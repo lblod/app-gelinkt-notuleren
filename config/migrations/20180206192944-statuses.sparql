@@ -1,0 +1,31 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/application> {
+    <http://mu.semte.ch/application/editor-document-statuses/cfd751588a6c453296de9f9c0dff2af4>
+    a ext:EditorDocumentStatus;
+    mu:uuid "cfd751588a6c453296de9f9c0dff2af4";
+    ext:EditorDocumentStatusName "concept".
+
+    <http://mu.semte.ch/application/editor-document-statuses/627aec5d144c422bbd1077022c9b45d1>
+    a ext:EditorDocumentStatus;
+    mu:uuid "627aec5d144c422bbd1077022c9b45d1";
+    ext:EditorDocumentStatusName "agenda publiek".
+
+    <http://mu.semte.ch/application/editor-document-statuses/b763390a63d548bb977fb4804293084a>
+    a ext:EditorDocumentStatus;
+    mu:uuid "b763390a63d548bb977fb4804293084a";
+    ext:EditorDocumentStatusName "besluitenlijst publiek".
+
+    <http://mu.semte.ch/application/editor-document-statuses/c272d47d756d4aeaa0be72081f1389c6>
+    a ext:EditorDocumentStatus;
+    mu:uuid "c272d47d756d4aeaa0be72081f1389c6";
+    ext:EditorDocumentStatusName "goedgekeurd".
+
+    <http://mu.semte.ch/application/editor-document-statuses/5A8304E8C093B00009000010>
+    a ext:EditorDocumentStatus;
+    mu:uuid "5A8304E8C093B00009000010";
+    ext:EditorDocumentStatusName "prullenbak".
+  }
+}

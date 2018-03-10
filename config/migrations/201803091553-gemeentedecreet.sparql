@@ -1,0 +1,14 @@
+WITH <http://mu.semte.ch/application>
+DELETE {
+?s <http://data.europa.eu/eli/ontology#title_short> ?short_title.
+?s <http://data.europa.eu/eli/ontology#title> ?title.
+}
+INSERT {
+?s <http://www.semanticdesktop.org/ontologies/2007/08/15/nao#score> "1"^^xsd:float.
+?s <http://data.europa.eu/eli/ontology#title_short> "Het gemeentedecreet van 15 juli 2005".
+?s <http://data.europa.eu/eli/ontology#title> "Het gemeentedecreet van 15 juli 2005".
+} WHERE {
+?s <http://mu.semte.ch/vocabularies/core/uuid> "5a68ff2a4e1027002c58f50a";
+   <http://data.europa.eu/eli/ontology#title_short> ?short_title;
+   <http://data.europa.eu/eli/ontology#title> ?title.
+}
