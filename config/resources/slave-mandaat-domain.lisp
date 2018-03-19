@@ -59,7 +59,10 @@
   :class (s-prefix "mandaat:Mandaat")
   :properties `((:aantal-houders :number ,(s-prefix "mandaat:aantalHouders")))
   :has-one `((bestuursfunctie-code :via ,(s-prefix "org:role")
-                                    :as "bestuursfunctie"))
+                                   :as "bestuursfunctie")
+             (bestuursorgaan :via ,(s-prefix "org:hasPost")
+                             :inverse t
+                             :as "bevat-in"))
   :resource-base (s-url "https://data.lblod.info/id/mandaten/")
   :features '(include-uri)
   :on-path "mandaten")
@@ -117,7 +120,10 @@
                 (:gebruikte-voornaam :string ,(s-prefix "persoon:gebruikteVoornaam")))
   :has-many `((mandataris :via ,(s-prefix "mandaat:isBestuurlijkeAliasVan")
                           :inverse t
-                          :as "is-aangesteld-als"))
+                          :as "is-aangesteld-als")
+              (kandidatenlijst :via ,(s-prefix "mandaat:heeftKandidaat")
+                               :inverse t
+                               :as "is-kandidaat-voor"))
   :has-one `((geboorte :via ,(s-prefix "persoon:heeftGeboorte")
                        :as "geboorte")
              (identificator :via ,(s-prefix "adms:identifier")
@@ -171,6 +177,9 @@
                 (:geldigheid :date ,(s-prefix "dct:valid")))
   :has-one `((bestuursorgaan :via ,(s-prefix "mandaat:steltSamen")
                              :as "stelt-samen"))
+  :has-many `((kandidatenlijst :via ,(s-prefix "mandaat:behoortTot")
+                               :inverse t
+                               :as "heeft-lijst"))
   :resource-base (s-url "https://data.lblod.info/id/rechtstreekse-verkiezingen/")
   :features '(include-uri)
   :on-path "rechtstreekse-verkiezingen")
