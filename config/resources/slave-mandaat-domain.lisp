@@ -3,28 +3,28 @@
 ;; TODO: do we need this superclass?
 (define-resource entiteit ()
   :class (s-prefix "prov:Entity")
-  :resource-base (s-url "https://data.lblod.info/id/entiteiten/")
+  :resource-base (s-url "http://data.lblod.info/id/entiteiten/")
   :features '(include-uri)
   :on-path "entiteiten")
 
 (define-resource fractie ()
   :class (s-prefix "mandaat:Fractie")
   :properties `((:naam :string ,(s-prefix "regorg:legalName")))
-  :resource-base (s-url "https://data.lblod.info/id/fracties/")
+  :resource-base (s-url "http://data.lblod.info/id/fracties/")
   :features '(include-uri)
   :on-path "fracties")
 
 (define-resource geboorte ()
   :class (s-prefix "persoon:Geboorte")
   :properties `((:datum :date ,(s-prefix "persoon:datum")))
-  :resource-base (s-url "https://data.lblod.info/id/geboortes/")
+  :resource-base (s-url "http://data.lblod.info/id/geboortes/")
   :features '(include-uri)
   :on-path "geboortes")
 
 (define-resource lijsttype ()
-  :class (s-prefix "mandaat:Lijsttype")
+  :class (s-prefix "ext:KandidatenlijstType")
   :properties `((:label :string ,(s-prefix "skos:prefLabel")))
-  :resource-base (s-url "https://data.lblod.info/id/lijsttypes/")
+  :resource-base (s-url "http://data.vlaanderen.be/id/concept/KandidatenlijstType/")
   :features '(include-uri)
   :on-path "lijsttypes")
 
@@ -38,7 +38,7 @@
                         :as "lijsttype")
              (rechtstreekse-verkiezing :via ,(s-prefix "mandaat:behoortTot")
                                        :as "rechtstreekse-verkiezing"))
-  :resource-base (s-url "https://data.lblod.info/id/kandidatenlijsten/")
+  :resource-base (s-url "http://data.lblod.info/id/kandidatenlijsten/")
   :features '(include-uri)
   :on-path "kandidatenlijsten")
 
@@ -51,7 +51,7 @@
                          :as "lid")
              (tijdsinterval :via ,(s-prefix "org:memberDuring")
                             :as "lid-gedurende"))
-  :resource-base (s-url "https://data.lblod.info/id/lidmaatschappen/")
+  :resource-base (s-url "http://data.lblod.info/id/lidmaatschappen/")
   :features '(include-uri)
   :on-path "lidmaatschappen")
 
@@ -63,14 +63,14 @@
              (bestuursorgaan :via ,(s-prefix "org:hasPost")
                              :inverse t
                              :as "bevat-in"))
-  :resource-base (s-url "https://data.lblod.info/id/mandaten/")
+  :resource-base (s-url "http://data.lblod.info/id/mandaten/")
   :features '(include-uri)
   :on-path "mandaten")
 
 (define-resource bestuursfunctie-code ()
   :class (s-prefix "ext:BestuursfunctieCode")
   :properties `((:label :string ,(s-prefix "skos:prefLabel")))
-  :resource-base (s-url "https://data.lblod.info/id/bestuursfunctie-codes/")
+  :resource-base (s-url "http://data.vlaanderen.be/id/concept/BestuursfunctieCode/")
   :features '(include-uri)
   :on-path "bestuursfunctie-codes")
 
@@ -95,21 +95,21 @@
                       :as "is-bestuurlijke-alias-van")
              (mandataris-status-code :via ,(s-prefix "mandaat:status")
                                       :as "status"))
-  :resource-base (s-url "https://data.lblod.info/id/mandatarissen/")
+  :resource-base (s-url "http://data.lblod.info/id/mandatarissen/")
   :features '(include-uri)
   :on-path "mandatarissen")
 
 (define-resource mandataris-status-code ()
   :class (s-prefix "ext:MandatarisStatusCode")
   :properties `((:label :string ,(s-prefix "skos:prefLabel")))
-  :resource-base (s-url "https://data.lblod.info/id/mandataris-status-codes/")
+  :resource-base (s-url "http://data.vlaanderen.be/id/concept/MandatarisStatusCode/")
   :features '(include-uri)
   :on-path "mandataris-status-codes")
 
 (define-resource beleidsdomein-code ()
   :class (s-prefix "ext:BeleidsdomeinCode")
   :properties `((:label :string ,(s-prefix "skos:prefLabel")))
-  :resource-base (s-url "https://data.lblod.info/id/beleidsdomein-codes/")
+  :resource-base (s-url "http://data.vlaanderen.be/id/concept/BeleidsdomeinCode/")
   :features '(include-uri)
   :on-path "beleidsdomein-codes")
 
@@ -130,20 +130,20 @@
                             :as "identificator")
              (geslacht-code :via ,(s-prefix "persoon:geslacht")
                             :as "geslacht"))
-  :resource-base (s-url "https://data.lblod.info/id/personen/")
+  :resource-base (s-url "http://data.lblod.info/id/personen/")
   :features '(include-uri)
   :on-path "personen")
 
 (define-resource geslacht-code ()
   :class (s-prefix "ext:GeslachtCode")
   :properties `((:label :string ,(s-prefix "skos:prefLabel")))
-  :resource-base (s-url "https://data.lblod.info/id/geslacht-codes/")
+  :resource-base (s-url "http://data.vlaanderen.be/id/concept/GeslachtCode/")
   :features '(include-uri)
   :on-path "geslacht-codes")
 
 (define-resource identificator ()
   :class (s-prefix "adms:Identifier")
-  :resource-base (s-url "https://data.lblod.info/id/identificatoren/")
+  :resource-base (s-url "http://data.lblod.info/id/identificatoren/")
   :features '(include-uri)
   :on-path "identificatoren")
 
@@ -155,7 +155,7 @@
   :has-many `((mandataris :via ,(s-prefix "mandaat:isAangesteldDoor")
                           :inverse t
                           :as "bekrachtigt-aanstellingen-van"))
-  :resource-base (s-url "https://data.ldblod.info/id/rechtsgronden-aanstelling/")
+  :resource-base (s-url "http://data.ldblod.info/id/rechtsgronden-aanstelling/")
   :features '(include-uri)
   :on-path "rechtsgronden-aanstelling")
 
@@ -167,7 +167,7 @@
   :has-many `((mandataris :via ,(s-prefix "mandaat:isOntslagenDoor")
                           :inverse t
                           :as "bekrachtigt-ontslagen-van"))
-  :resource-base (s-url "https://data.lblod.info/id/rechtsgronden-beeindiging/")
+  :resource-base (s-url "http://data.lblod.info/id/rechtsgronden-beeindiging/")
   :features '(include-uri)
   :on-path "rechtsgronden-beeindiging")
 
@@ -180,7 +180,7 @@
   :has-many `((kandidatenlijst :via ,(s-prefix "mandaat:behoortTot")
                                :inverse t
                                :as "heeft-lijst"))
-  :resource-base (s-url "https://data.lblod.info/id/rechtstreekse-verkiezingen/")
+  :resource-base (s-url "http://data.lblod.info/id/rechtstreekse-verkiezingen/")
   :features '(include-uri)
   :on-path "rechtstreekse-verkiezingen")
 
@@ -190,7 +190,7 @@
                 (:binding-start :date ,(s-prefix "mandaat:bindingStart")))
   :has-one `((entiteit :via ,(s-prefix "mandaat:isTijdsspecialisatieVan")
                        :as "is-tijdsspecialisatie-van"))
-  :resource-base (s-url "https://data.lblod.info/id/tijdsgebonden-entiteiten/")
+  :resource-base (s-url "http://data.lblod.info/id/tijdsgebonden-entiteiten/")
   :features '(include-uri)
   :on-path "tijdsgebonden-entiteiten")
 
@@ -198,7 +198,7 @@
   :class (s-prefix "dct:PeriodOfTime")
   :properties `((:begin :datetime ,(s-prefix "generiek:begin"))
                 (:einde :datetime ,(s-prefix "generiek:einde")))
-  :resource-base (s-url "https://data.lblod.info/id/tijdsintervallen/")
+  :resource-base (s-url "http://data.lblod.info/id/tijdsintervallen/")
   :features '(include-uri)
   :on-path "tijdsintervallen")
 
@@ -212,13 +212,13 @@
                               :as "is-resultaat-voor")
              (verkiezingsresultaat-gevolg-code :via ,(s-prefix "mandaat:gevolg")
                                                :as "gevolg"))
-  :resource-base (s-url "https://data.lblod.info/id/verkiezingsresultaten/")
+  :resource-base (s-url "http://data.lblod.info/id/verkiezingsresultaten/")
   :features '(include-uri)
   :on-path "verkiezingsresultaten")
 
 (define-resource verkiezingsresultaat-gevolg-code ()
-  :class (s-prefix "mandaat:VerkiezingsresultaatGevolgCode")
+  :class (s-prefix "ext:VerkiezingsresultaatGevolgCode")
   :properties `((:label :string ,(s-prefix "skos:prefLabel")))
-  :resource-base (s-url "https://data.lblod.info/id/verkiezingsresultaat-gevolg-codes/")
+  :resource-base (s-url "http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/")
   :features '(include-uri)
   :on-path "verkiezingsresultaat-gevolg-codes")
