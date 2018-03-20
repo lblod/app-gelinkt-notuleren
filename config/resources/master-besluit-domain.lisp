@@ -7,7 +7,7 @@
   :has-one `((zitting :via ,(s-prefix "besluit:heeftAgenda")
                       :inverse t
                       :as "zitting"))
-  :resource-base (s-url "https://data.lblod.info/id/agendas/")
+  :resource-base (s-url "http://data.lblod.info/id/agendas/")
   :features '(include-uri)
   :on-path "agendas")
 
@@ -25,7 +25,7 @@
              (agenda :via ,(s-prefix "besluit:heeftAgendapunt")
                      :inverse t
                      :as "agenda"))
-  :resource-base (s-url "https://data.lblod.info/id/agendapunten/")
+  :resource-base (s-url "http://data.lblod.info/id/agendapunten/")
   :features '(include-uri)
   :on-path "agendapunten")
 
@@ -39,7 +39,7 @@
                 (:score :float ,(s-prefix "nao:score")))
   :has-one `((rechtsgrond-artikel :via ,(s-prefix "eli:realizes")
                                     :as "realisatie"))
-  :resource-base (s-url "https://data.lblod.info/id/artikels/")
+  :resource-base (s-url "http://data.lblod.info/id/artikels/")
   :features '(include-uri)
   :on-path "artikels")
 
@@ -66,7 +66,7 @@
                          :as "secretaris")
              (mandataris :via ,(s-prefix "besluit:heeftVoorzitter")
                          :as "voorzitter"))
-  :resource-base (s-url "https://data.lblod.info/id/behandelingen-van-agendapunt")
+  :resource-base (s-url "http://data.lblod.info/id/behandelingen-van-agendapunt")
   :features '(include-uri)
   :on-path "behandelingen-van-agendapunten")
 
@@ -87,7 +87,7 @@
                     :as "volgend-uit-behandeling-van-agendapunt")
              (editor-document :via ,(s-prefix "pav:derivedFrom")
                     :as "afgeleid-uit-notule"))
-  :resource-base (s-url "https://data.lblod.info/id/besluiten/")
+  :resource-base (s-url "http://data.lblod.info/id/besluiten/")
   :features '(include-uri)
   :on-path "besluiten")
 
@@ -101,14 +101,14 @@
                              :as "bestuursorgaan")
              (bestuurseenheid-classificatie-code :via ,(s-prefix "besluit:classificatie")
                                                  :as "classificatie"))
-  :resource-base (s-url "https://data.lblod.info/id/bestuurseenheden/")
+  :resource-base (s-url "http://data.lblod.info/id/bestuurseenheden/")
   :features '(include-uri)
   :on-path "bestuurseenheden")
 
 (define-resource bestuurseenheid-classificatie-code ()
   :class (s-prefix "ext:BestuurseenheidClassificatieCode")
   :properties `((:label :string ,(s-prefix "skos:prefLabel")))
-  :resource-base (s-url "https://data.lblod.info/id/bestuurseenheid-classificatie-codes/")
+  :resource-base (s-url "http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/")
   :features '(include-uri)
   :on-path "bestuurseenheid-classificatie-codes")
 
@@ -132,14 +132,14 @@
               (mandaat :via ,(s-prefix "org:hasPost")
                        :as "bevat"))
 
-  :resource-base (s-url "https://data.lblod.info/id/bestuursorganen/")
+  :resource-base (s-url "http://data.lblod.info/id/bestuursorganen/")
   :features '(include-uri)
   :on-path "bestuursorganen")
 
 (define-resource bestuursorgaan-classificatie-code ()
   :class (s-prefix "ext:BestuursorgaanClassificatieCode")
   :properties `((:label :string ,(s-prefix "skos:prefLabel")))
-  :resource-base (s-url "https://data.lblod.info/id/bestuursorgaan-classificatie-codes/")
+  :resource-base (s-url "http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/")
   :features '(include-uri)
   :on-path "bestuursorgaan-classificatie-codes")
 
@@ -153,7 +153,7 @@
                                    :as "rechtsgronden-artikel"))
   :has-one `((bestuursorgaan :via ,(s-prefix "eli:passed_by")
                              :as "bestuursorgaan"))
-  :resource-base (s-url "https://data.lblod.info/id/rechtsgronden-besluit/")
+  :resource-base (s-url "http://data.lblod.info/id/rechtsgronden-besluit/")
   :features '(include-uri)
   :on-path "rechtsgronden-besluit")
 
@@ -164,7 +164,7 @@
   :has-one `((rechtsgrond-besluit :via ,(s-prefix "eli:has_part")
                                   :inverse t
                                   :as "rechtsgrond-besluit"))
-  :resource-base (s-url "https://data.lblod.info/id/rechtsgronden-artikel/")
+  :resource-base (s-url "http://data.lblod.info/id/rechtsgronden-artikel/")
   :features '(include-uri)
   :on-path "rechtsgronden-artikel")
 
@@ -187,7 +187,7 @@
                           :as "tegenstanders")
               (mandataris :via ,(s-prefix "besluit:heeftVoorstander")
                           :as "voorstanders"))
-  :resource-base (s-url "https://data.lblod.info/id/stemmingen/")
+  :resource-base (s-url "http://data.lblod.info/id/stemmingen/")
   :features '(include-uri)
   :on-path "stemmingen")
 
@@ -214,6 +214,6 @@
              (editor-document :via ,(s-prefix "besluit:heeftNotulen")
                               :as "notulen"))
 
-  :resource-base (s-url "https://data.lblod.info/id/zittingen/")
+  :resource-base (s-url "http://data.lblod.info/id/zittingen/")
   :features '(include-uri)
   :on-path "zittingen")
