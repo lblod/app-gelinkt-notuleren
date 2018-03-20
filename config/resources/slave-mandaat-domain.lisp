@@ -109,6 +109,9 @@
 (define-resource beleidsdomein-code ()
   :class (s-prefix "ext:BeleidsdomeinCode")
   :properties `((:label :string ,(s-prefix "skos:prefLabel")))
+  :has-many `((mandataris :via ,(s-prefix "mandaat:beleidsdomein")
+                          :inverse t
+                          :as "mandatarissen"))
   :resource-base (s-url "http://data.vlaanderen.be/id/concept/BeleidsdomeinCode/")
   :features '(include-uri)
   :on-path "beleidsdomein-codes")
