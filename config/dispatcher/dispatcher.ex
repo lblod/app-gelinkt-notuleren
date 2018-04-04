@@ -158,6 +158,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/verkiezingsresultaat-gevolg-codes/"
   end
 
+  match "/werkingsgebieden/*path" do
+    Proxy.forward conn, path, "http://resource/werkingsgebieden/"
+  end
+
   match "/templates/*path" do
     Proxy.forward conn, path, "http://resource/templates/"
   end

@@ -91,12 +91,12 @@
   :features '(include-uri)
   :on-path "besluiten")
 
-
 (define-resource bestuurseenheid ()
   :class (s-prefix "besluit:Bestuurseenheid")
-  :properties `((:naam :string ,(s-prefix "skos:prefLabel"))
-                (:werkingsgebied :uri ,(s-prefix "besluit:werkingsgebied")))
-  :has-one `((bestuursorgaan :via ,(s-prefix "besluit:bestuurt")
+  :properties `((:naam :string ,(s-prefix "skos:prefLabel")))
+  :has-one `((werkingsgebied :via ,(s-prefix "besluit:werkingsgebied")
+                             :as "werkingsgebied")
+             (bestuursorgaan :via ,(s-prefix "besluit:bestuurt")
                              :inverse t
                              :as "bestuursorgaan")
              (bestuurseenheid-classificatie-code :via ,(s-prefix "besluit:classificatie")
@@ -104,6 +104,18 @@
   :resource-base (s-url "http://data.lblod.info/id/bestuurseenheden/")
   :features '(include-uri)
   :on-path "bestuurseenheden")
+
+(define-resource werkingsgebied ()
+  :class (s-prefix "prov:Location")
+  :properties `((:naam :string ,(s-prefix "rdfs:label"))
+                (:niveau :string, (s-prefix "ext:werkingsgebiedNiveau")))
+
+  :has-many `((bestuurseenheid :via ,(s-prefix "besluit:werkingsgebied")
+                               :inverse t
+                               :as "bestuurseenheid"))
+  :resource-base (s-url "http://data.lblod.info/id/werkingsgebieden/")
+  :features '(include-uri)
+  :on-path "werkingsgebieden")
 
 (define-resource bestuurseenheid-classificatie-code ()
   :class (s-prefix "ext:BestuurseenheidClassificatieCode")
