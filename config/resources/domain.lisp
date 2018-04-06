@@ -7,6 +7,7 @@
 
 (read-domain-file "master-besluit-domain.lisp")
 (read-domain-file "slave-mandaat-domain.lisp")
+(read-domain-file "slave-organisatie-domain.lisp")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; TEMPLATES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
