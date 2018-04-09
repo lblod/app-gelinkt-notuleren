@@ -5,7 +5,7 @@ services:
     links:
       - identifier:backend
   admin:
-    image: lblod/frontend-editor-admin
+    image: lblod/frontend-editor-admin:0.2.0
     environment:
       STATIC_FOLDERS_REGEX: "^/(assets|fonts)/"
     links:
