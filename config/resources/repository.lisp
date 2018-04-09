@@ -22,3 +22,4 @@
 (add-prefix "foaf" "http://xmlns.com/foaf/0.1/")
 (add-prefix "nao" "http://www.semanticdesktop.org/ontologies/2007/08/15/nao#")
 (add-prefix "pav" "http://purl.org/pav/")
+(add-prefix "schema" "http://schema.org/")
