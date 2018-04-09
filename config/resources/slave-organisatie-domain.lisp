@@ -28,6 +28,7 @@
                   :as "rol"))
   :has-many `((persoon :via ,(s-prefix "org:heldBy")
                        :as "wordt-ingevuld-door"))
+  :resource-base (s-url "http://data.lblod.info/id/positie/")
   :features '(include-uri)
   :on-path '"posities"
 )
