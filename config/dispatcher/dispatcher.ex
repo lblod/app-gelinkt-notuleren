@@ -55,9 +55,6 @@ defmodule Dispatcher do
   match "/rechtsgronden-besluit/*path" do
     Proxy.forward conn, path, "http://resource/rechtsgronden-besluit/"
   end
-  match "/rechtsgronden/*path" do
-    Proxy.forward conn, path, "http://resource/rechtsgronden/"
-  end
   match "/rechtsgronden-artikel/*path" do
     Proxy.forward conn, path, "http://resource/rechtsgronden-artikel/"
   end
@@ -117,6 +114,9 @@ defmodule Dispatcher do
   end
   match "/rechtstreekse-verkiezingen/*path" do
     Proxy.forward conn, path, "http://resource/rechtstreekse-verkiezingen/"
+  end
+  match "/rechtsgronden/*path" do
+    Proxy.forward conn, path, "http://resource/rechtsgronden/"
   end
   match "/tijdsgebonden-entiteiten/*path" do
     Proxy.forward conn, path, "http://resource/tijdsgebonden-entiteiten/"
