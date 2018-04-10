@@ -107,7 +107,7 @@
                           :as "politiezone"))
   :has-many `((contact-punt :via ,(s-prefix "schema:contactPoint")
                             :as "contactinfo")
-              (positie :via ,(s-prefix "org:heldBy")
+              (positie :via ,(s-prefix "org:hasPost")
                        :as "posities"))
   :resource-base (s-url "http://data.lblod.info/id/bestuurseenheden/")
   :features '(include-uri)
