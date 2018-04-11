@@ -9,7 +9,7 @@
 
 (define-resource contact-punt ()
   :class (s-prefix "schema:PostalAddress")
-  :properties `((:land :string ,(s-prefix "schema:addressCountry "))
+  :properties `((:land :string ,(s-prefix "schema:addressCountry"))
                 (:gemeente :string ,(s-prefix "schema:addressLocality"))
                 (:adres :string ,(s-prefix "schema:streetAddress"))
                 (:postcode :string ,(s-prefix "schema:postalCode"))
@@ -25,9 +25,13 @@
 (define-resource positie ()
   :class (s-prefix "org:Post")
   :has-one `((rol :via ,(s-prefix "org:role")
-                  :as "rol"))
+                  :as "rol")
+             (organisatie :via ,(s-prefix "org:hasPost")
+                            :inverse t
+                            :as "is-positie-in"))
   :has-many `((persoon :via ,(s-prefix "org:heldBy")
                        :as "wordt-ingevuld-door"))
+  :resource-base (s-url "http://data.lblod.info/id/positie/")
   :features '(include-uri)
   :on-path '"posities"
 )
@@ -48,7 +52,7 @@
              )
   :has-many `((contact-punt :via ,(s-prefix "schema:contactPoint")
                             :as "contactinfo")
-              (positie :via ,(s-prefix "org:heldBy")
+              (positie :via ,(s-prefix "org:hasPost")
                        :as "posities"))
   :resource-base (s-url "http://data.lblod.info/id/organisaties/")
   :features '(include-uri)
