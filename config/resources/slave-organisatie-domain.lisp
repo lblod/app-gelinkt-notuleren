@@ -1,3 +1,5 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ORGANISATIE ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; this is a shared domain file, maintained in https://github.com/lblod/domain-files
 (define-resource vestiging ()
   :class (s-prefix "org:Site")
   :has-one `((contact-punt :via ,(s-prefix "schema:contactPoint")

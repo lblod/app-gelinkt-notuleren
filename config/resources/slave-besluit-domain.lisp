@@ -1,5 +1,5 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; BESLUIT ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;; this is a shared domain file, maintained in https://github.com/lblod/domain-files
 (define-resource agenda ()
   :class (s-prefix "besluit:Agenda")
   :has-many `((agendapunt :via ,(s-prefix "besluit:heeftAgendapunt")
