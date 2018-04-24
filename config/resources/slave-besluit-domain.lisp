@@ -143,12 +143,12 @@
                               :as "bestuurseenheid")
              (bestuursorgaan-classificatie-code :via ,(s-prefix "besluit:classificatie")
                                                 :as "classificatie")
-             (bestuursorgaan :via ,(s-prefix "mandaat:isTijdsspecialisatieVan")
+             (bestuursorgaan :via ,(s-prefix "mandaat:isTijdspecialisatieVan")
                              :as "is-tijdsspecialisatie-van")
              (rechtstreekse-verkiezing :via ,(s-prefix "mandaat:steltSamen")
                                       :inverse t
                                       :as "wordt-samengesteld-door"))
-  :has-many `((bestuursorgaan :via ,(s-prefix "mandaat:isTijdsspecialisatieVan")
+  :has-many `((bestuursorgaan :via ,(s-prefix "mandaat:isTijdspecialisatieVan")
                        :inverse t
                        :as "heeft-tijdsspecialisaties")
               (mandaat :via ,(s-prefix "org:hasPost")
