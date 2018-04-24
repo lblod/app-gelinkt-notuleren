@@ -5,7 +5,7 @@
   "when non-nil, all paginated listings will contain the number
    of responses in the result object's meta.")
 
-(read-domain-file "master-besluit-domain.lisp")
+(read-domain-file "slave-besluit-domain.lisp")
 (read-domain-file "slave-mandaat-domain.lisp")
 (read-domain-file "slave-organisatie-domain.lisp")
 
