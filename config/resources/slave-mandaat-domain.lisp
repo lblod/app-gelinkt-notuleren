@@ -1,4 +1,5 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; MANDAAT ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; this is a shared domain file, maintained in https://github.com/lblod/domain-files
 
 ;; TODO: do we need this superclass?
 (define-resource entiteit ()
@@ -151,6 +152,7 @@
 
 (define-resource identificator ()
   :class (s-prefix "adms:Identifier")
+  :properties `((:identificator :string ,(s-prefix "skos:notation"))) ;; TODO: should have a specific type
   :resource-base (s-url "http://data.lblod.info/id/identificatoren/")
   :features '(include-uri)
   :on-path "identificatoren")
@@ -163,6 +165,7 @@
   :resource-base (s-url "https://data.lblod.info/id/rechtsgronden/")
   :features '(include-uri)
   :on-path "rechtsgronden")
+
 
 (define-resource rechtsgrond-aanstelling ()
   :class (s-prefix "mandaat:RechtsgrondAanstelling")
