@@ -1,11 +1,11 @@
 version: '3.4'
 services:
   editor:
-    image: lblod/frontend-demo-editor
+    image: lblod/frontend-demo-editor:0.2.8
     links:
       - identifier:backend
   admin:
-    image: lblod/frontend-editor-admin:0.2.0
+    image: lblod/frontend-editor-admin:0.2.2
     environment:
       STATIC_FOLDERS_REGEX: "^/(assets|fonts)/"
     links:
