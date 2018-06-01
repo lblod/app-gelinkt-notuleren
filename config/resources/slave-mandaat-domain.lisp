@@ -12,6 +12,10 @@
   :class (s-prefix "mandaat:Fractie")
   :properties `((:naam :string ,(s-prefix "regorg:legalName")))
   :resource-base (s-url "http://data.lblod.info/id/fracties/")
+  :has-many `((bestuursorgaan :via ,(s-prefix "org:memberOf")
+                       :as "bestuursorganen-in-tijd"))
+  :has-one `((bestuurseenheid :via ,(s-prefix "org:linkedTo")
+                        :as "bestuurseenheid"))
   :features '(include-uri)
   :on-path "fracties")
 
