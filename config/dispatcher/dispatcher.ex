@@ -71,7 +71,7 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/fracties/"
   end
   match "/fractietypes/*path" do
-    Proxy.forward conn, path, "http://cache/fractietypes/"
+    Proxy.forward conn, path, "http://resource/fractietypes/"
   end
   match "/geboortes/*path" do
     Proxy.forward conn, path, "http://resource/geboortes/"
