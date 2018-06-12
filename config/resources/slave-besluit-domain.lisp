@@ -96,9 +96,6 @@
   :properties `((:naam :string ,(s-prefix "skos:prefLabel")))
   :has-one `((werkingsgebied :via ,(s-prefix "besluit:werkingsgebied")
                              :as "werkingsgebied")
-             (bestuursorgaan :via ,(s-prefix "besluit:bestuurt")
-                             :inverse t
-                             :as "bestuursorgaan")
              (bestuurseenheid-classificatie-code :via ,(s-prefix "besluit:classificatie")
                                                  :as "classificatie")
              (vestiging :via ,(s-prefix "org:hasPrimarySite")
@@ -108,7 +105,10 @@
   :has-many `((contact-punt :via ,(s-prefix "schema:contactPoint")
                             :as "contactinfo")
               (positie :via ,(s-prefix "org:hasPost")
-                       :as "posities"))
+                       :as "posities")
+              (bestuursorgaan :via ,(s-prefix "besluit:bestuurt")
+                              :inverse t
+                              :as "bestuursorganen"))
   :resource-base (s-url "http://data.lblod.info/id/bestuurseenheden/")
   :features '(include-uri)
   :on-path "bestuurseenheden"
