@@ -37,7 +37,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
 WITH <http://mu.semte.ch/application>
 
-# insert burgemeester
+# insert vast bureau
 DELETE {
   ?existingOrgaanInTijd org:hasPost ?mandaat .
 }
@@ -45,7 +45,7 @@ DELETE {
 INSERT {
   ?bestuursorgaan a besluit:Bestuursorgaan .
   ?bestuursorgaan mu:uuid ?uuidOrgaan .
-  ?bestuursorgaan besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/4955bd72cd0e4eb895fdbfab08da0284> .
+  ?bestuursorgaan besluit:classificatie ?bestuursorgaanClassificatie .
   ?bestuursorgaan besluit:bestuurt ?bestuurseenheid .
   ?bestuursorgaan skos:prefLabel ?bestuursorgaanNaam .
 
@@ -57,22 +57,25 @@ INSERT {
   ?bestuursorgaanInTijd org:hasPost ?mandaat .
 }
 
+# match lid vast bureau, voorzitter vast bureau
 WHERE {
-  ?bestuursfunctie mu:uuid "5ab0e9b8a3b2ca7c5e000013" .
+  ?bestuursfunctie mu:uuid ?uuid .
+  VALUES ?uuid { "5ab0e9b8a3b2ca7c5e000017" "5ab0e9b8a3b2ca7c5e000018" } .
   ?mandaat org:role ?bestuursfunctie .
   ?mandaat ^org:hasPost ?existingOrgaanInTijd .
   ?existingOrgaanInTijd mandaat:isTijdspecialisatieVan ?orgaan .
   ?orgaan besluit:bestuurt ?bestuurseenheid .
   ?bestuurseenheid skos:prefLabel ?eenheidNaam .
+  ?bestuursorgaanClassificatie skos:prefLabel ?classificatieLabel ; mu:uuid "5ab0e9b8a3b2ca7c5e000008" .
 
-  BIND(CONCAT("Burgemeester ", STR(?eenheidNaam)) AS ?bestuursorgaanNaam) .
+  BIND(CONCAT(STR(?classificatieLabel), " ", STR(?eenheidNaam)) AS ?bestuursorgaanNaam) .
   BIND(SHA256(CONCAT("1aee45a1-0bb6-49a0-976f-461c84e269f2", ":", STR(?bestuursorgaanNaam))) AS ?uuidOrgaan) .
   BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", STR(?uuidOrgaan))) AS ?bestuursorgaan) .
   BIND(SHA256(CONCAT("a9d31fe8-4e40-4815-acdf-be17927d0bb9", ":", STR(?bestuursorgaanNaam))) AS ?uuidInTijd) .
   BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", ?uuidInTijd)) AS ?bestuursorgaanInTijd) .
 };
 
-# insert college
+# insert Bijzonder Comite voor de Sociale Dienst
 DELETE {
   ?existingOrgaanInTijd org:hasPost ?mandaat .
 }
@@ -80,7 +83,7 @@ DELETE {
 INSERT {
   ?bestuursorgaan a besluit:Bestuursorgaan .
   ?bestuursorgaan mu:uuid ?uuidOrgaan .
-  ?bestuursorgaan besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000006> .
+  ?bestuursorgaan besluit:classificatie ?bestuursorgaanClassificatie .
   ?bestuursorgaan besluit:bestuurt ?bestuurseenheid .
   ?bestuursorgaan skos:prefLabel ?bestuursorgaanNaam .
 
@@ -92,37 +95,40 @@ INSERT {
   ?bestuursorgaanInTijd org:hasPost ?mandaat .
 }
 
-# select schepenen
+# match lid van bijz soc com, voorzitter bijz soc com
 WHERE {
-  ?bestuursfunctie mu:uuid "5ab0e9b8a3b2ca7c5e000014" .
+  ?bestuursfunctie mu:uuid ?uuid .
+  VALUES ?uuid { "5ab0e9b8a3b2ca7c5e000019" "5ab0e9b8a3b2ca7c5e00001a" } .
   ?mandaat org:role ?bestuursfunctie .
   ?mandaat ^org:hasPost ?existingOrgaanInTijd .
   ?existingOrgaanInTijd mandaat:isTijdspecialisatieVan ?orgaan .
   ?orgaan besluit:bestuurt ?bestuurseenheid .
   ?bestuurseenheid skos:prefLabel ?eenheidNaam .
+  ?bestuursorgaanClassificatie skos:prefLabel ?classificatieLabel ; mu:uuid "5ab0e9b8a3b2ca7c5e000009" .
 
-  BIND(CONCAT("College van Burgemeester en Schepenen ", STR(?eenheidNaam)) AS ?bestuursorgaanNaam) .
+  BIND(CONCAT(STR(?classificatieLabel), " ", STR(?eenheidNaam)) AS ?bestuursorgaanNaam) .
   BIND(SHA256(CONCAT("1aee45a1-0bb6-49a0-976f-461c84e269f2", ":", STR(?bestuursorgaanNaam))) AS ?uuidOrgaan) .
   BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", STR(?uuidOrgaan))) AS ?bestuursorgaan) .
   BIND(SHA256(CONCAT("a9d31fe8-4e40-4815-acdf-be17927d0bb9", ":", STR(?bestuursorgaanNaam))) AS ?uuidInTijd) .
   BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", ?uuidInTijd)) AS ?bestuursorgaanInTijd) .
 };
 
-# burgemeester
+
+# replace label OCMWraad with Raad voor Maatschappelijk Welzijn
+DELETE {
+  ?bestuursorgaan skos:prefLabel ?ocmwRaadNaam .
+}
 INSERT {
-  ?collegeInTijd org:hasPost ?burgemeester
+  ?bestuursorgaan skos:prefLabel ?bestuursorgaanNaam .
+}
+# match Raad voor Maatschappelijk Welzijn 
+WHERE {
+  ?bestuursorgaan skos:prefLabel ?ocmwRaadNaam .
+  ?bestuursorgaan besluit:classificatie ?bestuursorgaanClassificatie .
+  ?bestuursorgaanClassificatie skos:prefLabel ?classificatieLabel ; mu:uuid "5ab0e9b8a3b2ca7c5e000007" .
+  ?bestuursorgaan besluit:bestuurt ?bestuurseenheid .
+  ?bestuurseenheid skos:prefLabel ?eenheidNaam .
+
+  BIND(CONCAT(STR(?classificatieLabel), " ", STR(?eenheidNaam)) AS ?bestuursorgaanNaam) .
 }
 
-WHERE {
-  ?orgaanCollege besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000006> .
-  ?orgaanBurgemeester besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/4955bd72cd0e4eb895fdbfab08da0284> .
-  ?orgaanCollege besluit:bestuurt ?bestuurseenheid .
-  ?orgaanBurgemeester besluit:bestuurt ?bestuurseenheid .
-
-  ?collegeInTijd mandaat:isTijdspecialisatieVan ?orgaanCollege .
-  ?burgemeesterInTijd mandaat:isTijdspecialisatieVan ?orgaanBurgemeester .
-
-  ?burgemeesterInTijd org:hasPost ?burgemeester .
-  ?burgemeester org:role ?burgemeesterRol .
-  ?burgemeesterRol mu:uuid "5ab0e9b8a3b2ca7c5e000013" .
-};
