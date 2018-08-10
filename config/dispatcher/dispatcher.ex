@@ -162,6 +162,14 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://notulenimporter/publish/"
   end
 
+  match "/rdfs-classes/*path" do
+    Proxy.forward conn, path, "http://resource/rdfs-classes/"
+  end
+
+  match "/rdfs-properties/*path" do
+    Proxy.forward conn, path, "http://resource/rdfs-properties/"
+  end
+
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
