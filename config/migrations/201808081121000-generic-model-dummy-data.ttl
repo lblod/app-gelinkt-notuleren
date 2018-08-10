@@ -1,0 +1,47 @@
+<http://www.w3.org/2001/XMLSchema#string> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "3c7f297e-9c7f-11e8-b70d-ef9004a24187" ;
+   <http://mu.semte.ch/vocabularies/ext/isPrimitive> true;
+   <http://www.w3.org/2000/01/rdf-schema#label> "string" .
+
+<http://www.w3.org/ns/person#Person> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "45c4e2ee-9aef-11e8-a70e-d370cbf41a91" ;
+   <http://www.w3.org/2000/01/rdf-schema#label> "persoon";
+   <http://mu.semte.ch/vocabularies/ext/apiPath> "/personen";
+   <http://mu.semte.ch/vocabularies/ext/displayProperties> "[\"gebruikte-voornaam\",\"achternaam\"]";
+   <http://mu.semte.ch/vocabularies/ext/baseUri> "http://data.lblod.info/id/personen/";
+   <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter[achternaam]";
+   <http://mu.semte.ch/vocabularies/ext/isPrimitive> false;
+   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://xmlns.com/foaf/0.1/familyName> ;
+   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ;
+   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.vlaanderen.be/ns/persoon#geslacht> .
+
+<http://xmlns.com/foaf/0.1/familyName> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "c195b706-9af7-11e8-8841-b371817df349" ;
+   <http://www.w3.org/2000/01/rdf-schema#label> "achternaam";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string>.
+
+<http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "d018fe22-9af8-11e8-b5a2-33131a0f2885" ;
+   <http://www.w3.org/2000/01/rdf-schema#label> "gebruikte-voornaam";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+
+<http://data.vlaanderen.be/ns/persoon#geslacht> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "1be22efe-9afa-11e8-a6f5-5ba173b15dd7" ;
+   <http://www.w3.org/2000/01/rdf-schema#label> "geslacht";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://mu.semte.ch/vocabularies/ext/GeslachtCode>.
+
+<http://mu.semte.ch/vocabularies/ext/GeslachtCode> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "7cecd45c-9af9-11e8-ae39-cf550261a13b" ;
+   <http://www.w3.org/2000/01/rdf-schema#label> "geslacht-code";
+   <http://mu.semte.ch/vocabularies/ext/apiPath> "/geslacht-codes";
+   <http://mu.semte.ch/vocabularies/ext/displayProperties> "[\"label\"]";
+   <http://mu.semte.ch/vocabularies/ext/baseUri> "http://data.lblod.info/id/geslacht-codes/";
+   <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter[label]";
+   <http://mu.semte.ch/vocabularies/ext/isPrimitive> false;
+   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://www.w3.org/2004/02/skos/core#prefLabel> .
+
+<http://www.w3.org/2004/02/skos/core#prefLabel> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "b84bea06-9af9-11e8-abf6-67e92e60eafa" ;
+   <http://www.w3.org/2000/01/rdf-schema#label> "label";
+   <http://mu.semte.ch/vocabularies/ext/sPrefix> "http://www.w3.org/2004/02/skos/core#prefLabel";
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .

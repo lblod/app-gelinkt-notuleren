@@ -8,6 +8,7 @@
 (read-domain-file "slave-besluit-domain.lisp")
 (read-domain-file "slave-mandaat-domain.lisp")
 (read-domain-file "slave-organisatie-domain.lisp")
+(read-domain-file "generic-model-plugin-domain.lisp")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; TEMPLATES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
