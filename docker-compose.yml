@@ -30,7 +30,7 @@ services:
     environment:
       MU_SPARQL_TIMEOUT: "600"
   resource:
-    image: semtech/mu-cl-resources:1.16.0
+    image: semtech/mu-cl-resources:1.17.1
     volumes:
       - ./config/resources:/config
   notulenimporter:
