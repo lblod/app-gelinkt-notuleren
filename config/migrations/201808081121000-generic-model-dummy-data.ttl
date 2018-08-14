@@ -4,6 +4,12 @@
    <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2001/XMLSchema#string>;
    <http://www.w3.org/2000/01/rdf-schema#label> "string" .
 
+<http://data.lblod.info/id/rdfs-classes/14e78c54-9fc1-11e8-bf5e-db898e1438d3> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "14e78c54-9fc1-11e8-bf5e-db898e1438d3" ;
+   <http://mu.semte.ch/vocabularies/ext/isPrimitive> true;
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2001/XMLSchema#number>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "number" .
+
 <http://data.lblod.info/id/rdfs-classes/45c4e2ee-9aef-11e8-a70e-d370cbf41a91> a <http://www.w3.org/2000/01/rdf-schema#Class>;
    <http://mu.semte.ch/vocabularies/core/uuid> "45c4e2ee-9aef-11e8-a70e-d370cbf41a91" ;
    <http://www.w3.org/2000/01/rdf-schema#label> "personen";
@@ -157,10 +163,24 @@
    <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter[lijstnaam]";
    <http://mu.semte.ch/vocabularies/ext/isPrimitive> false ;
    <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/mandaat#Kandidatenlijst>;
-   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-classes/66d3d61e-9fa6-11e8-a3dc-8f7ccc624ad6>.
+   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-properties/33806ec4-9fa8-11e8-8acd-f715dbe61443>;
+   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-properties/45537088-9fc1-11e8-a98c-934a8fe316c9>;
+   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-properties/c5337140-9fc1-11e8-98ca-2f2e4c3c7f99>.
 
 <http://data.lblod.info/id/rdfs-properties/33806ec4-9fa8-11e8-8acd-f715dbe61443> a <http://www.w3.org/2000/01/rdf-schema#Property>;
    <http://mu.semte.ch/vocabularies/core/uuid> "33806ec4-9fa8-11e8-8acd-f715dbe61443" ;
    <http://www.w3.org/2000/01/rdf-schema#label> "lijstnaam" ;
    <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2004/02/skos/core#prefLabel>;
-   <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/5257d2de-9ef3-11e8-b6d2-e31b79f9e7b4>.
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/3c7f297e-9c7f-11e8-b70d-ef9004a24187>.
+
+<http://data.lblod.info/id/rdfs-properties/45537088-9fc1-11e8-a98c-934a8fe316c9> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "45537088-9fc1-11e8-a98c-934a8fe316c9" ;
+   <http://www.w3.org/2000/01/rdf-schema#label> "lijstnummer" ;
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/mandaat#lijstnummer>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/14e78c54-9fc1-11e8-bf5e-db898e1438d3>.
+
+<http://data.lblod.info/id/rdfs-properties/c5337140-9fc1-11e8-98ca-2f2e4c3c7f99> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "c5337140-9fc1-11e8-98ca-2f2e4c3c7f99" ;
+   <http://www.w3.org/2000/01/rdf-schema#label> "kandidaten" ;
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/mandaat#heeftKandidaat>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/45c4e2ee-9aef-11e8-a70e-d370cbf41a91>.
