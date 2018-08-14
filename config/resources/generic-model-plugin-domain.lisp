@@ -6,7 +6,8 @@
                 (:display-properties :string ,(s-prefix "ext:displayProperties"))
                 (:base-uri :string ,(s-prefix "ext:baseUri"))
                 (:api-filter :string ,(s-prefix "ext:apiFilter"))
-                (:is-primitive :bool ,(s-prefix "ext:isPrimitive")))
+                (:is-primitive :bool ,(s-prefix "ext:isPrimitive"))
+                (:rdfa-type :uri ,(s-prefix "ext:rdfaType")))
 
   :has-many `((rdfs-property :via ,(s-prefix "ext:rdfsClassProperties")
                         :as "properties"))
@@ -17,7 +18,8 @@
 
 (define-resource rdfs-property ()
   :class (s-prefix "rdfs:Property")
-  :properties `((:label :string ,(s-prefix "rdfs:label")))
+  :properties `((:label :string ,(s-prefix "rdfs:label"))
+                (:rdfa-type :uri ,(s-prefix "ext:rdfaType")))
   :has-many `((rdfs-class :via ,(s-prefix "ext:rdfsClassProperties")
                      :inverse t
                      :as "domain"))

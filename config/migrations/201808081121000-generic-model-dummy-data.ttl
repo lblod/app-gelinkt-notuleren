@@ -1,9 +1,10 @@
-<http://www.w3.org/2001/XMLSchema#string> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+<http://data.lblod.info/id/rdfs-classes/3c7f297e-9c7f-11e8-b70d-ef9004a24187> a <http://www.w3.org/2000/01/rdf-schema#Class>;
    <http://mu.semte.ch/vocabularies/core/uuid> "3c7f297e-9c7f-11e8-b70d-ef9004a24187" ;
    <http://mu.semte.ch/vocabularies/ext/isPrimitive> true;
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2001/XMLSchema#string>;
    <http://www.w3.org/2000/01/rdf-schema#label> "string" .
 
-<http://www.w3.org/ns/person#Person> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+<http://data.lblod.info/id/rdfs-classes/45c4e2ee-9aef-11e8-a70e-d370cbf41a91> a <http://www.w3.org/2000/01/rdf-schema#Class>;
    <http://mu.semte.ch/vocabularies/core/uuid> "45c4e2ee-9aef-11e8-a70e-d370cbf41a91" ;
    <http://www.w3.org/2000/01/rdf-schema#label> "personen";
    <http://mu.semte.ch/vocabularies/ext/apiPath> "/personen";
@@ -11,27 +12,31 @@
    <http://mu.semte.ch/vocabularies/ext/baseUri> "http://data.lblod.info/id/personen/";
    <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter[achternaam]";
    <http://mu.semte.ch/vocabularies/ext/isPrimitive> false;
-   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://xmlns.com/foaf/0.1/familyName> ;
-   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ;
-   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.vlaanderen.be/ns/persoon#geslacht> ;
-   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.vlaanderen.be/ns/persoon#heeftGeboorte> .
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/ns/person#Person>;
+   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-properties/c195b706-9af7-11e8-8841-b371817df349>;
+   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-properties/d018fe22-9af8-11e8-b5a2-33131a0f2885>;
+   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-properties/1be22efe-9afa-11e8-a6f5-5ba173b15dd7>;
+   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-properties/ee69aefe-9f2f-11e8-8cc4-0b98be68754e>.
 
-<http://xmlns.com/foaf/0.1/familyName> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+<http://data.lblod.info/id/rdfs-properties/c195b706-9af7-11e8-8841-b371817df349> a <http://www.w3.org/2000/01/rdf-schema#Property>;
    <http://mu.semte.ch/vocabularies/core/uuid> "c195b706-9af7-11e8-8841-b371817df349" ;
    <http://www.w3.org/2000/01/rdf-schema#label> "achternaam";
-   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string>.
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://xmlns.com/foaf/0.1/familyName>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/3c7f297e-9c7f-11e8-b70d-ef9004a24187>.
 
-<http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+<http://data.lblod.info/id/rdfs-properties/d018fe22-9af8-11e8-b5a2-33131a0f2885> a <http://www.w3.org/2000/01/rdf-schema#Property>;
    <http://mu.semte.ch/vocabularies/core/uuid> "d018fe22-9af8-11e8-b5a2-33131a0f2885" ;
    <http://www.w3.org/2000/01/rdf-schema#label> "gebruikte-voornaam";
-   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/3c7f297e-9c7f-11e8-b70d-ef9004a24187> .
 
-<http://data.vlaanderen.be/ns/persoon#geslacht> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+<http://data.lblod.info/id/rdfs-properties/1be22efe-9afa-11e8-a6f5-5ba173b15dd7> a <http://www.w3.org/2000/01/rdf-schema#Property>;
    <http://mu.semte.ch/vocabularies/core/uuid> "1be22efe-9afa-11e8-a6f5-5ba173b15dd7" ;
    <http://www.w3.org/2000/01/rdf-schema#label> "geslacht";
-   <http://www.w3.org/2000/01/rdf-schema#range> <http://mu.semte.ch/vocabularies/ext/GeslachtCode>.
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/persoon#geslacht>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/7cecd45c-9af9-11e8-ae39-cf550261a13b>.
 
-<http://mu.semte.ch/vocabularies/ext/GeslachtCode> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+<http://data.lblod.info/id/rdfs-classes/7cecd45c-9af9-11e8-ae39-cf550261a13b> a <http://www.w3.org/2000/01/rdf-schema#Class>;
    <http://mu.semte.ch/vocabularies/core/uuid> "7cecd45c-9af9-11e8-ae39-cf550261a13b" ;
    <http://www.w3.org/2000/01/rdf-schema#label> "geslacht-codes";
    <http://mu.semte.ch/vocabularies/ext/apiPath> "/geslacht-codes";
@@ -39,15 +44,16 @@
    <http://mu.semte.ch/vocabularies/ext/baseUri> "http://data.lblod.info/id/geslacht-codes/";
    <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter[label]";
    <http://mu.semte.ch/vocabularies/ext/isPrimitive> false;
-   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://www.w3.org/2004/02/skos/core#prefLabel> .
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://mu.semte.ch/vocabularies/ext/GeslachtCode>;
+   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-properties/b84bea06-9af9-11e8-abf6-67e92e60eafa>.
 
-<http://www.w3.org/2004/02/skos/core#prefLabel> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+<http://data.lblod.info/id/rdfs-properties/b84bea06-9af9-11e8-abf6-67e92e60eafa> a <http://www.w3.org/2000/01/rdf-schema#Property>;
    <http://mu.semte.ch/vocabularies/core/uuid> "b84bea06-9af9-11e8-abf6-67e92e60eafa" ;
    <http://www.w3.org/2000/01/rdf-schema#label> "label";
-   <http://mu.semte.ch/vocabularies/ext/sPrefix> "http://www.w3.org/2004/02/skos/core#prefLabel";
-   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2004/02/skos/core#prefLabel>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/3c7f297e-9c7f-11e8-b70d-ef9004a24187> .
 
-<http://data.vlaanderen.be/ns/mandaat#Mandaat> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+<http://data.lblod.info/id/rdfs-classes/bce12792-9ef1-11e8-baf4-6bf0fb13efa1> a <http://www.w3.org/2000/01/rdf-schema#Class>;
    <http://mu.semte.ch/vocabularies/core/uuid> "bce12792-9ef1-11e8-baf4-6bf0fb13efa1" ;
    <http://www.w3.org/2000/01/rdf-schema#label> "mandaten";
    <http://mu.semte.ch/vocabularies/ext/apiPath> "/mandaten";
@@ -55,14 +61,16 @@
    <http://mu.semte.ch/vocabularies/ext/baseUri> "http://data.lblod.info/id/mandaten/";
    <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter[bestuursfunctie][label]";
    <http://mu.semte.ch/vocabularies/ext/isPrimitive> false ;
-   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://www.w3.org/ns/org#role> .
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/mandaat#Mandaat>;
+   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-properties/2b639a4c-9ef7-11e8-8242-2bd96fed2653>.
 
-<http://www.w3.org/ns/org#role> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+<http://data.lblod.info/id/rdfs-properties/2b639a4c-9ef7-11e8-8242-2bd96fed2653> a <http://www.w3.org/2000/01/rdf-schema#Property>;
    <http://mu.semte.ch/vocabularies/core/uuid> "2b639a4c-9ef7-11e8-8242-2bd96fed2653" ;
    <http://www.w3.org/2000/01/rdf-schema#label> "bestuursfunctie";
-   <http://www.w3.org/2000/01/rdf-schema#range> <http://mu.semte.ch/vocabularies/ext/BestuursfunctieCode> .
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/ns/org#role>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/5257d2de-9ef3-11e8-b6d2-e31b79f9e7b4>.
 
-<http://mu.semte.ch/vocabularies/ext/BestuursfunctieCode> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+<http://data.lblod.info/id/rdfs-classes/5257d2de-9ef3-11e8-b6d2-e31b79f9e7b4> a <http://www.w3.org/2000/01/rdf-schema#Class>;
    <http://mu.semte.ch/vocabularies/core/uuid> "5257d2de-9ef3-11e8-b6d2-e31b79f9e7b4" ;
    <http://www.w3.org/2000/01/rdf-schema#label> "bestuursfunctie-codes";
    <http://mu.semte.ch/vocabularies/ext/apiPath> "/bestuursfunctie-codes";
@@ -70,9 +78,10 @@
    <http://mu.semte.ch/vocabularies/ext/baseUri> "http://data.lblod.info/id/BestuursfunctieCode/";
    <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter[label]";
    <http://mu.semte.ch/vocabularies/ext/isPrimitive> false ;
-   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://www.w3.org/ns/org#role> .
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://mu.semte.ch/vocabularies/ext/BestuursfunctieCode> ;
+   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-properties/b84bea06-9af9-11e8-abf6-67e92e60eafa> .
 
-<http://data.vlaanderen.be/ns/mandaat#Mandataris> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+<http://data.lblod.info/id/rdfs-classes/b4777a4e-9ef5-11e8-9e69-e790d3958e14> a <http://www.w3.org/2000/01/rdf-schema#Class>;
    <http://mu.semte.ch/vocabularies/core/uuid> "b4777a4e-9ef5-11e8-9e69-e790d3958e14" ;
    <http://www.w3.org/2000/01/rdf-schema#label> "mandatarissen";
    <http://mu.semte.ch/vocabularies/ext/apiPath> "/mandatarissen";
@@ -80,37 +89,43 @@
    <http://mu.semte.ch/vocabularies/ext/baseUri> "http://data.lblod.info/id/mandatarissen/";
    <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter[is-bestuurlijke-alias-van]";
    <http://mu.semte.ch/vocabularies/ext/isPrimitive> false ;
-   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://www.w3.org/ns/org#holds> ;
-   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan> ;
-   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.vlaanderen.be/ns/mandaat#start> ;
-   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.vlaanderen.be/ns/mandaat#einde> .
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/mandaat#Mandataris>;
+   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-properties/9e865ea0-9ef8-11e8-baa5-37bda8c9a977>;
+   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-properties/615bd9c8-9ef9-11e8-87e2-ab9078cd5519>;
+   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-properties/188bb7d0-9eff-11e8-9376-5f94723db63b>;
+   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-properties/2ced06de-9eff-11e8-b961-831a3490a5e2>.
 
-<http://www.w3.org/ns/org#holds> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+<http://data.lblod.info/id/rdfs-properties/9e865ea0-9ef8-11e8-baa5-37bda8c9a977> a <http://www.w3.org/2000/01/rdf-schema#Property>;
    <http://mu.semte.ch/vocabularies/core/uuid> "9e865ea0-9ef8-11e8-baa5-37bda8c9a977" ;
    <http://www.w3.org/2000/01/rdf-schema#label> "bekleedt";
-   <http://www.w3.org/2000/01/rdf-schema#range> <http://data.vlaanderen.be/ns/mandaat#Mandaat> .
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/ns/org#holds>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/bce12792-9ef1-11e8-baf4-6bf0fb13efa1> .
 
-<http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+<http://data.lblod.info/id/rdfs-properties/615bd9c8-9ef9-11e8-87e2-ab9078cd5519> a <http://www.w3.org/2000/01/rdf-schema#Property>;
    <http://mu.semte.ch/vocabularies/core/uuid> "615bd9c8-9ef9-11e8-87e2-ab9078cd5519" ;
    <http://www.w3.org/2000/01/rdf-schema#label> "is-bestuurlijke-alias-van" ;
-   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/person#Person> .
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/45c4e2ee-9aef-11e8-a70e-d370cbf41a91>.
 
-<http://www.w3.org/2001/XMLSchema#datetime> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+<http://data.lblod.info/id/rdfs-classess/79d6c20c-9efd-11e8-ad07-536338a5cf8b> a <http://www.w3.org/2000/01/rdf-schema#Class>;
    <http://mu.semte.ch/vocabularies/core/uuid> "79d6c20c-9efd-11e8-ad07-536338a5cf8b" ;
    <http://mu.semte.ch/vocabularies/ext/isPrimitive> true;
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2001/XMLSchema#datetime>;
    <http://www.w3.org/2000/01/rdf-schema#label> "datetime" .
 
-<http://data.vlaanderen.be/ns/mandaat#start> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+<http://data.lblod.info/id/rdfs-properties/188bb7d0-9eff-11e8-9376-5f94723db63b>  a <http://www.w3.org/2000/01/rdf-schema#Property>;
    <http://mu.semte.ch/vocabularies/core/uuid> "188bb7d0-9eff-11e8-9376-5f94723db63b" ;
    <http://www.w3.org/2000/01/rdf-schema#label> "start" ;
-   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#datetime> .
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/mandaat#start>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classess/79d6c20c-9efd-11e8-ad07-536338a5cf8b> .
 
-<http://data.vlaanderen.be/ns/mandaat#einde> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+<http://data.lblod.info/id/rdfs-properties/2ced06de-9eff-11e8-b961-831a3490a5e2> a <http://www.w3.org/2000/01/rdf-schema#Property>;
    <http://mu.semte.ch/vocabularies/core/uuid> "2ced06de-9eff-11e8-b961-831a3490a5e2" ;
    <http://www.w3.org/2000/01/rdf-schema#label> "einde" ;
-   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#datetime> .
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/mandaat#einde>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classess/79d6c20c-9efd-11e8-ad07-536338a5cf8b> .
 
-<http://data.vlaanderen.be/ns/persoon#Geboorte> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+<http://data.lblod.info/id/rdfs-classes/d5b73d88-9f00-11e8-9723-9fd8d5ede63e> a <http://www.w3.org/2000/01/rdf-schema#Class>;
    <http://mu.semte.ch/vocabularies/core/uuid> "d5b73d88-9f00-11e8-9723-9fd8d5ede63e" ;
    <http://www.w3.org/2000/01/rdf-schema#label> "geboortes";
    <http://mu.semte.ch/vocabularies/ext/apiPath> "/geboortes";
@@ -118,14 +133,34 @@
    <http://mu.semte.ch/vocabularies/ext/baseUri> "http://data.lblod.info/id/geboortes/";
    <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter[datum]";
    <http://mu.semte.ch/vocabularies/ext/isPrimitive> false ;
-   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.vlaanderen.be/ns/persoon#datum> .
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/persoon#Geboorte>;
+   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-properties/2bd3a364-9f01-11e8-9bc1-6771389bf346>.
 
-<http://data.vlaanderen.be/ns/persoon#datum> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+<http://data.lblod.info/id/rdfs-properties/2bd3a364-9f01-11e8-9bc1-6771389bf346> a <http://www.w3.org/2000/01/rdf-schema#Property>;
    <http://mu.semte.ch/vocabularies/core/uuid> "2bd3a364-9f01-11e8-9bc1-6771389bf346" ;
    <http://www.w3.org/2000/01/rdf-schema#label> "datum" ;
-   <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#datetime> .
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/persoon#datum>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classess/79d6c20c-9efd-11e8-ad07-536338a5cf8b>.
 
-<http://data.vlaanderen.be/ns/persoon#heeftGeboorte> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+<http://data.lblod.info/id/rdfs-properties/ee69aefe-9f2f-11e8-8cc4-0b98be68754e> a <http://www.w3.org/2000/01/rdf-schema#Property>;
    <http://mu.semte.ch/vocabularies/core/uuid> "ee69aefe-9f2f-11e8-8cc4-0b98be68754e" ;
    <http://www.w3.org/2000/01/rdf-schema#label> "geboorte" ;
-   <http://www.w3.org/2000/01/rdf-schema#range> <http://data.vlaanderen.be/ns/persoon#Geboorte> .
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/persoon#heeftGeboorte>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/d5b73d88-9f00-11e8-9723-9fd8d5ede63e>.
+
+<http://data.lblod.info/id/rdfs-classes/66d3d61e-9fa6-11e8-a3dc-8f7ccc624ad6> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "66d3d61e-9fa6-11e8-a3dc-8f7ccc624ad6" ;
+   <http://www.w3.org/2000/01/rdf-schema#label> "kandidatenlijsten";
+   <http://mu.semte.ch/vocabularies/ext/apiPath> "/kandidatenlijsten";
+   <http://mu.semte.ch/vocabularies/ext/displayProperties> "[\"lijstnaam\"]";
+   <http://mu.semte.ch/vocabularies/ext/baseUri> "http://data.lblod.info/id/kandidatenlijsten/";
+   <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter[lijstnaam]";
+   <http://mu.semte.ch/vocabularies/ext/isPrimitive> false ;
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/mandaat#Kandidatenlijst>;
+   <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-classes/66d3d61e-9fa6-11e8-a3dc-8f7ccc624ad6>.
+
+<http://data.lblod.info/id/rdfs-properties/33806ec4-9fa8-11e8-8acd-f715dbe61443> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "33806ec4-9fa8-11e8-8acd-f715dbe61443" ;
+   <http://www.w3.org/2000/01/rdf-schema#label> "lijstnaam" ;
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2004/02/skos/core#prefLabel>;
+   <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/5257d2de-9ef3-11e8-b6d2-e31b79f9e7b4>.
