@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   editor:
-    image: lblod/frontend-demo-editor:0.2.9
+    image: lblod/frontend-demo-editor:0.3.0
     links:
       - identifier:backend
   admin:
@@ -11,9 +11,9 @@ services:
     links:
       - identifier:backend
   identifier:
-    image: semtech/mu-identifier:1.3.0
+    image: semtech/mu-identifier:1.4.0
   dispatcher:
-    image: semtech/mu-dispatcher:1.1.0
+    image: semtech/mu-dispatcher:1.1.2
     volumes:
       - ./config/dispatcher:/config
   database:
@@ -24,7 +24,7 @@ services:
     volumes:
       - ./data/db:/data
   migrations:
-    image: semtech/mu-migrations-service:0.3.0
+    image: semtech/mu-migrations-service:0.3.1
     volumes:
       - ./config/migrations:/data/migrations
     environment:
