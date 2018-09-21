@@ -7,7 +7,8 @@
                 (:base-uri :string ,(s-prefix "ext:baseUri"))
                 (:api-filter :string ,(s-prefix "ext:apiFilter"))
                 (:is-primitive :bool ,(s-prefix "ext:isPrimitive"))
-                (:rdfa-type :uri ,(s-prefix "ext:rdfaType")))
+                (:rdfa-type :uri ,(s-prefix "ext:rdfaType"))
+                (:json-api-type :string ,(s-prefix "ext:jsonApiType")))
 
   :has-many `((rdfs-property :via ,(s-prefix "ext:rdfsClassProperties")
                         :as "properties"))
