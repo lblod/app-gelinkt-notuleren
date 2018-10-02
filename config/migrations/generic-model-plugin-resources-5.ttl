@@ -1,0 +1,454 @@
+# Class for contact-punt #
+<https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000027> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+    <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000027" ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "contact-punt";
+    <http://mu.semte.ch/vocabularies/ext/apiPath> "/contact-punten";
+    <http://mu.semte.ch/vocabularies/ext/displayProperties> "[\"land\",\"gemeente\",\"adres\",\"postcode\",\"email\",\"telephone\",\"fax\",\"website\"]";
+    <http://mu.semte.ch/vocabularies/ext/baseUri> "http://data.lblod.info/id/contactpunt/";
+    <http://mu.semte.ch/vocabularies/ext/jsonApiType> "contact-punten";
+    <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter"; # use filter[name] to search on the name property
+    <http://mu.semte.ch/vocabularies/ext/isPrimitive> false;
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000CA>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000CB>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000CC>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000CD>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000CE>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000CF>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000D0>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000D1>;
+
+   
+    <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://schema.org/PostalAddress>.
+
+# Properties for contact-punt #
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000CA> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000CA" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "land";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://schema.org/addressCountry>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000CB> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000CB" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "gemeente";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://schema.org/addressLocality>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000CC> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000CC" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "adres";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://schema.org/streetAddress>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000CD> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000CD" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "postcode";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://schema.org/postalCode>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000CE> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000CE" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "email";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://schema.org/email>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000CF> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000CF" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "telephone";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://schema.org/telephone>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000D0> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000D0" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "fax";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://schema.org/faxNumber>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000D1> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000D1" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "website";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://schema.org/url>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+# Relations for contact-punt #
+
+
+
+# Class for positie #
+<https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000028> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+    <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000028" ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "positie";
+    <http://mu.semte.ch/vocabularies/ext/apiPath> "/posities";
+    <http://mu.semte.ch/vocabularies/ext/displayProperties> "[]";
+    <http://mu.semte.ch/vocabularies/ext/baseUri> "http://data.lblod.info/id/positie/";
+    <http://mu.semte.ch/vocabularies/ext/jsonApiType> "posities";
+    <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter"; # use filter[name] to search on the name property
+    <http://mu.semte.ch/vocabularies/ext/isPrimitive> false;
+   
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A0000D2>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A0000D3>;
+
+    <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/ns/org#Post>.
+
+# Properties for positie #
+
+# Relations for positie #
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A0000D2> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000D2" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "wordt-ingevuld-door";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/ns/org#heldBy>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A00001B>.
+
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A0000D3> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000D3" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "rol";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/ns/org#role>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000029>.
+
+
+
+# Class for rol #
+<https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000029> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+    <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000029" ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "rol";
+    <http://mu.semte.ch/vocabularies/ext/apiPath> "/rollen";
+    <http://mu.semte.ch/vocabularies/ext/displayProperties> "[\"label\"]";
+    <http://mu.semte.ch/vocabularies/ext/baseUri> "http://data.lblod.info/id/concept/bestuurseenheidRollen/";
+    <http://mu.semte.ch/vocabularies/ext/jsonApiType> "rollen";
+    <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter"; # use filter[name] to search on the name property
+    <http://mu.semte.ch/vocabularies/ext/isPrimitive> false;
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000D4>;
+
+   
+    <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/ns/org#Role>.
+
+# Properties for rol #
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000D4> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000D4" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "label";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2004/02/skos/core#prefLabel>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+# Relations for rol #
+
+
+
+# Class for organisatie #
+<https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A00002A> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+    <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A00002A" ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "organisatie";
+    <http://mu.semte.ch/vocabularies/ext/apiPath> "/organisaties";
+    <http://mu.semte.ch/vocabularies/ext/displayProperties> "[\"naam\"]";
+    <http://mu.semte.ch/vocabularies/ext/baseUri> "http://data.lblod.info/id/organisaties/";
+    <http://mu.semte.ch/vocabularies/ext/jsonApiType> "organisaties";
+    <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter"; # use filter[name] to search on the name property
+    <http://mu.semte.ch/vocabularies/ext/isPrimitive> false;
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000D5>;
+
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A0000D6>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A0000D7>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A0000D8>;
+
+    <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/ns/org#Organization>.
+
+# Properties for organisatie #
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000D5> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000D5" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "naam";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2004/02/skos/core#prefLabel>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+# Relations for organisatie #
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A0000D6> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000D6" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "contactinfo";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://schema.org/contactPoint>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000027>.
+
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A0000D7> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000D7" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "posities";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/ns/org#hasPost>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000028>.
+
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A0000D8> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000D8" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "primaire-site";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/ns/org#hasPrimarySite>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000026>.
+
+
+
+# Class for rdfs-class #
+<https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A00002B> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+    <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A00002B" ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "rdfs-class";
+    <http://mu.semte.ch/vocabularies/ext/apiPath> "/rdfs-classes";
+    <http://mu.semte.ch/vocabularies/ext/displayProperties> "[\"label\",\"description\",\"api-path\",\"display-properties\",\"base-uri\",\"api-filter\",\"is-primitive\",\"rdfa-type\"]";
+    <http://mu.semte.ch/vocabularies/ext/baseUri> "http://data.lblod.info/id/rdfs-classes/";
+    <http://mu.semte.ch/vocabularies/ext/jsonApiType> "rdfs-classes";
+    <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter"; # use filter[name] to search on the name property
+    <http://mu.semte.ch/vocabularies/ext/isPrimitive> false;
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000D9>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000DA>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000DB>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000DC>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000DD>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000DE>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000DF>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000E0>;
+
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A0000E1>;
+
+    <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2000/01/rdf-schema#Class>.
+
+# Properties for rdfs-class #
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000D9> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000D9" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "label";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2000/01/rdf-schema#label>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000DA> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000DA" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "description";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2000/01/rdf-schema#comment>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000DB> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000DB" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "api-path";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://mu.semte.ch/vocabularies/ext/apiPath>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000DC> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000DC" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "display-properties";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://mu.semte.ch/vocabularies/ext/displayProperties>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000DD> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000DD" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "base-uri";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://mu.semte.ch/vocabularies/ext/baseUri>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000DE> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000DE" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "api-filter";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://mu.semte.ch/vocabularies/ext/apiFilter>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000DF> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000DF" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "is-primitive";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://mu.semte.ch/vocabularies/ext/isPrimitive>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/bool>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000E0> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000E0" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "rdfa-type";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://mu.semte.ch/vocabularies/ext/rdfaType>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/uri>.
+
+# Relations for rdfs-class #
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A0000E1> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000E1" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "properties";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A00002C>.
+
+
+
+# Class for rdfs-property #
+<https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A00002C> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+    <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A00002C" ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "rdfs-property";
+    <http://mu.semte.ch/vocabularies/ext/apiPath> "/rdfs-properties";
+    <http://mu.semte.ch/vocabularies/ext/displayProperties> "[\"label\",\"rdfa-type\"]";
+    <http://mu.semte.ch/vocabularies/ext/baseUri> "http://data.lblod.info/id/rdfs-properties/";
+    <http://mu.semte.ch/vocabularies/ext/jsonApiType> "rdfs-properties";
+    <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter"; # use filter[name] to search on the name property
+    <http://mu.semte.ch/vocabularies/ext/isPrimitive> false;
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000E2>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000E3>;
+
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A0000E4>;
+
+    <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2000/01/rdf-schema#Property>.
+
+# Properties for rdfs-property #
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000E2> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000E2" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "label";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2000/01/rdf-schema#label>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000E3> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000E3" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "rdfa-type";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://mu.semte.ch/vocabularies/ext/rdfaType>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/uri>.
+
+# Relations for rdfs-property #
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A0000E4> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000E4" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "range";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2000/01/rdf-schema#range>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A00002B>.
+
+
+
+# Class for template #
+<https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A00002D> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+    <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A00002D" ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "template";
+    <http://mu.semte.ch/vocabularies/ext/apiPath> "/templates";
+    <http://mu.semte.ch/vocabularies/ext/displayProperties> "[\"title\",\"matches\",\"body\",\"contexts\",\"disabled-in-contexts\"]";
+    <http://mu.semte.ch/vocabularies/ext/baseUri> "http://lblod.info/templates/";
+    <http://mu.semte.ch/vocabularies/ext/jsonApiType> "templates";
+    <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter"; # use filter[name] to search on the name property
+    <http://mu.semte.ch/vocabularies/ext/isPrimitive> false;
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000E5>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000E6>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000E7>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000E8>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000E9>;
+
+   
+    <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://mu.semte.ch/vocabularies/ext/Template>.
+
+# Properties for template #
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000E5> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000E5" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "title";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://purl.org/dc/terms/title>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000E6> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000E6" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "matches";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://mu.semte.ch/vocabularies/ext/templateMatches>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string-set>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000E7> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000E7" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "body";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://mu.semte.ch/vocabularies/ext/templateContent>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000E8> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000E8" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "contexts";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://mu.semte.ch/vocabularies/ext/activeInContext>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/uri-set>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000E9> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000E9" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "disabled-in-contexts";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://mu.semte.ch/vocabularies/ext/disabledInContext>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/uri-set>.
+
+# Relations for template #
+
+
+
+# Class for editor-document #
+<https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A00002E> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+    <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A00002E" ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "editor-document";
+    <http://mu.semte.ch/vocabularies/ext/apiPath> "/editor-documents";
+    <http://mu.semte.ch/vocabularies/ext/displayProperties> "[\"title\",\"content\",\"context\",\"created-on\",\"starred\",\"origin\"]";
+    <http://mu.semte.ch/vocabularies/ext/baseUri> "http://lblod.info/editor-documents/";
+    <http://mu.semte.ch/vocabularies/ext/jsonApiType> "editor-documents";
+    <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter"; # use filter[name] to search on the name property
+    <http://mu.semte.ch/vocabularies/ext/isPrimitive> false;
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000EA>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000EB>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000EC>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000ED>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000EE>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000EF>;
+
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A0000F0>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A0000F1>;
+
+    <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://mu.semte.ch/vocabularies/ext/EditorDocument>.
+
+# Properties for editor-document #
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000EA> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000EA" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "title";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://purl.org/dc/terms/title>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000EB> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000EB" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "content";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://mu.semte.ch/vocabularies/ext/editorDocumentContent>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000EC> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000EC" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "context";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://mu.semte.ch/vocabularies/ext/editorDocumentContext>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000ED> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000ED" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "created-on";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://purl.org/pav/createdOn>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/datetime>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000EE> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000EE" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "starred";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://mu.semte.ch/vocabularies/tmp/starred>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/boolean>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000EF> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000EF" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "origin";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://purl.org/pav/providedBy>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+# Relations for editor-document #
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A0000F0> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000F0" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "status";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://mu.semte.ch/vocabularies/ext/editorDocumentStatus>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A00002F>.
+
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A0000F1> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000F1" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "previous-version";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://purl.org/pav/previousVersion>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A00002E>.
+
+
+
+# Class for editor-document-status #
+<https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A00002F> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+    <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A00002F" ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "editor-document-status";
+    <http://mu.semte.ch/vocabularies/ext/apiPath> "/editor-document-statuses";
+    <http://mu.semte.ch/vocabularies/ext/displayProperties> "[\"name\"]";
+    <http://mu.semte.ch/vocabularies/ext/baseUri> "http://lblod.info/editor-document-statuses/";
+    <http://mu.semte.ch/vocabularies/ext/jsonApiType> "editor-document-statuses";
+    <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter"; # use filter[name] to search on the name property
+    <http://mu.semte.ch/vocabularies/ext/isPrimitive> false;
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000F2>;
+
+   
+    <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://mu.semte.ch/vocabularies/ext/EditorDocumentStatus>.
+
+# Properties for editor-document-status #
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A0000F2> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A0000F2" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "name";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://mu.semte.ch/vocabularies/ext/EditorDocumentStatusName>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+# Relations for editor-document-status #
+
+
+
