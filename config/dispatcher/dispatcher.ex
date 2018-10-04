@@ -170,6 +170,26 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/rdfs-properties/"
   end
 
+  #######
+  # Tasks
+  #######
+
+  match "/tasklists/*path" do
+    Proxy.forward conn, path, "http://resource/tasklists/"
+  end
+
+  match "/tasks/*path" do
+    Proxy.forward conn, path, "http://resource/tasks/"
+  end
+
+  match "/tasklist-solutions/*path" do
+    Proxy.forward conn, path, "http://resource/tasklist-solutions/"
+  end
+
+  match "/task-solutions/*path" do
+    Proxy.forward conn, path, "http://resource/task-solutions/"
+  end
+
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
