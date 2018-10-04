@@ -9,6 +9,7 @@
 (read-domain-file "slave-mandaat-domain.lisp")
 (read-domain-file "slave-organisatie-domain.lisp")
 (read-domain-file "generic-model-plugin-domain.lisp")
+(read-domain-file "tasklist-domain.lisp")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; TEMPLATES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -45,6 +46,10 @@
              (zitting :via ,(s-prefix "besluit:heeftNotulen")
                               :inverse t
                               :as "zitting"))
+
+  :has-many `((tasklist-solution :via ,(s-prefix "ext:editorDocumentTasklistSolution")
+                                 :as "tasklist-solutions"))
+
   :resource-base (s-url "http://lblod.info/editor-documents/")
   :features `(no-pagination-defaults)
   :on-path "editor-documents")
