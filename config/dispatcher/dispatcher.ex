@@ -190,6 +190,19 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/task-solutions/"
   end
 
+  #########
+  # login
+  ########
+  match "/mock/sessions/*path" do
+    Proxy.forward conn, path, "http://mocklogin/sessions/"
+  end
+  match "/gebruikers/*path" do
+    Proxy.forward conn, path, "http://resource/gebruikers/"
+  end
+  match "/accounts/*path" do
+    Proxy.forward conn, path, "http://resource/accounts/"
+  end
+
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
