@@ -1,0 +1,38 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+
+# Duplicate mock accounts / persons in organization graphs
+INSERT {
+  GRAPH ?orgGraph {
+     ?persoon a foaf:Person;
+           mu:uuid ?uuidPersoon;
+           foaf:firstName ?classificatie;
+           foaf:familyName ?naam;
+           foaf:member ?bestuurseenheid;
+           foaf:account ?account.
+     ?account a foaf:OnlineAccount;
+           mu:uuid ?uuidAccount;
+           foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>;
+           ext:sessionRole ?role.
+  }
+} WHERE {
+  GRAPH <http://mu.semte.ch/application> {
+     ?persoon a foaf:Person;
+           mu:uuid ?uuidPersoon;
+           foaf:firstName ?classificatie;
+           foaf:familyName ?naam;
+           foaf:member ?bestuurseenheid;
+           foaf:account ?account.
+     ?account a foaf:OnlineAccount;
+           mu:uuid ?uuidAccount;
+           foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>;
+           ext:sessionRole ?role.
+     ?bestuurseenheid a besluit:Bestuurseenheid;
+                      mu:uuid ?groupId .
+  }
+
+  BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?groupId)) as ?orgGraph)
+}
+
