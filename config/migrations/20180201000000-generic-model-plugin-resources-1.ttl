@@ -1,0 +1,482 @@
+<http://data.lblod.info/id/rdfs-classes/primitive/string> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "ce9b06b7-13ad-4b08-9e10-9ace3328614e" ;
+   <http://mu.semte.ch/vocabularies/ext/isPrimitive> true;
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2001/XMLSchema#string>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "string" .
+
+   <http://data.lblod.info/id/rdfs-classes/primitive/number> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "bcbdbf55-242f-4d9f-8651-826f7d1d0ca4" ;
+   <http://mu.semte.ch/vocabularies/ext/isPrimitive> true;
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2001/XMLSchema#number>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "number" .
+
+   # TODO
+   <http://data.lblod.info/id/rdfs-classes/primitive/boolean> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "c5addfd1-60e5-4b9e-84a7-c00ccd3a1acb" ;
+   <http://mu.semte.ch/vocabularies/ext/isPrimitive> true;
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2001/XMLSchema#string>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "boolean" .
+
+   <http://data.lblod.info/id/rdfs-classes/primitive/date> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "fb7b574d-fa19-43d7-8a30-cdbf54b33d63" ;
+   <http://mu.semte.ch/vocabularies/ext/isPrimitive> true;
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2001/XMLSchema#date>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "date" .
+
+   # fixed to be dateTime rather than datetime
+   <http://data.lblod.info/id/rdfs-classes/primitive/datetime> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "42b8b36b-3689-4e7c-bf0a-9d5a29a2285f" ;
+   <http://mu.semte.ch/vocabularies/ext/isPrimitive> true;
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2001/XMLSchema#dateTime>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "datetime" .
+
+   # TODO: needs custom handler
+   <http://data.lblod.info/id/rdfs-classes/primitive/url> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "5149a577-dfd5-4295-8034-4bac01d5ddd7" ;
+   <http://mu.semte.ch/vocabularies/ext/isPrimitive> true;
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2001/XMLSchema#string>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "url" .
+
+   # TODO: needs custom handler
+   <http://data.lblod.info/id/rdfs-classes/primitive/uri-set> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "ef783fd9-2330-4809-b8da-d1b7664f9860" ;
+   <http://mu.semte.ch/vocabularies/ext/isPrimitive> true;
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2001/XMLSchema#string>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "uri-set" .
+
+   # TODO: needs custom handler?
+   <http://data.lblod.info/id/rdfs-classes/primitive/string-set> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "8c4ed73f-5da3-40fd-bbf5-f97caf04f833" ;
+   <http://mu.semte.ch/vocabularies/ext/isPrimitive> true;
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2001/XMLSchema#string>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "string-set" .
+
+   # TODO: needs custom handler
+   <http://data.lblod.info/id/rdfs-classes/primitive/language-string> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "333f8b0a-2443-4eae-8bd0-2b1c67f35e39" ;
+   <http://mu.semte.ch/vocabularies/ext/isPrimitive> true;
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2001/XMLSchema#string>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "language-string" .
+
+   # TODO: needs custom handler?
+   <http://data.lblod.info/id/rdfs-classes/primitive/language-string-set> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "723f2b5d-f0ce-4e1d-948d-b1039e477b0b" ;
+   <http://mu.semte.ch/vocabularies/ext/isPrimitive> true;
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2001/XMLSchema#string>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "language-string-set" .
+
+   <http://data.lblod.info/id/rdfs-classes/primitive/g-year> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "efed70be-354b-4690-abd7-4dda0fc7306f" ;
+   <http://mu.semte.ch/vocabularies/ext/isPrimitive> true;
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2001/XMLSchema#gYear>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "g-year" .
+
+   <http://data.lblod.info/id/rdfs-classes/primitive/geometry> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "2f5abaa8-07e3-463e-ab04-3babdbe7c1dd" ;
+   <http://mu.semte.ch/vocabularies/ext/isPrimitive> true;
+   <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.opengis.net/ont/geosparql#wktLiteral>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "geometry" .
+
+# Class for agenda #
+<https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000001> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+    <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000001" ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "agenda";
+    <http://mu.semte.ch/vocabularies/ext/apiPath> "/agendas";
+    <http://mu.semte.ch/vocabularies/ext/displayProperties> "[]";
+    <http://mu.semte.ch/vocabularies/ext/baseUri> "http://data.lblod.info/id/agendas/";
+    <http://mu.semte.ch/vocabularies/ext/jsonApiType> "agendas";
+    <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter"; # use filter[name] to search on the name property
+    <http://mu.semte.ch/vocabularies/ext/isPrimitive> false;
+   
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000030>;
+
+    <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/besluit#Agenda>.
+
+# Properties for agenda #
+
+# Relations for agenda #
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000030> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000030" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "agendapunten";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/besluit#heeftAgendapunt>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000002>.
+
+
+
+# Class for agendapunt #
+<https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000002> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+    <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000002" ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "agendapunt";
+    <http://mu.semte.ch/vocabularies/ext/apiPath> "/agendapunten";
+    <http://mu.semte.ch/vocabularies/ext/displayProperties> "[\"beschrijving\",\"gepland-openbaar\",\"heeft-ontwerpbesluit\",\"titel\",\"type\"]";
+    <http://mu.semte.ch/vocabularies/ext/baseUri> "http://data.lblod.info/id/agendapunten/";
+    <http://mu.semte.ch/vocabularies/ext/jsonApiType> "agendapunten";
+    <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter"; # use filter[name] to search on the name property
+    <http://mu.semte.ch/vocabularies/ext/isPrimitive> false;
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000031>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000032>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000033>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000034>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000035>;
+
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000036>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000037>;
+
+    <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/besluit#Agendapunt>.
+
+# Properties for agendapunt #
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000031> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000031" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "beschrijving";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://purl.org/dc/terms/description>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000032> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000032" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "gepland-openbaar";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/besluit#geplandOpenbaar>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/boolean>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000033> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000033" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "heeft-ontwerpbesluit";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/besluit#heeftOntwerpbesluit>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/url>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000034> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000034" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "titel";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://purl.org/dc/terms/title>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000035> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000035" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "type";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/besluit#Agendapunt.type>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/uri-set>.
+
+# Relations for agendapunt #
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000036> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000036" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "referenties";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://purl.org/dc/terms/references>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000002>.
+
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000037> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000037" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "vorige-agendapunt";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/besluit#aangebrachtNa>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000002>.
+
+
+
+# Class for artikel #
+<https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000003> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+    <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000003" ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "artikel";
+    <http://mu.semte.ch/vocabularies/ext/apiPath> "/artikels";
+    <http://mu.semte.ch/vocabularies/ext/displayProperties> "[\"nummer\",\"inhoud\",\"taal\",\"titel\",\"page\",\"score\"]";
+    <http://mu.semte.ch/vocabularies/ext/baseUri> "http://data.lblod.info/id/artikels/";
+    <http://mu.semte.ch/vocabularies/ext/jsonApiType> "artikels";
+    <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter"; # use filter[name] to search on the name property
+    <http://mu.semte.ch/vocabularies/ext/isPrimitive> false;
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000038>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000039>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A00003A>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A00003B>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A00003C>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A00003D>;
+
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A00003E>;
+
+    <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/besluit#Artikel>.
+
+# Properties for artikel #
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000038> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000038" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "nummer";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.europa.eu/eli/ontology#number>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000039> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000039" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "inhoud";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/ns/prov#value>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A00003A> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A00003A" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "taal";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.europa.eu/eli/ontology#language>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/url>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A00003B> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A00003B" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "titel";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.europa.eu/eli/ontology#title>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A00003C> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A00003C" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "page";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://xmlns.com/foaf/0.1/page>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/url>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A00003D> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A00003D" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "score";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.semanticdesktop.org/ontologies/2007/08/15/nao#score>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/float>.
+
+# Relations for artikel #
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A00003E> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A00003E" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "realisatie";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.europa.eu/eli/ontology#realizes>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A00000C>.
+
+
+
+# Class for behandeling-van-agendapunt #
+<https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000004> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+    <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000004" ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "behandeling-van-agendapunt";
+    <http://mu.semte.ch/vocabularies/ext/apiPath> "/behandelingen-van-agendapunten";
+    <http://mu.semte.ch/vocabularies/ext/displayProperties> "[\"openbaar\",\"gevolg\",\"afgeleid-uit\"]";
+    <http://mu.semte.ch/vocabularies/ext/baseUri> "http://data.lblod.info/id/behandelingen-van-agendapunt";
+    <http://mu.semte.ch/vocabularies/ext/jsonApiType> "behandelingen-van-agendapunten";
+    <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter"; # use filter[name] to search on the name property
+    <http://mu.semte.ch/vocabularies/ext/isPrimitive> false;
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A00003F>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000040>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000041>;
+
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000042>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000043>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000044>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000045>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000046>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000047>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000048>;
+
+    <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt>.
+
+# Properties for behandeling-van-agendapunt #
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A00003F> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A00003F" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "openbaar";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/besluit#openbaar>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/boolean>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000040> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000040" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "gevolg";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/besluit#gevolg>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/language-string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000041> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000041" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "afgeleid-uit";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://purl.org/pav/derivedFrom>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+# Relations for behandeling-van-agendapunt #
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000042> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000042" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "besluiten";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/ns/prov#generated>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000005>.
+
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000043> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000043" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "aanwezigen";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/besluit#heeftAanwezige>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000018>.
+
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000044> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000044" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "stemmingen";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/besluit#heeftStemming>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A00000D>.
+
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000045> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000045" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "vorige-behandeling-van-agendapunt";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/besluit#gebeurtNa>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000004>.
+
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000046> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000046" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "onderwerp";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://purl.org/dc/terms/subject>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000002>.
+
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000047> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000047" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "secretaris";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/besluit#heeftSecretaris>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000018>.
+
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000048> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000048" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "voorzitter";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/besluit#heeftVoorzitter>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000018>.
+
+
+
+# Class for besluit #
+<https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000005> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+    <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000005" ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "besluit";
+    <http://mu.semte.ch/vocabularies/ext/apiPath> "/besluiten";
+    <http://mu.semte.ch/vocabularies/ext/displayProperties> "[\"beschrijving\",\"citeeropschrift\",\"motivering\",\"publicatiedatum\",\"inhoud\",\"taal\",\"titel\",\"score\"]";
+    <http://mu.semte.ch/vocabularies/ext/baseUri> "http://data.lblod.info/id/besluiten/";
+    <http://mu.semte.ch/vocabularies/ext/jsonApiType> "besluiten";
+    <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter"; # use filter[name] to search on the name property
+    <http://mu.semte.ch/vocabularies/ext/isPrimitive> false;
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000049>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A00004A>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A00004B>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A00004C>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A00004D>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A00004E>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A00004F>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000050>;
+
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000051>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000052>;
+
+    <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/besluit#Besluit>.
+
+# Properties for besluit #
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000049> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000049" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "beschrijving";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.europa.eu/eli/ontology#description>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A00004A> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A00004A" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "citeeropschrift";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.europa.eu/eli/ontology#title_short>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A00004B> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A00004B" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "motivering";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/besluit#motivering>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/language-string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A00004C> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A00004C" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "publicatiedatum";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.europa.eu/eli/ontology#date_publication>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/date>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A00004D> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A00004D" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "inhoud";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/ns/prov#value>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A00004E> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A00004E" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "taal";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.europa.eu/eli/ontology#language>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/url>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A00004F> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A00004F" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "titel";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.europa.eu/eli/ontology#title>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000050> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000050" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "score";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.semanticdesktop.org/ontologies/2007/08/15/nao#score>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/float>.
+
+# Relations for besluit #
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000051> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000051" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "realisatie";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.europa.eu/eli/ontology#realizes>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A00000B>.
+
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000052> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000052" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "afgeleid-uit-notule";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://purl.org/pav/derivedFrom>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A00002E>.
+
+
+
+# Class for bestuurseenheid #
+<https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000006> a <http://www.w3.org/2000/01/rdf-schema#Class>;
+    <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000006" ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "bestuurseenheid";
+    <http://mu.semte.ch/vocabularies/ext/apiPath> "/bestuurseenheden";
+    <http://mu.semte.ch/vocabularies/ext/displayProperties> "[\"naam\"]";
+    <http://mu.semte.ch/vocabularies/ext/baseUri> "http://data.lblod.info/id/bestuurseenheden/";
+    <http://mu.semte.ch/vocabularies/ext/jsonApiType> "bestuurseenheden";
+    <http://mu.semte.ch/vocabularies/ext/apiFilter> "filter"; # use filter[name] to search on the name property
+    <http://mu.semte.ch/vocabularies/ext/isPrimitive> false;
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000053>;
+
+    <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000054>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000055>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000056>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000057>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000058>;
+ <http://mu.semte.ch/vocabularies/ext/rdfsClassProperties> <http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000059>;
+
+    <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>.
+
+# Properties for bestuurseenheid #
+<http://data.lblod.info/id/rdf-properties/5BA4D79E201529000A000053> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000053" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "naam";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/2004/02/skos/core#prefLabel>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <http://data.lblod.info/id/rdfs-classes/primitive/string>.
+
+# Relations for bestuurseenheid #
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000054> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000054" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "contactinfo";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://schema.org/contactPoint>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000027>.
+
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000055> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000055" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "posities";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/ns/org#hasPost>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000028>.
+
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000056> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000056" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "werkingsgebied";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/besluit#werkingsgebied>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000007>.
+
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000057> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000057" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "classificatie";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://data.vlaanderen.be/ns/besluit#classificatie>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000008>.
+
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000058> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000058" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "primaire-site";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/ns/org#hasPrimarySite>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A000026>.
+
+<http://data.lblod.info/id/rdfs-relations/5BA4D79E201529000A000059> a <http://www.w3.org/2000/01/rdf-schema#Property>;
+                             <http://mu.semte.ch/vocabularies/core/uuid> "5BA4D79E201529000A000059" ;
+                             <http://www.w3.org/2000/01/rdf-schema#label> "politiezone";
+                             <http://mu.semte.ch/vocabularies/ext/rdfaType> <http://www.w3.org/ns/org#linkedTo>;
+                             <http://www.w3.org/2000/01/rdf-schema#range> <https://data.lblod.info/id/rdf-resources/5BA4D79E201529000A00002A>.
+
+
+
