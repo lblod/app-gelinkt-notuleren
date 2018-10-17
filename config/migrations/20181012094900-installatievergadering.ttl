@@ -13,7 +13,7 @@
     ns1:activeInContext	foaf:Document ;
     ns1:disabledInContext	ns3:Zitting ;
     ns5:title	"Installatievergadering" ;
-    ns1:templateContent  """<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+    ns1:templateContent """<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
   <div property="ext:idInSnippet" content="${generateBoundUuid('startAtTime-1')}">a</div>
   <div property="ext:intentionUri" content="http://zitting/startedAtTime">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
@@ -240,12 +240,58 @@
   </div>
 
   <br>
-  <div class="ext_tasklist_data" typeof="ext:TasklistData" resource="http://data.lblod.info/id/tasklistsdata/${generateBoundUuid('tasklistData')}">
-    <div property="ext:idInSnippet" content=${generateBoundUuid('tasklist')}>${generateBoundUuid('tasklist')}</div>
-    <meta property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/66a18951-71d5-434a-9fa6-b0b5965a754b" typeof="ext:Tasklist"/>
+  <!--START TAKENLIJSTEN-->
+  <div class="ext_tasklist_data" typeof="ext:TasklistData" resource=http://data.lblod.info/id/tasklistsdata/${generateBoundUuid("tasklistData-1")}>
+    <div property="ext:idInSnippet" content=${generateBoundUuid("tasklist-1")}>${generateBoundUuid("tasklist-1")}</div>
+    <meta property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/84b51f9bc40aaf2c9973b950a4e50ff3378b6096139a63d174c89eaa5ed3305d" typeof="ext:Tasklist"/>
     <div property="ext:tasklistDataState" content="initialized">initialized</div>
   </div>
-  <div id="${generateBoundUuid('tasklist')}" property="ext:tasklistDataHintText">Takenlijst installatievergadering.</div>
+  <div id=${generateBoundUuid("tasklist-1")} property="ext:tasklistDataHintText">Takenlijst voor deze vergadering.</div>
+
+  <div class="ext_tasklist_data" typeof="ext:TasklistData" resource=http://data.lblod.info/id/tasklistsdata/${generateBoundUuid("tasklistData-2")}>
+    <div property="ext:idInSnippet" content=${generateBoundUuid("tasklist-2")}>${generateBoundUuid("tasklist-2")}</div>
+    <meta property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/a299a730333cb29122e818466194b0a2bfcbe4762580c42779288cd60b91fc8a" typeof="ext:Tasklist"/>
+    <div property="ext:tasklistDataState" content="initialized">initialized</div>
+  </div>
+  <div id=${generateBoundUuid("tasklist-2")} property="ext:tasklistDataHintText">Takenlijst voor deze vergadering.</div>
+
+
+  <div class="ext_tasklist_data" typeof="ext:TasklistData" resource=http://data.lblod.info/id/tasklistsdata/${generateBoundUuid("tasklistData-3")}>
+    <div property="ext:idInSnippet" content=${generateBoundUuid("tasklist-3")}>${generateBoundUuid("tasklist-3")}</div>
+    <meta property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/4a98f3467c6bcc7c0713a70b117ea3688263c3e8b3a1c2ec9cb721a191ba91d3" typeof="ext:Tasklist"/>
+    <div property="ext:tasklistDataState" content="initialized">initialized</div>
+  </div>
+  <div id=${generateBoundUuid("tasklist-3")} property="ext:tasklistDataHintText">Takenlijst voor deze vergadering.</div>
+
+  <div class="ext_tasklist_data" typeof="ext:TasklistData" resource=http://data.lblod.info/id/tasklistsdata/${generateBoundUuid("tasklistData-4")}>
+    <div property="ext:idInSnippet" content=${generateBoundUuid("tasklist-4")}>${generateBoundUuid("tasklist-4")}</div>
+    <meta property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/74fd11344fa1a41b4b9dfaddf7713bb870b8b024faa6ddc8dd537ab544fbff88" typeof="ext:Tasklist"/>
+    <div property="ext:tasklistDataState" content="initialized">initialized</div>
+  </div>
+  <div id=${generateBoundUuid("tasklist-4")} property="ext:tasklistDataHintText">Takenlijst voor deze vergadering.</div>
+
+  <div class="ext_tasklist_data" typeof="ext:TasklistData" resource=http://data.lblod.info/id/tasklistsdata/${generateBoundUuid("tasklistData-5")}>
+    <div property="ext:idInSnippet" content=${generateBoundUuid("tasklist-5")}>${generateBoundUuid("tasklist-5")}</div>
+    <meta property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/986f6c9d4f1f6fc02c5e667150dfb583748c8de6f771ba1e8a4ccc2604519271" typeof="ext:Tasklist"/>
+    <div property="ext:tasklistDataState" content="initialized">initialized</div>
+  </div>
+  <div id=${generateBoundUuid("tasklist-5")} property="ext:tasklistDataHintText">Takenlijst voor deze vergadering.</div>
+
+  <div class="ext_tasklist_data" typeof="ext:TasklistData" resource=http://data.lblod.info/id/tasklistsdata/${generateBoundUuid("tasklistData-6")}>
+    <div property="ext:idInSnippet" content=${generateBoundUuid("tasklist-6")}>${generateBoundUuid("tasklist-6")}</div>
+    <meta property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/884a00eb3934152318210bde7a003c9313a39af5710665614a435b6e9efc9be2" typeof="ext:Tasklist"/>
+    <div property="ext:tasklistDataState" content="initialized">initialized</div>
+  </div>
+  <div id=${generateBoundUuid("tasklist-6")} property="ext:tasklistDataHintText">Takenlijst voor deze vergadering.</div>
+
+
+  <div class="ext_tasklist_data" typeof="ext:TasklistData" resource=http://data.lblod.info/id/tasklistsdata/${generateBoundUuid("tasklistData-7")}>
+    <div property="ext:idInSnippet" content=${generateBoundUuid("tasklist-7")}>${generateBoundUuid("tasklist-7")}</div>
+    <meta property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/6607ba3e1c8c1308573159b70bb12bf7c91769f95641ac0a00905d7b58b9c8cd" typeof="ext:Tasklist"/>
+    <div property="ext:tasklistDataState" content="initialized">initialized</div>
+  </div>
+  <div id=${generateBoundUuid("tasklist-7")} property="ext:tasklistDataHintText">Takenlijst voor deze vergadering.</div>
+  <!--END TAKENLIJSTEN-->
   <br>
   <!-- opening -->
   <div class="annotation-structure">
@@ -613,7 +659,7 @@
                 <li property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:Artikel">
                   <span class="annotation article-number" property="eli:number">Artikel 5</span>
                   <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
-                  <span class="annotation article-content" property="prov:value"> De rangorde van de gemeenteraadsleden als volgt vast te stellen.
+                  <span class="annotation article-content" property="prov:value"> De rangorde van de gemeenteraadsleden als volgt vast te stellen<br>
                   voeg rangorde tabel gemeenteraadsleden toe.
                   </span>
                 </li>
@@ -1185,4 +1231,5 @@
       </div>
     </div>
   </div>
-</div>""".
+</div>
+""".
