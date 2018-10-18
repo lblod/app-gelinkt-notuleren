@@ -224,23 +224,9 @@
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 
-
 <div typeof="besluit:Zitting" resource="http://data.lblod.info/id/zittingen/${generateUuid()}">
-  <div class="annotation-structure">
-    <!-- meta zitting -->
-    <h2 class="h1" property="dc:title">
-      Notulen van de <span property="ext:scopedBestuursorgaanText">selecteer bestuursorgaan</span> , zitting van <span class="annotation" property="besluit:geplandeStart" datatype="xsd:date" content=""><span typeOf="ext:currentDate">&nbsp;</span></span>​ (installatievergadering)
-    </h2>
-    <p>
-      Locatie: <span id="${generateBoundUuid('bestuurseenheid-1')}">&lt;Naam Gemeente&gt; [TODO variable]</span>, &lt;Naam zaal&gt;
-    </p>
-    <p>
-      van <span id="${generateBoundUuid('startAtTime-1')}"><span property="prov:startedAtTime" content="" datatype="xsd:dateTime" class="annotation"><span typeOf="ext:currentDate">&nbsp;</span></span></span> tot <span property="prov:endedAtTime" content="" datatype="xsd:dateTime" class="annotation"><span typeOf="ext:currentDate">&nbsp;</span></span>
-    </p>
-  </div>
-
-  <br>
-  <!--START TAKENLIJSTEN-->
+  <!--START TAKENLIJSTEN (please keep on top because -->
+  &nbsp;
   <div class="ext_tasklist_data" typeof="ext:TasklistData" resource=http://data.lblod.info/id/tasklistsdata/${generateBoundUuid("tasklistData-1")}>
     <div property="ext:idInSnippet" content=${generateBoundUuid("tasklist-1")}>${generateBoundUuid("tasklist-1")}</div>
     <meta property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/84b51f9bc40aaf2c9973b950a4e50ff3378b6096139a63d174c89eaa5ed3305d" typeof="ext:Tasklist"/>
@@ -292,16 +278,28 @@
   </div>
   <div id=${generateBoundUuid("tasklist-7")} property="ext:tasklistDataHintText">Takenlijst voor deze vergadering.</div>
   <!--END TAKENLIJSTEN-->
+  <div class="annotation-structure">
+    <!-- meta zitting -->
+    <h2 class="h1" property="dc:title">
+      Notulen van de <span property="ext:scopedBestuursorgaanText">selecteer bestuursorgaan</span> , zitting van <span class="annotation" property="besluit:geplandeStart" datatype="xsd:date" content=""><span typeOf="ext:currentDate">&nbsp;</span></span>​ (installatievergadering)
+    </h2>
+    <p>
+      Locatie: <span id="${generateBoundUuid('bestuurseenheid-1')}">&lt;Naam Gemeente&gt; [TODO variable]</span>, &lt;Naam zaal&gt;
+    </p>
+    <p>
+      van <span id="${generateBoundUuid('startAtTime-1')}"><span property="prov:startedAtTime" content="" datatype="xsd:dateTime" class="annotation"><span typeOf="ext:currentDate">&nbsp;</span></span></span> tot <span property="prov:endedAtTime" content="" datatype="xsd:dateTime" class="annotation"><span typeOf="ext:currentDate">&nbsp;</span></span>
+    </p>
+  </div>>
   <br>
   <!-- opening -->
   <div class="annotation-structure">
     <p>De uittredend gemeenteraad-voorzitter zit de installatievergadering voor op <span id="${generateBoundUuid('startAtTime-2')}"></span> en deelt mee dat er een opname gemaakt wordt ingevolge schriftelijke uitnodiging vanwege de Algemeen Directeur dienstdoend <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​.</p>
   </div
->
+  >
   <!-- aanwezigen
-  <div class="annotation-structure">
-    <ul class="bullet-list"></ul>
-  </div> -->
+       <div class="annotation-structure">
+       <ul class="bullet-list"></ul>
+       </div> -->
 
   <br>
 
@@ -484,7 +482,7 @@
 
                     <li>Overwegende dat <span id="${generateBoundUuid('burgemeester-persoon-4')}">&lt;Naam&gt;</span> aldus met ingang van <span id="${generateBoundUuid('burgemeester-aanstelling-1')}" content="2019-01-01" type="xsd:date">1 januari 2019 [TODO: data koppelen van ABB / manueel invullen + variable]</span> het ambt van burgemeester heeft opgenomen;</li>
 
-                  <li>Overwegende dat de akte van voordracht van de kandidaat-burgemeester geen melding maakt van de einddatum van het mandaat en aldus geen melding maakt van diegene die hem zal opvolgen voor de resterende duurtijd van het mandaat [TODO: Vragen aan Domien voor ander scenario (opvolger)];</li>
+                    <li>Overwegende dat de akte van voordracht van de kandidaat-burgemeester geen melding maakt van de einddatum van het mandaat en aldus geen melding maakt van diegene die hem zal opvolgen voor de resterende duurtijd van het mandaat [TODO: Vragen aan Domien voor ander scenario (opvolger)];</li>
                 </ul>
               </div>
             </div>
@@ -499,10 +497,10 @@
           </div>
         </div>
       </div>
-        
-        <br>
-        <br>
-        
+      
+      <br>
+      <br>
+      
       <div resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-3')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
         <meta property="besluit:gebeurtNa" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-2')}">        
         <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
@@ -548,9 +546,9 @@
                     OF
                     <br>
 
-                  <li>Overwegende dat <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span> en <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span> verklaard hebben zich in een situatie van onverenigbaarheid te bevinden; [TODO: ander scenario visualiseren]</li>
+                    <li>Overwegende dat <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span> en <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span> verklaard hebben zich in een situatie van onverenigbaarheid te bevinden; [TODO: ander scenario visualiseren]</li>
 
-                  <li>Overwegende dat <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="burgemeester">&lt;persoon (Mandaat)&gt; [TODO: variable]</span> op &lt;datum [TODO: data koppelen van ABB / manueel invullen + variable]&gt; de eed als burgemeester heeft afgelegd in handen van de gouverneur en dat conform <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">[TODO: link cite and RDFA article] het decreet van 22 december 2017 over het lokaal bestuur artikel <span class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">59</span>, lid 260 , §2</a> deze eedaflegging tevens geldt als eedaflegging als gemeenteraadslid in de zin van <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">[TODO: link cite and RDFA article] het decreet van 22 december 2017 artikel <span class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">67</span></a>;</li>
+                    <li>Overwegende dat <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="burgemeester">&lt;persoon (Mandaat)&gt; [TODO: variable]</span> op &lt;datum [TODO: data koppelen van ABB / manueel invullen + variable]&gt; de eed als burgemeester heeft afgelegd in handen van de gouverneur en dat conform <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">[TODO: link cite and RDFA article] het decreet van 22 december 2017 over het lokaal bestuur artikel <span class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">59</span>, lid 260 , §2</a> deze eedaflegging tevens geldt als eedaflegging als gemeenteraadslid in de zin van <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">[TODO: link cite and RDFA article] het decreet van 22 december 2017 artikel <span class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">67</span></a>;</li>
                 </ul>
               </div>
             </div>
@@ -588,26 +586,26 @@
                   <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
                   <span class="annotation article-content" property="prov:value"> De geloofsbrieven goed te keuren van:
                     <ul class="numbered-list">
-                        <li>Lijst nummer 1 (Naam partij)
-                            <ul class="bullet-list">
-                                <li>
-                                    <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span>
-                                </li>
-                                <li>
-                                    <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>Lijst nummer 2 (Naam partij)
-                            <ul class="bullet-list">
-                                <li>
-                                    <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span>
-                                </li>
-                                <li>
-                                    <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span>
-                                </li>
-                            </ul>
-                        </li>
+                      <li>Lijst nummer 1 (Naam partij)
+                        <ul class="bullet-list">
+                          <li>
+                            <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span>
+                          </li>
+                          <li>
+                            <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>Lijst nummer 2 (Naam partij)
+                        <ul class="bullet-list">
+                          <li>
+                            <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span>
+                          </li>
+                          <li>
+                            <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span>
+                          </li>
+                        </ul>
+                      </li>
                     </ul>
                   </span>
                 </li>
@@ -617,26 +615,26 @@
                   <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
                   <span class="annotation article-content" property="prov:value"> Akte te nemen van de eedaflegging in handen van de uittredende voorzitter van:
                     <ul class="numbered-list">
-                        <li>Lijst nummer 1 (Naam partij)
-                            <ul class="bullet-list">
-                                <li>
-                                    <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span>
-                                </li>
-                                <li>
-                                    <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>Lijst nummer 2 (Naam partij)
-                            <ul class="bullet-list">
-                                <li>
-                                    <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span>
-                                </li>
-                                <li>
-                                    <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span>
-                                </li>
-                            </ul>
-                        </li>
+                      <li>Lijst nummer 1 (Naam partij)
+                        <ul class="bullet-list">
+                          <li>
+                            <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span>
+                          </li>
+                          <li>
+                            <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>Lijst nummer 2 (Naam partij)
+                        <ul class="bullet-list">
+                          <li>
+                            <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span>
+                          </li>
+                          <li>
+                            <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span>
+                          </li>
+                        </ul>
+                      </li>
                     </ul>
                   </span>
                 </li>
@@ -646,12 +644,12 @@
                   <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
                   <span class="annotation article-content" property="prov:value"> Akte te nemen van de afwezigheid zonder opgave van geldige reden van volgende verkozen gemeenteraadsleden: geen [todo: ander scenario visualiseren] <em>(moet dit nu bij/na akteneming van onverenigbaarheid/afstand en geloofsbrieven?)</em>
                     <ul class="bullet-list">
-                        <li>
-                            <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span>: reden
-                        </li>
-                        <li>
-                            <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span>: reden
-                        </li>
+                      <li>
+                        <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span>: reden
+                      </li>
+                      <li>
+                        <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt;</span>: reden
+                      </li>
                     </ul>
                   </span>
                 </li>
@@ -660,7 +658,7 @@
                   <span class="annotation article-number" property="eli:number">Artikel 5</span>
                   <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
                   <span class="annotation article-content" property="prov:value"> De rangorde van de gemeenteraadsleden als volgt vast te stellen<br>
-                  voeg rangorde tabel gemeenteraadsleden toe.
+                    voeg rangorde tabel gemeenteraadsleden toe.
                   </span>
                 </li>
 
@@ -675,8 +673,8 @@
         </div>
       </div>
 
-        <br>
-        <br>
+      <br>
+      <br>
 
       <div resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-4')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
         <meta property="besluit:gebeurtNa" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-3')}">
@@ -684,87 +682,87 @@
         <div property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-4')}"><span id="${generateBoundUuid('bva-nr-4')}">Agendapunt 4</span></div>
         <div class="annotation-snippet" property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
           <div class="annotation-structure">
-              <h5 class="h4 u-spacer" property="eli:title"><span id="${generateBoundUuid('bva-besluit-4')}">Verkiezing van de voorzitter van de gemeenteraad</span></h5>
-              <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
-            </div>
+            <h5 class="h4 u-spacer" property="eli:title"><span id="${generateBoundUuid('bva-besluit-4')}">Verkiezing van de voorzitter van de gemeenteraad</span></h5>
+            <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+          </div>
           <br>
           <div class="annotation-structure">
             <p class="annotation" property="eli:description"> &lt;Geef een korte samenvatting op.&gt; [TODO: samenvatting vragen aan Domien + RDFA]</p>
           </div>
           <br>
           <div class="annotation-structure">
-              <p class="u-spacer--small">De gemeenteraad,</p>
+            <p class="u-spacer--small">De gemeenteraad,</p>
 
-              <div property="besluit:motivering" lang="nl">
+            <div property="besluit:motivering" lang="nl">
               <div class="annotation-structure">
-              <!-- <h6 class="h5">Juridische gronden</h6> -->
-              <ul class="bullet-list bullet-list--spaced--small u-spacer">
-              <li>Gelet op <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">[TODO: link cite and RDFA article] het decreet 22 december 2017 over het lokaal bestuur, de artikelen <span class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">6</span> en <span class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">7</span></a>;</li>
-              <li>Gelet op <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/TODO" property="eli:cites">de omzendbrief BA-2012/2 van 19 oktober 2012 – Start van de lokale en provinciale bestuursperiode [TODO check datum en nummer bij Domien + RDFA verwijzing]</a>;</li>
-              <li>Overwegende dat een gezamenlijke akte van voordracht van kandidaat-voorzitter op naam van <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="voorzitter">&lt;persoon (Mandaat)&gt; [TODO: variable]</span> werd overhandigd aan de algemeen directeur [TODO: uitklaren nu al algemeen directeur of wissel ook bepalen tijdens installatievergadering?] op <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​, zijnde uiterlijk acht dagen voor de installatievergadering van de gemeenteraad;</li>
+                <!-- <h6 class="h5">Juridische gronden</h6> -->
+                <ul class="bullet-list bullet-list--spaced--small u-spacer">
+                  <li>Gelet op <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">[TODO: link cite and RDFA article] het decreet 22 december 2017 over het lokaal bestuur, de artikelen <span class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">6</span> en <span class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">7</span></a>;</li>
+                  <li>Gelet op <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/TODO" property="eli:cites">de omzendbrief BA-2012/2 van 19 oktober 2012 – Start van de lokale en provinciale bestuursperiode [TODO check datum en nummer bij Domien + RDFA verwijzing]</a>;</li>
+                  <li>Overwegende dat een gezamenlijke akte van voordracht van kandidaat-voorzitter op naam van <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="voorzitter">&lt;persoon (Mandaat)&gt; [TODO: variable]</span> werd overhandigd aan de algemeen directeur [TODO: uitklaren nu al algemeen directeur of wissel ook bepalen tijdens installatievergadering?] op <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​, zijnde uiterlijk acht dagen voor de installatievergadering van de gemeenteraad;</li>
                 </ul>
               </div>
               <div class="annotation-structure">
-              <!-- <h6 class="h5">Feiten en context</h6> -->
+                <!-- <h6 class="h5">Feiten en context</h6> -->
 
-            </div>
+              </div>
               <div class="annotation-structure">
-              <ul class="bullet-list bullet-list--spaced--small u-spacer">
-              <li>Overwegende dat  de algemeen directeur [TODO: uitklaren nu al algemeen directeur of wissel ook bepalen tijdens installatievergadering?] de gezamenlijke akte van voordracht van kandidaat-voorzitter ter zitting overhandigd heeft aan de voorzitter van de installatievergadering; <em>[TODO: Ander scenario vragen aan Domien?]</em></li>
-              <li>Overwegende dat de gezamenlijke akte van voordracht van kandidaat-voorzitter voldoet aan de decretaal voorziene ontvankelijkheidsvereisten; <em>[TODO: Ander scenario vragen aan Domien van niet-voldoen]</em></li>
-              <li>Overwegende dat de gezamenlijke akte van voordracht van de kandidaat-voorzitter geen melding maakt van de einddatum van het mandaat en geen melding maakt van diegene die hem zal opvolgen voor de resterende duurtijd van het mandaat;
-              <br>
-              <br>
-              OF
-              <br>
-              <br>
-              Overwegende dat de gezamenlijke akte van voordracht van de kandidaat-voorzitter de melding maakt van de einddatum van het mandaat op <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​, met als opvolger <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="voorzitter">&lt;persoon (Mandaat)&gt; [TODO: variable]</span> voor de resterende duurtijd van het mandaat;
-              <br>
-              <br>
-              OF
-              <br>
-              <br>
-              Overwegende dat de gezamenlijke akte van voordracht van de kandidaat-voorzitter de melding maakt van de einddatum van het mandaat op <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​, met als opvolger <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="voorzitter">&lt;persoon (Mandaat)&gt; [TODO: variable]</span> tot <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​, met als opvolger <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="voorzitter">&lt;persoon (Mandaat)&gt; [TODO: variable]</span> voor de resterende duurtijd van het mandaat; <em>Is dit scenario nodig?</em>
-              <br>
-              <br>
-              <em>[TODO: Ander scenario visualiseren: einddatum vermeld en vermelding [PERSOON] opvolger]</em>
-                </li>
-              <li>Overwegende dat de kandidaat-voorzitter de voorgeschreven eed als gemeenteraadslid heeft afgelegd;</li>
-              <li>Overwegende dat er geen specifieke eed als voorzitter van de gemeenteraad dient afgelegd te worden;</li>
-              </ul>
-            </div>
+                <ul class="bullet-list bullet-list--spaced--small u-spacer">
+                  <li>Overwegende dat  de algemeen directeur [TODO: uitklaren nu al algemeen directeur of wissel ook bepalen tijdens installatievergadering?] de gezamenlijke akte van voordracht van kandidaat-voorzitter ter zitting overhandigd heeft aan de voorzitter van de installatievergadering; <em>[TODO: Ander scenario vragen aan Domien?]</em></li>
+                  <li>Overwegende dat de gezamenlijke akte van voordracht van kandidaat-voorzitter voldoet aan de decretaal voorziene ontvankelijkheidsvereisten; <em>[TODO: Ander scenario vragen aan Domien van niet-voldoen]</em></li>
+                  <li>Overwegende dat de gezamenlijke akte van voordracht van de kandidaat-voorzitter geen melding maakt van de einddatum van het mandaat en geen melding maakt van diegene die hem zal opvolgen voor de resterende duurtijd van het mandaat;
+                    <br>
+                    <br>
+                    OF
+                    <br>
+                    <br>
+                    Overwegende dat de gezamenlijke akte van voordracht van de kandidaat-voorzitter de melding maakt van de einddatum van het mandaat op <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​, met als opvolger <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="voorzitter">&lt;persoon (Mandaat)&gt; [TODO: variable]</span> voor de resterende duurtijd van het mandaat;
+                    <br>
+                    <br>
+                    OF
+                    <br>
+                    <br>
+                    Overwegende dat de gezamenlijke akte van voordracht van de kandidaat-voorzitter de melding maakt van de einddatum van het mandaat op <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​, met als opvolger <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="voorzitter">&lt;persoon (Mandaat)&gt; [TODO: variable]</span> tot <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​, met als opvolger <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="voorzitter">&lt;persoon (Mandaat)&gt; [TODO: variable]</span> voor de resterende duurtijd van het mandaat; <em>Is dit scenario nodig?</em>
+                    <br>
+                    <br>
+                    <em>[TODO: Ander scenario visualiseren: einddatum vermeld en vermelding [PERSOON] opvolger]</em>
+                  </li>
+                  <li>Overwegende dat de kandidaat-voorzitter de voorgeschreven eed als gemeenteraadslid heeft afgelegd;</li>
+                  <li>Overwegende dat er geen specifieke eed als voorzitter van de gemeenteraad dient afgelegd te worden;</li>
+                </ul>
+              </div>
 
               <p class="u-spacer--small">Beslist,</p>
               <div class="annotation-structure">
-              <!-- <h6 class="h5">Besluit</h6> -->
-              <ul class="article-list bullet-list u-spacer--small" property="prov:value">
-              <li property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:Artikel">
-              <span class="annotation article-number" property="eli:number">Artikel 1</span>
-              <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
-              <span class="annotation article-content" property="prov:value">Kennis te nemen van de ontvankelijke gezamenlijke akte van voordracht van de kandidaat-voorzitter.</span>
-                </li>
-              <li property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:Artikel">
-              <span class="annotation article-number" property="eli:number">Artikel 2</span>
-              <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
-              <span class="annotation article-content" property="prov:value">De voorgedragen kandidaat-voorzitter, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="voorzitter">&lt;persoon (Mandaat)&gt; [TODO: variable]</span>, wordt verkozen verklaard als voorzitter van de gemeenteraad met ingang van <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​.</span>
-                </li>
-            </ul>
-          </div>
-        </div>
+                <!-- <h6 class="h5">Besluit</h6> -->
+                <ul class="article-list bullet-list u-spacer--small" property="prov:value">
+                  <li property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:Artikel">
+                    <span class="annotation article-number" property="eli:number">Artikel 1</span>
+                    <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+                    <span class="annotation article-content" property="prov:value">Kennis te nemen van de ontvankelijke gezamenlijke akte van voordracht van de kandidaat-voorzitter.</span>
+                  </li>
+                  <li property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:Artikel">
+                    <span class="annotation article-number" property="eli:number">Artikel 2</span>
+                    <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+                    <span class="annotation article-content" property="prov:value">De voorgedragen kandidaat-voorzitter, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="voorzitter">&lt;persoon (Mandaat)&gt; [TODO: variable]</span>, wordt verkozen verklaard als voorzitter van de gemeenteraad met ingang van <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
 
 
-              <br>
-              <div class="annotation-structure" typeof="besluit:Stemming">
+            <br>
+            <div class="annotation-structure" typeof="besluit:Stemming">
               <p>Gevolg van de stemming: <span class="annotation u-spacer" property="besluit:gevolg" lang="nl">Aanvaard/Niet aanvaard</span><em>Is hier een stemming?</em></p>
               <br>
               <p>Conform <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">[TODO: link cite and RDFA article] het decreet 22 december 2017 over het lokaal bestuur, artikel <span class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">24</span></a>, neemt de nieuw gekozen voorzitter het voorzitterschap van de installatievergadering over van de uittredende voorzitter. [TODO: RDFA] <em>Waar hoort deze zin? Is dit een artikel en hoort het bij dit agendapunt?</em></p>
-        </div>
             </div>
+          </div>
         </div>
       </div>
       <br>
       <br>
-        
+      
       <div resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-5')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
         <meta property="besluit:gebeurtNa" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-4')}">        
         <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
@@ -833,28 +831,28 @@
                   <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
                   <span class="annotation article-content" property="prov:value"> De voorgedragen kandidaat-schepenen verkozen te verklaren in de rangorde van de gezamenlijke akte van voordracht van de kandidaat-schepenen, meer bepaald: <em> Hoe ziet het er uit met opvolgers?</em>
                     <table class="data-table data-table--lined data-table--zebra data-table--tight">
-                        <thead>
-                            <tr>
-                                <td>Voornaam &amp; Familienaam</td>
-                                <td>Mandaat</td>
-                                <td>Einde mandaat</td>
-                                <td>Naam opvolger(s)</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Voornaam Familienaam</td>
-                                <td>Eerste schepen</td>
-                                <td><span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​</td>
-                                <td><span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt; [TODO: variable]</span></td>
-                            </tr>
-                            <tr>
-                                <td>Voornaam Familienaam</td>
-                                <td>Tweede schepen</td>
-                                <td>Geen</td>
-                                <td>Geen</td>
-                            </tr>
-                        </tbody>
+                      <thead>
+                        <tr>
+                          <td>Voornaam &amp; Familienaam</td>
+                          <td>Mandaat</td>
+                          <td>Einde mandaat</td>
+                          <td>Naam opvolger(s)</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Voornaam Familienaam</td>
+                          <td>Eerste schepen</td>
+                          <td><span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​</td>
+                          <td><span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon (Mandaat)&gt; [TODO: variable]</span></td>
+                        </tr>
+                        <tr>
+                          <td>Voornaam Familienaam</td>
+                          <td>Tweede schepen</td>
+                          <td>Geen</td>
+                          <td>Geen</td>
+                        </tr>
+                      </tbody>
                     </table>
                   </span>
                 </li>
@@ -1029,19 +1027,19 @@
             <p class="u-spacer--small">Stelt vast dat, [TODO: RDFA + volgorde is verwarrrend!]</p>
 
             <div class="annotation-structure" property="prov:value">
-                <p property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:VaststellingTODO"><span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="burgemeester">&lt;persoon (Mandaat)&gt; [TODO: variable]</span> en <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="burgemeester">&lt;persoon (Mandaat)&gt; [TODO: variable]</span> gemeenteraadsleden (de jongste in leeftijd), de burgemeester bijstaan bij de verrichtingen van de stemming en van de stemopneming (<a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">[TODO: link cite and RDFA article] het koninklijk besluit van 20 december 2000, artikel <span class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">10</span></a>); [TODO: ABB data aanleveren, idem als bij verkiezing leden RVMW]</p>
+              <p property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:VaststellingTODO"><span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="burgemeester">&lt;persoon (Mandaat)&gt; [TODO: variable]</span> en <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="burgemeester">&lt;persoon (Mandaat)&gt; [TODO: variable]</span> gemeenteraadsleden (de jongste in leeftijd), de burgemeester bijstaan bij de verrichtingen van de stemming en van de stemopneming (<a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">[TODO: link cite and RDFA article] het koninklijk besluit van 20 december 2000, artikel <span class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">10</span></a>); [TODO: ABB data aanleveren, idem als bij verkiezing leden RVMW]</p>
             </div>
 
             <!-- <div class="annotation-structure">
-              <h6 class="h5">Besluit</h6>
-              <ul class="article-list bullet-list u-spacer--small" property="prov:value">
-                <li property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:Artikel">
-                  <span class="annotation article-number" property="eli:number">Enig artikel.</span>
-                  <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
-                  <span class="annotation article-content" property="prov:value"> De gemeenteraad neemt kennis van het ontslag van &lt;mandataris&gt; met ingang van <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​. </span>
-                </li>
-              </ul>
-            </div> -->
+                 <h6 class="h5">Besluit</h6>
+                 <ul class="article-list bullet-list u-spacer--small" property="prov:value">
+                 <li property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:Artikel">
+                 <span class="annotation article-number" property="eli:number">Enig artikel.</span>
+                 <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+                 <span class="annotation article-content" property="prov:value"> De gemeenteraad neemt kennis van het ontslag van &lt;mandataris&gt; met ingang van <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​. </span>
+                 </li>
+                 </ul>
+                 </div> -->
           </div>
         </div>
 
@@ -1065,26 +1063,26 @@
           <p>De op deze <span class="annotation">&lt;aantal stemmen&gt; [TODO: RDFA (+variable?)]</span> geldige stembiljetten uitgebrachte stemmen werden toegekend als volgt:</p>
           <br>
           <table class="data-table data-table--lined data-table--zebra data-table--tight">
-              <thead>
-                  <tr>
-                      <td>Voornaam Familienaam van het kandidaat-werkend lid</td>
-                      <td>Aantal bekomen stemmen</td>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td>Voornaam Familienaam</td>
-                      <td><span class="annotation">&lt;aantal stemmen&gt; [TODO: RDFA (+variable?)]</span></td>
-                  </tr>
-                  <tr>
-                      <td>Voornaam Familienaam</td>
-                      <td><span class="annotation">&lt;aantal stemmen&gt; [TODO: RDFA (+variable?)]</span></td>
-                  </tr>
-                  <tr>
-                      <th>Totaal aantal stemmen</th>
-                      <th><span class="annotation">&lt;aantal stemmen&gt; [TODO: RDFA (+variable?)]</span></th>
-                  </tr>
-              </tbody>
+            <thead>
+              <tr>
+                <td>Voornaam Familienaam van het kandidaat-werkend lid</td>
+                <td>Aantal bekomen stemmen</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Voornaam Familienaam</td>
+                <td><span class="annotation">&lt;aantal stemmen&gt; [TODO: RDFA (+variable?)]</span></td>
+              </tr>
+              <tr>
+                <td>Voornaam Familienaam</td>
+                <td><span class="annotation">&lt;aantal stemmen&gt; [TODO: RDFA (+variable?)]</span></td>
+              </tr>
+              <tr>
+                <th>Totaal aantal stemmen</th>
+                <th><span class="annotation">&lt;aantal stemmen&gt; [TODO: RDFA (+variable?)]</span></th>
+              </tr>
+            </tbody>
           </table>
           <br>
 
@@ -1092,15 +1090,15 @@
             <p class="u-spacer--small">Stelt vast dat, [TODO: RDFA + volgorde is verwarrrend!]</p>
 
             <div class="annotation-structure" property="prov:value">
-                <p property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:VaststellingTODO">dat de stemmen werden uitgebracht op naam van regelmatig voorgedragen kandidaten effectieve leden. [TODO ander scenario vragen aan Domien (nagaan of de stemmen uitsluitend werden uitgebracht op naam van personen vermeld op de kandidatenlijst. In tegenovergesteld geval moet dit worden vastgesteld en mag de betrokkene niet verkozen worden verklaard)].</p>
+              <p property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:VaststellingTODO">dat de stemmen werden uitgebracht op naam van regelmatig voorgedragen kandidaten effectieve leden. [TODO ander scenario vragen aan Domien (nagaan of de stemmen uitsluitend werden uitgebracht op naam van personen vermeld op de kandidatenlijst. In tegenovergesteld geval moet dit worden vastgesteld en mag de betrokkene niet verkozen worden verklaard)].</p>
             </div>
 
             <div class="annotation-structure" property="prov:value">
-                <p property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:VaststellingTODO"><span class="annotation">&lt;aantal stemmen&gt; [TODO: RDFA (+variable?)]</span> kandidaat effectieve leden, die het grootste aantal stemmen hebben bekomen, verkozen worden. [TODO: DATA kan ABB aanleveren]</p>
+              <p property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:VaststellingTODO"><span class="annotation">&lt;aantal stemmen&gt; [TODO: RDFA (+variable?)]</span> kandidaat effectieve leden, die het grootste aantal stemmen hebben bekomen, verkozen worden. [TODO: DATA kan ABB aanleveren]</p>
             </div>
 
             <div class="annotation-structure" property="prov:value">
-                <p property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:VaststellingTODO"><span class="annotation">&lt;aantal stemmen&gt; [TODO: RDFA (+variable?)]</span> kandidaat effectieve leden wegens staking van stemmen een keuze moet worden gedaan overeenkomstig <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">[TODO: link cite and RDFA article] de wet van 7 december 1998, artikel <span class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">17</span></a>.</p>
+              <p property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:VaststellingTODO"><span class="annotation">&lt;aantal stemmen&gt; [TODO: RDFA (+variable?)]</span> kandidaat effectieve leden wegens staking van stemmen een keuze moet worden gedaan overeenkomstig <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">[TODO: link cite and RDFA article] de wet van 7 december 1998, artikel <span class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">17</span></a>.</p>
             </div>
           </div>
         </div>
@@ -1127,7 +1125,7 @@
                   <th>Rang</th>
                   <th>Verkozen zijn tot effectief lid van de politieraad</th>
                   <th>De kandidaten die als opvolgers voor elk hiernaast vermeld verkozen effectief werden voorgedragen van rechtswege en in de volgorde van de voordrachtakte de opvolgers zijn van deze verkozen effectieve
-                  leden.</th>
+                    leden.</th>
                 </tr>
               </thead>
               <tbody>
@@ -1216,7 +1214,7 @@
 
             <p>Dit proces-verbaal zal overeenkomstig <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">[TODO: link cite and RDFA article] de wet van 7 december 1998, artikel <span class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">18bis</span></a> en
 
-            <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">het koninklijk besluit van 20 december 2000 betreffende de verkiezing in elke gemeenteraad van de leden van de politieraad, artikel <span class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">15</span> [TODO: ander scenario];</a> in dubbel exemplaar naar de bestendige deputatie (of het college bedoeld <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">de bijzondere wet van 12 januari 1989 met betrekking tot de Brusselse Instellingen, artikel <span class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">83quinquies</span>, § 2</a>) worden gezonden. <em>Moet het vermeld worden?</em> [TODO: RDFA + volgorde is verwarrrend + nakijken informatie in deze paragraaf]</p>
+              <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">het koninklijk besluit van 20 december 2000 betreffende de verkiezing in elke gemeenteraad van de leden van de politieraad, artikel <span class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">15</span> [TODO: ander scenario];</a> in dubbel exemplaar naar de bestendige deputatie (of het college bedoeld <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">de bijzondere wet van 12 januari 1989 met betrekking tot de Brusselse Instellingen, artikel <span class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">83quinquies</span>, § 2</a>) worden gezonden. <em>Moet het vermeld worden?</em> [TODO: RDFA + volgorde is verwarrrend + nakijken informatie in deze paragraaf]</p>
           </div>
         </div>
 
@@ -1232,4 +1230,4 @@
     </div>
   </div>
 </div>
-""".
+ """.
