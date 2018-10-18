@@ -1,0 +1,576 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX org: <http://www.w3.org/ns/org#>
+
+# Nieuwe bestuursorganen in tijd voor Gemeente, OCMW, District en Provincie
+
+INSERT {
+  GRAPH ?g {
+    ?vorigBestuursorgaanInTijd mandaat:bindingEinde "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+    ?bestuursorgaanInTijd a besluit:Bestuursorgaan ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaan ;
+       mu:uuid ?uuidInTijd ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?bestuurseenheid a besluit:Bestuurseenheid ;
+       besluit:classificatie ?classificatie .
+
+    FILTER (?classificatie IN (<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>, <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>, <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>, <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>))
+
+    ?bestuursorgaan besluit:bestuurt ?bestuurseenheid ;
+       skos:prefLabel ?bestuursorgaanLabel .
+    ?vorigBestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":", STR(?bestuursorgaanLabel))) AS ?uuidInTijd) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", STR(?uuidInTijd))) AS ?bestuursorgaanInTijd) .
+  }
+}
+
+;
+
+# Nieuw bestuursorgaan Voorzitter BCSD met nieuw bestuursorgaan in tijd voor OCMW
+
+INSERT {
+  GRAPH ?g {
+    ?bestuursorgaan a besluit:Bestuursorgaan ;
+      skos:prefLabel ?bestuursorgaanLabel ;
+      mu:uuid ?uuid ;
+      besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/53c0d8cd-f3a2-411d-bece-4bd83ae2bbc9> ;
+      besluit:bestuurt ?bestuurseenheid .
+
+    ?bestuursorgaanInTijd a besluit:Bestuursorgaan ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaan ;
+       mu:uuid ?uuidInTijd ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+  }
+} WHERE {
+  GRAPH ?g {
+    <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/53c0d8cd-f3a2-411d-bece-4bd83ae2bbc9> skos:prefLabel ?classificatieLabel .
+
+    ?bestuurseenheid a besluit:Bestuurseenheid ; 
+      besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002> ;
+      skos:prefLabel ?bestuurseenheidLabel .
+
+    BIND(CONCAT(STR(?classificatieLabel), " ", STR(?bestuurseenheidLabel)) AS ?bestuursorgaanLabel) .
+    BIND(SHA256(CONCAT("1aee45a1-0bb6-49a0-976f-461c84e269f2", ":", STR(?bestuursorgaanLabel))) AS ?uuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", STR(?uuid))) AS ?bestuursorgaan) .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":", STR(?bestuursorgaanLabel))) AS ?uuidInTijd) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", STR(?uuidInTijd))) AS ?bestuursorgaanInTijd) .
+  }
+}
+
+;
+
+# Nieuw bestuursorgaan Districtsburgemeester met nieuw bestuursorgaan in tijd voor District
+
+INSERT {
+  GRAPH ?g {
+    ?bestuursorgaan a besluit:Bestuursorgaan ;
+      skos:prefLabel ?bestuursorgaanLabel ;
+      mu:uuid ?uuid ;
+      besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/9314533e-891f-4d84-a492-0338af104065> ;
+      besluit:bestuurt ?bestuurseenheid .
+
+    ?bestuursorgaanInTijd a besluit:Bestuursorgaan ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaan ;
+       mu:uuid ?uuidInTijd ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+  }
+} WHERE {
+  GRAPH ?g {
+    <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/9314533e-891f-4d84-a492-0338af104065> skos:prefLabel ?classificatieLabel .
+
+    ?bestuurseenheid a besluit:Bestuurseenheid ; 
+      besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003> ;
+      skos:prefLabel ?bestuurseenheidLabel .
+
+    BIND(CONCAT(STR(?classificatieLabel), " ", STR(?bestuurseenheidLabel)) AS ?bestuursorgaanLabel) .
+    BIND(SHA256(CONCAT("1aee45a1-0bb6-49a0-976f-461c84e269f2", ":", STR(?bestuursorgaanLabel))) AS ?uuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", STR(?uuid))) AS ?bestuursorgaan) .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":", STR(?bestuursorgaanLabel))) AS ?uuidInTijd) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", STR(?uuidInTijd))) AS ?bestuursorgaanInTijd) .
+  }
+}
+
+;
+
+# Mandaat gemeenteraadslid in gemeenteraad
+
+INSERT {
+  GRAPH ?g {
+    ?mandaat a mandaat:Mandaat ;
+      mu:uuid ?uuid ;
+      org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000011> .
+
+    ?bestuursorgaanInTijd org:hasPost ?mandaat .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?bestuursorgaanInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaan .
+    ?bestuursorgaan besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000005> ;
+      skos:prefLabel ?bestuursorgaanLabel .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":2019-01-01:", STR(?bestuursorgaanLabel))) AS ?uuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/mandaten/", STR(?uuid))) AS ?mandaat) .
+  }
+}
+
+;
+
+# Mandaat Voorzitter van de gemeenteraad in gemeenteraad
+
+INSERT {
+  GRAPH ?g {
+    ?mandaat a mandaat:Mandaat ;
+      mu:uuid ?uuid ;
+      org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000012> .
+
+    ?bestuursorgaanInTijd org:hasPost ?mandaat .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?bestuursorgaanInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaan .
+    ?bestuursorgaan besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000005> ;
+      skos:prefLabel ?bestuursorgaanLabel .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":2019-01-01:", STR(?bestuursorgaanLabel))) AS ?uuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/mandaten/", STR(?uuid))) AS ?mandaat) .
+  }
+}
+
+;
+
+# Mandaat Schepen in College van Burgemeester en Schepenen
+
+INSERT {
+  GRAPH ?g {
+    ?mandaat a mandaat:Mandaat ;
+      mu:uuid ?uuid ;
+      org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000014> .
+
+    ?bestuursorgaanInTijd org:hasPost ?mandaat .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?bestuursorgaanInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaan .
+    ?bestuursorgaan besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000006> ;
+      skos:prefLabel ?bestuursorgaanLabel .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":2019-01-01:", STR(?bestuursorgaanLabel))) AS ?uuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/mandaten/", STR(?uuid))) AS ?mandaat) .
+  }
+}
+
+;
+
+# Mandaat Burgemeester in Burgemeester en College van Burgemeester en Schepenen
+
+INSERT {
+  GRAPH ?g {
+    ?mandaat a mandaat:Mandaat ;
+      mu:uuid ?uuid ;
+      org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000013> .
+
+    ?bestuursorgaanBurgemeesterInTijd org:hasPost ?mandaat .
+    ?bestuursorgaanCollegeInTijd org:hasPost ?mandaat .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?bestuursorgaanBurgemeesterInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaanBurgemeester .
+    ?bestuursorgaanBurgemeester besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/4955bd72cd0e4eb895fdbfab08da0284> ;
+      skos:prefLabel ?bestuursorgaanBurgemeesterLabel ;
+      besluit:bestuurt ?bestuurseenheid .
+
+    ?bestuursorgaanCollegeInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaanCollege .
+    ?bestuursorgaanCollege besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000006> ;
+      skos:prefLabel ?bestuursorgaanCollegeLabel ;
+      besluit:bestuurt ?bestuurseenheid .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":2019-01-01:", STR(?bestuursorgaanBurgemeesterLabel))) AS ?uuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/mandaten/", STR(?uuid))) AS ?mandaat) .
+  }
+}
+
+;
+
+# Mandaat Lid BCSD in BCSD
+
+INSERT {
+  GRAPH ?g {
+    ?mandaat a mandaat:Mandaat ;
+      mu:uuid ?uuid ;
+      org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000019> .
+
+    ?bestuursorgaanInTijd org:hasPost ?mandaat .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?bestuursorgaanInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaan .
+    ?bestuursorgaan besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000009> ;
+      skos:prefLabel ?bestuursorgaanLabel .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":2019-01-01:", STR(?bestuursorgaanLabel))) AS ?uuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/mandaten/", STR(?uuid))) AS ?mandaat) .
+  }
+}
+
+;
+
+# Mandaat Voorzitter BCSD in Voorzitter BCSD en BCSD
+
+INSERT {
+  GRAPH ?g {
+    ?mandaat a mandaat:Mandaat ;
+      mu:uuid ?uuid ;
+      org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e00001a> .
+
+    ?bestuursorgaanVoorzitterInTijd org:hasPost ?mandaat .
+    ?bestuursorgaanBcsdInTijd org:hasPost ?mandaat .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?bestuursorgaanVoorzitterInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaanVoorzitter .
+    ?bestuursorgaanVoorzitter besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/53c0d8cd-f3a2-411d-bece-4bd83ae2bbc9> ;
+      skos:prefLabel ?bestuursorgaanVoorzitterLabel ;
+      besluit:bestuurt ?bestuurseenheid .
+
+    ?bestuursorgaanBcsdInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaanBcsd .
+    ?bestuursorgaanBcsd besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000009> ;
+      skos:prefLabel ?bestuursorgaanBcsdLabel ;
+      besluit:bestuurt ?bestuurseenheid .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":2019-01-01:", STR(?bestuursorgaanVoorzitterLabel))) AS ?uuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/mandaten/", STR(?uuid))) AS ?mandaat) .
+  }
+}
+
+;
+
+# Mandaat Lid RMW in RMW
+
+INSERT {
+  GRAPH ?g {
+    ?mandaat a mandaat:Mandaat ;
+      mu:uuid ?uuid ;
+      org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000015> .
+
+    ?bestuursorgaanInTijd org:hasPost ?mandaat .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?bestuursorgaanInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaan .
+    ?bestuursorgaan besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000007> ;
+      skos:prefLabel ?bestuursorgaanLabel .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":2019-01-01:", STR(?bestuursorgaanLabel))) AS ?uuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/mandaten/", STR(?uuid))) AS ?mandaat) .
+  }
+}
+
+;
+
+# Mandaat Voorzitter RMW in RMW
+
+INSERT {
+  GRAPH ?g {
+    ?mandaat a mandaat:Mandaat ;
+      mu:uuid ?uuid ;
+      org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000016> .
+
+    ?bestuursorgaanInTijd org:hasPost ?mandaat .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?bestuursorgaanInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaan .
+    ?bestuursorgaan besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000007> ;
+      skos:prefLabel ?bestuursorgaanLabel .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":2019-01-01:", STR(?bestuursorgaanLabel))) AS ?uuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/mandaten/", STR(?uuid))) AS ?mandaat) .
+  }
+}
+
+;
+
+# Mandaat Lid Vast Bureau in Vast Bureau
+
+INSERT {
+  GRAPH ?g {
+    ?mandaat a mandaat:Mandaat ;
+      mu:uuid ?uuid ;
+      org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000017> .
+
+    ?bestuursorgaanInTijd org:hasPost ?mandaat .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?bestuursorgaanInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaan .
+    ?bestuursorgaan besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000008> ;
+      skos:prefLabel ?bestuursorgaanLabel .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":2019-01-01:", STR(?bestuursorgaanLabel))) AS ?uuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/mandaten/", STR(?uuid))) AS ?mandaat) .
+  }
+}
+
+;
+
+# Mandaat Voorzitter Vast Bureau in Vast Bureau
+
+INSERT {
+  GRAPH ?g {
+    ?mandaat a mandaat:Mandaat ;
+      mu:uuid ?uuid ;
+      org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000018> .
+
+    ?bestuursorgaanInTijd org:hasPost ?mandaat .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?bestuursorgaanInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaan .
+    ?bestuursorgaan besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000008> ;
+      skos:prefLabel ?bestuursorgaanLabel .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":2019-01-01:", STR(?bestuursorgaanLabel))) AS ?uuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/mandaten/", STR(?uuid))) AS ?mandaat) .
+  }
+}
+
+;
+
+# Mandaat Districtsburgemeester in Districtsurgemeester en Districtcollege
+
+INSERT {
+  GRAPH ?g {
+    ?mandaat a mandaat:Mandaat ;
+      mu:uuid ?uuid ;
+      org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e00001d> .
+
+    ?bestuursorgaanBurgemeesterInTijd org:hasPost ?mandaat .
+    ?bestuursorgaanCollegeInTijd org:hasPost ?mandaat .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?bestuursorgaanBurgemeesterInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaanBurgemeester .
+    ?bestuursorgaanBurgemeester besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/9314533e-891f-4d84-a492-0338af104065> ;
+      skos:prefLabel ?bestuursorgaanBurgemeesterLabel ;
+      besluit:bestuurt ?bestuurseenheid .
+
+    ?bestuursorgaanCollegeInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaanCollege .
+    ?bestuursorgaanCollege besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e00000b> ;
+      skos:prefLabel ?bestuursorgaanCollegeLabel ;
+      besluit:bestuurt ?bestuurseenheid .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":2019-01-01:", STR(?bestuursorgaanBurgemeesterLabel))) AS ?uuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/mandaten/", STR(?uuid))) AS ?mandaat) .
+  }
+}
+
+;
+
+# Mandaat Districtsschepen in Districtscollege
+
+INSERT {
+  GRAPH ?g {
+    ?mandaat a mandaat:Mandaat ;
+      mu:uuid ?uuid ;
+      org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e00001e> .
+
+    ?bestuursorgaanInTijd org:hasPost ?mandaat .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?bestuursorgaanInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaan .
+    ?bestuursorgaan besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e00000b> ;
+      skos:prefLabel ?bestuursorgaanLabel .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":2019-01-01:", STR(?bestuursorgaanLabel))) AS ?uuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/mandaten/", STR(?uuid))) AS ?mandaat) .
+  }
+}
+
+;
+
+# Mandaat Districtraadslid in Districtsraad
+
+INSERT {
+  GRAPH ?g {
+    ?mandaat a mandaat:Mandaat ;
+      mu:uuid ?uuid ;
+      org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e00001b> .
+
+    ?bestuursorgaanInTijd org:hasPost ?mandaat .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?bestuursorgaanInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaan .
+    ?bestuursorgaan besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e00000a> ;
+      skos:prefLabel ?bestuursorgaanLabel .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":2019-01-01:", STR(?bestuursorgaanLabel))) AS ?uuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/mandaten/", STR(?uuid))) AS ?mandaat) .
+  }
+}
+
+;
+
+# Mandaat Voorzitter van de districtsraad in Districtsraad
+
+INSERT {
+  GRAPH ?g {
+    ?mandaat a mandaat:Mandaat ;
+      mu:uuid ?uuid ;
+      org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e00001c> .
+
+    ?bestuursorgaanInTijd org:hasPost ?mandaat .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?bestuursorgaanInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaan .
+    ?bestuursorgaan besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e00000a> ;
+      skos:prefLabel ?bestuursorgaanLabel .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":2019-01-01:", STR(?bestuursorgaanLabel))) AS ?uuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/mandaten/", STR(?uuid))) AS ?mandaat) .
+  }
+}
+
+;
+
+# Mandaat Gedeputeerde in Deputatie
+
+INSERT {
+  GRAPH ?g {
+    ?mandaat a mandaat:Mandaat ;
+      mu:uuid ?uuid ;
+      org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000020> .
+
+    ?bestuursorgaanInTijd org:hasPost ?mandaat .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?bestuursorgaanInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaan .
+    ?bestuursorgaan besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e00000d> ;
+      skos:prefLabel ?bestuursorgaanLabel .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":2019-01-01:", STR(?bestuursorgaanLabel))) AS ?uuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/mandaten/", STR(?uuid))) AS ?mandaat) .
+  }
+}
+
+;
+
+# Mandaat Provincieraadslid in Provincieraad
+
+INSERT {
+  GRAPH ?g {
+    ?mandaat a mandaat:Mandaat ;
+      mu:uuid ?uuid ;
+      org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e00001f> .
+
+    ?bestuursorgaanInTijd org:hasPost ?mandaat .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?bestuursorgaanInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaan .
+    ?bestuursorgaan besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e00000c> ;
+      skos:prefLabel ?bestuursorgaanLabel .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":2019-01-01:", STR(?bestuursorgaanLabel))) AS ?uuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/mandaten/", STR(?uuid))) AS ?mandaat) .
+  }
+}
+
+;
+
+# Mandaat Voorzitter provincieraad in Provincieraad
+
+INSERT {
+  GRAPH ?g {
+    ?mandaat a mandaat:Mandaat ;
+      mu:uuid ?uuid ;
+      org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000027> .
+
+    ?bestuursorgaanInTijd org:hasPost ?mandaat .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?bestuursorgaanInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaan .
+    ?bestuursorgaan besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e00000c> ;
+      skos:prefLabel ?bestuursorgaanLabel .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":2019-01-01:", STR(?bestuursorgaanLabel))) AS ?uuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/mandaten/", STR(?uuid))) AS ?mandaat) .
+  }
+}
+
+;
+
+# Mandaat Gouverneur in Gouverneur
+
+INSERT {
+  GRAPH ?g {
+    ?mandaat a mandaat:Mandaat ;
+      mu:uuid ?uuid ;
+      org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/d7c00cd1-baf1-4346-83c0-6796c0bedd85> .
+
+    ?bestuursorgaanInTijd org:hasPost ?mandaat .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?bestuursorgaanInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaan .
+    ?bestuursorgaan besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/180a2fba-6ca9-4766-9b94-82006bb9c709> ;
+      skos:prefLabel ?bestuursorgaanLabel .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":2019-01-01:", STR(?bestuursorgaanLabel))) AS ?uuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/mandaten/", STR(?uuid))) AS ?mandaat) .
+  }
+}
+
