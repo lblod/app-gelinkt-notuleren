@@ -145,7 +145,10 @@
                           :as "is-aangesteld-als")
               (kandidatenlijst :via ,(s-prefix "mandaat:heeftKandidaat")
                                :inverse t
-                               :as "is-kandidaat-voor"))
+                               :as "is-kandidaat-voor")
+              (verkiezingsresultaat :via ,(s-prefix "mandaat:isResultaatVan")
+                        :inverse t
+                        :as "verkiezingsresultaten"))
   :has-one `((geboorte :via ,(s-prefix "persoon:heeftGeboorte")
                        :as "geboorte")
              (identificator :via ,(s-prefix "adms:identifier")
