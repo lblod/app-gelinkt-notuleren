@@ -1,0 +1,646 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://mu.semte.ch/vocabularies/ext/> .
+@prefix ns2:	<http://mu.semte.ch/vocabularies/core/> .
+@prefix ns3:	<http://data.vlaanderen.be/ns/besluit#> .
+@prefix ns4:	<http://data.vlaanderen.be/ns/mandaat#> .
+@prefix ns5:	<http://purl.org/dc/terms/> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+
+<http://lblod.info/templates/5cc28ef5-04d9-4a2b-898c-25361dd32add>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"5cc28ef5-04d9-4a2b-898c-25361dd32add" ;
+    ns1:templateMatches "OCMW-installatie";
+    ns1:activeInContext	foaf:Document ;
+    ns1:disabledInContext	ns3:Zitting ;
+    ns5:title	"Installatievergadering OCMW" ;
+    ns1:templateContent """<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-1')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-1/title">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-besluit-1')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-1/title">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-2')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-2/title">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-besluit-2')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-2/title">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-3')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-3/title">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-besluit-3')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-3/title">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-4')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-4/title">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-besluit-4')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-4/title">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-5')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-5/title">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-besluit-5')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-5/title">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-6')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-6/title">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-besluit-6')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-6/title">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-7')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-7/title">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-besluit-7')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-7/title">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-1-nr')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-1/ref">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-nr-1')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-1/ref">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-2-nr')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-2/ref">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-nr-2')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-2/ref">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-3-nr')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-3/ref">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-nr-3')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-3/ref">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-4-nr')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-4/ref">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-nr-4')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-4/ref">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-5-nr')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-5/ref">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-nr-5')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-5/ref">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-6-nr')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-6/ref">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-nr-6')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-6/ref">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-7-nr')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-7/ref">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-nr-7')}">a</div>
+  <div property="ext:intentionUri" content="http://agendapunt-7/ref">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bestuurseenheid-2')}">a</div>
+  <div property="ext:intentionUri" content="http://zitting/bestuurseenheid">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bestuurseenheid-3')}">a</div>
+  <div property="ext:intentionUri" content="http://zitting/bestuurseenheid">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+
+<div typeof="besluit:Zitting" resource="http://data.lblod.info/id/zittingen/${generateUuid()}">
+  <div class="annotation-structure">
+    <!-- meta zitting -->
+    <h2 class="h1" property="dc:title">
+      Notulen van <span property="ext:scopedBestuursorgaanText">selecteer bestuursorgaan</span>, zitting van <span class="annotation" property="besluit:geplandeStart" datatype="xsd:date" content=""><span typeOf="ext:currentDate">&nbsp;</span></span>​ (eerste vergadering van de raad voor maatschappelijk welzijn van OCMW <span class="annotation" id="${generateBoundUuid('bestuurseenheid-2')}"><span property="ext:setStandAloneCurrentBestuurseenheid">huidig bestuurseenheid</span></span>)
+    </h2>
+    <p>
+      Locatie: &lt;Naam locatie&gt;, &lt;Naam zaal&gt;
+    </p>
+    <!--     <p>
+         van <span id="${generateBoundUuid('startAtTime-1')}" property="prov:startedAtTime" content="" datatype="xsd:dateTime" class="annotation"><span typeOf="ext:currentDate">&nbsp;</span></span> tot <span property="prov:endedAtTime" content="" datatype="xsd:dateTime" class="annotation"><span typeOf="ext:currentDate">&nbsp;</span></span>
+         </p> -->
+  </div>
+  <br>
+  <!-- opening -->
+  <div class="annotation-structure">
+    <p>De uittredend voorzitter van de gemeenteraad &lt;Naam voorzitter gemeenteraad&gt; zit de installatievergadering voor <!-- op <span id="${generateBoundUuid('startAtTime-2')}" content="" datatype="xsd:dateTime" ><span typeOf="ext:currentDate">&nbsp;</span></span> --> en deelt mee dat er een video-opname gemaakt wordt van de zitting<!--  ingevolge schriftelijke uitnodiging vanwege de Algemeen Directeur dienstdoend <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​ -->.</p>
+  </div>
+  <br>
+  <!-- aanwezigen -->
+  <div class="annotation-structure">
+    <h3 class="h2">Aanwezigen</h3>
+    <ul class="bullet-list">
+      <li><span class="annotation" property="besluit:heeftVoorzitter" resource="http://data.lblod.info/id/personen/4ba9f6fc0fa9c7319bd8d0bf6408a0967527d3855f702ff85b959be9f2687e2f">Roger VANHOVE (Voorzitter van de Gemeenteraad en van de Raad voor Maatschappelijk Welzijn)</span>,</li>
+      <li><span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/03e34d8b-8cd2-4a66-ab04-cf23b290731c">Wouter VAN ELSACKER</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/b4fc7b01-59a3-4c8a-b4c0-2ca03f5c9924">Wesley KOLEN</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/7a9b985e-0ed2-4e58-be8a-adb635e40c5b">Liliane HINOUL</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/c4038cf6-653b-42ba-ba12-dca3560720e2">Davy PUT</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/271c5a47-51c3-4dd9-8239-a2115a2fe134">Sigrid CORNELISSEN</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/27dd3f98-ff3d-4571-a8b9-473d8a12e961">Ria PLASSCHAERT</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/214409fd-8f14-4f12-bcad-58501aadb1d2">Kathleen SOORS</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/eeeba21e-2f5d-4864-80eb-4a0f1a485c1b">Guido MAES</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/b9ddd004-6470-4ea0-ab99-e6c25d2ebd57">Patrick MEYSEN</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/c7cf2fe4-efb8-4bef-836a-706196b2d80f">Steven MATHEÏ</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/ef3aca4b-7db7-4d1c-b4e3-e64d3e46e007">Liesbeth DILIËN</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/2be37f0e-13a9-45b8-911c-2450789ac8b3">Raf NELIS</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/a1a86c1c-bbac-4aa3-a309-2eb008a00083">Bram GEERITS</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/beb88cbf-a257-4469-a334-b9f06f0ba523">Steven BROEKX</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/3b1efc30-97e3-43df-8f74-099bc09417e3">Koen WINTERS</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/ab9b6413-6809-4a57-8065-981166e761b1">Lutgarde CEYSSENS</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/e86b137a-2577-40b5-bd17-a6c918a8e16f">Dirk COLAERS</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/31c1c47b-f125-40dc-b945-429eeaa79362">Toon VAN GEYSEGHEM</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/85a083c9-1cb7-49d3-93b2-c01bde14e7bd">Tine BRAEKEN</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/1e7a48d0-e19d-4a48-aa26-efbca8c933a8">Nico LENAERTS</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/64adece2-93a9-40f5-9043-5ebd8d74e778">Mia SOORS</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/87ef6d8b-2149-4e0b-bb5c-77c69ab4678c">Eddy SCHROOTEN</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/952cf5f8-decb-4ff0-ae93-1f42e091d4b8">Hilde VAN LIMPT</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/5fe70548-f562-4ae2-8b50-1174ba4ea8fc">Yosh GORDIJN</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/619e2fa3-a157-41b3-8eda-9edf69b0c54d">Elle REUMERS</span> (leden van de Gemeenteraad en van de Raad voor Maatschappelijk Welzijn),</li>
+      <li>met raadgevende stem in de Raad voor Maatschappelijk Welzijn <span class="annotation" property="besluit:heeftSecretaris" resource="http://data.lblod.info/id/personen/45313719-fb4d-457b-a803-72db863d04b7">Jo Sclep (Algemeen Directeur)</span></li>
+    </ul>
+  </div>
+  <br>
+
+  <!-- Agenda overzicht-->
+  <div class="annotation-structure" property="besluit:heeftAgenda" resource="http://data.lblod.info/id/agendas/${generateUuid()}" typeof="besluit:Agenda">
+    <h3 class="h2">Agenda overzicht</h3>
+
+    <h4 class="h3" property="http://mu.semte.ch/vocabularies/ext/noHighlight" typeof="http://mu.semte.ch/vocabularies/ext/NoHighlight">Open agendapunten</h4>
+    <ul class="icon-list">
+      <li>
+        <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-1')}" typeof="besluit:Agendapunt" class="annotation--agendapunt annotation--agendapunt--open">
+          <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
+          <span property="dc:title" class="annotation"><span id="${generateBoundUuid('ap-1-nr')}">Agendapunt 1</span>: <span id="${generateBoundUuid('ap-1')}">Akteneming samenstelling Raad voor Maatschappelijk Welzijn</span></span>
+        </span>
+      </li>
+      <li>
+        <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-2')}" typeof="besluit:Agendapunt" class="annotation--agendapunt annotation--agendapunt--open">
+          <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
+          <span property="dc:title" class="annotation"><span id="${generateBoundUuid('ap-2-nr')}">Agendapunt 2</span>: <span id="${generateBoundUuid('ap-2')}">Akteneming voorzitter Raad voor Maatschappelijk Welzijn</span></span>
+        </span>
+      </li>
+      <li>
+        <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-3')}" typeof="besluit:Agendapunt" class="annotation--agendapunt annotation--agendapunt--open">
+          <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
+          <span property="dc:title" class="annotation"><span id="${generateBoundUuid('ap-3-nr')}">Agendapunt 3</span>: <span id="${generateBoundUuid('ap-3')}"> Akteneming samenstelling en voorzitter vast bureau</span></span>
+        </span>
+      </li>
+      <li>
+        <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-4')}" typeof="besluit:Agendapunt" class="annotation--agendapunt annotation--agendapunt--open">
+          <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
+          <span property="dc:title" class="annotation"><span id="${generateBoundUuid('ap-4-nr')}">Agendapunt 4</span>: <span id="${generateBoundUuid('ap-4')}">Bepaling van het aantal leden van het Bijzonder Comité voor de sociale dienst</span></span>
+        </span>
+      </li>
+      <li>
+        <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-5')}" typeof="besluit:Agendapunt" class="annotation--agendapunt annotation--agendapunt--open">
+          <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
+          <span property="dc:title" class="annotation"><span id="${generateBoundUuid('ap-5-nr')}">Agendapunt 5</span>: <span id="${generateBoundUuid('ap-5')}">Verkiezing van de leden van het Bijzonder Comité voor de sociale dienst</span></span>
+        </span>
+      </li>
+      <li>
+        <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-6')}" typeof="besluit:Agendapunt" class="annotation--agendapunt annotation--agendapunt--open">
+          <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
+          <span property="dc:title" class="annotation"><span id="${generateBoundUuid('ap-6-nr')}">Agendapunt 6</span>: <span id="${generateBoundUuid('ap-6')}">Verkiezing van de voorzitter van het Bijzonder Comité voor de sociale dienst</span></span>
+        </span>
+      </li>
+      <li>
+        <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-7')}" typeof="besluit:Agendapunt" class="annotation--agendapunt annotation--agendapunt--open">
+          <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
+          <span property="dc:title" class="annotation"><span id="${generateBoundUuid('ap-7-nr')}">Agendapunt 7</span>: <span id="${generateBoundUuid('ap-7')}">Verkiezing van de voorzitter van het Bijzonder Comité voor de sociale dienst</span></span>
+        </span>
+      </li>
+    </ul>
+  </div>
+  <br>
+
+  <!-- Agenda behandeling -->
+  <div id="${generateBoundUuid('datum installatievergadering')}" class="annotation-structure">
+    <h3 class="h2">Agendapunten</h3>
+    <h4 class="h3">Open zitting</h4>
+
+    <br>
+
+    <div property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-1')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
+      <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
+      <div property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-1')}"><span id="${generateBoundUuid('bva-nr-1')}">Agendapunt 1</span></div>
+
+      <div class="annotation-snippet" property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
+        <div class="annotation-structure">
+          <h5 class="h4 u-spacer" property="eli:title"><span id="${generateBoundUuid('bva-besluit-1')}">Akteneming samenstelling Raad voor Maatschappelijk Welzijn</span></h5>
+          <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+        </div>
+        <br>
+        <div class="annotation-structure">
+          <p class="annotation" property="eli:description">Korte openbare beschrijving: Akteneming samenstelling Raad voor Maatschappelijk Welzijn.</p>
+        </div>
+        <br>
+
+        <p class="u-spacer--small">De Raad voor Maatschappelijk Welzijn,</p>
+
+        <div property="besluit:motivering" lang="nl">
+          <div class="annotation-structure">
+            <!-- <h6 class="h5">Juridische gronden</h6> -->
+            <ul class="bullet-list bullet-list--spaced--small">
+							<li>Gelet op art. art. 68, §1 decreet 22 december 2017 over het lokaal bestuur dat bepaalt dat de raad voor maatschappelijk welzijn uit dezelfde leden als de gemeenteraad is bestaat, behalve indien de raad voor maatschappelijk welzijn op die manier niet uit personen van verschillend geslacht zou zijn samengesteld.</li>
+							<li>Gelet op art. 68, § 2 decreet 22 december 2017 over het lokaal bestuur dat bepaalt dat de raad voor maatschappelijk uit personen van verschillend geslacht bestaat.</li>
+							<li>Gelet op het onderzoek van de geloofsbrieven en de eedaflegging van de geïnstalleerde gemeenteraadsleden en gelet op de vastgestelde samenstelling van de Gemeenteraad tijdens de aan deze vergadering voorafgaande installatievergadering van de gemeenteraad van <span class="annotation" property="ext:datumInstallatievergadering" datatype="xsd:date" content="2019-01-03">3 januari 2019</span>.</li>
+						</ul>
+					</div>
+          <div class="annotation-structure">
+            <!-- <h6 class="h5">Feiten en context</h6> -->
+            <ul class="bullet-list bullet-list--spaced--small">
+							<!-- <li>De algemeen directeur geeft kennis van het proces-verbaal van de verkiezing van de leden van de Gemeenteraad.</li> -->
+              <li>
+                Overwegende dat de resultaten van de gemeenteraadsverkiezingen van&nbsp;
+                <span id="${generateBoundUuid('verkiezingsdatum-1')}" class="annotation" property="ext:datumVerkiezing" datatype="xsd:date" content="2018-10-14">14 oktober 2018</span>&nbsp;
+                door de Raad voor Verkiezingsbetwistingen op&nbsp;
+                <span class="annotation" property="ext:datumGoedkeuringVerkiezing" datatype="xsd:date" content="2018-11-27">27 november 2018 werden</span></li>
+							<li>Overwegende dat de raad voor maatschappelijk welzijn als kopie van de gemeenteraad in casu effectief uit personen van verschillend geslacht is samengesteld.</li>
+						</ul>
+					</div>
+        </div>
+
+        <p class="u-spacer--small">Neemt akte van,</p>
+
+        <div class="annotation-structure" property="prov:value">
+        	<ul class="bullet-list">
+        		<li>Het onderzoek van de geloofsbrieven en de eedaflegging van de leden van de Gemeenteraad en de Raad voor Maatschappelijk Welzijn tijdens de aan deze vergadering voorafgaande installatievergadering van de gemeenteraad van <span class="annotation" property="ext:datumInstallatievergadering" datatype="xsd:date" content="2019-01-03">3 januari 2019</span>.</li>
+        		<li>De samenstelling van de Gemeenteraad.</li>
+        		<li>De van rechtswege samenstelling van de Raad voor Maatschappelijk Welzijn als volgt:
+        			<ul> <!-- todo variable of all these names to be copied -->
+					      <li><span class="annotation" property="besluit:heeftVoorzitter" resource="http://data.lblod.info/id/personen/4ba9f6fc0fa9c7319bd8d0bf6408a0967527d3855f702ff85b959be9f2687e2f">Roger VANHOVE (Voorzitter van de Gemeenteraad en van de Raad voor Maatschappelijk Welzijn)</span>,</li>
+					      <li><span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/03e34d8b-8cd2-4a66-ab04-cf23b290731c">Wouter VAN ELSACKER</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/b4fc7b01-59a3-4c8a-b4c0-2ca03f5c9924">Wesley KOLEN</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/7a9b985e-0ed2-4e58-be8a-adb635e40c5b">Liliane HINOUL</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/c4038cf6-653b-42ba-ba12-dca3560720e2">Davy PUT</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/271c5a47-51c3-4dd9-8239-a2115a2fe134">Sigrid CORNELISSEN</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/27dd3f98-ff3d-4571-a8b9-473d8a12e961">Ria PLASSCHAERT</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/214409fd-8f14-4f12-bcad-58501aadb1d2">Kathleen SOORS</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/eeeba21e-2f5d-4864-80eb-4a0f1a485c1b">Guido MAES</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/b9ddd004-6470-4ea0-ab99-e6c25d2ebd57">Patrick MEYSEN</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/c7cf2fe4-efb8-4bef-836a-706196b2d80f">Steven MATHEÏ</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/ef3aca4b-7db7-4d1c-b4e3-e64d3e46e007">Liesbeth DILIËN</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/2be37f0e-13a9-45b8-911c-2450789ac8b3">Raf NELIS</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/a1a86c1c-bbac-4aa3-a309-2eb008a00083">Bram GEERITS</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/beb88cbf-a257-4469-a334-b9f06f0ba523">Steven BROEKX</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/3b1efc30-97e3-43df-8f74-099bc09417e3">Koen WINTERS</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/ab9b6413-6809-4a57-8065-981166e761b1">Lutgarde CEYSSENS</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/e86b137a-2577-40b5-bd17-a6c918a8e16f">Dirk COLAERS</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/31c1c47b-f125-40dc-b945-429eeaa79362">Toon VAN GEYSEGHEM</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/85a083c9-1cb7-49d3-93b2-c01bde14e7bd">Tine BRAEKEN</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/1e7a48d0-e19d-4a48-aa26-efbca8c933a8">Nico LENAERTS</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/64adece2-93a9-40f5-9043-5ebd8d74e778">Mia SOORS</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/87ef6d8b-2149-4e0b-bb5c-77c69ab4678c">Eddy SCHROOTEN</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/952cf5f8-decb-4ff0-ae93-1f42e091d4b8">Hilde VAN LIMPT</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/5fe70548-f562-4ae2-8b50-1174ba4ea8fc">Yosh GORDIJN</span>, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/personen/619e2fa3-a157-41b3-8eda-9edf69b0c54d">Elle REUMERS</span> (leden van de Gemeenteraad en van de Raad voor Maatschappelijk Welzijn),</li>
+					      <li>met raadgevende stem in de Raad voor Maatschappelijk Welzijn <span class="annotation" property="besluit:heeftSecretaris" resource="http://data.lblod.info/id/personen/45313719-fb4d-457b-a803-72db863d04b7">Jo Sclep (Algemeen Directeur)</span></li>
+        			</ul>
+        		</li>
+        	</ul>
+        </div>
+
+      </div> <!-- einde inhoud -->
+    </div> <!-- einde agendapunt -->
+
+    <!--     <div property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-1')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
+         <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
+         <div property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-1')}"><span id="${generateBoundUuid('bva-nr-1')}">Agendapunt 1</span></div>
+
+         <div class="annotation-snippet" property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
+         <div class="annotation-structure">
+         <h5 class="h4 u-spacer" property="eli:title"><span id="${generateBoundUuid('bva-besluit-1')}">Akteneming samenstelling Raad voor Maatschappelijk Welzijn en eedaflegging</span></h5>
+         <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+         </div>
+         <br>
+         <div class="annotation-structure">
+         <p class="annotation" property="eli:description">Korte openbare beschrijving: Akteneming samenstelling Raad voor Maatschappelijk Welzijn en eedaflegging.</p>
+         </div>
+         <br>
+         </div>
+         </div> -->
+
+    <div property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-2')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
+      <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
+      <div property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-2')}"><span id="${generateBoundUuid('bva-nr-2')}">Agendapunt 2</span></div>
+
+      <div class="annotation-snippet" property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
+        <div class="annotation-structure">
+          <h5 class="h4 u-spacer" property="eli:title"><span id="${generateBoundUuid('bva-besluit-2')}">Akteneming voorzitter Raad voor Maatschappelijk Welzijn</span></h5>
+          <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+        </div>
+        <br>
+        <div class="annotation-structure">
+          <p class="annotation" property="eli:description">Korte openbare beschrijving: Akteneming voorzitter Raad voor Maatschappelijk Welzijn.</p>
+        </div>
+        <br>
+
+        <p class="u-spacer--small">De Raad voor Maatschappelijk Welzijn,</p>
+        <div property="besluit:motivering" lang="nl">
+        	<div class="annotation-structure">
+
+            <div class="annotation-structure">
+              <!-- <h6 class="h5">Juridische gronden</h6> -->
+              <ul class="bullet-list bullet-list--spaced--small">
+            	  <li>Gelet op artikel 69 van het decreet 22 december 2017 over het lokaal bestuur dat bepaalt dat de voorzitter van de gemeenteraad van rechtswege de voorzitter van de Raad voor Maatschappelijk Welzijn is.</li>
+            	  <li>Gelet op de verkiezing van  <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;<!--  [TODO: variable] --></span> tot voorzitter van de Gemeenteraad tijdens de zitting van de gemeenteraad van <span class="annotation" property="ext:datumInstallatievergadering" datatype="xsd:date" content="2019-01-03">3 januari 2019</span>.</li>
+						  </ul>
+					  </div>
+	        </div>
+
+          <p class="u-spacer--small">Neemt akte van,</p>
+
+          <div class="annotation-structure" property="prov:value">
+        	  <ul class="bullet-list">
+        		  <li>De verkiezing van <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;<!--  [TODO: variable] --></span> tot voorzitter van de Gemeenteraad tijdens de aan deze vergadering voorafgaande installatievergadering van de gemeenteraad van [dag] januari 2019.</li>
+        		  <li>De van rechtswege aanstelling van <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;<!--  [TODO: variable] --></span> tot voorzitter van de Raad voor Maatschappelijk Welzijn</li>
+        	  </ul>
+          </div>
+        </div>
+        
+      </div> <!-- einde inhoud -->
+    </div> <!-- einde agendapunt -->
+
+    <div property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-3')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
+      <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
+      <div property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-3')}"><span id="${generateBoundUuid('bva-nr-3')}">Agendapunt 3</span></div>
+
+      <div class="annotation-snippet" property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
+        <div class="annotation-structure">
+          <h5 class="h4 u-spacer" property="eli:title"><span id="${generateBoundUuid('bva-besluit-3')}">Akteneming samenstelling en voorzitter vast bureau</span></h5>
+          <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+        </div>
+        <br>
+        <div class="annotation-structure">
+          <p class="annotation" property="eli:description">Korte openbare beschrijving: Akteneming samenstelling en voorzitter vast bureau.</p>
+        </div>
+        <br>
+
+        <p class="u-spacer--small">De Raad voor Maatschappelijk Welzijn,</p>
+        <div property="besluit:motivering" lang="nl">
+        	<div class="annotation-structure">
+
+            <div class="annotation-structure">
+              <!-- <h6 class="h5">Juridische gronden</h6> -->
+              <ul class="bullet-list bullet-list--spaced--small">
+            	  <li>Gelet op art. 79, eerste lid decreet 22 december 2017 over het lokaal bestuur dat bepaalt dat de burgemeester van rechtswege de voorzitter is van het vast bureau en de schepenen van rechtswege de leden van het vast bureau.</li>
+            	  <li>Gelet op het Ministerieel besluit van <span class="annotation" property="ext:datumInstallatievergadering" datatype="xsd:date" content="2019-01-03">3 januari 2019</span> houdende de benoeming van <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;<!--  [TODO: variable] --></span> tot burgemeester van de gemeente <span class="annotation" id="${generateBoundUuid('bestuurseenheid-3')}"><span property="ext:setStandAloneCurrentBestuurseenheid">huidig bestuurseenheid</span></span>.</li>
+            	  <li>Gelet op art. 79, derde lid decreet 22 december 2017 over het lokaal bestuur dat bepaalt dat de rangorde die de burgemeester en schepenen innemen overeenkomstig art. 43, §4 decreet 22 december 2017 over het lokaal bestuur van rechtswege de rang is die de leden in het vast bureau innemen.</li>
+            	  <li>Gelet op de eedaflegging van de burgemeester overeenkomstig art. 59, tweede lid decreet 22 december 2017 over het lokaal bestuur en van de schepenen overeenkomstig art. 44 decreet 22 december 2017 over het lokaal bestuur.</li>
+						  </ul>
+					  </div>
+	        </div>
+
+          <p class="u-spacer--small">Neemt akte van,</p>
+
+          <div class="annotation-structure" property="prov:value">
+        	  <ul class="bullet-list">
+        		  <li>De eedaflegging van de leden van het college van burgemeester en schepenen die tegelijk lid zijn van het vast bureau tijdens de aan deze vergadering voorafgaande installatievergadering van de gemeenteraad van <span class="annotation" property="ext:datumInstallatievergadering" datatype="xsd:date" content="2019-01-03">3 januari 2019</span>.</li>
+        		  <li>De samenstelling van de het vast bureau met overeenkomstige rangorde als volgt:
+
+        			  <ul> <!-- todo variable of all these names to be copied -->
+					        <li><span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;<!--  [TODO: variable] --></span>, voorzitter van het vast bureau</li>
+					        <li><span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;<!--  [TODO: variable] --></span>, eerste lid van het vast bureau</li>
+					        <li><span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;<!--  [TODO: variable] --></span>, tweede lid van het vast bureau</li>
+        			  </ul>
+        		  </li>
+        	  </ul>
+          </div>
+        </div>
+      </div> <!-- einde inhoud -->
+    </div> <!-- einde agendapunt -->
+
+    <div property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-4')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
+      <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
+      <div property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-4')}"><span id="${generateBoundUuid('bva-nr-4')}">Agendapunt 4</span></div>
+
+      <div class="annotation-snippet" property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
+        <div class="annotation-structure">
+          <h5 class="h4 u-spacer" property="eli:title"><span id="${generateBoundUuid('bva-besluit-4')}">Bepaling van het aantal leden van het Bijzonder Comité voor de sociale dienst</span></h5>
+          <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+        </div>
+        <br>
+        <div class="annotation-structure">
+          <p class="annotation" property="eli:description">Korte openbare beschrijving: Bepaling van het aantal leden van het Bijzonder Comité voor de sociale dienst.</p>
+        </div>
+        <br>
+
+        <p class="u-spacer--small">De Raad voor Maatschappelijk Welzijn,</p>
+        <div property="besluit:motivering" lang="nl">
+        	<div class="annotation-structure">
+
+            <div class="annotation-structure">
+              <!-- <h6 class="h5">Juridische gronden</h6> -->
+              <ul class="bullet-list bullet-list--spaced--small">
+            	  <li>Gelet op art. 87 decreet 22 december 2017 over het lokaal bestuur dat het aantal leden van het Bijzonder Comité voor de Sociale Dienst, de voorzitter niet inbegrepen, bepaalt op <span class="annotation" property="Datum" datatype="xsd:date" content="datum">&lt;datum&gt;<!--  [TODO: RDFA] --></span>​ voor een Raad voor maatschappelijk welzijn met <span class="annotation" property="Aantal leden RMW">&lt;aantal leden&gt;<!--  [TODO: variable aantal leden RMW &amp; RDFA] --></span><!-- [23 of minder - 25 tot en met 47 - 49 tot en met 51 – 53 of meer] --> leden.</li>
+						  </ul>
+					  </div>
+            <!--           <div class="annotation-structure">
+                 <! -- <h6 class="h5">Feiten en context</h6>
+                 <ul class="bullet-list bullet-list--spaced--small">
+                 <li></li>
+						     </ul>
+					       </div> -->
+	        </div>
+
+          <p class="u-spacer--small">Besluit,</p>
+
+          <div class="annotation-structure" property="prov:value">
+        	  <ul class="bullet-list">
+        		  <li>Het Bijzonder Comité voor de Sociale Dienst telt met inbegrip van de voorzitter <span class="annotation" property="Aantal leden RMW">&lt;aantal leden&gt;<!--  [TODO: variable aantal leden RMW &amp; RDFA] +1 voorzitter--></span> leden.</li>
+        	  </ul>
+          </div>
+
+          <p class="u-spacer--small">Beslist,</p>
+
+          <div class="annotation-structure" typeof="besluit:Stemming">
+        	  <p>met eenparigheid van stemmen:</p>
+            <ul class="article-list bullet-list u-spacer--small" property="prov:value">
+              <li property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:Artikel">
+                <span class="annotation article-number" property="eli:number">Enig artikel.</span>
+                <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+                <span class="annotation article-content" property="prov:value">Het Bijzonder Comité voor de Sociale Dienst telt met inbegrip van de voorzitter <span class="annotation" property="Aantal leden RMW">&lt;aantal leden&gt;<!--  [TODO: variable aantal leden RMW &amp; RDFA] +1 voorzitter--></span> leden.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+      </div> <!-- einde inhoud -->
+    </div> <!-- einde agendapunt -->
+
+    <div property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-5')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
+      <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
+      <div property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-5')}"><span id="${generateBoundUuid('bva-nr-5')}">Agendapunt 5</span></div>
+      <div class="annotation-snippet" property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
+        <div class="annotation-structure">
+          <h5 class="h4 u-spacer" property="eli:title"><span id="${generateBoundUuid('bva-besluit-5')}">Verkiezing van de leden van het Bijzonder Comité voor de sociale dienst</span></h5>
+          <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+        </div>
+        <br>
+        <div class="annotation-structure">
+          <p class="annotation" property="eli:description">Korte openbare beschrijving: Verkiezing van de leden van het Bijzonder Comité voor de sociale dienst.</p>
+        </div>
+        <br>
+
+        <p class="u-spacer--small">De Raad voor Maatschappelijk Welzijn,</p>
+        <div property="besluit:motivering" lang="nl">
+        	<div class="annotation-structure">
+
+            <div class="annotation-structure">
+              <!-- <h6 class="h5">Juridische gronden</h6> -->
+              <ul class="bullet-list bullet-list--spaced--small">
+            	  <li>Gelet op&nbsp;
+            		  <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">het decreet van 22 december 2017 over het lokaal bestuur, artikel <span class="annotation" resource="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">#</span></a>;</li>
+						  </ul>
+					  </div>
+            <!--           <div class="annotation-structure">
+                 <! -- <h6 class="h5">Feiten en context</h6>
+                 <ul class="bullet-list bullet-list--spaced--small">
+                 <li></li>
+						     </ul>
+					       </div> -->
+	        </div>
+
+          <p class="u-spacer--small">Beslist,</p>
+
+          <div class="annotation-structure" typeof="besluit:Stemming">
+        	  <p>met eenparigheid van stemmen:</p>
+            <ul class="article-list bullet-list u-spacer--small" property="prov:value">
+              <li property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:Artikel">
+                <span class="annotation article-number" property="eli:number">Enig artikel.</span>
+                <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+                <span class="annotation article-content" property="prov:value">Het Bijzonder Comité voor de Sociale Dienst telt met inbegrip van de voorzitter <span class="annotation" property="Aantal leden RMW">&lt;aantal leden&gt;<!--  [TODO: variable aantal leden RMW &amp; RDFA] +1 voorzitter--></span> leden.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div> <!-- einde inhoud -->
+    </div> <!-- einde agendapunt -->
+
+    <div property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-6')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
+      <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
+      <div property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-6')}"><span id="${generateBoundUuid('bva-nr-6')}">Agendapunt 6</span></div>
+      <div class="annotation-snippet" property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
+        <div class="annotation-structure">
+          <h5 class="h4 u-spacer" property="eli:title"><span id="${generateBoundUuid('bva-besluit-6')}">Verkiezing van de voorzitter van het Bijzonder Comité voor de sociale dienst</span></h5>
+          <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+        </div>
+        <br>
+        <div class="annotation-structure">
+          <p class="annotation" property="eli:description">Korte openbare beschrijving: Verkiezing van de voorzitter van het Bijzonder Comité voor de sociale dienst.</p>
+        </div>
+        <br>
+
+        <p class="u-spacer--small">De Raad voor Maatschappelijk Welzijn,</p>
+        <div property="besluit:motivering" lang="nl">
+        	<div class="annotation-structure">
+
+            <div class="annotation-structure">
+              <!-- <h6 class="h5">Juridische gronden</h6> -->
+              <ul class="bullet-list bullet-list--spaced--small">
+            	  <li>Gelet op&nbsp;
+            		  <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">het decreet van 22 december 2017 over het lokaal bestuur, artikel <span class="annotation" resource="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">#</span></a>;</li>
+						  </ul>
+					  </div>
+            <!--           <div class="annotation-structure">
+                 <! -- <h6 class="h5">Feiten en context</h6>
+                 <ul class="bullet-list bullet-list--spaced--small">
+                 <li></li>
+						     </ul>
+					       </div> -->
+	        </div>
+
+          <p class="u-spacer--small">Beslist,</p>
+
+          <div class="annotation-structure" typeof="besluit:Stemming">
+        	  <p>met eenparigheid van stemmen:</p>
+            <ul class="article-list bullet-list u-spacer--small" property="prov:value">
+              <li property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:Artikel">
+                <span class="annotation article-number" property="eli:number">Enig artikel.</span>
+                <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+                <span class="annotation article-content" property="prov:value">Het Bijzonder Comité voor de Sociale Dienst telt met inbegrip van de voorzitter <span class="annotation" property="Aantal leden RMW">&lt;aantal leden&gt;<!--  [TODO: variable aantal leden RMW &amp; RDFA] +1 voorzitter--></span> leden.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div> <!-- einde inhoud -->
+    </div> <!-- einde agendapunt -->
+
+    <div property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-7')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
+      <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
+      <div property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-7')}"><span id="${generateBoundUuid('bva-nr-7')}">Agendapunt 7</span></div>
+      <div class="annotation-snippet" property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
+        <div class="annotation-structure">
+          <h5 class="h4 u-spacer" property="eli:title"><span id="${generateBoundUuid('bva-besluit-7')}">Verkiezing van de voorzitter van het Bijzonder Comité voor de sociale dienst</span></h5>
+          <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+        </div>
+        <br>
+        <div class="annotation-structure">
+          <p class="annotation" property="eli:description">Korte openbare beschrijving: Verkiezing van de voorzitter van het Bijzonder Comité voor de sociale dienst.</p>
+        </div>
+        <br>
+
+        <p class="u-spacer--small">De Raad voor Maatschappelijk Welzijn,</p>
+
+        <div property="besluit:motivering" lang="nl">
+        	<div class="annotation-structure">
+
+            <div class="annotation-structure">
+              <!-- <h6 class="h5">Juridische gronden</h6> -->
+              <ul class="bullet-list bullet-list--spaced--small">
+            	  <li>Gelet op&nbsp;
+            		  <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">het decreet van 22 december 2017 over het lokaal bestuur, artikel <span class="annotation" resource="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">#</span></a>;</li>
+						  </ul>
+					  </div>
+            <!--           <div class="annotation-structure">
+                 <! -- <h6 class="h5">Feiten en context</h6>
+                 <ul class="bullet-list bullet-list--spaced--small">
+                 <li></li>
+						     </ul>
+					       </div> -->
+	        </div>
+
+          <p class="u-spacer--small">Beslist,</p>
+
+          <div class="annotation-structure" typeof="besluit:Stemming">
+        	  <p>met eenparigheid van stemmen:</p>
+            <ul class="article-list bullet-list u-spacer--small" property="prov:value">
+              <li property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:Artikel">
+                <span class="annotation article-number" property="eli:number">Enig artikel.</span>
+                <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+                <span class="annotation article-content" property="prov:value">Het Bijzonder Comité voor de Sociale Dienst telt met inbegrip van de voorzitter <span class="annotation" property="Aantal leden RMW">&lt;aantal leden&gt;<!--  [TODO: variable aantal leden RMW &amp; RDFA] +1 voorzitter--></span> leden.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div> <!-- einde inhoud -->
+    </div> <!-- einde agendapunt -->
+
+  </div> <!-- einde behandeling agendapunten -->
+
+  <!-- Sluiting zitting-->
+  <div class="annotation-structure">
+    <h3 class="h2">Sluiting van de zitting</h3>
+    <p>De voorzitter van de gemeenteraad sluit de zitting.</p>
+    <br>
+    <p><span class="annotation" property="besluit:heeftSecretaris" resource="http://data.lblod.info/id/personen/45313719-fb4d-457b-a803-72db863d04b7">Jo Sclep (Algemeen Directeur)<!-- todo variable algemeen directeur --></span></p>
+    <p><strong>Algemeen directeur</strong></p>
+    <br>
+    <p>&lt;Naam voorzitter gemeenteraad<!-- todo variable voorzitter -->&gt;</p>
+    <p><strong>Voorzitter van de gemeenteraad</strong></p>
+  </div>
+</div>
+""".
