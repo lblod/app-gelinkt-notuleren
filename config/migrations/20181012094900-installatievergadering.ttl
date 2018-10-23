@@ -289,13 +289,13 @@
       Locatie: &lt;Naam locatie &gt, &lt;Naam zaal&gt;
     </p>
     <p>
-      van <span id="${generateBoundUuid('startAtTime-1')}"><span property="prov:startedAtTime" content="" datatype="xsd:dateTime" class="annotation"><span typeOf="ext:currentDate">&nbsp;</span></span></span> tot <span property="prov:endedAtTime" content="" datatype="xsd:dateTime" class="annotation"><span typeOf="ext:currentDate">&nbsp;</span></span>
+      van <span id="${generateBoundUuid('startAtTime-1')}" property="prov:startedAtTime" content="" datatype="xsd:dateTime" class="annotation"><span typeOf="ext:currentDate">&nbsp;</span></span> tot <span property="prov:endedAtTime" content="" datatype="xsd:dateTime" class="annotation"><span typeOf="ext:currentDate">&nbsp;</span></span>
     </p>
   </div>
   <br>
   <!-- opening -->
   <div class="annotation-structure">
-    <p>De uittredend gemeenteraad-voorzitter zit de installatievergadering voor op <span id="${generateBoundUuid('startAtTime-2')}"></span> en deelt mee dat er een opname gemaakt wordt ingevolge schriftelijke uitnodiging vanwege de Algemeen Directeur dienstdoend <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​.</p>
+    <p>De uittredend gemeenteraad-voorzitter zit de installatievergadering voor op <span id="${generateBoundUuid('startAtTime-2')}" content="" datatype="xsd:dateTime" ><span typeOf="ext:currentDate">&nbsp;</span></span> en deelt mee dat er een opname gemaakt wordt ingevolge schriftelijke uitnodiging vanwege de Algemeen Directeur dienstdoend <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​.</p>
   </div>
   <!-- aanwezigen
        <div class="annotation-structure">
@@ -369,7 +369,7 @@
     <br>
 
     <div>
-      <div resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-1')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
+      <div property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-1')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
         <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
         <div property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-1')}"><span id="${generateBoundUuid('bva-nr-1')}">Agendapunt 1</span></div>
         <div class="annotation-snippet" property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
@@ -437,7 +437,7 @@
       <br>
       <br>
 
-      <div resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-2')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
+      <div property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-2')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
         <meta property="besluit:gebeurtNa" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-1')}">
         <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
         <div property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-2')}"><span id="${generateBoundUuid('bva-nr-2')}">Agendapunt 2</span></div>
@@ -512,7 +512,7 @@
       <br>
       <br>
 
-      <div resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-3')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
+      <div property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-3')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
         <meta property="besluit:gebeurtNa" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-2')}">
         <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
         <div property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-3')}"><span id="${generateBoundUuid('bva-nr-3')}">Agendapunt 3</span></div>
@@ -687,17 +687,16 @@
       <br>
       <br>
 
-
       <div class="ext_scroll_to" typeof="ext:ScrollToLocation" resource="http://scrollToLocation/${generateUuid()}">
         <div property="ext:scrollToLogicalName" content="voordrachtsakte algemeen directeur">voordrachtsakte algemeen directeur</div>
         <div property="ext:idInSnippet" content="${generateBoundUuid('voordrachtsakte algemeen directeur')}">${generateBoundUuid('voordrachtsakte algemeen directeur')}</div>
       </div>
       
-      <div id="${generateBoundUuid('voordrachtsakte algemeen directeur')}" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-4')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
+      <div id="${generateBoundUuid('voordrachtsakte algemeen directeur')}"  property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-4')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
         <meta property="besluit:gebeurtNa" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-3')}">
         <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
         <div property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-4')}"><span id="${generateBoundUuid('bva-nr-4')}">Agendapunt 4</span></div>
-        <div class="annotation-snippet" property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
+        <div class="annotation-snippet" property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit mandaat:AanstellingsBesluit">
           <div class="annotation-structure">
             <h5 class="h4 u-spacer" property="eli:title"><span id="${generateBoundUuid('bva-besluit-4')}">Verkiezing van de voorzitter van de gemeenteraad</span></h5>
             <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
@@ -712,16 +711,11 @@
 
             <div property="besluit:motivering" lang="nl">
               <div class="annotation-structure">
-                <!-- <h6 class="h5">Juridische gronden</h6> -->
                 <ul class="bullet-list bullet-list--spaced--small u-spacer">
                   <li>Gelet op <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">het decreet 22 december 2017 over het lokaal bestuur, de artikelen <span class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">6</span> en <span class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">7</span></a>;</li>
                   <li>Gelet op <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/TODO" property="eli:cites">de omzendbrief BA-2012/2 van 19 oktober 2012 – Start van de lokale en provinciale bestuursperiode [TODO check datum en nummer bij Domien + RDFA verwijzing]</a>;</li>
-                  <li>Overwegende dat een gezamenlijke akte van voordracht van kandidaat-voorzitter op naam van <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="voorzitter">&lt;persoon (Mandaat)&gt; [TODO: variable]</span> werd overhandigd aan de algemeen directeur [TODO: uitklaren nu al algemeen directeur of wissel ook bepalen tijdens installatievergadering?] op <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​, zijnde uiterlijk acht dagen voor de installatievergadering van de gemeenteraad;</li>
+                  <li>Overwegende dat een gezamenlijke akte van voordracht van kandidaat-voorzitter op naam van &lt;persoon (Mandaat)&gt; werd overhandigd aan de algemeen directeur [TODO: uitklaren nu al algemeen directeur of wissel ook bepalen tijdens installatievergadering?] op &lt;datum&gt; [TODO: RDFA], zijnde uiterlijk acht dagen voor de installatievergadering van de gemeenteraad;</li>
                 </ul>
-              </div>
-              <div class="annotation-structure">
-                <!-- <h6 class="h5">Feiten en context</h6> -->
-
               </div>
               <div class="annotation-structure">
                 <ul class="bullet-list bullet-list--spaced--small u-spacer">
@@ -748,23 +742,25 @@
                   <li>Overwegende dat er geen specifieke eed als voorzitter van de gemeenteraad dient afgelegd te worden;</li>
                 </ul>
               </div>
-
-              <p class="u-spacer--small">Beslist,</p>
-              <div class="annotation-structure">
-                <!-- <h6 class="h5">Besluit</h6> -->
-                <ul class="article-list bullet-list u-spacer--small" property="prov:value">
-                  <li property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:Artikel">
-                    <span class="annotation article-number" property="eli:number">Artikel 1</span>
-                    <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
-                    <span class="annotation article-content" property="prov:value">Kennis te nemen van de ontvankelijke gezamenlijke akte van voordracht van de kandidaat-voorzitter.</span>
-                  </li>
-                  <li property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:Artikel">
-                    <span class="annotation article-number" property="eli:number">Artikel 2</span>
-                    <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
-                    <span class="annotation article-content" property="prov:value">De voorgedragen kandidaat-voorzitter, <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="voorzitter">&lt;persoon (Mandaat)&gt; [TODO: variable]</span>, wordt verkozen verklaard als voorzitter van de gemeenteraad met ingang van <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​.</span>
-                  </li>
-                </ul>
-              </div>
+            </div>
+            <p class="u-spacer--small">Beslist,</p>
+            <div class="annotation-structure">
+              <ul class="article-list bullet-list u-spacer--small" property="prov:value">
+                <li property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+                  <span class="annotation article-number" property="eli:number">Artikel 1</span>
+                  <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+                  <span class="annotation article-content" property="prov:value">Kennis te nemen van de ontvankelijke gezamenlijke akte van voordracht van de kandidaat-voorzitter.</span>
+                </li>
+                <li property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+                  <span class="annotation article-number" property="eli:number">Artikel 2</span>
+                  <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+                  <span class="annotation article-content" property="prov:value">
+                    <span property="ext:bekrachtigtAanstellingVan" resource="http://data.lblod.info/id/mandatarissen/${generateUuid()}" typeOf="mandaat:Mandataris">
+                      De voorgedragen kandidaat-voorzitter, <span property="mandaat:isBestuurlijkeAliasVan" resource="http://data.lblod.info/id/personen/${generateUuid()}">&lt;persoon&gt;</span>, wordt verkozen verklaard <span property="org:holds" resource="http://data.lblod.info/id/mandaten/35844b6120c6294bcea8d8b65399dfc9c73456954c67f8c2716674c54c4fef4c">als voorzitter van de gemeenteraad</span> met ingang van <span property="mandaat:start" content="" datatype="xsd:dateTime" class="annotation"><span typeOf="ext:currentDate">&nbsp;</span></span>.
+                    </span>
+                  </span>
+                </li>
+              </ul>
             </div>
 
 
@@ -780,7 +776,7 @@
       <br>
       <br>
 
-      <div resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-5')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
+      <div property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-5')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
         <meta property="besluit:gebeurtNa" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-4')}">
         <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
         <div property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-5')}"><span id="${generateBoundUuid('bva-nr-5')}">Agendapunt 5</span></div>
@@ -907,7 +903,7 @@
 
       <br>
 
-      <div resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-6')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
+      <div property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-6')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
         <meta property="besluit:gebeurtNa" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-5')}">
         <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
         <div property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-6')}"><span id="${generateBoundUuid('bva-nr-6')}">Agendapunt 6</span></div>
@@ -968,7 +964,7 @@
 
       <br>
 
-      <div resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-7')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
+      <div property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-7')}" typeof="besluit:BehandelingVanAgendapunt" class="annotation-structure annotation-structure--behandeling annotation-structure--behandeling--open">
         <meta property="besluit:gebeurtNa" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-6')}">
         <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
         <div property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-7')}"><span id="${generateBoundUuid('bva-nr-7')}">Agendapunt 7</span></div>
