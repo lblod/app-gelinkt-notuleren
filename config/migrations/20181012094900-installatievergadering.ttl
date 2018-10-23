@@ -39,6 +39,42 @@
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('omzendbriefdatum-1')}">a</div>
+  <div property="ext:intentionUri" content="http://installatie/omzendbriefdatum">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('omzendbriefdatum-2')}">a</div>
+  <div property="ext:intentionUri" content="http://installatie/omzendbriefdatum">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('omzendbriefdatum-3')}">a</div>
+  <div property="ext:intentionUri" content="http://installatie/omzendbriefdatum">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('omzendbriefdatum-4')}">a</div>
+  <div property="ext:intentionUri" content="http://installatie/omzendbriefdatum">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('omzendbriefdatum-5')}">a</div>
+  <div property="ext:intentionUri" content="http://installatie/omzendbriefdatum">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('eedafleggingburgemeesterdatum-1')}">a</div>
+  <div property="ext:intentionUri" content="http://installatie/eedafleggingburgemeesterdatum">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('eedafleggingburgemeesterdatum-2')}">a</div>
+  <div property="ext:intentionUri" content="http://installatie/eedafleggingburgemeesterdatum">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
   <div property="ext:idInSnippet" content="${generateBoundUuid('ap-1')}">a</div>
   <div property="ext:intentionUri" content="http://agendapunt-1/title">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
@@ -208,6 +244,36 @@
   <div property="ext:intentionUri" content="http://installatie/burgemeester-persoon">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
+<!-- <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+     <div property="ext:idInSnippet" content="${generateBoundUuid('voorzitter-1')}">a</div>
+     <div property="ext:intentionUri" content="http://installatie/voorzitter">a</div>
+     <div property="ext:variableState" content="initialized">initialized</div>
+     </div>
+     <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+     <div property="ext:idInSnippet" content="${generateBoundUuid('voorzitter-2')}">a</div>
+     <div property="ext:intentionUri" content="http://installatie/voorzitter">a</div>
+     <div property="ext:variableState" content="initialized">initialized</div>
+     </div>
+     <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+     <div property="ext:idInSnippet" content="${generateBoundUuid('voorzitter-3')}">a</div>
+     <div property="ext:intentionUri" content="http://installatie/voorzitter">a</div>
+     <div property="ext:variableState" content="initialized">initialized</div>
+     </div>
+     <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+     <div property="ext:idInSnippet" content="${generateBoundUuid('voorzitter-4')}">a</div>
+     <div property="ext:intentionUri" content="http://installatie/voorzitter">a</div>
+     <div property="ext:variableState" content="initialized">initialized</div>
+     </div> -->
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('gouverneur-persoon-1')}">a</div>
+  <div property="ext:intentionUri" content="http://installatie/gouverneur-persoon">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('gouverneur-persoon-2')}">a</div>
+  <div property="ext:intentionUri" content="http://installatie/gouverneur-persoon">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
   <div property="ext:idInSnippet" content="${generateBoundUuid('bestuurseenheid-1')}">a</div>
   <div property="ext:intentionUri" content="http://zitting/bestuurseenheid">a</div>
@@ -287,7 +353,7 @@
   <br>
   <!-- opening -->
   <div class="annotation-structure">
-    <p>De uittredend voorzitter van de gemeenteraad &lt;Naam voorzitter gemeenteraad&gt; zit de installatievergadering voor <!-- op <span id="${generateBoundUuid('startAtTime-2')}" content="" datatype="xsd:dateTime" ><span typeOf="ext:currentDate">&nbsp;</span></span> --> en deelt mee dat er een video-opname gemaakt wordt van de zitting<!--  ingevolge schriftelijke uitnodiging vanwege de Algemeen Directeur dienstdoend <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​ -->.</p>
+    <p>De uittredend voorzitter van de gemeenteraad &lt;Naam voorzitter gemeenteraad&gt; zit de installatievergadering voor <!-- op <span id="${generateBoundUuid('startAtTime-2')}" content="" datatype="xsd:dateTime" ><span typeOf="ext:currentDate">&nbsp;</span></span> --> en deelt mee dat er een video-opname gemaakt wordt van de zitting<!--  ingevolge schriftelijke uitnodiging vanwege de Algemeen Directeur dienstdoend <span class="annotation" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​ -->.</p>
   </div>
   <br>
   <!-- aanwezigen -->
@@ -756,13 +822,13 @@
                          OF
                          <br>
                          <br>
-                         Overwegende dat de gezamenlijke akte van voordracht van de kandidaat-voorzitter de melding maakt van de einddatum van het mandaat op <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​, met als opvolger <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="voorzitter-1">&lt;persoon&gt; [TODO: variable]</span> voor de resterende duurtijd van het mandaat;
+                         Overwegende dat de gezamenlijke akte van voordracht van de kandidaat-voorzitter de melding maakt van de einddatum van het mandaat op <span class="annotation" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​, met als opvolger <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="voorzitter-1">&lt;persoon&gt; [TODO: variable]</span> voor de resterende duurtijd van het mandaat;
                          <br>
                          <br>
                          OF
                          <br>
                          <br>
-                         Overwegende dat de gezamenlijke akte van voordracht van de kandidaat-voorzitter de melding maakt van de einddatum van het mandaat op <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​, met als opvolger <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="voorzitter-2">&lt;persoon&gt; [TODO: variable]</span> tot <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​, met als opvolger <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="voorzitter-3">&lt;persoon&gt; [TODO: variable]</span> voor de resterende duurtijd van het mandaat; <em>Is dit scenario nodig?</em>
+                         Overwegende dat de gezamenlijke akte van voordracht van de kandidaat-voorzitter de melding maakt van de einddatum van het mandaat op <span class="annotation" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​, met als opvolger <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="voorzitter-2">&lt;persoon&gt; [TODO: variable]</span> tot <span class="annotation" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​, met als opvolger <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris" id="voorzitter-3">&lt;persoon&gt; [TODO: variable]</span> voor de resterende duurtijd van het mandaat; <em>Is dit scenario nodig?</em>
                          <br>
                          <br>
                          <em>[TODO: Ander scenario visualiseren: einddatum vermeld en vermelding [PERSOON] opvolger]</em>
@@ -835,11 +901,11 @@
                 <ul class="bullet-list bullet-list--spaced--small u-spacer">
                   <li>
                     Overwegende dat een gezamenlijke akte van voordracht van de kandidaat-schepenen werd overhandigd aan de (waarnemend) algemeen directeur op&nbsp;
-                    <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt;<!--  [TODO: RDFA] --></span>​<!--  [TODO: RDFA] -->, zijnde uiterlijk acht dagen voor de installatievergadering van de gemeenteraad;</li>
+                    <span class="annotation" property="Datum" datatype="xsd:date" content="datum">&lt;datum&gt;<!--  [TODO: RDFA] --></span>​<!--  [TODO: RDFA] -->, zijnde uiterlijk acht dagen voor de installatievergadering van de gemeenteraad;</li>
 
                   <li>
                     Overwegende dat de (waarnemend) algemeen directeur op datum van&nbsp;
-                    <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt;<!--  [TODO: RDFA] --></span>​<!--  [TODO: RDFA] --> een afschrift van de gezamenlijke akte van voordracht aan de burgemeester heeft bezorgd;</li>
+                    <span class="annotation" property="Datum" datatype="xsd:date" content="datum">&lt;datum&gt;<!--  [TODO: RDFA] --></span>​<!--  [TODO: RDFA] --> een afschrift van de gezamenlijke akte van voordracht aan de burgemeester heeft bezorgd;</li>
 
                   <li>Overwegende dat alle kandidaat-schepenen de eed als gemeenteraadslid hebben afgelegd;</li>
                   <li>
@@ -908,7 +974,7 @@
                          <tr>
                          <td>Voornaam Familienaam</td>
                          <td>Eerste schepen</td>
-                         <td><span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt;<! --  [TODO: RDFA] </span>​</td>
+                         <td><span class="annotation" datatype="xsd:date" content="datum">&lt;datum&gt;<! --  [TODO: RDFA] </span>​</td>
                          <td><span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;<! --  [TODO: variable feiten en context] </span></td>
                          </tr>
                          <tr>
@@ -1107,7 +1173,7 @@
                <li property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:Artikel">
                <span class="annotation article-number" property="eli:number">Enig artikel.</span>
                <meta content="meta-content-31 property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
-               <span class="annotation article-content" property="prov:value"> De gemeenteraad neemt kennis van het ontslag van &lt;mandataris&gt; met ingang van <span class="annotation" property="besluit:TODO" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​. </span>
+               <span class="annotation article-content" property="prov:value"> De gemeenteraad neemt kennis van het ontslag van &lt;mandataris&gt; met ingang van <span class="annotation" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​. </span>
                </li>
                </ul>
                </div> -->
@@ -1305,11 +1371,12 @@
       <!-- Sluiting zitting-->
       <div class="annotation-structure">
         <h3 class="h2">Sluiting van de zitting</h3>
-        <p>De voorzitter van de gemeenteraad sluit de zitting.</p>
-        <p>&lt;Naam algemeen directeur <!-- todo variable algemeen directeur -->&gt;</p>
-        <p><strong>Algemeen directeur</strong></p>
-
+        <p>Namens de Raad,</p>
+        <br>
         <p><span class="annotation" property="besluit:heeftSecretaris" resource="http://data.lblod.info/id/personen/45313719-fb4d-457b-a803-72db863d04b7">Jo Sclep (Algemeen Directeur)<!-- todo variable algemeen directeur --></span></p>
+        <p><strong>Algemeen directeur</strong></p>
+        <br>
+        <p>&lt;Naam voorzitter gemeenteraad<!-- todo variable voorzitter -->&gt;</p>
         <p><strong>Voorzitter van de gemeenteraad</strong></p>
       </div>
     </div>
