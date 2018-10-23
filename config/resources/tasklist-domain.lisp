@@ -14,7 +14,8 @@
   :class (s-prefix "ext:Task")
   :properties `((:title :string ,(s-prefix "ext:taskTitle"))
                 (:description :string ,(s-prefix "ext:taskDescription"))
-                (:priority :number ,(s-prefix "ext:taskPriority")))
+                (:priority :number ,(s-prefix "ext:taskPriority"))
+                (:click-target :string ,(s-prefix "ext:taskClickTarget")))
 
   :has-one `((task :via ,(s-prefix "ext:taskChild")
                   :inverse t
@@ -30,7 +31,8 @@
 (define-resource tasklist-solution ()
   :class (s-prefix "ext:TasklistSolution")
 
-  :properties `((:name :string ,(s-prefix "ext:tasklistSolutionName")))
+  :properties `((:name :string ,(s-prefix "ext:tasklistSolutionName"))
+                (:index :number ,(s-prefix "ext:tasklistSolutionIndex")))
 
   :has-one `((tasklist :via ,(s-prefix "ext:tasklistSolutionTasklist")
                         :as "tasklist"))
