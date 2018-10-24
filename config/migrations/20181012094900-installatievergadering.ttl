@@ -306,7 +306,7 @@
     <meta content="meta-content-3" property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/74fd11344fa1a41b4b9dfaddf7713bb870b8b024faa6ddc8dd537ab544fbff88" typeof="ext:Tasklist"/>
     <div property="ext:tasklistDataState" content="initialized">initialized</div>
   </div>
-  <p id="${generateBoundUuid('tasklist-4')}" property="ext:tasklistDataHintText">Er is een takenlijst beschikbaar: <br> <strong>Na de installatievergadering van de gemeenteraad</strong></p>
+  <p id="${generateBoundUuid('tasklist-4')}" property="ext:tasklistDataHintText">Er is een takenlijst beschikbaar: na vergadering</p>
 
   <div class="ext_tasklist_data u-spacer" typeof="ext:TasklistData" resource="http://data.lblod.info/id/tasklistsdata/${generateBoundUuid('tasklistData-5')}">
     <div property="ext:idInSnippet" content="${generateBoundUuid('tasklist-5')}">${generateBoundUuid('tasklist-5')}</div>
@@ -333,7 +333,7 @@
   <br>
   <!-- opening -->
   <div class="annotation-structure">
-    <p>De uittredend voorzitter van de gemeenteraad &lt;Naam voorzitter gemeenteraad&gt; zit de installatievergadering voor <!-- op <span id="${generateBoundUuid('startAtTime-2')}" content="" datatype="xsd:dateTime" ><span typeOf="ext:currentDate">&nbsp;</span></span> --> en deelt mee dat er een video-opname gemaakt wordt van de zitting<!--  ingevolge schriftelijke uitnodiging vanwege de Algemeen Directeur dienstdoend <span class="annotation" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​ -->.</p>
+    <p>De uittredend voorzitter van de gemeenteraad <span class="annotation" property="besluit:heeftVoorzitter" resource="http://data.lblod.info/id/personen/4ba9f6fc0fa9c7319bd8d0bf6408a0967527d3855f702ff85b959be9f2687e2f">Roger VANHOVE (Voorzitter)</span> zit de installatievergadering voor <!-- op <span id="${generateBoundUuid('startAtTime-2')}" content="" datatype="xsd:dateTime" ><span typeOf="ext:currentDate">&nbsp;</span></span> --> en deelt mee dat er een video-opname gemaakt wordt van de zitting<!--  ingevolge schriftelijke uitnodiging vanwege de Algemeen Directeur dienstdoend <span class="annotation" datatype="xsd:date" content="datum">&lt;datum&gt; [TODO: RDFA]</span>​ -->.</p>
   </div>
   <br>
   <!-- aanwezigen -->
@@ -1307,14 +1307,14 @@
           </div>
 
           <div class="annotation-structure" property="prov:value">
-            <p class="u-spacer--small">Stelt vast dat de verkiesbaarheidsvoorwaarden(1), vervult zijn door:</p>
+            <p class="u-spacer--small">Stelt vast dat de verkiesbaarheidsvoorwaarden<!-- (1) -->, vervult zijn door:</p>
             <ul class="bullet-list">
-              <li>de <span class="annotation">&lt;aantal&gt; [TODO: RDFA (+variable?)]</span> verkozen kandidaat effectieve leden.
-                <p class="u-font--italic smaller">Eventueel: met uitzondering van <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;</span> die de voorwaarde van <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">de wet van 7 december 1998 artikel <span class="annotation" resource="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">14</span></a> van niet vervult;</p>
+              <li>de <span class="annotation">&lt;aantal&gt;<!--  [TODO: RDFA (+variable?)] --></span> verkozen kandidaat effectieve leden.
+                <!-- <p class="u-font--italic smaller">Eventueel: met uitzondering van <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;</span> die de voorwaarde van <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">de wet van 7 december 1998 artikel <span class="annotation" resource="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">14</span></a> van niet vervult;</p> -->
               </li>
               <li>
                 de <span class="annotation">&lt;aantal&gt;</span>  kandidaten van rechtswege de opvolgers van deze <span class="annotation">&lt;aantal&gt;</span> kandidaten effectieve leden
-                <p class="u-font--italic smaller">Eventueel: met uitzondering van <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;</span> die de voorwaarde van <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">de wet van 7 december 1998 artikel <span class="annotation" resource="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">14</span></a> van niet vervult;</p>
+                <!-- <p class="u-font--italic smaller">Eventueel: met uitzondering van <span class="annotation" property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;</span> die de voorwaarde van <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">de wet van 7 december 1998 artikel <span class="annotation" resource="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO/ARTIKEL" property="eli:artikel">14</span></a> van niet vervult;</p> -->
               </li>
             </ul>
 
@@ -1341,7 +1341,7 @@
             </ul>
           </div>
 
-          <p class="u-font--italic smaller">(1) Inzake de onverenigbaarheden maakt de raad slechts een gewone opsomming. De onverenigbaarheden moeten immers nog bestaan op het ogenblik van de eedaflegging om de installatie van het betrokken lid te verhinderen.</p>
+          <!-- <p class="u-font--italic smaller">(1) Inzake de onverenigbaarheden maakt de raad slechts een gewone opsomming. De onverenigbaarheden moeten immers nog bestaan op het ogenblik van de eedaflegging om de installatie van het betrokken lid te verhinderen.</p> -->
         </div>
       </div>
 
