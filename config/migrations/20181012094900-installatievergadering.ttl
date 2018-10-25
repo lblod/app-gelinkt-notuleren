@@ -13,336 +13,315 @@
     ns1:activeInContext	foaf:Document ;
     ns1:disabledInContext	ns3:Zitting ;
     ns5:title	"Installatievergadering" ;
-    ns1:templateContent """<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('startAtTime-1')}">a</div>
+    ns1:templateContent """
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('startAtTime-1')}">0</div>
   <div property="ext:intentionUri" content="http://zitting/startedAtTime">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('startAtTime-2')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('startAtTime-2')}">1</div>
   <div property="ext:intentionUri" content="http://zitting/startedAtTime">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('verkiezingsdatum-1')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('verkiezingsdatum-1')}">2</div>
   <div property="ext:intentionUri" content="http://installatie/verkiezingsdatum">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('verkiezingsdatum-2')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('verkiezingsdatum-2')}">3</div>
   <div property="ext:intentionUri" content="http://installatie/verkiezingsdatum">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('verkiezingsdatum-3')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('verkiezingsdatum-3')}">4</div>
   <div property="ext:intentionUri" content="http://installatie/verkiezingsdatum">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('omzendbriefdatum-1')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('omzendbriefdatum-1')}">5</div>
   <div property="ext:intentionUri" content="http://installatie/omzendbriefdatum">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('omzendbriefdatum-2')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('omzendbriefdatum-2')}">6</div>
   <div property="ext:intentionUri" content="http://installatie/omzendbriefdatum">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('omzendbriefdatum-3')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('omzendbriefdatum-3')}">7</div>
   <div property="ext:intentionUri" content="http://installatie/omzendbriefdatum">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('omzendbriefdatum-4')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('omzendbriefdatum-4')}">8</div>
   <div property="ext:intentionUri" content="http://installatie/omzendbriefdatum">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('omzendbriefdatum-5')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('omzendbriefdatum-5')}">9</div>
   <div property="ext:intentionUri" content="http://installatie/omzendbriefdatum">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('eedafleggingburgemeesterdatum-1')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('eedafleggingburgemeesterdatum-1')}">10</div>
   <div property="ext:intentionUri" content="http://installatie/eedafleggingburgemeesterdatum">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('eedafleggingburgemeesterdatum-2')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('eedafleggingburgemeesterdatum-2')}">11</div>
   <div property="ext:intentionUri" content="http://installatie/eedafleggingburgemeesterdatum">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
-
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-1')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-1')}">12</div>
   <div property="ext:intentionUri" content="http://agendapunt-1/title">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-besluit-1')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-besluit-1')}">13</div>
   <div property="ext:intentionUri" content="http://agendapunt-1/title">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-2')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-2')}">14</div>
   <div property="ext:intentionUri" content="http://agendapunt-2/title">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-besluit-2')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-besluit-2')}">15</div>
   <div property="ext:intentionUri" content="http://agendapunt-2/title">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-3')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-3')}">16</div>
   <div property="ext:intentionUri" content="http://agendapunt-3/title">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-besluit-3')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-besluit-3')}">17</div>
   <div property="ext:intentionUri" content="http://agendapunt-3/title">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-4')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-4')}">18</div>
   <div property="ext:intentionUri" content="http://agendapunt-4/title">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-besluit-4')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-besluit-4')}">19</div>
   <div property="ext:intentionUri" content="http://agendapunt-4/title">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-5')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-5')}">20</div>
   <div property="ext:intentionUri" content="http://agendapunt-5/title">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-besluit-5')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-besluit-5')}">21</div>
   <div property="ext:intentionUri" content="http://agendapunt-5/title">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-6')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-6')}">22</div>
   <div property="ext:intentionUri" content="http://agendapunt-6/title">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-besluit-6')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-besluit-6')}">23</div>
   <div property="ext:intentionUri" content="http://agendapunt-6/title">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-7')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-7')}">24</div>
   <div property="ext:intentionUri" content="http://agendapunt-7/title">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-besluit-7')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-besluit-7')}">25</div>
   <div property="ext:intentionUri" content="http://agendapunt-7/title">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-1-nr')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-1-nr')}">26</div>
   <div property="ext:intentionUri" content="http://agendapunt-1/ref">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-nr-1')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-nr-1')}">27</div>
   <div property="ext:intentionUri" content="http://agendapunt-1/ref">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-2-nr')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-2-nr')}">28</div>
   <div property="ext:intentionUri" content="http://agendapunt-2/ref">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-nr-2')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-nr-2')}">29</div>
   <div property="ext:intentionUri" content="http://agendapunt-2/ref">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-3-nr')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-3-nr')}">30</div>
   <div property="ext:intentionUri" content="http://agendapunt-3/ref">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-nr-3')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-nr-3')}">31</div>
   <div property="ext:intentionUri" content="http://agendapunt-3/ref">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-4-nr')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-4-nr')}">32</div>
   <div property="ext:intentionUri" content="http://agendapunt-4/ref">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-nr-4')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-nr-4')}">33</div>
   <div property="ext:intentionUri" content="http://agendapunt-4/ref">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-5-nr')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-5-nr')}">34</div>
   <div property="ext:intentionUri" content="http://agendapunt-5/ref">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-nr-5')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-nr-5')}">35</div>
   <div property="ext:intentionUri" content="http://agendapunt-5/ref">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-6-nr')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-6-nr')}">36</div>
   <div property="ext:intentionUri" content="http://agendapunt-6/ref">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-nr-6')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-nr-6')}">37</div>
   <div property="ext:intentionUri" content="http://agendapunt-6/ref">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-7-nr')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('ap-7-nr')}">38</div>
   <div property="ext:intentionUri" content="http://agendapunt-7/ref">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-nr-7')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bva-nr-7')}">39</div>
   <div property="ext:intentionUri" content="http://agendapunt-7/ref">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-persoon-1')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-persoon-1')}">40</div>
   <div property="ext:intentionUri" content="http://installatie/burgemeester-persoon">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-persoon-2')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-persoon-2')}">41</div>
   <div property="ext:intentionUri" content="http://installatie/burgemeester-persoon">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-persoon-3')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-persoon-3')}">42</div>
   <div property="ext:intentionUri" content="http://installatie/burgemeester-persoon">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-persoon-4')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-persoon-4')}">43</div>
   <div property="ext:intentionUri" content="http://installatie/burgemeester-persoon">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-persoon-5')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-persoon-5')}">44</div>
   <div property="ext:intentionUri" content="http://installatie/burgemeester-persoon">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-persoon-6')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-persoon-6')}">45</div>
   <div property="ext:intentionUri" content="http://installatie/burgemeester-persoon">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('gouverneur-persoon-1')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('gouverneur-persoon-1')}">46</div>
   <div property="ext:intentionUri" content="http://installatie/gouverneur-persoon">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('gouverneur-persoon-2')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('gouverneur-persoon-2')}">47</div>
   <div property="ext:intentionUri" content="http://installatie/gouverneur-persoon">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('bestuurseenheid-1')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bestuurseenheid-1')}">48</div>
   <div property="ext:intentionUri" content="http://zitting/bestuurseenheid">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('bestuurseenheid-2')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('bestuurseenheid-2')}">49</div>
   <div property="ext:intentionUri" content="http://zitting/bestuurseenheid">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-aanstelling-1')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-aanstelling-1')}">50</div>
   <div property="ext:intentionUri" content="http://installatie/burgemeester-aanstelling">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-aanstelling-2')}">a</div>
+  <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-aanstelling-2')}">51</div>
   <div property="ext:intentionUri" content="http://installatie/burgemeester-aanstelling">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
-
-
+<!--START TASKLISTS-->
+<div class="ext_tasklist_data" typeof="ext:TasklistData" resource="http://data.lblod.info/id/tasklistsdata/${generateBoundUuid('tasklistData-1')}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('tasklist-1')}">${generateBoundUuid('tasklist-1')}</div>
+  <div content="meta-content-0" property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/84b51f9bc40aaf2c9973b950a4e50ff3378b6096139a63d174c89eaa5ed3305d" typeof="ext:Tasklist">tasklist</div>
+  <div property="ext:tasklistDataState" content="initialized">initialized</div>
+</div>
+<div class="ext_tasklist_data" typeof="ext:TasklistData" resource="http://data.lblod.info/id/tasklistsdata/${generateBoundUuid('tasklistData-2')}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('tasklist-2')}">${generateBoundUuid('tasklist-2')}</div>
+  <div content="meta-content-1" property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/a299a730333cb29122e818466194b0a2bfcbe4762580c42779288cd60b91fc8a" typeof="ext:Tasklist">tasklist</div>
+  <div property="ext:tasklistDataState" content="initialized">initialized</div>
+</div>
+<div class="ext_tasklist_data" typeof="ext:TasklistData" resource="http://data.lblod.info/id/tasklistsdata/${generateBoundUuid('tasklistData-3')}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('tasklist-3')}">${generateBoundUuid('tasklist-3')}</div>
+  <div content="meta-content-2" property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/4a98f3467c6bcc7c0713a70b117ea3688263c3e8b3a1c2ec9cb721a191ba91d3" typeof="ext:Tasklist">tasklist</div>
+  <div property="ext:tasklistDataState" content="initialized">initialized</div>
+</div>
+<div class="ext_tasklist_data" typeof="ext:TasklistData" resource="http://data.lblod.info/id/tasklistsdata/${generateBoundUuid('tasklistData-4')}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('tasklist-4')}">${generateBoundUuid('tasklist-4')}</div>
+  <div content="meta-content-3" property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/74fd11344fa1a41b4b9dfaddf7713bb870b8b024faa6ddc8dd537ab544fbff88" typeof="ext:Tasklist">tasklist</div>
+  <div property="ext:tasklistDataState" content="initialized">initialized</div>
+</div>
+<div class="ext_tasklist_data" typeof="ext:TasklistData" resource="http://data.lblod.info/id/tasklistsdata/${generateBoundUuid('tasklistData-5')}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('tasklist-5')}">${generateBoundUuid('tasklist-5')}</div>
+  <div content="meta-content-4" property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/986f6c9d4f1f6fc02c5e667150dfb583748c8de6f771ba1e8a4ccc2604519271" typeof="ext:Tasklist">tasklist</div>
+  <div property="ext:tasklistDataState" content="initialized">initialized</div>
+</div>
+<div class="ext_tasklist_data" typeof="ext:TasklistData" resource="http://data.lblod.info/id/tasklistsdata/${generateBoundUuid('tasklistData-6')}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('tasklist-6')}">${generateBoundUuid('tasklist-6')}</div>
+  <div content="meta-content-5" property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/884a00eb3934152318210bde7a003c9313a39af5710665614a435b6e9efc9be2" typeof="ext:Tasklist">tasklist</div>
+  <div property="ext:tasklistDataState" content="initialized">initialized</div>
+</div>
+<div class="ext_tasklist_data" typeof="ext:TasklistData" resource="http://data.lblod.info/id/tasklistsdata/${generateBoundUuid('tasklistData-7')}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('tasklist-7')}">${generateBoundUuid('tasklist-7')}</div>
+  <div content="meta-content-6" property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/6607ba3e1c8c1308573159b70bb12bf7c91769f95641ac0a00905d7b58b9c8cd" typeof="ext:Tasklist">tasklist</div>
+  <div property="ext:tasklistDataState" content="initialized">initialized</div>
+</div>
+<div class="ext_tasklist_data" typeof="ext:TasklistData" resource="http://data.lblod.info/id/tasklistsdata/${generateBoundUuid('tasklistData-8')}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('tasklist-8')}">${generateBoundUuid('tasklist-8')}</div>
+  <div content="meta-content-7" property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/32f569235e6c55d8ae889dd7f6baf63bbfdcf1cb42d4f9e5c1fe4c45b19c418a" typeof="ext:Tasklist">tasklist</div>
+  <div property="ext:tasklistDataState" content="initialized">initialized</div>
+</div>
+<!--END TASKLISTS-->
 
 <div typeof="besluit:Zitting" resource="http://data.lblod.info/id/zittingen/${generateUuid()}">
-  <!--START TAKENLIJSTEN (please keep on top because else something not 100% with hints above it) -->
-  &nbsp;
-  <div class="ext_tasklist_data u-spacer" typeof="ext:TasklistData" resource="http://data.lblod.info/id/tasklistsdata/${generateBoundUuid('tasklistData-1')}">
-    <div property="ext:idInSnippet" content="${generateBoundUuid('tasklist-1')}">${generateBoundUuid('tasklist-1')}</div>
-    <meta content="meta-content-0" property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/84b51f9bc40aaf2c9973b950a4e50ff3378b6096139a63d174c89eaa5ed3305d" typeof="ext:Tasklist"/>
-    <div property="ext:tasklistDataState" content="initialized">initialized</div>
-  </div>
-  <p id="${generateBoundUuid('tasklist-1')}" property="ext:tasklistDataHintText">Takenlijst: "Voorbereiding:installatievergadering organiseren"</p>
-
-  <div class="ext_tasklist_data u-spacer" typeof="ext:TasklistData" resource="http://data.lblod.info/id/tasklistsdata/${generateBoundUuid('tasklistData-2')}">
-    <div property="ext:idInSnippet" content="${generateBoundUuid('tasklist-2')}">${generateBoundUuid('tasklist-2')}</div>
-    <meta content="meta-content-1" property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/a299a730333cb29122e818466194b0a2bfcbe4762580c42779288cd60b91fc8a" typeof="ext:Tasklist"/>
-    <div property="ext:tasklistDataState" content="initialized">initialized</div>
-  </div>
-  <p id="${generateBoundUuid('tasklist-2')}" property="ext:tasklistDataHintText">Takenlijst: "Voorbereiding van de voordracht en de verkiezing van de politieraadsleden in meergemeentezones"</p>
-
-  <div class="ext_tasklist_data u-spacer" typeof="ext:TasklistData" resource="http://data.lblod.info/id/tasklistsdata/${generateBoundUuid('tasklistData-3')}">
-    <div property="ext:idInSnippet" content="${generateBoundUuid('tasklist-3')}">${generateBoundUuid('tasklist-3')}</div>
-    <meta content="meta-content-2" property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/4a98f3467c6bcc7c0713a70b117ea3688263c3e8b3a1c2ec9cb721a191ba91d3" typeof="ext:Tasklist"/>
-    <div property="ext:tasklistDataState" content="initialized">initialized</div>
-  </div>
-  <p id="${generateBoundUuid('tasklist-3')}" property="ext:tasklistDataHintText">Takenlijst: "Indiening akten van voordracht (uitgezonderd de burgemeester)"</p>
-
-  <div class="ext_tasklist_data u-spacer" typeof="ext:TasklistData" resource="http://data.lblod.info/id/tasklistsdata/${generateBoundUuid('tasklistData-4')}">
-    <div property="ext:idInSnippet" content="${generateBoundUuid('tasklist-4')}">${generateBoundUuid('tasklist-4')}</div>
-    <meta content="meta-content-3" property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/74fd11344fa1a41b4b9dfaddf7713bb870b8b024faa6ddc8dd537ab544fbff88" typeof="ext:Tasklist"/>
-    <div property="ext:tasklistDataState" content="initialized">initialized</div>
-  </div>
-  <p id="${generateBoundUuid('tasklist-4')}" property="ext:tasklistDataHintText">Takenlijst: "Voorbereiding van de installatie en eedaflegging van gemeenteraadsleden"</p>
-
-  <div class="ext_tasklist_data u-spacer" typeof="ext:TasklistData" resource="http://data.lblod.info/id/tasklistsdata/${generateBoundUuid('tasklistData-5')}">
-    <div property="ext:idInSnippet" content="${generateBoundUuid('tasklist-5')}">${generateBoundUuid('tasklist-5')}</div>
-    <meta content="meta-content-4" property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/986f6c9d4f1f6fc02c5e667150dfb583748c8de6f771ba1e8a4ccc2604519271" typeof="ext:Tasklist"/>
-    <div property="ext:tasklistDataState" content="initialized">initialized</div>
-  </div>
-  <p id="${generateBoundUuid('tasklist-5')}" property="ext:tasklistDataHintText">Takenlijst: "De vergadering zelf"</p>
-
-  <div class="ext_tasklist_data u-spacer" typeof="ext:TasklistData" resource="http://data.lblod.info/id/tasklistsdata/${generateBoundUuid('tasklistData-6')}">
-    <div property="ext:idInSnippet" content="${generateBoundUuid('tasklist-6')}">${generateBoundUuid('tasklist-6')}</div>
-    <meta content="meta-content-5" property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/884a00eb3934152318210bde7a003c9313a39af5710665614a435b6e9efc9be2" typeof="ext:Tasklist"/>
-    <div property="ext:tasklistDataState" content="initialized">initialized</div>
-  </div>
-  <p id="${generateBoundUuid('tasklist-6')}" property="ext:tasklistDataHintText">Takenlijst: "Na de vergadering van de gemeenteraad"</p>
-
-  <div class="ext_tasklist_data u-spacer" typeof="ext:TasklistData" resource="http://data.lblod.info/id/tasklistsdata/${generateBoundUuid('tasklistData-7')}">
-    <div property="ext:idInSnippet" content="${generateBoundUuid('tasklist-7')}">${generateBoundUuid('tasklist-7')}</div>
-    <meta content="meta-content-6" property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/6607ba3e1c8c1308573159b70bb12bf7c91769f95641ac0a00905d7b58b9c8cd" typeof="ext:Tasklist"/>
-    <div property="ext:tasklistDataState" content="initialized">initialized</div>
-  </div>
-  <p id="${generateBoundUuid('tasklist-7')}" property="ext:tasklistDataHintText">Takenlijst: "Andere beslissingen"</p>
-
-  <div class="ext_tasklist_data u-spacer" typeof="ext:TasklistData" resource="http://data.lblod.info/id/tasklistsdata/${generateBoundUuid('tasklistData-8')}">
-    <div property="ext:idInSnippet" content="${generateBoundUuid('tasklist-8')}">${generateBoundUuid('tasklist-8')}</div>
-    <meta content="meta-content-7" property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/32f569235e6c55d8ae889dd7f6baf63bbfdcf1cb42d4f9e5c1fe4c45b19c418a" typeof="ext:Tasklist"/>
-    <div property="ext:tasklistDataState" content="initialized">initialized</div>
-  </div>
-  <p id="${generateBoundUuid('tasklist-8')}" property="ext:tasklistDataHintText">Takenlijst: "Wat als"</p>
-  <!--END TAKENLIJSTEN-->
-  <br>
-  <br>
-
   <div class="annotation-structure">
     <!-- meta zitting -->
     <h2 class="h1" property="dc:title">
-      Notulen van <span property="ext:scopedBestuursorgaanText">selecteer bestuursorgaan</span> , zitting van <span class="annotation" property="besluit:geplandeStart" datatype="xsd:date" content=""><span typeOf="ext:currentDate">&nbsp;</span></span>​ (installatievergadering)
+      Notulen van <span property="ext:scopedBestuursorgaanText">selecteer bestuursorgaan</span>, zitting van <span class="annotation" property="besluit:geplandeStart" datatype="xsd:date" content=""><span typeOf="ext:currentDate">&nbsp;</span></span>​ (installatievergadering)
     </h2>
     <p>
       Locatie: &lt;Naam locatie&gt;, &lt;Naam zaal&gt;
@@ -833,7 +812,7 @@
                          <br>
                          <br>
                          <em>[TODO: Ander scenario visualiseren: einddatum vermeld en vermelding [PERSOON] opvolger]</em>
-                       --></li>
+                    --></li>
                   <li>Overwegende dat de kandidaat-voorzitter de voorgeschreven eed als gemeenteraadslid heeft afgelegd;</li>
                   <li>Overwegende dat er geen specifieke eed als voorzitter van de gemeenteraad dient afgelegd te worden;</li>
                 </ul>
