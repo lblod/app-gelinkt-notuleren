@@ -13,8 +13,7 @@
     ns1:activeInContext	foaf:Document ;
     ns1:disabledInContext	ns3:Zitting ;
     ns5:title	"Installatievergadering" ;
-    ns1:templateContent """
-<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+    ns1:templateContent """<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
   <div property="ext:idInSnippet" content="${generateBoundUuid('startAtTime-1')}">0</div>
   <div property="ext:intentionUri" content="http://zitting/startedAtTime">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
@@ -361,43 +360,43 @@
       <li>
         <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-1')}" typeof="besluit:Agendapunt" class="annotation--agendapunt annotation--agendapunt--open">
           <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
-          <span property="dc:title" class="annotation"><span id="${generateBoundUuid('ap-1-nr')}">Agendapunt 1</span>: <span id="${generateBoundUuid('ap-1')}">Kennisneming geldigverklaring van de verkiezingen</span></span>
+          <span id="${generateBoundUuid('ap-1-nr')}">Agendapunt 1</span>: <span property="dc:title" class="annotation"><span id="${generateBoundUuid('ap-1')}">Kennisneming geldigverklaring van de verkiezingen</span></span>
         </span>
       </li>
       <li>
         <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-2')}" typeof="besluit:Agendapunt" class="annotation--agendapunt annotation--agendapunt--open">
           <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
-          <span property="dc:title" class="annotation"><span id="${generateBoundUuid('ap-2-nr')}">Agendapunt 2</span>: <span id="${generateBoundUuid('ap-2')}">Mededeling van de benoeming en eedaflegging van de burgemeester (onder voorbehoud)</span></span>
+          <span id="${generateBoundUuid('ap-2-nr')}">Agendapunt 2</span>: <span property="dc:title" class="annotation"><span id="${generateBoundUuid('ap-2')}">Mededeling van de benoeming en eedaflegging van de burgemeester (onder voorbehoud)</span></span>
         </span>
       </li>
       <li>
         <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-3')}" typeof="besluit:Agendapunt" class="annotation--agendapunt annotation--agendapunt--open">
           <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
-          <span property="dc:title" class="annotation"><span id="${generateBoundUuid('ap-3-nr')}">Agendapunt 3</span>: <span id="${generateBoundUuid('ap-3')}">Installatie gemeenteraadsleden en eedaflegging</span></span>
+          <span id="${generateBoundUuid('ap-3-nr')}">Agendapunt 3</span>: <span property="dc:title" class="annotation"><span id="${generateBoundUuid('ap-3')}">Installatie gemeenteraadsleden en eedaflegging</span></span>
         </span>
       </li>
       <li>
         <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-4')}" typeof="besluit:Agendapunt" class="annotation--agendapunt annotation--agendapunt--open">
           <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
-          <span property="dc:title" class="annotation"><span id="${generateBoundUuid('ap-4-nr')}">Agendapunt 4</span>: <span id="${generateBoundUuid('ap-4')}">Verkiezing van de voorzitter van de gemeenteraad</span></span>
+          <span id="${generateBoundUuid('ap-4-nr')}">Agendapunt 4</span>: <span property="dc:title" class="annotation"><span id="${generateBoundUuid('ap-4')}">Verkiezing van de voorzitter van de gemeenteraad</span></span>
         </span>
       </li>
       <li>
         <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-5')}" typeof="besluit:Agendapunt" class="annotation--agendapunt annotation--agendapunt--open">
           <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
-          <span property="dc:title" class="annotation"><span id="${generateBoundUuid('ap-5-nr')}">Agendapunt 5</span>: <span id="${generateBoundUuid('ap-5')}">Verkiezing van de schepenen</span></span>
+          <span id="${generateBoundUuid('ap-5-nr')}">Agendapunt 5</span>: <span property="dc:title" class="annotation"><span id="${generateBoundUuid('ap-5')}">Verkiezing van de schepenen</span></span>
         </span>
       </li>
       <li>
         <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-6')}" typeof="besluit:Agendapunt" class="annotation--agendapunt annotation--agendapunt--open">
           <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
-          <span property="dc:title" class="annotation"><span id="${generateBoundUuid('ap-6-nr')}">Agendapunt 6</span>: <span id="${generateBoundUuid('ap-6')}">Vaststelling van fractievorming</span></span>
+          <span id="${generateBoundUuid('ap-6-nr')}">Agendapunt 6</span>: <span property="dc:title" class="annotation"><span id="${generateBoundUuid('ap-6')}">Vaststelling van fractievorming</span></span>
         </span>
       </li>
       <li>
         <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-7')}" typeof="besluit:Agendapunt" class="annotation--agendapunt annotation--agendapunt--open">
           <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
-          <span property="dc:title" class="annotation"><span id="${generateBoundUuid('ap-7-nr')}">Agendapunt 7</span>: <span id="${generateBoundUuid('ap-7')}">Verkiezing van de Politieraad</span></span>
+          <span id="${generateBoundUuid('ap-7-nr')}">Agendapunt 7</span>: <span property="dc:title" class="annotation"><span id="${generateBoundUuid('ap-7')}">Verkiezing van de Politieraad</span></span>
         </span>
       </li>
     </ul>
@@ -487,7 +486,7 @@
       <meta content="meta-content-6" property="besluit:gebeurtNa" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-1')}">
       <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
       <div property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-2')}"><span id="${generateBoundUuid('bva-nr-2')}">Agendapunt 2</span></div>
-      <div class="annotation-snippet" property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
+      <div class="annotation-snippet" property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit mandaat:Aanstellingsbesluit">
         <div class="annotation-structure">
           <h5 class="h4 u-spacer" property="eli:title"><span id="${generateBoundUuid('bva-besluit-2')}">Mededeling van de benoeming en eedaflegging van de burgemeester</span></h5>
           <meta content="meta-content-7" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
@@ -503,7 +502,6 @@
 
           <div property="besluit:motivering" lang="nl">
             <div class="annotation-structure">
-              <!-- <h6 class="h5">Juridische gronden</h6> -->
               <ul class="bullet-list bullet-list--spaced--small u-spacer">
                 <li>Gelet op&nbsp;
                   <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">het decreet van 22 december 2017 over het lokaal bestuur, de artikelen&nbsp;
@@ -514,17 +512,16 @@
                   <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">het Ministerieel besluit van 23 november 2018 houdende de benoeming van <span id="${generateBoundUuid('burgemeester-persoon-1')}">&lt;Naam&gt;</span> tot burgemeester van <span id="${generateBoundUuid('bestuurseenheid-1')}"><span property="ext:setStandAloneCurrentBestuurseenheid">huidig bestuurseenheid</span></span></a>;</li>
 
                 <li>Gelet op&nbsp;
-                  <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="Omzendbrief">de omzendbrief BA-2018/2</a> van <span id="${generateBoundUuid('omzendbriefdatum-1')}" class="annotation" property="ext:datumOmzendbrief" datatype="xsd:date" content="2018-10-19">19 oktober 2018<!-- <em>uitgevonden RDFA en ID</em> --></span> – Start van de lokale en provinciale bestuursperiode;</li>
+                  <a class="annotation" href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/TODO" property="eli:cites">de omzendbrief BA-2018/2</a> van <span id="${generateBoundUuid('omzendbriefdatum-1')}" class="annotation" property="ext:datumOmzendbrief" datatype="xsd:date" content="2018-10-19">19 oktober 2018<!-- <em>uitgevonden RDFA en ID</em> --></span> – Start van de lokale en provinciale bestuursperiode;</li>
               </ul>
             </div>
             <div class="annotation-structure">
-              <!-- <h6 class="h5">Feiten en context</h6> -->
               <ul class="bullet-list bullet-list--spaced--small u-spacer">
                 <li>
                   Overwegende dat&nbsp;
                   <span id="${generateBoundUuid('burgemeester-persoon-2')}">&lt;Naam&gt;</span>&nbsp;
                   de decretaal voorziene eed heeft afgelegd in de handen van de gouverneur&nbsp;
-                  <span class="annotation" id="${generateBoundUuid('gouverneur-persoon-1')}" property="Gouverneur">Herman Reynders<!-- <em>uitgevonden RDFA en ID</em> --></span> op&nbsp;
+                  <span class="annotation" id="${generateBoundUuid('gouverneur-persoon-1')}">Herman Reynders<!-- <em>uitgevonden RDFA en ID</em> --></span> op&nbsp;
                   <span id="${generateBoundUuid('eedafleggingburgemeesterdatum-1')}" class="annotation" property="ext:datumEedafleggingBurgemeester" datatype="xsd:date" content="2018-12-04">4 december 2018<!-- <em>uitgevonden RDFA en ID</em> --></span>, zoals bevestigd door de akte van eedaflegging;</li>
 
                 <li>
@@ -544,12 +541,9 @@
           <p class="u-spacer--small">Neemt akte van,<!--  <em>[TODO: Vragen aan Domien voor ander scenario (burgemeester buiten de raad, geen burgemeester aangesteld, ...] </em>--></p>
 
           <div class="annotation-structure" property="prov:value">
-            <p>De benoeming en eedaflegging van&nbsp;
-              <span class="annotation" id="${generateBoundUuid('burgemeester-persoon-4')}">&lt;Naam&gt;</span>&nbsp;
-              tot burgemeester van&nbsp;
-              <span class="annotation" id="${generateBoundUuid('bestuurseenheid-2')}"><span property="ext:setStandAloneCurrentBestuurseenheid">huidig bestuurseenheid</span></span>&nbsp;
-              met ingang van&nbsp;
-              <span class="annotation" id="${generateBoundUuid('burgemeester-aanstelling-2')}" content="2019-01-01" type="xsd:date">1 januari 2019</span>.</p>
+            <span property="ext:bekrachtigtAanstellingVan" resource="http://data.lblod.info/id/mandatarissen/${generateUuid()}" typeOf="mandaat:Mandataris">
+              De benoeming en eedaflegging van, &lt;naam&gt;, tot <span property="org:holds" resource="http://data.lblod.info/id/mandaten/35844b6120c6294bcea8d8b65399dfc9c73456954c67f8c2716674c54c4fef4c">burgemeester</span> van&nbsp; <span class="annotation" id="${generateBoundUuid('bestuurseenheid-2')}"><span property="ext:setStandAloneCurrentBestuurseenheid">huidig bestuurseenheid</span></span>&nbsp; met ingang van <span class="annotation" property="mandaat:start" content="2019-01-01" type="xsd:date">1 januari 2019</span></span>.
+            </span>
           </div>
         </div>
       </div>
@@ -775,7 +769,7 @@
       <meta content="meta-content-15" property="besluit:gebeurtNa" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-3')}">
       <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
       <div property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-4')}"><span id="${generateBoundUuid('bva-nr-4')}">Agendapunt 4</span></div>
-      <div class="annotation-snippet" property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit mandaat:AanstellingsBesluit">
+      <div class="annotation-snippet" property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit mandaat:Aanstellingsbesluit">
         <div class="annotation-structure">
           <h5 class="h4 u-spacer" property="eli:title"><span id="${generateBoundUuid('bva-besluit-4')}">Verkiezing van de voorzitter van de gemeenteraad</span></h5>
           <meta content="meta-content-16" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
@@ -839,7 +833,7 @@
                 <meta content="meta-content-18" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
                 <span class="annotation article-content" property="prov:value">
                   <span property="ext:bekrachtigtAanstellingVan" resource="http://data.lblod.info/id/mandatarissen/${generateUuid()}" typeOf="mandaat:Mandataris">
-                    De voorgedragen kandidaat-voorzitter, <span property="mandaat:isBestuurlijkeAliasVan" resource="http://data.lblod.info/id/personen/${generateUuid()}">&lt;persoon&gt;</span>, wordt verkozen verklaard <span property="org:holds" resource="http://data.lblod.info/id/mandaten/35844b6120c6294bcea8d8b65399dfc9c73456954c67f8c2716674c54c4fef4c">als voorzitter van de gemeenteraad</span> met ingang van <span property="mandaat:start" content="" datatype="xsd:dateTime" class="annotation"><span typeOf="ext:currentDate">&nbsp;</span></span>.
+                    De voorgedragen kandidaat-voorzitter, &lt;naam&gt;, wordt verkozen verklaard <span property="org:holds" resource="http://data.lblod.info/id/mandaten/35844b6120c6294bcea8d8b65399dfc9c73456954c67f8c2716674c54c4fef4c">als voorzitter van de gemeenteraad</span> met ingang van <span property="mandaat:start" content="" datatype="xsd:dateTime" class="annotation"><span typeOf="ext:currentDate">&nbsp;</span></span>.
                   </span>
                 </span>
               </li>
@@ -1390,5 +1384,4 @@
     <p><strong>Voorzitter van de gemeenteraad</strong></p>
   </div>
 </div>
-
  """.
