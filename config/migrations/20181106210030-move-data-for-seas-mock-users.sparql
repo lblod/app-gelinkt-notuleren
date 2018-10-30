@@ -18,7 +18,7 @@ INSERT {
            ext:sessionRole ?role.
   }
 } WHERE {
-  GRAPH <http://mu.semte.ch/application> {
+  GRAPH <http://mu.semte.ch/graphs/public> {
      ?persoon a foaf:Person;
            mu:uuid ?uuidPersoon;
            foaf:firstName ?classificatie;
