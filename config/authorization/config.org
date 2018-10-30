@@ -1,0 +1,71 @@
+* Types
+<http://mu.semte.ch/graphs/public>
+
+
+
+http://mu.semte.ch/graphs/organizations/:id
+
+
+
+* Data ownership
+| resource                             | pub | org | user | used |
+|--------------------------------------+-----+-----+------+------|
+| ext:EditorDocumentStatus             | r   |     |      | x    |
+| ext:Template                         | r   |     |      | x    |
+|                                      |     |     |      |      |
+| rdfs:Class                           | r   |     |      | x    |
+| rdfs:Property                        | r   |     |      | x    |
+|                                      |     |     |      |      |
+| ext:Task                             | r   |     |      | x    |
+| ext:Tasklist                         | r   |     |      | x    |
+| ext:TaskSolution                     |     | rwf |      | x    |
+| ext:TasklistSolution                 |     | rwf |      | x    |
+|                                      |     |     |      |      |
+| ext:BestuursorgaanClassificatieCode  | r   |     |      | x    |
+| besluit:Bestuursorgaan               | r   |     |      | x    |
+| ext:BestuurseenheidClassificatieCode | r   |     |      | x    |
+| prov:Location                        | r   |     |      | x    |
+| besluit:Bestuurseenheid              | r   |     |      | x    |
+| ext:VerkiezingsresultaatGevolgCode   | r   |     |      | x    |
+| ext:GeslachtCode                     | r   |     |      | x    |
+| ext:BeleidsdomeinCode                | r   |     |      | x    |
+| ext:MandatarisStatusCode             | r   |     |      | x    |
+| ext:BestuursfunctieCode              | r   |     |      | x    |
+| mandaat:Mandaat                      |     | rwf |      | x    |
+| mandaat:Kandidatenlijst              | r   |     |      | x    |
+| ext:KandidatenlijstType              | r   |     |      | x    |
+| ext:Fractietype                      | r   |     |      | x    |
+| mandaat:Verkiezingsresultaat         | r   |     |      | x    |
+| besluit:Zitting                      |     | rwf |      | x    |
+| besluit:Stemming                     |     | rwf |      | x    |
+| eli:LegalResourceSubdivision         |     |     |      |      |
+| eli:LegalResource                    |     |     |      |      |
+| besluit:Besluit                      | r   | wf  |      | x    |
+| besluit:BehandelingVanAgendapunt     |     | rwf |      | x    |
+| besluit:Artikel                      |     | rwf |      | x    |
+| besluit:Agendapunt                   |     | rwf |      | x    |
+| besluit:Agenda                       |     | rwf |      | x    |
+| mandaat:TijdsgebondenEntiteit        |     |     |      |      |
+| mandaat:RechtstreekseVerkiezing      | r   |     |      | x    |
+| mandaat:RechtsgrondBeeindiging       |     |     |      |      |
+| mandaat:RechtsgrondAanstelling       |     |     |      |      |
+| eli:LegalResource                    |     |     |      |      |
+| adms:Identifier                      |     | rwf |      | x    |
+| person:Person                        |     | r   |      | x    |
+| persoon:Geboorte                     |     | r   |      | x    |
+| mandaat:Mandataris                   |     | rwf |      | x    |
+| org:Membership                       |     | rwf |      | x    |
+| dct:PeriodOfTime                     |     | rwf |      | x    |
+| mandaat:Fractie                      |     | rfw |      | x    |
+| prov:Entity                          |     |     |      |      |
+|                                      |     |     |      |      |
+| foaf:OnlineAccount                   |     |     | rwf  | x    |
+| foaf:Person                          |     |     | rwf  | x    |
+| ext:EditorDocument                   |     | rwf |      | x    |
+|                                      |     |     |      |      |
+| org:Organization                     |     |     |      |      |
+| org:Role                             |     |     |      |      |
+| org:Post                             |     |     |      |      |
+| schema:PostalAddress                 |     |     |      |      |
+| org:Site                             |     |     |      |      |
+

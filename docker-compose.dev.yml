@@ -3,10 +3,8 @@ services:
   identifier:
     ports:
       - "80:80"
-  database:
+  virtuoso:
     ports:
       - "8890:8890"
   mocklogin:
     image: lblod/mock-login-service:0.4.0
-    environment:
-      MU_APPLICATION_GRAPH: 'http://mu.semte.ch/application'

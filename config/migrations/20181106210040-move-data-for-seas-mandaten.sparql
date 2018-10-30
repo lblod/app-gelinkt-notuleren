@@ -1,0 +1,53 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX bbcdr: <http://mu.semte.ch/vocabularies/ext/bbcdr/>
+PREFIX toezicht: <http://mu.semte.ch/vocabularies/ext/supervision/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX adms: <http://www.w3.org/ns/adms#>
+PREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>
+PREFIX schema: <http://schema.org/>
+PREFIX person: <http://www.w3.org/ns/person#>
+
+INSERT {
+  GRAPH ?graph {
+    ?mandaat a mandaat:Mandaat ; 
+             ?p ?o .
+  }
+} WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?mandaat a mandaat:Mandaat ; 
+             ?p ?o .
+    ?bestuursorgaanInTijd org:hasPost ?mandaat ;
+                          mandaat:isTijdspecialisatieVan ?bestuursorgaan .
+    ?bestuursorgaan besluit:bestuurt ?bestuurseenheid .
+    ?bestuurseenheid mu:uuid ?groupId .
+
+    BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?groupId)) as ?graph)
+  }
+}
+
+;
+
+INSERT {
+  GRAPH ?g {
+    ?persoon a person:Person ;
+             ?p ?o .
+  }
+} WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?persoon a person:Person ; 
+             ?p ?o .
+    ?kandidatenlijst mandaat:heeftKandidaat ?persoon ;
+                     mandaat:behoortTot ?rechtstreekseVerkiezing .
+    ?rechtstreekseVerkiezing mandaat:steltSamen ?bestuursorgaanInTijd .
+    ?bestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan .
+    ?bestuursorgaan besluit:bestuurt ?bestuurseenheid .
+    ?bestuurseenheid mu:uuid ?groupId .
+    
+    BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?groupId)) as ?g)
+  }
+}
