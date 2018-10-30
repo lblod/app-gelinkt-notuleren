@@ -2,6 +2,7 @@ PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
 PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
 PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
 PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 # Nieuwe bestuursorganen in tijd voor Gemeente, OCMW, District en Provincie
 
@@ -16,6 +17,7 @@ INSERT {
 } WHERE {
   GRAPH ?g {
     ?bestuurseenheid a besluit:Bestuurseenheid ;
+       skos:prefLabel ?naam;
        besluit:classificatie ?classificatie .
 
     FILTER (?classificatie IN (<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000>, <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>, <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>, <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000003>))
@@ -26,6 +28,7 @@ INSERT {
 
     BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":", STR(?bestuursorgaanLabel))) AS ?uuidInTijd) .
     BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", STR(?uuidInTijd))) AS ?bestuursorgaanInTijd) .
+    FILTER(?naam NOT IN ("Kruisem", "Pelt", "Lievegem", "Oudsbergen", "Puurs-Sint-Amands"))
   }
 }
 
