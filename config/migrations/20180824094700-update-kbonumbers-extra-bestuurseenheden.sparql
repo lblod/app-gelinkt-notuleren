@@ -1,0 +1,31 @@
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+INSERT {
+  GRAPH ?g {
+    ?s ext:kbonummer ?newkbo;
+       dct:identifier ?newkbo.
+  }
+} WHERE {
+  GRAPH ?g {
+    ?s ext:kbonummer ?kbonummer.
+    BIND( STRLEN( ?kbonummer ) AS ?len )
+    BIND( CONCAT("0", STR(?kbonummer)) AS ?newkbo )
+  }
+  FILTER( ?len = 9 )
+  FILTER( regex(?kbonummer, "^[0-9]*$") )
+};
+
+DELETE {
+  GRAPH ?g {
+    ?s ext:kbonummer ?kbonummer;
+       dct:identifier ?kbonummer.
+  }
+} WHERE {
+  GRAPH ?g {
+    ?s ext:kbonummer ?kbonummer.
+    BIND( STRLEN( ?kbonummer ) AS ?len )
+  }
+  FILTER( ?len = 9 )
+  FILTER( regex(?kbonummer, "^[0-9]*$") )
+}
