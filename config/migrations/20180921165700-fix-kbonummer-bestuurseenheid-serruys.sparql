@@ -1,0 +1,15 @@
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+DELETE {
+  GRAPH ?g {
+      <http://data.lblod.info/id/bestuurseenheden/251143c6-2094-4ad5-8b54-26cfded0082a> ext:kbonummer ?kbo .
+  }
+} INSERT {
+  GRAPH ?g {
+      <http://data.lblod.info/id/bestuurseenheden/251143c6-2094-4ad5-8b54-26cfded0082a> ext:kbonummer "0473908049" .
+  }
+} WHERE {
+  GRAPH ?g {
+      <http://data.lblod.info/id/bestuurseenheden/251143c6-2094-4ad5-8b54-26cfded0082a> ext:kbonummer ?kbo .
+  }
+}
