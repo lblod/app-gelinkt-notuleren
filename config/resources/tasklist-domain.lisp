@@ -49,13 +49,7 @@
   :properties `((:status :bool ,(s-prefix "ext:taskSolutionStatus")))
 
   :has-one `((task :via ,(s-prefix "ext:taskSolutionTask")
-                   :as "task")
-             (task-solution :via ,(s-prefix "ext:taskSolutionChild")
-                  :inverse t
-                  :as "task-solution-parent"))
-
-  :has-many `((task-solution :via ,(s-prefix "ext:taskSolutionChild")
-                    :as "task-solution-childs"))
+                   :as "task"))
 
   :resource-base (s-url "http://data.lblod.info/id/task-solutions/")
   :features '(include-uri)
