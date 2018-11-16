@@ -61,7 +61,19 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid",
                         "http://www.w3.org/ns/prov#Location",
                         "http://data.vlaanderen.be/ns/mandaat#Kandidatenlijst",
-                        "http://data.vlaanderen.be/ns/mandaat#Verkiezingsresultaat"
+                        "http://data.vlaanderen.be/ns/mandaat#Verkiezingsresultaat",
+                        "http://data.vlaanderen.be/ns/besluit#Zitting",
+                        "http://data.vlaanderen.be/ns/besluit#Stemming",
+                        "http://data.vlaanderen.be/ns/besluit#Besluit",
+                        "http://data.vlaanderen.be/ns/besluit#Artikel",
+                        "http://data.vlaanderen.be/ns/besluit#Agenda",
+                        "http://data.vlaanderen.be/ns/besluit#Agendapunt",
+                        "http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt",
+                        "http://data.vlaanderen.be/ns/mandaat#Mandaat",
+                        "http://data.vlaanderen.be/ns/mandaat#Mandataris",
+                        "http://data.vlaanderen.be/ns/mandaat#Fractie",
+                        "http://purl.org/dc/terms/PeriodOfTime",                        
+                        "http://www.w3.org/ns/org#Membership",
                       ]
                     } },
                   %GraphSpec{
@@ -69,17 +81,17 @@ defmodule Acl.UserGroups.Config do
                     constraint: %ResourceFormatConstraint{
                       resource_prefix: "http://mu.semte.ch/sessions/"
                     } } ] },
-      %GroupSpec{
-        name: "public-wf",
-        useage: [:write, :read_for_write],
-        access: %AlwaysAccessible{}, # TODO: Should be only for logged in users
-        graphs: [%GraphSpec{
-                    graph: "http://mu.semte.ch/graphs/public",
-                    constraint: %ResourceConstraint{
-                      resource_types: [
-                        "http://mu.semte.ch/vocabularies/ext/BeleidsdomeinCode"
-                      ]
-                    } } ] },
+      # %GroupSpec{
+      #   name: "public-wf",
+      #   useage: [:write, :read_for_write],
+      #   access: %AlwaysAccessible{}, # TODO: Should be only for logged in users
+      #   graphs: [%GraphSpec{
+      #               graph: "http://mu.semte.ch/graphs/public",
+      #               constraint: %ResourceConstraint{
+      #                 resource_types: [
+
+      #                 ]
+      #               } } ] },
 
       # // ORGANIZATION HAS POSSIBLY DUPLICATE USER DATA
       %GroupSpec{
@@ -97,23 +109,11 @@ defmodule Acl.UserGroups.Config do
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://mu.semte.ch/vocabularies/ext/EditorDocument",
-                        "http://data.vlaanderen.be/ns/besluit#Zitting",
-                        "http://data.vlaanderen.be/ns/besluit#Stemming",
-                        "http://data.vlaanderen.be/ns/besluit#Besluit",
-                        "http://data.vlaanderen.be/ns/besluit#Artikel",
-                        "http://data.vlaanderen.be/ns/besluit#Agenda",
-                        "http://data.vlaanderen.be/ns/besluit#Agendapunt",
-                        "http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt",
-                        "http://data.vlaanderen.be/ns/mandaat#Mandaat",
-                        "http://data.vlaanderen.be/ns/mandaat#Mandataris",
-                        "http://data.vlaanderen.be/ns/mandaat#Fractie",
-                        "http://purl.org/dc/terms/PeriodOfTime",                        
-                        "http://www.w3.org/ns/org#Membership",
                         "http://www.w3.org/ns/person#Person",
                         "http://data.vlaanderen.be/ns/persoon#Geboorte",
+                        "http://www.w3.org/ns/adms#Identifier",
                         "http://xmlns.com/foaf/0.1/Person",
                         "http://xmlns.com/foaf/0.1/OnlineAccount",
-                        "http://www.w3.org/ns/adms#Identifier",
                         "http://mu.semte.ch/vocabularies/ext/TaskSolution",
                         "http://mu.semte.ch/vocabularies/ext/TasklistSolution"
                       ] } } ] },
@@ -133,30 +133,9 @@ defmodule Acl.UserGroups.Config do
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://mu.semte.ch/vocabularies/ext/EditorDocument",                        
-                        "http://data.vlaanderen.be/ns/besluit#Zitting",
-                        "http://data.vlaanderen.be/ns/besluit#Stemming",
-                        "http://data.vlaanderen.be/ns/besluit#Besluit",
-                        "http://data.vlaanderen.be/ns/besluit#Artikel",
-                        "http://data.vlaanderen.be/ns/besluit#Agenda",
-                        "http://data.vlaanderen.be/ns/besluit#Agendapunt",
-                        "http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt",
-                        "http://data.vlaanderen.be/ns/mandaat#Mandaat",
-                        "http://data.vlaanderen.be/ns/mandaat#Mandataris",
-                        "http://data.vlaanderen.be/ns/mandaat#Fractie",
-                        "http://purl.org/dc/terms/PeriodOfTime",                        
-                        "http://www.w3.org/ns/org#Membership",
-                        "http://xmlns.com/foaf/0.1/Person",
-                        "http://xmlns.com/foaf/0.1/OnlineAccount",
-                        "http://www.w3.org/ns/adms#Identifier",
                         "http://mu.semte.ch/vocabularies/ext/TaskSolution",
                         "http://mu.semte.ch/vocabularies/ext/TasklistSolution"
                       ] } } ] },
-
-
-      # // USER HAS NO DATA
-      # this was moved to org instead.
-      # perhaps move some elements to public when needed for demo
-      # purposes.
 
 
       # // CLEANUP
