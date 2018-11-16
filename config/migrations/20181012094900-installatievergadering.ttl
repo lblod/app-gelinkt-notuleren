@@ -265,15 +265,15 @@
     <div property="ext:idInSnippet" content="${generateBoundUuid('naam voorzitter gemeenteraad')}">${generateBoundUuid('naam voorzitter gemeenteraad')}</div>
   </div>
 
-  <!-- opening -->
-  <p id="${generateBoundUuid('naam voorzitter gemeenteraad')}">De uittredend voorzitter van de gemeenteraad, zit de installatievergadering voor <!-- op <span content="" datatype="xsd:dateTime" ><span typeOf="ext:currentDate">&nbsp;</span></span> --> en deelt mee dat er een video-opname gemaakt wordt van de zitting<!--  ingevolge schriftelijke uitnodiging vanwege de Algemeen Directeur dienstdoend <span property="ext:TODO" var="ext:TODO" datatype="xsd:date" content="datum">&lt;datum&gt;</span>​ -->.</p>
-
   <br>
   <!-- aanwezigen -->
   <h3 class="h2">Aanwezigen</h3>
   <span property="ext:insertAanwezigenText">Beheer aanwezigen bij de zitting.</span>
   <br>
   <br>
+
+  <!-- opening -->
+  <p id="${generateBoundUuid('naam voorzitter gemeenteraad')}">De uittredend voorzitter van de gemeenteraad, zit de installatievergadering voor <!-- op <span content="" datatype="xsd:dateTime" ><span typeOf="ext:currentDate">&nbsp;</span></span> -->.</p>
 
   <!-- Agenda overzicht-->
   <div property="besluit:heeftAgenda" resource="http://data.lblod.info/id/agendas/${generateUuid()}" typeof="besluit:Agenda">
@@ -394,6 +394,7 @@
         </div>
 
         <br>
+        <br>
 
         <div>
           <p class="u-spacer--small">Neemt akte van,</p>
@@ -464,6 +465,9 @@
             </div>
           </div>
         </div>
+
+        <br>
+        <br>
 
         <div>
           <p class="u-spacer--small">Neemt akte van,<!--  <em>[TO ASK: Vragen aan Domien voor ander scenario (burgemeester buiten de raad, geen burgemeester aangesteld, ...] </em>--></p>
@@ -1355,5 +1359,4 @@
     <p><span id="${generateBoundUuid('nieuwe-voorzitter-3')}">&lt;persoon&gt;</span></p>
     <p><strong>Voorzitter van de gemeenteraad</strong></p>
   </div>
-
  """.
