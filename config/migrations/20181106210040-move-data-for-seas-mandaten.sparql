@@ -13,20 +13,22 @@ PREFIX schema: <http://schema.org/>
 PREFIX person: <http://www.w3.org/ns/person#>
 
 INSERT {
-  GRAPH ?graph {
-    ?mandaat a mandaat:Mandaat ; 
+  GRAPH ?g {
+    ?persoon a person:Person ;
              ?p ?o .
   }
 } WHERE {
   GRAPH <http://mu.semte.ch/graphs/public> {
-    ?mandaat a mandaat:Mandaat ; 
+    ?persoon a person:Person ; 
              ?p ?o .
+    ?mandataris mandaat:isBestuurlijkeAliasVan ?persoon .
+    ?mandataris org:holds ?mandaat .
     ?bestuursorgaanInTijd org:hasPost ?mandaat ;
                           mandaat:isTijdspecialisatieVan ?bestuursorgaan .
     ?bestuursorgaan besluit:bestuurt ?bestuurseenheid .
     ?bestuurseenheid mu:uuid ?groupId .
 
-    BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?groupId)) as ?graph)
+    BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?groupId)) as ?g)
   }
 }
 
@@ -41,6 +43,7 @@ INSERT {
   GRAPH <http://mu.semte.ch/graphs/public> {
     ?persoon a person:Person ; 
              ?p ?o .
+    NOT EXISTS { ?mandataris mandaat:isBestuurlijkeAliasVan ?persoon . }
     ?kandidatenlijst mandaat:heeftKandidaat ?persoon ;
                      mandaat:behoortTot ?rechtstreekseVerkiezing .
     ?rechtstreekseVerkiezing mandaat:steltSamen ?bestuursorgaanInTijd .

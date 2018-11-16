@@ -14,44 +14,6 @@ PREFIX person: <http://www.w3.org/ns/person#>
 
 INSERT {
   GRAPH ?g {
-    ?mandataris ?mandatarisP ?mandatarisO .
-  }
-} WHERE {
-  GRAPH ?g {
-    FILTER(STRSTARTS(STR(?g), "http://mu.semte.ch/graphs/organization/")) 
-
-    ?mandaat a mandaat:Mandataris .
-  }
-
-  GRAPH <http://mu.semte.ch/graphs/public> {
-    ?mandataris org:holds ?mandaat .
-    ?mandataris ?mandatarisP ?mandatarisO .
-  }
-}
-
-;
-
-INSERT {
-  GRAPH ?g {
-    ?persoon ?persoonP ?persoonO .
-  }
-} WHERE {
-  GRAPH ?g {
-    FILTER(STRSTARTS(STR(?g), "http://mu.semte.ch/graphs/organization/")) 
-
-    ?mandataris a mandaat:Mandataris .
-  }
-
-  GRAPH <http://mu.semte.ch/graphs/public> {
-    ?mandataris mandaat:isBestuurlijkeAliasVan ?persoon .
-    ?persoon ?persoonP ?persoonO .
-  }
-}
-
-;
-
-INSERT {
-  GRAPH ?g {
     ?geboorte ?geboorteP ?geboorteO .
   }
 } WHERE {
