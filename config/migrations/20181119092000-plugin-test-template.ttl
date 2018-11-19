@@ -1,0 +1,28 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://mu.semte.ch/vocabularies/ext/> .
+@prefix ns2:	<http://mu.semte.ch/vocabularies/core/> .
+@prefix ns3:	<http://data.vlaanderen.be/ns/besluit#> .
+@prefix ns4:	<http://data.vlaanderen.be/ns/mandaat#> .
+@prefix ns5:	<http://purl.org/dc/terms/> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+
+<http://lblod.info/templates/3cd2fcf8-b7b0-42e4-b84a-f06c375d72d4>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"3cd2fcf8-b7b0-42e4-b84a-f06c375d72d4" ;
+    ns1:templateMatches "installatie";
+    ns1:activeInContext	foaf:Document ;
+    ns1:disabledInContext	ns3:Zitting ;
+    ns5:title	"Installatievergadering test" ;
+    ns1:templateContent """
+    <div typeof="besluit:Zitting" resource="http://data.lblod.info/id/zittingen/244f7b7e-a524-446d-aba3-2d98a0068f93">
+
+
+  <!-- meta zitting -->
+  <h2 class="h1" property="dc:title" id="a2f76bfc-3a80-4e9e-bc03-ea3466fda0fc">
+    Notulen van <span property="http://data.vlaanderen.be/ns/besluit#isGehoudenDoor" typeof="http://data.vlaanderen.be/ns/besluit#Bestuursorgaan" resource="http://data.lblod.info/id/bestuursorganen/87ff0dab47039a42cf3bf27ff22f4f05b88330cd55a74c47480a61a5fdaa378b">
+            <mark data-editor-highlight="true">Gemeenteraad</mark> Brecht
+          </span> &nbsp;, zitting van <span id="b6feb546-06c3-442a-ae93-333afb84d866" property="besluit:geplandeStart" datatype="xsd:date" content="2018-11-19">19 november 2018</span>​ (installatievergadering)
+  </h2>
+  <br>
+  beheer aanstelling gemeenteraadsleden.
+  """.

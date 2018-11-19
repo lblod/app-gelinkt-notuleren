@@ -15,6 +15,76 @@
     ns5:title	"Installatievergadering" ;
     ns1:templateContent """
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('agendapunt-nummer-1')}">0</div>
+  <div property="ext:intentionUri" content="http://zitting/agendapunt-nummer-1">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('agendapunt-nummer-2')}">0</div>
+  <div property="ext:intentionUri" content="http://zitting/agendapunt-nummer-2">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('agendapunt-nummer-3')}">0</div>
+  <div property="ext:intentionUri" content="http://zitting/agendapunt-nummer-3">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('agendapunt-nummer-4')}">0</div>
+  <div property="ext:intentionUri" content="http://zitting/agendapunt-nummer-4">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('agendapunt-nummer-5')}">0</div>
+  <div property="ext:intentionUri" content="http://zitting/agendapunt-nummer-5">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('agendapunt-nummer-6')}">0</div>
+  <div property="ext:intentionUri" content="http://zitting/agendapunt-nummer-6">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('agendapunt-nummer-7')}">0</div>
+  <div property="ext:intentionUri" content="http://zitting/agendapunt-nummer-7">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('agendapunt-nummer-1-bva')}">0</div>
+  <div property="ext:intentionUri" content="http://zitting/agendapunt-nummer-1">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('agendapunt-nummer-2-bva')}">0</div>
+  <div property="ext:intentionUri" content="http://zitting/agendapunt-nummer-2">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('agendapunt-nummer-3-bva')}">0</div>
+  <div property="ext:intentionUri" content="http://zitting/agendapunt-nummer-3">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('agendapunt-nummer-4-bva')}">0</div>
+  <div property="ext:intentionUri" content="http://zitting/agendapunt-nummer-4">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('agendapunt-nummer-5-bva')}">0</div>
+  <div property="ext:intentionUri" content="http://zitting/agendapunt-nummer-5">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('agendapunt-nummer-6-bva')}">0</div>
+  <div property="ext:intentionUri" content="http://zitting/agendapunt-nummer-6">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('agendapunt-nummer-7-bva')}">0</div>
+  <div property="ext:intentionUri" content="http://zitting/agendapunt-nummer-7">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
   <div property="ext:idInSnippet" content="${generateBoundUuid('geplande-start-1')}">0</div>
   <div property="ext:intentionUri" content="http://zitting/geplande-start">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
@@ -265,13 +335,21 @@
     <div property="ext:idInSnippet" content="${generateBoundUuid('naam voorzitter gemeenteraad')}">${generateBoundUuid('naam voorzitter gemeenteraad')}</div>
   </div>
 
-  <!-- opening -->
-  <p id="${generateBoundUuid('naam voorzitter gemeenteraad')}">De uittredend voorzitter van de gemeenteraad, zit de installatievergadering voor <!-- op <span content="" datatype="xsd:dateTime" ><span typeOf="ext:currentDate">&nbsp;</span></span> --> en deelt mee dat er een video-opname gemaakt wordt van de zitting<!--  ingevolge schriftelijke uitnodiging vanwege de Algemeen Directeur dienstdoend <span property="ext:TODO" var="ext:TODO" datatype="xsd:date" content="datum">&lt;datum&gt;</span>​ -->.</p>
-
   <br>
   <!-- aanwezigen -->
   <h3 class="h2">Aanwezigen</h3>
   <span property="ext:insertAanwezigenText">Beheer aanwezigen bij de zitting.</span>
+  <br>
+  <br>
+
+  <!-- opening -->
+  <p id="${generateBoundUuid('naam voorzitter gemeenteraad')}">De uittredend voorzitter van de gemeenteraad, zit de installatievergadering voor <!-- op <span content="" datatype="xsd:dateTime" ><span typeOf="ext:currentDate">&nbsp;</span></span> -->.</p>
+
+	  <!-- Alternatief opening, wanneer deze er niet is
+	  	De voorzitter opent de vergadering om start zitting. -->
+		<!-- Indien van toepassing
+			Mededeling door de voorzitter dat er een video-opname of audio-opname wordt gemaakt van de zitting -->
+
   <br>
   <br>
 
@@ -284,49 +362,49 @@
       <li>
         <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-1')}" typeof="besluit:Agendapunt">
           <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
-          <span property="dc:title"><span id="${generateBoundUuid('ap-1')}">Kennisneming geldigverklaring van de verkiezingen</span></span>
+          <span property="dc:title"><span id="${generateBoundUuid('ap-1')}"><span id="${generateBoundUuid('agendapunt-nummer-1')}">Agendapunt 1:</span> Kennisneming van de geldigverklaring van de verkiezingen</span></span>
         </span>
       </li>
       <li>
         <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-2')}" typeof="besluit:Agendapunt">
           <meta content="meta-content-32" property="besluit:aangebrachtNa" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-1')}">
           <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
-          <span property="dc:title"><span id="${generateBoundUuid('ap-2')}">Mededeling van de benoeming en eedaflegging van de burgemeester (onder voorbehoud)</span></span>
+          <span property="dc:title"><span id="${generateBoundUuid('ap-2')}"><span id="${generateBoundUuid('agendapunt-nummer-2')}">Agendapunt 2:</span> Mededeling over de benoeming en eedaflegging van de burgemeester</span></span>
         </span>
       </li>
       <li>
         <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-3')}" typeof="besluit:Agendapunt">
           <meta content="meta-content-33" property="besluit:aangebrachtNa" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-2')}">
           <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
-          <span property="dc:title"><span id="${generateBoundUuid('ap-3')}">Installatie gemeenteraadsleden en eedaflegging</span></span>
+          <span property="dc:title"><span id="${generateBoundUuid('ap-3')}"><span id="${generateBoundUuid('agendapunt-nummer-3')}">Agendapunt 3:</span> Installatie van de gemeenteraadsleden en vaststelling van hun rangorde</span></span>
         </span>
       </li>
       <li>
         <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-4')}" typeof="besluit:Agendapunt">
-          <meta content="meta-content-34" property="besluit:aangebrachtNa" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-3')}">
+          <meta content="meta-content-36" property="besluit:aangebrachtNa" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-3')}">
           <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
-          <span property="dc:title"><span id="${generateBoundUuid('ap-4')}">Verkiezing van de voorzitter van de gemeenteraad</span></span>
+          <span property="dc:title"><span id="${generateBoundUuid('ap-6')}"><span id="${generateBoundUuid('agendapunt-nummer-4')}">Agendapunt 4:</span> Vaststelling van fractievorming</span></span>
         </span>
       </li>
       <li>
         <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-5')}" typeof="besluit:Agendapunt">
-          <meta content="meta-content-35" property="besluit:aangebrachtNa" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-4')}">
+          <meta content="meta-content-34" property="besluit:aangebrachtNa" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-4')}">
           <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
-          <span property="dc:title"><span id="${generateBoundUuid('ap-5')}">Verkiezing van de schepenen</span></span>
+          <span property="dc:title"><span id="${generateBoundUuid('ap-4')}"><span id="${generateBoundUuid('agendapunt-nummer-5')}">Agendapunt 5:</span> Verkiezing van de voorzitter van de gemeenteraad</span></span>
         </span>
       </li>
       <li>
         <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-6')}" typeof="besluit:Agendapunt">
-          <meta content="meta-content-36" property="besluit:aangebrachtNa" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-5')}">
+          <meta content="meta-content-35" property="besluit:aangebrachtNa" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-5')}">
           <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
-          <span property="dc:title"><span id="${generateBoundUuid('ap-6')}">Vaststelling van fractievorming</span></span>
+          <span property="dc:title"><span id="${generateBoundUuid('ap-5')}"><span id="${generateBoundUuid('agendapunt-nummer-6')}">Agendapunt 6:</span> Verkiezing van de schepenen</span></span>
         </span>
       </li>
       <li>
         <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-7')}" typeof="besluit:Agendapunt">
           <meta content="meta-content-37" property="besluit:aangebrachtNa" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-6')}">
           <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
-          <span property="dc:title"><span id="${generateBoundUuid('ap-7')}">Verkiezing van de Politieraad</span></span>
+          <span property="dc:title"><span id="${generateBoundUuid('ap-7')}"><span id="${generateBoundUuid('agendapunt-nummer-7')}">Agendapunt 7:</span> Verkiezing van de Politieraad</span></span>
         </span>
       </li>
     </ul>
@@ -343,17 +421,29 @@
 
     <div property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-1')}" typeof="besluit:BehandelingVanAgendapunt">
       <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
-      <p property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-1')}">Agendapunt</p>
+      <span property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-1')}"><span id="${generateBoundUuid('agendapunt-nummer-1-bva')}">Agendapunt 1</span></span>
+      <br>
+      <h3 class="h5">Aanwezigen bij agendapunt</h3>
+      <br>
+      <br>
+      <h4 class="h6">Aanwezig</h4>
+      <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
+      <br>
+      <h4 class="h6">Afwezig</h4>
+      <p>&lt;Geef afwezigen hier in&gt;</p>
+      <!--
+      	Afwezigen met kennisgeving
+      	Afwezigen zonder kennisgeving
+      -->
+      <br>
+      <br>
       <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
         <div>
-          <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-1')}">Kennisneming geldigverklaring van de verkiezingen</span></h5>
+          <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-1')}">Kennisneming van de geldigverklaring van de verkiezingen</span></h5>
           <meta content="meta-content-5" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
         </div>
         <br>
-        <h3 class="h5">Aanwezigen bij agendapunt</h3>
-        <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
-        <br>
-        <p>Korte openbare beschrijving: <span property="eli:description">Kennisneming geldigverklaring van de verkiezingen.</span></p>
+        <p>Korte openbare beschrijving: <span property="eli:description">Kennisneming van de geldigverklaring van de verkiezingen.</span></p>
         <br>
 
         <div>
@@ -394,6 +484,7 @@
         </div>
 
         <br>
+        <br>
 
         <div>
           <p class="u-spacer--small">Neemt akte van,</p>
@@ -412,17 +503,17 @@
     <div property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-2')}" typeof="besluit:BehandelingVanAgendapunt">
       <meta content="meta-content-6" property="besluit:gebeurtNa" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-1')}">
       <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
-      <p property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-2')}">Agendapunt</p>
+      <p property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-2')}"><span id="${generateBoundUuid('agendapunt-nummer-2-bva')}">Agendapunt 2</span></p>
+      <br>
+      <h3 class="h5">Aanwezigen bij agendapunt</h3>
+      <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
+      <br>
       <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit mandaat:Aanstellingsbesluit">
         <div>
-          <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-2')}">Mededeling van de benoeming en eedaflegging van de burgemeester</span></h5>
+          <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-2')}">Mededeling over de benoeming en eedaflegging van de burgemeester</span></h5>
           <meta content="meta-content-7" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
         </div>
-        <br>
-        <h3 class="h5">Aanwezigen bij agendapunt</h3>
-        <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
-        <br>
-        <p>Korte openbare beschrijving: <span property="eli:description">Mededeling van de benoeming en eedaflegging van de burgemeester</span></p>
+        <p>Korte openbare beschrijving: <span property="eli:description">Mededeling van de benoeming en eedaflegging van de burgemeester.</span></p>
         <br>
 
         <div>
@@ -465,6 +556,9 @@
           </div>
         </div>
 
+        <br>
+        <br>
+
         <div>
           <p class="u-spacer--small">Neemt akte van,<!--  <em>[TO ASK: Vragen aan Domien voor ander scenario (burgemeester buiten de raad, geen burgemeester aangesteld, ...] </em>--></p>
 
@@ -484,17 +578,17 @@
     <div property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-3')}" typeof="besluit:BehandelingVanAgendapunt">
       <meta content="meta-content-8" property="besluit:gebeurtNa" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-2')}">
       <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
-      <p property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-3')}">Agendapunt</p>
+      <p property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-3')}"><span id="${generateBoundUuid('agendapunt-nummer-3-bva')}">Agendapunt 3</span></p>
+      <br>
+      <h3 class="h5">Aanwezigen bij agendapunt</h3>
+      <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
+      <br>
       <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
         <div>
-          <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-3')}">Installatie gemeenteraadsleden en eedaflegging</span></h5>
+          <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-3')}">Installatie van de gemeenteraadsleden en vaststelling van hun rangorde</span></h5>
           <meta content="meta-content-9" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
         </div>
-        <br>
-        <h3 class="h5">Aanwezigen bij agendapunt</h3>
-        <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
-        <br>
-        <p>Korte openbare beschrijving: <span property="eli:description">Installatie gemeenteraadsleden en eedaflegging</span></p>
+        <p>Korte openbare beschrijving: <span property="eli:description">Installatie van de gemeenteraadsleden en vaststelling van hun rangorde.</span></p>
         <br>
 
         <div>
@@ -599,110 +693,66 @@
               <div property="ext:idInSnippet" content="${generateBoundUuid('aan en afwezigen')}">${generateBoundUuid('aan en afwezigen')}</div>
             </div>
             <!-- <h6 class="h5">Besluit</h6> -->
+            beheer aanstelling gemeenteraadsleden.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-4')}" typeof="besluit:BehandelingVanAgendapunt">
+      <meta content="meta-content-26" property="besluit:gebeurtNa" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-3')}">
+      <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
+      <p property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-4')}"><span id="${generateBoundUuid('agendapunt-nummer-4-bva')}">Agendapunt 6</span></p>
+      <br>
+      <h3 class="h5">Aanwezigen bij agendapunt</h3>
+      <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
+      <br>
+      <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
+        <div>
+          <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-4')}">Vaststelling van fractievorming</span></h5>
+          <meta content="meta-content-27" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+        </div>
+        <p>Korte openbare beschrijving: <span property="eli:description">Vaststelling van fractievorming.</span></p>
+        <br>
+
+        <div>
+          <p class="u-spacer--small">De gemeenteraad,</p>
+          <div property="besluit:motivering" lang="nl">
+            <div>
+              <!-- <h6 class="h5">Juridische gronden</h6> -->
+              <ul class="bullet-list">
+                <li>Gelet op&nbsp;
+                  <a href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/REFERENCE" property="eli:cites">het decreet van 22 december 2017 over het lokaal bestuur, artikel <span resource="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/REFERENCE/ARTIKEL" property="eli:cites">36</span></a>;</li>
+                <li>Gelet op&nbsp;
+                  <a href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/REFERENCE" property="eli:cites">de omzendbrief BA-2018/2 van 19 oktober 2018</a> <!-- <em>TODO validate datum</em> --> – Start van de lokale en provinciale bestuursperiode;</li>
+              </ul>
+            </div>
+            <div>
+              <!-- <h6 class="h5">Feiten en context</h6> -->
+              <ul class="bullet-list">
+                <li>Overwegende dat gemeenteraadsleden die op eenzelfde lijst verkozen zijn in principe één fractie vormen;</li>
+                <li>Overwegende dat geen enkele lijst de wens heeft uitgedrukt om te splitsen in twee fracties, noch de wens hebben uitgedrukt om zich te verenigen in één fractie met een andere lijst;<!--  [TO ASK: vraag Domien hoe ander scenario er uit ziet: wel splitswens of vereniging] --></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="u-spacer--small">Beslist,</p>
+
+          <div>
+            <!-- <h6 class="h5">Besluit</h6> -->
             <ul class="bullet-list">
               <li property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:Artikel">
-                <span property="eli:number">Artikel 1</span>
-                <meta content="meta-content-10" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
-                <div property="prov:value"> Kennis te nemen van <!-- [TO ASK ANDER SCENARIO: geen afstand noch onverenigbaarheid] -->
-                  <ul class="bullet-list">
-                    <li>geen vastgestelde afstanden van mandaat;</li>
-                    <!--                       <li>de vastgestelde afstanden van mandaat door: [TO ASK optioneel]
-                         <ul>
-                         <li><span property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;</span></li>
-                         </ul>
-                         </li> -->
-                    <li>geen vastgestelde onverenigbaarheden;</li>
-                    <!-- <li>de vastgestelde onverenigbaarheden door: [TO ASK optioneel]
-                         <ul>
-                         <li><span property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;</span></li>
-                         </ul>
-                         </li> -->
-                  </ul>
-                </div>
-              </li>
-
-              <li property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:Artikel">
-                <span property="eli:number">Artikel 2</span>
-                <meta content="meta-content-11" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
-                <div property="prov:value"> De geloofsbrieven goed te keuren van:
-                  <ul class="numbered-list">
-                    <li>Lijst nummer 1 (Naam partij)
-                      <ul class="bullet-list">
-                        <li>
-                          <span property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;</span>
-                        </li>
-                        <li>
-                          <span property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;</span>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>Lijst nummer 2 (Naam partij)
-                      <ul class="bullet-list">
-                        <li>
-                          <span property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;</span>
-                        </li>
-                        <li>
-                          <span property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;</span>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-
-              <li property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:Artikel">
-                <span property="eli:number">Artikel 3</span>
-                <meta content="meta-content-12" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
-                <div property="prov:value"> Akte te nemen van de eedaflegging in handen van de uittredende voorzitter van:
-                  <ul class="numbered-list">
-                    <li>Lijst nummer 1 (Naam partij)
-                      <ul class="bullet-list">
-                        <li>
-                          <span property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;</span>
-                        </li>
-                        <li>
-                          <span property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;</span>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>Lijst nummer 2 (Naam partij)
-                      <ul class="bullet-list">
-                        <li>
-                          <span property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;</span>
-                        </li>
-                        <li>
-                          <span property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;</span>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-
-              <li property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:Artikel">
-                <span property="eli:number">Artikel 4</span>
-                <meta content="meta-content-13" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
-                <span property="prov:value"> Akte te nemen van de afwezigheid zonder opgave van geldige reden van volgende verkozen gemeenteraadsleden: geen <!-- [TO ASK: ander scenario visualiseren] <em>(moet dit nu bij/na akteneming van onverenigbaarheid/afstand en geloofsbrieven?)</em> -->
-                  <!--                     <ul class="bullet-list">
-                       <li>
-                       <span property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;</span>: reden
-                       </li>
-                       <li>
-                       <span property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;</span>: reden
-                       </li>
-                       </ul> -->
-                </span>
-              </li>
-
-              <li property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:Artikel" id="${generateBoundUuid('rangorde gemeenteraadsleden')}">
-                <div class="ext_scroll_to" typeof="ext:ScrollToLocation" resource="http://scrollToLocation/${generateUuid()}">
-                  <div property="ext:scrollToLogicalName" content="rangorde gemeenteraadsleden">rangorde gemeenteraadsleden</div>
-                  <div property="ext:idInSnippet" content="${generateBoundUuid('rangorde gemeenteraadsleden')}">${generateBoundUuid('rangorde gemeenteraadsleden')}</div>
-                </div>
-                <span property="eli:number">Artikel 5</span>
-                <meta content="meta-content-14" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
-                <span property="prov:value"> De rangorde van de gemeenteraadsleden als volgt vast te stellen:<br>
-                  voeg rangorde tabel gemeenteraadsleden toe.
+                <span property="eli:number">Enig artikel.</span>
+                <meta content="meta-content-28" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+                <span property="prov:value">
+                  Vast te stellen dat volgende fracties gevormd worden:
+                  <span property="ext:fractievormingText">Voeg lijst met fracties hier toe.</span>
                 </span>
               </li>
             </ul>
@@ -711,27 +761,24 @@
       </div>
     </div>
 
-
-
-
     <br>
     <br>
     <br>
 
-    <div id="${generateBoundUuid('voordrachtsakte algemeen directeur')}"  property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-4')}" typeof="besluit:BehandelingVanAgendapunt">
-      <meta content="meta-content-15" property="besluit:gebeurtNa" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-3')}">
+    <div id="${generateBoundUuid('voordrachtsakte algemeen directeur')}"  property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-5')}" typeof="besluit:BehandelingVanAgendapunt">
+      <meta content="meta-content-15" property="besluit:gebeurtNa" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-4')}">
       <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
-      <p property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-4')}">Agendapunt</p>
+      <p property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-5')}"><span id="${generateBoundUuid('agendapunt-nummer-5-bva')}">Agendapunt 5</span></p>
+      <br>
+      <h3 class="h5">Aanwezigen bij agendapunt</h3>
+      <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
+      <br>
       <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit mandaat:Aanstellingsbesluit">
         <div>
-          <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-4')}">Verkiezing van de voorzitter van de gemeenteraad</span></h5>
+          <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-5')}">Verkiezing van de voorzitter van de gemeenteraad</span></h5>
           <meta content="meta-content-16" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
         </div>
-        <br>
-        <h3 class="h5">Aanwezigen bij agendapunt</h3>
-        <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
-        <br>
-        <p>Korte openbare beschrijving: <span property="eli:description">Verkiezing van de voorzitter van de gemeenteraad</span></p>
+        <p>Korte openbare beschrijving: <span property="eli:description">Verkiezing van de voorzitter van de gemeenteraad.</span></p>
         <br>
 
         <div>
@@ -811,21 +858,21 @@
     <br>
     <br>
 
-    <div property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-5')}" typeof="besluit:BehandelingVanAgendapunt">
-      <meta content="meta-content-19" property="besluit:gebeurtNa" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-4')}">
+    <div property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-6')}" typeof="besluit:BehandelingVanAgendapunt">
+      <meta content="meta-content-19" property="besluit:gebeurtNa" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-5')}">
       <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
-      <p property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-5')}">Agendapunt</p>
+      <p property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-6')}"><span id="${generateBoundUuid('agendapunt-nummer-6-bva')}">Agendapunt 6</span></p>
+      <br>
+      <h3 class="h5">Aanwezigen bij agendapunt</h3>
+      <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
+      <br>
       <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
         <div>
-          <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-5')}">Verkiezing van de schepenen</span></h5>
+          <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-6')}">Verkiezing van de schepenen</span></h5>
           <meta content="meta-content-20" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
         </div>
         <br>
-        <p>Korte openbare beschrijving: <span property="eli:description">Verkiezing van de schepenen</span></p>
-        <br>
-        <h3 class="h5">Aanwezigen bij agendapunt</h3>
-        <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
-        <br>
+        <p>Korte openbare beschrijving: <span property="eli:description">Verkiezing van de schepenen.</span></p>
 
         <div>
           <p class="u-spacer--small">De gemeenteraad,</p>
@@ -973,82 +1020,20 @@
     <br>
     <br>
 
-    <div property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-6')}" typeof="besluit:BehandelingVanAgendapunt">
-      <meta content="meta-content-26" property="besluit:gebeurtNa" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-5')}">
-      <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
-      <p property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-6')}">Agendapunt</p>
-      <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
-        <div>
-          <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-6')}">Vaststelling van fractievorming</span></h5>
-          <meta content="meta-content-27" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
-        </div>
-        <br>
-        <h3 class="h5">Aanwezigen bij agendapunt</h3>
-        <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
-        <br>
-        <p>Korte openbare beschrijving: <span property="eli:description">Vaststelling van fractievorming</span></p>
-        <br>
-
-        <div>
-          <p class="u-spacer--small">De gemeenteraad,</p>
-          <div property="besluit:motivering" lang="nl">
-            <div>
-              <!-- <h6 class="h5">Juridische gronden</h6> -->
-              <ul class="bullet-list">
-                <li>Gelet op&nbsp;
-                  <a href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/REFERENCE" property="eli:cites">het decreet van 22 december 2017 over het lokaal bestuur, artikel <span resource="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/REFERENCE/ARTIKEL" property="eli:cites">36</span></a>;</li>
-                <li>Gelet op&nbsp;
-                  <a href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/REFERENCE" property="eli:cites">de omzendbrief BA-2018/2 van 19 oktober 2018</a> <!-- <em>TODO validate datum</em> --> – Start van de lokale en provinciale bestuursperiode;</li>
-              </ul>
-            </div>
-            <div>
-              <!-- <h6 class="h5">Feiten en context</h6> -->
-              <ul class="bullet-list">
-                <li>Overwegende dat gemeenteraadsleden die op eenzelfde lijst verkozen zijn in principe één fractie vormen;</li>
-                <li>Overwegende dat geen enkele lijst de wens heeft uitgedrukt om te splitsen in twee fracties, noch de wens hebben uitgedrukt om zich te verenigen in één fractie met een andere lijst;<!--  [TO ASK: vraag Domien hoe ander scenario er uit ziet: wel splitswens of vereniging] --></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <p class="u-spacer--small">Beslist,</p>
-
-          <div>
-            <!-- <h6 class="h5">Besluit</h6> -->
-            <ul class="bullet-list">
-              <li property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:Artikel">
-                <span property="eli:number">Enig artikel.</span>
-                <meta content="meta-content-28" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
-                <span property="prov:value">
-                  Vast te stellen dat volgende fracties gevormd worden:
-                  <span property="ext:fractievormingText">Voeg lijst met fracties hier toe.</span>
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <br>
-    <br>
-    <br>
-
     <div property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-7')}" typeof="besluit:BehandelingVanAgendapunt">
       <meta content="meta-content-29" property="besluit:gebeurtNa" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-6')}">
       <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
-      <p property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-7')}">Agendapunt</p>
+      <p property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-7')}"><span id="${generateBoundUuid('agendapunt-nummer-7-bva')}">Agendapunt 7</span></p>
+      <br>
+      <h3 class="h5">Aanwezigen bij agendapunt</h3>
+      <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
+      <br>
       <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
         <div>
           <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-7')}">Verkiezing van de Politieraad</span></h5>
           <meta content="meta-content-30" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
         </div>
-        <br>
-        <h3 class="h5">Aanwezigen bij agendapunt</h3>
-        <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
-        <br>
-        <p>Korte openbare beschrijving: <span property="eli:description">Verkiezing van de Politieraad</span></p>
+        <p>Korte openbare beschrijving: <span property="eli:description">Verkiezing van de Politieraad.</span></p>
         <br>
 
         <div>
@@ -1148,6 +1133,7 @@
              </ul>
              </div> -->
         <br>
+        <span property="ext:insertStemmingText">Beheer de stemmingen bij verkiezingen politieraad.</span>
         <div typeof="besluit:Stemming">
           <p>Gaat in openbare vergadering en bij geheime stemming over tot de verkiezing van de effectieve leden en hun opvolgers van de politieraad</p>
           <ul class="bullet-list">
