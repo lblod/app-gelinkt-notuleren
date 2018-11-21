@@ -207,48 +207,8 @@
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('eedafleggingburgemeesterdatum-1')}">10</div>
-  <div property="ext:intentionUri" content="http://installatie/eedafleggingburgemeesterdatum">a</div>
-  <div property="ext:variableState" content="initialized">initialized</div>
-</div>
-<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('eedafleggingburgemeesterdatum-2')}">11</div>
-  <div property="ext:intentionUri" content="http://installatie/eedafleggingburgemeesterdatum">a</div>
-  <div property="ext:variableState" content="initialized">initialized</div>
-</div>
-<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-persoon-1')}">40</div>
-  <div property="ext:intentionUri" content="http://installatie/burgemeester-persoon">a</div>
-  <div property="ext:variableState" content="initialized">initialized</div>
-</div>
-<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-persoon-2')}">41</div>
-  <div property="ext:intentionUri" content="http://installatie/burgemeester-persoon">a</div>
-  <div property="ext:variableState" content="initialized">initialized</div>
-</div>
-<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-persoon-3')}">42</div>
-  <div property="ext:intentionUri" content="http://installatie/burgemeester-persoon">a</div>
-  <div property="ext:variableState" content="initialized">initialized</div>
-</div>
-<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
   <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-persoon-5')}">44</div>
   <div property="ext:intentionUri" content="http://installatie/burgemeester-persoon">a</div>
-  <div property="ext:variableState" content="initialized">initialized</div>
-</div>
-<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-persoon-6')}">45</div>
-  <div property="ext:intentionUri" content="http://installatie/burgemeester-persoon">a</div>
-  <div property="ext:variableState" content="initialized">initialized</div>
-</div>
-<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('bestuurseenheid-1')}">48</div>
-  <div property="ext:intentionUri" content="http://zitting/bestuurseenheid">a</div>
-  <div property="ext:variableState" content="initialized">initialized</div>
-</div>
-<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('bestuurseenheid-2')}">49</div>
-  <div property="ext:intentionUri" content="http://zitting/bestuurseenheid">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <!--START TASKLISTS-->
@@ -483,7 +443,7 @@
       <h3 class="h5">Aanwezigen bij agendapunt</h3>
       <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
       <br>
-      <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit mandaat:Aanstellingsbesluit">
+      <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit ext:BesluitBenoemingBurgemeester">
         <div>
           <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-2')}">Mededeling over de benoeming en eedaflegging van de burgemeester</span></h5>
           <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
@@ -491,14 +451,7 @@
         <p>Korte openbare beschrijving: <span property="eli:description">Mededeling over de benoeming en eedaflegging van de burgemeester.</span></p>
         <br>
 
-      	<p class="delete-me-mark-highlight-make-me-plugin">Selecteer scenario benoeming en eedaflegging burgemeester</p>
-
-      	<!-- Erika!
-
-					installatievergadering-benoeming-burgemeester-benoeming-1-burgemeester-benoemd.html
-					installatievergadering-benoeming-burgemeester-benoeming-2-geen-burgemeester-benoemd.html
-
-				-->
+      	<p>Selecteer scenario benoeming en eedaflegging burgemeester</p>
       </div>
     </div>
 
@@ -1218,7 +1171,7 @@
             <br>
             <p>Origineel werd getekend door:</p>
             <ul class="bullet-list">
-              <li><span id="${generateBoundUuid('burgemeester-persoon-6')}" property="ext:TODO">&lt;Typ naam&gt;</span>, burgemeester</li>
+              <li><span id="${generateBoundUuid('burgemeester-persoon-5')}" class="mark-highlight-manual">Voer naam burgemeester in</span>, burgemeester</li>
               <li><span var="ext:TODO">&lt;persoon&gt;<!-- variable jongste leden persoon A] --></span> en <span var="ext:TODO">&lt;persoon&gt;<!--  [variable jongste leden persoon B] --></span>, de jongste twee gemeenteraadsleden</li>
               <li><span> (Algemeen Directeur)</span></li>
               <li>Volgende gemeenteraadsleden: NIHIL</li>

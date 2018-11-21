@@ -1,0 +1,40 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://mu.semte.ch/vocabularies/ext/> .
+@prefix ns2:	<http://mu.semte.ch/vocabularies/core/> .
+@prefix ns3:	<http://data.vlaanderen.be/ns/besluit#> .
+@prefix ns4:	<http://data.vlaanderen.be/ns/mandaat#> .
+@prefix ns5:	<http://purl.org/dc/terms/> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+
+<http://lblod.info/templates/407ed451-bee8-4725-94de-36f3d63b64e6>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"407ed451-bee8-4725-94de-36f3d63b64e6" ;
+    ns1:templateMatches "Selecteer scenario benoeming en eedaflegging burgemeester";
+    ns1:activeInContext	ns1:BesluitBenoemingBurgemeester ;
+    ns5:title	"Scenario: geen burgemeester benoemd" ;
+    ns1:templateContent """
+<p class="u-spacer--small">De gemeenteraad,</p>
+<div property="besluit:motivering" lang="nl">
+  <p>Input nog te krijgen</p>
+  <div>
+    <ul class="bullet-list">
+      <li>Input nog te krijgen</li>
+    </ul>
+  </div>
+  <br>
+  <div>
+    <ul class="bullet-list">
+      <li>Input nog te krijgen</li>
+    </ul>
+  </div>
+</div>
+
+<br>
+<br>
+
+<p class="u-spacer--small">Neemt akte van,</p>
+
+<div property="prov:value">
+  <p>Input nog te krijgen</p>
+</div>
+ """.
