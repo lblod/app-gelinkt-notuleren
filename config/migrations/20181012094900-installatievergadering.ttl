@@ -169,6 +169,11 @@
   <div property="ext:intentionUri" content="http://installatie/verkiezingsdatum">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-persoon-5')}">44</div>
+  <div property="ext:intentionUri" content="http://installatie/burgemeester-persoon">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
 
 
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
@@ -192,11 +197,6 @@
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('nieuwe-voorzitter-1')}">0</div>
-  <div property="ext:intentionUri" content="http://zitting/nieuwe-voorzitter">a</div>
-  <div property="ext:variableState" content="initialized">initialized</div>
-</div>
-<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
   <div property="ext:idInSnippet" content="${generateBoundUuid('nieuwe-voorzitter-2')}">1</div>
   <div property="ext:intentionUri" content="http://zitting/nieuwe-voorzitter">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
@@ -204,11 +204,6 @@
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
   <div property="ext:idInSnippet" content="${generateBoundUuid('nieuwe-voorzitter-3')}">1</div>
   <div property="ext:intentionUri" content="http://zitting/nieuwe-voorzitter">a</div>
-  <div property="ext:variableState" content="initialized">initialized</div>
-</div>
-<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-persoon-5')}">44</div>
-  <div property="ext:intentionUri" content="http://installatie/burgemeester-persoon">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <!--START TASKLISTS-->
@@ -663,7 +658,7 @@
       <h3 class="h5">Aanwezigen bij agendapunt</h3>
       <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
       <br>
-      <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit mandaat:Aanstellingsbesluit">
+      <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit mandaat:Aanstellingsbesluit ext:BesluitVerkiezingVoorzitter">
         <div>
           <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-5')}">Verkiezing van de voorzitter van de gemeenteraad</span></h5>
           <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
@@ -671,45 +666,14 @@
         <p>Korte openbare beschrijving: <span property="eli:description">Verkiezing van de voorzitter van de gemeenteraad.</span></p>
         <br>
 
-        <div>
-          <p class="u-spacer--small">De gemeenteraad,</p>
-          <div property="besluit:motivering" lang="nl">
-            <div>
-              <ul class="bullet-list">
-                <li>Gelet op <a href="http://data.lblod.info/WetgevingDocument/1029017" property="eli:cites">het decreet van 22 december 2017 over het lokaal bestuur</a>, de artikelen <a href="http://data.lblod.info/WetgevingArtikel/1234844" property="eli:cites">6 </a> en <a href="http://data.lblod.info/WetgevingArtikel/1234845" property="eli:cites">7 </a>;</li>
-                <li>Gelet op de omzendbrief BA-2018/2 van 19 oktober 2018 &mdash; Start van de lokale en provinciale bestuursperiode;</li>
-              </ul>
-            </div>
-
-            <div>
-              <ul class="bullet-list">
-                <li class="delete-me-mark-highlight-make-me-plugin">Selecteer scenario overhandiging akte van voordracht</li>
-	                <!-- Erika!
-										installatievergadering-voorzitter-akte-overhandiging-3-geen-akte.html
-										installatievergadering-voorzitter-akte-overhandiging-2-laattijdige-akte.html
-										installatievergadering-voorzitter-akte-overhandiging-1-binnen-termijn.html
-	                -->
-
-	               	<!-- Wat moeten we doen als de akte van voordracht niet overhandigd werd aan de voorzitter van de gemeenteraad? -->
-
-                <li>Overwegende dat de kandidaat-voorzitter de voorgeschreven eed als gemeenteraadslid heeft afgelegd en er geen specifieke eed als voorzitter van de gemeenteraad dient afgelegd te worden;</li>
-              </ul>
-            </div>
-          </div>
-          <p class="u-spacer--small">Beslist,</p>
-          <div>
-          	<p class="delete-me-mark-highlight-make-me-plugin">Selecteer scenario akte van voordracht kandidaat-voorzitter</p>
-          	<!-- Erika!
-
-          		Kennisname van de tijdige en ontvankelijke akte van voordracht van de kandidaat-voorzitter
-          		installatievergadering-voorzitter-besluit-1-tijdig-ontvankelijk.html
-
-          		Kennisname van het ontbreken van een tijdige en ontvankelijke akte van voordracht van de kandidaat-voorzitter
-							installatievergadering-voorzitter-besluit-2-niet-tijdig-niet-ontvankelijk.html
-						-->
-
-          </div>
+        <div class="ext_scroll_to" typeof="ext:ScrollToLocation" resource="http://scrollToLocation/${generateUuid()}">
+          <div property="ext:scrollToLogicalName" content="datum bezorging akte van voordracht kandidaat-voorzitter">datum bezorging akte van voordracht kandidaat-voorzitter</div>
+          <div property="ext:idInSnippet" content="${generateBoundUuid('datum bezorging akte van voordracht kandidaat-voorzitter')}">${generateBoundUuid('datum bezorging akte van voordracht kandidaat-voorzitter')}</div>
         </div>
+        <div id="${generateBoundUuid('datum bezorging akte van voordracht kandidaat-voorzitter')}">
+          <p>Selecteer scenario verkiezing van de voorzitter van de gemeenteraad</p>
+        </div>
+
       </div>
     </div>
 
@@ -1195,7 +1159,7 @@
     <p><span class="mark-highlight-manual">Voer algemeen directeur in</span></p>
     <p><strong>Algemeen directeur</strong></p>
     <br>
-    <p><span id="${generateBoundUuid('nieuwe-voorzitter-3')}"><span class="mark-highlight-manual">Voer voorzitter van de gemeenteraad in</span></span></p>
+    <p><span id="${generateBoundUuid('nieuwe-voorzitter-3')}"><span class="mark-highlight-manual">Voer naam in</span></span></p>
     <p><strong>Voorzitter van de gemeenteraad</strong></p>
   </div>
  """.

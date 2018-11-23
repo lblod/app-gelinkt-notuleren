@@ -1,0 +1,58 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://mu.semte.ch/vocabularies/ext/> .
+@prefix ns2:	<http://mu.semte.ch/vocabularies/core/> .
+@prefix ns3:	<http://data.vlaanderen.be/ns/besluit#> .
+@prefix ns4:	<http://data.vlaanderen.be/ns/mandaat#> .
+@prefix ns5:	<http://purl.org/dc/terms/> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+
+<http://lblod.info/templates/b41a9863-ea0c-4fc1-833d-3483cf05c607>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"b41a9863-ea0c-4fc1-833d-3483cf05c607" ;    
+    ns1:templateMatches "Selecteer scenario verkiezing van de voorzitter van de gemeenteraad";
+    ns1:activeInContext	ns1:BesluitVerkiezingVoorzitter ;
+    ns5:title	"Scenario: akte niet (tijdig) ontvangen" ;
+    ns1:templateContent """
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('nieuwe-voorzitter-1c')}">0</div>
+  <div property="ext:intentionUri" content="http://zitting/nieuwe-voorzitter">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+
+<div>
+  <p class="u-spacer--small">De gemeenteraad,</p>
+  <div property="besluit:motivering" lang="nl">
+    <div>
+      <ul class="bullet-list">
+        <li>Gelet op <a href="http://data.lblod.info/WetgevingDocument/1029017" property="eli:cites">het decreet van 22 december 2017 over het lokaal bestuur</a>, de artikelen <a href="http://data.lblod.info/WetgevingArtikel/1234844" property="eli:cites">6 </a> en <a href="http://data.lblod.info/WetgevingArtikel/1234845" property="eli:cites">7 </a>;</li>
+        <li>Gelet op de omzendbrief BA-2018/2 van 19 oktober 2018 &mdash; Start van de lokale en provinciale bestuursperiode;</li>
+      </ul>
+    </div>
+
+    <div>
+      <ul class="bullet-list">
+        <li resource="#VerkiezingVoorzitterAkteScenario" typeof="ext:BesluitVerkiezingVoorzitterOverhandigingAkte">Selecteer scenario overhandiging akte van voordracht</li>
+
+        <li>Overwegende dat de kandidaat-voorzitter de voorgeschreven eed als gemeenteraadslid heeft afgelegd en er geen specifieke eed als voorzitter van de gemeenteraad dient afgelegd te worden;</li>
+      </ul>
+    </div>
+  </div>
+  <p class="u-spacer--small">Beslist,</p>
+  <div>
+    <div property="prov:value">
+      <ul class="bullet-list">
+        <li property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+          <span property="eli:number">Artikel 1</span>
+          <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+          <span property="prov:value">Kennis te nemen van het ontbreken van een tijdige en ontvankelijke akte van voordracht van kandidaat-voorzitter.</span>
+        </li>
+        <li property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+          <span property="eli:number">Artikel 2</span>
+          <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+          <span property="prov:value">Kennis te nemen van het gegeven dat de uittredend voorzitter het mandaat van voorzitter van de gemeenteraad blijft bekleden tot een nieuwe voorzitter wordt verkozen.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+ """.
