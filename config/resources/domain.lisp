@@ -33,6 +33,7 @@
                 (:content :string ,(s-prefix "ext:editorDocumentContent"))
                 (:context :string ,(s-prefix "ext:editorDocumentContext"))
                 (:created-on :datetime ,(s-prefix "pav:createdOn"))
+                (:updated-on :datetime ,(s-prefix "pav:lastUpdateOn"))
                 (:starred :boolean ,(s-prefix "tmp:starred"))
                 (:origin :string ,(s-prefix "pav:providedBy"))) ;;de gemeente Niel
 
