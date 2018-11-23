@@ -21,7 +21,7 @@ Overwegende dat er geen afstanden van mandaat ingediend werden bij de uittredend
     ns2:uuid	"0bf21d22-c073-446e-835e-60a02e5eac15" ;
     ns1:templateMatches "Selecteer scenario afstanden van mandaat";
     ns1:activeInContext	ns1:BesluitGemeenteraadsledenAfstandMandaat ;
-    ns5:title	"Scenario: afstanden van mandaat toevoegen" ;
+    ns5:title	"Scenario: afstanden van mandaat zonder opvolgers" ;
     ns1:templateContent """
 Overwegende dat volgende raadsleden schriftelijk hebben laten weten afstand te doen van hun mandaat:
 <ul class="bullet-list">
@@ -35,12 +35,21 @@ Overwegende dat volgende raadsleden schriftelijk hebben laten weten afstand te d
     ns2:uuid	"432a2c1b-2a81-449a-bf6a-104fe681c562" ;
     ns1:templateMatches "Selecteer scenario afstanden van mandaat";
     ns1:activeInContext	ns1:BesluitGemeenteraadsledenAfstandMandaat ;
-    ns5:title	"Scenario: opvolgers die in aanmerking komen" ;
+    ns5:title	"Scenario: afstanden van mandaat met opvolgers" ;
     ns1:templateContent """
-Overwegende dat volgende opvolgers in aanmerking komen om het mandaat op te nemen:
-<ul class="bullet-list">
-  <li><span class="mark-highlight-manual">Voer naam verkozene in</span> als <span class="mark-highlight-manual">Voer nummer opvolger in</span> op <span class="mark-highlight-manual">Voer lijst in</span></li>
-  <li>...</li>
+<ul>
+  <li>Overwegende dat volgende raadsleden schriftelijk hebben laten weten afstand te doen van hun mandaat:
+    <ul class="bullet-list">
+      <li><span class="mark-highlight-manual">Voer naam verkozene in</span> deed afstand op <span class="mark-highlight-manual">Voer datum afstand in</span> per <span class="mark-highlight-manual">mail / brief</span></li>
+      <li>...</li>
+    </ul>
+  </li>
+  <li>Overwegende dat volgende opvolgers in aanmerking komen om het mandaat op te nemen:
+    <ul class="bullet-list">
+      <li><span class="mark-highlight-manual">Voer naam verkozene in</span> als <span class="mark-highlight-manual">Voer nummer opvolger in</span> op <span class="mark-highlight-manual">Voer lijst in</span></li>
+      <li>...</li>
+    </ul>
+  </li>
 </ul>
 """.
 
