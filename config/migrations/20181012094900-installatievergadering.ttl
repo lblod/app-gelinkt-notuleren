@@ -404,7 +404,7 @@
               <ul class="bullet-list">
                 <li>
                   Overwegende dat de resultaten van de gemeenteraadsverkiezingen van&nbsp;
-                  <span id="${generateBoundUuid('verkiezingsdatum-1')}"">14 oktober 2018</span>&nbsp;
+                  <span id="${generateBoundUuid('verkiezingsdatum-1')}">14 oktober 2018</span>&nbsp;
                   door de Raad voor Verkiezingsbetwistingen op&nbsp;
                   <span class="mark-highlight-manual">Voeg datum in</span> werden&nbsp;
                   goedgekeurd, zoals meegedeeld per brief op&nbsp;
@@ -485,74 +485,31 @@
 
             <div>
               <ul class="bullet-list">
-                <li>Overwegende dat de resultaten van de gemeenteraadsverkiezingen van <span id="${generateBoundUuid('verkiezingsdatum-3')}"">14 oktober 2018</span> door de Raad voor Verkiezingsbetwistingen op <span class="mark-highlight-manual">Voeg datum in</span> werden goedgekeurd;</li>
+                <li>Overwegende dat de resultaten van de gemeenteraadsverkiezingen van <span id="${generateBoundUuid('verkiezingsdatum-3')}">14 oktober 2018</span> door de Raad voor Verkiezingsbetwistingen op <span class="mark-highlight-manual">Voeg datum in</span> werden goedgekeurd;</li>
 
-                <li id="${generateBoundUuid('afstand van mandaat')}">
+                <li id="${generateBoundUuid('afstand van mandaat')}" resource="#VerkiezingGemeenteraadsledenScenario" typeof="ext:BesluitGemeenteraadsledenAfstandMandaat">
                   <div class="ext_scroll_to" typeof="ext:ScrollToLocation" resource="http://scrollToLocation/${generateUuid()}">
                     <div property="ext:scrollToLogicalName" content="afstand van mandaat">afstand van mandaat</div>
                     <div property="ext:idInSnippet" content="${generateBoundUuid('afstand van mandaat')}">${generateBoundUuid('afstand van mandaat')}</div>
                   </div>
-	                <span class="delete-me-mark-highlight-make-me-plugin">Selecteer scenario afstanden van mandaat</span>
-	              </li>
+	            Selecteer scenario afstanden van mandaat
+	        </li>
 
-	                <!-- Erika!
-
-	                	installatievergadering-gemeenteraadsleden-afstanden-1-geen-afstanden-mandaat.html
-										installatievergadering-gemeenteraadsleden-afstanden-2-wel-afstanden-mandaat-geen-opvolgers.html
-										installatievergadering-gemeenteraadsleden-afstanden-3-wel-afstanden-mandaat-wel-opvolgers.html
-
-	                	Ook hier: vervang hele "li" <li>Selecteer scenario eventuele einddatum en opvolgers</li>, met li's uit de scenario's, of verwijder li elementen in de alternatieve scenario's en voeg bij "installatievergadering-gemeenteraadsleden-3-wel-afstanden-mandaat-wel-opvolgers.html" de twee puntjes samen tot één zinnetje (vragen aan Veronique, geen idee of dat dat juridisch correct is...).
-
-									-->
-
-                <li class="delete-me-mark-highlight-make-me-plugin">Selecteer scenario afwezigen</li>
-
-	                <!-- Erika!
-
-										installatievergadering-gemeenteraadsleden-afwezigen-1-geen-afwezigen.html
-										installatievergadering-gemeenteraadsleden-afwezigen-2-afwezigen-zonder-reden.html
-										installatievergadering-gemeenteraadsleden-afwezigen-3-afwezigen-met-reden.html
-	                	installatievergadering-gemeenteraadsleden-afwezigen-4-afwezigen-met-en-zonder-reden.html
-
-	                	Ook hier: vervang hele "li" <li>Selecteer scenario afwezigen</li>, met li's uit de scenario's, of verwijder li elementen in de alternatieve scenario's en voeg bij "installatievergadering-gemeenteraadsleden-afwezigen-4-afwezigen-met-en-zonder-reden.html" de twee puntjes samen tot één zinnetje (vragen aan Veronique, geen idee of dat dat juridisch correct is...).
-
-									-->
-
-								<li id="${generateBoundUuid('onderzoek geloofsbrieven')}">
+                <li resource="#VerkiezingGemeenteraadsledenScenario" typeof="ext:BesluitGemeenteraadsledenAfwezigen">Selecteer scenario afwezigen</li>
+                
+		<li id="${generateBoundUuid('onderzoek geloofsbrieven')}" resource="#VerkiezingGemeenteraadsledenScenario" typeof="ext:BesluitGemeenteraadsledenGeloofsbrieven">
                   <div class="ext_scroll_to" typeof="ext:ScrollToLocation" resource="http://scrollToLocation/${generateUuid()}">
                     <div property="ext:scrollToLogicalName" content="onderzoek geloofsbrieven">onderzoek geloofsbrieven</div>
                     <div property="ext:idInSnippet" content="${generateBoundUuid('onderzoek geloofsbrieven')}">${generateBoundUuid('onderzoek geloofsbrieven')}</div>
                   </div>
-                  <span class="delete-me-mark-highlight-make-me-plugin">Selecteer scenario geloofsbrieven</span>
+                  Selecteer scenario geloofsbrieven
                 </li>
-
-	                <!-- Erika!
-
-										installatievergadering-gemeenteraadsleden-geloofsbrieven-1-geen-uitzonderingen.html
-										installatievergadering-gemeenteraadsleden-geloofsbrieven-2-wel-uitzonderingen.html
-									-->
 
                 <li>Overwegende dat uit het onderzoek van de geloofsbrieven van de verkozen gemeenteraadsleden door de gemeenteraad, zoals voorgeschreven in <a href="http://data.lblod.info/WetgevingDocument/1029017" property="eli:cites">het decreet van 22 december 2017 over het lokaal bestuur</a> in artikel <a href="http://data.lblod.info/WetgevingArtikel/1234844" property="eli:cites">6</a>, §3 en artikel <a href="http://data.lblod.info/WetgevingArtikel/1234847" property="eli:cites">9</a>, blijkt dat alle verkozenen en hun respectieve opvolgers die worden uitgenodigd heden de eed af te leggen, voldoen aan de verkiesbaarheidsvoorwaarden en op eer verklaard hebben zich niet in een situatie van onverenigbaarheid te bevinden;</li>
 
-                <li class="delete-me-mark-highlight-make-me-plugin">Selecteer scenario onverenigbaarheden</li>
+                <li resource="#VerkiezingGemeenteraadsledenScenario" typeof="ext:BesluitGemeenteraadsledenOnverenigbaarheden">Selecteer scenario onverenigbaarheden</li>
 
-	                <!-- Erika!
-
-										installatievergadering-gemeenteraadsleden-onverenigbaarheden-1-geen-onverenigbaarheden.html
-										installatievergadering-gemeenteraadsleden-onverenigbaarheden-2-wel-onverenigbaarheden-geen-opvolger.html
-										installatievergadering-gemeenteraadsleden-onverenigbaarheden-3-wel-onverenigbaarheden-wel-opvolger.html
-
-	                	Hier lijkt het mij heel moeilijk om de li's niet volledig te vervangen... Laat me zeker weten wat ge denkt
-
-									-->
-
-                <li class="delete-me-mark-highlight-make-me-plugin">Selecteer scenario burgemeester</li>
-
-	                <!-- Erika!
-
-	                	Wordt hier de burgemeester automatisch ingevuld en de data als die data beschikbaar is? Dan moet de template aangepast worden denk ik voor het scenario met burgemeester.
-
-									-->
+                <li resource="#VerkiezingGemeenteraadsledenScenario" typeof="ext:BesluitGemeenteraadsledenBurgemeester">Selecteer scenario burgemeester</li>
               </ul>
             </div>
           </div>
@@ -560,7 +517,7 @@
         <br>
         <div>
           <p class="u-spacer--small">Beslist,</p>
-          <div typeof="besluit:Stemming">
+          <div>
             <p>met eenparigheid van stemmen:</p>
           </div>
           <br>
@@ -709,7 +666,7 @@
             <div>
               <ul class="bullet-list">
                 <li>Gelet op <a href="http://data.lblod.info/WetgevingDocument/1029017" property="eli:cites">het  decreet van 22 december 2017 over het lokaal bestuur</a>, artikelen <a href="http://data.lblod.info/WetgevingArtikel/1234880" property="eli:cites">42</a>, <a href="http://data.lblod.info/WetgevingArtikel/1234881" property="eli:cites">43</a>, <a href="http://data.lblod.info/WetgevingArtikel/1234882" property="eli:cites">44</a> en <a href="http://data.lblod.info/WetgevingArtikel/1234887" property="eli:cites">49</a>;</li>
-                <li>Gelet op de omzendbrief BA-2018/2 van 19 oktober 2018 &mdash; Start van de lokale en provinciale bestuursperiode;</li></li>
+                <li>Gelet op de omzendbrief BA-2018/2 van 19 oktober 2018 &mdash; Start van de lokale en provinciale bestuursperiode;</li>
               </ul>
             </div>
 

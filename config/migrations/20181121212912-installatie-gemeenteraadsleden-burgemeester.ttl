@@ -1,0 +1,28 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://mu.semte.ch/vocabularies/ext/> .
+@prefix ns2:	<http://mu.semte.ch/vocabularies/core/> .
+@prefix ns3:	<http://data.vlaanderen.be/ns/besluit#> .
+@prefix ns4:	<http://data.vlaanderen.be/ns/mandaat#> .
+@prefix ns5:	<http://purl.org/dc/terms/> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+
+<http://lblod.info/templates/13cc76d1-c070-452a-8d87-ed4c60393e37>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"13cc76d1-c070-452a-8d87-ed4c60393e37" ;
+    ns1:templateMatches "Selecteer scenario burgemeester";
+    ns1:activeInContext	ns1:BesluitGemeenteraadsledenBurgemeester ;
+    ns5:title	"Scenario: burgemeester benoemd" ;
+    ns1:templateContent """
+Overwegende dat <span class="mark-highlight-manual">Voer naam burgemeester in</span> op <span class="mark-highlight-manual">Voer datum aanstelling burgemeester in</span> de eed als burgemeester heeft afgelegd in handen van de gouverneur, en dat conform <a href="http://data.lblod.info/WetgevingDocument/1029017" property="eli:cites">het decreet van 22 december 2017 over het lokaal bestuur</a>, artikel 59, tweede lid &mdash; deze eedaflegging tevens geldt als eedaflegging als gemeenteraadslid in de zin van artikel 6;
+""".
+
+<http://lblod.info/templates/46c0c0bb-53f1-4743-8401-3f0c77ad8359>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"46c0c0bb-53f1-4743-8401-3f0c77ad8359" ;
+    ns1:templateMatches "Selecteer scenario burgemeester";
+    ns1:activeInContext	ns1:BesluitGemeenteraadsledenBurgemeester ;
+    ns5:title	"Scenario: burgemeester benoemd" ;
+    ns1:templateContent """
+Wachten op input
+""".
+
