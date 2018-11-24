@@ -1,0 +1,55 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://mu.semte.ch/vocabularies/ext/> .
+@prefix ns2:	<http://mu.semte.ch/vocabularies/core/> .
+@prefix ns3:	<http://data.vlaanderen.be/ns/besluit#> .
+@prefix ns4:	<http://data.vlaanderen.be/ns/mandaat#> .
+@prefix ns5:	<http://purl.org/dc/terms/> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+
+<http://lblod.info/templates/313ccba6-57f0-4460-9218-405b774857f1>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"313ccba6-57f0-4460-9218-405b774857f1" ;
+    ns1:templateMatches "Selecteer scenario afstanden van mandaat";
+    ns1:activeInContext	ns1:BesluitGemeenteraadsledenAfstandMandaat ;
+    ns5:title	"Scenario: geen afstanden van mandaat" ;
+    ns1:templateContent """
+Overwegende dat er geen afstanden van mandaat ingediend werden bij de uittredende voorzitter voor de installatie van de raadsleden;
+ """.
+
+<http://lblod.info/templates/0bf21d22-c073-446e-835e-60a02e5eac15>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"0bf21d22-c073-446e-835e-60a02e5eac15" ;
+    ns1:templateMatches "Selecteer scenario afstanden van mandaat";
+    ns1:activeInContext	ns1:BesluitGemeenteraadsledenAfstandMandaat ;
+    ns5:title	"Scenario: afstanden van mandaat zonder opvolgers" ;
+    ns1:templateContent """
+Overwegende dat volgende raadsleden schriftelijk hebben laten weten afstand te doen van hun mandaat:
+<ul class="bullet-list">
+  <li><span class="mark-highlight-manual">Voer naam verkozene in</span> deed afstand op <span class="mark-highlight-manual">Voer datum afstand in</span> per <span class="mark-highlight-manual">mail / brief</span></li>
+  <li>...</li>
+</ul>
+ """.
+
+<http://lblod.info/templates/432a2c1b-2a81-449a-bf6a-104fe681c562>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"432a2c1b-2a81-449a-bf6a-104fe681c562" ;
+    ns1:templateMatches "Selecteer scenario afstanden van mandaat";
+    ns1:activeInContext	ns1:BesluitGemeenteraadsledenAfstandMandaat ;
+    ns5:title	"Scenario: afstanden van mandaat met opvolgers" ;
+    ns1:templateContent """
+<ul>
+  <li>Overwegende dat volgende raadsleden schriftelijk hebben laten weten afstand te doen van hun mandaat:
+    <ul class="bullet-list">
+      <li><span class="mark-highlight-manual">Voer naam verkozene in</span> deed afstand op <span class="mark-highlight-manual">Voer datum afstand in</span> per <span class="mark-highlight-manual">mail / brief</span></li>
+      <li>...</li>
+    </ul>
+  </li>
+  <li>Overwegende dat volgende opvolgers in aanmerking komen om het mandaat op te nemen:
+    <ul class="bullet-list">
+      <li><span class="mark-highlight-manual">Voer naam verkozene in</span> als <span class="mark-highlight-manual">Voer nummer opvolger in</span> op <span class="mark-highlight-manual">Voer lijst in</span></li>
+      <li>...</li>
+    </ul>
+  </li>
+</ul>
+""".
+
