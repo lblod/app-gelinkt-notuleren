@@ -170,13 +170,6 @@
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('burgemeester-persoon-5')}">44</div>
-  <div property="ext:intentionUri" content="http://installatie/burgemeester-persoon">a</div>
-  <div property="ext:variableState" content="initialized">initialized</div>
-</div>
-
-
-<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
   <div property="ext:idInSnippet" content="${generateBoundUuid('geplande-start-1')}">0</div>
   <div property="ext:intentionUri" content="http://zitting/geplande-start">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
@@ -184,16 +177,6 @@
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
   <div property="ext:idInSnippet" content="${generateBoundUuid('geplande-start-2')}">1</div>
   <div property="ext:intentionUri" content="http://zitting/geplande-start">a</div>
-  <div property="ext:variableState" content="initialized">initialized</div>
-</div>
-<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('voorzitter-bij-start-1')}">0</div>
-  <div property="ext:intentionUri" content="http://zitting/voorzitter-bij-start">a</div>
-  <div property="ext:variableState" content="initialized">initialized</div>
-</div>
-<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
-  <div property="ext:idInSnippet" content="${generateBoundUuid('voorzitter-bij-start-2')}">1</div>
-  <div property="ext:intentionUri" content="http://zitting/voorzitter-bij-start">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
@@ -808,287 +791,14 @@
       <h3 class="h5">Aanwezigen bij agendapunt</h3>
       <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
       <br>
-      <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
+      <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit ext:BesluitPolitieraad">
         <div>
           <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-7')}">Verkiezing van de Politieraad</span></h5>
           <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
         </div>
         <p>Korte openbare beschrijving: <span property="eli:description">Verkiezing van de Politieraad.</span></p>
         <br>
-
-        <div>
-          <p class="u-spacer--small">De gemeenteraad,</p>
-          <div property="besluit:motivering" lang="nl">
-            <div>
-              <!-- <h6 class="h5">Juridische gronden</h6> -->
-              <ul class="bullet-list">
-                <li>Gelet op de wet van 7 december 1998 tot organisatie van een geïntegreerde politiedienst, gestructureerd op twee niveaus;</li>
-                <li>Gelet op het koninklijk besluit van 20 december 2000 betreffende de verkiezing in elke gemeenteraad van de leden van de politieraad;</li>
-              </ul>
-            </div>
-
-            <div>
-              <ul class="bullet-list">
-                <li>Overwegende dat het koninklijk besluit van 20 december 2000 betreffende de verkiezing in elke gemeenteraad van de leden van de politieraad artikel 18 bepaalt dat de verkiezing van de leden van de politieraad plaatsheeft tijdens de openbare zitting waarop de gemeenteraad wordt geïnstalleerd of ten laatste binnen tien dagen; Indien die laatste dag een zaterdag, een zondag of een wettelijke feestdag is, wordt die termijn verlengd tot en met de eerstvolgende dag die geen zaterdag, zondag of wettelijke feestdag is;</li>
-
-                <li>Overwegende dat de politieraad van de meergemeentezone overeenkomstig de wet van 7 december 1998 artikel 12, eerste lid, samengesteld is uit <span property="ext:TODO" var="ext:TODO">&lt;aantal leden&gt;<!--  [variable aantal leden] --></span> verkozen leden;</li>
-
-                <li>Overwegende dat de gemeenteraad overeenkomstig de wet van 7 december 1998, artikel 12, tweede lid, dient over te gaan tot verkiezing van <span property="ext:TODO" var="ext:TODO">&lt;aantal gemeenteraadsleden&gt;<!--  [variable aantal gemeenteraadsleden (niet leden)] --></span> leden van de gemeenteraad als lid van de politieraad;</li>
-
-                <li>Overwegende dat elk van de 21 gemeenteraadsleden overeenkomstig&nbsp;
-                  de wet van 7 december 1998, artikel 16, beschikt over 1 stem;</li>
-              </ul>
-            </div>
-
-            <div class="ext_scroll_to" typeof="ext:ScrollToLocation" resource="http://scrollToLocation/${generateUuid()}">
-              <div property="ext:scrollToLogicalName" content="datum voordrachtsakten politieraadsleden">datum voordrachtsakten politieraadsleden</div>
-              <div property="ext:idInSnippet" content="${generateBoundUuid('datum voordrachtsakten politieraadsleden')}">${generateBoundUuid('datum voordrachtsakten politieraadsleden')}</div>
-            </div>
-
-            <div id="${generateBoundUuid('datum voordrachtsakten politieraadsleden')}">
-              <ul class="bullet-list">
-                <li>Gelet op de voordrachtsakten ten getale van&nbsp;
-                  <span property="ext:TODO" var="ext:TODO">&lt;aantal leden&gt;<!--  [variable aantal leden] --></span> ingediend overeenkomstig het koninklijk besluit van 20 december 2000, de artikelen 2, 4 en 5, betreffende de verkiezing in elke gemeenteraad van de leden van de politieraad op <span property="ext:TODO">&lt;datum&gt;</span>​.</li>
-              </ul>
-            </div>
-
-            <div>
-              <ul class="bullet-list">
-                <li>Overwegende dat, respectievelijk deze akten de hierna vermelde kandidaten voordragen en ondertekend zijn door de volgende verkozenen voor de gemeenteraad:
-                  <!-- <p class="u-font--italic smaller">Hier, uit elke voordrachtsakte, de namen van de kandidaten effectieve leden en hun kandidaten-opvolgers vermelden, alsmede de namen van de verkozenen voor de gemeenteraad die de voordracht deden.</p> -->
-                  <ul class="numbered-list">
-                    <li><span var="ext:TODO">&lt;persoon&gt;<!--  [variable juridische gronden] --></span> (effectief), <span var="ext:TODO">&lt;persoon&gt;<!--  [variable juridische gronden] --></span>   (1ste opvolger), <span var="ext:TODO">&lt;persoon&gt;<!--  [variable juridische gronden] --></span> (2de opvolger)</li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <!-- <h6 class="h5">Juridische gronden</h6> -->
-              <ul class="bullet-list">
-                <li>Gelet op de kandidatenlijst door de burgemeester opgemaakt, overeenkomstig het voornoemd koninklijk besluit op grond van gezegde voordrachtsakten, artikel 7, en luidend als volgt:
-                  <ul class="numbered-list">
-                    <li><span var="ext:TODO">&lt;persoon&gt;<!-- variable feiten en context hiervoor] --></span> (effectief), <span var="ext:TODO">&lt;persoon&gt;<!-- variable feiten en context hiervoor] --></span>   (1ste opvolger), <span var="ext:TODO">&lt;persoon&gt;<!-- variable feiten en context hiervoor] --></span> (2de opvolger)</li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <br>
-
-        <div>
-          <p>Stelt vast dat&nbsp;
-            <span var="ext:TODO">&lt;persoon&gt;<!--  [variable jongste leden persoon A] --></span> en&nbsp;
-            <span var="ext:TODO">&lt;persoon&gt;<!--  [variable jongste leden persoon B] --></span> gemeenteraadsleden (de jongste in leeftijd), de burgemeester bijstaan bij de verrichtingen van de stemming en van de stemopneming&nbsp;
-            (het koninklijk besluit van 20 december 2000, artikel 10);</p>
-        </div>
-
-        <!-- <p class="u-spacer--small">Stelt vast dat,</p>
-
-             <div property="prov:value">
-             <p property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" property="ext:TODO"><span property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt; [TODO: variable jongste leden]</span> en <span property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt; [TODO: variable jongste leden]</span> gemeenteraadsleden (de jongste in leeftijd), de burgemeester bijstaan bij de verrichtingen van de stemming en van de stemopneming (<a href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/REFERENCE" property="eli:cites">het koninklijk besluit van 20 december 2000, artikel <span resource="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/REFERENCE/ARTIKEL" property="eli:cites">10</span></a>); [TODO: ABB data aanleveren, idem als bij verkiezing leden RVMW]</p>
-             </div> -->
-
-        <!-- <div>
-             <h6 class="h5">Besluit</h6>
-             <ul class="bullet-list">
-             <li property="eli:has_part" resource="http://data.lblod.info/artikels/0c399694-7b7a-4d11-b35c-32ae8e5afe2c" typeof="besluit:Artikel">
-             <span property="eli:number">Enig artikel.</span>
-             <meta content="meta-content-31 property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
-             <span property="prov:value"> De gemeenteraad neemt kennis van het ontslag van &lt;mandataris&gt; met ingang van <span property="ext:TODO" var="ext:TODO" datatype="xsd:date" content="datum">&lt;datum&gt;</span>​. </span>
-             </li>
-             </ul>
-             </div> -->
-        <br>
-        <span property="ext:insertStemmingText">Beheer de stemmingen bij verkiezingen politieraad.</span>
-        <div typeof="besluit:Stemming">
-          <p>Gaat in openbare vergadering en bij geheime stemming over tot de verkiezing van de effectieve leden en hun opvolgers van de politieraad</p>
-          <ul class="bullet-list">
-            <li><span property="ext:TODO" var="ext:TODO">&lt;aantal raadsleden&gt;<!--  [variable raadsleden] --></span> raadsleden nemen deel aan de stemmingen en ontvangen ieder 1 stembiljet,</li>
-            <li><span property="ext:TODO" var="ext:TODO">&lt;aantal stembiljetten&gt;</span> stembiljetten worden overhandigd aan de burgemeester en zijn bijzitters,</li>
-            <li><span property="ext:TODO" var="ext:TODO">&lt;aantal stembiljetten&gt;<!-- variable geldige stemmen --></span> stembiljetten werden in de stembus aangetroffen.</li>
-          </ul>
-          <br>
-          <p>De stemopneming van deze biljetten geeft volgend resultaat:</p>
-          <ul class="bullet-list">
-            <li>&lt;aantal stemmen&gt; nietige stembiljetten,</li>
-            <li>&lt;aantal stemmen&gt; blanco stembiljetten,</li>
-            <li>&lt;aantal stemmen&gt; geldige stembiljetten.</li>
-          </ul>
-          <br>
-          <p>De op deze <span property="ext:TODO" var="ext:TODO">&lt;aantal stemmen&gt;<!-- variable geldige stemmen --></span> geldige stembiljetten uitgebrachte stemmen werden toegekend als volgt:</p>
-          <br>
-          <p>Kandidaten effectieve leden en aantal bekomen stemmen:</p>
-          <ul class="bullet-list">
-            <li>Naam en voornaam: &lt;aantal stemmen&gt;</li>
-          </ul>
-          <p>Totaal aantal stemmen: &lt;aantal stemmen&gt;<!-- optellen mogelijk? --></p>
-
-          <!--             <table class="data-table data-table--lined data-table--zebra data-table--tight">
-               <thead>
-               <tr>
-               <td>Voornaam Familienaam van het kandidaat-werkend lid</td>
-               <td>Aantal bekomen stemmen</td>
-               </tr>
-               </thead>
-               <tbody>
-               <tr>
-               <td>Voornaam Familienaam</td>
-               <td><span property="ext:TODO" var="ext:TODO">&lt;aantal stemmen&gt;</span></td>
-               </tr>
-               <tr>
-               <td>Voornaam Familienaam</td>
-               <td><span property="ext:TODO" var="ext:TODO">&lt;aantal stemmen&gt;</span></td>
-               </tr>
-               <tr>
-               <th>Totaal aantal stemmen</th>
-               <th><span property="ext:TODO" var="ext:TODO">&lt;aantal stemmen&gt;</span></th>
-               </tr>
-               </tbody>
-               </table> -->
-          <br>
-
-          <div>
-            <p property="ext:TODO">Stelt vast dat de stemmen werden uitgebracht op naam van regelmatig voorgedragen kandidaten effectieve leden.<!--  [TO ASK ander scenario vragen aan Domien --></p>
-            <!-- <p class="u-font--italic smaller">Nagaan of de stemmen uitsluitend werden uitgebracht op naam van personen vermeld op de kandidatenlijst. In tegenovergesteld geval moet dit worden vastgesteld en mag de betrokkene niet verkozen worden verklaard.</p> -->
-          </div>
-
-          <div>
-            <p property="ext:TODO">Stelt vast dat <span property="ext:TODO" var="ext:TODO">&lt;aantal stemmen&gt;</span> kandidaat effectieve leden, die het grootste aantal stemmen hebben bekomen, verkozen worden.</p>
-          </div>
-
-          <div>
-            <p property="ext:TODO">Stelt vast dat <span property="ext:TODO" var="ext:TODO">0</span> kandidaat effectieve leden wegens staking van stemmen een keuze moet worden gedaan overeenkomstig de wet van 7 december 1998, artikel 17.</p>
-          </div>
-        </div>
-
-        <div>
-          <!-- <h6 class="h5">Juridische gronden</h6> -->
-          <ul class="bullet-list">
-            <li>Gelet op de wet van 7 december 1998, artikel 18 eerste lid, wordt voorrang verleend aan <!--  [TO ASK: vragen aan Domien welke info hier moet komen --></li>
-          </ul>
-        </div>
-
-        <div property="prov:value">
-          <p class="u-spacer--small">Bijgevolg stelt de burgemeester vast dat volgende personen verkozen zijn tot effectief lid van de politieraad:</p>
-
-          <ul class="bullet-list">
-            <li><span>&lt;persoon&gt;</span>
-              <ul class="bullet-list">
-                <li>Eerste opvolger: <span>&lt;persoon&gt;</span></li>
-              </ul>
-            </li>
-          </ul>
-
-          <!--               <table class="data-table data-table--lined data-table--zebra data-table--tight">
-               <thead>
-               <tr>
-               <th>Rang</th>
-               <th>Verkozen zijn tot effectief lid van de politieraad</th>
-               <th>De kandidaten die als opvolgers voor elk hiernaast vermeld verkozen effectief werden voorgedragen van rechtswege en in de volgorde van de voordrachtsakte de opvolgers zijn van deze verkozen effectieve
-               leden.</th>
-               </tr>
-               </thead>
-               <tbody>
-               <tr>
-               <td>1</td>
-               <td>Voornaam Familienaam</td>
-               <td class="datatable--nested">
-               <table>
-               <tbody>
-               <tr>
-               <td>1ste opvolger</td>
-               <td>Voornaam Familienaam</td>
-               </tr>
-               </tbody>
-               </table>
-               </td>
-               </tr>
-               <tr>
-               <td>2</td>
-               <td>Voornaam Familienaam</td>
-               <td class="datatable--nested">
-               <table>
-               <tbody>
-               <tr>
-               <td>1ste opvolger</td>
-               <td>Voornaam Familienaam</td>
-               </tr>
-               <tr>
-               <td>2de opvolger</td>
-               <td>Voornaam Familienaam</td>
-               </tr>
-               </tbody>
-               </table>
-               </td>
-               </tr>
-               <tr>
-               <td>3</td>
-               <td>Voornaam Familienaam</td>
-               <td class="datatable--nested">
-               <table>
-               <tbody>
-               <tr>
-               <td>1ste opvolger</td>
-               <td>Voornaam Familienaam</td>
-               </tr>
-               <tr>
-               <td>2de opvolger</td>
-               <td>Voornaam Familienaam</td>
-               </tr>
-               <tr>
-               <td>3de opvolger</td>
-               <td>Voornaam Familienaam</td>
-               </tr>
-               </tbody>
-               </table>
-               </td>
-               </tr>
-               </tbody>
-               </table> -->
-          <br>
-        </div>
-
-        <div property="prov:value">
-          <p class="u-spacer--small">Stelt vast dat de verkiesbaarheidsvoorwaarden<!-- (1) -->, vervult zijn door:</p>
-          <ul class="bullet-list">
-            <li>de <span property="ext:TODO" var="ext:TODO">&lt;aantal&gt;</span> verkozen kandidaat effectieve leden.
-              <!-- <p class="u-font--italic smaller">Eventueel: met uitzondering van <span property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;</span> die de voorwaarde van <a href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/REFERENCE" property="eli:cites">de wet van 7 december 1998 artikel <span resource="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/REFERENCE/ARTIKEL" property="eli:cites">14</span></a> van niet vervult;</p> -->
-            </li>
-            <li>
-              de <span property="ext:TODO" var="ext:TODO">&lt;aantal&gt;</span>  kandidaten van rechtswege de opvolgers van deze <span property="ext:TODO" var="ext:TODO">&lt;aantal&gt;</span> kandidaten effectieve leden
-              <!-- <p class="u-font--italic smaller">Eventueel: met uitzondering van <span property="besluit:heeftAanwezigeBijStart" resource="http://data.lblod.info/id/mandatarissen/5a81ab404cac4f1ccb000024" typeof="mandaat:Mandataris">&lt;persoon&gt;</span> die de voorwaarde van <a href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/REFERENCE" property="eli:cites">de wet van 7 december 1998 artikel <span resource="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/REFERENCE/ARTIKEL" property="eli:cites">14</span></a> van niet vervult;</p> -->
-            </li>
-          </ul>
-          <br>
-
-          <p class="u-spacer--small">Stelt vast dat:</p>
-          <ul class="bullet-list">
-            <li>geen enkel effectief lid zich bevindt in een van de gevallen van onverenigbaarheid bepaald in <span>&lt;persoon&gt;</span> die de voorwaarde van de wet van 7 december 1998 artikel 15; <!-- [TO ASK: ander scenario] --></li>
-          </ul>
-          <br>
-
-          <!--           <p>Dit proces-verbaal zal overeenkomstig <a href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/REFERENCE" property="eli:cites">de wet van 7 december 1998, artikel <span resource="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/REFERENCE/ARTIKEL" property="eli:cites">18bis</span></a> en
-
-               <a href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/REFERENCE" property="eli:cites">het koninklijk besluit van 20 december 2000 betreffende de verkiezing in elke gemeenteraad van de leden van de politieraad, artikel <span resource="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/REFERENCE/ARTIKEL" property="eli:cites">15</span>;</a> in dubbel exemplaar naar de bestendige deputatie (of het college bedoeld <a href="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/REFERENCE" property="eli:cites">de bijzondere wet van 12 januari 1989 met betrekking tot de Brusselse Instellingen, artikel <span resource="http://codex.opendata.api.vlaanderen.be/api/WetgevingDocument/REFERENCE/ARTIKEL" property="eli:cites">83quinquies</span>, § 2</a>) worden gezonden.</p>
-               </div> -->
-
-          <div property="prov:value">
-            <p>Dit proces-verbaal zal overeenkomstig&nbsp;
-              de wet van 7 december 1998 artikel 18bis en het koninklijk besluit van 20 december 2000 betreffende de verkiezing in elke gemeenteraad van de leden van de politieraad artikel 15 in dubbel exemplaar naar de  deputatie (of het college bedoeld de bijzondere wet van 12 januari 1989 met betrekking tot de Brusselse Instellingen, artikel 83quinquies, § 2) worden gezonden. <!-- [TO ASK: ander scenario] --></p>
-            <br>
-            <p>Origineel werd getekend door:</p>
-            <ul class="bullet-list">
-              <li><span id="${generateBoundUuid('burgemeester-persoon-5')}" class="mark-highlight-manual">Voer naam burgemeester in</span>, burgemeester</li>
-              <li><span var="ext:TODO">&lt;persoon&gt;<!-- variable jongste leden persoon A] --></span> en <span var="ext:TODO">&lt;persoon&gt;<!--  [variable jongste leden persoon B] --></span>, de jongste twee gemeenteraadsleden</li>
-              <li><span> (Algemeen Directeur)</span></li>
-              <li>Volgende gemeenteraadsleden: NIHIL</li>
-            </ul>
-          </div>
-
-          <!-- <p class="u-font--italic smaller">(1) Inzake de onverenigbaarheden maakt de raad slechts een gewone opsomming. De onverenigbaarheden moeten immers nog bestaan op het ogenblik van de eedaflegging om de installatie van het betrokken lid te verhinderen.</p> -->
-        </div>
+        Voeg besluit politieraad in
       </div>
 
       <br>
@@ -1104,7 +814,7 @@
     <p><span class="mark-highlight-manual">Voer algemeen directeur in</span></p>
     <p><strong>Algemeen directeur</strong></p>
     <br>
-    <p><span id="${generateBoundUuid('nieuwe-voorzitter-3')}"><span class="mark-highlight-manual">Voer naam in</span></span></p>
+    <p><span id="${generateBoundUuid('nieuwe-voorzitter-3')}" class="mark-highlight-manual">Voer naam in</span></p>
     <p><strong>Voorzitter van de gemeenteraad</strong></p>
   </div>
  """.
