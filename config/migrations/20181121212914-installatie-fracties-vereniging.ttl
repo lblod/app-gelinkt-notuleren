@@ -1,0 +1,31 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://mu.semte.ch/vocabularies/ext/> .
+@prefix ns2:	<http://mu.semte.ch/vocabularies/core/> .
+@prefix ns3:	<http://data.vlaanderen.be/ns/besluit#> .
+@prefix ns4:	<http://data.vlaanderen.be/ns/mandaat#> .
+@prefix ns5:	<http://purl.org/dc/terms/> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+
+<http://lblod.info/templates/922d39cc-4e8b-405a-a071-391a3ea847af>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"922d39cc-4e8b-405a-a071-391a3ea847af" ;
+    ns1:templateMatches "Selecteer scenario fracties verenigingen";
+    ns1:activeInContext	ns1:BesluitFractieVereniging ;
+    ns5:title	"Scenario: Geen verenigingen van fracties" ;
+    ns1:templateContent """
+Overwegende dat gemeenteraadsleden die op eenzelfde lijst verkozen zijn in principe één fractie vormen;
+""".
+
+<http://lblod.info/templates/080b381c-bbba-4150-a43f-ee179dabc9d8>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"080b381c-bbba-4150-a43f-ee179dabc9d8" ;
+    ns1:templateMatches "Selecteer scenario fracties verenigingen";
+    ns1:activeInContext	ns1:BesluitFractieVereniging ;
+    ns5:title	"Scenario: Verenigingen van fracties" ;
+    ns1:templateContent """
+Overwegende dat volgende lijsten zich onderling verenigen doordat de meerderheid van de verkozenen op elk van die lijsten daarmee instemt:
+<ul class="bullet-list">
+  <li><span class="mark-highlight-manual">Voer naam lijst in</span>, <span class="mark-highlight-manual">Voer naam lijst in</span>, (...) tot fractie <span class="mark-highlight-manual">Voer naam fractie in</span></li>
+  <li>...</li>
+</ul>
+""".
