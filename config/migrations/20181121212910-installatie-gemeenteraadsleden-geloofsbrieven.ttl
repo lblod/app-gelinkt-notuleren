@@ -1,0 +1,31 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://mu.semte.ch/vocabularies/ext/> .
+@prefix ns2:	<http://mu.semte.ch/vocabularies/core/> .
+@prefix ns3:	<http://data.vlaanderen.be/ns/besluit#> .
+@prefix ns4:	<http://data.vlaanderen.be/ns/mandaat#> .
+@prefix ns5:	<http://purl.org/dc/terms/> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+
+<http://lblod.info/templates/31d5185d-bf71-409e-b4d9-a21211a91526>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"31d5185d-bf71-409e-b4d9-a21211a91526" ;
+    ns1:templateMatches "Selecteer scenario geloofsbrieven";
+    ns1:activeInContext	ns1:BesluitGemeenteraadsledenGeloofsbrieven ;
+    ns5:title	"Scenario: geen uitzonderingen bij geloofsbrieven" ;
+    ns1:templateContent """
+Overwegende dat alle geloofsbrieven behoorlijk en tijdig werden ingediend, en dat deze ter inzage werden gelegd met respect voor de decretale bepalingen ter zake;
+ """.
+
+<http://lblod.info/templates/6ea07f40-dc6e-4cc3-b9a9-c857e38e8c4e>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"6ea07f40-dc6e-4cc3-b9a9-c857e38e8c4e" ;
+    ns1:templateMatches "Selecteer scenario geloofsbrieven";
+    ns1:activeInContext	ns1:BesluitGemeenteraadsledenGeloofsbrieven ;
+    ns5:title	"Scenario: wel uitzonderingen bij geloofsbrieven" ;
+    ns1:templateContent """
+Overwegende dat alle geloofsbrieven behoorlijk en tijdig werden ingediend, en dat deze ter inzage werden gelegd met respect voor de decretale bepalingen ter zake, met uitzondering van de geloofsbrieven van volgende opvolgers die niet tijdig konden opgeroepen worden:
+	<ul class="bullet-list">
+		<li><span class="mark-highlight-manual">Voer naam verkozene in</span></li>
+		<li>...</li>
+	</ul>
+ """.

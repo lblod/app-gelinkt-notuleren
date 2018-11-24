@@ -1,0 +1,41 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://mu.semte.ch/vocabularies/ext/> .
+@prefix ns2:	<http://mu.semte.ch/vocabularies/core/> .
+@prefix ns3:	<http://data.vlaanderen.be/ns/besluit#> .
+@prefix ns4:	<http://data.vlaanderen.be/ns/mandaat#> .
+@prefix ns5:	<http://purl.org/dc/terms/> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+
+<http://lblod.info/templates/4cb60b91-1505-4ff3-bf30-8863744bafe5>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"4cb60b91-1505-4ff3-bf30-8863744bafe5" ;    
+    ns1:templateMatches "Selecteer scenario eventuele einddatum en opvolgers";
+    ns1:activeInContext	ns1:BesluitBenoemingBurgemeesterEinddatum ;
+    ns5:title	"Scenario: geen melding van einddatum van het mandaat" ;
+    ns1:templateContent """
+Overwegende dat de akte van voordracht van de kandidaat-burgemeester geen melding maakt van de einddatum van het mandaat en aldus geen melding maakt van diegene die hem zal opvolgen voor de resterende duurtijd van het mandaat;
+ """.
+
+<http://lblod.info/templates/0f03410d-5dda-4ab6-9568-554d9925dc21>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"0f03410d-5dda-4ab6-9568-554d9925dc21" ;    
+    ns1:templateMatches "Selecteer scenario eventuele einddatum en opvolgers";
+    ns1:activeInContext	ns1:BesluitBenoemingBurgemeesterEinddatum ;
+    ns5:title	"Scenario: melding van einddatum van het mandaat zonder opvolger" ;
+    ns1:templateContent """
+Overwegende dat de akte van voordracht van de kandidaat-burgemeester melding maakt van <span class="mark-highlight-manual">Voer geplande einddatum in</span> als einddatum van het mandaat;
+ """.
+
+<http://lblod.info/templates/2f5d0b3e-e8c6-49c3-b477-e03b69b99335>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"2f5d0b3e-e8c6-49c3-b477-e03b69b99335" ;    
+    ns1:templateMatches "Selecteer scenario eventuele einddatum en opvolgers";
+    ns1:activeInContext	ns1:BesluitBenoemingBurgemeesterEinddatum ;
+    ns5:title	"Scenario: melding van einddatum van het mandaat met opvolger" ;
+    ns1:templateContent """
+<ul>
+  <li>Overwegende dat de akte van voordracht van de kandidaat-burgemeester melding maakt van <span class="mark-highlight-manual">Voer geplande einddatum in</span> als einddatum van het mandaat;</li>
+  <li>Overwegende dat de akte van voordracht van de kandidaat-burgemeester eveneens melding maakt van <span class="mark-highlight-manual">Typ naam opvolger</span> als opvolger voor de resterende duurtijd van het mandaat;</li>
+</ul>
+ """.
+

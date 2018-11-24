@@ -1,0 +1,77 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://mu.semte.ch/vocabularies/ext/> .
+@prefix ns2:	<http://mu.semte.ch/vocabularies/core/> .
+@prefix ns3:	<http://data.vlaanderen.be/ns/besluit#> .
+@prefix ns4:	<http://data.vlaanderen.be/ns/mandaat#> .
+@prefix ns5:	<http://purl.org/dc/terms/> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+
+<http://lblod.info/templates/c0c4d33d-3256-4426-b64b-cd61667f6a34>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"c0c4d33d-3256-4426-b64b-cd61667f6a34" ;
+    ns1:templateMatches "Selecteer scenario geldigheid ingediende akten" ;
+    ns1:activeInContext	ns1:BesluitFractieSplitwensAkte ;
+    ns5:title	"Scenario: Geen splitwens" ;
+    ns1:templateContent """
+Overwegende dat alle ingediende akten van fractievorming rechtsgeldig zijn;
+""".
+
+<http://lblod.info/templates/1610725d-5812-4a2c-b1bb-75ec5ce1e0d6>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"1610725d-5812-4a2c-b1bb-75ec5ce1e0d6" ;
+    ns1:templateMatches "Selecteer scenario geldigheid ingediende akten" ;
+    ns1:activeInContext	ns1:BesluitFractieSplitwensAkte ;
+    ns5:title	"Scenario: Splitwens" ;
+    ns1:templateContent """
+<ul>
+  <li>Overwegende dat de akte van fractievorming voor <span class="mark-highlight-manual">Voer naam lijst in</span> niet rechtsgeldig is, omdat <span class="mark-highlight-manual">Voer motivering in</span></li>
+  <li>...</li>
+  <li>alternatief voor "..." <span class="delete-me-mark-highlight-make-me-plugin">Dupliceer overweging "niet rechtsgeldig"</span></li>
+</ul>
+""".
+
+<http://lblod.info/templates/7dbb2b25-51ba-4506-b4b4-4ff1b1310f14>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"7dbb2b25-51ba-4506-b4b4-4ff1b1310f14" ;
+    ns1:templateMatches "Selecteer scenario voldoen aan voorwaarden ingediende akten" ;
+    ns1:activeInContext	ns1:BesluitFractieSplitwensAkteVoorwaarden ;
+    ns5:title	"Scenario: ingediende akten voldoen aan voorwaarden" ;
+    ns1:templateContent """
+Overwegende dat alle ingediende akten van fractievorming voldoen aan de voorwaarden tot splitsing in twee fracties;
+""".
+
+
+<http://lblod.info/templates/5281b184-1dbf-4bd2-aa88-2e9a31bd4945>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"5281b184-1dbf-4bd2-aa88-2e9a31bd4945" ;
+    ns1:templateMatches "Selecteer scenario voldoen aan voorwaarden ingediende akten" ;
+    ns1:activeInContext	ns1:BesluitFractieSplitwensAkteVoorwaarden ;
+    ns5:title	"Scenario: ingediende akten voldoen niet aan voorwaarden" ;
+    ns1:templateContent """
+Overwegende dat <span class="mark-highlight-manual">Voer naam lijst in</span> weliswaar een akte van fractievorming hebben ingediend, maar niet voldoet aan de voorwaarden tot splitsing in twee fracties, omdat <span class="mark-highlight-manual">Voer motivering in</span>
+""".
+
+
+<http://lblod.info/templates/a0c18425-5414-4e48-b767-3596d75b6d0b>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"a0c18425-5414-4e48-b767-3596d75b6d0b" ;
+    ns1:templateMatches "Selecteer scenario afzonderlijke fractievorming" ;
+    ns1:activeInContext	ns1:BesluitFractieSplitsingAfzonderlijk ;
+    ns5:title	"Scenario: afzonderlijke fractievorming" ;
+    ns1:templateContent """
+Overwegende dat volgende afzonderlijke fracties worden gevormd omdat een meerderheid van de verkozen gemeenteraadsleden die potentieel een afzonderlijke fractie kan uitmaken daartoe op de installatievergadering van de gemeenteraad heeft beslist:
+<ul class="bullet-list">
+  <li><span class="mark-highlight-manual">Voer naam fractie in</span> met als leden <span class="mark-highlight-manual">Voer naam gemeenteraadslid in</span>, ...</li>
+  <li>...</li>
+</ul>
+""".
+
+<http://lblod.info/templates/267c3f44-8ddd-4c88-9e54-7f6a9cfe679c>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"267c3f44-8ddd-4c88-9e54-7f6a9cfe679c"
+    ns1:templateMatches "Selecteer scenario afzonderlijke fractievorming" ;
+    ns1:activeInContext	ns1:BesluitFractieSplitsingAfzonderlijk ;
+    ns5:title	"Scenario: geen afzonderlijke fractievorming" ;
+    ns1:templateContent """
+Overwegende dat geen afzonderlijke fracties worden gevormd.
+""".
