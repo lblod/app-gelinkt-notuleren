@@ -1,11 +1,25 @@
 version: '3.4'
 services:
+  editor:
+    restart: "no"
+  admin:
+    restart: "no"
   identifier:
     ports:
       - "80:80"
+    restart: "no"
+  dispatcher:
+    restart: "no"
+  migrations:
+    restart: "no"
+  resource:
+    restart: "no"
+  notulenimporter:
+    restart: "no"
   database:
     ports:
       - "8890:8890"
+    restart: "no"
   mocklogin:
     image: lblod/mock-login-service:0.4.0
     environment:
