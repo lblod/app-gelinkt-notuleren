@@ -6,8 +6,13 @@ x-logging:
   options:
     max-size: "10m"
     max-file: "3"
-
 services:
+  cooluris:
+    image: nvdk/cool-uris
+  cooluris-proxy:
+    image: nginx:1.15.3
+    volumes:
+      - ./config/cool-uris/nginx.conf:/etc/nginx/conf.d/default.conf
   editor:
     image: lblod/frontend-demo-editor:0.8.2
     links:
