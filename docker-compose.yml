@@ -16,6 +16,14 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
+  publicatie:
+    image: lblod/frontend-gelinkt-notuleren-publicatie:0.1.0
+    links:
+      - identifier:backend
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
   admin:
     image: lblod/frontend-editor-admin:0.2.2
     environment:
