@@ -1,21 +1,21 @@
-# Demo editor
+# Gelinkt Notuleren
 
 Backend systems and editor built on top of the Besluit and Mandaat model and application profile as defined on:
 * http://data.vlaanderen.be/ns/besluit
-* http://data.vlaanderen.be/doc/applicatieprofiel/besluit-publicatie
+* http://data.vlaanderen.be/doc/applicatieprofiel/besluit-publicatie/
 * http://data.vlaanderen.be/ns/mandaat
-* http://data.vlaanderen.be/doc/applicatieprofiel/mandatendatabank
+* http://data.vlaanderen.be/doc/applicatieprofiel/mandatendatabank/
 
 ## What's included?
 
 This repository harvest three setups.  The base of these setups resides in the standard docker-compose.yml.
 
-* *docker-compose.yml* This provides you with the backend components.  There is a frontend demo-editor included which you can publish using a separate proxy (we tend to put a letsencrypt proxy in front).  
+* *docker-compose.yml* This provides you with the backend components.  There is a frontend application included which you can publish using a separate proxy (we tend to put a letsencrypt proxy in front).  
 * *docker-compose.dev.yml* Provides changes for a good frontend development setup.
   - publishes the backend services on port 80 directly, so you can run `ember serve --proxy http://localhost` when developing the frontend apps natively.
   - publishes the database instance on port 8890 so you can easily see what content is stored in the base triplestore
   - provides a mock-login backend service so you don't need the ACM/IDM integration.
-* *docker-compose.demo.yml* Provides a setup for demo purposes.  It is similar to the dev setup, but publishes the frontend demo editor directly:
+* *docker-compose.demo.yml* Provides a setup for demo purposes.  It is similar to the dev setup, but publishes the frontend application directly:
   - publishes the frontend editor on port 80 so you can visit the app at http://localhost/
   - publishes the database instance on port 8890 so you can easily see what content is stored in the base triplestore
   - provides a mock-login backend service so you don't need the ACM/IDM integration
@@ -38,10 +38,10 @@ Execute the following:
     git lfs install
     
     # Clone this repository
-    git clone https://github.com/lblod/app-demo-editor.git
+    git clone https://github.com/lblod/app-gelinkt-notuleren.git
     
     # Move into the directory
-    cd app-demo-editor
+    cd app-gelinkt-notuleren
     
     # Start the system
     docker-compose -f docker-compose.yml -f docker-compose.demo.yml up
@@ -60,17 +60,17 @@ Execute the following:
     git lfs install
     
     # Clone this repository
-    git clone git@github.com:lblod/app-demo-editor.git
+    git clone https://github.com/lblod/app-gelinkt-notuleren.git
     
     # Move into the directory
-    cd app-demo-editor
+    cd app-gelinkt-notuleren
     
     # Start the system
     docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
 
 Wait for everything to boot to ensure clean caches.  You may choose to monitor the migrations service in a separate terminal to and wait for the overview of all migrations to appear: `docker-compose logs -f --tail=100 migrations`.
 
-Once the migrations have ran, you can start developing your application by connecting the ember frontend application to this backend.  See https://github.com/lblod/frontend-demo-editor for more information on development with the ember application.
+Once the migrations have ran, you can start developing your application by connecting the ember frontend application to this backend.  See https://github.com/lblod/frontend-gelinkt-notuleren for more information on development with the ember application.
 
 ### Upgrading your setup
 
@@ -81,7 +81,7 @@ Once installed, you may desire to upgrade your current setup to follow developme
 First we bring down the stack so we can upgrade things easily:
 
     # Move to the right directory
-    cd place-where-you-clone-repository/app-demo-editor
+    cd place-where-you-clone-repository/app-gelinkt-notuleren
     
     # Bring the application down
     docker-compose -f docker-compose.yml -f docker-compose.demo.yml down
@@ -111,11 +111,11 @@ Once the migrations have ran, visit the application at http://localhost/
 For the dev setup, we assume you'll pull more often and thus will most likely clear the database separately:
 
     # Bring the application down
-    docker-compose down -f docker-compose.yml -f docker-compose.dev.yml    
+    docker-compose -f docker-compose.yml -f docker-compose.dev.yml down
     # Pull in the changes
     git pull origin master
     # Launch the stack
-    docker-compose up -f docker-compose.yml -f docker-compose.demo.yml
+    docker-compose -f docker-compose.yml -f docker-compose.demo.yml up
 
 As with the initial setup, we wait for everything to boot to ensure clean caches.  You may choose to monitor the migrations service in a separate terminal to and wait for the overview of all migrations to appear: `docker-compose logs -f --tail=100 migrations`.
 
@@ -123,7 +123,7 @@ Once the migrations have ran, you can go on with your current setup.
 
 ### Cleaning the database
 
-At some times you may want te clean the database and make sure it's in a pristine state.  For development this is the following (for demo, replae the docker-compose.dev.yml with docker-compose.demo.yml):
+At some times you may want te clean the database and make sure it's in a pristine state.  For development this is the following (for demo, replace the docker-compose.dev.yml with docker-compose.demo.yml):
 
     # Bring down our current setup
     docker-compose -f docker-compose.yml -f docker-compose.dev.yml down
