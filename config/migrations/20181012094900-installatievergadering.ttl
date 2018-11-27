@@ -180,6 +180,11 @@
   <div property="ext:variableState" content="initialized">initialized</div>
 </div>
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('geplande-start-3')}">2</div>
+  <div property="ext:intentionUri" content="http://zitting/geplande-start">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
   <div property="ext:idInSnippet" content="${generateBoundUuid('nieuwe-voorzitter-2')}">1</div>
   <div property="ext:intentionUri" content="http://zitting/nieuwe-voorzitter">a</div>
   <div property="ext:variableState" content="initialized">initialized</div>
@@ -241,12 +246,15 @@
 
   <!-- meta zitting -->
   <h2 class="h1" property="dc:title" id="${generateBoundUuid('datum en locatie installatievergadering')}">
-    Notulen van <span property="ext:scopedBestuursorgaanText">selecteer bestuursorgaan</span>, zitting van <span id="${generateBoundUuid('geplande-start-1')}" property="besluit:geplandeStart" datatype="xsd:dateTime" content=""><span typeOf="ext:currentDate">&nbsp;</span></span>​ (installatievergadering)
+    Notulen van <span property="ext:scopedBestuursorgaanText">selecteer bestuursorgaan</span>, zitting van <span id="${generateBoundUuid('geplande-start-1')}" property="besluit:geplandeStart" datatype="xsd:dateTime" content="2019-01-02T19:00:00.299Z">2 januari 2019 19:00&nbsp;</span>​ (installatievergadering)
   </h2>
   <br>
 
   <p>
     Locatie: <span class="mark-highlight-manual">Voer naam locatie in</span>, <span class="mark-highlight-manual">Voer naam zaal in</span>.
+  </p>
+  <p>
+    Geplande start: <span id="${generateBoundUuid('geplande-start-2')}" property="besluit:geplandeStart" datatype="xsd:dateTime" content="2019-01-02T19:00:00.299Z">2 januari 2019 19:00&nbsp;</span>​
   </p>
   <br>
 
@@ -254,6 +262,7 @@
   <!-- aanwezigen -->
   <h3 class="h2">Aanwezigen</h3>
   <span property="ext:insertAanwezigenText">Beheer aanwezigen bij de zitting.</span>
+  <br>
   <br>
 
   <!--
@@ -298,7 +307,7 @@
         <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-2')}" typeof="besluit:Agendapunt">
           <meta property="besluit:aangebrachtNa" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-1')}">
           <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
-          <span id="${generateBoundUuid('agendapunt-nummer-2')}">Agendapunt 2:</span> <span property="dc:title"><span id="${generateBoundUuid('ap-2')}">Mededeling over de benoeming en eedaflegging van de burgemeester</span></span>
+          <span id="${generateBoundUuid('agendapunt-nummer-2')}">Agendapunt 2:</span> <span property="dc:title"><span id="${generateBoundUuid('ap-2')}">Mededeling over de benoeming en eedaflegging van de burgemeester (onder voorbehoud)</span></span>
         </span>
       </li>
       <li>
@@ -379,29 +388,19 @@
             <ul class="bullet-list">
               <li>Gelet op <a href="http://data.lblod.info/WetgevingDocument/1029017" property="eli:cites">het decreet van 22 december 2017 over het lokaal bestuur</a>, artikel <a href="http://data.lblod.info/WetgevingArtikel/1234844" property="eli:cites">6</a>;</li>
               <li>Gelet op <a href="http://data.lblod.info/WetgevingDocument/1020561" property="eli:cites">het Lokaal en Provinciaal Kiesdecreet van 8 juli 2011</a>, de artikelen <a href="http://data.lblod.info/WetgevingArtikel/1138929" property="eli:cites">203</a> en <a href="http://data.lblod.info/WetgevingArtikel/1138930" property="eli:cites">204</a>;</li>
-              <li>
-                Gelet op <a href="http://data.lblod.info/WetgevingDocument/1024603" property="eli:cites">het decreet van 4 april 2014 betreffende de organisatie en rechtspleging van sommige Vlaamse bestuursrechtcolleges</a>, artikel <a href="http://data.lblod.info/WetgevingArtikel/1240910" property="eli:cites">28</a>;</li>
-
+              <li>Gelet op <a href="http://data.lblod.info/WetgevingDocument/1024603" property="eli:cites">het decreet van 4 april 2014 betreffende de organisatie en rechtspleging van sommige Vlaamse bestuursrechtcolleges</a>, artikel <a href="http://data.lblod.info/WetgevingArtikel/1240910" property="eli:cites">28</a>;</li>
             </ul>
           </div>
           <br>
           <div>
             <ul class="bullet-list">
-              <li>
-                Overwegende dat de resultaten van de gemeenteraadsverkiezingen van&nbsp;
-                <span id="${generateBoundUuid('verkiezingsdatum-1')}">14 oktober 2018</span>&nbsp;
-                door de Raad voor Verkiezingsbetwistingen op&nbsp;
-                <span class="mark-highlight-manual">Voeg datum in</span> werden&nbsp;
-                goedgekeurd, zoals meegedeeld per brief op&nbsp;
-                <span class="mark-highlight-manual">Voeg datum in</span>;</li>
+              <li>Overwegende dat de resultaten van de gemeenteraadsverkiezingen van <span id="${generateBoundUuid('verkiezingsdatum-1')}">14 oktober 2018</span> door de Raad voor Verkiezingsbetwistingen op <span class="mark-highlight-manual">Voeg datum in</span> werden goedgekeurd, zoals meegedeeld per brief op <span class="mark-highlight-manual">Voeg datum in</span>;</li>
             </ul>
           </div>
         </div>
       </div>
-
       <br>
       <br>
-
       <div>
         <p class="u-spacer--small">Neemt akte van,</p>
         <div property="prov:value">
@@ -563,7 +562,8 @@
               <span property="eli:number">Enig artikel.</span>
               <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
               <span property="prov:value">
-                Vast te stellen dat volgende fracties gevormd worden:
+              	<p>De fracties als volgt vast te stellen:</p>
+              	<br>
                 <span property="ext:fractievormingText">Voeg lijst met fracties hier toe.</span>
               </span>
             </li>
@@ -658,7 +658,7 @@
 
               <li>
                 Overwegende dat&nbsp;
-                <span id="${generateBoundUuid('nieuwe-voorzitter-2')}" class="mark-highlight-manual">Voer naam in</span>​ tot voorzitter van de gemeenteraad werd verkozen tijdens de <span resource="http://data.lblod.info/id/zittingen/${generateUuid('installatievergadering')}">installatievergadering van <span  id="${generateBoundUuid('geplande-start-2')}" property="besluit:geplandeStart" datatype="xsd:date" content=""><span typeOf="ext:currentDate"></span></span></span> en na zijn installatie de gemeenteraad voorzit;
+                <span id="${generateBoundUuid('nieuwe-voorzitter-2')}" class="mark-highlight-manual">Voer naam in</span>​ tot voorzitter van de gemeenteraad werd verkozen tijdens de <span resource="http://data.lblod.info/id/zittingen/${generateUuid('installatievergadering')}">installatievergadering van <span  id="${generateBoundUuid('geplande-start-3')}" property="besluit:geplandeStart" datatype="xsd:date" content="2019-01-02T19:00:00.299Z">2 januari 2019 19:00&nbsp;</span></span> en na zijn installatie de gemeenteraad voorzit;
               </li>
 
               <li>Overwegende dat de algemeen directeur de gezamenlijke akte van voordracht van de kandidaat-schepenen ter zitting heeft overhandigd aan de voorzitter van de gemeenteraad;</li>
