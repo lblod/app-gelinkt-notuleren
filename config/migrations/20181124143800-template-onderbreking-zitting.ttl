@@ -1,0 +1,22 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://mu.semte.ch/vocabularies/ext/> .
+@prefix ns2:	<http://mu.semte.ch/vocabularies/core/> .
+@prefix ns3:	<http://data.vlaanderen.be/ns/besluit#> .
+@prefix ns4:	<http://data.vlaanderen.be/ns/mandaat#> .
+@prefix ns5:	<http://purl.org/dc/terms/> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+
+<http://lblod.info/templates/95342a58-f7cd-47f2-9247-72d2cea5f21f>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"95342a58-f7cd-47f2-9247-72d2cea5f21f" ;
+    ns1:activeInContext	ns3:Zitting ;
+    ns5:title	"Onderbreking zitting" ;
+    ns1:templateContent """
+<br>
+<br>
+<p>De voorzitter van de gemeenteraad schorst de zitting op <span class="mark-highlight-manual">Typ datum en tijdstip schorsing</span>​.</p>
+<br>
+<p>De voorzitter van de gemeenteraad heropent de zitting op <span  class="mark-highlight-manual">Typ datum en tijdstip heropening</span>​</p>
+<br>
+<br>
+""".
