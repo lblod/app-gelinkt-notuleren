@@ -1,10 +1,35 @@
 version: '3.4'
 services:
+  cooluris:
+    restart: "no"
+  cooluris-proxy:
+    restart: "no"    
+  publicatie:
+    restart: "no"
+  editor:
+    restart: "no"
   identifier:
     ports:
       - "80:80"
+  database:
+    restart: "no"
   virtuoso:
     ports:
       - "8890:8890"
+    restart: "no"
+  dispatcher:
+    restart: "no"
+  migrations:
+    restart: "no"
+  login:
+    restart: "no"
+  cache:
+    restart: "no"
+  sink:
+    restart: "no"
+  resource:
+    restart: "no"
+  notulenimporter:
+    restart: "no"
   mocklogin:
     image: lblod/mock-login-service:0.4.0
