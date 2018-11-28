@@ -6,12 +6,12 @@
 @prefix ns5:	<http://purl.org/dc/terms/> .
 @prefix foaf:	<http://xmlns.com/foaf/0.1/> .
 
-<http://lblod.info/templates/017bc40a-0a06-4c2c-be6b-117e93bd0112>
+<http://lblod.info/templates/7b3c50a0-ad2f-4fd1-a48b-bcb2f9b7144f>
     rdf:type	ns1:Template ;
-    ns2:uuid	"017bc40a-0a06-4c2c-be6b-117e93bd0112" ;
+    ns2:uuid	"7b3c50a0-ad2f-4fd1-a48b-bcb2f9b7144f" ;
     ns1:templateMatches "Selecteer scenario verkiezing van de voorzitter van de gemeenteraad";
     ns1:activeInContext	ns1:BesluitVerkiezingVoorzitter ;
-    ns5:title	"Scenario: akte tijdig ontvangen en ontvankelijk" ;
+    ns5:title	"Scenario: akte tijdig ontvangen en ontvankelijk, maar voorzitter verhinderd" ;
     ns1:templateContent """
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
   <div property="ext:idInSnippet" content="${generateBoundUuid('nieuwe-voorzitter-1a')}">0</div>
@@ -42,6 +42,14 @@
         <li resource="#VerkiezingVoorzitterEinddatumScenario" typeof="ext:BesluitVerkiezingVoorzitterEinddatum">Selecteer scenario eventuele einddatum en opvolgers</li>
 
         <li>Overwegende dat de kandidaat-voorzitter de voorgeschreven eed als gemeenteraadslid heeft afgelegd en er geen specifieke eed als voorzitter van de gemeenteraad dient afgelegd te worden;</li>
+
+	<li>Overwegende dat de voorzitter van de gemeenteraad verhinderd is;</li>
+	<li>
+	  Overwegende dat de verhinderde voorzitter van de gemeenteraad vervangen worden door volgende opvolger:
+	  <ul>
+	    <li><span class="mark-highlight-manual">Voer naam opvolger in</span> als <span class="mark-highlight-manual">Voer nummer opvolger in</span> op <span class="mark-highlight-manual">Voer lijstnaam in</span>. <span class="mark-highlight-manual">Motivering</span>.</li>
+	  </ul>
+	</li>
       </ul>
     </div>
   </div>
@@ -57,10 +65,17 @@
         <span property="eli:number">Artikel 2</span>
         <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
         <span property="prov:value">
-          <span property="ext:bekrachtigtAanstellingVan" resource="http://data.lblod.info/id/mandatarissen/${generateUuid()}" typeOf="mandaat:Mandataris">
-            De voorgedragen kandidaat-voorzitter, <span class="mark-highlight-manual">Voer kandidaat-voorzitter in</span>, wordt verkozen verklaard <span property="ext:currentVoorzitterMandaat">als voorzitter van de gemeenteraad</span> met ingang van <span property="mandaat:start" content="" datatype="xsd:dateTime"><span typeOf="ext:currentDate">&nbsp;</span></span>. <span resource="#VerkiezingVoorzitterOpvolgerScenario" typeof="ext:BesluitVerkiezingVoorzitterOpvolger">Voeg indien van toepassing scenario opvolger in</span>
+          <span property="ext:bekrachtigtAanstellingVan" resource="http://data.lblod.info/id/mandatarissen/${generateBoundUuid('mandataris-voorzitter')}" typeOf="mandaat:Mandataris">
+            De voorgedragen kandidaat-voorzitter, <span class="mark-highlight-manual">Voer kandidaat-voorzitter in</span>, wordt verkozen verklaard <span property="ext:currentVoorzitterMandaat">als voorzitter van de gemeenteraad</span> met ingang van <span property="mandaat:start" content="" datatype="xsd:dateTime"><span typeOf="ext:currentDate">&nbsp;</span></span>.
           </span>
         </span>
+      </li>
+      <li property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+	<span property="eli:number">Artikel 3</span>
+	<meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+	<span property="prov:value">
+	  Kennis te nemen van de verhindering van de verkozen voorzitter van de gemeenteraad vanaf <span class="mark-highlight-manual">Typ datum tijdelijk einde mandaat in</span> en de vervanging door <span class="mark-highlight-manual">Typ naam vervanger</span> met ingang van <span class="mark-highlight-manual">Typ datum</span>
+	</span>
       </li>
     </ul>
   </div>

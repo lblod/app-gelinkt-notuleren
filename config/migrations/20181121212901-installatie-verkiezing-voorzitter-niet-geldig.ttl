@@ -6,12 +6,12 @@
 @prefix ns5:	<http://purl.org/dc/terms/> .
 @prefix foaf:	<http://xmlns.com/foaf/0.1/> .
 
-<http://lblod.info/templates/017bc40a-0a06-4c2c-be6b-117e93bd0112>
+<http://lblod.info/templates/7b3c50a0-ad2f-4fd1-a48b-bcb2f9b7144f>
     rdf:type	ns1:Template ;
-    ns2:uuid	"017bc40a-0a06-4c2c-be6b-117e93bd0112" ;
+    ns2:uuid	"7b3c50a0-ad2f-4fd1-a48b-bcb2f9b7144f" ;
     ns1:templateMatches "Selecteer scenario verkiezing van de voorzitter van de gemeenteraad";
     ns1:activeInContext	ns1:BesluitVerkiezingVoorzitter ;
-    ns5:title	"Scenario: akte tijdig ontvangen en ontvankelijk" ;
+    ns5:title	"Scenario: niet gelding" ;
     ns1:templateContent """
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
   <div property="ext:idInSnippet" content="${generateBoundUuid('nieuwe-voorzitter-1a')}">0</div>
@@ -31,17 +31,7 @@
 
     <div>
       <ul class="bullet-list">
-        <li>
-          Overwegende dat een akte van voordracht van kandidaat-voorzitter op naam van <span id="${generateBoundUuid('nieuwe-voorzitter-1a')}" class="mark-highlight-manual">Voer naam in</span> werd overhandigd aan de algemeen directeur op <span class="mark-highlight-manual">Voer datum in</span>, zijnde binnen de termijn van acht dagen voor de installatievergadering van de gemeenteraad;
-        </li>
-
-        <li>Overwegende dat de algemeen directeur de akte van voordracht van kandidaat-voorzitter ter zitting overhandigd heeft aan de voorzitter van de installatievergadering;</li>
-
-        <li>Overwegende dat de voorzitter van de installatievergadering heeft vastgesteld dat de akte van voordracht van kandidaat-voorzitter werd ondertekend door meer dan de helft van de verkozenen op de lijsten die aan de verkiezingen deelnamen en door een meerderheid van de personen die op dezelfde lijst als de voorgedragen kandidaat werden verkozen en daarmee de ontvankelijkheid van de akte kan bevestigen;</li>
-
-        <li resource="#VerkiezingVoorzitterEinddatumScenario" typeof="ext:BesluitVerkiezingVoorzitterEinddatum">Selecteer scenario eventuele einddatum en opvolgers</li>
-
-        <li>Overwegende dat de kandidaat-voorzitter de voorgeschreven eed als gemeenteraadslid heeft afgelegd en er geen specifieke eed als voorzitter van de gemeenteraad dient afgelegd te worden;</li>
+        <li><span class="mark-highlight-manual">Overwegende dat er er geen geldige kandidaat-voorzitter beschikbaar is;</span><!-- Dit is fout --></li>
       </ul>
     </div>
   </div>
@@ -57,10 +47,13 @@
         <span property="eli:number">Artikel 2</span>
         <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
         <span property="prov:value">
-          <span property="ext:bekrachtigtAanstellingVan" resource="http://data.lblod.info/id/mandatarissen/${generateUuid()}" typeOf="mandaat:Mandataris">
-            De voorgedragen kandidaat-voorzitter, <span class="mark-highlight-manual">Voer kandidaat-voorzitter in</span>, wordt verkozen verklaard <span property="ext:currentVoorzitterMandaat">als voorzitter van de gemeenteraad</span> met ingang van <span property="mandaat:start" content="" datatype="xsd:dateTime"><span typeOf="ext:currentDate">&nbsp;</span></span>. <span resource="#VerkiezingVoorzitterOpvolgerScenario" typeof="ext:BesluitVerkiezingVoorzitterOpvolger">Voeg indien van toepassing scenario opvolger in</span>
-          </span>
+          Kennis te nemen van het gegeven dat er geen nieuwe voorzitter van de gemeenteraad verkozen kan verklaard worden.
         </span>
+      </li>
+      <li property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+        <span property="eli:number">Artikel 2</span>
+        <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+        <span property="prov:value">Kennis te nemen van het gegeven dat de uittredend voorzitter het mandaat van voorzitter van de gemeenteraad blijft bekleden tot een nieuwe voorzitter wordt verkozen.</span>
       </li>
     </ul>
   </div>
