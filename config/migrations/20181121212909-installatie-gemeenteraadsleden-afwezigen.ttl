@@ -13,7 +13,7 @@
     ns1:activeInContext	ns1:BesluitGemeenteraadsledenAfwezigen ;
     ns5:title	"Scenario: geen afwezigen" ;
     ns1:templateContent """
-Overwegende dat er geen afwezigen zijn op deze installatievergadering;
+Overwegende dat er geen enkel te installeren verkozene afwezig is op deze installatievergadering;
  """.
 
 <http://lblod.info/templates/6f75e5ef-dce0-4a16-b9fe-3bdf708db073>
@@ -21,13 +21,13 @@ Overwegende dat er geen afwezigen zijn op deze installatievergadering;
     ns2:uuid	"6f75e5ef-dce0-4a16-b9fe-3bdf708db073" ;
     ns1:templateMatches "Selecteer scenario afwezigen";
     ns1:activeInContext	ns1:BesluitGemeenteraadsledenAfwezigen ;
-    ns5:title	"Scenario: afwezigen zonder reden" ;
+    ns5:title	"Scenario: afwezigen zonder opgave van reden" ;
     ns1:templateContent """
-Overwegende dat volgende verkozenen afwezig zijn op deze installatievergadering zonder reden en dus uitdrukkelijk zullen opgeroepen worden om de eed af te leggen op de eerstvolgende gemeenteraadszitting:
-	<ul class="bullet-list">
-		<li><span class="mark-highlight-manual">Voer naam verkozene in</span></li>
-		<li>...</li>
-	</ul>
+Overwegende dat volgende te installeren verkozenen afwezig zijn op deze installatievergadering zonder opgave van reden en dus uitdrukkelijk zullen opgeroepen worden om de eed af te leggen op de eerstvolgende gemeenteraadszitting:
+<ul class="bullet-list">
+  <li><span class="mark-highlight-manual">Voer naam verkozene in</span></li>
+  <li>...</li>
+</ul>
  """.
 
 <http://lblod.info/templates/e56e40e2-7b94-4dbb-b5e3-a0b110c5fe58>
@@ -35,12 +35,36 @@ Overwegende dat volgende verkozenen afwezig zijn op deze installatievergadering 
     ns2:uuid	"e56e40e2-7b94-4dbb-b5e3-a0b110c5fe58" ;
     ns1:templateMatches "Selecteer scenario afwezigen";
     ns1:activeInContext	ns1:BesluitGemeenteraadsledenAfwezigen ;
-    ns5:title	"Scenario: afwezigen met reden" ;
+    ns5:title	"Scenario: afwezigen met opgave van reden" ;
     ns1:templateContent """
-Overwegende dat volgende verkozenen of hun respectieve opvolger afwezig zijn met reden en dus de eed pas op een volgende gemeenteraadszitting kunnen afleggen:
-	<ul class="bullet-list">
-		<li><span class="mark-highlight-manual">Voer naam verkozene in</span></li>
-		<li>...</li>
-	</ul>
+Overwegende dat de volgende te installeren verkozenen afwezig zijn met opgave van reden en dus de eed pas op een volgende gemeenteraadszitting kunnen afleggen:
+<ul class="bullet-list">
+  <li><span class="mark-highlight-manual">Voer naam verkozene in</span></li>
+  <li>...</li>
+</ul>
+ """.
+
+<http://lblod.info/templates/f7b3769d-fd10-4166-9d86-c50530967694>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"f7b3769d-fd10-4166-9d86-c50530967694" ;
+    ns1:templateMatches "Selecteer scenario afwezigen";
+    ns1:activeInContext	ns1:BesluitGemeenteraadsledenAfwezigen ;
+    ns5:title	"Scenario: afwezigen met en zonder opgave van reden" ;
+    ns1:templateContent """
+<ul>
+  <li>Overwegende dat volgende te installeren verkozenen afwezig zijn op deze installatievergadering zonder opgave van reden en dus uitdrukkelijk zullen opgeroepen worden om de eed af te leggen op de eerstvolgende gemeenteraadszitting:
+    <ul class="bullet-list">
+      <li><span class="mark-highlight-manual">Voer naam verkozene in</span></li>
+      <li>...</li>
+    </ul>
+  </li>
+  <li>
+    Overwegende dat de volgende te installeren verkozenen afwezig zijn met opgave van reden en dus de eed pas op een volgende gemeenteraadszitting kunnen afleggen:
+    <ul class="bullet-list">
+      <li><span class="mark-highlight-manual">Voer naam verkozene in</span></li>
+      <li>...</li>
+    </ul>
+  </li>
+</ul>
  """.
 

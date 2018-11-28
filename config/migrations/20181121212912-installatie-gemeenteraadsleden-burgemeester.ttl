@@ -13,7 +13,17 @@
     ns1:activeInContext	ns1:BesluitGemeenteraadsledenBurgemeester ;
     ns5:title	"Scenario: burgemeester benoemd" ;
     ns1:templateContent """
-Overwegende dat <span class="mark-highlight-manual">Voer naam burgemeester in</span> op <span class="mark-highlight-manual">Voer datum aanstelling burgemeester in</span> de eed als burgemeester heeft afgelegd in handen van de gouverneur, en dat conform <a href="http://data.lblod.info/WetgevingDocument/1029017" property="eli:cites">het decreet van 22 december 2017 over het lokaal bestuur</a>, artikel 59, tweede lid &mdash; deze eedaflegging tevens geldt als eedaflegging als gemeenteraadslid in de zin van artikel 6;
+Overwegende dat <span class="mark-highlight-manual">Voer naam burgemeester in</span> op <span class="mark-highlight-manual">Voer datum aanstelling burgemeester in</span> de eed als burgemeester heeft afgelegd in handen van de gouverneur, en deze eedaflegging tevens geldt als eedaflegging als gemeenteraadslid;
+""".
+
+<http://lblod.info/templates/dbea2664-bd3c-4e64-afeb-fa8644442f5b>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"dbea2664-bd3c-4e64-afeb-fa8644442f5b" ;
+    ns1:templateMatches "Selecteer scenario burgemeester";
+    ns1:activeInContext	ns1:BesluitGemeenteraadsledenBurgemeester ;
+    ns5:title	"Scenario: burgemeester heeft nog geen eed afgelegd" ;
+    ns1:templateContent """
+Wachten op input
 """.
 
 <http://lblod.info/templates/46c0c0bb-53f1-4743-8401-3f0c77ad8359>
@@ -23,6 +33,6 @@ Overwegende dat <span class="mark-highlight-manual">Voer naam burgemeester in</s
     ns1:activeInContext	ns1:BesluitGemeenteraadsledenBurgemeester ;
     ns5:title	"Scenario: burgemeester niet benoemd" ;
     ns1:templateContent """
-Wachten op input
+
 """.
 
