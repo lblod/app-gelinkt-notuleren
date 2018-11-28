@@ -18,13 +18,13 @@ INSERT {
   }
 } WHERE {
   GRAPH ?g {
-    FILTER(STRSTARTS(STR(?g), "http://mu.semte.ch/graphs/organization/")) 
+    FILTER(STRSTARTS(STR(?g), "http://mu.semte.ch/graphs/organizations/"))
 
     ?persoon a person:Person .
+    ?persoon persoon:heeftGeboorte ?geboorte .
   }
 
   GRAPH <http://mu.semte.ch/graphs/public> {
-    ?persoon persoon:heeftGeboorte ?geboorte .
     ?geboorte ?geboorteP ?geboorteO .
   }
 }
@@ -37,13 +37,13 @@ INSERT {
   }
 } WHERE {
   GRAPH ?g {
-    FILTER(STRSTARTS(STR(?g), "http://mu.semte.ch/graphs/organization/")) 
+    FILTER(STRSTARTS(STR(?g), "http://mu.semte.ch/graphs/organizations/"))
 
     ?persoon a person:Person .
+    ?persoon adms:identifier ?identificator .
   }
 
   GRAPH <http://mu.semte.ch/graphs/public> {
-    ?persoon adms:identifier ?identificator .
     ?identificator ?identificatorP ?identificatorO .
   }
 }
