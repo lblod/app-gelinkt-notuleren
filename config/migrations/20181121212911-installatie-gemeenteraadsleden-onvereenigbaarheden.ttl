@@ -13,10 +13,7 @@
     ns1:activeInContext	ns1:BesluitGemeenteraadsledenOnverenigbaarheden ;
     ns5:title	"Scenario: geen onverenigbaarheden" ;
     ns1:templateContent """
-<ul>
-  <li>Overwegende dat uit het onderzoek van de geloofsbrieven van de verkozen gemeenteraadsleden door de gemeenteraad, zoals voorgeschreven in het decreet van <a href="http://data.lblod.info/WetgevingDocument/1029017" property="eli:cites">het decreet van 22 december 2017 over het lokaal bestuur</a>, de artikelen 6, §3 en 9, blijkt dat alle verkozenen en hun respectieve opvolgers die worden uitgenodigd heden de eed af te leggen, voldoen aan de verkiesbaarheidsvoorwaarden en op eer verklaard hebben zich niet in een situatie van onverenigbaarheid te bevinden;</li>
-  <li>Overwegende dat er verder geen elementen zijn waaruit zou blijken dat de verkozenen of hun respectieve opvolgers zich in een situatie van onverenigbaarheid bevinden;</li>
-</ul>
+Overwegende dat er verder geen elementen zijn waaruit zou blijken dat de verkozenen of hun respectieve opvolgers zich in een situatie van onverenigbaarheid bevinden;
  """.
 
 <http://lblod.info/templates/5292547d-700d-42f8-8a04-338a85b19ac3>
@@ -26,8 +23,9 @@
     ns1:activeInContext	ns1:BesluitGemeenteraadsledenOnverenigbaarheden ;
     ns5:title	"Scenario: onverenigbaarheden zonder opvolgers" ;
     ns1:templateContent """
-<ul>
-  <li>Overwegende dat uit volgende elementen blijkt dat <span class="mark-highlight-manual">Voer naam verkozene / opvolger in</span> zich wel in een situatie van onverenigbaarheid bevindt: <span class="mark-highlight-manual">Voer motivering in</span></li>
+Overwegende dat uit volgende elementen blijkt dat volgende verkozenen zich in een situatie van onverenigbaarheid bevinden:
+<ul class="bullet-list">
+  <li><span class="mark-highlight-manual">Voer naam verkozene / opvolger in</span>, <span class="mark-highlight-manual">Voer motivering in</span>;</li>
   <li>...</li>
 </ul>
  """.
@@ -40,9 +38,12 @@
     ns5:title	"Scenario: onverenigbaarheden met opvolgers" ;
     ns1:templateContent """
 <ul>
-  <li>Overwegende dat uit volgende elementen blijkt dat <span class="mark-highlight-manual">Voer naam verkozene / opvolger in</span> zich wel in een situatie van onverenigbaarheid bevindt: <span class="mark-highlight-manual">Voer motivering in</span></li>
-  <li>...</li>
-
+  <li>Overwegende dat uit volgende elementen blijkt dat volgende verkozenen zich in een situatie van onverenigbaarheid bevinden:
+    <ul class="bullet-list">
+      <li><span class="mark-highlight-manual">Voer naam verkozene / opvolger in</span>, <span class="mark-highlight-manual">Voer motivering in</span>;</li>
+      <li>...</li>
+    </ul>
+  </li>
   <li>Overwegende dat volgende opvolgers in aanmerking komen om het mandaat op te nemen:
     <ul class="bullet-list">
       <li><span class="mark-highlight-manual">Voer naam verkozene in</span> als <span class="mark-highlight-manual">Voer nummer opvolger in</span> op <span class="mark-highlight-manual">Voer lijst in</span></li>

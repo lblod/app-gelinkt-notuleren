@@ -11,7 +11,7 @@
     ns2:uuid	"c0c4d33d-3256-4426-b64b-cd61667f6a34" ;
     ns1:templateMatches "Selecteer scenario geldigheid ingediende akten" ;
     ns1:activeInContext	ns1:BesluitFractieSplitwensAkte ;
-    ns5:title	"Scenario: Geen splitwens" ;
+    ns5:title	"Scenario: Akten zijn rechtsgeldig" ;
     ns1:templateContent """
 Overwegende dat alle ingediende akten van fractievorming rechtsgeldig zijn;
 """.
@@ -21,12 +21,11 @@ Overwegende dat alle ingediende akten van fractievorming rechtsgeldig zijn;
     ns2:uuid	"1610725d-5812-4a2c-b1bb-75ec5ce1e0d6" ;
     ns1:templateMatches "Selecteer scenario geldigheid ingediende akten" ;
     ns1:activeInContext	ns1:BesluitFractieSplitwensAkte ;
-    ns5:title	"Scenario: Splitwens" ;
+    ns5:title	"Scenario: Akten zijn niet rechtsgeldig" ;
     ns1:templateContent """
 <ul>
   <li>Overwegende dat de akte van fractievorming voor <span class="mark-highlight-manual">Voer naam lijst in</span> niet rechtsgeldig is, omdat <span class="mark-highlight-manual">Voer motivering in</span></li>
   <li>...</li>
-  <li>alternatief voor "..." <span class="delete-me-mark-highlight-make-me-plugin">Dupliceer overweging "niet rechtsgeldig"</span></li>
 </ul>
 """.
 
