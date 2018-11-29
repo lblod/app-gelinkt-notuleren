@@ -1,0 +1,97 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://mu.semte.ch/vocabularies/ext/> .
+@prefix ns2:	<http://mu.semte.ch/vocabularies/core/> .
+@prefix ns3:	<http://data.vlaanderen.be/ns/besluit#> .
+@prefix ns4:	<http://data.vlaanderen.be/ns/mandaat#> .
+@prefix ns5:	<http://purl.org/dc/terms/> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+
+<http://lblod.info/templates/31b8846e-72eb-4e55-a45f-d2351bd6b9e3>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"31b8846e-72eb-4e55-a45f-d2351bd6b9e3" ;
+    ns1:templateMatches "Selecteer scenario ondertekening meerderheid die op de lijsten die aan de verkiezingen deelnamen" ;
+    ns1:activeInContext	ns1:BesluitSchepenenMeerderheidLijst ;
+    ns5:title	"Scenario: Meerderheid heeft ondertekend" ;
+    ns1:templateContent """
+Overwegende dat de voorzitter van de gemeenteraad heeft vastgesteld dat de gezamenlijke akte van voordracht van kandidaat-schepenen werd ondertekend door meer dan de helft van de verkozenen op de lijsten die aan de verkiezingen deelnamen;
+ """.
+
+<http://lblod.info/templates/32d9ec3a-7b0e-4aa1-963d-783ad4c50914>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"32d9ec3a-7b0e-4aa1-963d-783ad4c50914" ;
+    ns1:templateMatches "Selecteer scenario ondertekening meerderheid die op de lijsten die aan de verkiezingen deelnamen" ;
+    ns1:activeInContext	ns1:BesluitSchepenenMeerderheidLijst ;
+    ns5:title	"Scenario: Meerderheid heeft niet ondertekend" ;
+    ns1:templateContent """
+<ul>
+	<li>Overwegende dat de voorzitter van de gemeenteraad heeft vastgesteld dat de gezamenlijke akte van voordracht van kandidaat-schepenen niet werd ondertekend door meer dan de helft van de verkozenen op de lijsten die aan de verkiezingen deelnamen;</li>
+	<li>Overwegende dat <span class="mark-highlight-manual">Motivering waarom de meerderheid niet werd gehaald, bv. handtekeningen die moesten geschrapt worden wegens afstand van mandaat betrokkenen, etc.</span></li>
+</ul>
+ """.
+
+<http://lblod.info/templates/4eeb4a09-532f-4e40-a71c-c3a0758a7735>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"4eeb4a09-532f-4e40-a71c-c3a0758a7735" ;
+    ns1:templateMatches "Selecteer scenario ondertekening meerderheid die op dezelfde lijst als de voorgedragen kandidaat staan" ;
+    ns1:activeInContext	ns1:BesluitSchepenenMeerderheidKandidaat ;
+    ns5:title	"Scenario: Meerderheid heeft ondertekend" ;
+    ns1:templateContent """
+Overwegende dat de voorzitter van de gemeenteraad heeft vastgesteld dat de gezamenlijke akte van voordracht van kandidaat-schepenen werd ondertekend door een meerderheid van de personen die op dezelfde lijst als de voorgedragen kandidaat werden verkozen en daarmee de ontvankelijkheid van de akte kan bevestigen;
+ """.
+
+<http://lblod.info/templates/33c97522-09bd-45ba-8f9f-e61f102b9a0e>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"33c97522-09bd-45ba-8f9f-e61f102b9a0e" ;
+    ns1:templateMatches "Selecteer scenario ondertekening meerderheid die op dezelfde lijst als de voorgedragen kandidaat staan" ;
+    ns1:activeInContext	ns1:BesluitSchepenenMeerderheidKandidaat ;
+    ns5:title	"Scenario: Meerderheid heeft niet ondertekend" ;
+    ns1:templateContent """
+<ul>
+	<li>Overwegende dat de voorzitter van de gemeenteraad heeft vastgesteld dat de gezamenlijke akte van voordracht van kandidaat-schepenen niet werd ondertekend door een meerderheid van de personen die op dezelfde lijst als de voorgedragen kandidaat werden verkozen;</li>
+	<li>Overwegende dat <span class="mark-highlight-manual">Motivering waarom de meerderheid niet werd gehaald, bv. handtekeningen die moesten geschrapt worden wegens afstand van mandaat betrokkenen, etc.</span></li>
+</ul>
+ """.
+
+<http://lblod.info/templates/7772a40e-83f1-4ad9-aaf3-0f93c7bb3fa7>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"7772a40e-83f1-4ad9-aaf3-0f93c7bb3fa7" ;
+    ns1:templateMatches "Selecteer scenario ontvankelijkheid aktes" ;
+    ns1:activeInContext	ns1:BesluitSchepenenOntvankelijkeAkte ;
+    ns5:title	"Scenario: beide meerderheden hebben ondertekend" ;
+    ns1:templateContent """
+<ul>
+	<li>Overwegende dat de voorzitter van de gemeenteraad dus de ontvankelijkheid van de akte kan bevestigen;</li>
+	<li>Overwegende dat in de ontvankelijke voordrachtsakte <span class="mark-highlight-manual">Typ aantal schepenen</span> kandidaat-schepenen worden voorgedragen;</li>
+	<li resource="#ScenarioSchepenen" typeof="ext:BesluitSchepenenMaxAantal">Selecteer scenario maximum aantal schepenen</li>
+	<li>Overwegende dat de voorzitter van de gemeenteraad dit aantal ter zitting meedeelt aan de gemeenteraad;</li>
+	<li>Overwegende dat de voorgedragen kandidaat schepenen de volgende personen zijn:
+		<ul class="bullet-list">
+			<li>Voeg kandidaat-schepen in</li>
+			<li>...</li>
+		</ul>
+	</li>
+
+	<li resource="#ScenarioSchepenen" typeof="ext:BesluitSchepenenEedaflegging">Selecteer scenario eedaflegging
+	</li>
+
+	<li resource="#ScenarioSchepenen" typeof="ext:BesluitSchepenenOnverenigbaar">Selecteer scenario onverenigbaarheden
+	</li>
+
+	<li resource="#ScenarioSchepenen" typeof="ext:BesluitSchepenenEinddatum">Selecteer scenario einddatum
+	</li>
+	<li>Overwegende dat de rangorde van de schepenen is bepaald door de rangorde zoals deze op de ontvankelijke voordrachtsakte bepaald;</li>
+	<li>Overwegende dat de voorzitter van de gemeenteraad deze volgorde ter zitting meedeelt aan de gemeenteraad;</li>
+	<li>Overwegende dat de verkozen verklaarde schepenen de decretaal voorziene eed hebben afgelegd in handen van de burgemeester;</li>
+</ul>
+ """.
+
+<http://lblod.info/templates/63d110b8-afb8-4062-b629-b3790c82b8e7>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"63d110b8-afb8-4062-b629-b3790c82b8e7" ;
+    ns1:templateMatches "Selecteer scenario ontvankelijkheid aktes" ;
+    ns1:activeInContext	ns1:BesluitSchepenenOntvankelijkeAkte ;
+    ns5:title	"Scenario: een van de meerderheden of beide meerderheden hebben niet ondertekend" ;
+    ns1:templateContent """
+Overwegende dat de voorzitter van de gemeenteraad dus de onontvankelijkheid van de akte moet vaststellen;
+ """.
+
