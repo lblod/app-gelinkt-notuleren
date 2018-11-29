@@ -255,10 +255,10 @@
   <br>
 
   <p>
-    Locatie: <span class="mark-highlight-manual">Voer naam locatie in</span>, <span class="mark-highlight-manual">Voer naam zaal in</span>.
+    Geplande start: <span id="${generateBoundUuid('geplande-start-2')}" property="besluit:geplandeStart" datatype="xsd:dateTime" content="2019-01-02T19:00:00.299Z">2 januari 2019 20:00&nbsp;</span>​
   </p>
   <p>
-    Geplande start: <span id="${generateBoundUuid('geplande-start-2')}" property="besluit:geplandeStart" datatype="xsd:dateTime" content="2019-01-02T19:00:00.299Z">2 januari 2019 20:00&nbsp;</span>​
+    Locatie: <span class="mark-highlight-manual">Voer naam locatie in</span>, <span class="mark-highlight-manual">Voer naam zaal in</span>.
   </p>
   <br>
 
@@ -360,17 +360,19 @@
         <div property="besluit:motivering" lang="nl">
           <div>
             <ul class="bullet-list">
-              <li>Gelet op <a href="http://data.lblod.info/WetgevingDocument/1029017" property="eli:cites">het decreet van 22 december 2017 over het lokaal bestuur</a>, artikel <a href="http://data.lblod.info/WetgevingArtikel/1234844" property="eli:cites">6</a>;</li>
 
               <li>Gelet op <a href="http://data.lblod.info/WetgevingDocument/1020561" property="eli:cites">het Lokaal en Provinciaal Kiesdecreet van 8 juli 2011</a>, de artikelen <a href="http://data.lblod.info/WetgevingArtikel/1138929" property="eli:cites">203</a> en <a href="http://data.lblod.info/WetgevingArtikel/1138930" property="eli:cites">204</a>;</li>
 
               <li>Gelet op <a href="http://data.lblod.info/WetgevingDocument/1024603" property="eli:cites">het decreet van 4 april 2014 betreffende de organisatie en rechtspleging van sommige Vlaamse bestuursrechtcolleges</a>, artikel <a href="http://data.lblod.info/WetgevingArtikel/1240910" property="eli:cites">28</a>;</li>
+
+              <li>Gelet op <a href="http://data.lblod.info/WetgevingDocument/1029017" property="eli:cites">het decreet van 22 december 2017 over het lokaal bestuur</a>, artikel <a href="http://data.lblod.info/WetgevingArtikel/1234844" property="eli:cites">6</a>;</li>
+
             </ul>
           </div>
           <br>
           <div>
             <ul class="bullet-list">
-              <li>Overwegende dat de resultaten van de gemeenteraadsverkiezingen van <span id="${generateBoundUuid('verkiezingsdatum-1')}">14 oktober 2018</span> door de Raad voor Verkiezingsbetwistingen op <span class="mark-highlight-manual">Voeg datum in</span> werden goedgekeurd, zoals meegedeeld per brief op <span class="mark-highlight-manual">Voeg datum in</span>;</li>
+              <li>Overwegende dat de resultaten van de gemeenteraadsverkiezingen van <span id="${generateBoundUuid('verkiezingsdatum-1')}">14 oktober 2018</span> door de Raad voor Verkiezingsbetwistingen op <span class="mark-highlight-manual">Voeg datum in</span> werden geldig verklaard, zoals meegedeeld per brief op <span class="mark-highlight-manual">Voeg datum in</span>;</li>
             </ul>
           </div>
         </div>
@@ -383,7 +385,7 @@
 	        <div property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
 	          <span property="eli:number">Enig artikel.</span>
 	          <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
-	          <span property="prov:value">Akte te nemen van de goedkeuring van de resultaten van de gemeenteraadsverkiezingen van <span id="${generateBoundUuid('verkiezingsdatum-2')}">14 oktober 2018</span> door de Raad voor Verkiezingsbetwistingen.</span>
+	          <span property="prov:value">Akte te nemen van de geldigverklaring van de resultaten van de gemeenteraadsverkiezingen van <span id="${generateBoundUuid('verkiezingsdatum-2')}">14 oktober 2018</span> door de Raad voor Verkiezingsbetwistingen.</span>
 	        </div>
         </div>
       </div>
@@ -474,9 +476,7 @@
 
               <li resource="#VerkiezingGemeenteraadsledenScenario" typeof="ext:BesluitGemeenteraadsledenBurgemeester">Selecteer scenario burgemeester</li>
 
-              <li>Overwegende dat de verkozenen die opgeroepen werden om de eed af te leggen, de volgende eed hebben afgelegd in handen van <span class="mark-highlight-manual">de voorzitter (indien van toepassing of in het geval van de uittredend voorzitter, in handen van de burgemeester of het oudste raadslid</span>: &quot;Ik zweer de verplichtingen van mijn mandaat trouw na te komen&quot;.</li>
-              <li>Selecteer scenario verhindering</li>
-
+              <li>Overwegende dat de verkozenen die opgeroepen werden om de eed af te leggen, de volgende eed hebben afgelegd in handen van <span class="mark-highlight-manual">de voorzitter (indien van toepassing of in het geval van de uittredend voorzitter, in handen van de burgemeester of het oudste raadslid)</span>: &quot;Ik zweer de verplichtingen van mijn mandaat trouw na te komen&quot;.</li>
               <li resource="#VerkiezingGemeenteraadsledenScenario" typeof="ext:BesluitGemeenteraadsledenVerhindering">Selecteer scenario verhinderingen</li>
             </ul>
           </div>
@@ -487,6 +487,7 @@
         <p class="u-spacer--small">Beslist,</p>
         <div> <!-- Erika! -->
           <p>met eenparigheid van stemmen:</p>
+          <span class="mark-highlight-manual">Typ namen stemmers</span>
         </div>
         <br>
         <br>
@@ -607,13 +608,14 @@
     <h3 class="h6">Aanwezigen bij agendapunt</h3>
     <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
     <br>
-    <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
+    <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit ext:BesluitSchepenen">
       <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-6')}">Verkiezing van de schepenen</span></h5>
       <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
       <br>
       <p>Korte openbare beschrijving:</p>
       <p property="eli:description">Verkiezing van de schepenen.</p>
 
+      <br>
       <div>
         <p class="u-spacer--small">De gemeenteraad,</p>
         <div property="besluit:motivering" lang="nl">
@@ -623,7 +625,6 @@
               <li>Gelet op omzendbrief KB / ABB 2018 / 3 van 26 oktober 2018 &mdash; Start van de lokale en provinciale bestuursperiode;</li>
             </ul>
           </div>
-
           <div>
             <ul class="bullet-list">
               <li id="${generateBoundUuid('datum bezorging akte van voordracht schepenen')}">
@@ -631,13 +632,7 @@
                   <div property="ext:scrollToLogicalName" content="datum bezorging akte van voordracht schepenen">datum bezorging akte van voordracht schepenen</div>
                   <div property="ext:idInSnippet" content="${generateBoundUuid('datum bezorging akte van voordracht schepenen')}">${generateBoundUuid('datum bezorging akte van voordracht schepenen')}</div>
                 </div>
-                Overwegende dat een gezamenlijke akte van voordracht van de kandidaat-schepenen werd overhandigd aan de algemeen directeur op&nbsp;
-                <span class="mark-highlight-manual">Voer datum in</span>​, zijnde binnen de termijn van acht dagen voor de installatievergadering van de gemeenteraad;
-
-                <!-- Moet hier ook een alternatief scenario zoals bij gemeenteraadsleden? -->
-              </li>
-              <li>Selecteer scenario akte van voordracht</li>
-
+              Selecteer scenario akte van voordracht</li>
               <li>
                 Overwegende dat de algemeen directeur op datum van&nbsp;
                 <span class="mark-highlight-manual">Voer datum in</span>​ een afschrift van de gezamenlijke akte van voordracht aan de burgemeester heeft bezorgd;
@@ -791,10 +786,12 @@
 
   <!-- Sluiting zitting-->
   <h3 class="h2">Sluiting van de zitting</h3>
-  <!-- <p>De voorzittter van de raad sluit de zitting op <span property="prov:endedAtTime" content="" datatype="xsd:dateTime"><span typeOf="ext:currentDate">&nbsp;</span></span>.</p> -->
+
+  <p>De voorzittter van de raad sluit de zitting op <span property="prov:endedAtTime" content="" datatype="xsd:dateTime"><span typeOf="ext:currentDate">&nbsp;</span></span>.</p>
+
   <p>Namens de Raad,</p>
   <br>
-  <p><span class="mark-highlight-manual">Voer algemeen directeur in</span></p>
+  <p><span class="mark-highlight-manual">Voer naam algemeen directeur in</span></p>
   <p><strong>Algemeen directeur</strong></p>
   <br>
   <p><span id="${generateBoundUuid('nieuwe-voorzitter-3')}" class="mark-highlight-manual">Voer naam in</span></p>
