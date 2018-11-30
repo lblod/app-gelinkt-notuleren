@@ -6,12 +6,12 @@
 @prefix ns5:	<http://purl.org/dc/terms/> .
 @prefix foaf:	<http://xmlns.com/foaf/0.1/> .
 
-<http://lblod.info/templates/017bc40a-0a06-4c2c-be6b-117e93bd0112>
+<http://lblod.info/templates/7b3c50a0-ad2f-4fd1-a48b-bcb2f9b7144f>
     rdf:type	ns1:Template ;
-    ns2:uuid	"017bc40a-0a06-4c2c-be6b-117e93bd0112" ;
+    ns2:uuid	"7b3c50a0-ad2f-4fd1-a48b-bcb2f9b7144f" ;
     ns1:templateMatches "Selecteer scenario verkiezing van de voorzitter van de gemeenteraad";
     ns1:activeInContext	ns1:BesluitVerkiezingVoorzitter ;
-    ns5:title	"Scenario: Ontvankelijke akte (tijdig met dubbele meerderheid) én kandidaat voldoet aan voorwaarden" ;
+    ns5:title	"Scenario: ontvankelijke akte (tijdig met dubbele meerderheid) MAAR kandidaat voldoet NIET aan voorwaarden" ;
     ns1:templateContent """
 <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
   <div property="ext:idInSnippet" content="${generateBoundUuid('nieuwe-voorzitter-1a')}">0</div>
@@ -35,16 +35,9 @@
 
         <li>Overwegende dat de algemeen directeur de akte van voordracht van kandidaat-voorzitter ter zitting overhandigd heeft aan de voorzitter van de installatievergadering;</li>
 
-        <li>Overwegende dat de voorzitter van de installatievergadering heeft vastgesteld dat de akte van voordracht van kandidaat-voorzitter werd ondertekend door meer dan de helft van de verkozenen op de lijsten die aan de verkiezingen deelnamen en door een meerderheid van de personen die op dezelfde lijst als de voorgedragen kandidaat werden verkozen en daarmee de ontvankelijkheid van de akte kan bevestigen;</li>
+        <li>Overwegende dat uit onderzoek van de geloofsbrieven blijkt dat de voorgedragen kandidaat niet voldoet aan de verkiesbaarheidsvoorwaarden, omdat <span class="mark-highlight-manual">Voer motivering in</span>;</li>
 
-        <li>Overwegende dat uit onderzoek van de geloofsbrieven blijkt dat de voorgedragen kandidaat voldoet aan de verkiesbaarheidsvoorwaarden;</li>
-
-        <li>Overwegende dat de kandidaat-voorzitter de voorgeschreven eed als gemeenteraadslid heeft afgelegd en er geen specifieke eed als voorzitter van de gemeenteraad dient afgelegd te worden;</li>
-
-        <li resource="#VerkiezingVoorzitter" typeof="ext:BesluitVerkiezingVoorzitterEinddatum">Selecteer scenario eventuele einddatum en opvolger</li>
-
-        <li resource="#VerkiezingVoorzitter" typeof="ext:BesluitVerkiezingVoorzitterVerhindering">Selecteer scenario verhindering</li>
-
+        <li>Overwegende dat de kandidaat dus niet verkozen verklaard kan worden;</li>
       </ul>
     </div>
   </div>
@@ -56,8 +49,11 @@
         <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
         <span property="prov:value">Kennis te nemen van de tijdige en ontvankelijke akte van voordracht van kandidaat-voorzitter.</span>
       </li>
-      <li resource="#VerkiezingVoorzitter" typeof="ext:BesluitVerkiezingVoorzitterOpvolger">Selecteer scenario opvolger</li>
-      <li resource="#VerkiezingVoorzitter" typeof="ext:BesluitVerkiezingVoorzitterArtikelVerhindering">Selecteer scenario verhindering</li>
+      <li property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+        <span property="eli:number">Artikel 2</span>
+        <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+        <span property="prov:value">Kennis te nemen van het gegeven dat de uittredend voorzitter het mandaat van voorzitter van de gemeenteraad blijft bekleden tot een nieuwe voorzitter wordt verkozen.</span>
+      </li>
     </ul>
   </div>
 </div>
