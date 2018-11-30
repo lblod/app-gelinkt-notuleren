@@ -11,7 +11,7 @@
     ns2:uuid	"0391116e-bed3-41b4-806c-4c7ebbecab7e" ;    
     ns1:templateMatches "Selecteer scenario eventuele einddatum en opvolgers";
     ns1:activeInContext	ns1:BesluitVerkiezingVoorzitterEinddatum ;
-    ns5:title	"Scenario: geen melding van einddatum van het mandaat" ;
+    ns5:title	"Scenario: geen melding van einddatum van het mandaat, noch opvolger" ;
     ns1:templateContent """
 Overwegende dat de akte van voordracht van kandidaat-voorzitter geen melding maakt van de einddatum van het mandaat en er dus geen opvolger aangeduid wordt;
  """.
@@ -36,6 +36,19 @@ Overwegende dat de akte van voordracht van kandidaat-voorzitter melding maakt va
 <ul>
   <li>Overwegende dat de akte van voordracht van kandidaat-voorzitter melding maakt van <span class="mark-highlight-manual">Voer geplande einddatum in</span> als einddatum van het mandaat;</li>
   <li>Overwegende dat de akte van voordracht van kandidaat-voorzitter eveneens melding maakt van <span class="mark-highlight-manual">Voer naam opvolger in</span> als opvolger voor de resterende duurtijd van het mandaat;</li>
+</ul>
+""".
+
+<http://lblod.info/templates/e557128e-023a-4d5f-84e3-4e72ce4acfd8>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"e557128e-023a-4d5f-84e3-4e72ce4acfd8" ;
+    ns1:templateMatches "Selecteer scenario eventuele einddatum en opvolgers";
+    ns1:activeInContext	ns1:BesluitVerkiezingVoorzitterEinddatum ;
+    ns5:title	"Scenario: geen melding van einddatum van het mandaat, wel opvolger" ;
+    ns1:templateContent """
+<ul>
+	<li>Overwegende dat de akte van voordracht van kandidaat-voorzitter geen einddatum van het mandaat, maar wel een opvolger vermeldt;</li>
+	<li>Overwegende dat het aanduiden van een opvolger zonder het vermelden van een einddatum niet geldig is en er dus geen opvolger aangeduid wordt;</li>
 </ul>
 """.
 

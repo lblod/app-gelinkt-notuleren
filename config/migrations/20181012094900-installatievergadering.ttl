@@ -244,12 +244,12 @@
 <div typeof="besluit:Zitting" resource="http://data.lblod.info/id/zittingen/${generateUuid('installatievergadering')}">
 
   <div class="ext_scroll_to" typeof="ext:ScrollToLocation" resource="http://scrollToLocation/${generateUuid()}">
-    <div property="ext:scrollToLogicalName" content="datum en locatie installatievergadering">datum en locatie installatievergadering</div>
-    <div property="ext:idInSnippet" content="${generateBoundUuid('datum en locatie installatievergadering')}">${generateBoundUuid('datum en locatie installatievergadering')}</div>
+    <div property="ext:scrollToLogicalName" content="bestuursorgaan en geplande start">bestuursorgaan en geplande start</div>
+    <div property="ext:idInSnippet" content="${generateBoundUuid('bestuursorgaan en geplande start')}">${generateBoundUuid('bestuursorgaan en geplande start')}</div>
   </div>
 
   <!-- meta zitting -->
-  <h2 class="h1" property="dc:title" id="${generateBoundUuid('datum en locatie installatievergadering')}">
+  <h2 class="h1" property="dc:title" id="${generateBoundUuid('bestuursorgaan en geplande start')}">
     Notulen van <span property="ext:scopedBestuursorgaanText">selecteer bestuursorgaan</span>, zitting van <span id="${generateBoundUuid('geplande-start-1')}" property="besluit:geplandeStart" datatype="xsd:dateTime" content="2019-01-02T19:00:00.299Z">2 januari 2019 20:00&nbsp;</span>​ (installatievergadering)
   </h2>
   <br>
@@ -257,12 +257,17 @@
   <p>
     Geplande start: <span id="${generateBoundUuid('geplande-start-2')}" property="besluit:geplandeStart" datatype="xsd:dateTime" content="2019-01-02T19:00:00.299Z">2 januari 2019 20:00&nbsp;</span>​
   </p>
-  <p>
+
+  <div class="ext_scroll_to" typeof="ext:ScrollToLocation" resource="http://scrollToLocation/${generateUuid()}">
+    <div property="ext:scrollToLogicalName" content="locatie en zaal">locatie en zaal</div>
+    <div property="ext:idInSnippet" content="${generateBoundUuid('locatie en zaal')}">${generateBoundUuid('locatie en zaal')}</div>
+  </div>
+  <p id="${generateBoundUuid('locatie en zaal')}">
     Locatie: <span class="mark-highlight-manual">Voer naam locatie in</span>, <span class="mark-highlight-manual">Voer naam zaal in</span>.
   </p>
   <br>
-
   <br>
+
   <!-- aanwezigen -->
   <h3 class="h2">Aanwezigen bij de zitting</h3>
   <span property="ext:insertAanwezigenText">Beheer aanwezigen bij de zitting.</span>
@@ -305,7 +310,7 @@
         <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-4')}" typeof="besluit:Agendapunt">
           <meta property="besluit:aangebrachtNa" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-3')}">
           <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
-          <span id="${generateBoundUuid('agendapunt-nummer-4')}">Agendapunt 4:</span> <span property="dc:title"><span id="${generateBoundUuid('ap-4')}">Vaststelling van fractievorming</span></span>
+          <span id="${generateBoundUuid('agendapunt-nummer-4')}">Agendapunt 4:</span> <span property="dc:title"><span id="${generateBoundUuid('ap-4')}">Vaststelling van de fracties</span></span>
         </span>
       </li>
       <li>
@@ -382,11 +387,11 @@
       <div>
         <p class="u-spacer--small">Beslist,</p>
         <div property="prov:value">
-	        <div property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
-	          <span property="eli:number">Enig artikel.</span>
-	          <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
-	          <span property="prov:value">Akte te nemen van de geldigverklaring van de resultaten van de gemeenteraadsverkiezingen van <span id="${generateBoundUuid('verkiezingsdatum-2')}">14 oktober 2018</span> door de Raad voor Verkiezingsbetwistingen.</span>
-	        </div>
+          <div property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+            <span property="eli:number">Enig artikel.</span>
+            <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+            <span property="prov:value">Akte te nemen van de geldigverklaring van de resultaten van de gemeenteraadsverkiezingen van <span id="${generateBoundUuid('verkiezingsdatum-2')}">14 oktober 2018</span> door de Raad voor Verkiezingsbetwistingen.</span>
+          </div>
         </div>
       </div>
     </div>
@@ -411,7 +416,7 @@
       <p property="eli:description">Mededeling over de benoeming en eedaflegging van de burgemeester.</p>
       <br>
 
-    	<p property="ext:insertBurgemeesterText">Selecteer scenario benoeming en eedaflegging burgemeester</p>
+      <p property="ext:insertBurgemeesterText">Selecteer scenario benoeming en eedaflegging burgemeester</p>
     </div>
   </div>
 
@@ -515,10 +520,10 @@
     <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
     <br>
     <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
-      <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-4')}">Vaststelling van fractievorming</span></h5>
+      <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-4')}">Vaststelling van de fracties</span></h5>
       <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
       <p>Korte openbare beschrijving:</p>
-      <p property="eli:description">Vaststelling van fractievorming.</p>
+      <p property="eli:description">Vaststelling van de fracties.</p>
       <br>
 
       <div>
@@ -532,9 +537,9 @@
           </div>
           <div>
             <ul class="bullet-list">
-            	<li resource="#FractieScenario" typeof="ext:BesluitFractieSplitwens">Selecteer scenario fracties splitsingen</li>
+              <li resource="#FractieScenario" typeof="ext:BesluitFractieSplitwens">Selecteer scenario fracties splitsingen</li>
 
-            	<li resource="#FractieScenario" typeof="ext:BesluitFractieVereniging">Selecteer scenario fracties verenigingen</li>
+              <li resource="#FractieScenario" typeof="ext:BesluitFractieVereniging">Selecteer scenario fracties verenigingen</li>
             </ul>
           </div>
         </div>
@@ -549,8 +554,8 @@
               <span property="eli:number">Enig artikel.</span>
               <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
               <span property="prov:value">
-              	<p>De fracties als volgt vast te stellen:</p>
-              	<br>
+                <p>De fracties als volgt vast te stellen:</p>
+                <br>
                 <span property="ext:fractievormingText">Voeg lijst met fracties hier toe.</span>
               </span>
             </li>
@@ -660,7 +665,7 @@
               <li>Overwegende dat de gezamenlijke akte van voordracht van de kandidaat-schepenen geen melding maakt van de einddatum van een schepenmandaat;
 
                 <!-- Moet hier ook een alternatief scenario zoals bij gemeenteraadsleden? -->
-             	</li>
+              </li>
 
               <li id="${generateBoundUuid('aantal schepenen')}">
                 <div class="ext_scroll_to" typeof="ext:ScrollToLocation" resource="http://scrollToLocation/${generateUuid()}">
@@ -679,7 +684,11 @@
 
       <div>
         <p class="u-spacer--small">Beslist,</p>
-        <span property="ext:schepenenAanstellingText">voeg lijst met schepenen toe.</span>
+        <ul>
+          <li>Artikel 1 ...</li>
+          <li>Artikel 2 ...</li>
+          <li><span property="ext:schepenenAanstellingText">Beheer artikels 3 tot en met 5 hier.</span></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -702,7 +711,9 @@
       <p>Korte openbare beschrijving:</p>
       <p property="eli:description">Verkiezing van de Politieraad.</p>
       <br>
-      Voeg besluit politieraad in
+      <div class="hide-for-launch--politie">
+        <div>Voeg besluit politieraad in</div>
+      </div>
     </div>
 
     <br>
