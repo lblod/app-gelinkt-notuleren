@@ -432,7 +432,13 @@
     <h3 class="h6">Aanwezigen bij agendapunt</h3>
     <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
     <br>
-    <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
+
+    <div class="ext_scroll_to" typeof="ext:ScrollToLocation" resource="http://scrollToLocation/${generateUuid()}">
+      <div property="ext:scrollToLogicalName" content="agendapunt gemeenteraadsleden">agendapunt gemeenteraadsleden</div>
+      <div property="ext:idInSnippet" content="${generateBoundUuid('agendapunt gemeenteraadsleden')}">${generateBoundUuid('agendapunt gemeenteraadsleden')}</div>
+    </div>
+
+    <div id="${generateBoundUuid('agendapunt gemeenteraadsleden')}" property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
       <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-3')}">Installatie van de gemeenteraadsleden en vaststelling van hun rangorde</span></h5>
       <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
       <p>Korte openbare beschrijving:</p>
@@ -577,18 +583,19 @@
     <h3 class="h6">Aanwezigen bij agendapunt</h3>
     <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
     <br>
-    <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit mandaat:Aanstellingsbesluit ext:BesluitVerkiezingVoorzitter">
+
+	  <div class="ext_scroll_to" typeof="ext:ScrollToLocation" resource="http://scrollToLocation/${generateUuid()}">
+	    <div property="ext:scrollToLogicalName" content="datum bezorging akte van voordracht kandidaat-voorzitter">datum bezorging akte van voordracht kandidaat-voorzitter</div>
+	    <div property="ext:idInSnippet" content="${generateBoundUuid('datum bezorging akte van voordracht kandidaat-voorzitter')}">${generateBoundUuid('datum bezorging akte van voordracht kandidaat-voorzitter')}</div>
+	  </div>
+
+    <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit mandaat:Aanstellingsbesluit ext:BesluitVerkiezingVoorzitter" id="${generateBoundUuid('datum bezorging akte van voordracht kandidaat-voorzitter')}">
       <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-5')}">Verkiezing van de voorzitter van de gemeenteraad</span></h5>
       <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
       <p>Korte openbare beschrijving:</p>
       <p property="eli:description">Verkiezing van de voorzitter van de gemeenteraad.</p>
       <br>
-
-      <div class="ext_scroll_to" typeof="ext:ScrollToLocation" resource="http://scrollToLocation/${generateUuid()}">
-        <div property="ext:scrollToLogicalName" content="datum bezorging akte van voordracht kandidaat-voorzitter">datum bezorging akte van voordracht kandidaat-voorzitter</div>
-        <div property="ext:idInSnippet" content="${generateBoundUuid('datum bezorging akte van voordracht kandidaat-voorzitter')}">${generateBoundUuid('datum bezorging akte van voordracht kandidaat-voorzitter')}</div>
-      </div>
-      <div id="${generateBoundUuid('datum bezorging akte van voordracht kandidaat-voorzitter')}">
+      <div>
         <p>Selecteer scenario verkiezing van de voorzitter van de gemeenteraad</p>
       </div>
 
@@ -613,7 +620,12 @@
     <h3 class="h6">Aanwezigen bij agendapunt</h3>
     <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
     <br>
-    <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit ext:BesluitSchepenen">
+
+    <div class="ext_scroll_to" typeof="ext:ScrollToLocation" resource="http://scrollToLocation/${generateUuid()}">
+      <div property="ext:scrollToLogicalName" content="agendapunt schepenen">agendapunt schepenen</div>
+      <div property="ext:idInSnippet" content="${generateBoundUuid('agendapunt schepenen')}">${generateBoundUuid('agendapunt schepenen')}</div>
+    </div>
+    <div id="${generateBoundUuid('agendapunt schepenen')}" property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit ext:BesluitSchepenen">
       <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-6')}">Verkiezing van de schepenen</span></h5>
       <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
       <br>
@@ -632,12 +644,7 @@
           </div>
           <div>
             <ul class="bullet-list">
-              <li id="${generateBoundUuid('datum bezorging akte van voordracht schepenen')}">
-                <div class="ext_scroll_to" typeof="ext:ScrollToLocation" resource="http://scrollToLocation/${generateUuid()}">
-                  <div property="ext:scrollToLogicalName" content="datum bezorging akte van voordracht schepenen">datum bezorging akte van voordracht schepenen</div>
-                  <div property="ext:idInSnippet" content="${generateBoundUuid('datum bezorging akte van voordracht schepenen')}">${generateBoundUuid('datum bezorging akte van voordracht schepenen')}</div>
-                </div>
-              Selecteer scenario akte van voordracht</li>
+              <li>Selecteer scenario akte van voordracht</li>
               <li>
                 Overwegende dat de algemeen directeur op datum van&nbsp;
                 <span class="mark-highlight-manual">Voer datum in</span>​ een afschrift van de gezamenlijke akte van voordracht aan de burgemeester heeft bezorgd;
@@ -667,11 +674,7 @@
                 <!-- Moet hier ook een alternatief scenario zoals bij gemeenteraadsleden? -->
               </li>
 
-              <li id="${generateBoundUuid('aantal schepenen')}">
-                <div class="ext_scroll_to" typeof="ext:ScrollToLocation" resource="http://scrollToLocation/${generateUuid()}">
-                  <div property="ext:scrollToLogicalName" content="aantal schepenen">aantal schepenen</div>
-                  <div property="ext:idInSnippet" content="${generateBoundUuid('aantal schepenen')}">${generateBoundUuid('aantal schepenen')}</div>
-                </div>
+              <li>
                 Overwegende dat door de indiening van een geldige voordrachtsakte het aantal schepenen voor de rest van de legislatuur bepaald is, zijnde <span property="ext:TODO" var="ext:TODO" class="mark-highlight-manual">Voer aantal schepenen in</span>;</li>
               <li>Overwegende dat de voorzitter van de gemeenteraad dit aantal ter zitting meedeelt aan de gemeenteraad;</li>
               <li>Overwegende dat de rangorde van de schepenen is bepaald door de rangorde zoals deze op de ontvankelijke voordrachtsakte bepaald;</li>
@@ -705,7 +708,12 @@
     <h3 class="h6">Aanwezigen bij agendapunt</h3>
     <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
     <br>
-    <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit ext:BesluitPolitieraad">
+
+	  <div class="ext_scroll_to" typeof="ext:ScrollToLocation" resource="http://scrollToLocation/${generateUuid()}">
+	    <div property="ext:scrollToLogicalName" content="datum voordrachtsakten politieraadsleden">datum voordrachtsakten politieraadsleden</div>
+	    <div property="ext:idInSnippet" content="${generateBoundUuid('datum voordrachtsakten politieraadsleden')}">${generateBoundUuid('datum voordrachtsakten politieraadsleden')}</div>
+	  </div>
+    <div id="${generateBoundUuid('datum voordrachtsakten politieraadsleden')}" property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit ext:BesluitPolitieraad">
       <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-7')}">Verkiezing van de Politieraad</span></h5>
       <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
       <p>Korte openbare beschrijving:</p>
