@@ -1,0 +1,16 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://mu.semte.ch/vocabularies/ext/> .
+@prefix ns2:	<http://mu.semte.ch/vocabularies/core/> .
+@prefix ns3:	<http://data.vlaanderen.be/ns/besluit#> .
+@prefix ns4:	<http://data.vlaanderen.be/ns/mandaat#> .
+@prefix ns5:	<http://purl.org/dc/terms/> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+
+<http://lblod.info/templates/95dfc0a8-f708-11e8-92e2-6fea1a459fc1>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"95dfc0a8-f708-11e8-92e2-6fea1a459fc1" ;
+    ns1:templateMatches "Selecteer scenario maximum aantal schepenen";
+    ns1:activeInContext	ns1:BesluitSchepenen;
+    ns5:title	"Scenario: maximum aantal schepenen niet overschreden" ;
+    ns1:templateContent """Overwegende dat dit aantal het maximum voor de gemeente niet overschrijdt en dat daarmee het aantal schepenen is vastgelegd;
+ """.
