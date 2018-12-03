@@ -1,0 +1,36 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://mu.semte.ch/vocabularies/ext/> .
+@prefix ns2:	<http://mu.semte.ch/vocabularies/core/> .
+@prefix ns3:	<http://data.vlaanderen.be/ns/besluit#> .
+@prefix ns4:	<http://data.vlaanderen.be/ns/mandaat#> .
+@prefix ns5:	<http://purl.org/dc/terms/> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+
+<http://lblod.info/templates/7b4541aa-f70d-11e8-a3f1-8fd40d366db4>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"7b4541aa-f70d-11e8-a3f1-8fd40d366db4" ;
+    ns1:templateMatches "Selecteer scenario eventuele einddatum en eventuele opvolgers";
+    ns1:activeInContext	ns1:BesluitSchepenen;
+    ns5:title	"Scenario: Met einddatum en met opvolgers" ;
+    ns1:templateContent """
+<ul>
+	<li>Overwegende dat de akte van voordracht van kandidaat-schepenen voor volgende kandidaat-schepenen melding maakt van de einddatum van het mandaat:
+		<ul class="bullet-list">
+			<li>
+				voor <span class="mark-highlight-manual">Voer naam kandidaat-schepen in</span> is de einddatum <span class="mark-highlight-manual">Voer geplande einddatum in</span>;
+			</li>
+			<li>
+				...
+			</li>
+		</ul>
+	</li>
+	<li>Overwegende dat de akte van voordracht van kandidaat-schepenen voor volgende kandidaat-schepenen eveneens melding maakt van een opvolger voor de resterende duurtijd van het mandaat:
+		<ul class="bullet-list">
+			<li>
+				Voeg naam <span class="mark-highlight-manual">Voer naam kandidaat-schepen in</span> in met als opvolger <span class="mark-highlight-manual">Voer naam opvolger in</span>;
+			</li>
+		</ul>
+	</li>
+</ul>
+
+ """.
