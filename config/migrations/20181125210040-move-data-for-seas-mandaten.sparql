@@ -43,7 +43,6 @@ INSERT {
   GRAPH <http://mu.semte.ch/graphs/public> {
     ?persoon a person:Person ; 
              ?p ?o .
-    FILTER NOT EXISTS { ?mandataris mandaat:isBestuurlijkeAliasVan ?persoon . }
     ?kandidatenlijst mandaat:heeftKandidaat ?persoon ;
                      mandaat:behoortTot ?rechtstreekseVerkiezing .
     ?rechtstreekseVerkiezing mandaat:steltSamen ?bestuursorgaanInTijd .
