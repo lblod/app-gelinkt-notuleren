@@ -1,0 +1,20 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://mu.semte.ch/vocabularies/ext/> .
+@prefix ns2:	<http://mu.semte.ch/vocabularies/core/> .
+@prefix ns3:	<http://data.vlaanderen.be/ns/besluit#> .
+@prefix ns4:	<http://data.vlaanderen.be/ns/mandaat#> .
+@prefix ns5:	<http://purl.org/dc/terms/> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+
+<http://lblod.info/templates/d4294dba-f745-11e8-afff-bfd122452ad2>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"d4294dba-f745-11e8-afff-bfd122452ad2" ;
+    ns1:templateMatches "Selecteer scenario verkiesbaarheidsvoorwaarden";
+    ns1:activeInContext	ns1:BesluitGemeenteraadsledenVerkiezbaarheidsvoorwaarden ;
+    ns5:title	"Scenario: minstens één verkozene voldoet niet" ;
+    ns1:templateContent """
+  Overwegende dat uit het onderzoek van de ingediende geloofsbrieven blijkt dat alle verkozenen die uitgenodigd worden heden de eed af te leggen, voldoen aan de verkiesbaarheidsvoorwaarden, met uitzondering van:
+  <ul>
+    <li><span class="mark-highlight-manual">Voeg naam verkozene in</span>, <span class="mark-highlight-manual">Voeg motivering in</span></li>
+  </ul>
+ """.
