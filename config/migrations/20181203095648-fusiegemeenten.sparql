@@ -1,0 +1,197 @@
+INSERT INTO <http://mu.semte.ch/graphs/public> {
+<http://data.lblod.info/id/werkingsgebieden/56e8ec85-e03f-4168-b062-737f9704cd2a> a <http://www.w3.org/ns/prov#Location>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "Deinze";
+   <http://mu.semte.ch/vocabularies/core/uuid> "56e8ec85-e03f-4168-b062-737f9704cd2a";
+   <http://mu.semte.ch/vocabularies/ext/werkingsgebiedNiveau> "Gemeente" .
+
+<http://data.lblod.info/id/bestuursorganen/366e7aac-7339-4894-85fd-79fd35d4e164> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>;
+   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/6523cf7f-8292-4784-8916-52d32c28345a>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "366e7aac-7339-4894-85fd-79fd35d4e164" .
+
+<http://data.lblod.info/id/bestuursorganen/7d48d4f2-f4c3-4bc7-a7a6-083a3224b110> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>;
+   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/4d89e643-b9ba-4765-ab01-ce84c427ac84>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "7d48d4f2-f4c3-4bc7-a7a6-083a3224b110" .
+
+<http://data.lblod.info/id/bestuursorganen/d87cb43a-e9d3-4f7b-9f51-e0b86050383b> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>;
+   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/2148c481-a30e-4040-bf5e-d1d4749ac788>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "d87cb43a-e9d3-4f7b-9f51-e0b86050383b" .
+
+<http://data.lblod.info/id/bestuursorganen/2148c481-a30e-4040-bf5e-d1d4749ac788> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/d93451bf-e89a-4528-80f3-f0a1c19361a8>;
+   <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000006>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "2148c481-a30e-4040-bf5e-d1d4749ac788";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "College van Burgemeester en Schepenen Deinze" .
+
+<http://data.lblod.info/id/bestuursorganen/4d89e643-b9ba-4765-ab01-ce84c427ac84> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/d93451bf-e89a-4528-80f3-f0a1c19361a8>;
+   <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/4955bd72cd0e4eb895fdbfab08da0284>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "4d89e643-b9ba-4765-ab01-ce84c427ac84";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Burgemeester Deinze" .
+
+<http://data.lblod.info/id/bestuursorganen/6523cf7f-8292-4784-8916-52d32c28345a> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/d93451bf-e89a-4528-80f3-f0a1c19361a8>;
+   <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000005>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "6523cf7f-8292-4784-8916-52d32c28345a";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Gemeenteraad Deinze" .
+
+<http://data.lblod.info/id/bestuurseenheden/d93451bf-e89a-4528-80f3-f0a1c19361a8> a <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>;
+   <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>;
+   <http://data.vlaanderen.be/ns/besluit#werkingsgebied> <http://data.lblod.info/id/werkingsgebieden/56e8ec85-e03f-4168-b062-737f9704cd2a>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "d93451bf-e89a-4528-80f3-f0a1c19361a8";
+   <http://mu.semte.ch/vocabularies/ext/kbonummer> "0697608162";
+   <http://purl.org/dc/terms/identifier> "0697608162";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Deinze" .
+
+<http://data.lblod.info/id/bestuursorganen/1abcb23b-4bb6-4ca3-a7ac-27df7338467e> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>;
+   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/53c94cc0-3e24-4771-9193-3c9abb253025>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "1abcb23b-4bb6-4ca3-a7ac-27df7338467e" .
+
+<http://data.lblod.info/id/bestuursorganen/2a2136f4-58c0-4936-a701-8c8d9b8368b6> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>;
+   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/f050d2a9-9ff8-413a-a040-b7102e495baa>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "2a2136f4-58c0-4936-a701-8c8d9b8368b6" .
+
+<http://data.lblod.info/id/bestuursorganen/523869ee-e3e0-4c5f-91bc-070014c06895> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>;
+   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/ad6eb98d-3f4e-4ce8-af72-8346f80ad343>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "523869ee-e3e0-4c5f-91bc-070014c06895" .
+
+<http://data.lblod.info/id/bestuursorganen/ba819c96-7893-43f8-8c20-d14471581c33> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>;
+   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/4e9a1589-6b8d-4ec4-ab73-522b079e8701>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "ba819c96-7893-43f8-8c20-d14471581c33" .
+
+<http://data.lblod.info/id/bestuursorganen/4e9a1589-6b8d-4ec4-ab73-522b079e8701> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/a4fd24f3-cc6d-4ea5-91c7-efa02d3b970f>;
+   <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000009>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "4e9a1589-6b8d-4ec4-ab73-522b079e8701";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Bijzonder Comité voor de Sociale Dienst Deinze" .
+
+<http://data.lblod.info/id/bestuursorganen/53c94cc0-3e24-4771-9193-3c9abb253025> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/a4fd24f3-cc6d-4ea5-91c7-efa02d3b970f>;
+   <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000007>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "53c94cc0-3e24-4771-9193-3c9abb253025";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Raad voor Maatschappelijk Welzijn Deinze" .
+
+<http://data.lblod.info/id/bestuursorganen/ad6eb98d-3f4e-4ce8-af72-8346f80ad343> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/a4fd24f3-cc6d-4ea5-91c7-efa02d3b970f>;
+   <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000008>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "ad6eb98d-3f4e-4ce8-af72-8346f80ad343";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Vast Bureau Deinze" .
+
+<http://data.lblod.info/id/bestuursorganen/f050d2a9-9ff8-413a-a040-b7102e495baa> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/a4fd24f3-cc6d-4ea5-91c7-efa02d3b970f>;
+   <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/53c0d8cd-f3a2-411d-bece-4bd83ae2bbc9>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "f050d2a9-9ff8-413a-a040-b7102e495baa";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Voorzitter van het Bijzonder Comité voor de Sociale Dienst Deinze" .
+
+<http://data.lblod.info/id/bestuurseenheden/a4fd24f3-cc6d-4ea5-91c7-efa02d3b970f> a <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>;
+   <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>;
+   <http://data.vlaanderen.be/ns/besluit#werkingsgebied> <http://data.lblod.info/id/werkingsgebieden/56e8ec85-e03f-4168-b062-737f9704cd2a>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "a4fd24f3-cc6d-4ea5-91c7-efa02d3b970f";
+   <http://mu.semte.ch/vocabularies/ext/kbonummer> "0697663689";
+   <http://purl.org/dc/terms/identifier> "0697663689";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Deinze" .
+
+<http://data.lblod.info/id/werkingsgebieden/a0e4508a-a20b-42e5-a40d-4d919d045fdd> a <http://www.w3.org/ns/prov#Location>;
+   <http://www.w3.org/2000/01/rdf-schema#label> "Aalter";
+   <http://mu.semte.ch/vocabularies/core/uuid> "a0e4508a-a20b-42e5-a40d-4d919d045fdd";
+   <http://mu.semte.ch/vocabularies/ext/werkingsgebiedNiveau> "Gemeente" .
+
+<http://data.lblod.info/id/bestuursorganen/0921318d-c195-4fbf-aadf-2534cdd63c7d> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>;
+   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/a423b2ec-2162-4b06-9260-22ada39a90fd>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "0921318d-c195-4fbf-aadf-2534cdd63c7d" .
+
+<http://data.lblod.info/id/bestuursorganen/2f95588c-cc11-49cb-ad81-72bb16c931d8> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>;
+   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/eb0cf5c1-646e-468e-9b72-e6579a271ba9>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "2f95588c-cc11-49cb-ad81-72bb16c931d8" .
+
+<http://data.lblod.info/id/bestuursorganen/ee5cd8ab-c969-4e53-b360-b0389b57fc6b> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>;
+   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/6f6399e6-4ef2-4ab6-bb4a-006d9b17be3a>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "ee5cd8ab-c969-4e53-b360-b0389b57fc6b" .
+
+<http://data.lblod.info/id/bestuursorganen/6f6399e6-4ef2-4ab6-bb4a-006d9b17be3a> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/5116efa8-e96e-46a2-aba6-c077e9056a96>;
+   <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/4955bd72cd0e4eb895fdbfab08da0284>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "6f6399e6-4ef2-4ab6-bb4a-006d9b17be3a";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Burgemeester Aalter" .
+
+<http://data.lblod.info/id/bestuursorganen/a423b2ec-2162-4b06-9260-22ada39a90fd> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/5116efa8-e96e-46a2-aba6-c077e9056a96>;
+   <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000005>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "a423b2ec-2162-4b06-9260-22ada39a90fd";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Gemeenteraad Aalter" .
+
+<http://data.lblod.info/id/bestuursorganen/eb0cf5c1-646e-468e-9b72-e6579a271ba9> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/5116efa8-e96e-46a2-aba6-c077e9056a96>;
+   <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000006>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "eb0cf5c1-646e-468e-9b72-e6579a271ba9";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "College van Burgemeester en Schepenen Aalter" .
+
+<http://data.lblod.info/id/bestuurseenheden/5116efa8-e96e-46a2-aba6-c077e9056a96> a <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>;
+   <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>;
+   <http://data.vlaanderen.be/ns/besluit#werkingsgebied> <http://data.lblod.info/id/werkingsgebieden/a0e4508a-a20b-42e5-a40d-4d919d045fdd>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "5116efa8-e96e-46a2-aba6-c077e9056a96";
+   <http://mu.semte.ch/vocabularies/ext/kbonummer> "0697608063";
+   <http://purl.org/dc/terms/identifier> "0697608063";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Aalter" .
+
+<http://data.lblod.info/id/bestuursorganen/13289429-db2b-4d10-94d2-ab43d4891a23> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>;
+   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/ff42be15-6759-44d0-a1df-72a26f4ba596>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "13289429-db2b-4d10-94d2-ab43d4891a23" .
+
+<http://data.lblod.info/id/bestuursorganen/1bdbc0e9-5b84-4840-bc24-7acdd86bdf06> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>;
+   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/322e3a1d-9811-42d7-a7e4-28951db639b5>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "1bdbc0e9-5b84-4840-bc24-7acdd86bdf06" .
+
+<http://data.lblod.info/id/bestuursorganen/21dba537-1a10-4d7e-99ba-0dece86a7b4a> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>;
+   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/905f565c-1203-4129-9a65-3ec0215b02c0>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "21dba537-1a10-4d7e-99ba-0dece86a7b4a" .
+
+<http://data.lblod.info/id/bestuursorganen/bc253135-1d73-4f9a-a453-0ea2820774a2> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/mandaat#bindingStart> "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date>;
+   <http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan> <http://data.lblod.info/id/bestuursorganen/d9c84fa7-a7a8-4750-b2a9-9e1628e252e3>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "bc253135-1d73-4f9a-a453-0ea2820774a2" .
+
+<http://data.lblod.info/id/bestuursorganen/322e3a1d-9811-42d7-a7e4-28951db639b5> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/f73c7109-06a0-45d7-b558-879d87ca3553>;
+   <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000008>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "322e3a1d-9811-42d7-a7e4-28951db639b5";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Vast Bureau Aalter" .
+
+<http://data.lblod.info/id/bestuursorganen/905f565c-1203-4129-9a65-3ec0215b02c0> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/f73c7109-06a0-45d7-b558-879d87ca3553>;
+   <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000007>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "905f565c-1203-4129-9a65-3ec0215b02c0";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Raad voor Maatschappelijk Welzijn Aalter" .
+
+<http://data.lblod.info/id/bestuursorganen/d9c84fa7-a7a8-4750-b2a9-9e1628e252e3> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/f73c7109-06a0-45d7-b558-879d87ca3553>;
+   <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000009>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "d9c84fa7-a7a8-4750-b2a9-9e1628e252e3";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Bijzonder Comité voor de Sociale Dienst Aalter" .
+
+<http://data.lblod.info/id/bestuursorganen/ff42be15-6759-44d0-a1df-72a26f4ba596> a <http://data.vlaanderen.be/ns/besluit#Bestuursorgaan>;
+   <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/f73c7109-06a0-45d7-b558-879d87ca3553>;
+   <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/53c0d8cd-f3a2-411d-bece-4bd83ae2bbc9>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "ff42be15-6759-44d0-a1df-72a26f4ba596";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Voorzitter van het Bijzonder Comité voor de Sociale Dienst Aalter" .
+
+<http://data.lblod.info/id/bestuurseenheden/f73c7109-06a0-45d7-b558-879d87ca3553> a <http://data.vlaanderen.be/ns/besluit#Bestuurseenheid>;
+   <http://data.vlaanderen.be/ns/besluit#classificatie> <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002>;
+   <http://data.vlaanderen.be/ns/besluit#werkingsgebied> <http://data.lblod.info/id/werkingsgebieden/a0e4508a-a20b-42e5-a40d-4d919d045fdd>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "f73c7109-06a0-45d7-b558-879d87ca3553";
+   <http://mu.semte.ch/vocabularies/ext/kbonummer> "0697663491";
+   <http://purl.org/dc/terms/identifier> "0697663491";
+   <http://www.w3.org/2004/02/skos/core#prefLabel> "Aalter" .
+}

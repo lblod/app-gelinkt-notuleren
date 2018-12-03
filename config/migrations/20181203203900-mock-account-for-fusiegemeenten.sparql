@@ -1,0 +1,59 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?persoon a foaf:Person;
+           mu:uuid ?uuidPersoon;
+           foaf:firstName ?classificatie;
+           foaf:familyName ?naam;
+           foaf:member ?bestuurseenheid;
+           foaf:account ?account.
+  ?account a foaf:OnlineAccount;
+           mu:uuid ?uuidAccount;
+           foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>;
+           ext:sessionRole "GelinktNotuleren-schrijver", "GelinktNotuleren-lezer" ,"GelinktNotuleren-ondertekenaar", "GelinktNotuleren-sjablonen_valideerder", "GelinktNotuleren-publiceerder".
+           }
+  GRAPH ?g {
+  ?persoon a foaf:Person;
+           mu:uuid ?uuidPersoon;
+           foaf:firstName ?classificatie;
+           foaf:familyName ?naam;
+           foaf:member ?bestuurseenheid;
+           foaf:account ?account.
+  ?account a foaf:OnlineAccount;
+           mu:uuid ?uuidAccount;
+           foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>;
+           ext:sessionRole "GelinktNotuleren-schrijver", "GelinktNotuleren-lezer" ,"GelinktNotuleren-ondertekenaar", "GelinktNotuleren-sjablonen_valideerder", "GelinktNotuleren-publiceerder".
+           }
+}
+WHERE {
+     ?bestuurseenheid a besluit:Bestuurseenheid;
+     mu:uuid ?uuid;
+     skos:prefLabel ?naam;
+     besluit:classificatie/skos:prefLabel ?classificatie.
+     BIND(CONCAT(?classificatie, " ", ?naam, " fusie") as ?volledigeNaam)
+     BIND(MD5(?volledigeNaam) as ?uuidPersoon)
+     BIND(MD5(CONCAT(?volledigeNaam,"ACCOUNT")) as ?uuidAccount)
+     BIND(IRI(CONCAT("http://data.lblod.info/id/persoon/", ?uuidPersoon)) AS ?persoon)
+     BIND(IRI(CONCAT("http://data.lblod.info/id/account/", ?uuidAccount)) AS ?account)
+     VALUES ?bestuurseenheid  {
+            <http://data.lblod.info/id/bestuurseenheden/52cc723a-9717-496d-9897-c6774cf124e4>
+     <http://data.lblod.info/id/bestuurseenheden/d26e802b-cae8-4c52-bad6-39e349d46862>
+     <http://data.lblod.info/id/bestuurseenheden/57b1646f-bf4c-4dc4-8bc9-6ec8a6486018>
+     <http://data.lblod.info/id/bestuurseenheden/120d2462-0e97-4636-b8dd-78edc4b2ba14>
+     <http://data.lblod.info/id/bestuurseenheden/8d7de878-db13-4fe1-8d74-bb8c9a690d90>
+     <http://data.lblod.info/id/bestuurseenheden/fad1ca7a-ac26-43fc-b167-b8ae4f873553>
+     <http://data.lblod.info/id/bestuurseenheden/c8f33e80-6f19-4ba1-a758-9d85f42d28d4>
+     <http://data.lblod.info/id/bestuurseenheden/a25044d6-d9f9-496e-9061-b0c858dda944>
+     <http://data.lblod.info/id/bestuurseenheden/47857958-7d00-47e0-ae83-00d914eca93f>
+     <http://data.lblod.info/id/bestuurseenheden/13b25c80-8d3a-4821-95b0-ffc4e850cb4b>
+     <http://data.lblod.info/id/bestuurseenheden/d93451bf-e89a-4528-80f3-f0a1c19361a8>
+     <http://data.lblod.info/id/bestuurseenheden/a4fd24f3-cc6d-4ea5-91c7-efa02d3b970f>
+     <http://data.lblod.info/id/bestuurseenheden/5116efa8-e96e-46a2-aba6-c077e9056a96>
+     <http://data.lblod.info/id/bestuurseenheden/f73c7109-06a0-45d7-b558-879d87ca3553>
+     }
+     BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/",?uuid)) AS ?g )
+}

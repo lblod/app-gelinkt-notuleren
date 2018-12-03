@@ -1,0 +1,49 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX bbcdr: <http://mu.semte.ch/vocabularies/ext/bbcdr/>
+PREFIX toezicht: <http://mu.semte.ch/vocabularies/ext/supervision/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX adms: <http://www.w3.org/ns/adms#>
+PREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>
+PREFIX schema: <http://schema.org/>
+PREFIX person: <http://www.w3.org/ns/person#>
+INSERT {
+ GRAPH ?orgGraph {
+    ?kandidaat ?p ?o.
+    ?geboorte ?geboorteP ?geboorteO.
+    ?identificator ?idP ?idO.
+ }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?nieuweeenheid besluit:werkingsgebied ?nieuwgebied;
+                   mu:uuid ?newGID.
+    ?nieuworgaan besluit:bestuurt ?nieuweeenheid.
+    ?nieuworgaan besluit:classificatie ?classificatie.
+    ?nieuwtijdsOrgaan mandaat:isTijdspecialisatieVan ?nieuworgaan;
+                  mandaat:bindingStart "2019-01-01"^^xsd:dateTime.
+       ?verkiezing mandaat:steltSamen ?tijdsOrgaan.
+    ?lijst mandaat:behoortTot ?verkiezing;
+           mandaat:heeftKandidaat ?kandidaat.
+  }
+  GRAPH ?oldG {
+      ?kandidaat ?p ?o.
+  }
+  OPTIONAL {
+    ?kandidaat persoon:heeftGeboorte ?geboorte.
+    ?geboorte ?p ?o.
+  }
+  OPTIONAL {
+   ?kandidaat adms:identifier ?identificator.
+   ?identificator ?idP ?idO.
+  }
+ BIND (IRI(CONCAT('http://mu.semte.ch/graphs/organizations/',?newGID)) AS ?orgGraph)
+ VALUES ?nieuwgebied {
+        <http://data.lblod.info/id/werkingsgebieden/56e8ec85-e03f-4168-b062-737f9704cd2a>  # deinze
+        <http://data.lblod.info/id/werkingsgebieden/a0e4508a-a20b-42e5-a40d-4d919d045fdd>  # aalter
+ }
+}
