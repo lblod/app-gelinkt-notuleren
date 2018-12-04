@@ -1,0 +1,31 @@
+PREFIX ns5:	<http://purl.org/dc/terms/>
+PREFIX ns2: <http://mu.semte.ch/vocabularies/core/>
+PREFIX ns1:	<http://mu.semte.ch/vocabularies/ext/>
+
+# delete
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+
+WHERE {
+  GRAPH ?g {
+    ?s  a  ns1:Tasklist .
+    ?s ?p ?o .
+  }
+};
+
+# delete
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o .
+  }
+}
+
+WHERE {
+  GRAPH ?g {
+    ?s  a  ns1:Task .
+    ?s ?p ?o .
+  }
+};
