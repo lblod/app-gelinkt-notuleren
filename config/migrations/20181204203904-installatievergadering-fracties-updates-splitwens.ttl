@@ -1,0 +1,41 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://mu.semte.ch/vocabularies/ext/> .
+@prefix ns2:	<http://mu.semte.ch/vocabularies/core/> .
+@prefix ns3:	<http://data.vlaanderen.be/ns/besluit#> .
+@prefix ns4:	<http://data.vlaanderen.be/ns/mandaat#> .
+@prefix ns5:	<http://purl.org/dc/terms/> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+
+<http://lblod.info/templates/b7e29ba8-67e8-41c9-9582-f2c746f06ec2>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"b7e29ba8-67e8-41c9-9582-f2c746f06ec2" ;
+    ns1:templateMatches "Selecteer scenario fracties splitsingen";
+    ns1:activeInContext	ns1:BesluitFractieSplitwens ;
+    ns5:title	"Scenario: afzonderlijke fracties bepaald in de akte" ;
+    ns1:templateContent """
+<ul>
+  <li>Overwegende dat voor volgende lijsten een akte van fractievorming werd ingediend met het oog op de vorming van twee afzonderlijke fracties:
+    <ul class="bullet-list">
+      <li><span class="mark-highlight-manual">Voer naam lijst in</span></li>
+      <li>...</li>
+    </ul>
+  </li>
+  <li resource="#FractieScenario" typeof="ext:BesluitFractieSplitwensAkte">Selecteer scenario voldoen aan voorwaarden voorgestelde splitsing</li>
+  <li resource="#FractieScenario" typeof="ext:BesluitFractieSplitwensAkteVoorwaarden">Selecteer scenario voldoen aan voorwaarden voorgestelde splitsing</li>
+</ul>
+""".
+
+<http://lblod.info/templates/6a7fe8a4-c438-4a2a-8376-25ca80f2da22>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"6a7fe8a4-c438-4a2a-8376-25ca80f2da22" ;
+    ns1:templateMatches "Selecteer scenario fracties splitsingen";
+    ns1:activeInContext	ns1:BesluitFractieSplitwens ;
+    ns5:title	"Scenario: mogelijkheid afzonderlijke fracties bepaald door meerderheid" ;
+    ns1:templateContent """
+<ul>
+  <li>Overwegende dat voor volgende lijsten een akte van fractievorming werd ingediend met het oog op de vorming van twee afzonderlijke fracties, wanneer een meerderheid van de verkozen gemeenteraadsleden die potentieel een afzonderlijke fractie kan uitmaken, op de installatievergadering van de gemeenteraad daartoe beslist:
+  </li>
+  <li resource="#FractieScenario" typeof="ext:BesluitFractieSplitwensAkte">Selecteer scenario voldoen aan voorwaarden voorgestelde splitsing</li>
+  <li resource="#FractieScenario" typeof="ext:BesluitFractieSplitwensAkteVoorwaarden">Selecteer scenario voldoen aan voorwaarden voorgestelde splitsing</li>
+</ul>
+""".
