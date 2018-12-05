@@ -88,23 +88,3 @@ WHERE {
       <http://lblod.info/templates/7dbb2b25-51ba-4506-b4b4-4ff1b1310f14> ns5:title ?o.
    }
 };
-
-
-# update title and template matches
-DELETE {
-   GRAPH ?g {
-      <http://lblod.info/templates/5281b184-1dbf-4bd2-aa88-2e9a31bd4945> ns5:title ?o .
-  }
-}
-
-INSERT {
-   GRAPH ?g {
-      <http://lblod.info/templates/5281b184-1dbf-4bd2-aa88-2e9a31bd4945> ns5:title "Scenario: minstens één voorgestelde splitsing voldoet niet aan voorwaarden" .
-  }
-}
-
-WHERE {
-   GRAPH ?g {
-      <http://lblod.info/templates/5281b184-1dbf-4bd2-aa88-2e9a31bd4945> ns5:title ?o.
-   }
-};
