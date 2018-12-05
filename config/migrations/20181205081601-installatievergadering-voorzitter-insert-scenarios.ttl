@@ -1,0 +1,67 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://mu.semte.ch/vocabularies/ext/> .
+@prefix ns2:	<http://mu.semte.ch/vocabularies/core/> .
+@prefix ns3:	<http://data.vlaanderen.be/ns/besluit#> .
+@prefix ns4:	<http://data.vlaanderen.be/ns/mandaat#> .
+@prefix ns5:	<http://purl.org/dc/terms/> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+
+<http://lblod.info/templates/cb0fb816-588c-4dbb-ba28-b9e3a5210a2a>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"cb0fb816-588c-4dbb-ba28-b9e3a5210a2a" ;
+    ns1:templateMatches "Selecteer scenario einddatum en opvolgers";
+    ns1:activeInContext	ns1:BesluitVerkiezingVoorzitterOpvolger ;
+    ns5:title	"Scenario: einddatum en opvolger bepaald" ;
+    ns1:templateContent """
+<li property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+  <span property="eli:number">Artikel 2</span>
+  <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+  <span property="prov:value">
+    <span property="ext:bekrachtigtAanstellingVan" resource="http://data.lblod.info/id/mandatarissen/${generateUuid()}" typeOf="mandaat:Mandataris">
+    	De voorgedragen kandidaat-voorzitter,
+    	<span class="mark-highlight-manual">Voer kandidaat-voorzitter in</span>, wordt verkozen verklaard
+    	als <span property="ext:currentVoorzitterMandaat">voorzitter van de gemeenteraad</span> met ingang van
+    	<span property="mandaat:start" content="" datatype="xsd:dateTime"><span typeOf="ext:currentDate">&nbsp;</span></span> tot
+    	<span property="mandaat:einde" content="" datatype="xsd:dateTime">Voer geplande einddatum in</span>. 
+    </span>
+    <span property="ext:bekrachtigtAanstellingVan" resource="http://data.lblod.info/id/mandatarissen/${generateUuid()}" typeOf="mandaat:Mandataris">
+      Vanaf <span property="mandaat:start" content="" datatype="xsd:dateTime">Voer geplande startdatum in</span> zal <span class="mark-ighlight-manual">Voeg naam opvolger in</span> het mandaat van <span property="ext:currentVoorzitterMandaat">voorzitter van de gemeenteraad</span> opnemen.
+    </span>
+  </span>
+</li>
+ """.
+
+<http://lblod.info/templates/bb85f8f0-942d-4eb5-9f55-88bbfc74b8f9>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"bb85f8f0-942d-4eb5-9f55-88bbfc74b8f9x" ;
+    ns1:templateMatches "Selecteer scenario einddatum en opvolgers";
+    ns1:activeInContext	ns1:BesluitVerkiezingVoorzitterOpvolger ;
+    ns5:title	"Scenario: geen einddatum noch opvolger bepaald" ;
+    ns1:templateContent """
+<li property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+  <span property="eli:number">Artikel 2</span>
+  <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+  <span property="prov:value">
+    <span property="ext:bekrachtigtAanstellingVan" resource="http://data.lblod.info/id/mandatarissen/${generateUuid()}" typeOf="mandaat:Mandataris">De voorgedragen kandidaat-voorzitter, <span class="mark-highlight-manual">Voer kandidaat-voorzitter in</span>, wordt verkozen verklaard als <span property="ext:currentVoorzitterMandaat">voorzitter van de gemeenteraad</span> met ingang van <span property="mandaat:start" content="" datatype="xsd:dateTime"><span typeOf="ext:currentDate">&nbsp;</span></span>.
+    </span>
+  </span>
+</li>
+""" .
+
+<http://lblod.info/templates/ce9c7e08-f7e5-11e8-987c-6f05a9e3fc22>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"ce9c7e08-f7e5-11e8-987c-6f05a9e3fc22" ;
+    ns1:templateMatches "Selecteer scenario einddatum en opvolgers";
+    ns1:activeInContext	ns1:BesluitVerkiezingVoorzitterOpvolger ;
+    ns5:title	"Scenario: einddatum maar geen opvolger bepaald" ;
+    ns1:templateContent """
+<li property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+  <span property="eli:number">Artikel 2</span>
+  <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+  <span property="prov:value">
+    <span property="ext:bekrachtigtAanstellingVan" resource="http://data.lblod.info/id/mandatarissen/${generateUuid()}" typeOf="mandaat:Mandataris">
+    	De voorgedragen kandidaat-voorzitter, <span class="mark-highlight-manual">Voer kandidaat-voorzitter in</span>, wordt verkozen verklaard als <span property="ext:currentVoorzitterMandaat">voorzitter van de gemeenteraad</span> met ingang van <span property="mandaat:start" content="" datatype="xsd:dateTime"><span typeOf="ext:currentDate">&nbsp;</span></span> tot <span property="mandaat:einde" content="" datatype="xsd:dateTime">Voer geplande einddatum in</span>.
+    </span>
+  </span>
+</li>
+ """.

@@ -1,0 +1,17 @@
+PREFIX ns5:	<http://purl.org/dc/terms/>
+PREFIX ns2: <http://mu.semte.ch/vocabularies/core/>
+PREFIX ns1:	<http://mu.semte.ch/vocabularies/ext/>
+
+# delete
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o.
+  }
+}
+
+WHERE {
+  GRAPH ?g {
+    ?s ?p ?o .
+    ?s ns2:uuid "da8be55e-4759-4193-89d1-55aec23b9642".
+  }
+};

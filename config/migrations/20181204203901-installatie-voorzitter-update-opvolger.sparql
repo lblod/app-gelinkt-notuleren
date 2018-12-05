@@ -1,0 +1,40 @@
+PREFIX ns5:	<http://purl.org/dc/terms/>
+PREFIX ns2: <http://mu.semte.ch/vocabularies/core/>
+
+# update title geen opvolger
+DELETE {
+   GRAPH ?g {
+      <http://lblod.info/templates/d868d5e8-2133-4ef5-abdd-bb72f91134dd> ns5:title ?o .
+  }
+}
+
+INSERT {
+   GRAPH ?g {
+      <http://lblod.info/templates/d868d5e8-2133-4ef5-abdd-bb72f91134dd> ns5:title "Scenario: geen einddatum noch opvolger bepaald" .
+  }
+}
+
+WHERE {
+   GRAPH ?g {
+      <http://lblod.info/templates/d868d5e8-2133-4ef5-abdd-bb72f91134dd> ns5:title ?o.
+   }
+};
+
+# rename title opvolger bepaald
+DELETE {
+   GRAPH ?g {
+      <http://lblod.info/templates/3e5e4e24-993a-4f8e-8d4e-ca82931dacc4> ns5:title ?o .
+  }
+}
+
+INSERT {
+   GRAPH ?g {
+      <http://lblod.info/templates/3e5e4e24-993a-4f8e-8d4e-ca82931dacc4> ns5:title "Scenario: einddatum en opvolger bepaald" .
+  }
+}
+
+WHERE {
+   GRAPH ?g {
+      <http://lblod.info/templates/3e5e4e24-993a-4f8e-8d4e-ca82931dacc4> ns5:title ?o.
+   }
+};
