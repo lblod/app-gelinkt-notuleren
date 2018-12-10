@@ -12,14 +12,13 @@ PREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>
 PREFIX schema: <http://schema.org/>
 PREFIX person: <http://www.w3.org/ns/person#>
 
-
 INSERT {
   GRAPH ?newGraph {
     ?kandidaat ?p ?o.
     ?geboorte ?geboorteP ?geboorteO.
     ?identificator ?idP ?idO.
   }
-} 
+}
 WHERE {
   GRAPH <http://mu.semte.ch/graphs/public> {
     ?fusiegemeente a besluit:Bestuurseenheid ;
@@ -29,28 +28,17 @@ WHERE {
     ?fusieorgaan besluit:bestuurt ?fusiegemeente.
     ?fusieorgaanInTijd mandaat:isTijdspecialisatieVan ?fusieorgaan;
                   mandaat:bindingStart "2019-01-01"^^xsd:dateTime.
-
-    ?oudeGemeente a besluit:Bestuurseenheid ;
-                   besluit:werkingsgebied ?oudgebied;
-                   besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001> ;
-                   mu:uuid ?oldUuuid.
-    ?oudOrgaan besluit:bestuurt ?oudeGemeente.
-    ?oudOrgaanInTijd mandaat:isTijdspecialisatieVan ?oudOrgaan;
-                  mandaat:bindingStart "2019-01-01"^^xsd:dateTime.
-
-  VALUES (?fusiegebied ?oudgebied) {
-        (<http://data.lblod.info/id/werkingsgebieden/56e8ec85-e03f-4168-b062-737f9704cd2a> <http://data.lblod.info/id/werkingsgebieden/a567b3fdb462a8513ffeeff0188317003c5bbb7debb8f1ea9245b83e1d43b437>) # deinze
-        (<http://data.lblod.info/id/werkingsgebieden/a0e4508a-a20b-42e5-a40d-4d919d045fdd> <http://data.lblod.info/id/werkingsgebieden/7a7daa48e9e6449358cf96be6c7b30466648d31236e56b8958fae7d53e2308b8>) # aalter
+  VALUES (?fusiegebied) {
+        (<http://data.lblod.info/id/werkingsgebieden/56e8ec85-e03f-4168-b062-737f9704cd2a>)
+        (<http://data.lblod.info/id/werkingsgebieden/a0e4508a-a20b-42e5-a40d-4d919d045fdd>)
     }
 
-    ?verkiezing mandaat:steltSamen ?oudOrgaanInTijd .
+    ?verkiezing mandaat:steltSamen ?fusieorgaanInTijd .
     ?lijst mandaat:behoortTot ?verkiezing;
            mandaat:heeftKandidaat ?kandidaat.
   }
 
-  GRAPH ?oldOrganizationGraph {
-    ?kandidaat a person:Person ; ?p ?o.
-  }
+  ?kandidaat a person:Person ; ?p ?o.
 
   OPTIONAL {
     ?kandidaat persoon:heeftGeboorte ?geboorte.
@@ -62,5 +50,4 @@ WHERE {
   }
 
   BIND (IRI(CONCAT('http://mu.semte.ch/graphs/organizations/', ?fusieUuid)) AS ?newGraph)
-  BIND (IRI(CONCAT('http://mu.semte.ch/graphs/organizations/', ?oudeUuid)) AS ?oldOrganizationGraph)
 }
