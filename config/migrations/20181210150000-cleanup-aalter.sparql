@@ -1,0 +1,27 @@
+INSERT {
+  GRAPH <http://backup.semte.ch/aalter-gemeente> {
+    ?s ?p ?o
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/5116efa8-e96e-46a2-aba6-c077e9056a96> {
+  ?s ?p ?o.
+  ?s a ?type
+  VALUES ?type { <http://mu.semte.ch/vocabularies/ext/EditorDocument> <http://mu.semte.ch/vocabularies/ext/TasklistSolution> <http://xmlns.com/foaf/0.1/OnlineAccount> <http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/ns/adms#Identifier> }
+  }
+};
+
+DROP SILENT GRAPH <http://mu.semte.ch/graphs/organizations/5116efa8-e96e-46a2-aba6-c077e9056a96>;
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/organizations/5116efa8-e96e-46a2-aba6-c077e9056a96> {
+    ?s ?p ?o.
+  }
+}
+WHERE  {
+  GRAPH <http://backup.semte.ch/aalter-gemeente> {
+    ?s ?p ?o
+  }
+};
+
+DROP SILENT GRAPH <http://backup.semte.ch/aalter-gemeente>;
