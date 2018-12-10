@@ -1,0 +1,27 @@
+INSERT {
+  GRAPH <http://backup.semte.ch/aalter-ocwm> {
+    ?s ?p ?o
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/organizations/f73c7109-06a0-45d7-b558-879d87ca3553> {
+  ?s ?p ?o.
+  ?s a ?type
+  VALUES ?type { <http://mu.semte.ch/vocabularies/ext/EditorDocument> <http://mu.semte.ch/vocabularies/ext/TasklistSolution> <http://xmlns.com/foaf/0.1/OnlineAccount> <http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/ns/adms#Identifier> }
+  }
+};
+
+DROP SILENT GRAPH <http://mu.semte.ch/graphs/organizations/f73c7109-06a0-45d7-b558-879d87ca3553>;
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/organizations/f73c7109-06a0-45d7-b558-879d87ca3553> {
+    ?s ?p ?o.
+  }
+}
+WHERE  {
+  GRAPH <http://backup.semte.ch/aalter-ocwm> {
+    ?s ?p ?o
+  }
+};
+
+DROP SILENT GRAPH <http://backup.semte.ch/aalter-ocwm>;
