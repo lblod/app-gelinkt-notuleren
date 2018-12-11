@@ -129,4 +129,8 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
+  sync:
+    image: lblod/gemeente-ocmw-sync-service
+    links:
+      - virtuoso:database #TODO replace with database when possible
 
