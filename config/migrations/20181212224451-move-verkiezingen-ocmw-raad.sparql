@@ -1,0 +1,21 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+DELETE {
+GRAPH <http://mu.semte.ch/application> {
+?s a ?type; ?p ?o.
+}
+}
+
+INSERT {
+GRAPH <http://mu.semte.ch/graphs/public> {
+?s a ?type; ?p ?o
+}}
+WHERE {
+GRAPH <http://mu.semte.ch/application> {
+?s a ?type; ?p ?o.
+VALUES ?type {
+<http://data.vlaanderen.be/ns/mandaat#Kandidatenlijst>
+<http://data.vlaanderen.be/ns/mandaat#RechtstreekseVerkiezing>
+<http://data.vlaanderen.be/ns/mandaat#Verkiezingsresultaat>
+}
+}
+}
