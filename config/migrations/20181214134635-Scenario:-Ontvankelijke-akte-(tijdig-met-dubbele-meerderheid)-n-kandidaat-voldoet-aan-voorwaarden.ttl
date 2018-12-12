@@ -1,0 +1,61 @@
+
+<http://lblod.info/templates/8326c8d4-6d98-4b5a-aa50-4db821baa263> a <http://mu.semte.ch/vocabularies/ext/Template>,
+     <http://mu.semte.ch/vocabularies/ext/Template>;
+   <http://purl.org/dc/terms/title> "Scenario: Ontvankelijke akte (tijdig met dubbele meerderheid) én kandidaat voldoet aan voorwaarden";
+   <http://mu.semte.ch/vocabularies/core/uuid> "8326c8d4-6d98-4b5a-aa50-4db821baa263";
+   <http://mu.semte.ch/vocabularies/ext/activeInContext> <http://mu.semte.ch/vocabularies/ext/BesluitVerkiezingVoorzitterNieuweStijl>;
+   <http://mu.semte.ch/vocabularies/ext/templateContent> """
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('nieuwe-voorzitter-1a')}">0</div>
+  <div property="ext:intentionUri" content="http://zitting/nieuwe-voorzitter">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+
+<div property="besluit:motivering" lang="nl">
+  <div>
+    <h6 class="h6">Bevoegdheid</h6>
+    <ul class="bullet-list">
+      <li><a href="http://data.lblod.info/WetgevingDocument/1029017" property="eli:cites">Het decreet van 22 december 2017 over het lokaal bestuur</a>, de artikelen <a href="http://data.lblod.info/WetgevingArtikel/1234844" property="eli:cites">6 </a> en <a href="http://data.lblod.info/WetgevingArtikel/1234845" property="eli:cites">7 </a>;</li>
+    </ul>
+    <br>
+    <h6 class="h6">Juridische context</h6>
+    <ul class="bullet-list">
+    	<li>De omzendbrief KB / ABB 2018 / 3 van 26 oktober 2018 &mdash; Start van de lokale en provinciale bestuursperiode;</li>
+    </ul>
+    <br>
+
+    <h6 class="h6">Feitelijke context en argumentatie</h6>
+    <ul class="bullet-list">
+      <li>Er werd een akte van voordracht van kandidaat-voorzitter op naam van <span id="${generateBoundUuid('nieuwe-voorzitter-1a')}" class="mark-highlight-manual">Voer naam in</span> overhandigd aan de algemeen directeur op <span class="mark-highlight-manual">Voer datum in</span>, zijnde uiterlijk acht dagen voor de installatievergadering van de gemeenteraad;</li>
+
+      <li>De algemeen directeur heeft de akte van voordracht van kandidaat-voorzitter ter zitting overhandigd aan de voorzitter van de installatievergadering;</li>
+
+      <li>De voorzitter van de installatievergadering heeft vastgesteld dat de akte van voordracht van kandidaat-voorzitter werd ondertekend door meer dan de helft van de verkozenen op de lijsten die aan de verkiezingen deelnamen en door een meerderheid van de personen die op dezelfde lijst als de voorgedragen kandidaat werden verkozen en bevestigt de ontvankelijkheid van de akte;</li>
+
+      <li>Uit het onderzoek van de geloofsbrieven blijkt dat de voorgedragen kandidaat voldoet aan de verkiesbaarheidsvoorwaarden;</li>
+
+      <li>De kandidaat-voorzitter heeft de voorgeschreven eed als gemeenteraadslid afgelegd. Er dient dus geen specifieke eed als voorzitter van de gemeenteraad te worden afgelegd;</li>
+
+      <li resource="#VerkiezingVoorzitter" typeof="ext:BesluitVerkiezingVoorzitterEinddatumNieuweStijl">Selecteer scenario eventuele einddatum en opvolger</li>
+
+      <li resource="#VerkiezingVoorzitter" typeof="ext:BesluitVerkiezingVoorzitterVerhinderingNieuweStijl">Selecteer scenario verhindering</li>
+
+    </ul>
+  </div>
+</div>
+<br>
+<br>
+<h6 class="h6">Beslissing</h6>
+<div property="prov:value">
+  <ul class="bullet-list">
+    <li property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+      <span property="eli:number">Artikel 1</span>
+      <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+      <span property="prov:value">De gemeenteraad neemt kennis van de tijdige en ontvankelijke akte van voordracht van kandidaat-voorzitter.</span>
+    </li>
+    <li>Selecteer scenario einddatum en opvolgers</li>
+    <li>Selecteer scenario verhindering</li>
+  </ul>
+</div>
+ """;
+   <http://mu.semte.ch/vocabularies/ext/templateMatches> "Selecteer scenario verkiezing van de voorzitter van de gemeenteraad" .

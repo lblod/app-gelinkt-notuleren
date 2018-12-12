@@ -1,0 +1,64 @@
+
+<http://lblod.info/templates/a4d79410-4442-4481-91aa-88c40122721c> a <http://mu.semte.ch/vocabularies/ext/Template>,
+     <http://mu.semte.ch/vocabularies/ext/Template>;
+   <http://purl.org/dc/terms/title> "Scenario: ontvankelijke akte (tijdig met dubbele meerderheid) én kandidaten voldoen aan voorwaarden";
+   <http://mu.semte.ch/vocabularies/core/uuid> "a4d79410-4442-4481-91aa-88c40122721c";
+   <http://mu.semte.ch/vocabularies/ext/activeInContext> <http://mu.semte.ch/vocabularies/ext/BesluitSchepenenNieuweStijl>;
+   <http://mu.semte.ch/vocabularies/ext/templateContent> """
+<div property="besluit:motivering" lang="nl">
+  <div>
+  	<h6 class="h6">Bevoegdheid</h6>
+  	<ul class="bullet-list">
+      <li>Het <a href="http://data.lblod.info/WetgevingDocument/1029017" property="eli:cites">decreet van 22 december 2017 over het lokaal bestuur</a>, artikelen <a href="http://data.lblod.info/WetgevingArtikel/1234880" property="eli:cites">42</a>, <a href="http://data.lblod.info/WetgevingArtikel/1234881" property="eli:cites">43</a>, <a href="http://data.lblod.info/WetgevingArtikel/1234882" property="eli:cites">44</a> en <a href="http://data.lblod.info/WetgevingArtikel/1234887" property="eli:cites">49</a>;</li>
+    </ul>
+    <br>
+    <h6 class="h6">Juridische context</h6>
+  	<ul class="bullet-list">
+  		<li>De omzendbrief KB / ABB 2018 / 3 van 26 oktober 2018 &mdash; Start van de lokale en provinciale bestuursperiode.</li>
+    </ul>
+    <br>
+  	<h6 class="h6">Feitelijke context en argumentatie</h6>
+    <ul class="bullet-list">
+      <li>Een gezamenlijke akte van voordracht van kandidaat-schepenen werd overhandigd aan de algemeen directeur op <span class="mark-highlight-manual">Typ datum</span>, zijnde uiterlijk acht dagen voor de installatievergadering van de gemeenteraad;</li>
+      <li>De algemeen directeur heeft op <span class="mark-highlight-manual">Typ datum</span> een afschrift van de gezamenlijke akte van voordracht aan de burgemeester bezorgd;</li>
+      <li>De algemeen directeur heeft de gezamenlijke akte van voordracht van de kandidaat-schepenen ter zitting overhandigd aan de voorzitter van de gemeenteraad;</li>
+      <li>De voorzitter van de gemeenteraad heeft vastgesteld dat de gezamenlijke akte van voordracht van kandidaat-schepenen werd ondertekend door meer dan de helft van de verkozenen op de lijsten die aan de verkiezingen deelnamen en door een meerderheid van de personen die op dezelfde lijst als de voorgedragen kandidaat werden verkozen;</li>
+      <li>De voorzitter van de gemeenteraad kan dus de ontvankelijkheid van de akte bevestigen;</li>
+      <li>In de ontvankelijke voordrachtsakte worden <span class="mark-highlight-manual">Typ aantal schepenen</span> kandidaat-schepenen voorgedragen;</li>
+      <li>Selecteer scenario maximum aantal schepenen</li>
+      <li>De voorzitter van de gemeenteraad deelt dit aantal ter zitting mee aan de gemeenteraad;</li>
+      <li>De voorgedragen kandidaat schepenen zijn de volgende personen:
+        <ul class="bullet-list">
+          <li><span class="mark-highlight-manual">Typ kandidaat-schepen</span></li>
+          <li>...</li>
+        </ul>
+      </li>
+      <li> Selecteer scenario geïnstalleerd gemeenteraadslid</li>
+      <li>Selecteer scenario onverenigbaarheden</li>
+      <li>Selecteer scenario eventuele einddatum en eventuele opvolgers</li>
+      <li>Selecteer scenario verhindering</li>
+    </ul>
+  </div>
+</div>
+<br>
+<br>
+
+<h6 class="h6">Beslissing</h6>
+<div property="prov:value">
+  <div property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+    <span property="eli:number">Artikel 1</span>
+    <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+    <span property="prov:value">De gemeenteraad neemt kennis van de ontvankelijke gezamenlijke akte van voordracht van de kandidaat-schepenen.</span>
+  </div>
+  <div property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+    <span property="eli:number">Artikel 2</span>
+    <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+    <span property="prov:value">De gemeenteraad neemt kennis van het vastgelegd aantal schepenen, met name <span class="mark-highlight-manual">Typ aantal schepenen</span>.</span>
+  </div>
+
+  <div>
+    <div property="ext:schepenenAanstellingText">Voeg rangorde en verhindering schepenen in</div>
+  </div>
+</div>
+ """;
+   <http://mu.semte.ch/vocabularies/ext/templateMatches> "Selecteer scenario akte van voordracht" .

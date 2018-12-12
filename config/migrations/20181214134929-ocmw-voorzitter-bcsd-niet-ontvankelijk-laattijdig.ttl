@@ -1,0 +1,46 @@
+<http://lblod.info/templates/4fe1e00d-748b-409b-9763-e066b4363335> a <http://mu.semte.ch/vocabularies/ext/Template>,
+     <http://mu.semte.ch/vocabularies/ext/Template>;
+   <http://purl.org/dc/terms/title> "Scenario: niet ontvankelijke akte, want laattijdig ontvangen";
+   <http://mu.semte.ch/vocabularies/core/uuid> "4fe1e00d-748b-409b-9763-e066b4363335";
+   <http://mu.semte.ch/vocabularies/ext/activeInContext> <http://mu.semte.ch/vocabularies/ext/BesluitVoorzitterBCSD>;
+   <http://mu.semte.ch/vocabularies/ext/templateContent> """
+
+<div>
+  <p class="u-spacer--small">De raad voor maatschappelijk welzijn,</p>
+  <div property="besluit:motivering" lang="nl">
+    <div>
+      <ul class="bullet-list">
+        <li>Gelet op <a href="http://data.lblod.info/WetgevingDocument/1029017" property="eli:cites">het decreet van 22 december 2017 over het lokaal bestuur</a>, artikel <a href="http://data.lblod.info/WetgevingArtikel/1234947" property="eli:cites">90</a> en <a href="http://data.lblod.info/WetgevingArtikel/1234962" property="eli:cites">106</a>.</li>
+      </ul>
+    </div>
+    <br>
+    <div>
+      <ul class="bullet-list">
+        <li>Overwegende dat een akte van voordracht van kandidaat-voorzitter van het bijzonder comité voor de sociale dienst op naam van <span class="mark-highlight-manual">Voeg naam persoon in</span> werd overhandigd aan de algemeen directeur op <span class="mark-highlight-manual">Voeg datum overhandiging in</span>, zijnde minder dan acht dagen voor de installatievergadering van de gemeenteraad;</li>
+				<li>Overwegende dat de akte van voordracht van de kandidaat-voorzitter van het bijzonder comité voor de sociale dienst dus niet ontvankelijk is;</li>
+				<li>Overwegende dat er dus geen voorzitter van het bijzonder comité voor de sociale dienst verkozen kan worden verklaard;</li>
+				<li>Overwegende dat de OCMW-raad in dat geval een voorzitter van het bijzonder comité voor de sociale dienst verkiest binnen de veertien dagen;</li>
+				<li>Overwegende dat tot de verkiezing van de voorzitter van het bijzonder comité voor de sociale dienst waargenomen wordt door het lid van de raad voor maatschappelijk welzijn met de hoogste rang of, als dat raadslid de voorzitter niet kan vervangen, door een ander lid van de raad voor maatschappelijk welzijn in volgorde van rang;</li>
+				<li>Overwegende dat dus <span class="mark-highlight-manual">Voeg naam raadslid dat zal vervangen in</span> het voorzitterschap van het bijzonder comité voor de sociale dienst zal waarnemen tot aan de verkiezing van de voorzitter van het bijzonder comité voor de sociale dienst;</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<br>
+<div>
+  <p class="u-spacer--small">Beslist,</p>
+  <div property="prov:value">
+    <div property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+      <span property="eli:number">Artikel 1</span>
+      <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+      <span property="prov:value">Akte te nemen van het ontbreken van een ontvankelijke akte van voordracht van kandidaat-voorzitter van het bijzonder comité voor de sociale dienst.</span>
+    </div>
+    <div property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+      <span property="eli:number">Artikel 2</span>
+      <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+      <span property="prov:value">Akte te nemen van het gegeven dat <span class="mark-highlight-manual">Voeg naam waarnemend voorzitter van het bijzonder comité de sociale dienst in</span> het <span>voorzitterschap</span> zal waarnemen vanaf <span class="mark-highlight-manual">Voeg startdatum (datum installatievergadering) in</span> tot aan de verkiezing van de voorzitter van het bijzonder comité voor de sociale dienst.</span>
+    </div>
+  </div>
+</div>
+""";
+   <http://mu.semte.ch/vocabularies/ext/templateMatches> "Selecteer scenario verkiezing van de voorzitter van het bijzonder comité voor de sociale dienst" .
