@@ -1,0 +1,12 @@
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+DELETE {
+  GRAPH ?g {
+  ?s ?p ?o.
+  }
+}
+WHERE {
+  GRAPH ?g {
+  ?s a ext:Template .
+  ?s ?p ?o .
+  }
+}
