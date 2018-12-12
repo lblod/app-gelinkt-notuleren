@@ -1,0 +1,44 @@
+
+<http://lblod.info/templates/03fc32dc-8ebf-4515-9abd-c327a23a9195> a <http://mu.semte.ch/vocabularies/ext/Template>,
+     <http://mu.semte.ch/vocabularies/ext/Template>;
+   <http://purl.org/dc/terms/title> "Scenario: geen akte ontvangen";
+   <http://mu.semte.ch/vocabularies/core/uuid> "03fc32dc-8ebf-4515-9abd-c327a23a9195";
+   <http://mu.semte.ch/vocabularies/ext/activeInContext> <http://mu.semte.ch/vocabularies/ext/BesluitSchepenenNieuweStijl>;
+   <http://mu.semte.ch/vocabularies/ext/templateContent> """
+<div property="besluit:motivering" lang="nl">
+  <div>
+  	<h6 class="h6">Bevoegdheid</h6>
+  	<ul class="bullet-list">
+      <li>Het <a href="http://data.lblod.info/WetgevingDocument/1029017" property="eli:cites">decreet van 22 december 2017 over het lokaal bestuur</a>, artikelen <a href="http://data.lblod.info/WetgevingArtikel/1234880" property="eli:cites">42</a>, <a href="http://data.lblod.info/WetgevingArtikel/1234881" property="eli:cites">43</a>, <a href="http://data.lblod.info/WetgevingArtikel/1234882" property="eli:cites">44</a> en <a href="http://data.lblod.info/WetgevingArtikel/1234887" property="eli:cites">49</a>;</li>
+    </ul>
+    <br>
+    <h6 class="h6">Juridische context</h6>
+  	<ul class="bullet-list">
+  		<li>De omzendbrief KB / ABB 2018 / 3 van 26 oktober 2018 &mdash; Start van de lokale en provinciale bestuursperiode.</li>
+    </ul>
+    <br>
+  	<h6 class="h6">Feitelijke context en argumentatie</h6>
+    <ul class="bullet-list">
+      <li>Er werd geen gezamenlijke akte van voordracht van kandidaat-schepenen overhandigd aan de algemeen directeur;</li>
+    </ul>
+  </div>
+</div>
+<br>
+<br>
+
+<h6 class="h6">Beslissing</h6>
+<div property="prov:value">
+  <div property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+    <span property="eli:number">Artikel 1</span>
+    <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+    <span property="prov:value">De gemeenteraad neemt kennis van de niet-ontvankelijke gezamenlijke akte van voordracht van de kandidaat-schepenen.</span>
+  </div>
+  <div property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+    <span property="eli:number">Artikel 2</span>
+    <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+    <span property="prov:value">De gemeenteraad neemt kennis van het gegeven dat de uittredende schepenen hun mandaat blijven bekleden tot het nieuwe college van burgemeester en schepenen is geïnstalleerd.</span>
+  </div>
+</div>
+
+ """;
+   <http://mu.semte.ch/vocabularies/ext/templateMatches> "Selecteer scenario akte van voordracht" .

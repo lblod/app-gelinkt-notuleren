@@ -1,0 +1,27 @@
+
+<http://lblod.info/templates/c37c8832-ef3c-4ea7-ac6f-6bac4475421b> a <http://mu.semte.ch/vocabularies/ext/Template>,
+     <http://mu.semte.ch/vocabularies/ext/Template>;
+   <http://purl.org/dc/terms/title> "Scenario: voorzitter is verhinderd";
+   <http://mu.semte.ch/vocabularies/core/uuid> "c37c8832-ef3c-4ea7-ac6f-6bac4475421b";
+   <http://mu.semte.ch/vocabularies/ext/activeInContext> <http://mu.semte.ch/vocabularies/ext/BesluitVerkiezingVoorzitterNieuweStijl>;
+   <http://mu.semte.ch/vocabularies/ext/templateContent> """
+<ul>
+  <li property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+    <span property="eli:number">Artikel 3 </span>
+    <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+    <span property="prov:value">
+      <span property="ext:bekrachtigtAanstellingVan" resource="http://data.lblod.info/id/mandatarissen/${generateUuid()}" typeOf="mandaat:Mandataris">De gemeenteraad neemt kennis van de <span property="mandaat:status" resource="http://data.vlaanderen.be/id/concept/MandatarisStatusCode/c301248f-0199-45ca-b3e5-4c596731d5fe">verhindering</span> van de <span property="ext:currentVoorzitterMandaat">voorzitter van de gemeenteraad</span>, <span class="mark-highlight-manual">Voeg naam verkozen voorzitter in</span>, vanaf <span property="mandaat:start" content="" datatype="xsd:dateTime"><span typeOf="ext:currentDate">&nbsp;</span></span>;
+      </span>
+    </span>
+  </li>
+  <li property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+    <span property="eli:number">Artikel 4</span>
+    <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+    <span property="prov:value">
+      <span property="ext:bekrachtigtAanstellingVan" resource="http://data.lblod.info/id/mandatarissen/${generateUuid()}" typeOf="mandaat:Mandataris">De gemeenteraad neemt kennis van het gegeven dat de waarnemend voorzitter die gedurende de periode van verhindering het mandaat zal opnemen, op de volgende zitting verkozen zal worden en dat vanaf  <span property="mandaat:start" content="" datatype="xsd:dateTime"><span typeOf="ext:currentDate">&nbsp;</span></span> tot aan die verkiezing <span property="ext:currentVoorzitterMandaat">het voorzitterschap</span> wordt <span property="mandaat:status" resource="http://data.vlaanderen.be/id/concept/MandatarisStatusCode/e1ca6edd-55e1-4288-92a5-53f4cf71946a">waargenomen</span> door <span class="mark-highlight-manual">Voer naam tijdelijke vervanger in</span>.
+      </span>
+    </span>
+  </li>
+</ul>
+""";
+   <http://mu.semte.ch/vocabularies/ext/templateMatches> "Selecteer scenario verhindering" .

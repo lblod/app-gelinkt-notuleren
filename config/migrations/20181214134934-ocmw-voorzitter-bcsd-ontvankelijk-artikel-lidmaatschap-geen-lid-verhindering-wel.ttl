@@ -1,0 +1,22 @@
+<http://lblod.info/templates/cfaf2bd1-c23d-41f6-a4d1-13d258dd00fa> a <http://mu.semte.ch/vocabularies/ext/Template>,
+     <http://mu.semte.ch/vocabularies/ext/Template>;
+   <http://purl.org/dc/terms/title> "Scenario: voorzitter is verhinderd ";
+   <http://mu.semte.ch/vocabularies/core/uuid> "cfaf2bd1-c23d-41f6-a4d1-13d258dd00fa";
+    <http://mu.semte.ch/vocabularies/ext/activeInContext> <http://mu.semte.ch/vocabularies/ext/BesluitVoorzitterBCSD> ;
+   <http://mu.semte.ch/vocabularies/ext/templateContent> """
+  <div property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+    <span property="eli:number">Artikel 4</span>
+    <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+    <span property="prov:value">
+    	Akte te nemen van de <span>verhindering</span> van <span>de voorzitter van het bijzonder comité voor de sociale dienst</span> <span class="mark-highlight-manual">Voeg naam voorzitter in</span> vanaf <span class="mark-highlight-manual">Voeg startdatum verhindering in</span>.
+    </span>
+  </div>
+  <div property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+    <span property="eli:number">Artikel 5</span>
+    <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+    <span property="prov:value">
+    	Akte te nemen van het gegeven dat de <span>waarnemend voorzitter</span> die gedurende de periode van verhindering het mandaat zal opnemen, op de volgende zitting verkozen zal worden en dat vanaf <span class="mark-highlight-manual">Voeg startdatum vervanging in</span> tot aan die verkiezing het voorzitterschap wordt waargenomen door <span class="mark-highlight-manual">Voeg naam tijdelijke vervanger in</span>.
+    </span>
+  </div>
+""";
+   <http://mu.semte.ch/vocabularies/ext/templateMatches> "Selecteer scenario geen lid verhindering" .
