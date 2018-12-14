@@ -130,7 +130,7 @@ services:
     labels:
       - "logging=true"
   sync:
-    image: lblod/gemeente-ocmw-sync-service
+    image: lblod/gemeente-ocmw-sync-service:0.2.1
     links:
       - virtuoso:database #TODO replace with database when possible
 
