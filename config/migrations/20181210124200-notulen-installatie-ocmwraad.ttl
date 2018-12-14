@@ -1,0 +1,155 @@
+<http://lblod.info/templates/516549a2-fc71-11e8-a155-2fa462171b93> a "http://mu.semte.ch/vocabularies/ext/Template",
+     <http://mu.semte.ch/vocabularies/ext/Template>;
+   <http://purl.org/dc/terms/title> "Eerste vergadering ocmw-raad (voorlopige titel)";
+   <http://mu.semte.ch/vocabularies/core/uuid> "516549a2-fc71-11e8-a155-2fa462171b93";
+   <http://mu.semte.ch/vocabularies/ext/activeInContext> "http://xmlns.com/foaf/0.1/Document";
+   <http://mu.semte.ch/vocabularies/ext/disabledInContext> "http://data.vlaanderen.be/ns/besluit#Zitting";
+   <http://mu.semte.ch/vocabularies/ext/templateContent> """
+<!--START VARIABLES-->
+<div>
+  <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+    <div property="ext:idInSnippet" content="${generateBoundUuid('agendapunt-nummer-1')}">0</div>
+    <div property="ext:intentionUri" content="http://zitting/agendapunt-nummer-1">a</div>
+    <div property="ext:variableState" content="initialized">initialized</div>
+  </div>
+
+</div>
+<!--END VARIABLES-->
+
+<!--START TASKLISTS-->
+<div>
+  <!--NOTE: this is a dummy tasklist (from gemeenteraad)-->
+  <div class="ext_tasklist_data" typeof="ext:TasklistData" resource="http://data.lblod.info/id/tasklistsdata/${generateBoundUuid('tasklistData-1')}">
+    <div property="ext:idInSnippet" content="${generateBoundUuid('tasklist-1')}">${generateBoundUuid('tasklist-1')}</div>
+    <div content="meta-content-0" property="ext:tasklistDataTasklist" resource="http://data.lblod.info/id/tasklists/84b51f9bc40aaf2c9973b950a4e50ff3378b6096139a63d174c89eaa5ed3305d" typeof="ext:Tasklist">tasklist</div>
+    <div property="ext:tasklistDataState" content="initialized">initialized</div>
+  </div>
+</div>
+<!--END TASKLISTS-->
+
+<!--START ZITTING-->
+<div typeof="besluit:Zitting" resource="http://data.lblod.info/id/zittingen/${generateUuid('installatievergadering-ocmwraad')}">
+
+  <div class="ext_scroll_to" typeof="ext:ScrollToLocation" resource="http://scrollToLocation/${generateUuid()}">
+    <div property="ext:scrollToLogicalName" content="bestuursorgaan en geplande start">bestuursorgaan en geplande start</div>
+    <div property="ext:idInSnippet" content="${generateBoundUuid('bestuursorgaan en geplande start')}">${generateBoundUuid('bestuursorgaan en geplande start')}</div>
+  </div>
+
+  <h2 class="h1" property="dc:title" id="${generateBoundUuid('bestuursorgaan en geplande start')}">
+    Notulen van <span property="ext:scopedBestuursorgaanText">selecteer bestuursorgaan</span>, zitting van <span id="${generateBoundUuid('geplande-start-1')}" property="besluit:geplandeStart" datatype="xsd:dateTime" content="2019-01-02T19:00:00.299Z">2 januari 2019 20:00&nbsp;</span>​ (installatievergadering ocmwraad)
+  </h2>
+  <br>
+
+  <p>
+    Geplande start: <span id="${generateBoundUuid('geplande-start-2')}"
+                          property="besluit:geplandeStart"
+                          datatype="xsd:dateTime"
+                          content="2019-01-02T19:00:00.299Z">
+                      2 januari 2019 20:00&nbsp;
+                    </span>​
+  </p>
+  <br>
+
+  <div class="ext_scroll_to" typeof="ext:ScrollToLocation" resource="http://scrollToLocation/${generateUuid()}">
+    <div property="ext:scrollToLogicalName" content="locatie en zaal">locatie en zaal</div>
+    <div property="ext:idInSnippet" content="${generateBoundUuid('locatie en zaal')}">${generateBoundUuid('locatie en zaal')}</div>
+  </div>
+  <p id="${generateBoundUuid('locatie en zaal')}">
+    Locatie: <span class="mark-highlight-manual">Voer naam locatie in</span>, <span class="mark-highlight-manual">Voer naam zaal in</span>.
+  </p>
+  <br>
+  <br>
+
+  <!-- aanwezigen -->
+  <h3 class="h2">Aanwezigen bij de zitting</h3>
+  <span property="ext:insertAanwezigenText">Beheer aanwezigen bij de zitting.</span>
+  <br>
+  <br>
+
+  <!-- Agenda overzicht-->
+  <div property="besluit:heeftAgenda" resource="http://data.lblod.info/id/agendas/${generateUuid()}" typeof="besluit:Agenda">
+    <h3 class="h2">Agenda overzicht</h3>
+    <h4 class="h3" property="http://mu.semte.ch/vocabularies/ext/noHighlight" typeof="http://mu.semte.ch/vocabularies/ext/NoHighlight">Open agendapunten</h4>
+
+    <ul>
+      <li>
+        <span property="besluit:heeftAgendapunt" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-1')}" typeof="besluit:Agendapunt">
+          <span property="besluit:geplandOpenbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
+            <span id="${generateBoundUuid('agendapunt-nummer-1')}">Agendapunt 1:</span> <span property="dc:title"><span id="${generateBoundUuid('ap-1')}">
+              dummy agendapunt
+            </span>
+          </span>
+        </span>
+      </li>
+    </ul>
+
+  </div>
+  <br>
+
+  <!-- Agenda behandeling -->
+  <h3 class="h2">Agendapunten</h3>
+  <h4 class="h3">Open zitting</h4>
+
+  <br>
+  <br>
+
+  <div property="ext:behandelt" resource="http://data.lblod.info/id/behandelingen-van-agendapunten/${generateUuid('bva-nr-1')}" typeof="besluit:BehandelingVanAgendapunt">
+    <span property="besluit:openbaar" datatype="xsd:boolean" content="true" class="annotation--agendapunt--open__icon"><i class="fa fa-eye"></i></span>
+    <span property="dc:subject" resource="http://data.lblod.info/id/agendapunten/${generateBoundUuid('ap-1')}"><span id="${generateBoundUuid('agendapunt-nummer-1-bva')}">Agendapunt 1</span></span>
+    <br>
+    <h3 class="h6">Aanwezigen bij agendapunt</h3>
+    <p property="ext:insertAanwezigenText">Beheer aanwezigen bij agendapunt.</p>
+    <br>
+
+    <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit">
+      <h5 class="h4" property="eli:title"><span id="${generateBoundUuid('bva-besluit-1')}">Kennisneming van de geldigverklaring van de verkiezingen</span></h5>
+      <span class="u-hidden" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">&nbsp;</span>
+      <br>
+      <p>Korte openbare beschrijving:</p>
+      <p property="eli:description">Een dummy beschrijving</p>
+      <br>
+    </div>
+
+    <br>
+    <br>
+
+    <div>
+      <p class="u-spacer--small">De ocmw-raad,</p>
+      <div property="besluit:motivering" lang="nl">
+        <div>
+          <ul class="bullet-list">
+            <li>
+              Gelet op <a href="http://data.lblod.info/WetgevingDocument/1020561" property="eli:cites">het Lokaal en Provinciaal Kiesdecreet van 8 juli 2011</a>,
+              de artikelen <a href="http://data.lblod.info/WetgevingArtikel/1138929" property="eli:cites">203</a> en
+              <a href="http://data.lblod.info/WetgevingArtikel/1138930" property="eli:cites">204</a>;
+            </li>
+          </ul>
+        </div>
+        <br>
+
+        <div>
+          <ul class="bullet-list">
+            <li>
+              Overwegende dat de resultaten van de gemeenteraadsverkiezingen van
+              <span id="${generateBoundUuid('verkiezingsdatum-1')}">14 oktober 2018</span> door de Raad voor Verkiezingsbetwistingen op <span class="mark-highlight-manual">Voeg datum in</span> werden geldig verklaard, zoals meegedeeld per brief op <span class="mark-highlight-manual">Voeg datum in</span>;
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div>
+      <p class="u-spacer--small">Beslist,</p>
+      <div property="prov:value">
+        <div property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+          <span property="eli:number">Enig artikel.</span>
+          <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+          <span property="prov:value">Akte te nemen van de geldigverklaring van de resultaten van de gemeenteraadsverkiezingen van <span id="${generateBoundUuid('verkiezingsdatum-2')}">14 oktober 2018</span> door de Raad voor Verkiezingsbetwistingen.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--END ZITTING-->
+""".
