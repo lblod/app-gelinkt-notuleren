@@ -40,24 +40,31 @@
                 (:updated-on :datetime ,(s-prefix "pav:lastUpdateOn"))
                 (:starred :boolean ,(s-prefix "tmp:starred"))
                 (:origin :string ,(s-prefix "pav:providedBy"))) ;;de gemeente Niel
-
   :has-one `((editor-document-status :via ,(s-prefix "ext:editorDocumentStatus")
                                      :as "status")
-             (editor-document        :via ,(s-prefix "pav:previousVersion")
-                                     :as "previous-version")
+             (editor-document :via ,(s-prefix "pav:previousVersion")
+                              :as "previous-version")
              (editor-document :via ,(s-prefix "pav:previousVersion")
                               :inverse t
                               :as "next-version")
              (zitting :via ,(s-prefix "besluit:heeftNotulen")
-                              :inverse t
-                              :as "zitting"))
-
+                      :inverse t
+                      :as "zitting")
+             (document-container :via ,(s-prefix "pav:hasVersion")
+                                 :inverse t
+                                 :as "document-container"))
   :has-many `((tasklist-solution :via ,(s-prefix "ext:editorDocumentTasklistSolution")
                                  :as "tasklist-solutions"))
-
   :resource-base (s-url "http://lblod.info/editor-documents/")
   :features `(no-pagination-defaults)
   :on-path "editor-documents")
+
+(define-resource document-container ()
+  :class (s-prefix "ext:DocumentContainer")
+  :has-many `((editor-document :via ,(s-prefix "pav:hasVersion")
+                               :as "revisions"))
+  :resource-base (s-url "http://lblod.info/document-containers/")
+  :on-path "document-containers")
 
 (define-resource editor-document-status ()
   :class (s-prefix "ext:EditorDocumentStatus")
@@ -76,10 +83,8 @@
   :has-many `((account :via ,(s-prefix "foaf:account")
                        :as "account")
               (bestuurseenheid :via ,(s-prefix "foaf:member")
-                              :as "bestuurseenheden")
-             )
-  :on-path "gebruikers"
-)
+                              :as "bestuurseenheden"))
+  :on-path "gebruikers")
 
 (define-resource account ()
   :class (s-prefix "foaf:OnlineAccount")

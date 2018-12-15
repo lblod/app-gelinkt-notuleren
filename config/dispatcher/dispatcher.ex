@@ -154,6 +154,9 @@ defmodule Dispatcher do
   match "/editor-documents/*path" do
     Proxy.forward conn, path, "http://cache/editor-documents/"
   end
+  match "/document-containers/*path" do
+    Proxy.forward conn, path,  "http://cache/document-containers/"
+  end
   match "/editor-document-statuses/*path" do
     Proxy.forward conn, path, "http://cache/editor-document-statuses/"
   end
