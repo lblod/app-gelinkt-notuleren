@@ -63,6 +63,8 @@
   :class (s-prefix "ext:DocumentContainer")
   :has-many `((editor-document :via ,(s-prefix "pav:hasVersion")
                                :as "revisions"))
+  :has-one `((editor-document :via ,(s-prefix "pav:hasCurrentVersion")
+                              :as "current-version"))
   :resource-base (s-url "http://lblod.info/document-containers/")
   :on-path "document-containers")
 
