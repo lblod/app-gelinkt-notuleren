@@ -160,7 +160,10 @@ defmodule Acl.UserGroups.Config do
                       resource_types: [
                         "http://mu.semte.ch/vocabularies/ext/EditorDocument",
                         "http://mu.semte.ch/vocabularies/ext/TaskSolution",
-                        "http://mu.semte.ch/vocabularies/ext/TasklistSolution"
+                        "http://mu.semte.ch/vocabularies/ext/TasklistSolution",
+                        "http://www.w3.org/ns/person#Person",
+                        "http://data.vlaanderen.be/ns/persoon#Geboorte",
+                        "http://www.w3.org/ns/adms#Identifier"
                       ] } } ] },
 
 
