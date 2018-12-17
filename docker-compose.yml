@@ -124,13 +124,12 @@ services:
   notulenimporter:
     image: lblod/notulen-importer-service:0.5.0
     links:
-      - virtuoso:database    
+      - virtuoso:database
     restart: always
     logging: *default-logging
     labels:
       - "logging=true"
   sync:
-    image: lblod/gemeente-ocmw-sync-service:0.2.1
+    image: lblod/gemeente-ocmw-sync-service:0.2.3
     links:
       - virtuoso:database #TODO replace with database when possible
-
