@@ -1,0 +1,76 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+
+DELETE {
+    GRAPH ?g {
+     ?aalter skos:prefLabel ?label .
+    }
+} INSERT {
+    GRAPH ?g {
+      ?aalter skos:prefLabel "Aalter-voor-fusie" .
+    }
+} WHERE {
+  GRAPH ?g {
+    ?aalter a besluit:Bestuurseenheid ;
+            skos:prefLabel ?label .
+
+    VALUES ?aalter {
+      <http://data.lblod.info/id/bestuurseenheden/9b93ff5308590c7d03c97c3b892910f912e695ad45c82465934996fb04dac859>
+      <http://data.lblod.info/id/bestuurseenheden/c895809729a165666fc111a40affe229f3c8e8f1ce9dec2dcc1be1ed81b52d9b>
+    }
+  }
+}
+
+;
+
+DELETE {
+    GRAPH ?g {
+        ?deinze skos:prefLabel ?label .
+    }
+} INSERT {
+    GRAPH ?g {
+        ?deinze skos:prefLabel "Deinze-voor-fusie" .
+    }
+} WHERE {
+  GRAPH ?g {
+    ?deinze a besluit:Bestuurseenheid ;
+            skos:prefLabel ?label .
+
+    VALUES ?deinze {
+      <http://data.lblod.info/id/bestuurseenheden/25b05f670144f166a485a1d0ac37faca672b36642cf1647d846010d6fe9cabb5>
+      <http://data.lblod.info/id/bestuurseenheden/56db39c0bb1c85e9c5aec9adb3f5af9720d4702e30f4772aecd272f03c7becea>
+    }
+  }
+}
+
+;
+
+DELETE {
+    GRAPH ?g {
+        ?persoon foaf:familyName ?naam
+    }
+} INSERT {
+    GRAPH ?g {
+        ?persoon foaf:familyName ?mockLoginName
+    }
+} WHERE {
+   GRAPH ?g {
+      ?persoon a foaf:Person;
+           foaf:familyName ?naam;
+           foaf:member ?bestuurseenheid;
+           foaf:account ?account.
+      ?account a foaf:OnlineAccount;
+           foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>.
+
+    VALUES ?bestuurseenheid {
+      <http://data.lblod.info/id/bestuurseenheden/9b93ff5308590c7d03c97c3b892910f912e695ad45c82465934996fb04dac859>
+      <http://data.lblod.info/id/bestuurseenheden/c895809729a165666fc111a40affe229f3c8e8f1ce9dec2dcc1be1ed81b52d9b>
+      <http://data.lblod.info/id/bestuurseenheden/25b05f670144f166a485a1d0ac37faca672b36642cf1647d846010d6fe9cabb5>
+      <http://data.lblod.info/id/bestuurseenheden/56db39c0bb1c85e9c5aec9adb3f5af9720d4702e30f4772aecd272f03c7becea>
+    }
+
+      BIND(CONCAT(?naam, " (voor fusie)") as ?mockLoginName)
+   }
+}
