@@ -39,11 +39,3 @@ services:
     restart: "no"
   mocklogin:
     image: lblod/mock-login-service:0.4.0
-  sync:
-    image: semtech/mu-javascript-template:1.3.3
-    environment:
-      NODE_ENV: "development"
-    links:
-      - virtuoso:database #TODO replace with database when possible
-    volumes:
-      - /home/nielsv/Projects/lblod/gemeente-ocmw-sync-service:/app
