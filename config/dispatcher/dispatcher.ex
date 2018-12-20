@@ -168,7 +168,7 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://notulenimporter/publish/"
   end
   match "/prepublish/*path" do
-    Proxy.forward conn, path, "http://notulenimporter/prepublish/"
+    Proxy.forward conn, path, "http://preimporter/prepublish/"
   end
 
   match "/rdfs-classes/*path" do
