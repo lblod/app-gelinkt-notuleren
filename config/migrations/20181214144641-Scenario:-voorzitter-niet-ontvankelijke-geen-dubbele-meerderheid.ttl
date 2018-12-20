@@ -1,0 +1,57 @@
+
+<http://lblod.info/templates/5f294cfe-030c-4b01-a1f3-a9e79805d5c6> a <http://mu.semte.ch/vocabularies/ext/Template>,
+     <http://mu.semte.ch/vocabularies/ext/Template>;
+   <http://purl.org/dc/terms/title> "Scenario: niet ontvankelijke akte, want geen dubbele meerderheid";
+   <http://mu.semte.ch/vocabularies/core/uuid> "5f294cfe-030c-4b01-a1f3-a9e79805d5c6";
+   <http://mu.semte.ch/vocabularies/ext/activeInContext> <http://mu.semte.ch/vocabularies/ext/BesluitVerkiezingVoorzitterNieuweStijl>;
+   <http://mu.semte.ch/vocabularies/ext/templateContent> """
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('nieuwe-voorzitter-1a')}">0</div>
+  <div property="ext:intentionUri" content="http://zitting/nieuwe-voorzitter">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+
+<div property="besluit:motivering" lang="nl">
+  <div>
+    <h6 class="h6">Bevoegdheid</h6>
+    <ul class="bullet-list">
+      <li><a href="http://data.lblod.info/WetgevingDocument/1029017" property="eli:cites">Het decreet van 22 december 2017 over het lokaal bestuur</a>, de artikelen <a href="http://data.lblod.info/WetgevingArtikel/1234844" property="eli:cites">6 </a> en <a href="http://data.lblod.info/WetgevingArtikel/1234845" property="eli:cites">7 </a>;</li>
+    </ul>
+    <br>
+    <h6 class="h6">Juridische context</h6>
+    <ul class="bullet-list">
+    	<li>De omzendbrief KB / ABB 2018 / 3 van 26 oktober 2018 &mdash; Start van de lokale en provinciale bestuursperiode;</li>
+    </ul>
+    <br>
+
+    <h6 class="h6">Feitelijke context en argumentatie</h6>
+    <ul class="bullet-list">
+      <li>Er werd een akte van voordracht van kandidaat-voorzitter op naam van <span id="${generateBoundUuid('nieuwe-voorzitter-1a')}" class="mark-highlight-manual">Voer naam in</span> overhandigd aan de algemeen directeur op <span class="mark-highlight-manual">Voer datum in</span>, zijnde uiterlijk acht dagen voor de installatievergadering van de gemeenteraad;</li>
+
+      <li>De algemeen directeur heeft de akte van voordracht van kandidaat-voorzitter ter zitting overhandigd aan de voorzitter van de installatievergadering;</li>
+
+      <li>De voorzitter van de installatievergadering heeft vastgesteld dat de akte van voordracht van kandidaat-voorzitter niet voldoet aan de vereisten op het vlak van ondertekening door een dubbele meerderheid omdat <span class="mark-highlight-manual">Voer motivering in</span>;</li>
+
+      <li>De akte van voordracht van de kandidaat-voorzitter is daardoor onontvankelijk;</li>
+    </ul>
+  </div>
+</div>
+<br>
+<br>
+<h6 class="h6">Beslissing</h6>
+<div property="prov:value">
+  <ul class="bullet-list">
+    <li property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+      <span property="eli:number">Artikel 1</span>
+      <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+      <span property="prov:value">De gemeenteraad neemt kennis van het ontbreken van een akte van voordracht van kandidaat-voorzitter.</span>
+    </li>
+    <li property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+      <span property="eli:number">Artikel 2</span>
+      <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+      <span property="prov:value">De gemeenteraad neemt kennis van het gegeven dat de uittredend voorzitter het mandaat van voorzitter van de gemeenteraad blijft bekleden tot een nieuwe voorzitter is verkozen.</span>
+    </li>
+  </ul>
+</div>
+ """;
+   <http://mu.semte.ch/vocabularies/ext/templateMatches> "Selecteer scenario verkiezing van de voorzitter van de gemeenteraad" .

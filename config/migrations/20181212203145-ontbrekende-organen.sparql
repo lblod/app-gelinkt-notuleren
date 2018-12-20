@@ -1,0 +1,40 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+DELETE {
+GRAPH <http://mu.semte.ch/application> {
+?s a besluit:Bestuursorgaan; ?p ?o.
+}
+}
+
+INSERT {
+GRAPH <http://mu.semte.ch/graphs/public> {
+?s a besluit:Bestuursorgaan; ?p ?o
+}}
+WHERE {
+GRAPH <http://mu.semte.ch/application> {
+?s a besluit:Bestuursorgaan; ?p ?o.
+}
+};
+
+# duplicate voorzitters ocmw 
+DELETE {
+GRAPH <http://mu.semte.ch/graphs/public> {
+?orgaan ?p ?o.
+}
+}
+WHERE {
+GRAPH <http://mu.semte.ch/graphs/public> {
+?orgaan ?p ?o.
+VALUES ?orgaan {
+<http://data.lblod.info/id/bestuursorganen/be506ed54ec00600c14ad41e54864babb4732287f78196aead6a33d8cac88469>
+<http://data.lblod.info/id/bestuursorganen/96a1cdda474a6a441e453cdabaa96e42d748d76b883d461538cf3b08ad6602e3>
+<http://data.lblod.info/id/bestuursorganen/f125ccdedb55f430c33e7f25e6ce0b79776f3f6d4834636a08b7df42bd0c2f72>
+<http://data.lblod.info/id/bestuursorganen/07eb011f5cceea74d96109f955f4ae4399623c12663484af4afaff2aad2a6f06>
+<http://data.lblod.info/id/bestuursorganen/842d660dc4680c5321e964215669206026ebe7ca4015d1cfd7d9c2aa87bd927f>
+<http://data.lblod.info/id/bestuursorganen/87c1dcf820b567d83b80d06b4d749bc823a1bf43c8fe248adfebca539f91e3f3>
+<http://data.lblod.info/id/bestuursorganen/d837e509d756191d8a4895d0acbfff3e3a6e87cdd63072590c36644a79294237>
+<http://data.lblod.info/id/bestuursorganen/09b0ff6ac63040c20a174b7334d8f9768cbda622ade11a2f2b21de754518be0e>
+<http://data.lblod.info/id/bestuursorganen/8c4109ee9defcdade376b2b7b3673ff95e59f5a9f4f732b93ee8479c4f9978dc>
+<http://data.lblod.info/id/bestuursorganen/8ea3065133d200dcaa2283147150ff9805b479bd0025660ed0e23873a0cda024>
+}
+}
+}

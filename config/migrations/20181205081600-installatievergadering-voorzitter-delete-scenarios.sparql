@@ -1,0 +1,45 @@
+PREFIX ns5:	<http://purl.org/dc/terms/>
+PREFIX ns2: <http://mu.semte.ch/vocabularies/core/>
+PREFIX ns1:	<http://mu.semte.ch/vocabularies/ext/>
+
+# delete
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o.
+  }
+}
+
+WHERE {
+  GRAPH ?g {
+    ?s ?p ?o .
+    ?s ns2:uuid "cb0fb816-588c-4dbb-ba28-b9e3a5210a2a".
+  }
+};
+
+# delete
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o.
+  }
+}
+
+WHERE {
+  GRAPH ?g {
+    ?s ?p ?o .
+    ?s ns2:uuid "bb85f8f0-942d-4eb5-9f55-88bbfc74b8f9x".
+  }
+};
+
+# delete
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o.
+  }
+}
+
+WHERE {
+  GRAPH ?g {
+    ?s ?p ?o .
+    ?s ns2:uuid "ce9c7e08-f7e5-11e8-987c-6f05a9e3fc22".
+  }
+};

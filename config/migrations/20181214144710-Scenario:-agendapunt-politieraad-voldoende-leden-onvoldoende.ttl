@@ -1,0 +1,36 @@
+
+<http://lblod.info/templates/0aa1af4e-3467-4256-b18c-4fbaf84a5873> a <http://mu.semte.ch/vocabularies/ext/Template>,
+     <http://mu.semte.ch/vocabularies/ext/Template>;
+   <http://purl.org/dc/terms/title> "Scenario: er werden niet voldoende leden verkozen ";
+   <http://mu.semte.ch/vocabularies/core/uuid> "0aa1af4e-3467-4256-b18c-4fbaf84a5873";
+   <http://mu.semte.ch/vocabularies/ext/activeInContext> <http://mu.semte.ch/vocabularies/ext/BesluitPolitieraadVoldoendeLeden>;
+   <http://mu.semte.ch/vocabularies/ext/templateContent> """
+
+<ul>
+	<li>Overwegende dat er slechts <span class="mark-highlight-manual">Voer aantal in leden</span> van de politieraad verkozen zijn in plaats van de te verkiezen <span class="mark-highlight-manual">Voer aantal te verkiezen leden in</span>;</li>
+	<li>Overwegende dat de overige <span class="mark-highlight-manual">Voer aantal in</span> leden verkozen worden in een bijkomende stemronde;</li>
+	<li>Overwegende dat op volgende kandidaten kan gestemd worden:
+		<ul class="bullet-list">
+			<li><span class="mark-highlight-manual">Voer naam, geboortedatum en beroep kandida(a)t(en) in</span> met als eerste opvolger <span class="mark-highlight-manual">Voer naam, geboortedatum en beroep opvolger 1 in</span> en als tweede opvolger <span class="mark-highlight-manual">Voer naam, geboortedatum en beroep opvolger 2 in</span></li>
+			<li>...</li>
+		</ul>
+	</li>
+	<li>Overwegende dat elk gemeenteraadslid <span class="mark-highlight-manual">Voer aantal stemmen in</span> stemmen heeft;</li>
+	<li>Overwegende dat elk gemeenteraadslid dus <span class="mark-highlight-manual">Voer aantal biljetten in</span> stembiljetten gekregen heeft;</li>
+	<li>Overwegende dat de burgemeester, na erop gewezen te hebben dat de stemming geheim is, de stemming heeft geopend;</li>
+	<li>Overwegende dat de burgemeester, na de sluiting van de stemming, de stembiljetten heeft verzameld en heeft meegedeeld dat overgegaan wordt tot de telling van de stembiljetten;</li>
+	<li>Overwegende dat, gegeven het aantal raadsleden dat aan de stemming deelneemt en het aantal stemmen per raadslid, er <span class="mark-highlight-manual">Voer totaal aantal in</span> stembiljetten moeten overhandigd zijn;</li>
+	<li typeof="ext:BesluitPolitieraadOnvoldoendeLedenStembiljetten">Selecteer scenario aantal verzamelde stembiljetten</li>
+	<li>Overwegende dat het bureau voor de kiesverrichtingen de stembiljetten heeft geopend en gesorteerd, waarbij de ongeldige stemmen en blanco stemmen apart werden gelegd en de geldige stembiljetten werden gerangschikt volgens de effectieve kandidaten waarvoor een stem is uitgebracht;</li>
+	<li typeof="ext:BesluitPolitieraadOnvoldoendeLedenOngeldigeStemmen">Selecteer scenario ongeldige stemmen</li>
+
+	<li>Overwegende dat er <span class="mark-highlight-manual">Voer aantal in</span> blanco stemmen werden uitgebracht;</li>
+	<li>Overwegende dat er <span class="mark-highlight-manual">Voer aantal in</span> geldige stemmen werden uitgebracht en deze toegekend werden aan volgende kandidaten:
+		<ul class="bullet-list">
+			<li><span class="mark-highlight-manual">Voer aantal stemmen in</span> voor kandidaat <span class="mark-highlight-manual">Voer kandidaat in</span></li>
+			<li>...</li>
+	</li>
+	<li typeof="ext:BesluitPolitieraadOnvoldoendeLedenStakingStemmen">Selecteer scenario staking van stemmen</li>
+</ul>
+ """;
+   <http://mu.semte.ch/vocabularies/ext/templateMatches> "Selecteer scenario (on)voldoende verkozen leden" .

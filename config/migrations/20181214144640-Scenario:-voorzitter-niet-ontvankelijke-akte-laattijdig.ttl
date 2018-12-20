@@ -1,0 +1,52 @@
+
+<http://lblod.info/templates/b1e0a874-8a32-4295-86a1-6e9157a04665> a <http://mu.semte.ch/vocabularies/ext/Template>,
+     <http://mu.semte.ch/vocabularies/ext/Template>;
+   <http://purl.org/dc/terms/title> "Scenario: niet ontvankelijke akte, want laattijdig ontvangen";
+   <http://mu.semte.ch/vocabularies/core/uuid> "b1e0a874-8a32-4295-86a1-6e9157a04665";
+   <http://mu.semte.ch/vocabularies/ext/activeInContext> <http://mu.semte.ch/vocabularies/ext/BesluitVerkiezingVoorzitterNieuweStijl>;
+   <http://mu.semte.ch/vocabularies/ext/templateContent> """
+<div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+  <div property="ext:idInSnippet" content="${generateBoundUuid('nieuwe-voorzitter-1a')}">0</div>
+  <div property="ext:intentionUri" content="http://zitting/nieuwe-voorzitter">a</div>
+  <div property="ext:variableState" content="initialized">initialized</div>
+</div>
+
+<div property="besluit:motivering" lang="nl">
+  <div>
+    <h6 class="h6">Bevoegdheid</h6>
+    <ul class="bullet-list">
+      <li><a href="http://data.lblod.info/WetgevingDocument/1029017" property="eli:cites">Het decreet van 22 december 2017 over het lokaal bestuur</a>, de artikelen <a href="http://data.lblod.info/WetgevingArtikel/1234844" property="eli:cites">6 </a> en <a href="http://data.lblod.info/WetgevingArtikel/1234845" property="eli:cites">7 </a>;</li>
+    </ul>
+    <br>
+    <h6 class="h6">Juridische context</h6>
+    <ul class="bullet-list">
+    	<li>De omzendbrief KB / ABB 2018 / 3 van 26 oktober 2018 &mdash; Start van de lokale en provinciale bestuursperiode;</li>
+    </ul>
+    <br>
+
+    <h6 class="h6">Feitelijke context en argumentatie</h6>
+    <ul class="bullet-list">
+    	<li>Er werd een akte van voordracht van kandidaat-voorzitter op naam van <span class="mark-highlight-manual">Voer persoon in</span> werd overhandigd aan de algemeen directeur op <span class="mark-highlight-manual">Voer datum in</span>, zijnde minder dan acht dagen voor de installatievergadering van de gemeenteraad;​</li> <!-- Felix moet hier Uuid in of niet denk je? id="${generateBoundUuid('nieuwe-voorzitter-1a')}" -->
+      <li>De akte van voordracht van de kandidaat-voorzitter is daardoor onontvankelijk;</li>
+    </ul>
+  </div>
+</div>
+<br>
+<br>
+<h6 class="h6">Beslissing</h6>
+<div property="prov:value">
+  <ul class="bullet-list">
+    <li property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+      <span property="eli:number">Artikel 1</span>
+      <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+      <span property="prov:value">De gemeenteraad neemt kennis van het ontbreken van een akte van voordracht van kandidaat-voorzitter.</span>
+    </li>
+    <li property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+      <span property="eli:number">Artikel 2</span>
+      <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+      <span property="prov:value">De gemeenteraad neemt kennis van het gegeven dat de uittredend voorzitter het mandaat van voorzitter van de gemeenteraad blijft bekleden tot een nieuwe voorzitter is verkozen.</span>
+    </li>
+  </ul>
+</div>
+ """;
+   <http://mu.semte.ch/vocabularies/ext/templateMatches> "Selecteer scenario verkiezing van de voorzitter van de gemeenteraad" .

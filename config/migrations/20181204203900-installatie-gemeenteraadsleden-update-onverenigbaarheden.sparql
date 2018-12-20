@@ -1,0 +1,73 @@
+PREFIX ns5:	<http://purl.org/dc/terms/>
+PREFIX ns2: <http://mu.semte.ch/vocabularies/core/>
+
+# update title
+DELETE {
+   GRAPH ?g {
+      <http://lblod.info/templates/8f6fb9db-5ff1-4b3d-bd9a-e281fffdbe63> ns5:title ?o .
+  }
+}
+
+INSERT {
+   GRAPH ?g {
+      <http://lblod.info/templates/8f6fb9db-5ff1-4b3d-bd9a-e281fffdbe63> ns5:title "Scenario: er zijn onverenigbaarheden" .
+  }
+}
+
+WHERE {
+   GRAPH ?g {
+      <http://lblod.info/templates/8f6fb9db-5ff1-4b3d-bd9a-e281fffdbe63> ns5:title ?o.
+   }
+};
+
+# delete subscenario
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o.
+  }
+}
+
+WHERE {
+  GRAPH ?g {
+    ?s ?p ?o .
+    ?s ns2:uuid "5292547d-700d-42f8-8a04-338a85b19ac3".
+  }
+};
+
+# rename title
+DELETE {
+   GRAPH ?g {
+      <http://lblod.info/templates/13cc76d1-c070-452a-8d87-ed4c60393e37> ns5:title ?o .
+  }
+}
+
+INSERT {
+   GRAPH ?g {
+      <http://lblod.info/templates/13cc76d1-c070-452a-8d87-ed4c60393e37> ns5:title "Scenario: burgemeester heeft eed afgelegd" .
+  }
+}
+
+WHERE {
+   GRAPH ?g {
+      <http://lblod.info/templates/13cc76d1-c070-452a-8d87-ed4c60393e37> ns5:title ?o.
+   }
+};
+
+# rename title
+DELETE {
+   GRAPH ?g {
+      <http://lblod.info/templates/dbea2664-bd3c-4e64-afeb-fa8644442f5b> ns5:title ?o .
+  }
+}
+
+INSERT {
+   GRAPH ?g {
+      <http://lblod.info/templates/dbea2664-bd3c-4e64-afeb-fa8644442f5b> ns5:title "Scenario: burgemeester heeft nog geen eed afgelegd (verwijder nota)" .
+  }
+}
+
+WHERE {
+   GRAPH ?g {
+      <http://lblod.info/templates/dbea2664-bd3c-4e64-afeb-fa8644442f5b> ns5:title ?o.
+   }
+};

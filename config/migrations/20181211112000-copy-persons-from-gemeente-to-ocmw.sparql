@@ -1,0 +1,52 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX bbcdr: <http://mu.semte.ch/vocabularies/ext/bbcdr/>
+PREFIX toezicht: <http://mu.semte.ch/vocabularies/ext/supervision/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX adms: <http://www.w3.org/ns/adms#>
+PREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>
+PREFIX schema: <http://schema.org/>
+PREFIX person: <http://www.w3.org/ns/person#>
+
+INSERT {
+  GRAPH ?ocmwGraph {
+    ?person a person:Person ;
+      ?p ?o .
+    ?geboorte ?geboorteP ?geboorteO.
+    ?identificator ?idP ?idO.
+  }
+} WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?gemeente a besluit:Bestuurseenheid ;
+      besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001> ;
+      mu:uuid ?gemeenteUuid ;
+      besluit:werkingsgebied ?werkingsgebiedGemeente .
+    ?ocmw a besluit:Bestuurseenheid ;
+      besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002> ;
+      mu:uuid ?ocmwUuid ;
+      besluit:werkingsgebied ?werkingsgebiedOcmw .
+  }
+
+  FILTER(?werkingsgebiedGemeente = ?werkingsgebiedOcmw) 
+
+  BIND (IRI(CONCAT('http://mu.semte.ch/graphs/organizations/', ?gemeenteUuid)) AS ?gemeenteGraph)
+  BIND (IRI(CONCAT('http://mu.semte.ch/graphs/organizations/', ?ocmwUuid)) AS ?ocmwGraph)
+
+  GRAPH ?gemeenteGraph {
+    ?person a person:Person ;
+      ?p ?o .
+
+    OPTIONAL {
+      ?person persoon:heeftGeboorte ?geboorte.
+      ?geboorte ?geboorteP ?geboorteO.
+    }
+    OPTIONAL {
+     ?person adms:identifier ?identificator.
+     ?identificator ?idP ?idO.
+    }
+  }
+}

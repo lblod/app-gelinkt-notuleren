@@ -47,7 +47,7 @@ defmodule Acl.UserGroups.Config do
                         "http://www.w3.org/2000/01/rdf-schema#Class",
                         "http://www.w3.org/2000/01/rdf-schema#Property",
                         "http://mu.semte.ch/vocabularies/ext/Task",
-                        "http://mu.semte.ch/vocabularies/ext/Tasklist",                        
+                        "http://mu.semte.ch/vocabularies/ext/Tasklist",
                         "http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode",
                         "http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode",
                         "http://mu.semte.ch/vocabularies/ext/BestuursfunctieCode",
@@ -72,7 +72,7 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/mandaat#Mandaat",
                         "http://data.vlaanderen.be/ns/mandaat#Mandataris",
                         "http://data.vlaanderen.be/ns/mandaat#Fractie",
-                        "http://purl.org/dc/terms/PeriodOfTime",                        
+                        "http://purl.org/dc/terms/PeriodOfTime",
                         "http://www.w3.org/ns/org#Membership",
                       ]
                     } },
@@ -120,6 +120,32 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/TasklistSolution"
                       ] } } ] },
 
+        %GroupSpec{
+        name: "org-temp",
+        useage: [:read],
+        access: %AccessByQuery{
+          vars: ["session_group"],
+          query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+                  PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+                  SELECT ?session_group ?session_role WHERE {
+                    <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group.
+                    }" },
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/temporary-sync-",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://data.vlaanderen.be/ns/besluit#Zitting",
+                        "http://data.vlaanderen.be/ns/besluit#Stemming",
+                        "http://data.vlaanderen.be/ns/besluit#Besluit",
+                        "http://data.vlaanderen.be/ns/besluit#Artikel",
+                        "http://data.vlaanderen.be/ns/besluit#Agenda",
+                        "http://data.vlaanderen.be/ns/besluit#Agendapunt",
+                        "http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt",
+                        "http://data.vlaanderen.be/ns/mandaat#Mandaat",
+                        "http://data.vlaanderen.be/ns/mandaat#Mandataris",
+                        "http://data.vlaanderen.be/ns/mandaat#Fractie",
+                      ] } } ] },
+
       %GroupSpec{
         name: "org-wf",
         useage: [:write, :read_for_write],
@@ -138,7 +164,10 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/DocumentContainer",
                         "http://mu.semte.ch/vocabularies/ext/PrePublishedAgenda",
                         "http://mu.semte.ch/vocabularies/ext/TaskSolution",
-                        "http://mu.semte.ch/vocabularies/ext/TasklistSolution"
+                        "http://mu.semte.ch/vocabularies/ext/TasklistSolution",
+                        "http://www.w3.org/ns/person#Person",
+                        "http://data.vlaanderen.be/ns/persoon#Geboorte",
+                        "http://www.w3.org/ns/adms#Identifier"
                       ] } } ] },
 
 

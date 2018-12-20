@@ -1,0 +1,16 @@
+<http://lblod.info/templates/3df53879-040a-45e7-8c2b-97a37bdc7615> a <http://mu.semte.ch/vocabularies/ext/Template>,
+     <http://mu.semte.ch/vocabularies/ext/Template>;
+   <http://purl.org/dc/terms/title> "Scenario: kandidaat is geen voorzitter of lid van het vast bureau ";
+   <http://mu.semte.ch/vocabularies/core/uuid> "3df53879-040a-45e7-8c2b-97a37bdc7615";
+   <http://mu.semte.ch/vocabularies/ext/activeInContext> <http://mu.semte.ch/vocabularies/ext/BesluitVoorzitterBCSD>;
+   <http://mu.semte.ch/vocabularies/ext/templateContent> """
+<div property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+  <span property="eli:number">Artikel 3</span>
+  <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+  <span property="prov:value">
+  	Akte te nemen van de eedaflegging van de verkozen verklaarde <span>voorzitter van het bijzonder comité voor de sociale dienst</span> die tevens als <span>schepen</span> toegevoegd wordt aan <span>het college van burgemeester en schepenen</span> vanaf <span class="mark-highlight-manual">Voer begindatum in</span>.
+  </span>
+</div>
+<div>Selecteer scenario geen lid verhindering</div>
+""";
+   <http://mu.semte.ch/vocabularies/ext/templateMatches> "Selecteer scenario artikel lidmaatschap vast bureau" .

@@ -1,0 +1,30 @@
+<http://lblod.info/templates/5fd36722-6a1b-4a0c-aa3b-b2f8d320b497> a <http://mu.semte.ch/vocabularies/ext/Template>,
+     <http://mu.semte.ch/vocabularies/ext/Template>;
+   <http://purl.org/dc/terms/title> "Scenario: er zijn geen (geldige) lijstenverbindingen ";
+   <http://mu.semte.ch/vocabularies/core/uuid> "5fd36722-6a1b-4a0c-aa3b-b2f8d320b497";
+   <http://mu.semte.ch/vocabularies/ext/activeInContext> <http://mu.semte.ch/vocabularies/ext/BSCDledenOverwegingLijstenverbindingen>;
+   <http://mu.semte.ch/vocabularies/ext/templateContent> """
+<ul>
+	<li>Overwegende dat binnen de 60 dagen na de verkiezingen, geen verklaringen tot lijstenverbindingen werden bezorgd aan de algemeen directeur;</li>
+	<li>Overwegende dat de algemeen directeur op <span class="mark-highlight-manual">Voer datum bekendmaking in</span> op de webtoepassing van de gemeente bekendmaakte hoeveel zetels in het bijzonder comité voor de sociale dienst toekomen aan de verschillende lijsten die aan de lokale verkiezingen deelnamen;</li>
+	<li>Overwegende dat de zetelverdeling er als volgt uit ziet:
+		<ul class="bullet-list">
+			<li><span class="mark-highlight-manual">Voer lijst in</span> heeft <span class="mark-highlight-manual">Voer aantal zetels in</span>;</li>
+			<li>...</li>
+		</ul>
+	</li>
+	<li>Overwegende dat volgende lijsten een akte van voordracht bezorgden aan de algemeen directeur:
+		<ul class="bullet-list">
+			<li><span class="mark-highlight-manual">Voer lijst in</span> heeft <span class="mark-highlight-manual">Voer datum in</span>;</li>
+			<li>...</li>
+		</ul>
+	</li>
+	<li resource="#ScenarioBSCDLeden" typeof="ext:BSCDledenOverwegingLijstenverbindingenGeenTijdigheid">Selecteer scenario tijdigheid akten van voordracht</li>
+	<li resource="#ScenarioBSCDLeden" typeof="ext:BSCDledenOverwegingLijstenverbindingenGeenMeerderheid">Selecteer scenario ondertekend door meerderheid</li>
+	<li resource="#ScenarioBSCDLeden" typeof="ext:BSCDledenOverwegingLijstenverbindingenGeenOngeldigeVoordracht">Selecteer scenario ongeldige voordracht</li>
+	<li resource="#ScenarioBSCDLeden" typeof="ext:BSCDledenOverwegingLijstenverbindingenGeenVerkozenVerklaring">Selecteer scenario verkozenverklaring en bijkomende voordrachten ter zitting</li>
+	<li resource="#ScenarioBSCDLeden" typeof="ext:BSCDledenOverwegingLijstenverbindingenGeenAfstanden">Selecteer scenario afstanden van mandaat</li>
+	<li resource="#ScenarioBSCDLeden" typeof="ext:BSCDledenOverwegingLijstenverbindingenGeenAfwezigheden">Selecteer scenario afwezigheden</li>
+</ul>
+""";
+   <http://mu.semte.ch/vocabularies/ext/templateMatches> "Selecteer scenario lijstenverbinding" .

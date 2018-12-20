@@ -1,0 +1,72 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX bbcdr: <http://mu.semte.ch/vocabularies/ext/bbcdr/>
+PREFIX toezicht: <http://mu.semte.ch/vocabularies/ext/supervision/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX adms: <http://www.w3.org/ns/adms#>
+PREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>
+PREFIX schema: <http://schema.org/>
+PREFIX person: <http://www.w3.org/ns/person#>
+INSERT {
+ GRAPH <http://mu.semte.ch/graphs/public> {
+   ?nieuwtijdsOrgaan org:hasPost ?post.
+   ?verkiezing mandaat:steltSamen ?nieuwtijdsOrgaan.
+   ?nieuweeenheid besluit:werkingsgebied ?nieuwgebied.
+   ?nieuworgaan besluit:bestuurt ?nieuweeenheid.
+   ?nieuworgaan besluit:classificatie ?classificatie.
+   ?nieuwtijdsOrgaan mandaat:isTijdspecialisatieVan ?nieuworgaan;
+                  mandaat:bindingStart "2019-01-01"^^xsd:dateTime.
+ }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+     ?eenheid besluit:werkingsgebied ?oudgebied.
+     ?orgaan besluit:bestuurt ?eenheid.
+     ?orgaan besluit:classificatie ?classificatie.
+     ?tijdsOrgaan mandaat:isTijdspecialisatieVan ?orgaan;
+                  mandaat:bindingStart "2019-01-01"^^xsd:dateTime;
+                  org:hasPost ?post;
+                  ?p ?o.     
+    ?nieuweeenheid besluit:werkingsgebied ?nieuwgebied.
+    ?nieuworgaan besluit:bestuurt ?nieuweeenheid.
+    ?nieuworgaan besluit:classificatie ?classificatie.
+    ?nieuwtijdsOrgaan mandaat:isTijdspecialisatieVan ?nieuworgaan;
+                  mandaat:bindingStart "2019-01-01"^^xsd:dateTime.
+ OPTIONAL {
+       ?verkiezing mandaat:steltSamen ?tijdsOrgaan.
+     }
+}
+ VALUES (?nieuwgebied ?oudgebied) {
+        (<http://data.lblod.info/id/werkingsgebieden/56e8ec85-e03f-4168-b062-737f9704cd2a> <http://data.lblod.info/id/werkingsgebieden/a567b3fdb462a8513ffeeff0188317003c5bbb7debb8f1ea9245b83e1d43b437>) # deinze
+        (<http://data.lblod.info/id/werkingsgebieden/a0e4508a-a20b-42e5-a40d-4d919d045fdd> <http://data.lblod.info/id/werkingsgebieden/7a7daa48e9e6449358cf96be6c7b30466648d31236e56b8958fae7d53e2308b8>) # aalter
+ }
+};
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+     ?tijdsOrgaan mandaat:isTijdspecialisatieVan ?orgaan;
+                  mandaat:bindingStart "2019-01-01"^^xsd:dateTime;
+                  org:hasPost ?post;
+                  ?p ?o.
+       ?verkiezing mandaat:steltSamen ?tijdsOrgaan.
+}}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+     ?eenheid besluit:werkingsgebied ?oudgebied.
+     ?orgaan besluit:bestuurt ?eenheid.
+     ?orgaan besluit:classificatie ?classificatie.
+     ?tijdsOrgaan mandaat:isTijdspecialisatieVan ?orgaan;
+                  mandaat:bindingStart "2019-01-01"^^xsd:dateTime;
+                  org:hasPost ?post;
+                  ?p ?o.
+     OPTIONAL {
+       ?verkiezing mandaat:steltSamen ?tijdsOrgaan.
+     }
+
+ }
+ VALUES ?oudgebied { <http://data.lblod.info/id/werkingsgebieden/a567b3fdb462a8513ffeeff0188317003c5bbb7debb8f1ea9245b83e1d43b437> <http://data.lblod.info/id/werkingsgebieden/7a7daa48e9e6449358cf96be6c7b30466648d31236e56b8958fae7d53e2308b8> }
+}

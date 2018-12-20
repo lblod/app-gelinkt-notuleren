@@ -1,0 +1,16 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://mu.semte.ch/vocabularies/ext/> .
+@prefix ns2:	<http://mu.semte.ch/vocabularies/core/> .
+@prefix ns3:	<http://data.vlaanderen.be/ns/besluit#> .
+@prefix ns4:	<http://data.vlaanderen.be/ns/mandaat#> .
+@prefix ns5:	<http://purl.org/dc/terms/> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+
+<http://lblod.info/templates/6ca0047c-f709-11e8-b3cc-1f90a806f09f>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"6ca0047c-f709-11e8-b3cc-1f90a806f09f" ;
+    ns1:templateMatches "Selecteer scenario geïnstalleerd gemeenteraadslid";
+    ns1:activeInContext	ns1:BesluitSchepenen;
+    ns5:title	"Scenario: alle schepenen hebben hun eed als gemeenteraadslid afgelegd" ;
+    ns1:templateContent """Overwegende dat alle kandidaat-schepenen de eed als gemeenteraadslid hebben afgelegd;
+ """.

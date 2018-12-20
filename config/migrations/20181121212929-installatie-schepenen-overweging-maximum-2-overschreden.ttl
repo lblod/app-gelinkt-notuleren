@@ -1,0 +1,20 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://mu.semte.ch/vocabularies/ext/> .
+@prefix ns2:	<http://mu.semte.ch/vocabularies/core/> .
+@prefix ns3:	<http://data.vlaanderen.be/ns/besluit#> .
+@prefix ns4:	<http://data.vlaanderen.be/ns/mandaat#> .
+@prefix ns5:	<http://purl.org/dc/terms/> .
+@prefix foaf:	<http://xmlns.com/foaf/0.1/> .
+
+<http://lblod.info/templates/dcf864a4-f708-11e8-aaa5-9f2737020193>
+    rdf:type	ns1:Template ;
+    ns2:uuid	"dcf864a4-f708-11e8-aaa5-9f2737020193" ;
+    ns1:templateMatches "Selecteer scenario maximum aantal schepenen";
+    ns1:activeInContext	ns1:BesluitSchepenen;
+    ns5:title	"Scenario: maximum aantal schepenen overschreden" ;
+    ns1:templateContent """
+<ul>
+	<li>Overwegende dat het aantal voorgedragen kandidaat-schepenen het maximum aantal schepenen voor de gemeente van <span class="mark-highlight-manual">Typ maximum aantal schepenen</span> overschrijdt;</li>
+	<li>Overwegende dat volgende de kandidaat-schepenen worden geschrapt van de voordrachtsakte, waarmee het aantal wordt teruggebracht tot het maximaal toegelaten aantal: <span class="mark-highlight-manual">Typ naam kandidaat-schepen &mdash (laatste in rang worden geschrapt)</span>, ...;</li>
+</ul>
+ """.

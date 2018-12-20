@@ -1,0 +1,90 @@
+PREFIX ns5:	<http://purl.org/dc/terms/>
+PREFIX ns2: <http://mu.semte.ch/vocabularies/core/>
+PREFIX ns1:	<http://mu.semte.ch/vocabularies/ext/>
+
+# update title
+DELETE {
+   GRAPH ?g {
+      <http://lblod.info/templates/6a7fe8a4-c438-4a2a-8376-25ca80f2da22> ns5:title ?o .
+  }
+}
+
+INSERT {
+   GRAPH ?g {
+      <http://lblod.info/templates/6a7fe8a4-c438-4a2a-8376-25ca80f2da22> ns5:title "Scenario: afzonderlijke fracties bepaald door meerderheid" .
+  }
+}
+
+WHERE {
+   GRAPH ?g {
+      <http://lblod.info/templates/6a7fe8a4-c438-4a2a-8376-25ca80f2da22> ns5:title ?o.
+   }
+};
+
+# update title
+DELETE {
+   GRAPH ?g {
+      <http://lblod.info/templates/60fcbfaf-3977-4b57-9372-01eb1614826e> ns5:title ?o .
+  }
+}
+
+INSERT {
+   GRAPH ?g {
+      <http://lblod.info/templates/60fcbfaf-3977-4b57-9372-01eb1614826e> ns5:title "Scenario: geen afzonderlijke fracties" .
+  }
+}
+
+WHERE {
+   GRAPH ?g {
+      <http://lblod.info/templates/60fcbfaf-3977-4b57-9372-01eb1614826e> ns5:title ?o.
+   }
+};
+
+# delete subscenario
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o.
+  }
+}
+
+WHERE {
+  GRAPH ?g {
+    ?s ?p ?o .
+    ?s ns2:uuid "b7e29ba8-67e8-41c9-9582-f2c746f06ec2".
+  }
+};
+
+
+# delete subscenario
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o.
+  }
+}
+
+WHERE {
+  GRAPH ?g {
+    ?s ?p ?o .
+    ?s ns2:uuid "6a7fe8a4-c438-4a2a-8376-25ca80f2da22".
+  }
+};
+
+
+# update title and template matches
+DELETE {
+   GRAPH ?g {
+      <http://lblod.info/templates/7dbb2b25-51ba-4506-b4b4-4ff1b1310f14> ns5:title ?o .
+  }
+}
+
+INSERT {
+   GRAPH ?g {
+      <http://lblod.info/templates/7dbb2b25-51ba-4506-b4b4-4ff1b1310f14> ns5:title "Scenario: voorgestelde splitsing voldoet aan voorwaarden" .
+  }
+}
+
+WHERE {
+   GRAPH ?g {
+      <http://lblod.info/templates/7dbb2b25-51ba-4506-b4b4-4ff1b1310f14> ns5:title ?o.
+   }
+};
