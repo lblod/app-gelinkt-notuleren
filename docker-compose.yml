@@ -130,7 +130,7 @@ services:
     labels:
       - "logging=true"
   preimporter:
-    image: lblod/notulen-importer-service:notulen-importer-service
+    image: lblod/notulen-importer-service:blockchain-preimporter
     links:
       - database:database
     restart: always
