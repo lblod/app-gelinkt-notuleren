@@ -22,6 +22,14 @@ defmodule Dispatcher do
   #   Proxy.forward conn, path, "http://resource/themes/"
   # end
 
+  match "/blockchain/*path" do
+    Proxy.forward conn, path, "http://blockchain/"
+  end
+
+  match "/decisionservice/*path" do
+    Proxy.forward conn, path, "http://decisionservice/"
+  end
+
   match "/agendas/*path" do
     Proxy.forward conn, path, "http://resource/agendas/"
   end
