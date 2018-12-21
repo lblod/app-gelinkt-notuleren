@@ -5,7 +5,7 @@ services:
       - decisionservice:decisionservice
       - blockchain:blockchain
   blockchain:
-    image: trase/blockcain-event-broker
+    image: trase/blockchain-event-broker
     environment:
       NODE_ENV: development
     links:
