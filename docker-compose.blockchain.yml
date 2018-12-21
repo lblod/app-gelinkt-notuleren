@@ -1,0 +1,49 @@
+version: '3.4'
+services:
+  dispatcher:
+    links:
+      - decisionservice:decisionservice
+      - blockchain:blockchain
+  blockchain:
+    image: trase/blockcain-event-broker
+    environment:
+      NODE_ENV: development
+    links:
+      - virtuoso:database
+  blockchainNotifier:
+    image: lblod/blockchain-informing-service
+    links:
+      - virtuoso:database
+      - blockchain:blockchain
+  decisionservice:
+    image: trase/decision-service
+    environment:
+      NODE_ENV: development
+      JWT_SECRET: 0a6b944d-d2fb-46fc-a85e-0295c986cd9f
+      MONGO_URI: mongodb://admin:18feb2018@ds135952.mlab.com:35952/abb-lblod
+      MONGO_HOST_TEST: mongodb://admin:18feb2018@ds135952.mlab.com:35952/abb-lblod
+      SALT_ROUNDS: 10
+      ORG_MSP: Org1MSP
+      CHANNEL_NAME: mychannel
+      CHAINCODE_NAME: MyChainCode
+      CA_DOMAIN: ca.example.com
+      CA_URL: http://10.1.17.30:7054
+      PEER1: grpc://10.1.17.30:7051
+      ORDERER1: grpc://10.1.17.30:7050
+      ADMIN_PW: myRandomAdminPW
+    links:
+      - virtuoso:database
+  authenticationdummy:
+    image: trase/authentication-service-dummy
+    environment:
+      NODE_ENV: development
+      ORG_MSP: Org1MSP
+      CA_DOMAIN: ca.example.com
+      CA_URL: http://10.1.17.30:7054
+      ADMIN_PW: myRandomAdminPW
+  frontend:
+    image: trase/frontend-local
+    environment:
+      NODE_ENV: development
+    ports:
+      - "82:1234"
