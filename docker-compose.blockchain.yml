@@ -27,9 +27,9 @@ services:
       CHANNEL_NAME: mychannel
       CHAINCODE_NAME: MyChainCode
       CA_DOMAIN: ca.example.com
-      CA_URL: http://10.1.17.30:7054
-      PEER1: grpc://10.1.17.30:7051
-      ORDERER1: grpc://10.1.17.30:7050
+      CA_URL: http://INSERT_IP_HERE:7054
+      PEER1: grpc://INSERT_IP_HERE:7051
+      ORDERER1: grpc://INSERT_IP_HERE:7050
       ADMIN_PW: myRandomAdminPW
     links:
       - virtuoso:database
@@ -39,10 +39,10 @@ services:
       NODE_ENV: development
       ORG_MSP: Org1MSP
       CA_DOMAIN: ca.example.com
-      CA_URL: http://10.1.17.30:7054
+      CA_URL: http://INSERT_IP_HERE:7054
       ADMIN_PW: myRandomAdminPW
   frontend:
-    image: trase/frontend-local
+    image: trase/frontend
     environment:
       NODE_ENV: development
     ports:
