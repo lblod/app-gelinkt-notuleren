@@ -1,0 +1,45 @@
+<http://lblod.info/templates/c2d58255-2251-4677-92fd-65fba80b59f2> a <http://mu.semte.ch/vocabularies/ext/Template>,
+     <http://mu.semte.ch/vocabularies/ext/Template>;
+   <http://purl.org/dc/terms/title> "Scenario: geen akte ontvangen";
+   <http://mu.semte.ch/vocabularies/core/uuid> "c2d58255-2251-4677-92fd-65fba80b59f2";
+   <http://mu.semte.ch/vocabularies/ext/activeInContext> <http://mu.semte.ch/vocabularies/ext/BesluitVoorzitterBCSDNieuweStijl>;
+   <http://mu.semte.ch/vocabularies/ext/templateContent> """
+
+<div>
+	<div property="besluit:motivering" lang="nl">
+		<div>
+			<h6 class="h6">Bevoegdheid</h6>
+      <ul class="bullet-list">
+        <li><a href="http://data.lblod.info/WetgevingDocument/1029017" property="eli:cites">Het decreet van 22 december 2017 over het lokaal bestuur</a>, artikel <a href="http://data.lblod.info/WetgevingArtikel/1234947" property="eli:cites">90</a> en <a href="http://data.lblod.info/WetgevingArtikel/1234962" property="eli:cites">106</a>.</li>
+			</ul>
+			<br>
+
+      <h6 class="h6">Feitelijke context en argumentatie</h6>
+			<ul class="bullet-list">
+        <li>Er werd geen akte van voordracht van kandidaat-voorzitter van het bijzonder comité voor de sociale dienst overhandigd aan de algemeen directeur;</li>
+				<li>Er kan dus geen voorzitter van het bijzonder comité voor de sociale dienst verkozen verklaard worden;</li>
+				<li>In dat geval verkiest de raad voor maatschappelijk welzijn een voorzitter van het bijzonder comité voor de sociale dienst binnen de veertien dagen;</li>
+				<li>Tot aan de eerste verkiezing van de voorzitter wordt het voorzitterschap van het bijzonder comité voor de sociale dienst waargenomen door een lid van het college van burgemeester en schepenen of als er geen college van burgemeester en schepenen is geïnstalleerd, een uittredend lid van het college van burgemeester en schepenen, in volgorde van rang;</li>
+				<li>Dus zal <span class="mark-highlight-manual">Voeg naam lid CBS dat zal vervangen in zal</span> het voorzitterschap van het bijzonder comité voor de sociale dienst waarnemen tot aan de verkiezing van de voorzitter van het bijzonder comité voor de sociale dienst;</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<br>
+<div>
+  <h6 class="h6">Beslissing</h6>
+  <div property="prov:value">
+    <div property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+      <span property="eli:number">Artikel 1</span>
+      <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+      <span property="prov:value">De raad voor maatschappelijk welzijn neemt kennis van het ontbreken van een ontvankelijke akte van voordracht van kandidaat-voorzitter van het bijzonder comité voor de sociale dienst.</span>
+    </div>
+    <div property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+      <span property="eli:number">Artikel 2</span>
+      <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+      <span property="prov:value">De raad voor maatschappelijk welzijn neemt kennis van het gegeven dat <span class="mark-highlight-manual">Voeg naam waarnemend voorzitter van het bijzonder comité de sociale dienst in</span> het <span>voorzitterschap</span> zal waarnemen vanaf <span class="mark-highlight-manual">Voeg startdatum (datum installatievergadering) in</span> tot aan de verkiezing van de voorzitter van het bijzonder comité voor de sociale dienst.</span>
+    </div>
+  </div>
+</div>
+""";
+   <http://mu.semte.ch/vocabularies/ext/templateMatches> "Selecteer scenario verkiezing van de voorzitter van het bijzonder comité voor de sociale dienst" .
