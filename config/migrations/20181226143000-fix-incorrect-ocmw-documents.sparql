@@ -1,0 +1,48 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX pav: <http://purl.org/pav/>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+
+DELETE {
+  GRAPH ?g {
+    ?document  ext:editorDocumentContent ?content .
+  }
+} INSERT {
+  GRAPH ?g {
+    ?document  ext:editorDocumentContent ?newContent .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?document a ext:EditorDocument ; dct:title ?title ; ext:editorDocumentContent ?content
+
+    FILTER NOT EXISTS { ?next pav:previousVersion ?document }
+    FILTER CONTAINS(?title, "aansluitend op de installatievergadering")
+    FILTER(!CONTAINS(?content, "v1.0.0"))
+
+    BIND(REPLACE(?content, "welzijn\\.<\\/span>(\\s)*<\\/div>(\\s)*<\\/div>(\\s)*<\\/div>(\\s)*<\\/div>(\\s)*<br>", STR("welzijn.</span> </div> </div> </div> </div> </div><br>"), "i") as ?newContent)
+  }
+}
+
+;
+
+DELETE {
+  GRAPH ?g {
+    ?document  ext:editorDocumentContent ?content .
+  }
+} INSERT {
+  GRAPH ?g {
+    ?document  ext:editorDocumentContent ?newContent .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?document a ext:EditorDocument ; dct:title ?title ; ext:editorDocumentContent ?content
+
+    FILTER NOT EXISTS { ?next pav:previousVersion ?document }
+    FILTER CONTAINS(?title, "aansluitend op de installatievergadering")
+    FILTER(!CONTAINS(?content, "v1.0.0"))
+
+    BIND(REPLACE(?content, "ZITTING--><\\/div>", "ZITTING-->", "i") as ?newContent)
+  }
+}
+
