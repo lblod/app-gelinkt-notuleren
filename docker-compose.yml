@@ -122,7 +122,7 @@ services:
     labels:
       - "logging=true"
   notulenimporter:
-    image: lblod/notulen-importer-service:latest
+    image: lblod/notulen-importer-service:0.5.0
     links:
       - virtuoso:database
     restart: always
