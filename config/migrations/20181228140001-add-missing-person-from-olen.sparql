@@ -1,0 +1,48 @@
+INSERT DATA {
+# GEMEENTE OLEN
+GRAPH <http://mu.semte.ch/graphs/organizations/80c5a6a8789862c171c8d33ae28cb0649b4a0186114eb49ed36dc28ea515604b> {
+<http://data.lblod.info/id/personen/3771af9a-f479-43f8-a309-3d209a5bb6ed> a <http://www.w3.org/ns/person#Person>;
+   <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Koen";
+   <http://data.vlaanderen.be/ns/persoon#geslacht> <http://publications.europa.eu/resource/authority/human-sex/MALE>;
+   <http://data.vlaanderen.be/ns/persoon#heeftGeboorte> <http://data.lblod.info/id/geboorte/f21ded7a-3976-48ab-a250-d8c376954dba>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "3771af9a-f479-43f8-a309-3d209a5bb6ed";
+   <http://xmlns.com/foaf/0.1/familyName> "Laenen" .
+
+<http://data.lblod.info/id/geboorte/f21ded7a-3976-48ab-a250-d8c376954dba> a <http://data.vlaanderen.be/ns/persoon#Geboorte>;
+   <http://data.vlaanderen.be/ns/persoon#datum> "1966-05-19"^^<http://www.w3.org/2001/XMLSchema#date>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "f21ded7a-3976-48ab-a250-d8c376954dba" .
+
+<http://data.lblod.info/id/verkiezingsresultaten/f3eea005-2388-4a9c-92ac-7429ef2a1bdb> a <http://data.vlaanderen.be/ns/mandaat#Verkiezingsresultaat>;
+   <http://data.vlaanderen.be/ns/mandaat#aantalNaamstemmen> 292;
+   <http://data.vlaanderen.be/ns/mandaat#gevolg> <http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/4c713f09-1317-4860-bbbd-e8f7dfd78a2f>;
+   <http://data.vlaanderen.be/ns/mandaat#isResultaatVan> <http://data.lblod.info/id/personen/3771af9a-f479-43f8-a309-3d209a5bb6ed>;
+   <http://data.vlaanderen.be/ns/mandaat#isResultaatVoor> <http://data.lblod.info/id/kandidatenlijsten/589972a7-795c-4937-a566-c6e7dba7e219>;
+   <http://data.vlaanderen.be/ns/mandaat#plaatsRangorde> 2;
+   <http://mu.semte.ch/vocabularies/core/uuid> "f3eea005-2388-4a9c-92ac-7429ef2a1bdb" .
+
+<http://data.lblod.info/id/kandidatenlijsten/589972a7-795c-4937-a566-c6e7dba7e219> <http://data.vlaanderen.be/ns/mandaat#heeftKandidaat> <http://data.lblod.info/id/personen/3771af9a-f479-43f8-a309-3d209a5bb6ed> .
+}
+
+# OCMW OLEN
+GRAPH <http://mu.semte.ch/graphs/organizations/5bf06ce5dbd1eea7dbaf00cf52fc517b7439ab7a9c5e607a269cc26cc8e27d70> {
+<http://data.lblod.info/id/personen/3771af9a-f479-43f8-a309-3d209a5bb6ed> a <http://www.w3.org/ns/person#Person>;
+   <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Koen";
+   <http://data.vlaanderen.be/ns/persoon#geslacht> <http://publications.europa.eu/resource/authority/human-sex/MALE>;
+   <http://data.vlaanderen.be/ns/persoon#heeftGeboorte> <http://data.lblod.info/id/geboorte/f21ded7a-3976-48ab-a250-d8c376954dba>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "3771af9a-f479-43f8-a309-3d209a5bb6ed";
+   <http://xmlns.com/foaf/0.1/familyName> "Laenen" .
+
+<http://data.lblod.info/id/geboorte/f21ded7a-3976-48ab-a250-d8c376954dba> a <http://data.vlaanderen.be/ns/persoon#Geboorte>;
+   <http://data.vlaanderen.be/ns/persoon#datum> "1966-05-19"^^<http://www.w3.org/2001/XMLSchema#date>;
+   <http://mu.semte.ch/vocabularies/core/uuid> "f21ded7a-3976-48ab-a250-d8c376954dba" .
+
+<http://data.lblod.info/id/verkiezingsresultaten/73c3b881-044a-4408-81a1-73993fee77fe> a <http://data.vlaanderen.be/ns/mandaat#Verkiezingsresultaat>;
+   <http://data.vlaanderen.be/ns/mandaat#aantalNaamstemmen> 292;
+   <http://data.vlaanderen.be/ns/mandaat#gevolg> <http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/4c713f09-1317-4860-bbbd-e8f7dfd78a2f>;
+   <http://data.vlaanderen.be/ns/mandaat#isResultaatVan> <http://data.lblod.info/id/personen/3771af9a-f479-43f8-a309-3d209a5bb6ed>;
+   <http://data.vlaanderen.be/ns/mandaat#isResultaatVoor> <http://data.lblod.info/id/kandidatenlijsten/d807b850-13e6-47f5-bf7a-7e4e44dcd4e6>;
+   <http://data.vlaanderen.be/ns/mandaat#plaatsRangorde> 2;
+   <http://mu.semte.ch/vocabularies/core/uuid> "73c3b881-044a-4408-81a1-73993fee77fe" .
+<http://data.lblod.info/id/kandidatenlijsten/d807b850-13e6-47f5-bf7a-7e4e44dcd4e6> <http://data.vlaanderen.be/ns/mandaat#heeftKandidaat> <http://data.lblod.info/id/personen/3771af9a-f479-43f8-a309-3d209a5bb6ed> .
+}
+}
