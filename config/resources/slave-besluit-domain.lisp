@@ -23,6 +23,9 @@
                           :as "referenties"))
   :has-one `((agendapunt :via ,(s-prefix "besluit:aangebrachtNa")
                          :as "vorige-agendapunt")
+             (behandeling-van-agendapunt :via ,(s-prefix "dct:subject")
+                                         :inverse t
+                                         :as "behandeling")
              (agenda :via ,(s-prefix "besluit:heeftAgendapunt")
                      :inverse t
                      :as "agenda"))
@@ -56,10 +59,7 @@
                           :as "aanwezigen")
               (stemming :via ,(s-prefix "besluit:heeftStemming")
                           :as "stemmingen"))
-  :has-one `((zitting :via ,(s-prefix "ext:behandelt")
-                      :inverse t
-                      :as "zitting")
-             (behandeling-van-agendapunt :via ,(s-prefix "besluit:gebeurtNa")
+  :has-one `((behandeling-van-agendapunt :via ,(s-prefix "besluit:gebeurtNa")
                                          :as "vorige-behandeling-van-agendapunt")
              (agendapunt :via ,(s-prefix "dct:subject")
                               :as "onderwerp")
@@ -94,7 +94,9 @@
 
 (define-resource bestuurseenheid ()
   :class (s-prefix "besluit:Bestuurseenheid")
-  :properties `((:naam :string ,(s-prefix "skos:prefLabel")))
+  :properties `((:naam :string ,(s-prefix "skos:prefLabel"))
+                (:wil-mail-ontvangen :boolean ,(s-prefix "ext:wilMailOntvangen")) ;;Voorkeur in berichtencentrum
+                (:mail-adres :string ,(s-prefix "ext:mailAdresVoorNotificaties")))
   :has-one `((werkingsgebied :via ,(s-prefix "besluit:werkingsgebied")
                              :as "werkingsgebied")
              (bestuurseenheid-classificatie-code :via ,(s-prefix "besluit:classificatie")
@@ -223,9 +225,7 @@
                 (:geeindigd-op-tijdstip :datetime ,(s-prefix "prov:endedAtTime"))
                 (:op-locatie :url ,(s-prefix "prov:atLocation"))
                 (:afgeleid-uit :string ,(s-prefix "pav:derivedFrom")))
-  :has-many `((behandeling-van-agendapunt :via ,(s-prefix "ext:behandelt")
-                          :as "behandelde-agendapunten")
-              (mandataris :via ,(s-prefix "besluit:heeftAanwezigeBijStart")
+  :has-many `((mandataris :via ,(s-prefix "besluit:heeftAanwezigeBijStart")
                           :as "aanwezigen-bij-start"))
   :has-one `((bestuursorgaan :via ,(s-prefix "besluit:isGehoudenDoor")
                              :as "bestuursorgaan")

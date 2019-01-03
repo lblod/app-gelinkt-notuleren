@@ -1,0 +1,52 @@
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX mu:      <http://mu.semte.ch/vocabularies/core/>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+DELETE {
+GRAPH <http://mu.semte.ch/graphs/public> {
+?resultaat mandaat:aantalNaamstemmen ?orgStemmen;
+           mandaat:gevolg ?orgStatus;
+           mandaat:plaatsRangorde ?orgRangorde.
+}
+}
+INSERT {
+GRAPH <http://mu.semte.ch/graphs/public> {
+  ?resultaat mandaat:aantalNaamstemmen ?stemmen;
+             mandaat:gevolg ?status;
+             mandaat:plaatsRangorde ?rangorde.
+  }
+}
+WHERE {
+  ?resultaat mandaat:isResultaatVan ?person;
+             mandaat:isResultaatVoor/mandaat:behoortTot ?verkiezing.
+?resultaat mandaat:aantalNaamstemmen ?orgStemmen;
+           mandaat:gevolg ?orgStatus;
+           mandaat:plaatsRangorde ?orgRangorde.
+  ?verkiezing mandaat:datum "2018-10-14"^^xsd:dateTime;
+              mandaat:steltSamen/mandaat:isTijdspecialisatieVan ?orgaan.
+  ?orgaan besluit:classificatie ?klasse.
+  FILTER(?klasse in (<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000007>, <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000005>))
+  VALUES (?person ?stemmen ?status ?rangorde) {
+(<http://data.lblod.info/id/personen/9c2c5a1e08d6bd8742d01b2428fde148fb922113b9082d1dd918b7bd79b4b906> "416"^^xsd:integer <http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/4c713f09-1317-4860-bbbd-e8f7dfd78a2f> "1"^^xsd:integer)
+(<http://data.lblod.info/id/personen/69f909c80c4a335473b2c486f746a0f55ee2004d9ae2b9d24f1a4bd3e81fee1b> "455"^^xsd:integer <http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/4c713f09-1317-4860-bbbd-e8f7dfd78a2f> "2"^^xsd:integer)
+(<http://data.lblod.info/id/personen/773ac26bba30788e837947cee60c3342a1cc74f73f5844f78e141dfb23efb551> "420"^^xsd:integer <http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/4c713f09-1317-4860-bbbd-e8f7dfd78a2f> "3"^^xsd:integer)
+(<http://data.lblod.info/id/personen/dbe28aa8-d7cc-408a-992e-8af084213046> "390"^^xsd:integer <http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/4c713f09-1317-4860-bbbd-e8f7dfd78a2f> "4"^^xsd:integer)
+(<http://data.lblod.info/id/personen/4499c8ee-3fae-4f41-bbbc-7444a63e9a2c> "385"^^xsd:integer <http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/4c713f09-1317-4860-bbbd-e8f7dfd78a2f> "5"^^xsd:integer)
+(<http://data.lblod.info/id/personen/3873812b-af57-4cda-bf02-2878900f96e5> "375"^^xsd:integer <http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/4c713f09-1317-4860-bbbd-e8f7dfd78a2f> "6"^^xsd:integer)
+(<http://data.lblod.info/id/personen/88f025ac-6dac-42e8-bc64-93b1d6feee7e> "291"^^xsd:integer <http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/4c713f09-1317-4860-bbbd-e8f7dfd78a2f> "7"^^xsd:integer)
+(<http://data.lblod.info/id/personen/fb646619-26f5-480f-a643-cd6dbd65fe8e> "279"^^xsd:integer <http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/4c713f09-1317-4860-bbbd-e8f7dfd78a2f> "8"^^xsd:integer)
+(<http://data.lblod.info/id/personen/d2981042d8c070f0c28aff704981ec8f5191d68bdcd75b958a56b51cb76287a3> "1512"^^xsd:integer <http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/89498d89-6c68-4273-9609-b9c097727a0f> "1"^^xsd:integer)
+(<http://data.lblod.info/id/personen/d5eaffd03d9bb26a8a45cdfa6912e5e16c16b5a1a2ded0390edb900e4d5c1162> "975"^^xsd:integer <http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/89498d89-6c68-4273-9609-b9c097727a0f> "2"^^xsd:integer)
+(<http://data.lblod.info/id/personen/60ecee63d857b196103c48e42ace80c4498dd354612473257c87501ee1504d85> "769"^^xsd:integer <http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/89498d89-6c68-4273-9609-b9c097727a0f> "3"^^xsd:integer)
+(<http://data.lblod.info/id/personen/b64c13bd9da400d41a774983d71e5f4d9e54cc155edcd49a914744a50e71ee5c> "735"^^xsd:integer <http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/89498d89-6c68-4273-9609-b9c097727a0f> "4"^^xsd:integer)
+(<http://data.lblod.info/id/personen/82f9b504ca454b67e986a97fc1c0982839023ae3432544db9db3a6b494a0a618> "734"^^xsd:integer <http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/89498d89-6c68-4273-9609-b9c097727a0f> "5"^^xsd:integer)
+(<http://data.lblod.info/id/personen/dedd179e86b0e1f509ddaf0600c32c22055be108ba8a727dc8d71f654c6f8070> "693"^^xsd:integer <http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/89498d89-6c68-4273-9609-b9c097727a0f> "6"^^xsd:integer)
+(<http://data.lblod.info/id/personen/48425654-ca7f-4d20-a567-1853768ffe24> "674"^^xsd:integer <http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/89498d89-6c68-4273-9609-b9c097727a0f> "7"^^xsd:integer)
+(<http://data.lblod.info/id/personen/ee059d040d5e0c5d1ec001e363b735dec3ab3849b32bb39068de3643659e8ff7> "546"^^xsd:integer <http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/89498d89-6c68-4273-9609-b9c097727a0f> "8"^^xsd:integer)
+(<http://data.lblod.info/id/personen/609dbfc05f42e18a57dcc7113b77a89189892fc21f011ab7321b5ebab519c291> "525"^^xsd:integer <http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/89498d89-6c68-4273-9609-b9c097727a0f> "9"^^xsd:integer)
+(<http://data.lblod.info/id/personen/708fcb6d50d891dfb92f57bb6a7c8373e75dab8b78d98ffe4f0b562f847fb920> "515"^^xsd:integer <http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/89498d89-6c68-4273-9609-b9c097727a0f> "10"^^xsd:integer)
+(<http://data.lblod.info/id/personen/fef89871-d603-4e97-a1b4-aa8241fbaf0a> "499"^^xsd:integer <http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/89498d89-6c68-4273-9609-b9c097727a0f> "11"^^xsd:integer)
+(<http://data.lblod.info/id/personen/8e4d326d04d434bbce974061ea188ae7212cabd8ec96da40183c21adcbae269c> "481"^^xsd:integer <http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/89498d89-6c68-4273-9609-b9c097727a0f> "12"^^xsd:integer)
+(<http://data.lblod.info/id/personen/4a655e3e-2d65-450a-837c-37ac0677e39d> "464"^^xsd:integer <http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/89498d89-6c68-4273-9609-b9c097727a0f> "13"^^xsd:integer)
+  }
+
+}
