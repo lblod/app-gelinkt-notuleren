@@ -1,0 +1,16 @@
+
+               PREFIX ns5:  <http://purl.org/dc/terms/>
+               PREFIX ns2: <http://mu.semte.ch/vocabularies/core/>
+               # delete subscenario
+                DELETE {
+                  GRAPH ?g {
+                    ?s ?p ?o.
+                  }
+                }
+                WHERE {
+                  GRAPH ?g {
+                    ?s ?p ?o .
+                    FILTER( ?s IN (<http://data.lblod.info/id/mandatarissen/98b9e66e-771f-4918-9dba-8def3b91317b>,<http://data.lblod.info/id/mandatarissen/b54d8f5e-abe8-476c-a978-999a4cccf90c>,<http://data.lblod.info/id/mandatarissen/85bfa781-f161-413a-a5c4-3ea2735c83df>,<http://data.lblod.info/id/mandatarissen/4d4ce61b-7908-4af4-a19d-2e3ab13df13b>,<http://data.lblod.info/id/mandatarissen/bedd6f74-135e-4f30-83aa-d9c55d13b2d2>,<http://data.lblod.info/id/mandatarissen/6e1499f0-cfc4-496e-abb7-e48445fba2b9>,<http://data.lblod.info/id/mandatarissen/4e08615a-65d8-46c3-8d01-7a534387c7b2>,<http://data.lblod.info/id/mandatarissen/ce05fb56-d203-442d-8c59-6d0519e95152>,<http://data.lblod.info/id/mandatarissen/09436d2d-3379-43aa-b54d-aab8f64f7e25>,<http://data.lblod.info/id/mandatarissen/d047c0a7-a977-4505-ac72-204dd850f7dc>,<http://data.lblod.info/id/mandatarissen/5c31d64f-6d0e-4ee9-8f35-ad5712507afa>,<http://data.lblod.info/id/mandatarissen/6d99b877-f8bb-49cd-964c-a85f89967cb6>,<http://data.lblod.info/id/mandatarissen/26ac761f-6fb7-4fa9-91aa-b0edf5c5763f>,<http://data.lblod.info/id/mandatarissen/c9290d29-7fb4-46a0-b0a4-fde95eb94c3e>,<http://data.lblod.info/id/mandatarissen/18a5a4f0-6203-4964-a4e4-5935150f88f6>,<http://data.lblod.info/id/mandatarissen/83bc790c-6209-423e-bb2c-1dfa2467d5ec>,<http://data.lblod.info/id/mandatarissen/24e91edd-bada-46b7-a2f9-9894e252ad34>,<http://data.lblod.info/id/mandatarissen/23896a31-5a2a-4a5b-92a2-cd02b9a40529>,<http://data.lblod.info/id/mandatarissen/ba7e259e-55af-4edb-9914-0fd347aafc74>,<http://data.lblod.info/id/mandatarissen/8ca33b6a-fa95-45b7-bc86-0049ae8e7453>,<http://data.lblod.info/id/mandatarissen/ae8994e3-98ea-4936-aaa3-7b26057d7386>,<http://data.lblod.info/id/mandatarissen/cc65fc27-8605-4d91-9193-e65f234ed22c>,<http://data.lblod.info/id/mandatarissen/c03af1fb-d355-48bb-ad6c-f6da163a0e3d>,<http://data.lblod.info/id/mandatarissen/5ac5651d-2b51-42fc-b4f4-9c69d2d1a6be>,<http://data.lblod.info/id/mandatarissen/fe2e7da2-5a0e-413a-a83f-14422528bf22>)) .
+                  }
+                };
+           
