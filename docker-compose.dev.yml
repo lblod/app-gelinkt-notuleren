@@ -17,6 +17,7 @@ services:
   identifier:
     ports:
       - "80:80"
+    restart: "no"
   database:
     restart: "no"
   virtuoso:
