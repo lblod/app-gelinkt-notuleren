@@ -1,0 +1,12 @@
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX mu:   <http://mu.semte.ch/vocabularies/core/>
+DELETE {
+  GRAPH ?g {
+     ?s mu:uuid ?uuid
+  }
+}WHERE {
+  GRAPH ?g {
+     ?s mu:uuid ?uuid
+     FILTER(STRSTARTS(?uuid,'http://'))
+  }
+}
