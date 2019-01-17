@@ -1,0 +1,28 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+INSERT {
+  GRAPH ?g {
+    ?mandaat a mandaat:Mandaat ;
+      mu:uuid ?uuid ;
+      org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/59a90e03-4f22-4bb9-8c91-132618db4b38> .
+
+    ?bestuursorgaanInTijd org:hasPost ?mandaat .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?bestuursorgaanInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaan .
+    ?bestuursorgaan besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000005> ;
+      skos:prefLabel ?bestuursorgaanLabel .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":2019-01-01:ToegevoegdeSchepen", STR(?bestuursorgaanLabel))) AS ?uuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/mandaten/", STR(?uuid))) AS ?mandaat) .
+  }
+}
+
+;
