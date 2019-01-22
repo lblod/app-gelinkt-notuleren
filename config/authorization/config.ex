@@ -36,7 +36,7 @@ defmodule Acl.UserGroups.Config do
       # // PUBLIC
       %GroupSpec{
         name: "public",
-        useage: [:read],
+        useage: [:read,:read_for_write],
         access: %AlwaysAccessible{}, # TODO: Should be only for logged in users
         graphs: [ %GraphSpec{
                     graph: "http://mu.semte.ch/graphs/public",
@@ -74,6 +74,7 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/mandaat#Fractie",
                         "http://purl.org/dc/terms/PeriodOfTime",
                         "http://www.w3.org/ns/org#Membership",
+                        "http://mu.semte.ch/vocabularies/ext/signing/BlockchainStatus",
                       ]
                     } },
                   %GraphSpec{
@@ -81,6 +82,16 @@ defmodule Acl.UserGroups.Config do
                     constraint: %ResourceFormatConstraint{
                       resource_prefix: "http://mu.semte.ch/sessions/"
                     } } ] },
+      # %GroupSpec{
+      #   name: "otherpublic",
+      #   useage: [:read],
+      #   access: %AlwaysAccessible{}, # TODO: Should be only for logged in users
+      #   graphs: [ %GraphSpec{
+      #               graph: "http://mu.semte.ch/graphs/sessions",
+      #               constraint: %ResourceFormatConstraint{
+      #                 resource_prefix: "http://mu.semte.ch/sessions/"
+      #               } } ] },
+
       # %GroupSpec{
       #   name: "public-wf",
       #   useage: [:write, :read_for_write],
@@ -110,14 +121,16 @@ defmodule Acl.UserGroups.Config do
                       resource_types: [
                         "http://mu.semte.ch/vocabularies/ext/EditorDocument",
                         "http://mu.semte.ch/vocabularies/ext/DocumentContainer",
-                        "http://mu.semte.ch/vocabularies/ext/PrePublishedAgenda",
+                        "http://mu.semte.ch/vocabularies/ext/VersionedAgenda",
                         "http://www.w3.org/ns/person#Person",
                         "http://data.vlaanderen.be/ns/persoon#Geboorte",
                         "http://www.w3.org/ns/adms#Identifier",
                         "http://xmlns.com/foaf/0.1/Person",
                         "http://xmlns.com/foaf/0.1/OnlineAccount",
                         "http://mu.semte.ch/vocabularies/ext/TaskSolution",
-                        "http://mu.semte.ch/vocabularies/ext/TasklistSolution"
+                        "http://mu.semte.ch/vocabularies/ext/TasklistSolution",
+                        "http://mu.semte.ch/vocabularies/ext/signing/SignedResource",
+                        "http://mu.semte.ch/vocabularies/ext/signing/PublishedResource",
                       ] } } ] },
 
         %GroupSpec{
@@ -162,12 +175,14 @@ defmodule Acl.UserGroups.Config do
                       resource_types: [
                         "http://mu.semte.ch/vocabularies/ext/EditorDocument",
                         "http://mu.semte.ch/vocabularies/ext/DocumentContainer",
-                        "http://mu.semte.ch/vocabularies/ext/PrePublishedAgenda",
+                        "http://mu.semte.ch/vocabularies/ext/VersionedAgenda",
                         "http://mu.semte.ch/vocabularies/ext/TaskSolution",
                         "http://mu.semte.ch/vocabularies/ext/TasklistSolution",
                         "http://www.w3.org/ns/person#Person",
                         "http://data.vlaanderen.be/ns/persoon#Geboorte",
-                        "http://www.w3.org/ns/adms#Identifier"
+                        "http://www.w3.org/ns/adms#Identifier",
+                        "http://mu.semte.ch/vocabularies/ext/signing/SignedResource",
+                        "http://mu.semte.ch/vocabularies/ext/signing/PublishedResource",
                       ] } } ] },
 
 
