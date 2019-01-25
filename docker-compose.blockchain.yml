@@ -1,39 +1,41 @@
-version: '3.4'
+version: "3.4"
 services:
   blockchain:
     image: trase/blockchain-event-broker
+    restart: always
     environment:
-      NODE_ENV: development
+      NODE_ENV: ${NODE_ENV}
     links:
       - virtuoso:database
   blockchainNotifier:
     image: lblod/blockchain-informing-service
+    restart: always
     links:
       - virtuoso:database
       - blockchain:blockchain
   decisionservice:
     image: trase/decision-service
+    restart: always
     environment:
-      PEER1: grpc://${URL}:7051
-      ORDERER1: grpc://${URL}:7050
-      CA_URL: http://${URL}:7054
       NODE_ENV: ${NODE_ENV}
-      ORG_MSP: ${ORG_MSP}
-      CA_DOMAIN: ${CA_DOMAIN}
       ADMIN_PW: ${ADMIN_PW}
-      JWT_SECRET: ${JWT_SECRET}
       MONGO_URI: ${MONGO_URI}
-      MONGO_HOST_TEST: ${MONGO_HOST_TEST}
-      SALT_ROUNDS: ${SALT_ROUNDS}
-      CHANNEL_NAME: ${CHANNEL_NAME}
-      CHAINCODE_NAME: ${CHAINCODE_NAME}
     links:
       - virtuoso:database
-  authenticationdummy:
-    image: trase/authentication-service-dummy
+    volumes:
+      - "PATH_TO_CLIENT_CONFIG:/clients/"
+      - "PARG_TO_NETWORK_CONFIG:/config/"
+      - "PATH_TO_HTTPS_CERTS/:/usr/src/app/certs/"
+  authentication:
+    image: trase/authentication-service
+    restart: always
     environment:
-      CA_URL: http://${URL}:7054
       NODE_ENV: ${NODE_ENV}
-      ORG_MSP: ${ORG_MSP}
-      CA_DOMAIN: ${CA_DOMAIN}
       ADMIN_PW: ${ADMIN_PW}
+    volumes:
+      - "PATH_TO_CLIENT_CONFIG:/clients/"
+      - "PARG_TO_NETWORK_CONFIG:/config/"
+  frontend:
+    image: trase/frontend
+    ports:
+      - "82:1234"
