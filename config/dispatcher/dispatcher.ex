@@ -164,17 +164,6 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/editor-document-statuses/"
   end
 
-  match "/publish/*path" do
-    Proxy.forward conn, path, "http://notulenimporter/publish/"
-  end
-  match "/prepublish/*path" do
-    Proxy.forward conn, path, "http://preimporter/prepublish/"
-  end
-  match "/signing/*path" do
-    Proxy.forward conn, path, "http://preimporter/signing/"
-  end
-
-
   match "/rdfs-classes/*path" do
     Proxy.forward conn, path, "http://cache/rdfs-classes/"
   end
@@ -182,7 +171,9 @@ defmodule Dispatcher do
   match "/rdfs-properties/*path" do
     Proxy.forward conn, path, "http://cache/rdfs-properties/"
   end
-
+  match "/publish/*path" do
+    Proxy.forward conn, path, "http://notulenimporter/publish/"
+  end
   post "/sync/*path" do
     Proxy.forward conn, path, "http://sync/sync"
   end
@@ -190,7 +181,13 @@ defmodule Dispatcher do
   ############
   # Blockchain
   ############
+  match "/prepublish/*path" do
+    Proxy.forward conn, path, "http://preimporter/prepublish/"
+  end
 
+  match "/signing/*path" do
+    Proxy.forward conn, path, "http://preimporter/signing/"
+  end
   match "/signed-resources/*path" do
     Proxy.forward conn, path, "http://resource/signed-resources/"
   end
