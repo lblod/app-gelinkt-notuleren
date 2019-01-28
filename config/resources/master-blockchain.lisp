@@ -37,7 +37,9 @@
   :has-one `((blockchain-status :via ,(s-prefix "sign:status")
                                 :as "status")
              (versioned-agenda :via ,(s-prefix "ext:publishesAgenda")
-                               :as "versioned-agenda"))
+                               :as "versioned-agenda")
+             (gebruiker :via ,(s-prefix "sign:signatory")
+                        :as "gebruiker"))
   :resource-base (s-url "http://lblod.info/published-resources/")
   :on-path "published-resources")
 
