@@ -1,0 +1,26 @@
+
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+
+INSERT {
+    GRAPH ?g {
+        ?editorDocument ext:belongsToBestuurseenheid ?eenheid.
+    }
+}
+WHERE {
+{
+SELECT DISTINCT ?g ?editorDocument {
+    GRAPH ?g {
+        ?editorDocument a ext:EditorDocument.
+    }
+}
+LIMIT 100
+OFFSET 5600
+}
+BIND(REPLACE(STR(?g), 'http://mu.semte.ch/graphs/organizations/','') AS ?uuid).
+
+GRAPH <http://mu.semte.ch/graphs/public> {
+    ?eenheid mu:uuid ?uuid.
+}
+}
+    
