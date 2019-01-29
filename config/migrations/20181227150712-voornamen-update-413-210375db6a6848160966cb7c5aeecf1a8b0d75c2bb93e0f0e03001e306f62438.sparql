@@ -1,0 +1,480 @@
+# started voornamen-update-413-210375db6a6848160966cb7c5aeecf1a8b0d75c2bb93e0f0e03001e306f62438 at 2018-12-27T15:07:12+00:00
+        PREFIX person: <http://www.w3.org/ns/person#>
+        DELETE {
+          GRAPH ?g {
+            <http://data.lblod.info/id/personen/dc2e68a8-d7c1-4321-8143-8af7c9b6c7e9> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/dc2e68a8-d7c1-4321-8143-8af7c9b6c7e9> a person:Person.
+           <http://data.lblod.info/id/personen/dc2e68a8-d7c1-4321-8143-8af7c9b6c7e9> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        };
+        INSERT {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/dc2e68a8-d7c1-4321-8143-8af7c9b6c7e9> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Frieda".
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/dc2e68a8-d7c1-4321-8143-8af7c9b6c7e9> [] [].
+          }
+        }
+     ;
+
+        PREFIX person: <http://www.w3.org/ns/person#>
+        DELETE {
+          GRAPH ?g {
+            <http://data.lblod.info/id/personen/7bfc19ce-2ded-49a0-b12f-7b738009531e> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/7bfc19ce-2ded-49a0-b12f-7b738009531e> a person:Person.
+           <http://data.lblod.info/id/personen/7bfc19ce-2ded-49a0-b12f-7b738009531e> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        };
+        INSERT {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/7bfc19ce-2ded-49a0-b12f-7b738009531e> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Claudia".
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/7bfc19ce-2ded-49a0-b12f-7b738009531e> [] [].
+          }
+        }
+     ;
+
+        PREFIX person: <http://www.w3.org/ns/person#>
+        DELETE {
+          GRAPH ?g {
+            <http://data.lblod.info/id/personen/b1af593690a90c9f7ffae9b5b921d37e272b969cddb973d76f2e84ab1c3535e9> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/b1af593690a90c9f7ffae9b5b921d37e272b969cddb973d76f2e84ab1c3535e9> a person:Person.
+           <http://data.lblod.info/id/personen/b1af593690a90c9f7ffae9b5b921d37e272b969cddb973d76f2e84ab1c3535e9> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        };
+        INSERT {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/b1af593690a90c9f7ffae9b5b921d37e272b969cddb973d76f2e84ab1c3535e9> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Roger".
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/b1af593690a90c9f7ffae9b5b921d37e272b969cddb973d76f2e84ab1c3535e9> [] [].
+          }
+        }
+     ;
+
+        PREFIX person: <http://www.w3.org/ns/person#>
+        DELETE {
+          GRAPH ?g {
+            <http://data.lblod.info/id/personen/87e90bfa33411c14d2618c013901859c3ee366559b6b0cc2bce75f216a37dbf0> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/87e90bfa33411c14d2618c013901859c3ee366559b6b0cc2bce75f216a37dbf0> a person:Person.
+           <http://data.lblod.info/id/personen/87e90bfa33411c14d2618c013901859c3ee366559b6b0cc2bce75f216a37dbf0> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        };
+        INSERT {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/87e90bfa33411c14d2618c013901859c3ee366559b6b0cc2bce75f216a37dbf0> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Hilde".
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/87e90bfa33411c14d2618c013901859c3ee366559b6b0cc2bce75f216a37dbf0> [] [].
+          }
+        }
+     ;
+
+        PREFIX person: <http://www.w3.org/ns/person#>
+        DELETE {
+          GRAPH ?g {
+            <http://data.lblod.info/id/personen/e3761b9cfa885c64ecd343213e990ff9cded39fdcb3e76c5a215905bfb3af69d> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/e3761b9cfa885c64ecd343213e990ff9cded39fdcb3e76c5a215905bfb3af69d> a person:Person.
+           <http://data.lblod.info/id/personen/e3761b9cfa885c64ecd343213e990ff9cded39fdcb3e76c5a215905bfb3af69d> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        };
+        INSERT {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/e3761b9cfa885c64ecd343213e990ff9cded39fdcb3e76c5a215905bfb3af69d> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Ben".
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/e3761b9cfa885c64ecd343213e990ff9cded39fdcb3e76c5a215905bfb3af69d> [] [].
+          }
+        }
+     ;
+
+        PREFIX person: <http://www.w3.org/ns/person#>
+        DELETE {
+          GRAPH ?g {
+            <http://data.lblod.info/id/personen/25b664ed436c9e4480ff81751a42c6fe237637f1d91e7e9af553d58b9025aac3> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/25b664ed436c9e4480ff81751a42c6fe237637f1d91e7e9af553d58b9025aac3> a person:Person.
+           <http://data.lblod.info/id/personen/25b664ed436c9e4480ff81751a42c6fe237637f1d91e7e9af553d58b9025aac3> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        };
+        INSERT {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/25b664ed436c9e4480ff81751a42c6fe237637f1d91e7e9af553d58b9025aac3> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Annie".
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/25b664ed436c9e4480ff81751a42c6fe237637f1d91e7e9af553d58b9025aac3> [] [].
+          }
+        }
+     ;
+
+        PREFIX person: <http://www.w3.org/ns/person#>
+        DELETE {
+          GRAPH ?g {
+            <http://data.lblod.info/id/personen/d92e5e619ac695b59eded6377a8366164a04ac46dba0c4be62874c09ab60fca5> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/d92e5e619ac695b59eded6377a8366164a04ac46dba0c4be62874c09ab60fca5> a person:Person.
+           <http://data.lblod.info/id/personen/d92e5e619ac695b59eded6377a8366164a04ac46dba0c4be62874c09ab60fca5> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        };
+        INSERT {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/d92e5e619ac695b59eded6377a8366164a04ac46dba0c4be62874c09ab60fca5> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Rika".
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/d92e5e619ac695b59eded6377a8366164a04ac46dba0c4be62874c09ab60fca5> [] [].
+          }
+        }
+     ;
+
+        PREFIX person: <http://www.w3.org/ns/person#>
+        DELETE {
+          GRAPH ?g {
+            <http://data.lblod.info/id/personen/d74cee5f5669db26e9b96a561c9361655a0030ede39d4a67c439283ccb3c5c23> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/d74cee5f5669db26e9b96a561c9361655a0030ede39d4a67c439283ccb3c5c23> a person:Person.
+           <http://data.lblod.info/id/personen/d74cee5f5669db26e9b96a561c9361655a0030ede39d4a67c439283ccb3c5c23> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        };
+        INSERT {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/d74cee5f5669db26e9b96a561c9361655a0030ede39d4a67c439283ccb3c5c23> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Filip".
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/d74cee5f5669db26e9b96a561c9361655a0030ede39d4a67c439283ccb3c5c23> [] [].
+          }
+        }
+     ;
+
+        PREFIX person: <http://www.w3.org/ns/person#>
+        DELETE {
+          GRAPH ?g {
+            <http://data.lblod.info/id/personen/7800701c4ae5664a83d09e20f0015d4cb006af731379a2a9642ae385dd3bfad5> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/7800701c4ae5664a83d09e20f0015d4cb006af731379a2a9642ae385dd3bfad5> a person:Person.
+           <http://data.lblod.info/id/personen/7800701c4ae5664a83d09e20f0015d4cb006af731379a2a9642ae385dd3bfad5> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        };
+        INSERT {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/7800701c4ae5664a83d09e20f0015d4cb006af731379a2a9642ae385dd3bfad5> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Lucia".
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/7800701c4ae5664a83d09e20f0015d4cb006af731379a2a9642ae385dd3bfad5> [] [].
+          }
+        }
+     ;
+
+        PREFIX person: <http://www.w3.org/ns/person#>
+        DELETE {
+          GRAPH ?g {
+            <http://data.lblod.info/id/personen/a51e9ea2edea454dfc9716ea3c01b8aaf2a4252cff692ae0d2167540400c4fd7> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/a51e9ea2edea454dfc9716ea3c01b8aaf2a4252cff692ae0d2167540400c4fd7> a person:Person.
+           <http://data.lblod.info/id/personen/a51e9ea2edea454dfc9716ea3c01b8aaf2a4252cff692ae0d2167540400c4fd7> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        };
+        INSERT {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/a51e9ea2edea454dfc9716ea3c01b8aaf2a4252cff692ae0d2167540400c4fd7> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Philip".
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/a51e9ea2edea454dfc9716ea3c01b8aaf2a4252cff692ae0d2167540400c4fd7> [] [].
+          }
+        }
+     ;
+
+        PREFIX person: <http://www.w3.org/ns/person#>
+        DELETE {
+          GRAPH ?g {
+            <http://data.lblod.info/id/personen/ce116ea8-d856-4bda-8a31-34252e28ea9d> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/ce116ea8-d856-4bda-8a31-34252e28ea9d> a person:Person.
+           <http://data.lblod.info/id/personen/ce116ea8-d856-4bda-8a31-34252e28ea9d> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        };
+        INSERT {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/ce116ea8-d856-4bda-8a31-34252e28ea9d> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Micheline".
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/ce116ea8-d856-4bda-8a31-34252e28ea9d> [] [].
+          }
+        }
+     ;
+
+        PREFIX person: <http://www.w3.org/ns/person#>
+        DELETE {
+          GRAPH ?g {
+            <http://data.lblod.info/id/personen/6e56160e9ce0e39534c4c2f9e76ccc151d83dd040435bd3275944bfc21669ac3> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/6e56160e9ce0e39534c4c2f9e76ccc151d83dd040435bd3275944bfc21669ac3> a person:Person.
+           <http://data.lblod.info/id/personen/6e56160e9ce0e39534c4c2f9e76ccc151d83dd040435bd3275944bfc21669ac3> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        };
+        INSERT {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/6e56160e9ce0e39534c4c2f9e76ccc151d83dd040435bd3275944bfc21669ac3> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Tine".
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/6e56160e9ce0e39534c4c2f9e76ccc151d83dd040435bd3275944bfc21669ac3> [] [].
+          }
+        }
+     ;
+
+        PREFIX person: <http://www.w3.org/ns/person#>
+        DELETE {
+          GRAPH ?g {
+            <http://data.lblod.info/id/personen/6e96334a-c19b-4d31-8762-8297191c5132> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/6e96334a-c19b-4d31-8762-8297191c5132> a person:Person.
+           <http://data.lblod.info/id/personen/6e96334a-c19b-4d31-8762-8297191c5132> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        };
+        INSERT {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/6e96334a-c19b-4d31-8762-8297191c5132> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Bob".
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/6e96334a-c19b-4d31-8762-8297191c5132> [] [].
+          }
+        }
+     ;
+
+        PREFIX person: <http://www.w3.org/ns/person#>
+        DELETE {
+          GRAPH ?g {
+            <http://data.lblod.info/id/personen/7dc1107bf9d2fa7bd3d7109e214a840549132c11fb4027af7daee7632f2172ad> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/7dc1107bf9d2fa7bd3d7109e214a840549132c11fb4027af7daee7632f2172ad> a person:Person.
+           <http://data.lblod.info/id/personen/7dc1107bf9d2fa7bd3d7109e214a840549132c11fb4027af7daee7632f2172ad> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        };
+        INSERT {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/7dc1107bf9d2fa7bd3d7109e214a840549132c11fb4027af7daee7632f2172ad> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Paul".
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/7dc1107bf9d2fa7bd3d7109e214a840549132c11fb4027af7daee7632f2172ad> [] [].
+          }
+        }
+     ;
+
+        PREFIX person: <http://www.w3.org/ns/person#>
+        DELETE {
+          GRAPH ?g {
+            <http://data.lblod.info/id/personen/fd84d989-38d5-4afa-85f9-8dcc05b283e8> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/fd84d989-38d5-4afa-85f9-8dcc05b283e8> a person:Person.
+           <http://data.lblod.info/id/personen/fd84d989-38d5-4afa-85f9-8dcc05b283e8> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        };
+        INSERT {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/fd84d989-38d5-4afa-85f9-8dcc05b283e8> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Peter".
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/fd84d989-38d5-4afa-85f9-8dcc05b283e8> [] [].
+          }
+        }
+     ;
+
+        PREFIX person: <http://www.w3.org/ns/person#>
+        DELETE {
+          GRAPH ?g {
+            <http://data.lblod.info/id/personen/a0d9e872-66d6-4374-a7c1-e82a887cefc7> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/a0d9e872-66d6-4374-a7c1-e82a887cefc7> a person:Person.
+           <http://data.lblod.info/id/personen/a0d9e872-66d6-4374-a7c1-e82a887cefc7> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        };
+        INSERT {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/a0d9e872-66d6-4374-a7c1-e82a887cefc7> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Rika".
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/a0d9e872-66d6-4374-a7c1-e82a887cefc7> [] [].
+          }
+        }
+     ;
+
+        PREFIX person: <http://www.w3.org/ns/person#>
+        DELETE {
+          GRAPH ?g {
+            <http://data.lblod.info/id/personen/ab612860c333d480880a077f3b5c77ef127bbc794c7aa8653b172c54a2c20964> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/ab612860c333d480880a077f3b5c77ef127bbc794c7aa8653b172c54a2c20964> a person:Person.
+           <http://data.lblod.info/id/personen/ab612860c333d480880a077f3b5c77ef127bbc794c7aa8653b172c54a2c20964> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        };
+        INSERT {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/ab612860c333d480880a077f3b5c77ef127bbc794c7aa8653b172c54a2c20964> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Elke".
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/ab612860c333d480880a077f3b5c77ef127bbc794c7aa8653b172c54a2c20964> [] [].
+          }
+        }
+     ;
+
+        PREFIX person: <http://www.w3.org/ns/person#>
+        DELETE {
+          GRAPH ?g {
+            <http://data.lblod.info/id/personen/3f58a79932c5b69dc90b2c21fd2eab6588b6d027eff6e065f9449f906101f0f9> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/3f58a79932c5b69dc90b2c21fd2eab6588b6d027eff6e065f9449f906101f0f9> a person:Person.
+           <http://data.lblod.info/id/personen/3f58a79932c5b69dc90b2c21fd2eab6588b6d027eff6e065f9449f906101f0f9> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        };
+        INSERT {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/3f58a79932c5b69dc90b2c21fd2eab6588b6d027eff6e065f9449f906101f0f9> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Lieve".
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/3f58a79932c5b69dc90b2c21fd2eab6588b6d027eff6e065f9449f906101f0f9> [] [].
+          }
+        }
+     ;
+
+        PREFIX person: <http://www.w3.org/ns/person#>
+        DELETE {
+          GRAPH ?g {
+            <http://data.lblod.info/id/personen/4238a19bfac6a4352a570841e98cf55acfbd5be18dc729a6e094e51ce6942878> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/4238a19bfac6a4352a570841e98cf55acfbd5be18dc729a6e094e51ce6942878> a person:Person.
+           <http://data.lblod.info/id/personen/4238a19bfac6a4352a570841e98cf55acfbd5be18dc729a6e094e51ce6942878> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        };
+        INSERT {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/4238a19bfac6a4352a570841e98cf55acfbd5be18dc729a6e094e51ce6942878> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Luk".
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/4238a19bfac6a4352a570841e98cf55acfbd5be18dc729a6e094e51ce6942878> [] [].
+          }
+        }
+     ;
+
+        PREFIX person: <http://www.w3.org/ns/person#>
+        DELETE {
+          GRAPH ?g {
+            <http://data.lblod.info/id/personen/9c77bddbf1c95a1cb4e76e7a83dc90752b9671a35174c0e720897759ca01bc4a> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/9c77bddbf1c95a1cb4e76e7a83dc90752b9671a35174c0e720897759ca01bc4a> a person:Person.
+           <http://data.lblod.info/id/personen/9c77bddbf1c95a1cb4e76e7a83dc90752b9671a35174c0e720897759ca01bc4a> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> ?first_name.
+          }
+        };
+        INSERT {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/9c77bddbf1c95a1cb4e76e7a83dc90752b9671a35174c0e720897759ca01bc4a> <http://data.vlaanderen.be/ns/persoon#gebruikteVoornaam> "Maggie".
+          }
+        }
+        WHERE {
+          GRAPH ?g {
+           <http://data.lblod.info/id/personen/9c77bddbf1c95a1cb4e76e7a83dc90752b9671a35174c0e720897759ca01bc4a> [] [].
+          }
+        }
+     # finished voornamen-update-413-210375db6a6848160966cb7c5aeecf1a8b0d75c2bb93e0f0e03001e306f62438 at 2018-12-27T15:07:12+00:00

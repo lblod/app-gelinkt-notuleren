@@ -1,0 +1,23 @@
+PREFIX sign: <http://mu.semte.ch/vocabularies/ext/signing/>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://mu.semte.ch/vocabularies/ext/signing/publication-status/unpublished>
+      a sign:BlockchainStatus;
+      dct:title "unpublished";
+      dct:description "The item is not published on the blockchain yet.".
+    <http://mu.semte.ch/vocabularies/ext/signing/publication-status/publishing>
+      a sign:BlockchainStatus;
+      dct:title "publishing";
+      dct:description "The item is being published by the blockchain.".
+    <http://mu.semte.ch/vocabularies/ext/signing/publication-status/published>
+      a sign:BlockchainStatus;
+      dct:title "published";
+      dct:description "The item is published on the blockchain.".
+    <http://mu.semte.ch/vocabularies/ext/signing/publication-status/publication_failed>
+      a sign:BlockchainStatus;
+      dct:title "publication failed";
+      dct:description "The publication of this item on the blockchain has failed.".
+  }
+}

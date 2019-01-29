@@ -13,7 +13,7 @@
 (add-prefix "dct" "http://purl.org/dc/terms/")
 (add-prefix "cpsv" "http://purl.org/vocab/cpsv#")
 (add-prefix "dul" "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#")
-(add-prefix "adms" "https://www.w3.org/ns/adms#")
+(add-prefix "adms" "http://www.w3.org/ns/adms#")
 (add-prefix "person" "http://www.w3.org/ns/person#")
 (add-prefix "org" "http://www.w3.org/ns/org#")
 (add-prefix "prov" "http://www.w3.org/ns/prov#")
@@ -24,3 +24,4 @@
 (add-prefix "pav" "http://purl.org/pav/")
 (add-prefix "schema" "http://schema.org/")
 (add-prefix "rdfs" "http://www.w3.org/2000/01/rdf-schema#")
+(add-prefix "sign" "http://mu.semte.ch/vocabularies/ext/signing/")
