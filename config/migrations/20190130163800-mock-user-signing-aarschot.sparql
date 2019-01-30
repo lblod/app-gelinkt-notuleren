@@ -1,0 +1,44 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX mu:<http://mu.semte.ch/vocabularies/core/>
+PREFIX ext:<http://mu.semte.ch/vocabularies/ext/>
+
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/organizations/ba4d960fe3e01984e15fd0b141028bab8f2b9b240bf1e5ab639ba0d7fe4dc522> {
+  ?persoon a foaf:Person;
+           mu:uuid ?uuidPersoon;
+           foaf:firstName ?classificatie;
+           foaf:familyName ?naam;
+           foaf:member ?bestuurseenheid;
+           foaf:account ?account.
+  ?account a foaf:OnlineAccount;
+           mu:uuid ?uuidAccount;
+           foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>;
+           ext:sessionRole "GelinktNotuleren-schrijver", "GelinktNotuleren-lezer" ,"GelinktNotuleren-ondertekenaar", "GelinktNotuleren-sjablonen_valideerder", "GelinktNotuleren-publiceerder".
+           }
+             GRAPH <http://mu.semte.ch/graphs/public> {
+  ?persoon a foaf:Person;
+           mu:uuid ?uuidPersoon;
+           foaf:firstName ?classificatie;
+           foaf:familyName ?naam;
+           foaf:member ?bestuurseenheid;
+           foaf:account ?account.
+  ?account a foaf:OnlineAccount;
+           mu:uuid ?uuidAccount;
+           foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>;
+           ext:sessionRole "GelinktNotuleren-schrijver", "GelinktNotuleren-lezer" ,"GelinktNotuleren-ondertekenaar", "GelinktNotuleren-sjablonen_valideerder", "GelinktNotuleren-publiceerder".
+           }
+}
+WHERE {
+     <http://data.lblod.info/id/bestuurseenheden/ba4d960fe3e01984e15fd0b141028bab8f2b9b240bf1e5ab639ba0d7fe4dc522> a besluit:Bestuurseenheid;
+     skos:prefLabel ?eenheid;
+     besluit:classificatie/skos:prefLabel ?classificatie.
+     BIND(CONCAT(?eenheid, " ondertekenaar") as ?naam)
+     BIND(CONCAT(?classificatie, " ", ?naam) as ?volledigeNaam)
+     BIND(MD5(?volledigeNaam) as ?uuidPersoon)
+     BIND(MD5(CONCAT(?volledigeNaam,"ACCOUNT")) as ?uuidAccount)
+     BIND(IRI(CONCAT("http://data.lblod.info/id/persoon/", ?uuidPersoon)) AS ?persoon)
+     BIND(IRI(CONCAT("http://data.lblod.info/id/account/", ?uuidAccount)) AS ?account)
+}
