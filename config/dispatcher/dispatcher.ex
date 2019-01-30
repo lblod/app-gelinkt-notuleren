@@ -200,6 +200,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/versioned-agendas/"
   end
 
+  match "/versioned-notulen/*path" do
+    Proxy.forward conn, path, "http://resource/versioned-notulen/"
+  end
+  
   match "/blockchain-statuses/*path" do
     Proxy.forward conn, path, "http://resource/blockchain-statuses/"
   end

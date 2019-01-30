@@ -17,6 +17,25 @@
   :resource-base (s-url "http://lblod.info/presented-agendas/")
   :on-path "versioned-agendas")
 
+(define-resource versioned-notulen ()
+  :class (s-prefix "ext:PublishableNotulen")
+  :properties `((:state :string ,(s-prefix "ext:stateString"))
+                (:content :string ,(s-prefix "ext:content"))
+                (:kind :string ,(s-prefix "ext:notulenKind")))
+  :has-many `((signed-resource :via ,(s-prefix "ext:signsNotulen")
+                               :inverse t
+                               :as "signed-resources"))
+  :has-one `((published-resource :via ,(s-prefix "ext:publishesNotulen")
+                                 :inverse t
+                                 :as "published-resource")
+             (editor-document :via ,(s-prefix "prov:wasDerivedFrom")
+                              :as "editor-document")
+             (document-container :via ,(s-prefix "ext:hasVersionedNotulen")
+                                 :inverse t
+                                 :as "document-container"))
+  :resource-base (s-url "http://lblod.info/presented-agendas/")
+  :on-path "versioned-notulen")
+
 (define-resource signed-resource ()
   :class (s-prefix "sign:SignedResource")
   :properties `((:content :string ,(s-prefix "sign:text"))

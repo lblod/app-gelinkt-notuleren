@@ -67,7 +67,9 @@
   :has-many `((editor-document :via ,(s-prefix "pav:hasVersion")
                                :as "revisions")
               (versioned-agenda :via ,(s-prefix "ext:hasVersionedAgenda")
-                                :as "versioned-agendas"))
+                                :as "versioned-agendas")
+              (versioned-notulen :via ,(s-prefix "ext:hasVersionedNotulen")
+                                 :as "versioned-notulen"))
   :resource-base (s-url "http://lblod.info/document-containers/")
   :on-path "document-containers")
 
