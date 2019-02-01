@@ -52,9 +52,7 @@
                       :as "zitting")
              (document-container :via ,(s-prefix "pav:hasVersion")
                                  :inverse t
-                                 :as "document-container")
-             (bestuurseenheid :via ,(s-prefix "ext:belongsToBestuurseenheid")
-                              :as "bestuurseenheid"))
+                                 :as "document-container"))
   :has-many `((tasklist-solution :via ,(s-prefix "ext:editorDocumentTasklistSolution")
                                  :as "tasklist-solutions"))
   :resource-base (s-url "http://lblod.info/editor-documents/")
