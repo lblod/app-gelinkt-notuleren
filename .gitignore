@@ -18,4 +18,8 @@ gelinkt-notuleren-app/
 publicatie-app
 
 docker-compose.override.yml
+.env
 
+# Ignore blockchain crypto/network
+/config/blockchain/*
+!/config/blockchain/.gitkeep 
