@@ -62,7 +62,6 @@
   :resource-base (s-url "http://lblod.info/published-resources/")
   :on-path "published-resources")
 
-;; TODO: define the publication statuses in a migration
 (define-resource blockchain-status ()
   :class (s-prefix "sign:BlockcainStatus")
   :properties `((:title :string ,(s-prefix "dct:title"))
