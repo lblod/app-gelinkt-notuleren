@@ -41,7 +41,7 @@
                 (:updated-on :datetime ,(s-prefix "pav:lastUpdateOn"))
                 (:starred :boolean ,(s-prefix "tmp:starred"))
                 (:origin :string ,(s-prefix "pav:providedBy"))) ;;de gemeente Niel
-             (editor-document :via ,(s-prefix "pav:previousVersion")
+  :has-one `((editor-document :via ,(s-prefix "pav:previousVersion")
                               :as "previous-version")
              (editor-document :via ,(s-prefix "pav:previousVersion")
                               :inverse t
