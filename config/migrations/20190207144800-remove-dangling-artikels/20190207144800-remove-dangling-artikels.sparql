@@ -1,0 +1,17 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX eli: <http://data.europa.eu/eli/ontology#>
+
+DELETE {
+    GRAPH <http://mu.semte.ch/graphs/public> {
+        ?artikel ?artikelP ?artikelO.
+    }
+}
+WHERE {
+    GRAPH <http://mu.semte.ch/graphs/public> {
+        ?artikel a besluit:Artikel.
+        ?artikel ?artikelP ?artikelO.
+        FILTER( NOT EXISTS { ?besluit a besluit:Besluit. ?besluit eli:has_part ?artikel. } )
+    }
+}
+OFFSET 200000
+LIMIT 100000
