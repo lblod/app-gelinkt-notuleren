@@ -41,9 +41,7 @@
                 (:updated-on :datetime ,(s-prefix "pav:lastUpdateOn"))
                 (:starred :boolean ,(s-prefix "tmp:starred"))
                 (:origin :string ,(s-prefix "pav:providedBy"))) ;;de gemeente Niel
-  :has-one `((editor-document-status :via ,(s-prefix "ext:editorDocumentStatus")
-                                     :as "status")
-             (editor-document :via ,(s-prefix "pav:previousVersion")
+  :has-one `((editor-document :via ,(s-prefix "pav:previousVersion")
                               :as "previous-version")
              (editor-document :via ,(s-prefix "pav:previousVersion")
                               :inverse t
@@ -63,7 +61,9 @@
 (define-resource document-container ()
   :class (s-prefix "ext:DocumentContainer")
   :has-one `((editor-document :via ,(s-prefix "pav:hasCurrentVersion")
-                              :as "current-version"))
+                              :as "current-version")
+             (editor-document-status :via ,(s-prefix "ext:editorDocumentStatus")
+                           :as "status"))
   :has-many `((editor-document :via ,(s-prefix "pav:hasVersion")
                                :as "revisions")
               (versioned-agenda :via ,(s-prefix "ext:hasVersionedAgenda")
