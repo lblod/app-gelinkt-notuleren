@@ -1,0 +1,77 @@
+<http://lblod.info/templates/a5a954a3-4a70-463c-a744-c8aa8536b233> a <http://mu.semte.ch/vocabularies/ext/Template>;
+  <http://purl.org/dc/terms/title> "Zitting (klassieke stijl)";
+  <http://mu.semte.ch/vocabularies/core/uuid> "a5a954a3-4a70-463c-a744-c8aa8536b233";
+  <http://mu.semte.ch/vocabularies/ext/activeInContext> "http://xmlns.com/foaf/0.1/Document";
+  <http://mu.semte.ch/vocabularies/ext/disabledInContext> "http://data.vlaanderen.be/ns/besluit#Zitting";
+  <http://mu.semte.ch/vocabularies/ext/templateContent> """
+<div typeof="besluit:Zitting" resource="http://data.lblod.info/id/zittingen/${generateUuid()}">
+
+  <!-- meta zitting -->
+  <h2 class="h1" property="dc:title">
+    Notulen <span property="ext:scopedBestuursorgaanText">selecteer bestuursorgaan</span>, zitting van
+    <span class="annotation" property="besluit:geplandeStart" datatype="xsd:dateTime" content="">
+     <span typeOf="ext:currentDate">&nbsp;</span>
+    </span>
+  </h2>
+  <br>
+
+  <p>
+    Geplande start:
+    <span class="annotation" property="besluit:geplandeStart" datatype="xsd:dateTime" content="">
+     <span typeOf="ext:currentDate">&nbsp;</span>
+    </span>
+  </p>
+
+  <p>
+    Locatie: <span class="mark-highlight-manual">Voer naam locatie in</span>, <span class="mark-highlight-manual">Voer naam zaal in</span>.
+  </p>
+  <br>
+  <br>
+
+  <!-- aanwezigen -->
+  <h3 class="h2">Aanwezigen bij de zitting</h3>
+  <span property="ext:insertAanwezigenText">Beheer aanwezigen bij de zitting.</span>
+  <br>
+  <br>
+
+  <!-- opening -->
+  <p>De voorzitter van de gemeenteraad zit de vergadering voor en opent de zitting op
+  <span class="annotation" property="besluit:geplandeStart" datatype="xsd:dateTime" content="">
+    <span typeOf="ext:currentDate">&nbsp;</span>
+  </span>
+ .</p>
+  <br>
+  <br>
+  <!-- opening -->
+  <h3 class="h2">Agenda overzicht</h3>
+  <span property="ext:insertAgendaText">beheer agenda</span>
+  <br>
+  <br>
+  <!-- Agenda behandeling -->
+  <h3 class="h2"> Behandeling van de Agendapunten</h3>
+  <div property="ext:behandelingVanAgendapuntenContainer">
+    <br>
+  </div>
+  <br>
+  <br>
+  <!-- Sluiting zitting-->
+  <h3 class="h2">Sluiting van de zitting</h3>
+
+  <p>De voorzitter van de raad sluit de zitting op
+     <span property="prov:endedAtTime" content="" datatype="xsd:dateTime"><span typeOf="ext:currentDate">&nbsp;</span></span>.
+  </p>
+  <br>
+  <br>
+  <br>
+
+  <p>Namens de Raad,</p>
+  <br>
+  <p><span class="mark-highlight-manual">Voer naam algemeen directeur in</span></p>
+  <p><strong>Algemeen directeur</strong></p>
+  <br>
+  <p><span class="mark-highlight-manual">Voer naam in voorzitter van de gemeenteraad</span></p>
+  <p><strong>Voorzitter van de gemeenteraad</strong></p>
+
+</div>
+""";
+<http://mu.semte.ch/vocabularies/ext/templateMatches> "Voeg zitting toe".
