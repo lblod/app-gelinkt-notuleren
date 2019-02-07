@@ -1,0 +1,258 @@
+PREFIX nmo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nmo#>
+PREFIX toezichtReport: <http://mu.semte.ch/vocabularies/ext/supervision/reporting/>
+PREFIX toezicht: <http://mu.semte.ch/vocabularies/ext/supervision/>
+PREFIX validation: <http://mu.semte.ch/vocabularies/validation/>
+PREFIX bbcdr: <http://mu.semte.ch/vocabularies/ext/bbcdr/>
+PREFIX export: <http://mu.semte.ch/vocabularies/ext/export/>
+PREFIX dbpedia: <http://dbpedia.org/ontology/>
+PREFIX schema: <http://schema.org/>
+PREFIX nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
+PREFIX nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#>
+PREFIX pav: <http://purl.org/pav/>
+PREFIX nao: <http://www.semanticdesktop.org/ontologies/2007/08/15/nao#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX regorg: <https://www.w3.org/ns/regorg#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX person: <http://www.w3.org/ns/person#>
+PREFIX adms: <http://www.w3.org/ns/adms#>
+PREFIX dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#>
+PREFIX cpsv: <http://purl.org/vocab/cpsv#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX m8g: <http://data.europa.eu/m8g/>
+PREFIX eli: <http://data.europa.eu/eli/ontology#>
+PREFIX generiek: <http://data.vlaanderen.be/ns/generiek#>
+PREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX tmp: <http://mu.semte.ch/vocabularies/tmp/>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX rm: <http://mu.semte.ch/vocabularies/logical-delete/>
+PREFIX typedLiterals: <http://mu.semte.ch/vocabularies/typed-literals/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX app: <http://mu.semte.ch/app/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+
+
+###
+# Remove mandaten all mandaten from OCMW Aalter & Deinze
+###
+DELETE {
+  GRAPH ?g {
+    ?bov org:hasPost ?m.
+  }
+}
+
+WHERE {
+  GRAPH ?g {
+    ?s besluit:bestuurt ?eenheid.
+    ?s skos:prefLabel ?orgNaam.
+    ?bov mandaat:isTijdspecialisatieVan ?s.
+    ?bov org:hasPost ?m.
+    ?m org:role ?rol.
+    ?rol skos:prefLabel ?naam.
+  }
+
+  FILTER (?eenheid in ( <http://data.lblod.info/id/bestuurseenheden/f73c7109-06a0-45d7-b558-879d87ca3553>,
+                       <http://data.lblod.info/id/bestuurseenheden/a4fd24f3-cc6d-4ea5-91c7-efa02d3b970f> ))
+
+}
+
+;
+
+###
+# Insert mandaten again BC Aalter
+###
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/bestuursorganen/bc253135-1d73-4f9a-a453-0ea2820774a2> org:hasPost <http://data.lblod.info/id/mandaten/f1f0db3ced2ca37b2a0b99f3302e15848dfcdd5c12b77fc2b542f1a7ab11ff73>.
+    <http://data.lblod.info/id/bestuursorganen/bc253135-1d73-4f9a-a453-0ea2820774a2> org:hasPost <http://data.lblod.info/id/mandaten/d439210d345638ca081d2115a4089d1fca2cd41bf3f84dc066214ddccd14a608>.
+
+  }
+}
+
+;
+
+###
+# Insert mandaten again BC Deinze
+###
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/bestuursorganen/ba819c96-7893-43f8-8c20-d14471581c33> org:hasPost <http://data.lblod.info/id/mandaten/0ae5b9bcee44101b912d8ded1b586513e7f3c32431346c65742b62756a572425>.
+    <http://data.lblod.info/id/bestuursorganen/ba819c96-7893-43f8-8c20-d14471581c33> org:hasPost <http://data.lblod.info/id/mandaten/44b775715704a7f57e57da5c267f65680517e233b7e88294edf1e3ef8213e486>.
+  }
+}
+
+;
+
+###
+# Insert mandaten again RMW Aalter
+###
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/bestuursorganen/21dba537-1a10-4d7e-99ba-0dece86a7b4a> org:hasPost <http://data.lblod.info/id/mandaten/b8c3f24865aa1fd7735a556c6b7d0a17d9cd83234be8f56b139c2dae3c5f1d44>.
+    <http://data.lblod.info/id/bestuursorganen/21dba537-1a10-4d7e-99ba-0dece86a7b4a> org:hasPost <http://data.lblod.info/id/mandaten/ce73ea88df742f76c518ce01514fcdb9e7df9fb48e8f1875407cafe879affa52>.
+  }
+}
+
+;
+
+###
+# Insert mandaten again RMW Deinze
+###
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/bestuursorganen/1abcb23b-4bb6-4ca3-a7ac-27df7338467e> org:hasPost <http://data.lblod.info/id/mandaten/0b41f55c2acadf36fe690adf51e7d2f9b4d02cece375e125deff3e5614e9af4f>.
+    <http://data.lblod.info/id/bestuursorganen/1abcb23b-4bb6-4ca3-a7ac-27df7338467e> org:hasPost <http://data.lblod.info/id/mandaten/15937d08f5ebda67cfa93dda2a54d1930e69b5152fec564a5b98e88ec33c7348>.
+  }
+}
+
+;
+
+###
+# Insert mandaten again Vast bureau Aalter
+###
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/bestuursorganen/1bdbc0e9-5b84-4840-bc24-7acdd86bdf06> org:hasPost <http://data.lblod.info/id/mandaten/9f64c580-fe08-4953-9b25-aefa8d27c702>.
+    <http://data.lblod.info/id/bestuursorganen/1bdbc0e9-5b84-4840-bc24-7acdd86bdf06> org:hasPost <http://data.lblod.info/id/mandaten/16b225e7-163b-4986-8c03-ddff392273ee>.
+  }
+}
+
+;
+
+###
+# Insert mandaten again Vast bureau Deinze
+###
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/bestuursorganen/523869ee-e3e0-4c5f-91bc-070014c06895> org:hasPost <http://data.lblod.info/id/mandaten/0ae5b9bcee44101b912d8ded1b586513e7f3c32431346c65742b62756a572425>.
+    <http://data.lblod.info/id/bestuursorganen/523869ee-e3e0-4c5f-91bc-070014c06895> org:hasPost <http://data.lblod.info/id/mandaten/44b775715704a7f57e57da5c267f65680517e233b7e88294edf1e3ef8213e486>.
+  }
+}
+
+;
+
+###
+# Insert mandaten again Voorzitter van het Bijzonder Comité voor de Sociale Dienst Deinze
+###
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/bestuursorganen/2a2136f4-58c0-4936-a701-8c8d9b8368b6> org:hasPost <http://data.lblod.info/id/mandaten/7af04f4d-48e9-4eb3-9652-7fe1554b5d89>.
+  }
+}
+
+;
+
+###
+# Insert mandaten again Voorzitter van het Bijzonder Comité voor de Sociale Dienst Aalter
+###
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/bestuursorganen/13289429-db2b-4d10-94d2-ab43d4891a23> org:hasPost <http://data.lblod.info/id/mandaten/f1f0db3ced2ca37b2a0b99f3302e15848dfcdd5c12b77fc2b542f1a7ab11ff73>.
+  }
+}
+
+;
+
+###
+# Remove mandaten all mandaten from gemeente Aalter & Deinze
+###
+DELETE {
+  GRAPH ?g {
+    ?bov org:hasPost ?m.
+  }
+}
+
+WHERE {
+  GRAPH ?g {
+    ?s besluit:bestuurt ?eenheid.
+    ?s skos:prefLabel ?orgNaam.
+    ?bov mandaat:isTijdspecialisatieVan ?s.
+    ?bov org:hasPost ?m.
+    ?m org:role ?rol.
+    ?rol skos:prefLabel ?naam.
+  }
+
+  FILTER (?eenheid in ( <http://data.lblod.info/id/bestuurseenheden/5116efa8-e96e-46a2-aba6-c077e9056a96>,
+                       <http://data.lblod.info/id/bestuurseenheden/d93451bf-e89a-4528-80f3-f0a1c19361a8> ))
+
+}
+
+;
+
+###
+# Insert mandaten again Burgemeester Aalter
+###
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/bestuursorganen/ee5cd8ab-c969-4e53-b360-b0389b57fc6b> org:hasPost <http://data.lblod.info/id/mandaten/cae357e7314299c1c0611a47a2f49279d83f726ee02ce7b40a845c8526c73a84>.
+  }
+}
+
+;
+
+###
+# Insert mandaten again Burgemeester Deinze
+###
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/bestuursorganen/7d48d4f2-f4c3-4bc7-a7a6-083a3224b110> org:hasPost <http://data.lblod.info/id/mandaten/1799718d2547d9bb1ab03ddff69fc0571bdad2688314efb5d9e6f2e768eeb468>.
+  }
+}
+
+;
+
+###
+# Insert mandaten again College & Burgemeester Aalter
+###
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/bestuursorganen/2f95588c-cc11-49cb-ad81-72bb16c931d8> org:hasPost <http://data.lblod.info/id/mandaten/cae357e7314299c1c0611a47a2f49279d83f726ee02ce7b40a845c8526c73a84>.
+    <http://data.lblod.info/id/bestuursorganen/2f95588c-cc11-49cb-ad81-72bb16c931d8> org:hasPost <http://data.lblod.info/id/mandaten/9cea0c07d9700923f38a6256e565b2bf62035fe8d716c7989e9cdf305fbb3e1b>.
+    <http://data.lblod.info/id/bestuursorganen/2f95588c-cc11-49cb-ad81-72bb16c931d8> org:hasPost <http://data.lblod.info/id/mandaten/1837b6a0c604e70f335044ad2cfeaf84ad0af9233648878bbdc1a3e0a5f09ea3>.
+  }
+}
+
+;
+
+###
+# Insert mandaten again College & Burgemeester Deinze
+###
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/bestuursorganen/d87cb43a-e9d3-4f7b-9f51-e0b86050383b> org:hasPost <http://data.lblod.info/id/mandaten/1799718d2547d9bb1ab03ddff69fc0571bdad2688314efb5d9e6f2e768eeb468>.
+    <http://data.lblod.info/id/bestuursorganen/d87cb43a-e9d3-4f7b-9f51-e0b86050383b> org:hasPost <http://data.lblod.info/id/mandaten/d15ffcceed7f220abc28c664083270f26b677441842af6702ad5acf3d428de11>.
+     <http://data.lblod.info/id/bestuursorganen/d87cb43a-e9d3-4f7b-9f51-e0b86050383b> org:hasPost <http://data.lblod.info/id/mandaten/ec85ebf95268e2ee2c92e0138f03257afc0f2003775f3cd801685a76befeb378>.
+  }
+}
+
+;
+
+###
+# Insert mandaten again Gemeenteraad Aalter
+###
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/bestuursorganen/0921318d-c195-4fbf-aadf-2534cdd63c7d> org:hasPost <http://data.lblod.info/id/mandaten/8f29fd9ff41a8c1b8bb27acb09e34c32e729f7f779a79e6b02fec536b53b1147>.
+    <http://data.lblod.info/id/bestuursorganen/0921318d-c195-4fbf-aadf-2534cdd63c7d> org:hasPost <http://data.lblod.info/id/mandaten/b76443989280a3eb54e04d181bed4416f849b8bbdef61c1184b1c881e9a02f6e>.
+  }
+}
+
+;
+
+###
+# Insert mandaten again Gemeenteraad Deinze
+###
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/bestuursorganen/366e7aac-7339-4894-85fd-79fd35d4e164> org:hasPost <http://data.lblod.info/id/mandaten/28a8f81f1c548866171524edf128986929c71d5c3fde893af0039058be564717>.
+    <http://data.lblod.info/id/bestuursorganen/366e7aac-7339-4894-85fd-79fd35d4e164> org:hasPost <http://data.lblod.info/id/mandaten/6cd8579e7fc28f50c19f9f569f7a4987dbf903fee2bf546ff208e4d7ef9a2907>.
+  }
+}
+
+;

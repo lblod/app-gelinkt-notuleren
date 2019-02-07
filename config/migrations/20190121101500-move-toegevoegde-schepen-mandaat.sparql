@@ -1,0 +1,33 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?gemeenteraadInTijd org:hasPost ?mandaat .
+  }
+}
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?schepenCollegeInTijd org:hasPost ?mandaat .
+  }
+} WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?mandaat a mandaat:Mandaat ;
+      org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/59a90e03-4f22-4bb9-8c91-132618db4b38> .
+
+    ?gemeenteraadInTijd org:hasPost ?mandaat ;
+       mandaat:isTijdspecialisatieVan ?gemeenteraad .
+    ?gemeenteraad besluit:bestuurt ?bestuurseenheid .
+
+    ?schepenCollegeInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?schepenCollege .
+    ?schepenCollege besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000006> .
+    ?schepenCollege besluit:bestuurt ?bestuurseenheid .
+
+  }
+}
