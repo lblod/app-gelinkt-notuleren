@@ -62,7 +62,6 @@ services:
     environment:
       SPARQL_UPDATE: "true"
       DEFAULT_GRAPH: "http://mu.semte.ch/application"
-      BACKUP_PREFIX: "virtuoso_backup_190205T0330-"
     volumes:
       - ./data/db:/data
     restart: always
