@@ -1,0 +1,28 @@
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX pav: <http://purl.org/pav/>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+INSERT {
+  GRAPH ?g {
+      ?documentContainer dct:publisher ?bestuurseenheid
+  }
+}
+WHERE {
+    {
+        SELECT DISTINCT ?g ?documentContainer {
+            GRAPH ?g {
+                ?documentContainer a ext:DocumentContainer.
+            }
+        }
+        LIMIT 100
+        OFFSET 400
+    }
+    BIND(REPLACE(STR(?g), 'http://mu.semte.ch/graphs/organizations/','') AS ?bestuurseenheidUuid).
+
+
+    GRAPH <http://mu.semte.ch/graphs/public> {
+        ?bestuurseenheid mu:uuid ?bestuurseenheidUuid.
+    }
+}
+    
