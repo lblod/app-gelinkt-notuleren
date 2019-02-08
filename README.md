@@ -1,7 +1,13 @@
 # Starting the complete stack
 
 ```bash
-# Development mode
+# Clone repo
+https://github.com/Trasebe/lblod-app-gelinkt-notuleren.git
+
+# Set environment variables
+cp .env.example .env
+
+# Start using development mode
 docker-compose -f docker-compose.yml -f docker-compose.blockchain.dev.yml -f docker-compose.demo.yml up
 ```
 
