@@ -47,7 +47,7 @@ services:
     ports:
       - "82:1234"
     volumes:
-      - "../lblod-frontend-dev/:/app/"
+      - "../lblod-frontend-dev/:/usr/src/app/"
   mongodb:
     image: mongo:latest
     environment:
