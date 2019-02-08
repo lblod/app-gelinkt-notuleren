@@ -130,7 +130,7 @@ services:
     labels:
       - "logging=true"
   preimporter:
-    image: lblod/notulen-prepublish-service:0.0.1
+    image: lblod/notulen-prepublish-service:0.0.2
     links:
       - database:database
     restart: always
