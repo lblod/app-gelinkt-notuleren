@@ -16,7 +16,7 @@ services:
     ports:
       - "8888:80"
     volumes:
-      - "../lblod-event-broker/:/app/"
+      - "../lblod-services/event-broker/:/app/"
   decisionservice:
     image: trase/decision-service
     restart: always
@@ -27,9 +27,9 @@ services:
       - virtuoso:database
       - mongodb
     volumes:
-      - "../lblod-decision-service/:/app/"
-      - "../LBLOD/artifacts/clients/:/clients/"
-      - "../LBLOD/artifacts/config/:/config/"
+      - "../lblod-services/decision-service/:/app/"
+      - "../network/artifacts/clients/:/clients/"
+      - "../network/artifacts/config/:/config/"
     depends_on:
       - mongodb
   authentication:
@@ -39,15 +39,15 @@ services:
       NODE_ENV: ${NODE_ENV}
       ADMIN_PW: ${ADMIN_PW}
     volumes:
-      - "../lblod-authentication-service/:/app/"
-      - "../LBLOD/artifacts/clients/:/clients/"
-      - "../LBLOD/artifacts/config/:/config/"
+      - "../lblod-services/authentication-service/:/app/"
+      - "../network/artifacts/clients/:/clients/"
+      - "../network/artifacts/config/:/config/"
   frontend:
     image: trase/frontend
     ports:
       - "82:1234"
     volumes:
-      - "../lblod-frontend-dev/:/usr/src/app/"
+      - "../lblod-services/frontend/:/usr/src/app/"
   mongodb:
     image: mongo:latest
     environment:
