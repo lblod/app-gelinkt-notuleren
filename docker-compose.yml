@@ -61,7 +61,6 @@ services:
     environment:
       SPARQL_UPDATE: "true"
       DEFAULT_GRAPH: "http://mu.semte.ch/application"
-      BACKUP_PREFIX: "virtuoso_backup_190205T0330-"
     volumes:
       - ./data/db:/data
     restart: always
@@ -130,7 +129,7 @@ services:
     labels:
       - "logging=true"
   preimporter:
-    image: lblod/notulen-importer-service:blockchain-preimporter
+    image: lblod/notulen-prepublish-service:0.0.1
     links:
       - database:database
     restart: always

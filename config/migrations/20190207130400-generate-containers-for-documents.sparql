@@ -1,0 +1,37 @@
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX pav: <http://purl.org/pav/>
+
+INSERT {
+  GRAPH ?g {
+      ?documentContainer mu:uuid ?uuid.
+      ?documentContainer a ext:DocumentContainer.
+      ?documentContainer pav:hasCurrentVersion ?editorDocument.
+      ?documentContainer pav:hasVersion ?editorDocument.
+  }
+}
+WHERE {
+    GRAPH ?g {
+        ?editorDocument a ext:EditorDocument.
+        FILTER (NOT EXISTS { ?documentContainerNonExisting a ext:DocumentContainer; pav:hasVersion ?editorDocument })
+        FILTER (NOT EXISTS { ?document a ext:EditorDocument; pav:previousVersion ?editorDocument })
+
+        BIND(SHA256(CONCAT(STR(?editorDocument), STR(RAND()), STR(?editorDocument), STRUUID())) as ?uuid)
+        BIND(IRI(CONCAT("http://data.lblod.info/document-containers/", ?uuid)) as ?documentContainer)
+
+    }
+}
+;
+INSERT {
+  GRAPH ?g {
+      ?documentContainer pav:hasVersion ?editorDocument.
+  }
+}
+WHERE {
+    GRAPH ?g {
+        ?editorDocument a ext:EditorDocument.
+        FILTER (NOT EXISTS { ?documentContainerNonExisting a ext:DocumentContainer; pav:hasVersion ?editorDocument }).
+
+        ?latestDocument a ext:EditorDocument; pav:previousVersion+ ?editorDocument; ^pav:hasVersion ?documentContainer.
+    }
+}
