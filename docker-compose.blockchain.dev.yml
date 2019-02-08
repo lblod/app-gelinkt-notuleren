@@ -1,7 +1,13 @@
 version: "3.4"
 services:
+  blockchainNotifier:
+    image: lblod/blockchain-informing-service
+    restart: always
+    links:
+      - virtuoso:database
+      - blockchain:blockchain
   blockchain:
-    image: trase/blockchain-event-broker:0.1.2
+    image: trase/blockchain-event-broker
     restart: always
     environment:
       NODE_ENV: ${NODE_ENV}
@@ -9,14 +15,10 @@ services:
       - virtuoso:database
     ports:
       - "8888:80"
-  blockchainNotifier:
-    image: lblod/blockchain-informing-service:0.0.3
-    restart: always
-    links:
-      - virtuoso:database
-      - blockchain:blockchain
+    volumes:
+      - "../lblod-event-broker/:/app/"
   decisionservice:
-    image: trase/decision-service:0.1.1
+    image: trase/decision-service
     restart: always
     environment:
       NODE_ENV: ${NODE_ENV}
@@ -25,23 +27,27 @@ services:
       - virtuoso:database
       - mongodb
     volumes:
-      - "./config/blockchain/clients/:/clients/"
-      - "./config/blockchain/config/:/config/"
+      - "../lblod-decision-service/:/app/"
+      - "../LBLOD/artifacts/clients/:/clients/"
+      - "../LBLOD/artifacts/config/:/config/"
     depends_on:
       - mongodb
   authentication:
-    image: trase/authentication-service:0.1.0
+    image: trase/authentication-service
     restart: always
     environment:
       NODE_ENV: ${NODE_ENV}
       ADMIN_PW: ${ADMIN_PW}
     volumes:
-      - "./config/blockchain/clients/:/clients/"
-      - "./config/blockchain/config/:/config/"
+      - "../lblod-authentication-service/:/app/"
+      - "../LBLOD/artifacts/clients/:/clients/"
+      - "../LBLOD/artifacts/config/:/config/"
   frontend:
-    image: trase/frontend:0.1.0
+    image: trase/frontend
     ports:
       - "82:1234"
+    volumes:
+      - "../lblod-frontend-dev/:/app/"
   mongodb:
     image: mongo:latest
     environment:
