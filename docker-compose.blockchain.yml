@@ -9,8 +9,10 @@ services:
       - virtuoso:database
     ports:
       - "8888:80"
+    volumes:
+      - "/Users/wouter/Documents/Hyperledger/lblod/LBLOD/lblod-blockchain-event-broker/:/app/"
   blockchainNotifier:
-    image: lblod/blockchain-informing-service
+    image: lblod/blockchain-informing-service:0.0.3
     restart: always
     links:
       - virtuoso:database
@@ -25,8 +27,9 @@ services:
       - virtuoso:database
       - mongodb
     volumes:
-      - "./config/blockchain/clients/:/clients/"
-      - "./config/blockchain/config/:/config/"
+      - "/Users/wouter/Documents/Hyperledger/lblod/LBLOD/lblod-decision-service/:/app/"
+      - "../../network/artifacts/clients/:/clients/"
+      - "../../network/artifacts/config/:/config/"
       - "./config/blockchain/certs/:/usr/src/app/certs/"
     depends_on:
       - mongodb
@@ -37,8 +40,9 @@ services:
       NODE_ENV: ${NODE_ENV}
       ADMIN_PW: ${ADMIN_PW}
     volumes:
-      - "./config/blockchain/clients/:/clients/"
-      - "./config/blockchain/config/:/config/"
+      - "/Users/wouter/Documents/Hyperledger/lblod/LBLOD/lblod-authentication-integration-service/:/app/"
+      - "../../network/artifacts/clients/:/clients/"
+      - "../../network/artifacts/config/:/config/"
   frontend:
     image: trase/frontend:0.1.0
     ports:
