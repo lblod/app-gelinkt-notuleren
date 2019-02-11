@@ -1,0 +1,73 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/bestuurseenheden/50ede269-5c49-41cd-be68-ac135314019c> a besluit:Bestuurseenheid ;
+       mu:uuid "50ede269-5c49-41cd-be68-ac135314019c" ;
+       skos:prefLabel "Algemeen Ziekenhuis Sint-Dimpna" ;
+       dcterms:identifier "0844179716" ;
+       ext:kbonummer "0844179716" ;
+       besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/cc4e2d67-603b-4784-9b61-e50bac1ec089> ;
+       besluit:werkingsgebied <http://data.lblod.info/id/werkingsgebieden/c94533b210b8b1cb56bb69c4e7647238d39ce1a9c9096b83bc15bfcf5e1fcc36> . #Gemeente Geel
+
+   <http://data.lblod.info/id/bestuursorganen/32205ec8-61f8-4d92-9d58-fbdd09805896> besluit:bestuurt <http://data.lblod.info/id/bestuurseenheden/50ede269-5c49-41cd-be68-ac135314019c> ;
+       a besluit:Bestuursorgaan ;
+       mu:uuid "32205ec8-61f8-4d92-9d58-fbdd09805896" ;
+       skos:prefLabel "Raad van bestuur Algemeen Ziekenhuis Sint-Dimpna" ;
+       besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/013cc838-173a-4657-b1ae-b00c048df943> .
+
+   <http://data.lblod.info/id/bestuursorganen/25d403cd-30eb-4065-bd37-a99d7e6deb44> mandaat:isTijdspecialisatieVan <http://data.lblod.info/id/bestuursorganen/32205ec8-61f8-4d92-9d58-fbdd09805896> ;
+       a besluit:Bestuursorgaan ;
+       mu:uuid "25d403cd-30eb-4065-bd37-a99d7e6deb44" ;
+       mandaat:bindingStart "2012-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+   <http://data.lblod.info/id/bestuursorganen/aadad537-a93c-4ed7-bd85-f5c9c8a36a7c> besluit:bestuurt <http://data.lblod.info/id/bestuurseenheden/50ede269-5c49-41cd-be68-ac135314019c> ;
+       a besluit:Bestuursorgaan ;
+       mu:uuid "aadad537-a93c-4ed7-bd85-f5c9c8a36a7c" ;
+       skos:prefLabel "Algemene vergadering Algemeen Ziekenhuis Sint-Dimpna" ;
+       besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/b52094ff-21a2-4da8-8dbe-f513365d1528> .
+
+   <http://data.lblod.info/id/bestuursorganen/f1c71afa-496b-44b9-91f4-6aab4374871a> mandaat:isTijdspecialisatieVan <http://data.lblod.info/id/bestuursorganen/aadad537-a93c-4ed7-bd85-f5c9c8a36a7c> ;
+       a besluit:Bestuursorgaan ;
+       mu:uuid "f1c71afa-496b-44b9-91f4-6aab4374871a";
+       mandaat:bindingStart "2012-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+  }
+}
+
+;
+
+INSERT {
+  GRAPH ?g {
+     ?persoon a foaf:Person;
+           mu:uuid ?uuidPersoon;
+           foaf:firstName ?classificatie;
+           foaf:familyName ?naam;
+           foaf:member <http://data.lblod.info/id/bestuurseenheden/50ede269-5c49-41cd-be68-ac135314019c> ;
+           foaf:account ?account.
+     ?account a foaf:OnlineAccount;
+           mu:uuid ?uuidAccount;
+           foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>;
+           ext:sessionRole "LoketLB-toezichtGebruiker", "LoketLB-bbcdrGebruiker", "LoketLB-mandaatGebruiker". 
+  }
+} WHERE {
+     <http://data.lblod.info/id/bestuurseenheden/50ede269-5c49-41cd-be68-ac135314019c> a besluit:Bestuurseenheid;
+     skos:prefLabel ?naam;
+     besluit:classificatie/skos:prefLabel ?classificatie.
+     BIND(CONCAT(?classificatie, " ", ?naam) as ?volledigeNaam)
+     BIND(MD5(?volledigeNaam) as ?uuidPersoon)
+     BIND(MD5(CONCAT(?volledigeNaam,"ACCOUNT")) as ?uuidAccount)
+     BIND(IRI(CONCAT("http://data.lblod.info/id/persoon/", ?uuidPersoon)) AS ?persoon)
+     BIND(IRI(CONCAT("http://data.lblod.info/id/account/", ?uuidAccount)) AS ?account)
+
+     VALUES ?g {
+        <http://mu.semte.ch/graphs/organizations/50ede269-5c49-41cd-be68-ac135314019c>
+        <http://mu.semte.ch/graphs/public> 
+     } 
+}
+
