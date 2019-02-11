@@ -1,0 +1,15 @@
+               PREFIX ns5:  <http://purl.org/dc/terms/>
+               PREFIX ns2: <http://mu.semte.ch/vocabularies/core/>
+               # delete subscenario
+                DELETE {
+                  GRAPH ?g {
+                    ?s ?p ?o.
+                  }
+                }
+
+                WHERE {
+                  GRAPH ?g {
+                    ?s ?p ?o .
+                    FILTER( ?s IN (<http://lblod.info/templates/ff846ba3-c46b-4298-9676-13880356e642>, <http://lblod.info/templates/a5a954a3-4a70-463c-a744-c8aa8536b233>, <http://lblod.info/templates/6e480bbd-93d9-4e66-a123-f6feda498bb7>))
+                  }
+                };
