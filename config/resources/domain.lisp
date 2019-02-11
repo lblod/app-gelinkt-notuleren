@@ -14,6 +14,7 @@
 (read-domain-file "slave-organisatie-domain.lisp")
 (read-domain-file "generic-model-plugin-domain.lisp")
 (read-domain-file "tasklist-domain.lisp")
+(read-domain-file "master-blockchain.lisp")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; TEMPLATES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -40,9 +41,7 @@
                 (:updated-on :datetime ,(s-prefix "pav:lastUpdateOn"))
                 (:starred :boolean ,(s-prefix "tmp:starred"))
                 (:origin :string ,(s-prefix "pav:providedBy"))) ;;de gemeente Niel
-  :has-one `((editor-document-status :via ,(s-prefix "ext:editorDocumentStatus")
-                                     :as "status")
-             (editor-document :via ,(s-prefix "pav:previousVersion")
+  :has-one `((editor-document :via ,(s-prefix "pav:previousVersion")
                               :as "previous-version")
              (editor-document :via ,(s-prefix "pav:previousVersion")
                               :inverse t
@@ -61,24 +60,22 @@
 
 (define-resource document-container ()
   :class (s-prefix "ext:DocumentContainer")
-  :has-many `((editor-document :via ,(s-prefix "pav:hasVersion")
-                               :as "revisions"))
   :has-one `((editor-document :via ,(s-prefix "pav:hasCurrentVersion")
                               :as "current-version")
-             (prepublished-agenda :via ,(s-prefix "ext:hasPrePublishedAgenda")
-                                  :as "prepublished-agenda"))
+             (editor-document-status :via ,(s-prefix "ext:editorDocumentStatus")
+                                     :as "status")
+             (bestuurseenheid :via , (s-prefix "dct:publisher")
+                              :as "publisher"))
+  :has-many `((editor-document :via ,(s-prefix "pav:hasVersion")
+                               :as "revisions")
+              (versioned-agenda :via ,(s-prefix "ext:hasVersionedAgenda")
+                                :as "versioned-agendas")
+              (versioned-notulen :via ,(s-prefix "ext:hasVersionedNotulen")
+                                 :as "versioned-notulen")
+              (versioned-besluiten-lijst :via ,(s-prefix "ext:hasVersionedBesluitenLijst")
+                                         :as "versioned-besluiten-lijsten"))
   :resource-base (s-url "http://lblod.info/document-containers/")
   :on-path "document-containers")
-
-(define-resource prepublished-agenda ()
-  :class (s-prefix "ext:PrePublishedAgenda")
-  :properties `((:content :string ,(s-prefix "ext:content"))
-                (:context :string ,(s-prefix "ext:editorDocumentContext")))
-  :has-one `((document-container :via ,(s-prefix "ext:hasPrepPublishedAgenda")
-                                 :inverse t
-                                 :as "document-container"))
-  :resource-base (s-url "http://lblod.info/prepublished-agendas")
-  :on-path "prepublished-agendas")
 
 (define-resource editor-document-status ()
   :class (s-prefix "ext:EditorDocumentStatus")

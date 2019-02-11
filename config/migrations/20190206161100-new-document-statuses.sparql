@@ -1,0 +1,16 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://mu.semte.ch/application/editor-document-statuses/c02542af-e6be-4cc6-be60-4530477109fc>
+    a ext:EditorDocumentStatus;
+    mu:uuid "c02542af-e6be-4cc6-be60-4530477109fc";
+    ext:EditorDocumentStatusName "actief".
+
+    <http://mu.semte.ch/application/editor-document-statuses/cda8ec80-8508-40e2-9bbb-bee6d9536abb>
+    a ext:EditorDocumentStatus;
+    mu:uuid "cda8ec80-8508-40e2-9bbb-bee6d9536abb";
+    ext:EditorDocumentStatusName "gearchiveerd".
+  }
+}
