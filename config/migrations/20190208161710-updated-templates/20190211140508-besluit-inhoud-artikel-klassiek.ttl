@@ -1,0 +1,20 @@
+<http://lblod.info/templates/47f93bc4-2bad-11e9-a77b-9f29cd804da8> a <http://mu.semte.ch/vocabularies/ext/Template>;
+  <http://purl.org/dc/terms/title> "Artikel (klassieke stijl)";
+  <http://mu.semte.ch/vocabularies/core/uuid> "47f93bc4-2bad-11e9-a77b-9f29cd804da8";
+  <http://mu.semte.ch/vocabularies/ext/activeInContext> <http://mu.semte.ch/vocabularies/ext/BesluitKlassiekeStijl>;
+  <http://mu.semte.ch/vocabularies/ext/templateContent> """
+
+  <div property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+    <span property="eli:number"> &nbsp; <span class="mark-highlight-manual">Geef artikel nummer op</span> </span> <!-- will be automated but not now -->
+    <meta property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">
+    <span property="prov:value">Akte te nemen van
+      <br>
+      &nbsp; <span class="mark-highlight-manual">Voer inhoud in</span>. &nbsp;
+    </span>
+  </div>
+  <br>
+  <br>
+  <p>Voeg nieuw artikel in</p> <!-- Plugin en rdfa nakijken -->
+  <br>
+""";
+<http://mu.semte.ch/vocabularies/ext/templateMatches> "Voeg nieuw artikel in" .
