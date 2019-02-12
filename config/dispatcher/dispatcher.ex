@@ -158,17 +158,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/editor-documents/"
   end
   match "/document-containers/*path" do
-    Proxy.forward conn, path,  "http://cache/document-containers/"
+    Proxy.forward conn, path,  "http://resource/document-containers/"
   end
   match "/editor-document-statuses/*path" do
     Proxy.forward conn, path, "http://cache/editor-document-statuses/"
-  end
-
-  match "/publish/*path" do
-    Proxy.forward conn, path, "http://notulenimporter/publish/"
-  end
-  match "/prepublish/*path" do
-    Proxy.forward conn, path, "http://preimporter/prepublish/"
   end
 
   match "/rdfs-classes/*path" do
@@ -178,9 +171,41 @@ defmodule Dispatcher do
   match "/rdfs-properties/*path" do
     Proxy.forward conn, path, "http://cache/rdfs-properties/"
   end
-
+  match "/publish/*path" do
+    Proxy.forward conn, path, "http://notulenimporter/publish/"
+  end
   post "/sync/*path" do
     Proxy.forward conn, path, "http://sync/sync"
+  end
+
+  ############
+  # Blockchain
+  ############
+  match "/prepublish/*path" do
+    Proxy.forward conn, path, "http://preimporter/prepublish/"
+  end
+
+  match "/signing/*path" do
+    Proxy.forward conn, path, "http://preimporter/signing/"
+  end
+  match "/signed-resources/*path" do
+    Proxy.forward conn, path, "http://resource/signed-resources/"
+  end
+
+  match "/published-resources/*path" do
+    Proxy.forward conn, path, "http://resource/published-resources/"
+  end
+
+  match "/versioned-agendas/*path" do
+    Proxy.forward conn, path, "http://resource/versioned-agendas/"
+  end
+
+  match "/versioned-notulen/*path" do
+    Proxy.forward conn, path, "http://resource/versioned-notulen/"
+  end
+  
+  match "/blockchain-statuses/*path" do
+    Proxy.forward conn, path, "http://resource/blockchain-statuses/"
   end
 
   #######
