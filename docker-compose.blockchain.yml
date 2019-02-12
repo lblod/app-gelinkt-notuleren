@@ -38,10 +38,6 @@ services:
     volumes:
       - "./config/blockchain/clients/:/clients/"
       - "./config/blockchain/config/:/config/"
-  frontend:
-    image: trase/frontend:0.1.0
-    ports:
-      - "82:1234"
   mongodb:
     image: mongo:latest
     environment:
