@@ -1,5 +1,5 @@
 (define-resource versioned-agenda ()
-  :class (s-prefix "ext:PublishableAgenda")
+  :class (s-prefix "ext:VersionedAgenda")
   :properties `((:state :string ,(s-prefix "ext:stateString"))
                 (:content :string ,(s-prefix "ext:content"))
                 (:kind :string ,(s-prefix "ext:agendaKind")))
@@ -17,8 +17,26 @@
   :resource-base (s-url "http://lblod.info/presented-agendas/")
   :on-path "versioned-agendas")
 
+(define-resource versioned-besluiten-lijst ()
+  :class (s-prefix "ext:VersionedBesluitenLijst")
+  :properties `((:state :string ,(s-prefix "ext:stateString"))
+                (:content :string ,(s-prefix "ext:content")))
+  :has-many `((signed-resource :via ,(s-prefix "ext:signsBesluitenlijst")
+                               :inverse t
+                               :as "signed-resources"))
+  :has-one `((published-resource :via ,(s-prefix "ext:publishesBesluitenlijst")
+                                 :inverse t
+                                 :as "published-resource")
+             (editor-document :via ,(s-prefix "prov:wasDerivedFrom")
+                              :as "editor-document")
+             (document-container :via ,(s-prefix "ext:hasVersionedBesluitenLijst")
+                                 :inverse t
+                                 :as "document-container"))
+  :resource-base (s-url "http://lblod.info/presented-agendas/")
+  :on-path "versioned-notulen")
+
 (define-resource versioned-notulen ()
-  :class (s-prefix "ext:PublishableNotulen")
+  :class (s-prefix "ext:VersionedNotulen")
   :properties `((:state :string ,(s-prefix "ext:stateString"))
                 (:content :string ,(s-prefix "ext:content"))
                 (:kind :string ,(s-prefix "ext:notulenKind")))

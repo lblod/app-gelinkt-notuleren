@@ -71,7 +71,9 @@
               (versioned-agenda :via ,(s-prefix "ext:hasVersionedAgenda")
                                 :as "versioned-agendas")
               (versioned-notulen :via ,(s-prefix "ext:hasVersionedNotulen")
-                                 :as "versioned-notulen"))
+                                 :as "versioned-notulen")
+              (versioned-besluiten-lijst :via ,(s-prefix "ext:hasVersionedBesluitenLijst")
+                                         :as "versioned-besluiten-lijsten"))
   :resource-base (s-url "http://lblod.info/document-containers/")
   :on-path "document-containers")
 

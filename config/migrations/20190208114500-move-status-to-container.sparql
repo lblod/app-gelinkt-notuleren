@@ -1,0 +1,39 @@
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX pav: <http://purl.org/pav/>
+
+INSERT {
+  GRAPH ?g {
+      ?container ext:editorDocumentStatus ?newStatus.
+  }
+}
+WHERE {
+    GRAPH ?g {
+        ?container a ext:DocumentContainer.
+        ?container pav:hasCurrentVersion ?editorDocument.
+        ?editorDocument a ext:EditorDocument;
+                        ext:editorDocumentStatus ?oldStatus.
+    }
+    VALUES (?oldStatus ?newStatus) {
+      (
+        <http://mu.semte.ch/application/editor-document-statuses/cfd751588a6c453296de9f9c0dff2af4>
+        <http://mu.semte.ch/application/editor-document-statuses/c02542af-e6be-4cc6-be60-4530477109fc>
+      )
+      (
+        <http://mu.semte.ch/application/editor-document-statuses/627aec5d144c422bbd1077022c9b45d1>
+        <http://mu.semte.ch/application/editor-document-statuses/c02542af-e6be-4cc6-be60-4530477109fc>
+     )
+     (
+        <http://mu.semte.ch/application/editor-document-statuses/b763390a63d548bb977fb4804293084a>
+        <http://mu.semte.ch/application/editor-document-statuses/c02542af-e6be-4cc6-be60-4530477109fc>
+     )
+     (
+        <http://mu.semte.ch/application/editor-document-statuses/c272d47d756d4aeaa0be72081f1389c6>
+        <http://mu.semte.ch/application/editor-document-statuses/cda8ec80-8508-40e2-9bbb-bee6d9536abb>
+     )
+    (
+      <http://mu.semte.ch/application/editor-document-statuses/5A8304E8C093B00009000010>
+      <http://mu.semte.ch/application/editor-document-statuses/5A8304E8C093B00009000010>
+    )
+  }
+}
