@@ -13,5 +13,5 @@ WHERE {
         FILTER( NOT EXISTS { ?besluit a besluit:Besluit. ?besluit eli:has_part ?artikel. } )
     }
 }
-OFFSET 100000
+OFFSET 0
 LIMIT 100000
