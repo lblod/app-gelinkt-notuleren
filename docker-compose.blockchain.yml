@@ -1,7 +1,7 @@
 version: "3.4"
 services:
   blockchain:
-    image: trase/blockchain-event-broker:0.1.2
+    image: trase/blockchain-event-broker:0.2.0
     restart: always
     environment:
       NODE_ENV: ${NODE_ENV}
@@ -16,7 +16,7 @@ services:
       - virtuoso:database
       - blockchain:blockchain
   decisionservice:
-    image: trase/decision-service:0.1.1
+    image: trase/decision-service:0.2.0
     restart: always
     environment:
       NODE_ENV: ${NODE_ENV}
@@ -30,7 +30,7 @@ services:
     depends_on:
       - mongodb
   authentication:
-    image: trase/authentication-service:0.1.0
+    image: trase/authentication-service:0.2.0
     restart: always
     environment:
       NODE_ENV: ${NODE_ENV}
