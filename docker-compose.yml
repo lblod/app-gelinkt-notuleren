@@ -17,7 +17,7 @@ services:
     restart: always
     logging: *default-logging
   editor:
-    image: lblod/frontend-gelinkt-notuleren:blockchain-signing
+    image: lblod/frontend-gelinkt-notuleren:0.14.1
     links:
       - identifier:backend
     restart: always
@@ -121,7 +121,7 @@ services:
     labels:
       - "logging=true"
   notulenimporter:
-    image: lblod/notulen-importer-service:blockchain-preimporter
+    image: lblod/notulen-importer-service:0.6.2
     links:
       - virtuoso:database
     restart: always
