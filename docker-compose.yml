@@ -1,7 +1,6 @@
-version: '3.4'
+version: "3.4"
 
-x-logging:
-  &default-logging
+x-logging: &default-logging
   driver: "json-file"
   options:
     max-size: "10m"
@@ -18,7 +17,7 @@ services:
     restart: always
     logging: *default-logging
   editor:
-    image: lblod/frontend-gelinkt-notuleren:0.14.1
+    image: lblod/frontend-gelinkt-notuleren:blockchain-signing
     links:
       - identifier:backend
     restart: always
@@ -122,7 +121,7 @@ services:
     labels:
       - "logging=true"
   notulenimporter:
-    image: lblod/notulen-importer-service:0.6.2
+    image: lblod/notulen-importer-service:blockchain-preimporter
     links:
       - virtuoso:database
     restart: always
