@@ -1,0 +1,60 @@
+version: "3.4"
+services:
+  blockchainNotifier:
+    image: lblod/blockchain-informing-service
+    restart: always
+    links:
+      - virtuoso:database
+      - blockchain:blockchain
+  blockchain:
+    image: trase/blockchain-event-broker
+    restart: always
+    environment:
+      NODE_ENV: ${NODE_ENV}
+    links:
+      - virtuoso:database
+    ports:
+      - "8888:80"
+    volumes:
+      - "../lblod-services/event-broker/:/app/"
+  decisionservice:
+    image: trase/decision-service
+    restart: always
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      ADMIN_PW: ${ADMIN_PW}
+    links:
+      - virtuoso:database
+      - mongodb
+    volumes:
+      - "../lblod-services/decision-service/:/app/"
+      - "../network/artifacts/clients/:/clients/"
+      - "../network/artifacts/config/:/config/"
+    depends_on:
+      - mongodb
+  authentication:
+    image: trase/authentication-service
+    restart: always
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      ADMIN_PW: ${ADMIN_PW}
+    volumes:
+      - "../lblod-services/authentication-service/:/app/"
+      - "../network/artifacts/clients/:/clients/"
+      - "../network/artifacts/config/:/config/"
+  frontend:
+    image: trase/frontend
+    ports:
+      - "82:1234"
+    volumes:
+      - "../lblod-services/frontend/:/usr/src/app/"
+  mongodb:
+    image: mongo:latest
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/data/logs
+    volumes:
+      - ./data/bcdb:/data/db
+    ports:
+      - 27017:27017
+    command: mongod
