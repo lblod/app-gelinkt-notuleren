@@ -7,8 +7,6 @@ services:
       NODE_ENV: ${NODE_ENV}
     links:
       - virtuoso:database
-    ports:
-      - "8888:80"
   blockchainNotifier:
     image: lblod/blockchain-informing-service:0.0.3
     restart: always
@@ -45,6 +43,4 @@ services:
       - MONGO_LOG_DIR=/data/logs
     volumes:
       - ./data/bcdb:/data/db
-    ports:
-      - 27017:27017
     command: mongod
