@@ -142,6 +142,6 @@ services:
     links:
       - virtuoso:database #TODO replace with database when possible
   besluit-publicatie:
-    image: lblod/besluit-publicatie-publish-service:0.0.6
+    image: lblod/besluit-publicatie-publish-service:0.0.7
     links:
-      - virtuoso:database
+      - virtuoso:database #TODO replace with database (see repo as to why)
