@@ -23,6 +23,9 @@ services:
     environment:
       NODE_ENV: ${NODE_ENV}
       ADMIN_PW: ${ADMIN_PW}
+      APP_MONGO_USER: ${APP_MONGO_USER}
+      APP_MONGO_PASS: ${APP_MONGO_PASS}
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
     links:
       - virtuoso:database
       - mongodb
@@ -51,9 +54,15 @@ services:
   mongodb:
     image: mongo:latest
     environment:
-      - MONGO_DATA_DIR=/data/db
-      - MONGO_LOG_DIR=/data/logs
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
+      APP_MONGO_USER: ${APP_MONGO_USER}
+      APP_MONGO_PASS: ${APP_MONGO_PASS}
+      MONGO_DATA_DIR: /data/db
+      MONGO_LOG_DIR: /data/logs
     volumes:
+      - "./config/blockchain/mongodb/userCreation.sh:/docker-entrypoint-initdb.d/userCreation.sh"
       - ./data/bcdb:/data/db
     ports:
       - 27017:27017
