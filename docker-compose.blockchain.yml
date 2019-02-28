@@ -42,7 +42,7 @@ services:
       - "./config/blockchain/clients/:/clients/"
       - "./config/blockchain/config/:/config/"
   mongodb:
-    image: mongo:latest
+    image: mongo:4
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
