@@ -140,7 +140,15 @@ services:
     image: lblod/gemeente-ocmw-sync-service:0.2.4
     links:
       - virtuoso:database #TODO replace with database when possible
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
   besluit-publicatie:
     image: lblod/besluit-publicatie-publish-service:0.0.7
     links:
       - virtuoso:database #TODO replace with database (see repo as to why)
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
