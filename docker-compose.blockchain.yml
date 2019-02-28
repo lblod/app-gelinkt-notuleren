@@ -54,6 +54,4 @@ services:
     volumes:
       - "./config/blockchain/userCreation.sh:/docker-entrypoint-initdb.d/userCreation.sh"
       - ./data/bcdb:/data/db
-    ports:
-      - 27017:27017
     command: mongod
