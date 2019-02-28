@@ -16,7 +16,7 @@ services:
       - virtuoso:database
       - blockchain:blockchain
   decisionservice:
-    image: trase/decision-service:0.2.5
+    image: trase/decision-service:0.2.6
     restart: always
     environment:
       NODE_ENV: ${NODE_ENV}
