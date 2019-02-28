@@ -52,7 +52,7 @@ services:
     volumes:
       - "../lblod-services/frontend/:/usr/src/app/"
   mongodb:
-    image: mongo:latest
+    image: mongo:4
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
