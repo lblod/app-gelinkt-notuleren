@@ -14,7 +14,7 @@
              (document-container :via ,(s-prefix "ext:hasVersionedAgenda")
                                  :inverse t
                                  :as "document-container"))
-  :resource-base (s-url "http://lblod.info/presented-agendas/")
+  :resource-base (s-url "http://data.lblod.info/prepublished-agendas/")
   :on-path "versioned-agendas")
 
 (define-resource versioned-besluiten-lijst ()
@@ -32,8 +32,8 @@
              (document-container :via ,(s-prefix "ext:hasVersionedBesluitenLijst")
                                  :inverse t
                                  :as "document-container"))
-  :resource-base (s-url "http://lblod.info/presented-agendas/")
-  :on-path "versioned-notulen")
+  :resource-base (s-url "http://data.lblod.info/prepublished-besluiten-lijsten/")
+  :on-path "versioned-besluiten-lijsten")
 
 (define-resource versioned-notulen ()
   :class (s-prefix "ext:VersionedNotulen")
@@ -51,7 +51,7 @@
              (document-container :via ,(s-prefix "ext:hasVersionedNotulen")
                                  :inverse t
                                  :as "document-container"))
-  :resource-base (s-url "http://lblod.info/presented-agendas/")
+  :resource-base (s-url "http://data.lblod.info/prepublished-notulen/")
   :on-path "versioned-notulen")
 
 (define-resource signed-resource ()
@@ -62,9 +62,13 @@
                                 :as "status")
              (versioned-agenda :via ,(s-prefix "ext:signsAgenda")
                                :as "versioned-agenda")
+             (versioned-besluiten-lijst :via ,(s-prefix "ext:signsBesluitenlijst")
+                                        :as "versioned-besluiten-lijst")
+             (versioned-notulen :via ,(s-prefix "ext:signsNotulen")
+                                :as "versioned-notulen")
              (gebruiker :via ,(s-prefix "sign:signatory")
                         :as "gebruiker"))
-  :resource-base (s-url "http://lblod.info/signed-resources/")
+  :resource-base (s-url "http://data.lblod.info/signed-resources/")
   :on-path "signed-resources")
 
 (define-resource published-resource ()
@@ -75,14 +79,18 @@
                                 :as "status")
              (versioned-agenda :via ,(s-prefix "ext:publishesAgenda")
                                :as "versioned-agenda")
+             (versioned-besluiten-lijst :via ,(s-prefix "ext:publishedBesluitenlijst")
+                                        :as "versioned-besluiten-lijst")
+             (versioned-notulen :via ,(s-prefix "ext:publishNotulen")
+                                :as "versioned-notulen")
              (gebruiker :via ,(s-prefix "sign:signatory")
                         :as "gebruiker"))
-  :resource-base (s-url "http://lblod.info/published-resources/")
+  :resource-base (s-url "http://data.lblod.info/published-resources/")
   :on-path "published-resources")
 
 (define-resource blockchain-status ()
-  :class (s-prefix "sign:BlockcainStatus")
+  :class (s-prefix "sign:BlockchainStatus")
   :properties `((:title :string ,(s-prefix "dct:title"))
                 (:description :string ,(s-prefix "dct:description")))
-  :resource-base (s-url "http://lblod.info/blockchain-statuses")
+  :resource-base (s-url "http://data.lblod.info/blockchain-statuses/")
   :on-path "blockchain-statuses")
