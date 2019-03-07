@@ -1,0 +1,21 @@
+PREFIX person: <http://www.w3.org/ns/person#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX adms: <http://www.w3.org/ns/adms#>
+
+DELETE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/personen/87f8eebcc78ee6fe2651c195107e37b980b4da97cc8068158e8ce06bd5b9a973> foaf:familyName ?familyName .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    <http://data.lblod.info/id/personen/87f8eebcc78ee6fe2651c195107e37b980b4da97cc8068158e8ce06bd5b9a973> foaf:familyName "Vanoverberghe" .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/personen/87f8eebcc78ee6fe2651c195107e37b980b4da97cc8068158e8ce06bd5b9a973> a person:Person .
+    <http://data.lblod.info/id/personen/87f8eebcc78ee6fe2651c195107e37b980b4da97cc8068158e8ce06bd5b9a973> foaf:familyName ?familyName .
+  }
+}
