@@ -1,0 +1,99 @@
+#################################################
+# MIGRATES DATA FROM INSTALLATIEVERGADERING TO
+# UPDATED MODEL
+# WE REMAIN BACKWARDS COMPATIBLE
+#################################################
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX mu:      <http://mu.semte.ch/vocabularies/core/>
+PREFIX org:     <http://www.w3.org/ns/org#>
+PREFIX sd:      <http://www.w3.org/ns/sparql-service-description#>
+PREFIX nie:     <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX ext:     <http://mu.semte.ch/vocabularies/ext/>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX pav:  <http://purl.org/pav/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#>
+PREFIX eli: <http://data.europa.eu/eli/ontology#>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+
+# Attaches the extract besluiten, bvap to zitting.
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?zitting besluit:behandelt ?agendapunt.
+    ?zitting ext:besluitPublicatieLinkedBvap ?bvap.
+    ?zitting ext:besluitPublicatieLinkedBesluit ?besluit.
+  }
+
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?zitting a besluit:Zitting.
+    ?zitting besluit:heeftAgenda ?agenda.
+    ?agenda besluit:heeftAgendapunt ?agendapunt.
+    ?bvap dct:subject ?agendapunt.
+    ?bvap prov:generated ?besluit.
+ }
+}
+
+;
+
+#Links notulen to zitting as
+DELETE {
+   GRAPH ?g {
+    ?zitting pav:derivedFrom ?content.
+    ?zitting besluit:heeftNotulen ?oldNotulen.
+   }
+}
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?notulenUri a ext:Notulen.
+    ?notulenUri mu:uuid ?notulenUuid.
+    ?notulenUri prov:value ?content.
+    ?zitting besluit:heeftNotulen ?notulenUri.
+  }
+  GRAPH ?g {
+    ?zitting ext:wasDerivedFromInstallatievergaderingNotulen ?oldNotulen. #keep track of a relation in DB
+  }
+}
+WHERE {
+  GRAPH ?g {
+  ?zitting a besluit:Zitting.
+  ?zitting besluit:heeftNotulen ?oldNotulen.
+  ?zitting pav:derivedFrom ?content.
+ }
+
+  BIND(SHA256(CONCAT(STR(?oldNotulen), "d76a6eed-e16f-4ae2-9c6e-593e0356e040")) as ?notulenUuid) .
+  BIND(IRI(CONCAT("http://data.lblod.info/id/notulen/", ?notulenUuid)) AS ?notulenUri) .
+}
+
+;
+
+# removes the agendas
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o.
+  }
+}
+WHERE {
+  GRAPH ?g {
+   ?s a besluit:Agenda.
+   ?s ?p ?o.
+  }
+}
+
+;
+
+# removes the heeft agenda from zitting
+DELETE {
+  GRAPH ?g {
+    ?s besluit:heeftAgenda ?o.
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?s besluit:heeftAgenda ?o.
+  }
+}
