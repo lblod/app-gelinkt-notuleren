@@ -182,9 +182,7 @@ defmodule Dispatcher do
   match "/rdfs-properties/*path" do
     Proxy.forward conn, path, "http://cache/rdfs-properties/"
   end
-  match "/publish/*path" do
-    Proxy.forward conn, path, "http://notulenimporter/publish/"
-  end
+
   post "/sync/*path" do
     Proxy.forward conn, path, "http://sync/sync"
   end
