@@ -33,8 +33,8 @@ WHERE {
     ?zitting a besluit:Zitting.
     ?zitting besluit:heeftAgenda ?agenda.
     ?agenda besluit:heeftAgendapunt ?agendapunt.
-    ?bvap dct:subject ?agendapunt.
-    ?bvap prov:generated ?besluit.
+    OPTIONAL { ?bvap dct:subject ?agendapunt. }
+    OPTIONAL { ?bvap prov:generated ?besluit. }
  }
 }
 
@@ -60,9 +60,9 @@ INSERT {
 }
 WHERE {
   GRAPH ?g {
-  ?zitting a besluit:Zitting.
-  ?zitting besluit:heeftNotulen ?oldNotulen.
-  ?zitting pav:derivedFrom ?content.
+    ?zitting a besluit:Zitting.
+    ?zitting besluit:heeftNotulen ?oldNotulen.
+    ?zitting pav:derivedFrom ?content.
  }
 
   BIND(SHA256(CONCAT(STR(?oldNotulen), "d76a6eed-e16f-4ae2-9c6e-593e0356e040")) as ?notulenUuid) .
