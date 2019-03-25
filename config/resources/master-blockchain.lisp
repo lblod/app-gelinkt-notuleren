@@ -54,6 +54,27 @@
   :resource-base (s-url "http://data.lblod.info/prepublished-notulen/")
   :on-path "versioned-notulen")
 
+(define-resource versioned-behandeling ()
+  :class (s-prefix "ext:VersionedBehandeling")
+  :properties `((:state :string ,(s-prefix "ext:stateString"))
+                (:content :string ,(s-prefix "ext:content")))
+  :has-many `((signed-resource :via ,(s-prefix "ext:signsBehandeling")
+                               :inverse t
+                               :as "signed-resources"))
+  :has-one `((published-resource :via ,(s-prefix "ext:publishesBehandeling")
+                                 :inverse t
+                                 :as "published-resource")
+             (editor-document :via ,(s-prefix "prov:wasDerivedFrom")
+                              :as "editor-document")
+             (document-container :via ,(s-prefix "ext:hasVersionedBehandeling")
+                                 :inverse t
+                                 :as "document-container")
+             (behandeling-van-agendapunt :via ,(s-prefix "ext:behandeling")
+                                         :as "behandeling"))
+  :resource-base (s-url "http://data.lblod.info/prepublished-behandeling/")
+  :on-path "versioned-behandelingen")
+
+
 (define-resource signed-resource ()
   :class (s-prefix "sign:SignedResource")
   :properties `((:content :string ,(s-prefix "sign:text"))
@@ -66,6 +87,8 @@
                                         :as "versioned-besluiten-lijst")
              (versioned-notulen :via ,(s-prefix "ext:signsNotulen")
                                 :as "versioned-notulen")
+             (versioned-behandeling :via ,(s-prefix "ext:signsBehandeling")
+                                    :as "versioned-behandeling")
              (gebruiker :via ,(s-prefix "sign:signatory")
                         :as "gebruiker"))
   :resource-base (s-url "http://data.lblod.info/signed-resources/")
@@ -87,6 +110,7 @@
                         :as "gebruiker"))
   :resource-base (s-url "http://data.lblod.info/published-resources/")
   :on-path "published-resources")
+
 
 (define-resource blockchain-status ()
   :class (s-prefix "sign:BlockchainStatus")

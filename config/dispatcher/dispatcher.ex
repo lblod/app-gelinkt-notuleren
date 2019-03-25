@@ -213,6 +213,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/versioned-besluiten-lijsten/"
   end
 
+  match "/versioned-behandelingen/*path" do
+    Proxy.forward conn, path, "http://resource/versioned-behandelingen/"
+  end
+
   match "/versioned-notulen/*path" do
     Proxy.forward conn, path, "http://resource/versioned-notulen/"
   end
@@ -256,9 +260,11 @@ defmodule Dispatcher do
   match "/accounts/*path" do
     Proxy.forward conn, path, "http://cache/accounts/"
   end
+  post "/remote-login/*path" do
+    Proxy.forward conn, [], "http://remotelogin/remote-login"
+  end
 
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
-
 end
