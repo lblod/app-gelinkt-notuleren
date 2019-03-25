@@ -15,6 +15,7 @@
                                  :inverse t
                                  :as "document-container"))
   :resource-base (s-url "http://data.lblod.info/prepublished-agendas/")
+  :features '(include-uri)
   :on-path "versioned-agendas")
 
 (define-resource versioned-besluiten-lijst ()
@@ -33,6 +34,7 @@
                                  :inverse t
                                  :as "document-container"))
   :resource-base (s-url "http://data.lblod.info/prepublished-besluiten-lijsten/")
+  :features '(include-uri)
   :on-path "versioned-besluiten-lijsten")
 
 (define-resource versioned-notulen ()
@@ -52,6 +54,7 @@
                                  :inverse t
                                  :as "document-container"))
   :resource-base (s-url "http://data.lblod.info/prepublished-notulen/")
+  :features '(include-uri)
   :on-path "versioned-notulen")
 
 (define-resource versioned-behandeling ()
@@ -78,6 +81,7 @@
 (define-resource signed-resource ()
   :class (s-prefix "sign:SignedResource")
   :properties `((:content :string ,(s-prefix "sign:text"))
+                (:hash-value :string ,(s-prefix "sign:hashValue"))                
                 (:created-on :datetime ,(s-prefix "dct:created")))
   :has-one `((blockchain-status :via ,(s-prefix "sign:status")
                                 :as "status")
@@ -92,11 +96,13 @@
              (gebruiker :via ,(s-prefix "sign:signatory")
                         :as "gebruiker"))
   :resource-base (s-url "http://data.lblod.info/signed-resources/")
+  :features '(include-uri)
   :on-path "signed-resources")
 
 (define-resource published-resource ()
   :class (s-prefix "sign:PublishedResource")
   :properties `((:content :string ,(s-prefix "sign:text"))
+                (:hash-value :string ,(s-prefix "sign:hashValue"))
                 (:created-on :datetime ,(s-prefix "dct:created")))
   :has-one `((blockchain-status :via ,(s-prefix "sign:status")
                                 :as "status")
@@ -109,6 +115,7 @@
              (gebruiker :via ,(s-prefix "sign:signatory")
                         :as "gebruiker"))
   :resource-base (s-url "http://data.lblod.info/published-resources/")
+  :features '(include-uri)
   :on-path "published-resources")
 
 
@@ -117,4 +124,5 @@
   :properties `((:title :string ,(s-prefix "dct:title"))
                 (:description :string ,(s-prefix "dct:description")))
   :resource-base (s-url "http://data.lblod.info/blockchain-statuses/")
+  :features '(include-uri)
   :on-path "blockchain-statuses")
