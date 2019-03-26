@@ -75,13 +75,14 @@
              (behandeling-van-agendapunt :via ,(s-prefix "ext:behandeling")
                                          :as "behandeling"))
   :resource-base (s-url "http://data.lblod.info/prepublished-behandeling/")
+  :features '(include-uri)
   :on-path "versioned-behandelingen")
 
 
 (define-resource signed-resource ()
   :class (s-prefix "sign:SignedResource")
   :properties `((:content :string ,(s-prefix "sign:text"))
-                (:hash-value :string ,(s-prefix "sign:hashValue"))                
+                (:hash-value :string ,(s-prefix "sign:hashValue"))
                 (:created-on :datetime ,(s-prefix "dct:created")))
   :has-one `((blockchain-status :via ,(s-prefix "sign:status")
                                 :as "status")
