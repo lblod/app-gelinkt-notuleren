@@ -49,6 +49,8 @@
                                :as "revisions")
               (versioned-agenda :via ,(s-prefix "ext:hasVersionedAgenda")
                                 :as "versioned-agendas")
+              (versioned-behandeling :via ,(s-prefix "ext:hasVersionedBehandeling")
+                                 :as "versioned-behandelingen")
               (versioned-notulen :via ,(s-prefix "ext:hasVersionedNotulen")
                                  :as "versioned-notulen")
               (versioned-besluiten-lijst :via ,(s-prefix "ext:hasVersionedBesluitenLijst")
