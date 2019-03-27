@@ -250,7 +250,7 @@
   :class (s-prefix "ext:Agenda")
   :has-one `((published-resource :via ,(s-prefix "prov:wasDerivedFrom")
                              :as "publication"))
-  :has-many `((agendapunt :via ,(s-prefix "ext:agendapunt")
+  :has-many `((agendapunt :via ,(s-prefix "ext:agendaAgendapunt")
                                   :as "agendapunten"))
   :resource-base (s-url "http://data.lblod.info/id/agendas/")
   :features '(include-uri)
