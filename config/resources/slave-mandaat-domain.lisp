@@ -88,6 +88,9 @@
   :properties `((:label :string ,(s-prefix "skos:prefLabel"))
                 (:scope-note :string ,(s-prefix "skos:scopeNote")))
   :resource-base (s-url "http://data.vlaanderen.be/id/concept/BestuursfunctieCode/")
+  :has-many `((bestuursorgaan-classificatie-code :via ,(s-prefix "ext:hasDefaultType")
+                              :inverse t
+                              :as "standaard-type-van"))
   :features '(include-uri)
   :on-path "bestuursfunctie-codes")
 

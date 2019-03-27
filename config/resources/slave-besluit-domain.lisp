@@ -154,6 +154,8 @@
   :class (s-prefix "ext:BestuursorgaanClassificatieCode")
   :properties `((:label :string ,(s-prefix "skos:prefLabel"))
                 (:scope-note :string ,(s-prefix "skos:scopeNote")))
+  :has-many `((bestuursfunctie-code :via ,(s-prefix "ext:hasDefaultType")
+                        :as "standaard-type"))
   :resource-base (s-url "http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/")
   :features '(include-uri)
   :on-path "bestuursorgaan-classificatie-codes")
