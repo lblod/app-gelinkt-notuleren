@@ -33,6 +33,12 @@ defmodule Dispatcher do
   match "/agendas/*path" do
     Proxy.forward conn, path, "http://resource/agendas/"
   end
+  match "/besluitenlijsten/*path" do
+    Proxy.forward conn, path, "http://resource/besluitenlijsten/"
+  end
+  match "/uittreksels/*path" do
+    Proxy.forward conn, path, "http://resource/uittreksels/"
+  end
   match "/prepublished-agendas/*path" do
     Proxy.forward conn, path, "http://resource/prepublished-agendas/"
   end
