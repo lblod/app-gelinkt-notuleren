@@ -250,6 +250,7 @@
 
 (define-resource agenda ()
   :class (s-prefix "ext:Agenda")
+  :properties `((:inhoud :string ,(s-prefix "prov:value")))
   :has-one `((published-resource :via ,(s-prefix "prov:wasDerivedFrom")
                              :as "publication"))
   :has-many `((agendapunt :via ,(s-prefix "ext:agendaAgendapunt")
@@ -260,6 +261,7 @@
 
 (define-resource uittreksel ()
   :class (s-prefix "ext:Uittreksel")
+  :properties `((:inhoud :string ,(s-prefix "prov:value")))
   :has-one `((published-resource :via ,(s-prefix "prov:wasDerivedFrom")
                                  :as "publication")
              (behandeling-van-agendapunt :via ,(s-prefix "ext:uittrekselBvap")
@@ -270,6 +272,7 @@
 
 (define-resource besluitenlijst ()
   :class (s-prefix "ext:Besluitenlijst")
+  :properties `((:inhoud :string ,(s-prefix "prov:value")))
   :has-one `((published-resource :via ,(s-prefix "prov:wasDerivedFrom")
                              :as "publication"))
   :has-many `((besluit :via ,(s-prefix "ext:besluitenlijstBesluit")
