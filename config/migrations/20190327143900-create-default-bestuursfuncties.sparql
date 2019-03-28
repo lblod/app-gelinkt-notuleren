@@ -1,6 +1,6 @@
 PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
 
-INSERT {
+INSERT DATA {
   GRAPH <http://mu.semte.ch/graphs/public> {
     # Vast Bureau = Lid van het vast bureau + Voorzitter van het Vast Bureau
     <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000008> ext:hasDefaultType <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000017> .
@@ -33,18 +33,5 @@ INSERT {
 
     # Provincieraad = Provincieraadslid
     <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e00000c> ext:hasDefaultType <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e00001f> .
-  }
-}
-WHERE {
-  GRAPH <http://mu.semte.ch/graphs/public> {
-    <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000008> a ext:BestuursorgaanClassificatieCode . # Vast Bureau
-    <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e00000d> a ext:BestuursorgaanClassificatieCode . # Deputatie
-    <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000007> a ext:BestuursorgaanClassificatieCode . # Raad voor Maatschappelijk Welzijn
-    <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000006> a ext:BestuursorgaanClassificatieCode . # College van Burgemeester en Schepenen
-    <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000005> a ext:BestuursorgaanClassificatieCode . # Gemeenteraad
-    <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000009> a ext:BestuursorgaanClassificatieCode . # Bijzonder Comité voor de Sociale Dienst
-    <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e00000a> a ext:BestuursorgaanClassificatieCode . # Districtsraad
-    <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e00000b> a ext:BestuursorgaanClassificatieCode . # Districtscollege
-    <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e00000c> a ext:BestuursorgaanClassificatieCode . # Provincieraad
   }
 }
