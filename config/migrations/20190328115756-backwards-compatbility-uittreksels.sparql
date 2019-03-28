@@ -1,0 +1,60 @@
+############################################################################
+# BugFix on 20190327111026-backwards-compatiblity-besluiten-installatie-2.sparql
+# Uittreksels were not correctly created
+#############################################################################
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX mu:      <http://mu.semte.ch/vocabularies/core/>
+PREFIX org:     <http://www.w3.org/ns/org#>
+PREFIX sd:      <http://www.w3.org/ns/sparql-service-description#>
+PREFIX nie:     <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX ext:     <http://mu.semte.ch/vocabularies/ext/>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX pav:  <http://purl.org/pav/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#>
+PREFIX eli: <http://data.europa.eu/eli/ontology#>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?uittrekselUri a ext:Uittreksel.
+    ?uittrekselUri mu:uuid ?uittrekselUuid.
+    ?uittrekselUri ext:uittrekselBvap ?bvap.
+    ?zitting ext:uittreksel ?uittrekselUri.
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?uittrekselUri a ext:Uittreksel.
+    ?uittrekselUri mu:uuid ?uittrekselUuid.
+    ?uittrekselUri ext:uittrekselBvap ?bvap.
+    ?zitting ext:uittreksel ?uittrekselUri.
+  }
+}
+
+;
+
+# insert uittreksel
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+
+    ?uittrekselUri a ext:Uittreksel.
+    ?uittrekselUri mu:uuid ?uittrekselUuid.
+    ?uittrekselUri ext:uittrekselBvap ?bvap.
+    ?zitting ext:uittreksel ?uittrekselUri.
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?zitting a besluit:Zitting.
+    ?zitting besluit:behandelt ?ap.
+    ?bvap dct:subject ?ap.
+    BIND(SHA256(CONCAT(STR(?bvap), "d2042ef7-a6ff-427e-aa29-43d5a2e3fafa", "uittreksel")) as ?uittrekselUuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/uittreksels/", ?uittrekselUuid)) AS ?uittrekselUri) .
+ }
+}
+
+;
