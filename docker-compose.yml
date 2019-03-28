@@ -121,7 +121,7 @@ services:
     labels:
       - "logging=true"
   preimporter:
-    image: lblod/notulen-prepublish-service:0.2.0
+    image: lblod/notulen-prepublish-service:0.2.1
     restart: always
     logging: *default-logging
     labels:
