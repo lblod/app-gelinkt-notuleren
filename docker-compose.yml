@@ -17,7 +17,7 @@ services:
     restart: always
     logging: *default-logging
   editor:
-    image: lblod/frontend-gelinkt-notuleren:0.16.0
+    image: lblod/frontend-gelinkt-notuleren:0.17.0
     links:
       - identifier:backend
     restart: always
@@ -25,7 +25,7 @@ services:
     labels:
       - "logging=true"
   publicatie:
-    image: lblod/frontend-gelinkt-notuleren-publicatie:0.5.1
+    image: lblod/frontend-gelinkt-notuleren-publicatie:0.6.0
     links:
       - identifier:backend
     restart: always
