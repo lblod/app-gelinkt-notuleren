@@ -17,7 +17,7 @@ services:
     restart: always
     logging: *default-logging
   editor:
-    image: lblod/frontend-gelinkt-notuleren:blockchain-signing
+    image: lblod/frontend-gelinkt-notuleren:0.17.2
     links:
       - identifier:backend
     restart: always
@@ -25,7 +25,7 @@ services:
     labels:
       - "logging=true"
   publicatie:
-    image: lblod/frontend-gelinkt-notuleren-publicatie:0.4.1
+    image: lblod/frontend-gelinkt-notuleren-publicatie:0.6.0
     links:
       - identifier:backend
     restart: always
@@ -120,18 +120,8 @@ services:
         max-file: "3"
     labels:
       - "logging=true"
-  notulenimporter:
-    image: lblod/notulen-importer-service:blockchain-preimporter
-    links:
-      - virtuoso:database
-    restart: always
-    logging: *default-logging
-    labels:
-      - "logging=true"
   preimporter:
-    image: lblod/notulen-prepublish-service:0.0.3
-    links:
-      - database:database
+    image: lblod/notulen-prepublish-service:0.2.1
     restart: always
     logging: *default-logging
     labels:
@@ -140,3 +130,15 @@ services:
     image: lblod/gemeente-ocmw-sync-service:0.2.4
     links:
       - virtuoso:database #TODO replace with database when possible
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
+  besluit-publicatie:
+    image: lblod/besluit-publicatie-publish-service:0.1.3
+    links:
+      - virtuoso:database #TODO replace with database (see repo as to why)
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"

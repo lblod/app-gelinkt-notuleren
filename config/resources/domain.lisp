@@ -14,75 +14,8 @@
 (read-domain-file "slave-organisatie-domain.lisp")
 (read-domain-file "generic-model-plugin-domain.lisp")
 (read-domain-file "tasklist-domain.lisp")
+(read-domain-file "master-editor.lisp")
 (read-domain-file "master-blockchain.lisp")
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; TEMPLATES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(define-resource template ()
-  :class (s-prefix "ext:Template")
-  :properties `((:title :string ,(s-prefix "dct:title"))
-                (:matches :string-set ,(s-prefix "ext:templateMatches"))
-                (:body :string ,(s-prefix "ext:templateContent"))
-                (:contexts :uri-set ,(s-prefix "ext:activeInContext"))
-                (:disabled-in-contexts :uri-set ,(s-prefix "ext:disabledInContext")))
-  :resource-base (s-url "http://lblod.info/templates/")
-  :features `(no-pagination-defaults)
-  :on-path "templates")
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; DOCUMENTS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(define-resource editor-document ()
-  :class (s-prefix "ext:EditorDocument")
-  :properties `((:title :string ,(s-prefix "dct:title"))
-                (:content :string ,(s-prefix "ext:editorDocumentContent"))
-                (:context :string ,(s-prefix "ext:editorDocumentContext"))
-                (:created-on :datetime ,(s-prefix "pav:createdOn"))
-                (:updated-on :datetime ,(s-prefix "pav:lastUpdateOn"))
-                (:starred :boolean ,(s-prefix "tmp:starred"))
-                (:origin :string ,(s-prefix "pav:providedBy"))) ;;de gemeente Niel
-  :has-one `((editor-document :via ,(s-prefix "pav:previousVersion")
-                              :as "previous-version")
-             (editor-document :via ,(s-prefix "pav:previousVersion")
-                              :inverse t
-                              :as "next-version")
-             (zitting :via ,(s-prefix "besluit:heeftNotulen")
-                      :inverse t
-                      :as "zitting")
-             (document-container :via ,(s-prefix "pav:hasVersion")
-                                 :inverse t
-                                 :as "document-container"))
-  :has-many `((tasklist-solution :via ,(s-prefix "ext:editorDocumentTasklistSolution")
-                                 :as "tasklist-solutions"))
-  :resource-base (s-url "http://lblod.info/editor-documents/")
-  :features `(no-pagination-defaults)
-  :on-path "editor-documents")
-
-(define-resource document-container ()
-  :class (s-prefix "ext:DocumentContainer")
-  :has-one `((editor-document :via ,(s-prefix "pav:hasCurrentVersion")
-                              :as "current-version")
-             (editor-document-status :via ,(s-prefix "ext:editorDocumentStatus")
-                                     :as "status")
-             (bestuurseenheid :via , (s-prefix "dct:publisher")
-                              :as "publisher"))
-  :has-many `((editor-document :via ,(s-prefix "pav:hasVersion")
-                               :as "revisions")
-              (versioned-agenda :via ,(s-prefix "ext:hasVersionedAgenda")
-                                :as "versioned-agendas")
-              (versioned-notulen :via ,(s-prefix "ext:hasVersionedNotulen")
-                                 :as "versioned-notulen")
-              (versioned-besluiten-lijst :via ,(s-prefix "ext:hasVersionedBesluitenLijst")
-                                         :as "versioned-besluiten-lijsten"))
-  :resource-base (s-url "http://lblod.info/document-containers/")
-  :on-path "document-containers")
-
-(define-resource editor-document-status ()
-  :class (s-prefix "ext:EditorDocumentStatus")
-  :properties `((:name :string ,(s-prefix "ext:EditorDocumentStatusName")))
-  :resource-base (s-url "http://lblod.info/editor-document-statuses/")
-  :features `(no-pagination-defaults)
-  :on-path "editor-document-statuses")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; USERS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define-resource gebruiker ()

@@ -1,0 +1,69 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX person: <http://www.w3.org/ns/person#>
+PREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>
+
+DELETE {
+  GRAPH <http://mu.semte.ch/application> {
+    ?s a mandaat:Mandataris ;
+       org:holds ?mandaat ;
+       ?pMandate ?oMandate .
+
+    ?person a person:Person ;
+       mu:uuid ?uuid ;
+       persoon:gebruikteVoornaam ?vornaam ;
+       foaf:familyName ?familyName ;
+       persoon:geslacht ?gender ;
+       persoon:heeftGeboorte ?geboorte .
+
+    ?geboorte a persoon:Geboorte ;
+       mu:uuid ?geboorteUuid ;
+       persoon:datum ?geboorteDatum .
+  }
+}
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s a mandaat:Mandataris ;
+       org:holds ?mandaat ;
+       ?pMandate ?oMandate .
+  }
+  GRAPH ?graph {
+    ?person a person:Person ;
+       mu:uuid ?uuid ;
+       persoon:gebruikteVoornaam ?vornaam ;
+       foaf:familyName ?familyName ;
+       persoon:geslacht ?gender ;
+       persoon:heeftGeboorte ?geboorte .
+
+    ?geboorte a persoon:Geboorte ;
+       mu:uuid ?geboorteUuid ;
+       persoon:datum ?geboorteDatum .
+  }
+} WHERE {
+  GRAPH <http://mu.semte.ch/application> {
+    ?s a mandaat:Mandataris ;
+       org:holds ?mandaat ;
+       mandaat:isBestuurlijkeAliasVan ?person ;
+       ?pMandate ?oMandate .
+
+    ?person a person:Person ;
+       mu:uuid ?uuid ;
+       persoon:gebruikteVoornaam ?vornaam ;
+       foaf:familyName ?familyName ;
+       persoon:geslacht ?gender .
+
+		OPTIONAL { ?person persoon:heeftGeboorte ?geboorte .
+               ?geboorte a persoon:Geboorte ;
+                  mu:uuid ?geboorteUuid ;
+                  persoon:datum ?geboorteDatum . }
+
+    ?bestuursorgaanInTijd org:hasPost ?mandaat ;
+                          mandaat:isTijdspecialisatieVan ?bestuursorgaan .
+    ?bestuursorgaan besluit:bestuurt ?bestuurseenheid .
+    ?bestuurseenheid mu:uuid ?groupId .
+
+    BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?groupId)) as ?graph)
+  }
+}

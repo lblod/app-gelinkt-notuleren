@@ -33,6 +33,12 @@ defmodule Dispatcher do
   match "/agendas/*path" do
     Proxy.forward conn, path, "http://resource/agendas/"
   end
+  match "/besluitenlijsten/*path" do
+    Proxy.forward conn, path, "http://resource/besluitenlijsten/"
+  end
+  match "/uittreksels/*path" do
+    Proxy.forward conn, path, "http://resource/uittreksels/"
+  end
   match "/prepublished-agendas/*path" do
     Proxy.forward conn, path, "http://resource/prepublished-agendas/"
   end
@@ -74,6 +80,9 @@ defmodule Dispatcher do
   end
   match "/zittingen/*path" do
     Proxy.forward conn, path, "http://resource/zittingen/"
+  end
+  match "/notulen/*path" do
+    Proxy.forward conn, path, "http://resource/notulen/"
   end
   match "/entiteiten/*path" do
     Proxy.forward conn, path, "http://resource/entiteiten/"
@@ -179,9 +188,7 @@ defmodule Dispatcher do
   match "/rdfs-properties/*path" do
     Proxy.forward conn, path, "http://cache/rdfs-properties/"
   end
-  match "/publish/*path" do
-    Proxy.forward conn, path, "http://notulenimporter/publish/"
-  end
+
   post "/sync/*path" do
     Proxy.forward conn, path, "http://sync/sync"
   end
@@ -208,10 +215,18 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/versioned-agendas/"
   end
 
+  match "/versioned-besluiten-lijsten/*path" do
+    Proxy.forward conn, path, "http://resource/versioned-besluiten-lijsten/"
+  end
+
+  match "/versioned-behandelingen/*path" do
+    Proxy.forward conn, path, "http://resource/versioned-behandelingen/"
+  end
+
   match "/versioned-notulen/*path" do
     Proxy.forward conn, path, "http://resource/versioned-notulen/"
   end
-  
+
   match "/blockchain-statuses/*path" do
     Proxy.forward conn, path, "http://resource/blockchain-statuses/"
   end
@@ -251,9 +266,11 @@ defmodule Dispatcher do
   match "/accounts/*path" do
     Proxy.forward conn, path, "http://cache/accounts/"
   end
+  post "/remote-login/*path" do
+    Proxy.forward conn, [], "http://remotelogin/remote-login"
+  end
 
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
-
 end

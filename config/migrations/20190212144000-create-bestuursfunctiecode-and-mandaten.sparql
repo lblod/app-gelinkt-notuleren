@@ -1,0 +1,59 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+# Create the bestuursfunctiecode for Aangewezen burgemeester
+
+INSERT {
+    GRAPH ?g {
+        ?functieCode a ext:BestuursfunctieCode;
+            mu:uuid ?uuidFunctieCode;
+            skos:prefLabel "Aangewezen burgemeester".
+    }
+}
+WHERE {
+    GRAPH ?g {
+        ?functie a ext:BestuursfunctieCode.
+        BIND(MD5("Aangewezen burgemeester") as ?uuidFunctieCode)
+        BIND(IRI(CONCAT("http://data.vlaanderen.be/id/concept/BestuursfunctieCode/", ?uuidFunctieCode)) AS ?functieCode)    
+    }
+}
+
+;
+
+# Create the Aangewezen burgemeester mandats in 'Burgemeester' or 'College van Burgemeester & Schepenen' 
+
+INSERT {
+  GRAPH ?g {
+    ?mandaat a mandaat:Mandaat ;
+      mu:uuid ?uuid ;
+      org:role ?bestuursfunctieCode .
+
+    ?bestuursorgaanBurgemeesterInTijd org:hasPost ?mandaat .
+    ?bestuursorgaanCollegeInTijd org:hasPost ?mandaat .
+  }
+} WHERE {
+  GRAPH ?g {
+    ?bestuursorgaanBurgemeesterInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaanBurgemeester .
+    ?bestuursorgaanBurgemeester besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/4955bd72cd0e4eb895fdbfab08da0284> ;
+      skos:prefLabel ?bestuursorgaanBurgemeesterLabel ;
+      besluit:bestuurt ?bestuurseenheid .
+
+    ?bestuursorgaanCollegeInTijd a besluit:Bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaanCollege .
+    ?bestuursorgaanCollege besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000006> ;
+      besluit:bestuurt ?bestuurseenheid .
+      
+    ?bestuursfunctieCode a ext:BestuursfunctieCode;
+        skos:prefLabel "Aangewezen burgemeester".
+
+    BIND(SHA256(CONCAT("2b8fbb8a-9ac9-4991-8e28-6b7f2c0847ba", ":2019-01-01:AangewezenBurgemeester", STR(?bestuursorgaanBurgemeesterLabel))) AS ?uuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/mandaten/", STR(?uuid))) AS ?mandaat) .
+  }
+}

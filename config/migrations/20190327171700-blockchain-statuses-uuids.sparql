@@ -1,0 +1,14 @@
+PREFIX mu:<http://mu.semte.ch/vocabularies/core/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://mu.semte.ch/vocabularies/ext/signing/publication-status/unpublished>
+      mu:uuid "94ce5a2f-cb11-4cfa-a362-926f7ecde0e7".
+    <http://mu.semte.ch/vocabularies/ext/signing/publication-status/publishing>
+      mu:uuid "e57d7322-975b-4d71-b93a-767d98941d4c".
+    <http://mu.semte.ch/vocabularies/ext/signing/publication-status/published>
+      mu:uuid "1355a49b-1d77-4f71-b8fb-7e71cef49705".
+    <http://mu.semte.ch/vocabularies/ext/signing/publication-status/publication_failed>
+      mu:uuid "b4d1d4cb-759e-4b00-a812-a350060b157b".
+  }
+}

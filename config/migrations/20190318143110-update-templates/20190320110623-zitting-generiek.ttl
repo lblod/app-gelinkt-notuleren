@@ -1,0 +1,116 @@
+<http://lblod.info/templates/ad7c0cce-2ba3-11e9-adc5-b31231cd8dfa> a <http://mu.semte.ch/vocabularies/ext/Template>;
+  <http://purl.org/dc/terms/title> "Zitting (generiek)";
+  <http://mu.semte.ch/vocabularies/core/uuid> "ad7c0cce-2ba3-11e9-adc5-b31231cd8dfa";
+  <http://mu.semte.ch/vocabularies/ext/activeInContext> <http://xmlns.com/foaf/0.1/Document>;
+  <http://mu.semte.ch/vocabularies/ext/disabledInContext> <http://data.vlaanderen.be/ns/besluit#Zitting>;
+  <http://mu.semte.ch/vocabularies/ext/templateContent> """
+<div typeof="besluit:Zitting" resource="http://data.lblod.info/id/zittingen/${generateUuid()}">
+
+  <!--VARIABLE -->
+  <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+    <div property="ext:idInSnippet" content="${generateBoundUuid('bestuursorgaan-label-zitting')}">0</div>
+    <div property="ext:intentionUri" content="http://zitting/bestuursorgaan-label-for-further-use">a</div>
+    <div property="ext:variableState" content="initialized">initialized</div>
+  </div>
+  <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+    <div property="ext:idInSnippet" content="${generateBoundUuid('bestuursorgaan-label-zitting-met-lidwoord')}">0</div>
+    <div property="ext:intentionUri" content="http://zitting/bestuursorgaan-label-for-further-use-lidwoord">a</div>
+    <div property="ext:variableState" content="initialized">initialized</div>
+  </div>
+  <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+    <div property="ext:idInSnippet" content="${generateBoundUuid('bestuursorgaan-label-zitting-met-lidwoord-1')}">0</div>
+    <div property="ext:intentionUri" content="http://zitting/bestuursorgaan-label-for-further-use-lidwoord">a</div>
+    <div property="ext:variableState" content="initialized">initialized</div>
+  </div>
+  <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+    <div property="ext:idInSnippet" content="${generateBoundUuid('bestuursorgaan-label-zitting-met-lidwoord-2')}">0</div>
+    <div property="ext:intentionUri" content="http://zitting/bestuursorgaan-label-for-further-use-lidwoord">a</div>
+    <div property="ext:variableState" content="initialized">initialized</div>
+  </div>
+  <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+    <div property="ext:idInSnippet" content="${generateBoundUuid('bestuursorgaan-label-zitting-met-lidwoord-3')}">0</div>
+    <div property="ext:intentionUri" content="http://zitting/bestuursorgaan-label-for-further-use-lidwoord">a</div>
+    <div property="ext:variableState" content="initialized">initialized</div>
+  </div>
+  <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+    <div property="ext:idInSnippet" content="${generateBoundUuid('zitting-geplande-start-1')}">0</div>
+    <div property="ext:intentionUri" content="http://zitting/geplande-start">a</div>
+    <div property="ext:variableState" content="initialized">initialized</div>
+  </div>
+  <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+    <div property="ext:idInSnippet" content="${generateBoundUuid('zitting-geplande-start-2')}">0</div>
+    <div property="ext:intentionUri" content="http://zitting/geplande-start">a</div>
+    <div property="ext:variableState" content="initialized">initialized</div>
+  </div>
+
+  <!-- meta zitting -->
+  <h1 property="dc:title">
+    Notulen van <span id="${generateBoundUuid('bestuursorgaan-label-zitting-met-lidwoord')}">de/het <span id="${generateBoundUuid('bestuursorgaan-label-zitting')}"><span property="ext:scopedBestuursorgaanText">selecteer bestuursorgaan</span></span></span>, van
+    <span id="${generateBoundUuid('zitting-geplande-start-1')}"><span class="annotation" property="besluit:geplandeStart" datatype="xsd:dateTime" content="">Voer geplande start in</span></span>
+  </h1>
+  <br>
+  <br>
+
+  <p>
+    Geplande start:
+    <span id="${generateBoundUuid('zitting-geplande-start-2')}"><span class="annotation" property="besluit:geplandeStart" datatype="xsd:dateTime" content="">Voer geplande start in</span></span>
+  </p>
+
+  <p>
+    Locatie: <span class="mark-highlight-manual">Voer naam locatie in</span>, <span class="mark-highlight-manual">Voer naam zaal in</span>.
+  </p>
+  <br>
+  <br>
+
+  <!-- aanwezigen -->
+  <h2>Aanwezigen bij de zitting</h2>
+  <br>
+  <div property="ext:insertAanwezigenText">Beheer aanwezigen bij de zitting.</div>
+  <br>
+  <br>
+
+  <!-- opening -->
+  <p>
+    De voorzitter van
+    <span id="${generateBoundUuid('bestuursorgaan-label-zitting-met-lidwoord-1')}">bestuursorgaan</span>
+    zit de vergadering voor en opent de zitting op
+    <span class="annotation" property="besluit:geplandeStart" datatype="xsd:dateTime" content="">Voer effectieve start in</span>.
+ 	</p>
+  <br>
+  <br>
+  <!-- opening -->
+  <h2>Agenda overzicht</h2>
+  <br>
+  <div property="ext:insertAgendaText">Beheer agenda</div>
+  <br>
+  <br>
+  <!-- Agenda behandeling -->
+  <h2>Behandeling van de Agendapunten</h2>
+  <br>
+  <br>
+  <div property="ext:behandelingVanAgendapuntenContainer">
+    <p class="text-fade">Geen agendapunten aangemaakt. Maak agendapunten aan door bij het agenda overzicht op <strong>Beheer agenda</strong> te klikken.</p>
+  </div>
+  <br>
+  <br>
+  <!-- Sluiting zitting-->
+  <h2>Sluiting van de zitting</h2>
+  <br>
+  <p>De voorzitter van <span id="${generateBoundUuid('bestuursorgaan-label-zitting-met-lidwoord-2')}">bestuursorgaan</span> sluit de zitting op <span property="prov:endedAtTime" content="" datatype="xsd:dateTime">Voer sluiting zitting in</span>.
+  </p>
+  <br>
+  <br>
+
+  <div property="ext:signatories">
+    <p>Namens <span id="${generateBoundUuid('bestuursorgaan-label-zitting-met-lidwoord-3')}">bestuursorgaan</span>,</p>
+    <br>
+    <p><strong><span class="mark-highlight-manual">Voer rol ondertekenaar in</span></strong></p>
+    <p><span class="mark-highlight-manual">Voer naam ondertekenaar in</span></p>
+    <br>
+    <p><strong><span class="mark-highlight-manual">Voer rol ondertekenaar in</span></strong></p>
+    <p><span class="mark-highlight-manual">Voer naam ondertekenaar in</span></p>
+  </div>
+
+</div>
+""";
+<http://mu.semte.ch/vocabularies/ext/templateMatches> "Voeg zitting toe".

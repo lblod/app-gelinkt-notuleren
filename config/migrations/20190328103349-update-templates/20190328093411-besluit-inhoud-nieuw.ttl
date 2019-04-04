@@ -1,0 +1,79 @@
+<http://lblod.info/templates/6933312e-2bac-11e9-af69-3baeff70b1a8> a <http://mu.semte.ch/vocabularies/ext/Template>;
+  <http://purl.org/dc/terms/title> "Generiek besluit (nieuw stijl)";
+  <http://mu.semte.ch/vocabularies/core/uuid> "6933312e-2bac-11e9-af69-3baeff70b1a8";
+  <http://mu.semte.ch/vocabularies/ext/activeInContext> <http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt>;
+  <http://mu.semte.ch/vocabularies/ext/templateContent> """
+
+
+  <!-- VARIABLE -->
+  <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+    <div property="ext:idInSnippet" content="${generateBoundUuid('bestuursorgaan-label-in-besluit')}">0</div>
+    <div property="ext:intentionUri" content="http://zitting/bestuursorgaan-label-for-further-use">a</div>
+    <div property="ext:variableState" content="initialized">initialized</div>
+  </div>
+
+<div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit ext:BesluitNieuweStijl">
+  <h4 class="h4" property="eli:title"><span class="mark-highlight-manual">Geef titel besluit op</span></h4>
+  <span style="display:none;" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">&nbsp;</span>
+  <br>
+  <p>Korte openbare beschrijving:</p>
+  <p property="eli:description"><span class="mark-highlight-manual">Geef korte beschrijving op</span></p>
+  <br>
+
+  <p>Citeeropschrift:</p>
+  <p property="eli:title_short"><span class="mark-highlight-manual">Geef citeeropschrift op</span></p>
+  <br>
+
+  <div property="besluit:motivering" lang="nl">
+    <p>
+      <span id="${generateBoundUuid('bestuursorgaan-label-in-besluit')}">Geef bestuursorgaan op</span>,
+    </p>
+    <!-- Add variable -->
+    <br>
+
+    <h5>Bevoegdheid</h5>
+    <ul class="bullet-list">
+      <li><span class="mark-highlight-manual">Voeg bevoegdheden in</span></li>
+    </ul>
+    <br>
+
+    <h5>Juridische context</h5>
+    <ul class="bullet-list">
+      <li><span class="mark-highlight-manual">Voeg juridische context in</span></li>
+    </ul>
+    <br>
+
+    <h5>Feitelijke context en argumentatie</h5>
+    <ul class="bullet-list">
+      <li><span class="mark-highlight-manual">Voeg context en argumentatie in</span></li>
+    </ul>
+  </div>
+  <br>
+  <br>
+
+  <h5>Beslissing</h5>
+
+  <!-- VARIABLE -->
+  <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+    <div property="ext:idInSnippet" content="${generateBoundUuid('bestuursorgaan-label-in-artikel')}">0</div>
+    <div property="ext:intentionUri" content="http://zitting/bestuursorgaan-label-for-further-use">a</div>
+    <div property="ext:variableState" content="initialized">initialized</div>
+  </div>
+
+  <div property="prov:value">
+    <div property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+      <div property="eli:number">Artikel <span class="mark-highlight-manual">#</span></div>
+      <span style="display:none;" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">&nbsp;</span>
+      <div property="prov:value">
+        <span class="mark-highlight-manual">De/Het</span> <span id="${generateBoundUuid('bestuursorgaan-label-in-artikel')}">Selecteer bestuursorgaan</span> <span class="mark-highlight-manual">Voer inhoud in</span>.
+      </div>
+    </div>
+    <br>
+    <div>Voeg nieuw artikel in</div>
+    <br>
+  </div>
+
+</div>
+
+""";
+<http://mu.semte.ch/vocabularies/ext/templateMatches> "Voeg sjabloon in".
