@@ -1,7 +1,7 @@
 version: "3.4"
 services:
   blockchain:
-    image: trase/blockchain-event-broker:0.2.2
+    image: trase/blockchain-event-broker:0.3.0
     restart: always
     environment:
       NODE_ENV: ${NODE_ENV}
@@ -16,7 +16,7 @@ services:
       - virtuoso:database
       - blockchain:blockchain
   decisionservice:
-    image: trase/decision-service:0.2.6
+    image: trase/decision-service:0.3.0
     restart: always
     environment:
       NODE_ENV: ${NODE_ENV}
@@ -33,7 +33,7 @@ services:
     depends_on:
       - mongodb
   authentication:
-    image: trase/authentication-service:0.2.2
+    image: trase/authentication-service:0.3.0
     restart: always
     environment:
       NODE_ENV: ${NODE_ENV}
@@ -41,6 +41,12 @@ services:
     volumes:
       - "./config/blockchain/clients/:/clients/"
       - "./config/blockchain/config/:/config/"
+  blockchain-frontend:
+    image: trase/frontend:0.3.0
+    environment:
+      SERVICE_URL: "http://localhost:80"
+    ports:
+      - "82:1234"
   mongodb:
     image: mongo:4
     environment:

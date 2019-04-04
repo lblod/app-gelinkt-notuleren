@@ -45,8 +45,10 @@ services:
       - "../lblod-services/authentication-service/:/app/"
       - "../network/artifacts/clients/:/clients/"
       - "../network/artifacts/config/:/config/"
-  frontend:
+  blockchain-frontend:
     image: trase/frontend
+    environment:
+      SERVICE_URL: "http://localhost:80"
     ports:
       - "82:1234"
     volumes:
