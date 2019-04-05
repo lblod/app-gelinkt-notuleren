@@ -1,7 +1,7 @@
 version: "3.4"
 services:
   blockchain:
-    image: trase/blockchain-event-broker:0.2.2
+    image: trase/blockchain-event-broker:0.3.0
     restart: always
     environment:
       NODE_ENV: ${NODE_ENV}
@@ -14,11 +14,14 @@ services:
       - virtuoso:database
       - blockchain:blockchain
   decisionservice:
-    image: trase/decision-service:0.2.0
+    image: trase/decision-service:0.3.0
     restart: always
     environment:
       NODE_ENV: ${NODE_ENV}
       ADMIN_PW: ${ADMIN_PW}
+      APP_MONGO_USER: ${APP_MONGO_USER}
+      APP_MONGO_PASS: ${APP_MONGO_PASS}
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
     links:
       - virtuoso:database
       - mongodb
@@ -28,7 +31,7 @@ services:
     depends_on:
       - mongodb
   authentication:
-    image: trase/authentication-service:0.2.0
+    image: trase/authentication-service:0.3.0
     restart: always
     environment:
       NODE_ENV: ${NODE_ENV}
@@ -36,11 +39,23 @@ services:
     volumes:
       - "./config/blockchain/clients/:/clients/"
       - "./config/blockchain/config/:/config/"
-  mongodb:
-    image: mongo:latest
+  blockchain-frontend:
+    image: trase/frontend:0.3.0
     environment:
-      - MONGO_DATA_DIR=/data/db
-      - MONGO_LOG_DIR=/data/logs
+      SERVICE_URL: "http://localhost:80"
+    ports:
+      - "82:1234"
+  mongodb:
+    image: mongo:4
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
+      APP_MONGO_USER: ${APP_MONGO_USER}
+      APP_MONGO_PASS: ${APP_MONGO_PASS}
+      MONGO_DATA_DIR: /data/db
+      MONGO_LOG_DIR: /data/logs
     volumes:
+      - "./config/blockchain/userCreation.sh:/docker-entrypoint-initdb.d/userCreation.sh"
       - ./data/bcdb:/data/db
     command: mongod
