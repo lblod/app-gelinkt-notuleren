@@ -1,0 +1,74 @@
+#########################################################
+# REMOVES DUPLICATE MANDATARISSEN BASED ON LIST
+# PROVIDED BY KATRIEN
+#########################################################
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX mu:      <http://mu.semte.ch/vocabularies/core/>
+PREFIX org:     <http://www.w3.org/ns/org#>
+PREFIX sd:      <http://www.w3.org/ns/sparql-service-description#>
+PREFIX nie:     <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX ext:     <http://mu.semte.ch/vocabularies/ext/>
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX pav:  <http://purl.org/pav/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#>
+PREFIX eli: <http://data.europa.eu/eli/ontology#>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+DELETE {
+  GRAPH ?g {
+    ?s ?p ?o.
+  }
+}
+WHERE {
+  GRAPH ?g {
+   ?s a mandaat:Mandataris.
+   ?s ?p ?o.
+   FILTER (?s IN (
+     <http://data.lblod.info/id/mandatarissen/5C587812D5BECA000D0001EF>,
+     <http://data.lblod.info/id/mandatarissen/5C587812D5BECA000D0001EF>,
+     <http://data.lblod.info/id/mandatarissen/5C3107A09E5B64000900021C>,
+     <http://data.lblod.info/id/mandatarissen/5C3107A09E5B64000900021C>,
+     <http://data.lblod.info/id/mandatarissen/5C2F5C1C9E5B64000900017C>,
+     <http://data.lblod.info/id/mandatarissen/5C2F5C1C9E5B64000900017C>,
+     <http://data.lblod.info/id/mandatarissen/5C35C9D89E5B640009000126>,
+     <http://data.lblod.info/id/mandatarissen/5C35C9D89E5B640009000126>,
+     <http://data.lblod.info/id/mandatarissen/5C30EAEC9E5B640009000209>,
+     <http://data.lblod.info/id/mandatarissen/5C30EAEC9E5B640009000209>,
+     <http://data.lblod.info/id/mandatarissen/5C2DC5EB9E5B640009000098>,
+     <http://data.lblod.info/id/mandatarissen/5C2DC5EB9E5B640009000098>,
+     <http://data.lblod.info/id/mandatarissen/5C3DBF6557753A00090001EC>,
+     <http://data.lblod.info/id/mandatarissen/5C3DBF6557753A00090001EC>,
+     <http://data.lblod.info/id/mandatarissen/5C376B899E5B640009000AEA>,
+     <http://data.lblod.info/id/mandatarissen/5C376B899E5B640009000AEA>,
+     <http://data.lblod.info/id/mandatarissen/5C2F1F2D9E5B640009000046>,
+     <http://data.lblod.info/id/mandatarissen/5C2F1F2D9E5B640009000046>,
+     <http://data.lblod.info/id/mandatarissen/5C2F6E1B9E5B6400090001E5>,
+     <http://data.lblod.info/id/mandatarissen/5C2F6E1B9E5B6400090001E5>,
+     <http://data.lblod.info/id/mandatarissen/0515a8f7-46a0-448b-a586-4e3a9ef21479>,
+     <http://data.lblod.info/id/mandatarissen/0515a8f7-46a0-448b-a586-4e3a9ef21479>,
+     <http://data.lblod.info/id/mandatarissen/5C2F26909E5B64000900006B>,
+     <http://data.lblod.info/id/mandatarissen/5C2F26909E5B64000900006B>,
+     <http://data.lblod.info/id/mandatarissen/5C3366769E5B640009000697>,
+     <http://data.lblod.info/id/mandatarissen/5C3366769E5B640009000697>,
+     <http://data.lblod.info/id/mandatarissen/5C34773B9E5B640009000A7D>,
+     <http://data.lblod.info/id/mandatarissen/5C34773B9E5B640009000A7D>,
+     <http://data.lblod.info/id/mandatarissen/5C40237257753A000900097E>,
+     <http://data.lblod.info/id/mandatarissen/5C40237257753A000900097E>,
+     <http://data.lblod.info/id/mandatarissen/5C38513257753A0009000092>,
+     <http://data.lblod.info/id/mandatarissen/5C38513257753A0009000092>,
+     <http://data.lblod.info/id/mandatarissen/5C2F2C5B9E5B64000900008A>,
+     <http://data.lblod.info/id/mandatarissen/5C2F2C5B9E5B64000900008A>,
+     <http://data.lblod.info/id/mandatarissen/5C29E97C98360D00090000AE>,
+     <http://data.lblod.info/id/mandatarissen/5C29E97C98360D00090000AE>,
+     <http://data.lblod.info/id/mandatarissen/5C3477509E5B640009000A7F>,
+     <http://data.lblod.info/id/mandatarissen/5C3477509E5B640009000A7F>,
+     <http://data.lblod.info/id/mandatarissen/5C2F51CC9E5B640009000144>,
+     <http://data.lblod.info/id/mandatarissen/5C2F51CC9E5B640009000144>,
+     <http://data.lblod.info/id/mandatarissen/5C408E8C57753A0009000C37>,
+     <http://data.lblod.info/id/mandatarissen/5C408E8C57753A0009000C37>
+   ))
+ }
+}
