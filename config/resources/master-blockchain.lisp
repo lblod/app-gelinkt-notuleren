@@ -42,6 +42,7 @@
   :properties `((:state :string ,(s-prefix "ext:stateString"))
                 (:content :string ,(s-prefix "ext:content"))
                 (:public-content :string ,(s-prefix "ext:publicContent"))
+                (:public-behandelingen :uri-set ,(s-prefix "ext:publicBehandeling"))
                 (:kind :string ,(s-prefix "ext:notulenKind")))
   :has-many `((signed-resource :via ,(s-prefix "ext:signsNotulen")
                                :inverse t
