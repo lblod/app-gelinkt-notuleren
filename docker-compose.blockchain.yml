@@ -39,12 +39,6 @@ services:
     volumes:
       - "./config/blockchain/clients/:/clients/"
       - "./config/blockchain/config/:/config/"
-  blockchain-frontend:
-    image: trase/frontend:0.3.0
-    environment:
-      SERVICE_URL: "http://localhost:80"
-    ports:
-      - "82:1234"
   mongodb:
     image: mongo:4
     environment:
