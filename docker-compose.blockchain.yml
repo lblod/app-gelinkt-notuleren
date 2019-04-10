@@ -8,7 +8,7 @@ services:
     links:
       - virtuoso:database
   blockchainNotifier:
-    image: lblod/blockchain-informing-service:0.0.3
+    image: lblod/blockchain-informing-service:0.0.4
     restart: always
     links:
       - virtuoso:database
