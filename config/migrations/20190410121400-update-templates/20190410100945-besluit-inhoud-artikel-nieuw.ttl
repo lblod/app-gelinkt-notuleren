@@ -1,0 +1,26 @@
+<http://lblod.info/templates/49891d8e-2bb1-11e9-82f2-bf43ce7fc64b> a <http://mu.semte.ch/vocabularies/ext/Template>;
+  <http://purl.org/dc/terms/title> "Artikel (nieuwe stijl)";
+  <http://mu.semte.ch/vocabularies/core/uuid> "49891d8e-2bb1-11e9-82f2-bf43ce7fc64b";
+  <http://mu.semte.ch/vocabularies/ext/activeInContext> <http://mu.semte.ch/vocabularies/ext/BesluitNieuweStijl>;
+  <http://mu.semte.ch/vocabularies/ext/templateContent> """
+
+  <!-- VARIABLE -->
+  <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+    <div property="ext:idInSnippet" content="${generateBoundUuid('bestuursorgaan-label-in-artikel')}">0</div>
+    <div property="ext:intentionUri" content="http://zitting/bestuursorgaan-label-for-further-use">a</div>
+    <div property="ext:variableState" content="initialized">initialized</div>
+  </div>
+
+  <div property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+    <div property="eli:number">Artikel <span class="mark-highlight-manual">#</span></div>
+    <span style="display:none;" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">&nbsp;</span>
+    <div property="prov:value">
+      <span class="mark-highlight-manual">De/Het</span> <span id="${generateBoundUuid('bestuursorgaan-label-in-artikel')}">Selecteer bestuursorgaan</span> <span class="mark-highlight-manual">Voer inhoud in</span>.
+    </div>
+  </div>
+  <br>
+  <div>Voeg nieuw artikel in</div>
+  <br>
+
+""";
+<http://mu.semte.ch/vocabularies/ext/templateMatches> "Voeg nieuw artikel in" .
