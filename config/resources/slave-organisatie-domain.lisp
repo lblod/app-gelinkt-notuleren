@@ -22,42 +22,53 @@
   :resource-base (s-url "http://data.lblod.info/id/contactpunt/")
   :features '(include-uri)
   :on-path "contact-punten"
-)
+  )
+
+(define-resource functionaris ()
+  ;;Functionaris is considered subclass of org:Membership as of now. TODO: publish this
+  :class (s-prefix "lblod:Functionaris")
+  :has-one `((tijdsinterval :via ,(s-prefix "org:memberDuring")
+                            :as "lid-van-tot")
+             (persoon :via ,(s-prefix "org:member")
+                      :as "lid")
+             (rol :via ,(s-prefix "org:role")
+                  :as "rol")
+             (bestuurseenheid :via ,(s-prefix "org:organization")
+                              :as "is-lidmaatschap-bij")
+             (functionaris-status-code :via ,(s-prefix "lblod:functionarisStatusCode")
+                                       :as "status"))
+
+  :resource-base (s-url "http://data.lblod.info/id/functionaris/")
+  :features '(include-uri)
+  :on-path "functionarissen"
+  )
 
 (define-resource positie ()
   :class (s-prefix "org:Post")
-  :has-one `((rol :via ,(s-prefix "org:role")
+  :has-one `((contact-punt :via ,(s-prefix "schema:contactPoint")
+                           :as "contactinfo")
+             (rol :via ,(s-prefix "org:role")
                   :as "rol")
-             (organisatie :via ,(s-prefix "org:hasPost")
+             (bestuurseenheid :via ,(s-prefix "org:hasPost")
                             :inverse t
                             :as "is-positie-in"))
-  :has-many `((persoon :via ,(s-prefix "org:heldBy")
-                       :as "wordt-ingevuld-door"))
   :resource-base (s-url "http://data.lblod.info/id/positie/")
   :features '(include-uri)
-  :on-path '"posities"
+  :on-path "posities"
 )
 
 (define-resource rol ()
   :class (s-prefix "org:Role")
   :properties `((:label :string ,(s-prefix "skos:prefLabel")))
-  :resource-base (s-url "http://data.lblod.info/id/concept/bestuurseenheidRollen/")
+  :resource-base (s-url "http://data.lblod.info/id/concept/functionarisRol/")
   :features '(include-uri)
   :on-path "rollen"
 )
 
-(define-resource organisatie ()
-  :class (s-prefix "org:Organization")
-  :properties `((:naam :string ,(s-prefix "skos:prefLabel")))
-  :has-one `((vestiging :via ,(s-prefix "org:hasPrimarySite")
-                        :as "primaire-site")
-             )
-  :has-many `((contact-punt :via ,(s-prefix "schema:contactPoint")
-                            :as "contactinfo")
-              (positie :via ,(s-prefix "org:hasPost")
-                       :as "posities"))
-  :resource-base (s-url "http://data.lblod.info/id/organisaties/")
+(define-resource functionaris-status-code ()
+  ;;TODO: publish this somewhere
+  :class (s-prefix "lblod:FunctionarisStatusCode")
+  :properties `((:label :string ,(s-prefix "skos:prefLabel")))
+  :resource-base (s-url "http://data.vlaanderen.be/id/concept/functionarisStatusCode/")
   :features '(include-uri)
-  :on-path "organisaties"
-)
-
+  :on-path "functionaris-status-codes")

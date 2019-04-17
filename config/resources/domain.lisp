@@ -15,7 +15,6 @@
 (read-domain-file "generic-model-plugin-domain.lisp")
 (read-domain-file "tasklist-domain.lisp")
 (read-domain-file "master-editor.lisp")
-(read-domain-file "master-blockchain.lisp")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; USERS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define-resource gebruiker ()
