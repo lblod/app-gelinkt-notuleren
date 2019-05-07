@@ -84,7 +84,7 @@
 (define-resource bestuurseenheid ()
   :class (s-prefix "besluit:Bestuurseenheid")
   :properties `((:naam :string ,(s-prefix "skos:prefLabel"))
-                (:afkorting :string ,(s-prefix "skos:altLabel"))
+                (:alternatieve-naam :string-set ,(s-prefix "skos:altLabel"))
                 (:wil-mail-ontvangen :boolean ,(s-prefix "ext:wilMailOntvangen")) ;;Voorkeur in berichtencentrum
                 (:mail-adres :string ,(s-prefix "ext:mailAdresVoorNotificaties")))
   :has-one `((werkingsgebied :via ,(s-prefix "besluit:werkingsgebied")
