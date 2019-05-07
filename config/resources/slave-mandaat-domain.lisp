@@ -1,13 +1,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; MANDAAT ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; this is a shared domain file, maintained in https://github.com/lblod/domain-files
 
-;; TODO: do we need this superclass?
-(define-resource entiteit ()
-  :class (s-prefix "prov:Entity")
-  :resource-base (s-url "http://data.lblod.info/id/entiteiten/")
-  :features '(include-uri)
-  :on-path "entiteiten")
-
 (define-resource fractie ()
   :class (s-prefix "mandaat:Fractie")
   :properties `((:naam :string ,(s-prefix "regorg:legalName"))
