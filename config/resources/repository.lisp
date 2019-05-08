@@ -25,3 +25,4 @@
 (add-prefix "schema" "http://schema.org/")
 (add-prefix "rdfs" "http://www.w3.org/2000/01/rdf-schema#")
 (add-prefix "sign" "http://mu.semte.ch/vocabularies/ext/signing/")
+(add-prefix "lblodlg" "http://data.lblod.info/vocabularies/leidinggevenden/")
