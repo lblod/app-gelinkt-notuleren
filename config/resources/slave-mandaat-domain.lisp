@@ -218,16 +218,6 @@
   :features '(include-uri)
   :on-path "rechtstreekse-verkiezingen")
 
-(define-resource tijdsgebonden-entiteit ()
-  :class (s-prefix "mandaat:TijdsgebondenEntiteit")
-  :properties `((:binding-einde :date ,(s-prefix "mandaat:bindingEinde"))
-                (:binding-start :date ,(s-prefix "mandaat:bindingStart")))
-  :has-one `((entiteit :via ,(s-prefix "mandaat:isTijdsspecialisatieVan")
-                       :as "is-tijdsspecialisatie-van"))
-  :resource-base (s-url "http://data.lblod.info/id/tijdsgebonden-entiteiten/")
-  :features '(include-uri)
-  :on-path "tijdsgebonden-entiteiten")
-
 (define-resource tijdsinterval ()
   :class (s-prefix "dct:PeriodOfTime")
   :properties `((:begin :datetime ,(s-prefix "generiek:begin"))
