@@ -89,6 +89,8 @@
                 (:mail-adres :string ,(s-prefix "ext:mailAdresVoorNotificaties")))
   :has-one `((werkingsgebied :via ,(s-prefix "besluit:werkingsgebied")
                              :as "werkingsgebied")
+             (werkingsgebied :via ,(s-prefix "ext:inProvincie")
+                             :as "provincie")
              (bestuurseenheid-classificatie-code :via ,(s-prefix "besluit:classificatie")
                                                  :as "classificatie")
              (vestiging :via ,(s-prefix "org:hasPrimarySite")
