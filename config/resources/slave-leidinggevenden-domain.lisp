@@ -6,7 +6,7 @@
                                    :as "rol")
              (contact-punt :via ,(s-prefix "schema:contactPoint")
                            :as "contactinfo"))
-  :has-many `((bestuurorgaan :via ,(s-prefix "lblodlg:heeftBestuursfunctie")
+  :has-many `((bestuursorgaan :via ,(s-prefix "lblodlg:heeftBestuursfunctie")
                              :inverse t
                              :as "bevat-in"))
   :resource-base (s-url "http://data.lblod.info/id/bestuursfuncties/")

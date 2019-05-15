@@ -148,7 +148,7 @@
               (mandaat :via ,(s-prefix "org:hasPost")
                        :as "bevat")
               (bestuursfunctie :via ,(s-prefix "lblodlg:heeftBestuursfunctie")
-                               :as "bevat-functionaris"))
+                               :as "bevat-bestuursfunctie"))
   :resource-base (s-url "http://data.lblod.info/id/bestuursorganen/")
   :features '(include-uri)
   :on-path "bestuursorganen")
