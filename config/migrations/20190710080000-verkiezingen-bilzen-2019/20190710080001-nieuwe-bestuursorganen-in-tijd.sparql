@@ -1,0 +1,45 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+# Nieuwe bestuursorganen in tijd voor Gemeente Bilzen en OCMW Bilzen
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?vorigBestuursorgaanInTijd mandaat:bindingEinde ?installatieVergaderingDatum .
+    ?bestuursorgaanInTijd a besluit:Bestuursorgaan ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaan ;
+       mu:uuid ?uuidInTijd ;
+       mandaat:bindingStart ?installatieVergaderingDatum .
+  }
+} WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?bestuursorgaan besluit:bestuurt ?bestuurseenheid ;
+       skos:prefLabel ?bestuursorgaanLabel ;
+       besluit:classificatie ?classificatie .
+
+    FILTER (?bestuurseenheid IN (
+       <http://data.lblod.info/id/bestuurseenheden/99da98a7a0087d3429b084ebfc4eb5d488c593790d4d5af7253982a2e21a6a5f>, # Gemeente Bilzen
+       <http://data.lblod.info/id/bestuurseenheden/9ae900a5447b7d727ca6496910220d4389aba7f1869923f1bbf9729bdeca28e2> # OCMW Bilzen
+    ))
+
+    FILTER (?classificatie IN (
+      <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000005>, # Gemeenteraad
+      <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000006>, # Schepencollege
+      <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/4955bd72cd0e4eb895fdbfab08da0284>, # Burgemeester
+      <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000007>, # RMW
+      <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000008>, # Vast Bureau
+      <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000009>, # BCSD
+      <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/53c0d8cd-f3a2-411d-bece-4bd83ae2bbc9> # Vz BCSD
+    ))
+
+    ?vorigBestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+
+    BIND(SHA256(CONCAT("88a7120f-e38c-4780-9b48-dd9fe22c0eca", ":", STR(?bestuursorgaanLabel))) AS ?uuidInTijd) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", STR(?uuidInTijd))) AS ?bestuursorgaanInTijd) .
+    BIND("2019-08-03"^^<http://www.w3.org/2001/XMLSchema#date> as ?installatieVergaderingDatum) .
+  }
+}
+

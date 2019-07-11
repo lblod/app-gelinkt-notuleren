@@ -1,0 +1,47 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+# Nieuwe mandaten voor Gemeente Bilzen en OCMW Bilzen
+INSERT {
+  GRAPH ?g {
+    ?mandataris mandaat:einde ?installatieVergaderingDatum .
+  }
+} WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?bestuursorgaan besluit:bestuurt ?bestuurseenheid .
+
+    FILTER (?bestuurseenheid IN (
+       <http://data.lblod.info/id/bestuurseenheden/99da98a7a0087d3429b084ebfc4eb5d488c593790d4d5af7253982a2e21a6a5f>, # Gemeente Bilzen
+       <http://data.lblod.info/id/bestuurseenheden/9ae900a5447b7d727ca6496910220d4389aba7f1869923f1bbf9729bdeca28e2> # OCMW Bilzen
+    ))
+
+    ?vorigBestuursorgaanInTijd mandaat:isTijdspecialisatieVan ?bestuursorgaan ;
+       mandaat:bindingStart "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       org:hasPost ?vorigMandaat .
+
+    ?vorigMandaat a mandaat:Mandaat ;
+       org:role ?role .
+
+    FILTER (?role IN (
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000012>, # Voorzitter van de gemeenteraad
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000011>, # Gemeenteraadslid
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000014>, # Schepen
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000015>, # Lid van de Raad voor Maatschappelijk Welzijn
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000017>, # Lid van het Vast Bureau
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000016>, # Voorzitter van de Raad voor Maatschappelijk Welzijn
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000019>, # Lid van het Bijzonder Comité voor de Sociale Dienst
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e00001a>, # Voorzitter BCSD
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/59a90e03-4f22-4bb9-8c91-132618db4b38> # Toegevoegde schepen
+      # Nog geen einddatum voor Burgemeester en Voorzitter Vast Bureau
+    ))
+  }
+
+  GRAPH ?g {
+    ?mandataris org:holds ?vorigMandaat .
+  }
+
+  BIND("2019-08-03T00:00:00.000Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> as ?installatieVergaderingDatum) .
+}
