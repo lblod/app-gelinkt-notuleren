@@ -1,0 +1,31 @@
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s <http://data.vlaanderen.be/ns/mandaat#heeftKandidaat> ?persoon .
+  }
+} INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s <http://data.vlaanderen.be/ns/mandaat#heeftKandidaat> ?persoonUri .
+  }
+} WHERE {
+  ?s <http://data.vlaanderen.be/ns/mandaat#heeftKandidaat> ?persoon .
+  FILTER(isLiteral(?persoon))
+
+  BIND(IRI(?persoon) as ?persoonUri)
+}
+
+;
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s <http://data.vlaanderen.be/ns/mandaat#lijsttype>  ?lit .
+  }
+} INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s <http://data.vlaanderen.be/ns/mandaat#lijsttype>  ?uri .
+  }
+} WHERE {
+  ?s <http://data.vlaanderen.be/ns/mandaat#lijsttype>  ?lit .
+  FILTER(isLiteral(?lit))
+
+  BIND(IRI(?lit) as ?uri)
+}
