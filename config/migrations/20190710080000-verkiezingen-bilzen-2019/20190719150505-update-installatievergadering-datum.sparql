@@ -1,0 +1,158 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?bestuursorgaanInTijd mandaat:bindingEinde ?previousDate .
+  }
+} INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?bestuursorgaanInTijd mandaat:bindingEinde ?installatieDatum .
+  }
+} WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?bestuursorgaanInTijd mandaat:bindingEinde ?previousDate .
+
+    VALUES ?bestuursorgaanInTijd {
+      <http://data.lblod.info/id/bestuursorganen/b2ef752c72196962dd7ebb22b92cfabae7ec6d47b8b870e35300d20741e2a2b6>
+      <http://data.lblod.info/id/bestuursorganen/c79d903650062baa2879bc809feedcab8116bc65556539832dd828ff09713dc0>
+      <http://data.lblod.info/id/bestuursorganen/05ca891644edf712a3661c143492bb5df9aab0c786752bc3c70e3d0249379638>
+      <http://data.lblod.info/id/bestuursorganen/8b836a299d4f23a7fe1c23e369fdf6a60d30d6614d2a479dabd1080ec897b334>
+      <http://data.lblod.info/id/bestuursorganen/a685acca9002a9e58646a0329f95adcede39b9df447f6f20ce83f2fa73c53f4b>
+      <http://data.lblod.info/id/bestuursorganen/9fae0a9a-70b9-4126-bd54-44971e7c6100>
+      <http://data.lblod.info/id/bestuursorganen/b4c8e9c2c708b63e363490500a362290b1583f2d4ed0b4e36bf7bf3514b1a380>
+    }
+  }
+
+  BIND("2019-08-08"^^<http://www.w3.org/2001/XMLSchema#date> as ?installatieDatum) .
+}
+
+;
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?bestuursorgaanInTijd mandaat:bindingStart ?previousDate .
+  }
+} INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?bestuursorgaanInTijd mandaat:bindingStart ?installatieDatum .
+  }
+} WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?bestuursorgaanInTijd mandaat:bindingStart ?previousDate .
+
+    VALUES ?bestuursorgaanInTijd {
+      <http://data.lblod.info/id/bestuursorganen/06f4cb71d81a6823aa47f8a4be54b5102d8f693af5d4fa7fe84431dd72d077f1>
+      <http://data.lblod.info/id/bestuursorganen/ffbe4e05949d8ea3a37052e87bacf73bbf9d64dbf29103888d639cc965d64fa4>
+      <http://data.lblod.info/id/bestuursorganen/d2f11907eb2f6f96d6539d1c633d67c3990af3cf26aba8eb9dfd374f908a961c>
+      <http://data.lblod.info/id/bestuursorganen/1d37ca885ab3838792bb6ee68701474a0b017ced2292a668366ec2ba25cb2acb>
+      <http://data.lblod.info/id/bestuursorganen/c6ddaabdc714f503155cb8ab8da3012f9e559c917ce97fa8cb6bb7be7fdf02e7>
+      <http://data.lblod.info/id/bestuursorganen/428ad851cd411f4e2ce26e70def73335281172a957ac3d3a22413a13b9b0db2e>
+      <http://data.lblod.info/id/bestuursorganen/4ff654eaee685ce6c13d8046ccecc9a7e200ef694e9f17dea5a4dec72e1d1d94>
+    }
+  }
+
+  BIND("2019-08-08"^^<http://www.w3.org/2001/XMLSchema#date> as ?installatieDatum) .
+}
+
+
+;
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?mandataris mandaat:einde ?previousDateTime .
+  }
+} INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?mandataris mandaat:einde "2019-08-08T00:00:00.000Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+  }
+} WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+      ?mandataris a mandaat:Mandataris ;
+                  org:holds ?vorigMandaat ;
+                  mandaat:einde ?previousDateTime .
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    VALUES ?bestuursorgaanInTijd {
+      <http://data.lblod.info/id/bestuursorganen/b2ef752c72196962dd7ebb22b92cfabae7ec6d47b8b870e35300d20741e2a2b6>
+      <http://data.lblod.info/id/bestuursorganen/c79d903650062baa2879bc809feedcab8116bc65556539832dd828ff09713dc0>
+      <http://data.lblod.info/id/bestuursorganen/05ca891644edf712a3661c143492bb5df9aab0c786752bc3c70e3d0249379638>
+      <http://data.lblod.info/id/bestuursorganen/8b836a299d4f23a7fe1c23e369fdf6a60d30d6614d2a479dabd1080ec897b334>
+      <http://data.lblod.info/id/bestuursorganen/a685acca9002a9e58646a0329f95adcede39b9df447f6f20ce83f2fa73c53f4b>
+      <http://data.lblod.info/id/bestuursorganen/9fae0a9a-70b9-4126-bd54-44971e7c6100>
+      <http://data.lblod.info/id/bestuursorganen/b4c8e9c2c708b63e363490500a362290b1583f2d4ed0b4e36bf7bf3514b1a380>
+    }
+
+    ?bestuursorgaanInTijd org:hasPost ?vorigMandaat .
+    ?vorigMandaat a mandaat:Mandaat .
+
+    VALUES ?role {
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000012> # Voorzitter van de gemeenteraad
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000011> # Gemeenteraadslid
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000014> # Schepen
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000015> # Lid van de Raad voor Maatschappelijk Welzijn
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000017> # Lid van het Vast Bureau
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000016> # Voorzitter van de Raad voor Maatschappelijk Welzijn
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000019> # Lid van het Bijzonder Comite voor de Sociale Dienst
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e00001a> # Voorzitter BCSD
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/59a90e03-4f22-4bb9-8c91-132618db4b38> # Toegevoegde schepen
+      # Nog geen einddatum voor Burgemeester en Voorzitter Vast Bureau
+    }
+
+    ?vorigMandaat org:role ?role .
+
+  }
+}
+
+;
+
+DELETE {
+  GRAPH  <http://mu.semte.ch/graphs/public> {
+    ?mandataris mandaat:einde ?previousDateTime .
+  }
+} INSERT {
+  GRAPH  <http://mu.semte.ch/graphs/public> {
+    ?mandataris mandaat:einde "2019-08-08T00:00:00.000Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+  }
+} WHERE {
+  GRAPH  <http://mu.semte.ch/graphs/public> {
+      ?mandataris a mandaat:Mandataris ;
+                  org:holds ?vorigMandaat ;
+                  mandaat:einde ?previousDateTime .
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    VALUES ?bestuursorgaanInTijd {
+      <http://data.lblod.info/id/bestuursorganen/b2ef752c72196962dd7ebb22b92cfabae7ec6d47b8b870e35300d20741e2a2b6>
+      <http://data.lblod.info/id/bestuursorganen/c79d903650062baa2879bc809feedcab8116bc65556539832dd828ff09713dc0>
+      <http://data.lblod.info/id/bestuursorganen/05ca891644edf712a3661c143492bb5df9aab0c786752bc3c70e3d0249379638>
+      <http://data.lblod.info/id/bestuursorganen/8b836a299d4f23a7fe1c23e369fdf6a60d30d6614d2a479dabd1080ec897b334>
+      <http://data.lblod.info/id/bestuursorganen/a685acca9002a9e58646a0329f95adcede39b9df447f6f20ce83f2fa73c53f4b>
+      <http://data.lblod.info/id/bestuursorganen/9fae0a9a-70b9-4126-bd54-44971e7c6100>
+      <http://data.lblod.info/id/bestuursorganen/b4c8e9c2c708b63e363490500a362290b1583f2d4ed0b4e36bf7bf3514b1a380>
+    }
+
+    ?bestuursorgaanInTijd org:hasPost ?vorigMandaat .
+    ?vorigMandaat a mandaat:Mandaat .
+
+    VALUES ?role {
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000012> # Voorzitter van de gemeenteraad
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000011> # Gemeenteraadslid
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000014> # Schepen
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000015> # Lid van de Raad voor Maatschappelijk Welzijn
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000017> # Lid van het Vast Bureau
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000016> # Voorzitter van de Raad voor Maatschappelijk Welzijn
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000019> # Lid van het Bijzonder Comite voor de Sociale Dienst
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e00001a> # Voorzitter BCSD
+      <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/59a90e03-4f22-4bb9-8c91-132618db4b38> # Toegevoegde schepen
+      # Nog geen einddatum voor Burgemeester en Voorzitter Vast Bureau
+    }
+
+    ?vorigMandaat org:role ?role .
+
+  }
+}
