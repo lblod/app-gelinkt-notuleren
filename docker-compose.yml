@@ -101,7 +101,7 @@ services:
     labels:
       - "logging=true"
   cache:
-    image: madnificent/mu-elixir-cache:0.1.0
+    image: semtech/mu-cache:2.0.0
     links:
       - resource:backend
     restart: always
