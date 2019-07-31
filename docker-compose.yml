@@ -38,6 +38,8 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
+    environment:
+      DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: "[{\"variables\":[],\"name\":\"public\"}]"
   dispatcher:
     image: semtech/mu-dispatcher:1.1.2
     volumes:
