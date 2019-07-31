@@ -142,3 +142,7 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
+  adressenregister:
+    image: lblod/adressenregister-fuzzy-search-service:0.4.0
+    restart: always
+    logging: *default-logging

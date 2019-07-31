@@ -13,6 +13,7 @@
 (read-domain-file "slave-mandaat-domain.lisp")
 (read-domain-file "slave-organisatie-domain.lisp")
 (read-domain-file "slave-leidinggevenden-domain.lisp")
+(read-domain-file "slave-contact-domain.lisp")
 (read-domain-file "generic-model-plugin-domain.lisp")
 (read-domain-file "tasklist-domain.lisp")
 (read-domain-file "master-editor.lisp")

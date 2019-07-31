@@ -175,6 +175,13 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://sync/sync"
   end
 
+  #################################################################
+  # Adressenregister
+  #################################################################
+  match "/adressenregister/*path" do
+    Proxy.forward conn, path, "http://adressenregister/"
+  end
+
   ############
   # Blockchain
   ############
