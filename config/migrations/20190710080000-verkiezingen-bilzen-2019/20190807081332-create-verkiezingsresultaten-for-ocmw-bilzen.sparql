@@ -1,0 +1,79 @@
+#########################################################
+# For the aanwezigen-plugin -> overige aanwezigen
+# The personen are fetched linked to a bestuursorgaan.
+# The only way to do so, without assuming the SEAS-graph
+# is to go through what has been inserted in the kieslijsten
+# So they need to be created here
+#########################################################
+PREFIX    mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX    besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX    persoon: <http://data.vlaanderen.be/ns/persoon#>
+PREFIX    foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX    org: <http://www.w3.org/ns/org#>
+PREFIX    skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX    rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX    ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX    regorg: <https://www.w3.org/ns/regorg#>
+PREFIX    person: <http://www.w3.org/ns/person#>
+PREFIX    schema: <http://schema.org/>
+PREFIX    prov: <http://www.w3.org/ns/prov#>
+PREFIX    adms: <http://www.w3.org/ns/adms#>
+PREFIX    mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX    lblodlg: <http://data.lblod.info/vocabularies/leidinggevenden/>
+PREFIX    prov: <http://www.w3.org/ns/prov#>
+
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/rechtstreekse-verkiezingen/24dcce8b-05dd-40bc-aff2-c4f18fca0a4e> mu:uuid "24dcce8b-05dd-40bc-aff2-c4f18fca0a4e".
+    <http://data.lblod.info/id/rechtstreekse-verkiezingen/24dcce8b-05dd-40bc-aff2-c4f18fca0a4e> <http://data.vlaanderen.be/ns/mandaat#datum> "2019-06-16"^^xsd:Date.
+    <http://data.lblod.info/id/rechtstreekse-verkiezingen/24dcce8b-05dd-40bc-aff2-c4f18fca0a4e> a <http://data.vlaanderen.be/ns/mandaat#RechtstreekseVerkiezing>.
+    <http://data.lblod.info/id/rechtstreekse-verkiezingen/24dcce8b-05dd-40bc-aff2-c4f18fca0a4e>
+      <http://data.vlaanderen.be/ns/mandaat#steltSamen> <http://data.lblod.info/id/bestuursorganen/ffbe4e05949d8ea3a37052e87bacf73bbf9d64dbf29103888d639cc965d64fa4>.
+  }
+}
+
+;
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?nKl mu:uuid ?nKlUuid.
+    ?nKl a mandaat:Kandidatenlijst;
+         mandaat:behoortTot <http://data.lblod.info/id/rechtstreekse-verkiezingen/24dcce8b-05dd-40bc-aff2-c4f18fca0a4e>;
+         mandaat:lijsttype ?lijstType;
+         skos:prefLabel ?lijstNaam;
+         mu:uuid ?nKlUuid;
+         mandaat:heeftKandidaat ?persoon.
+
+    ?nVr mu:uuid ?nVrUuid;
+         a mandaat:Verkiezingsresultaat;
+         mandaat:gevolg ?gevolg;
+         mandaat:plaatsRangorde ?rangorde;
+         mandaat:isResultaatVan ?persoon;
+         mandaat:isResultaatVoor ?nKl.
+  }
+
+  GRAPH <http://mu.semte.ch/graphs/organizations/9ae900a5447b7d727ca6496910220d4389aba7f1869923f1bbf9729bdeca28e2> {
+    ?persoon ?persoonP ?persoonO.
+  }
+
+}
+WHERE {
+   ?kl mandaat:behoortTot <http://data.lblod.info/id/rechtstreekse-verkiezingen/6f7abe4b-f3bc-480c-a0f8-b13f98203621>;
+       mandaat:lijsttype ?lijstType;
+       skos:prefLabel ?lijstNaam;
+       mandaat:heeftKandidaat ?persoon.
+
+   ?vr mandaat:isResultaatVoor ?kl;
+        mandaat:gevolg ?gevolg;
+        mandaat:isResultaatVan ?persoon.
+
+   OPTIONAL { ?vr mandaat:plaatsRangorde ?rangorde. }
+
+   ?persoon ?persoonP ?persoonO.
+
+   BIND(SHA256(CONCAT(STR(?kl), "5407c872-8a46-47d1-a3a5-ea3c365ce373")) as ?nKlUuid) .
+   BIND(IRI(CONCAT("http://data.lblod.info/id/kandidatenlijsten/", ?nKlUuid)) AS ?nKl) .
+   BIND(SHA256(CONCAT(STR(?vr), "8ebbdfbf-7352-4012-87f4-7a2b61cc18c5")) as ?nVrUuid) .
+   BIND(IRI(CONCAT("http://data.lblod.info/id/verkiezingsresultaten/", ?nVrUuid)) AS ?nVr) .
+}
