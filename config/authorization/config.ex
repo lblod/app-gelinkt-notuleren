@@ -75,6 +75,10 @@ defmodule Acl.UserGroups.Config do
                         "http://purl.org/dc/terms/PeriodOfTime",
                         "http://www.w3.org/ns/org#Membership",
                         "http://mu.semte.ch/vocabularies/ext/signing/BlockchainStatus",
+                        "http://data.lblod.info/vocabularies/mobiliteit/Verkeersbordcombinatie",
+                        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordcategorie",
+                        "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordconcept",
+                        "http://data.lblod.info/vocabularies/mobiliteit/VerkeersbordconceptStatusCode"
                       ]
                     } },
                   %GraphSpec{

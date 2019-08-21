@@ -7,6 +7,7 @@
 (add-prefix "mandaat" "http://data.vlaanderen.be/ns/mandaat#")
 (add-prefix "persoon" "http://data.vlaanderen.be/ns/persoon#")
 (add-prefix "generiek" "http://data.vlaanderen.be/ns/generiek#")
+(add-prefix "mobiliteit" "https://data.vlaanderen.be/ns/mobiliteit#")
 
 (add-prefix "eli" "http://data.europa.eu/eli/ontology#")
 (add-prefix "m8g" "http://data.europa.eu/m8g/")
@@ -24,5 +25,7 @@
 (add-prefix "pav" "http://purl.org/pav/")
 (add-prefix "schema" "http://schema.org/")
 (add-prefix "rdfs" "http://www.w3.org/2000/01/rdf-schema#")
+
 (add-prefix "sign" "http://mu.semte.ch/vocabularies/ext/signing/")
 (add-prefix "lblodlg" "http://data.lblod.info/vocabularies/leidinggevenden/")
+(add-prefix "lblodmow" "http://data.lblod.info/vocabularies/mobiliteit/")
