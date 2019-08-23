@@ -30,29 +30,29 @@ First choose what you intend to run based on the description above.  Two scenari
 
 #### Running the demo setup
 
-First install git-lfs (see https://github.com/git-lfs/git-lfs/wiki/Installation)
+First install docker, docker-compose, and git-lfs (see https://github.com/git-lfs/git-lfs/wiki/Installation)
 
 Execute the following:
 
-    # Make sure git-lfs is enabled after installation
-    git lfs install
-    
     # Clone this repository
     git clone https://github.com/lblod/app-gelinkt-notuleren.git
     
     # Move into the directory
     cd app-gelinkt-notuleren
     
+    # Make sure git-lfs is enabled after installation
+    git lfs install
+    
     # Start the system
-    docker-compose -f docker-compose.yml -f docker-compose.demo.yml up
+    docker-compose -f docker-compose.yml -f docker-compose.demo.yml up -d
 
 Wait for everything to boot to ensure clean caches.  You may choose to monitor the migrations service in a separate terminal to and wait for the overview of all migrations to appear: `docker-compose logs -f --tail=100 migrations`.
 
-Once the migrations have ran, visit the application at http://localhost/
+Once the migrations have ran, visit the application at http://localhost/mock-login
 
 #### Running the dev setup
 
-First install git-lfs (see https://github.com/git-lfs/git-lfs/wiki/Installation)
+First install docker, docker-compose, and git-lfs (see https://github.com/git-lfs/git-lfs/wiki/Installation)
 
 Execute the following:
 
@@ -66,7 +66,7 @@ Execute the following:
     cd app-gelinkt-notuleren
     
     # Start the system
-    docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
+    docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
 
 Wait for everything to boot to ensure clean caches.  You may choose to monitor the migrations service in a separate terminal to and wait for the overview of all migrations to appear: `docker-compose logs -f --tail=100 migrations`.
 
