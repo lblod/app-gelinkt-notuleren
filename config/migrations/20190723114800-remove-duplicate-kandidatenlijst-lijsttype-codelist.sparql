@@ -1,0 +1,65 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.vlaanderen.be/id/concept/KandidatenlijstLijsttype/967a4dd2-53d7-48e8-becd-16a354580623>
+	a skos:Concept, <http://mu.semte.ch/vocabularies/ext/KandidatenlijstLijsttype> ;
+        mu:uuid	"967a4dd2-53d7-48e8-becd-16a354580623" ;
+	skos:prefLabel "OCMW verkiezingen" ;
+	skos:topConceptOf <http://data.vlaanderen.be/id/conceptscheme/KandidatenlijstLijsttype> .
+  }
+}
+
+;
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.vlaanderen.be/id/conceptscheme/KandidatenlijstLijsttype> a <http://www.w3.org/2004/02/skos/core#ConceptScheme>;
+       <http://mu.semte.ch/vocabularies/core/uuid> "254e4d85-3d01-406c-abd4-1d0082fe43f2";
+       <http://purl.org/dc/terms/modified> "2018-03-21"^^<http://www.w3.org/2001/XMLSchema#date>;
+       <http://www.w3.org/2004/02/skos/core#note> "Het type van een kandidatenlijst";
+       <http://www.w3.org/2004/02/skos/core#prefLabel> "Kandidatenlijst lijsttype" .
+  }
+}
+
+;
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?lijst <http://data.vlaanderen.be/ns/mandaat#lijsttype> ?oldType .
+  }
+} INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?lijst <http://data.vlaanderen.be/ns/mandaat#lijsttype> ?newType .
+  }
+} WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?oldType a <http://mu.semte.ch/vocabularies/ext/KandidaatLijsttype> .
+    ?lijst <http://data.vlaanderen.be/ns/mandaat#lijsttype> ?oldType .
+  }
+
+  VALUES (?oldType ?newType) {
+    (<http://data.vlaanderen.be/id/concept/KandidaatLijsttype/5ab0e9b8a3b2ca7c5e000010> <http://data.vlaanderen.be/id/concept/KandidatenlijstLijsttype/44aa08d2-fa02-42a3-8ae2-7dbfb23afdcc>)
+    (<http://data.vlaanderen.be/id/concept/KandidaatLijsttype/5aba54444ad0290001000002> <http://data.vlaanderen.be/id/concept/KandidatenlijstLijsttype/967a4dd2-53d7-48e8-becd-16a354580623>)
+    (<http://data.vlaanderen.be/id/concept/KandidaatLijsttype/5ab0e9b8a3b2ca7c5e00000e> <http://data.vlaanderen.be/id/concept/KandidatenlijstLijsttype/95de36e5-8c7a-4308-af7b-75afbd943dd2>)
+    (<http://data.vlaanderen.be/id/concept/KandidaatLijsttype/5ab0e9b8a3b2ca7c5e00000f> <http://data.vlaanderen.be/id/concept/KandidatenlijstLijsttype/90e3b7d0-2fae-43a1-957e-6daa8d072be1>)
+  }
+}
+
+;
+
+DELETE WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+  ?s a <http://mu.semte.ch/vocabularies/ext/KandidaatLijsttype> ;
+     ?p ?o .
+  }
+}
+
+;
+
+DELETE WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.vlaanderen.be/id/conceptscheme/KandidaatLijsttype> ?p ?o .
+  }
+}

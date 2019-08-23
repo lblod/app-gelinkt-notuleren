@@ -84,9 +84,6 @@ defmodule Dispatcher do
   match "/notulen/*path" do
     Proxy.forward conn, path, "http://resource/notulen/"
   end
-  match "/entiteiten/*path" do
-    Proxy.forward conn, path, "http://resource/entiteiten/"
-  end
   match "/fracties/*path" do
     Proxy.forward conn, path, "http://resource/fracties/"
   end
@@ -153,21 +150,6 @@ defmodule Dispatcher do
   match "/verkiezingsresultaat-gevolg-codes/*path" do
     Proxy.forward conn, path, "http://cache/verkiezingsresultaat-gevolg-codes/"
   end
-  match "/vestigingen/*path" do
-    Proxy.forward conn, path, "http://cache/vestigingen/"
-  end
-  match "/contact-punten/*path" do
-    Proxy.forward conn, path, "http://cache/contact-punten/"
-  end
-  match "/posities/*path" do
-    Proxy.forward conn, path, "http://cache/posities/"
-  end
-  match "/rollen/*path" do
-    Proxy.forward conn, path, "http://cache/rollen/"
-  end
-  match "/organisaties/*path" do
-    Proxy.forward conn, path, "http://cache/organisaties/"
-  end
   match "/templates/*path" do
     Proxy.forward conn, path, "http://cache/templates/"
   end
@@ -191,6 +173,13 @@ defmodule Dispatcher do
 
   post "/sync/*path" do
     Proxy.forward conn, path, "http://sync/sync"
+  end
+
+  #################################################################
+  # Adressenregister
+  #################################################################
+  match "/adressenregister/*path" do
+    Proxy.forward conn, path, "http://adressenregister/"
   end
 
   ############
