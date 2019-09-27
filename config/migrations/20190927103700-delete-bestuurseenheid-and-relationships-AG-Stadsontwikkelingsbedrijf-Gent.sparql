@@ -1,0 +1,60 @@
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+
+# Remove bestuurseenheid
+
+DELETE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/bestuurseenheden/ce61a1f14cf9b9c31765e4437cf383d7a3e1688451b7d547430c0190142ce573> ?p ?o.
+  }
+}
+
+WHERE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/bestuurseenheden/ce61a1f14cf9b9c31765e4437cf383d7a3e1688451b7d547430c0190142ce573> ?p ?o.
+  }
+}
+
+;
+
+# Remove bestuursorganen, bestuursorganen in tijd and bestuursfuncties
+# This bestuurseenheid has no mandates in the data, otherwise we'd have to remove them too
+
+DELETE {
+  GRAPH ?g {
+    ?bestuursorgaan <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/ce61a1f14cf9b9c31765e4437cf383d7a3e1688451b7d547430c0190142ce573> ;
+      ?boP ?boO .
+    ?bestuursorgaanInTijd <http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie> ?bestuursfunctie ;
+      ?botP ?botO .
+    ?bestuursfunctie ?beP ?beO .
+  }
+}
+
+WHERE {
+  GRAPH ?g {
+    ?bestuursorgaan <http://data.vlaanderen.be/ns/besluit#bestuurt> <http://data.lblod.info/id/bestuurseenheden/ce61a1f14cf9b9c31765e4437cf383d7a3e1688451b7d547430c0190142ce573> ;
+      ?boP ?boO ;
+      ^mandaat:isTijdspecialisatieVan ?bestuursorgaanInTijd .
+    ?bestuursorgaanInTijd <http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie> ?bestuursfunctie ;
+      ?botP ?botO .
+    ?bestuursfunctie ?beP ?beO .
+  }
+}
+
+;
+
+# Remove mock user
+
+DELETE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/account/37e1ab752cd2508df3818cf723ab804b> ?accP ?accO.
+    <http://data.lblod.info/id/persoon/2f96820d6c14a504160202a3185c818a> ?p <http://data.lblod.info/id/account/37e1ab752cd2508df3818cf723ab804b>.
+    <http://data.lblod.info/id/persoon/2f96820d6c14a504160202a3185c818a> ?persP ?persO.
+  }
+}
+WHERE {
+  GRAPH ?g {
+    <http://data.lblod.info/id/account/37e1ab752cd2508df3818cf723ab804b> ?accP ?accO.
+    <http://data.lblod.info/id/persoon/2f96820d6c14a504160202a3185c818a> ?p <http://data.lblod.info/id/account/37e1ab752cd2508df3818cf723ab804b>.
+    <http://data.lblod.info/id/persoon/2f96820d6c14a504160202a3185c818a> ?persP ?persO.
+  }
+}
