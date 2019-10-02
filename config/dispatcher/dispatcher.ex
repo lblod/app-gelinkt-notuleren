@@ -235,6 +235,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/verkeersbordcombinaties/"
   end
 
+  match "/maatregelconcepten/*path" do
+    Proxy.forward conn, path, "http://resource/maatregelconcepten/"
+  end
+
   match "/verkeersbordconcepten/*path" do
     Proxy.forward conn, path, "http://resource/verkeersbordconcepten/"
   end
