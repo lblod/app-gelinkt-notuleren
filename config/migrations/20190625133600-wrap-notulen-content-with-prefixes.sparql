@@ -1,0 +1,17 @@
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?notulen <http://www.w3.org/ns/prov#value> ?content .
+  }
+}
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?notulen <http://www.w3.org/ns/prov#value> ?newContent .
+  }
+}
+WHERE {
+  ?notulen a <http://mu.semte.ch/vocabularies/ext/Notulen> ; <http://www.w3.org/ns/prov#value> ?content .
+  ?z <http://data.vlaanderen.be/ns/besluit#heeftNotulen> ?notulen ;
+     <http://mu.semte.ch/vocabularies/ext/wasDerivedFromInstallatievergaderingNotulen> ?oldNotulen .
+
+  BIND(CONCAT("""<div prefix="lblodbp: http://data.lblod.info/vocabularies/besluitPublicatie/ eli: http://data.europa.eu/eli/ontology# prov: http://www.w3.org/ns/prov# mandaat: http://data.vlaanderen.be/ns/mandaat# besluit: http://data.vlaanderen.be/ns/besluit# person: http://www.w3.org/ns/person# persoon: http://data.vlaanderen.be/ns/persoon# ext: http://mu.semte.ch/vocabularies/ext/ ">""", STR( ?content ), "</div>") AS ?newContent ) .
+}

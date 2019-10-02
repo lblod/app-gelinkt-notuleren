@@ -1,0 +1,14 @@
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?uittreksel a ext:Uittreksel ; ?p ?o .
+    ?zitting <http://mu.semte.ch/vocabularies/ext/uittreksel> ?uittreksel .
+  }
+} WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?uittreksel a ext:Uittreksel ; ?p ?o .
+    ?zitting <http://mu.semte.ch/vocabularies/ext/uittreksel> ?uittreksel .
+    FILTER NOT EXISTS { ?uittreksel <http://www.w3.org/ns/prov#value> ?value }
+  }
+}

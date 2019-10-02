@@ -17,7 +17,7 @@ services:
     restart: always
     logging: *default-logging
   editor:
-    image: lblod/frontend-gelinkt-notuleren:1.0.0
+    image: lblod/frontend-gelinkt-notuleren:1.3.0
     links:
       - identifier:backend
     restart: always
@@ -25,7 +25,7 @@ services:
     labels:
       - "logging=true"
   publicatie:
-    image: lblod/frontend-gelinkt-notuleren-publicatie:0.9.0
+    image: lblod/frontend-gelinkt-notuleren-publicatie:0.10.1
     links:
       - identifier:backend
     restart: always
@@ -38,6 +38,8 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
+    environment:
+      DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: "[{\"variables\":[],\"name\":\"public\"}]"
   dispatcher:
     image: semtech/mu-dispatcher:1.1.2
     volumes:
@@ -101,7 +103,7 @@ services:
     labels:
       - "logging=true"
   cache:
-    image: madnificent/mu-elixir-cache:0.1.0
+    image: semtech/mu-cache:2.0.0
     links:
       - resource:backend
     restart: always
@@ -142,3 +144,7 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
+  adressenregister:
+    image: lblod/adressenregister-fuzzy-search-service:0.4.0
+    restart: always
+    logging: *default-logging

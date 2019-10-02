@@ -1,0 +1,123 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+# Bestuursorgaan Burgemeester
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?bestuursorgaanInTijd a besluit:Bestuursorgaan ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaan ;
+       mu:uuid ?uuidInTijd ;
+       mandaat:bindingStart "2012-10-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:bindingEinde "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+  }
+} WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?bestuurseenheid a besluit:Bestuurseenheid .
+
+    VALUES ?bestuurseenheid {
+      <http://data.lblod.info/id/bestuurseenheden/d760812063231cc45ced3fa65a7cd54920329178c8df7e891aa12db442e6606a> # Houthalen-Helchteren
+      <http://data.lblod.info/id/bestuurseenheden/44c5d81bf86b888159e3c2ee2cf3fd39e4afd58c73edc27245111c8a32bf5fa0> # Keerbergen
+      <http://data.lblod.info/id/bestuurseenheden/b45815b052363cc4b1c89eeb8dd6ae4dbf8433883d314b4c1d88c96a8d912212> # Landen
+      <http://data.lblod.info/id/bestuurseenheden/a10d7dc2599e3ab6854fc83d1023224eda8cfbc62017d4a1a82bedef7a03b8e4> # Maasmechelen
+      <http://data.lblod.info/id/bestuurseenheden/0584f1096c6eb744a680d13e4974ff85744ec9aa163e31833acaa694c8c9c6c8> # Zulte
+      <http://data.lblod.info/id/bestuurseenheden/7269d3607a761c9ce0e226e0b7ea5687324230b65a568d48c81a7acba53998fd> # Zwevegem
+    }
+
+    ?bestuursorgaan besluit:bestuurt ?bestuurseenheid ;
+                    skos:prefLabel ?bestuursorgaanLabel ;
+                    besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/4955bd72cd0e4eb895fdbfab08da0284> . # Burgemeester
+
+    BIND(SHA256(CONCAT("01b1adc8-7ed2-492b-ad64-547a04aac987", ":", STR(?bestuursorgaanLabel))) AS ?uuidInTijd) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", STR(?uuidInTijd))) AS ?bestuursorgaanInTijd) .
+  }
+}
+
+;
+
+# Bestuursorgaan Schepencollege
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?bestuursorgaanInTijd a besluit:Bestuursorgaan ;
+       mandaat:isTijdspecialisatieVan ?bestuursorgaan ;
+       mu:uuid ?uuidInTijd ;
+       mandaat:bindingStart "2012-10-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+       mandaat:bindingEinde "2019-01-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+  }
+} WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?bestuurseenheid a besluit:Bestuurseenheid .
+
+    VALUES ?bestuurseenheid {
+      <http://data.lblod.info/id/bestuurseenheden/d760812063231cc45ced3fa65a7cd54920329178c8df7e891aa12db442e6606a> # Houthalen-Helchteren
+      <http://data.lblod.info/id/bestuurseenheden/44c5d81bf86b888159e3c2ee2cf3fd39e4afd58c73edc27245111c8a32bf5fa0> # Keerbergen
+      <http://data.lblod.info/id/bestuurseenheden/b45815b052363cc4b1c89eeb8dd6ae4dbf8433883d314b4c1d88c96a8d912212> # Landen
+      <http://data.lblod.info/id/bestuurseenheden/a10d7dc2599e3ab6854fc83d1023224eda8cfbc62017d4a1a82bedef7a03b8e4> # Maasmechelen
+      <http://data.lblod.info/id/bestuurseenheden/0584f1096c6eb744a680d13e4974ff85744ec9aa163e31833acaa694c8c9c6c8> # Zulte
+      <http://data.lblod.info/id/bestuurseenheden/7269d3607a761c9ce0e226e0b7ea5687324230b65a568d48c81a7acba53998fd> # Zwevegem
+    }
+
+    ?bestuursorgaan besluit:bestuurt ?bestuurseenheid ;
+                    skos:prefLabel ?bestuursorgaanLabel ;
+                    besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000006> . # Schepencollege
+
+    BIND(SHA256(CONCAT("ffe502d1-e528-48a4-9a2a-05c3c7b7f440", ":", STR(?bestuursorgaanLabel))) AS ?uuidInTijd) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", STR(?uuidInTijd))) AS ?bestuursorgaanInTijd) .
+  }
+}
+
+;
+
+# Mandaten
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?burgemeester a mandaat:Mandaat ;
+      mu:uuid ?burgemeesterUuid ;
+      org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000013> . # Burgemeester
+
+    ?schepen a mandaat:Mandaat ;
+      mu:uuid ?schepenUuid ;
+      org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000014> . # Schepen
+
+    ?burgemeesterInTijd org:hasPost ?burgemeester .
+    ?schepenCollegeInTijd org:hasPost ?schepen, ?burgemeester .
+  }
+} WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?bestuurseenheid a besluit:Bestuurseenheid .
+
+    VALUES ?bestuurseenheid {
+      <http://data.lblod.info/id/bestuurseenheden/d760812063231cc45ced3fa65a7cd54920329178c8df7e891aa12db442e6606a> # Houthalen-Helchteren
+      <http://data.lblod.info/id/bestuurseenheden/44c5d81bf86b888159e3c2ee2cf3fd39e4afd58c73edc27245111c8a32bf5fa0> # Keerbergen
+      <http://data.lblod.info/id/bestuurseenheden/b45815b052363cc4b1c89eeb8dd6ae4dbf8433883d314b4c1d88c96a8d912212> # Landen
+      <http://data.lblod.info/id/bestuurseenheden/a10d7dc2599e3ab6854fc83d1023224eda8cfbc62017d4a1a82bedef7a03b8e4> # Maasmechelen
+      <http://data.lblod.info/id/bestuurseenheden/0584f1096c6eb744a680d13e4974ff85744ec9aa163e31833acaa694c8c9c6c8> # Zulte
+      <http://data.lblod.info/id/bestuurseenheden/7269d3607a761c9ce0e226e0b7ea5687324230b65a568d48c81a7acba53998fd> # Zwevegem
+    }
+
+    ?burgemeesterOrg besluit:bestuurt ?bestuurseenheid ;
+                    skos:prefLabel ?burgemeesterLabel ;
+                    besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/4955bd72cd0e4eb895fdbfab08da0284> . # Burgemeester
+
+    ?schepenCollegeOrg besluit:bestuurt ?bestuurseenheid ;
+                    skos:prefLabel ?schepenCollegeLabel ;
+                    besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000006> . # Schepencollege
+
+    BIND(SHA256(CONCAT("01b1adc8-7ed2-492b-ad64-547a04aac987", ":", STR(?burgemeesterLabel))) AS ?burgemeesterUuidInTijd) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", STR(?burgemeesterUuidInTijd))) AS ?burgemeesterInTijd) .
+
+    BIND(SHA256(CONCAT("ffe502d1-e528-48a4-9a2a-05c3c7b7f440", ":", STR(?schepenCollegeLabel))) AS ?schepenCollegeUuidInTijd) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/bestuursorganen/", STR(?schepenCollegeUuidInTijd))) AS ?schepenCollegeInTijd) .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":2012-10-14:Burgemeester", STR(?burgemeesterLabel))) AS ?burgemeesterUuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/mandaten/", STR(?burgemeesterUuid))) AS ?burgemeester) .
+
+    BIND(SHA256(CONCAT("f40a7a5b-ccb6-447c-aec8-f035227ff305", ":2012-10-14:Schepen", STR(?schepenCollegeLabel))) AS ?schepenUuid) .
+    BIND(IRI(CONCAT("http://data.lblod.info/id/mandaten/", STR(?schepenUuid))) AS ?schepen) .
+  }
+}

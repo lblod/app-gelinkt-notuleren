@@ -1,0 +1,15 @@
+# Remove voorzitter vast bureau linked to bijzonder comite
+DELETE DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/bestuursorganen/ba819c96-7893-43f8-8c20-d14471581c33> <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/0ae5b9bcee44101b912d8ded1b586513e7f3c32431346c65742b62756a572425> .
+    <http://data.lblod.info/id/bestuursorganen/ba819c96-7893-43f8-8c20-d14471581c33> <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/44b775715704a7f57e57da5c267f65680517e233b7e88294edf1e3ef8213e486>
+  }
+}
+
+# link lid and voorziter bijzonder comite
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+  <http://data.lblod.info/id/bestuursorganen/ba819c96-7893-43f8-8c20-d14471581c33> <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/7af04f4d-48e9-4eb3-9652-7fe1554b5d89>.
+  <http://data.lblod.info/id/bestuursorganen/ba819c96-7893-43f8-8c20-d14471581c33> <http://www.w3.org/ns/org#hasPost> <http://data.lblod.info/id/mandaten/0091c6f6-783c-4129-a4ac-f4fe6eb9ac40>
+  }
+}
