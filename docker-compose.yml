@@ -40,6 +40,7 @@ services:
       - "logging=true"
     environment:
       DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: "[{\"variables\":[],\"name\":\"public\"}]"
+      DEFAULT_ACCESS_CONTROL_ALLOW_ORIGIN_HEADER: '*'
   dispatcher:
     image: semtech/mu-dispatcher:1.1.2
     volumes:
