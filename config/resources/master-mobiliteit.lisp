@@ -18,7 +18,7 @@
                                      :as "combinaties")
              (verkeersbordconcept :via ,(s-prefix "lblodmow:verkeersbordconcept")
                                   :as "verkeersbordconcept"))
-  :resource-base (s-url "http://data.lblod.info/verkeersbordcombinaties/")
+  :resource-base (s-url "http://data.lblod.info/maatregelconcepten/")
   :on-path "maatregelconcepten")
 
 (define-resource verkeersbordconcept ()
