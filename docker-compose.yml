@@ -40,6 +40,7 @@ services:
       - "logging=true"
     environment:
       DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: "[{\"variables\":[],\"name\":\"public\"}]"
+      DEFAULT_ACCESS_CONTROL_ALLOW_ORIGIN_HEADER: '*'
   dispatcher:
     image: semtech/mu-dispatcher:1.1.2
     volumes:
@@ -145,6 +146,8 @@ services:
     labels:
       - "logging=true"
   adressenregister:
-    image: lblod/adressenregister-fuzzy-search-service:0.4.0
+    image: lblod/adressenregister-fuzzy-search-service:0.5.0
     restart: always
     logging: *default-logging
+    labels:
+      - "logging=true"

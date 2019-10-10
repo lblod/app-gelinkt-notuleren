@@ -220,6 +220,26 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/blockchain-statuses/"
   end
 
+  match "/verkeersbordcombinaties/*path" do
+    Proxy.forward conn, path, "http://resource/verkeersbordcombinaties/"
+  end
+
+  match "/maatregelconcepten/*path" do
+    Proxy.forward conn, path, "http://resource/maatregelconcepten/"
+  end
+
+  match "/verkeersbordconcepten/*path" do
+    Proxy.forward conn, path, "http://resource/verkeersbordconcepten/"
+  end
+
+  match "/verkeersbordcategorieen/*path" do
+    Proxy.forward conn, path, "http://resource/verkeersbordcategorieen/"
+  end
+
+  match "/verkeersbordconcept-status-codes/*path" do
+    Proxy.forward conn, path, "http://resource/verkeersbordconcept-status-codes/"
+  end
+
   #######
   # Tasks
   #######
