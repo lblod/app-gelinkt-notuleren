@@ -1,0 +1,71 @@
+<http://lblod.info/templates/0ae5a389-421b-4f6d-a5c6-be546db4f069> a <http://mu.semte.ch/vocabularies/ext/Template>;
+  <http://purl.org/dc/terms/title> "Aanstelling mandataris (klassieke stijl)";
+  <http://mu.semte.ch/vocabularies/core/uuid> "0ae5a389-421b-4f6d-a5c6-be546db4f069";
+  <http://mu.semte.ch/vocabularies/ext/activeInContext> <http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt>;
+  <http://mu.semte.ch/vocabularies/ext/templateContent> """
+
+<div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateBoundUuid('besluit')}"
+  typeof="besluit:Besluit ext:BesluitKlassiekeStijl mandaat:Aanstellingsbesluit">
+  <p>Openbare titel besluit:</p>
+  <h5 class="h4" property="eli:title">Aanstelling mandataris</h5>
+  <span style="display:none;" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">&nbsp;</span>
+  <br>
+  <p>Korte openbare beschrijving:</p>
+  <p property="eli:description"><span class="mark-highlight-manual">Geef korte beschrijving op</span></p>
+  <br>
+
+  <p>Citeeropschrift:</p>
+  <p property="eli:title_short"><span class="mark-highlight-manual">Geef citeeropschrift op</span></p>
+  <br>
+
+  <!-- VARIABLE -->
+  <div class="ext_variable" typeof="ext:Variable" resource="http://variables/${generateUuid()}">
+    <div property="ext:idInSnippet" content="${generateBoundUuid('bestuursorgaan-label-in-besluit')}">0</div>
+    <div property="ext:intentionUri" content="http://zitting/bestuursorgaan-label-for-further-use">a</div>
+    <div property="ext:variableState" content="initialized">initialized</div>
+  </div>
+
+  <div property="besluit:motivering" lang="nl">
+    <p>
+      <span class="mark-highlight-manual">De/Het</span>
+      <span id="${generateBoundUuid('bestuursorgaan-label-in-besluit')}">geef bestuursorgaan op</span>,
+    </p>
+    <br>
+
+    <div>
+      <ul class="bullet-list">
+        <li>Gelet op <span class="mark-highlight-manual">Voeg juridische grond in</span>;</li>
+      </ul>
+    </div>
+
+    <br>
+    <div>
+      <ul class="bullet-list">
+        <li>Overwegende dat <span class="mark-highlight-manual">Voeg motivering in</span>;</li>
+      </ul>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <p class="u-spacer--small">Beslist,</p>
+  <div property="prov:value">
+    <div property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+      <div property="eli:number">Enig artikel</div>
+      <span style="display:none;" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD">&nbsp;</span>
+      <div property="prov:value">
+         <div property="ext:bekrachtigtAanstellingVan" resource="http://data.lblod.info/id/mandatarissen/${generateBoundUuid('mandataris')}" typeof="mandaat:Mandataris">
+            De voorgedragen kandidaat <span class="mark-highlight-manual">geeft naam persoon op </span> wordt verkozen verklaard als
+            <span class="mark-highlight-manual">geef functie op</span> met ingang van <span class="mark-highlight-manual">geef start op</span>
+            <span class="mark-highlight-manual">geef einde op</span>
+         </div>
+      </div>
+    </div>
+    <br>
+    <div>Voeg nieuw artikel in</div>
+    <br>
+  </div>
+</div>
+
+""";
+<http://mu.semte.ch/vocabularies/ext/templateMatches> "Voeg sjabloon in voor besluit of vrij tekstveld (bijvoorbeeld voor een vraag, antwoord of tussenkomst)".
