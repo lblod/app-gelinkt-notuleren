@@ -33,7 +33,7 @@ services:
     labels:
       - "logging=true"
   identifier:
-    image: semtech/mu-identifier:1.5.0
+    image: semtech/mu-identifier:1.7.0
     restart: always
     logging: *default-logging
     labels:
@@ -41,6 +41,10 @@ services:
     environment:
       DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: "[{\"variables\":[],\"name\":\"public\"}]"
       DEFAULT_ACCESS_CONTROL_ALLOW_ORIGIN_HEADER: '*'
+  deltanotifier:
+    image: semtech/mu-delta-notifier:0.1.0
+    volumes:
+      - ./config/delta:/config
   dispatcher:
     image: semtech/mu-dispatcher:1.1.2
     volumes:
@@ -50,7 +54,7 @@ services:
     labels:
       - "logging=true"
   database:
-    image: semtech/mu-authorization:0.3.0
+    image: semtech/mu-authorization:0.6.0-beta.2
     environment:
       MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
     volumes:
@@ -104,7 +108,7 @@ services:
     labels:
       - "logging=true"
   cache:
-    image: semtech/mu-cache:2.0.0
+    image: semtech/mu-cache:2.0.1
     links:
       - resource:backend
     restart: always
@@ -112,7 +116,7 @@ services:
     labels:
       - "logging=true"
   resource:
-    image: semtech/mu-cl-resources:1.17.1
+    image: semtech/mu-cl-resources:1.18.0
     volumes:
       - ./config/resources:/config
     restart: always
