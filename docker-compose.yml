@@ -142,9 +142,7 @@ services:
     labels:
       - "logging=true"
   besluit-publicatie:
-    image: lblod/besluit-publicatie-publish-service:0.3.0
-    links:
-      - virtuoso:database #TODO replace with database (see repo as to why)
+    image: lblod/besluit-publicatie-publish-service:0.3.1
     restart: always
     logging: *default-logging
     labels:
