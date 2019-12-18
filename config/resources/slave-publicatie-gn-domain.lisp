@@ -176,7 +176,8 @@
 
 (define-resource besluitenlijst ()
   :class (s-prefix "ext:Besluitenlijst")
-  :properties `((:inhoud :string ,(s-prefix "prov:value")))
+  :properties `((:inhoud :string ,(s-prefix "prov:value"))
+                (:publicatiedatum :date ,(s-prefix "eli:date_publication")))
   :has-one `((published-resource :via ,(s-prefix "prov:wasDerivedFrom")
                                  :as "publication")
              (zitting :via ,(s-prefix "ext:besluitenlijst")
