@@ -142,7 +142,7 @@ services:
     labels:
       - "logging=true"
   besluit-publicatie:
-    image: lblod/besluit-publicatie-publish-service:0.3.1
+    image: lblod/besluit-publicatie-publish-service:0.4.0
     links:
       - virtuoso:database #TODO replace with database (but currently issue mu-delta)
     restart: always
