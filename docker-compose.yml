@@ -17,7 +17,7 @@ services:
     restart: always
     logging: *default-logging
   editor:
-    image: lblod/frontend-gelinkt-notuleren:1.5.1
+    image: lblod/frontend-gelinkt-notuleren:1.6.0
     links:
       - identifier:backend
     restart: always
@@ -143,6 +143,8 @@ services:
       - "logging=true"
   besluit-publicatie:
     image: lblod/besluit-publicatie-publish-service:0.3.1
+    links:
+      - virtuoso:database #TODO replace with database (but currently issue mu-delta)
     restart: always
     logging: *default-logging
     labels:

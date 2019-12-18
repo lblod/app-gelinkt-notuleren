@@ -260,6 +260,29 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/task-solutions/"
   end
 
+  #################################################################
+  # slave leidinggevenden
+  #################################################################
+  match "/bestuursfuncties/*path" do
+    Proxy.forward conn, path, "http://cache/bestuursfuncties/"
+  end
+
+  match "/functionarissen/*path" do
+    Proxy.forward conn, path, "http://cache/functionarissen/"
+  end
+
+  match "/contact-punten/*path" do
+    Proxy.forward conn, path, "http://cache/contact-punten/"
+  end
+
+  match "/adressen/*path" do
+    Proxy.forward conn, path, "http://cache/adressen/"
+  end
+
+  match "/functionaris-status-codes/*path" do
+    Proxy.forward conn, path, "http://cache/functionaris-status-codes/"
+  end
+
   #########
   # login
   ########

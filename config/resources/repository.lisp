@@ -31,4 +31,4 @@
 (add-prefix "lblodmow" "http://data.lblod.info/vocabularies/mobiliteit/")
 (add-prefix "locn" "http://www.w3.org/ns/locn#")
 (add-prefix "adres" "https://data.vlaanderen.be/ns/adres#")
-
+(add-prefix "lblodlg" "http://data.lblod.info/vocabularies/leidinggevenden/")
