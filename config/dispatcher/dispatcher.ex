@@ -1,356 +1,355 @@
 defmodule Dispatcher do
-  use Plug.Router
+  use Matcher
 
-  def start(_argv) do
-    port = 80
-    IO.puts "Starting Plug with Cowboy on port #{port}"
-    Plug.Adapters.Cowboy.http __MODULE__, [], port: port
-    :timer.sleep(:infinity)
+  define_accept_types [
+    json: [ "application/json", "application/vnd.api+json" ],
+    html: [ "text/html", "application/xhtml+html" ],
+    any: [ "*/*" ]
+  ]
+
+  @html %{ accept: %{ html: true } }
+  @json %{ accept: %{ json: true } }
+  @any %{ accept: %{ any: true } }
+
+  match "/blockchain/*path", @json do
+    forward conn, path, "http://blockchain/"
   end
 
-  plug Plug.Logger
-  plug :match
-  plug :dispatch
-
-  # In order to forward the 'themes' resource to the
-  # resource service, use the following forward rule.
-  #
-  # docker-compose stop; docker-compose rm; docker-compose up
-  # after altering this file.
-  #
-  # match "/themes/*path" do
-  #   Proxy.forward conn, path, "http://resource/themes/"
-  # end
-
-  match "/blockchain/*path" do
-    Proxy.forward conn, path, "http://blockchain/"
+   match "/decisionservice/*path", @json do
+    forward conn, path, "http://decisionservice/"
   end
 
-   match "/decisionservice/*path" do
-    Proxy.forward conn, path, "http://decisionservice/"
+  match "/agendas/*path", @json do
+    forward conn, path, "http://resource/agendas/"
   end
 
-  match "/agendas/*path" do
-    Proxy.forward conn, path, "http://resource/agendas/"
+  match "/besluitenlijsten/*path", @json do
+    forward conn, path, "http://resource/besluitenlijsten/"
   end
 
-  match "/besluitenlijsten/*path" do
-    Proxy.forward conn, path, "http://resource/besluitenlijsten/"
+  match "/uittreksels/*path", @json do
+    forward conn, path, "http://resource/uittreksels/"
   end
 
-  match "/uittreksels/*path" do
-    Proxy.forward conn, path, "http://resource/uittreksels/"
+  match "/prepublished-agendas/*path", @json do
+    forward conn, path, "http://resource/prepublished-agendas/"
   end
 
-  match "/prepublished-agendas/*path" do
-    Proxy.forward conn, path, "http://resource/prepublished-agendas/"
+  match "/agendapunten/*path", @json do
+    forward conn, path, "http://resource/agendapunten/"
   end
 
-  match "/agendapunten/*path" do
-    Proxy.forward conn, path, "http://resource/agendapunten/"
+  match "/artikels/*path", @json do
+    forward conn, path, "http://resource/artikels/"
   end
 
-  match "/artikels/*path" do
-    Proxy.forward conn, path, "http://resource/artikels/"
+  match "/behandelingen-van-agendapunten/*path", @json do
+    forward conn, path, "http://resource/behandelingen-van-agendapunten/"
   end
 
-  match "/behandelingen-van-agendapunten/*path" do
-    Proxy.forward conn, path, "http://resource/behandelingen-van-agendapunten/"
+  match "/besluiten/*path", @json do
+    forward conn, path, "http://resource/besluiten/"
   end
 
-  match "/besluiten/*path" do
-    Proxy.forward conn, path, "http://resource/besluiten/"
+  match "/bestuurseenheden/*path", @json do
+    forward conn, path, "http://cache/bestuurseenheden/"
   end
 
-  match "/bestuurseenheden/*path" do
-    Proxy.forward conn, path, "http://cache/bestuurseenheden/"
+  match "/werkingsgebieden/*path", @json do
+    forward conn, path, "http://cache/werkingsgebieden/"
   end
 
-  match "/werkingsgebieden/*path" do
-    Proxy.forward conn, path, "http://cache/werkingsgebieden/"
+  match "/bestuurseenheid-classificatie-codes/*path", @json do
+    forward conn, path, "http://cache/bestuurseenheid-classificatie-codes/"
   end
 
-  match "/bestuurseenheid-classificatie-codes/*path" do
-    Proxy.forward conn, path, "http://cache/bestuurseenheid-classificatie-codes/"
+  match "/bestuursorganen/*path", @json do
+    forward conn, path, "http://resource/bestuursorganen/"
   end
 
-  match "/bestuursorganen/*path" do
-    Proxy.forward conn, path, "http://resource/bestuursorganen/"
+  match "/bestuursorgaan-classificatie-codes/*path", @json do
+    forward conn, path, "http://cache/bestuursorgaan-classificatie-codes/"
   end
 
-  match "/bestuursorgaan-classificatie-codes/*path" do
-    Proxy.forward conn, path, "http://cache/bestuursorgaan-classificatie-codes/"
+  match "/rechtsgronden-besluit/*path", @json do
+    forward conn, path, "http://resource/rechtsgronden-besluit/"
   end
 
-  match "/rechtsgronden-besluit/*path" do
-    Proxy.forward conn, path, "http://resource/rechtsgronden-besluit/"
+  match "/rechtsgronden-artikel/*path", @json do
+    forward conn, path, "http://resource/rechtsgronden-artikel/"
   end
 
-  match "/rechtsgronden-artikel/*path" do
-    Proxy.forward conn, path, "http://resource/rechtsgronden-artikel/"
+  match "/stemmingen/*path", @json do
+    forward conn, path, "http://resource/stemmingen/"
   end
 
-  match "/stemmingen/*path" do
-    Proxy.forward conn, path, "http://resource/stemmingen/"
+  match "/zittingen/*path", @json do
+    forward conn, path, "http://resource/zittingen/"
   end
 
-  match "/zittingen/*path" do
-    Proxy.forward conn, path, "http://resource/zittingen/"
+  match "/notulen/*path", @json do
+    forward conn, path, "http://resource/notulen/"
   end
 
-  match "/notulen/*path" do
-    Proxy.forward conn, path, "http://resource/notulen/"
+  match "/fracties/*path", @json do
+    forward conn, path, "http://resource/fracties/"
   end
 
-  match "/fracties/*path" do
-    Proxy.forward conn, path, "http://resource/fracties/"
+  match "/fractietypes/*path", @json do
+    forward conn, path, "http://cache/fractietypes/"
   end
 
-  match "/fractietypes/*path" do
-    Proxy.forward conn, path, "http://cache/fractietypes/"
+  match "/geboortes/*path", @json do
+    forward conn, path, "http://cache/geboortes/"
   end
 
-  match "/geboortes/*path" do
-    Proxy.forward conn, path, "http://cache/geboortes/"
+  match "/lijsttypes/*path", @json do
+    forward conn, path, "http://cache/lijsttypes/"
   end
 
-  match "/lijsttypes/*path" do
-    Proxy.forward conn, path, "http://cache/lijsttypes/"
+  match "/kandidatenlijsten/*path", @json do
+    forward conn, path, "http://cache/kandidatenlijsten/"
   end
 
-  match "/kandidatenlijsten/*path" do
-    Proxy.forward conn, path, "http://cache/kandidatenlijsten/"
+  match "/lidmaatschappen/*path", @json do
+    forward conn, path, "http://resource/lidmaatschappen/"
   end
 
-  match "/lidmaatschappen/*path" do
-    Proxy.forward conn, path, "http://resource/lidmaatschappen/"
+  match "/mandaten/*path", @json do
+    forward conn, path, "http://resource/mandaten/"
   end
 
-  match "/mandaten/*path" do
-    Proxy.forward conn, path, "http://resource/mandaten/"
+  match "/bestuursfunctie-codes/*path", @json do
+    forward conn, path, "http://cache/bestuursfunctie-codes/"
   end
 
-  match "/bestuursfunctie-codes/*path" do
-    Proxy.forward conn, path, "http://cache/bestuursfunctie-codes/"
+  match "/mandatarissen/*path", @json do
+    forward conn, path, "http://resource/mandatarissen/"
   end
 
-  match "/mandatarissen/*path" do
-    Proxy.forward conn, path, "http://resource/mandatarissen/"
+  match "/mandataris-status-codes/*path", @json do
+    forward conn, path, "http://cache/mandataris-status-codes/"
   end
 
-  match "/mandataris-status-codes/*path" do
-    Proxy.forward conn, path, "http://cache/mandataris-status-codes/"
+  match "/beleidsdomein-codes/*path", @json do
+    forward conn, path, "http://cache/beleidsdomein-codes/"
   end
 
-  match "/beleidsdomein-codes/*path" do
-    Proxy.forward conn, path, "http://cache/beleidsdomein-codes/"
+  match "/personen/*path", @json do
+    forward conn, path, "http://cache/personen/"
   end
 
-  match "/personen/*path" do
-    Proxy.forward conn, path, "http://cache/personen/"
+  match "/geslacht-codes/*path", @json do
+    forward conn, path, "http://cache/geslacht-codes/"
   end
 
-  match "/geslacht-codes/*path" do
-    Proxy.forward conn, path, "http://cache/geslacht-codes/"
+  match "/identificatoren/*path", @json do
+    forward conn, path, "http://resource/identificatoren/"
   end
 
-  match "/identificatoren/*path" do
-    Proxy.forward conn, path, "http://resource/identificatoren/"
+  match "/rechtsgronden-aanstelling/*path", @json do
+    forward conn, path, "http://resource/rechtsgronden-aanstelling/"
   end
 
-  match "/rechtsgronden-aanstelling/*path" do
-    Proxy.forward conn, path, "http://resource/rechtsgronden-aanstelling/"
+  match "/rechtsgronden-beeindiging/*path", @json do
+    forward conn, path, "http://resource/rechtsgronden-beeindiging/"
   end
 
-  match "/rechtsgronden-beeindiging/*path" do
-    Proxy.forward conn, path, "http://resource/rechtsgronden-beeindiging/"
+  match "/rechtstreekse-verkiezingen/*path", @json do
+    forward conn, path, "http://cache/rechtstreekse-verkiezingen/"
   end
 
-  match "/rechtstreekse-verkiezingen/*path" do
-    Proxy.forward conn, path, "http://cache/rechtstreekse-verkiezingen/"
+  match "/rechtsgronden/*path", @json do
+    forward conn, path, "http://resource/rechtsgronden/"
   end
 
-  match "/rechtsgronden/*path" do
-    Proxy.forward conn, path, "http://resource/rechtsgronden/"
+  match "/tijdsgebonden-entiteiten/*path", @json do
+    forward conn, path, "http://cache/tijdsgebonden-entiteiten/"
   end
 
-  match "/tijdsgebonden-entiteiten/*path" do
-    Proxy.forward conn, path, "http://cache/tijdsgebonden-entiteiten/"
+  match "/tijdsintervallen/*path", @json do
+    forward conn, path, "http://resource/tijdsintervallen/"
   end
 
-  match "/tijdsintervallen/*path" do
-    Proxy.forward conn, path, "http://resource/tijdsintervallen/"
+  match "/verkiezingsresultaten/*path", @json do
+    forward conn, path, "http://cache/verkiezingsresultaten/"
   end
 
-  match "/verkiezingsresultaten/*path" do
-    Proxy.forward conn, path, "http://cache/verkiezingsresultaten/"
+  match "/verkiezingsresultaat-gevolg-codes/*path", @json do
+    forward conn, path, "http://cache/verkiezingsresultaat-gevolg-codes/"
   end
 
-  match "/verkiezingsresultaat-gevolg-codes/*path" do
-    Proxy.forward conn, path, "http://cache/verkiezingsresultaat-gevolg-codes/"
+  match "/templates/*path", @json do
+    forward conn, path, "http://cache/templates/"
   end
 
-  match "/templates/*path" do
-    Proxy.forward conn, path, "http://cache/templates/"
+  match "/editor-documents/*path", @json do
+    forward conn, path, "http://cache/editor-documents/"
   end
 
-  match "/editor-documents/*path" do
-    Proxy.forward conn, path, "http://cache/editor-documents/"
+  match "/document-containers/*path", @json do
+    forward conn, path,  "http://resource/document-containers/"
   end
 
-  match "/document-containers/*path" do
-    Proxy.forward conn, path,  "http://resource/document-containers/"
+  match "/editor-document-statuses/*path", @json do
+    forward conn, path, "http://cache/editor-document-statuses/"
   end
 
-  match "/editor-document-statuses/*path" do
-    Proxy.forward conn, path, "http://cache/editor-document-statuses/"
+  match "/rdfs-classes/*path", @json do
+    forward conn, path, "http://cache/rdfs-classes/"
   end
 
-  match "/rdfs-classes/*path" do
-    Proxy.forward conn, path, "http://cache/rdfs-classes/"
+  match "/rdfs-properties/*path", @json do
+    forward conn, path, "http://cache/rdfs-properties/"
   end
 
-  match "/rdfs-properties/*path" do
-    Proxy.forward conn, path, "http://cache/rdfs-properties/"
-  end
-
-  post "/sync/*path" do
-    Proxy.forward conn, path, "http://sync/sync"
+  post "/sync/*path", @json do
+    forward conn, path, "http://sync/sync"
   end
 
   #################################################################
   # Adressenregister
   #################################################################
-  match "/adressenregister/*path" do
-    Proxy.forward conn, path, "http://adressenregister/"
+  match "/adressenregister/*path", @json do
+    forward conn, path, "http://adressenregister/"
   end
 
   ############
   # Blockchain
   ############
-  match "/prepublish/*path" do
-    Proxy.forward conn, path, "http://preimporter/prepublish/"
+  match "/prepublish/*path", @json do
+    forward conn, path, "http://preimporter/prepublish/"
   end
 
-  match "/signing/*path" do
-    Proxy.forward conn, path, "http://preimporter/signing/"
+  match "/signing/*path", @json do
+    forward conn, path, "http://preimporter/signing/"
   end
 
-  match "/signed-resources/*path" do
-    Proxy.forward conn, path, "http://resource/signed-resources/"
+  match "/signed-resources/*path", @json do
+    forward conn, path, "http://resource/signed-resources/"
   end
 
-  match "/published-resources/*path" do
-    Proxy.forward conn, path, "http://resource/published-resources/"
+  match "/published-resources/*path", @json do
+    forward conn, path, "http://resource/published-resources/"
   end
 
-  match "/versioned-agendas/*path" do
-    Proxy.forward conn, path, "http://resource/versioned-agendas/"
+  match "/versioned-agendas/*path", @json do
+    forward conn, path, "http://resource/versioned-agendas/"
   end
 
-  match "/versioned-besluiten-lijsten/*path" do
-    Proxy.forward conn, path, "http://resource/versioned-besluiten-lijsten/"
+  match "/versioned-besluiten-lijsten/*path", @json do
+    forward conn, path, "http://resource/versioned-besluiten-lijsten/"
   end
 
-  match "/versioned-behandelingen/*path" do
-    Proxy.forward conn, path, "http://resource/versioned-behandelingen/"
+  match "/versioned-behandelingen/*path", @json do
+    forward conn, path, "http://resource/versioned-behandelingen/"
   end
 
-  match "/versioned-notulen/*path" do
-    Proxy.forward conn, path, "http://resource/versioned-notulen/"
+  match "/versioned-notulen/*path", @json do
+    forward conn, path, "http://resource/versioned-notulen/"
   end
 
-  match "/blockchain-statuses/*path" do
-    Proxy.forward conn, path, "http://resource/blockchain-statuses/"
+  match "/blockchain-statuses/*path", @json do
+    forward conn, path, "http://resource/blockchain-statuses/"
   end
 
-  match "/verkeersbordcombinaties/*path" do
-    Proxy.forward conn, path, "http://resource/verkeersbordcombinaties/"
+  match "/verkeersbordcombinaties/*path", @json do
+    forward conn, path, "http://resource/verkeersbordcombinaties/"
   end
 
-  match "/maatregelconcepten/*path" do
-    Proxy.forward conn, path, "http://resource/maatregelconcepten/"
+  match "/maatregelconcepten/*path", @json do
+    forward conn, path, "http://resource/maatregelconcepten/"
   end
 
-  match "/verkeersbordconcepten/*path" do
-    Proxy.forward conn, path, "http://resource/verkeersbordconcepten/"
+  match "/verkeersbordconcepten/*path", @json do
+    forward conn, path, "http://resource/verkeersbordconcepten/"
   end
 
-  match "/verkeersbordcategorieen/*path" do
-    Proxy.forward conn, path, "http://resource/verkeersbordcategorieen/"
+  match "/verkeersbordcategorieen/*path", @json do
+    forward conn, path, "http://resource/verkeersbordcategorieen/"
   end
 
-  match "/verkeersbordconcept-status-codes/*path" do
-    Proxy.forward conn, path, "http://resource/verkeersbordconcept-status-codes/"
+  match "/verkeersbordconcept-status-codes/*path", @json do
+    forward conn, path, "http://resource/verkeersbordconcept-status-codes/"
   end
 
   #######
   # Tasks
   #######
 
-  match "/tasklists/*path" do
-    Proxy.forward conn, path, "http://cache/tasklists/"
+  match "/tasklists/*path", @json do
+    forward conn, path, "http://cache/tasklists/"
   end
 
-  match "/tasks/*path" do
-    Proxy.forward conn, path, "http://cache/tasks/"
+  match "/tasks/*path", @json do
+    forward conn, path, "http://cache/tasks/"
   end
 
-  match "/tasklist-solutions/*path" do
-    Proxy.forward conn, path, "http://cache/tasklist-solutions/"
+  match "/tasklist-solutions/*path", @json do
+    forward conn, path, "http://cache/tasklist-solutions/"
   end
 
-  match "/task-solutions/*path" do
-    Proxy.forward conn, path, "http://cache/task-solutions/"
+  match "/task-solutions/*path", @json do
+    forward conn, path, "http://cache/task-solutions/"
   end
 
   #################################################################
   # slave leidinggevenden
   #################################################################
-  match "/bestuursfuncties/*path" do
-    Proxy.forward conn, path, "http://cache/bestuursfuncties/"
+  match "/bestuursfuncties/*path", @json do
+    forward conn, path, "http://cache/bestuursfuncties/"
   end
 
-  match "/functionarissen/*path" do
-    Proxy.forward conn, path, "http://cache/functionarissen/"
+  match "/functionarissen/*path", @json do
+    forward conn, path, "http://cache/functionarissen/"
   end
 
-  match "/contact-punten/*path" do
-    Proxy.forward conn, path, "http://cache/contact-punten/"
+  match "/contact-punten/*path", @json do
+    forward conn, path, "http://cache/contact-punten/"
   end
 
-  match "/adressen/*path" do
-    Proxy.forward conn, path, "http://cache/adressen/"
+  match "/adressen/*path", @json do
+    forward conn, path, "http://cache/adressen/"
   end
 
-  match "/functionaris-status-codes/*path" do
-    Proxy.forward conn, path, "http://cache/functionaris-status-codes/"
+  match "/functionaris-status-codes/*path", @json do
+    forward conn, path, "http://cache/functionaris-status-codes/"
   end
 
   #########
   # login
   ########
-  match "/mock/sessions/*path" do
-    Proxy.forward conn, path, "http://mocklogin/sessions/"
+  match "/mock/sessions/*path", @json do
+    forward conn, path, "http://mocklogin/sessions/"
   end
 
-  match "/sessions/*path" do
-    Proxy.forward conn, path, "http://login/sessions/"
+  match "/sessions/*path", @json do
+    forward conn, path, "http://login/sessions/"
   end
 
-  match "/gebruikers/*path" do
-    Proxy.forward conn, path, "http://cache/gebruikers/"
+  match "/gebruikers/*path", @json do
+    forward conn, path, "http://cache/gebruikers/"
   end
 
-  match "/accounts/*path" do
-    Proxy.forward conn, path, "http://cache/accounts/"
+  match "/accounts/*path", @json do
+    forward conn, path, "http://cache/accounts/"
   end
 
-  post "/remote-login/*path" do
-    Proxy.forward conn, [], "http://remotelogin/remote-login"
+  post "/remote-login/*_path", @json do
+    forward conn, [], "http://remotelogin/remote-login"
   end
 
-  match _ do
-    send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
+  match "/assets/*path", @any do
+    forward conn, path, "http://publicatie/assets/"
   end
+
+  match "/*path", @html do
+    forward conn, path, "http://publicatie/"
+  end
+
+  match "_", %{ last_call: true, accept: %{ json: true } } do
+    send_resp( conn, 404, "{ \"error\": { \"code\": 404, \"message\": \"Route not found.  See config/dispatcher.ex\" } }" )
+  end
+
+  last_match
 end
