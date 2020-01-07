@@ -19,7 +19,6 @@ defmodule Dispatcher do
     else
       "editor"
     end
-
   end
 
   @html %{ accept: %{ html: true } }
@@ -355,20 +354,20 @@ defmodule Dispatcher do
   end
 
   match "/assets/*path", @any do
-    case dispatch_frontend(conn) do
-      "editor" ->
-        forward conn, path, "http://editor/assets/"
-      "publicatie" ->
-        forward conn, path, "http://publicatie/assets/"
+    frontend = dispatch_frontend(conn)
+    if frontend == "editor" do
+      forward conn, path, "http://editor/assets/"
+    else
+      forward conn, path, "http://publicatie/assets/"
     end
   end
 
   match "/*path", @html do
-    case dispatch_frontend(conn) do
-      "editor" ->
-          forward conn, [], "http://editor/index.html"
-      "publicatie" ->
-        forward conn, path, "http://publicatie/"
+    frontend = dispatch_frontend(conn)
+    if frontend == "editor" do
+      forward conn, [], "http://editor/index.html"
+    else
+       forward conn, path, "http://publicatie/"
     end
   end
 
