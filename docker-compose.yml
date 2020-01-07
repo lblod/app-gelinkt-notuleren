@@ -46,7 +46,7 @@ services:
     volumes:
       - ./config/delta:/config
   dispatcher:
-    image: semtech/mu-dispatcher:1.1.2
+    image: semtech/mu-dispatcher:2.0.0-beta.1
     volumes:
       - ./config/dispatcher:/config
     restart: always
