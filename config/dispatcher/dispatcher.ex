@@ -7,6 +7,21 @@ defmodule Dispatcher do
     any: [ "*/*" ]
   ]
 
+  def dispatch_frontend( conn ) do
+    has_publicatie =
+      conn
+        |> Plug.Conn.get_req_header( "host" )
+        |> hd # assume only one host header
+        |> String.contains?("publicatie")
+
+    if has_publicatie do
+      "publicatie"
+    else
+      "editor"
+    end
+
+  end
+
   @html %{ accept: %{ html: true } }
   @json %{ accept: %{ json: true } }
   @any %{ accept: %{ any: true } }
@@ -340,11 +355,21 @@ defmodule Dispatcher do
   end
 
   match "/assets/*path", @any do
-    forward conn, path, "http://publicatie/assets/"
+    case dispatch_frontend(conn) do
+      "editor" ->
+        forward conn, path, "http://editor/assets/"
+      "publicatie" ->
+        forward conn, path, "http://publicatie/assets/"
+    end
   end
 
   match "/*path", @html do
-    forward conn, path, "http://publicatie/"
+    case dispatch_frontend(conn) do
+      "editor" ->
+          forward conn, [], "http://editor/index.html"
+      "publicatie" ->
+        forward conn, path, "http://publicatie/"
+    end
   end
 
   match "_", %{ last_call: true, accept: %{ json: true } } do
