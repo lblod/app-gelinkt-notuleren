@@ -149,6 +149,14 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
+  publicatie-melding:
+    image: lblod/besluit-publicatie-melding-service:0.1.0
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
+    links:
+      - database:database
   adressenregister:
     image: lblod/adressenregister-fuzzy-search-service:0.5.0
     restart: always
