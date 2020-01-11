@@ -1,0 +1,30 @@
+PREFIX    adms: <http://www.w3.org/ns/adms#>
+PREFIX    mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX    nuao: <http://www.semanticdesktop.org/ontologies/2010/01/25/nuao#>
+PREFIX    task: <http://redpencil.data.gift/vocabularies/tasks/>
+PREFIX    dct: <http://purl.org/dc/terms/>
+
+DELETE {
+  GRAPH ?g {
+   ?s adms:status ?status.
+  }
+}
+INSERT {
+  GRAPH ?g {
+   ?s adms:status <http://lblod.data.gift/besluit-publicatie-melding-statuses/success>.
+  }
+}
+
+WHERE {
+
+  GRAPH ?g {
+   ?s a task:Task;
+      dct:creator <http://lblod.data.gift/services/besluit-publicatie-melding-service>;
+      adms:status ?status;
+      task:numberOfRetries ?retries.
+   }
+
+   FILTER(
+     ?status in (<http://lblod.data.gift/besluit-publicatie-melding-statuses/failure>, <http://lblod.data.gift/besluit-publicatie-melding-statuses/ongoing>)
+   )
+}
