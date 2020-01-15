@@ -33,132 +33,175 @@ defmodule Dispatcher do
   match "/agendas/*path" do
     Proxy.forward conn, path, "http://resource/agendas/"
   end
+
   match "/besluitenlijsten/*path" do
     Proxy.forward conn, path, "http://resource/besluitenlijsten/"
   end
+
   match "/uittreksels/*path" do
     Proxy.forward conn, path, "http://resource/uittreksels/"
   end
+
   match "/prepublished-agendas/*path" do
     Proxy.forward conn, path, "http://resource/prepublished-agendas/"
   end
+
   match "/agendapunten/*path" do
     Proxy.forward conn, path, "http://resource/agendapunten/"
   end
+
   match "/artikels/*path" do
     Proxy.forward conn, path, "http://resource/artikels/"
   end
+
   match "/behandelingen-van-agendapunten/*path" do
     Proxy.forward conn, path, "http://resource/behandelingen-van-agendapunten/"
   end
+
   match "/besluiten/*path" do
     Proxy.forward conn, path, "http://resource/besluiten/"
   end
+
   match "/bestuurseenheden/*path" do
     Proxy.forward conn, path, "http://cache/bestuurseenheden/"
   end
+
   match "/werkingsgebieden/*path" do
     Proxy.forward conn, path, "http://cache/werkingsgebieden/"
   end
+
   match "/bestuurseenheid-classificatie-codes/*path" do
     Proxy.forward conn, path, "http://cache/bestuurseenheid-classificatie-codes/"
   end
+
   match "/bestuursorganen/*path" do
     Proxy.forward conn, path, "http://resource/bestuursorganen/"
   end
+
   match "/bestuursorgaan-classificatie-codes/*path" do
     Proxy.forward conn, path, "http://cache/bestuursorgaan-classificatie-codes/"
   end
+
   match "/rechtsgronden-besluit/*path" do
     Proxy.forward conn, path, "http://resource/rechtsgronden-besluit/"
   end
+
   match "/rechtsgronden-artikel/*path" do
     Proxy.forward conn, path, "http://resource/rechtsgronden-artikel/"
   end
+
   match "/stemmingen/*path" do
     Proxy.forward conn, path, "http://resource/stemmingen/"
   end
+
   match "/zittingen/*path" do
     Proxy.forward conn, path, "http://resource/zittingen/"
   end
+
   match "/notulen/*path" do
     Proxy.forward conn, path, "http://resource/notulen/"
   end
+
   match "/fracties/*path" do
     Proxy.forward conn, path, "http://resource/fracties/"
   end
+
   match "/fractietypes/*path" do
     Proxy.forward conn, path, "http://cache/fractietypes/"
   end
+
   match "/geboortes/*path" do
     Proxy.forward conn, path, "http://cache/geboortes/"
   end
+
   match "/lijsttypes/*path" do
     Proxy.forward conn, path, "http://cache/lijsttypes/"
   end
+
   match "/kandidatenlijsten/*path" do
     Proxy.forward conn, path, "http://cache/kandidatenlijsten/"
   end
+
   match "/lidmaatschappen/*path" do
     Proxy.forward conn, path, "http://resource/lidmaatschappen/"
   end
+
   match "/mandaten/*path" do
     Proxy.forward conn, path, "http://resource/mandaten/"
   end
+
   match "/bestuursfunctie-codes/*path" do
     Proxy.forward conn, path, "http://cache/bestuursfunctie-codes/"
   end
+
   match "/mandatarissen/*path" do
     Proxy.forward conn, path, "http://resource/mandatarissen/"
   end
+
   match "/mandataris-status-codes/*path" do
     Proxy.forward conn, path, "http://cache/mandataris-status-codes/"
   end
+
   match "/beleidsdomein-codes/*path" do
     Proxy.forward conn, path, "http://cache/beleidsdomein-codes/"
   end
+
   match "/personen/*path" do
     Proxy.forward conn, path, "http://cache/personen/"
   end
+
   match "/geslacht-codes/*path" do
     Proxy.forward conn, path, "http://cache/geslacht-codes/"
   end
+
   match "/identificatoren/*path" do
     Proxy.forward conn, path, "http://resource/identificatoren/"
   end
+
   match "/rechtsgronden-aanstelling/*path" do
     Proxy.forward conn, path, "http://resource/rechtsgronden-aanstelling/"
   end
+
   match "/rechtsgronden-beeindiging/*path" do
     Proxy.forward conn, path, "http://resource/rechtsgronden-beeindiging/"
   end
+
   match "/rechtstreekse-verkiezingen/*path" do
     Proxy.forward conn, path, "http://cache/rechtstreekse-verkiezingen/"
   end
+
   match "/rechtsgronden/*path" do
     Proxy.forward conn, path, "http://resource/rechtsgronden/"
   end
+
   match "/tijdsgebonden-entiteiten/*path" do
     Proxy.forward conn, path, "http://cache/tijdsgebonden-entiteiten/"
   end
+
   match "/tijdsintervallen/*path" do
     Proxy.forward conn, path, "http://resource/tijdsintervallen/"
   end
+
   match "/verkiezingsresultaten/*path" do
     Proxy.forward conn, path, "http://cache/verkiezingsresultaten/"
   end
+
   match "/verkiezingsresultaat-gevolg-codes/*path" do
     Proxy.forward conn, path, "http://cache/verkiezingsresultaat-gevolg-codes/"
   end
+
   match "/templates/*path" do
     Proxy.forward conn, path, "http://cache/templates/"
   end
+
   match "/editor-documents/*path" do
     Proxy.forward conn, path, "http://cache/editor-documents/"
   end
+
   match "/document-containers/*path" do
     Proxy.forward conn, path,  "http://resource/document-containers/"
   end
+
   match "/editor-document-statuses/*path" do
     Proxy.forward conn, path, "http://cache/editor-document-statuses/"
   end
@@ -192,6 +235,7 @@ defmodule Dispatcher do
   match "/signing/*path" do
     Proxy.forward conn, path, "http://preimporter/signing/"
   end
+
   match "/signed-resources/*path" do
     Proxy.forward conn, path, "http://resource/signed-resources/"
   end
@@ -289,15 +333,19 @@ defmodule Dispatcher do
   match "/mock/sessions/*path" do
     Proxy.forward conn, path, "http://mocklogin/sessions/"
   end
+
   match "/sessions/*path" do
     Proxy.forward conn, path, "http://login/sessions/"
   end
+
   match "/gebruikers/*path" do
     Proxy.forward conn, path, "http://cache/gebruikers/"
   end
+
   match "/accounts/*path" do
     Proxy.forward conn, path, "http://cache/accounts/"
   end
+
   post "/remote-login/*path" do
     Proxy.forward conn, [], "http://remotelogin/remote-login"
   end

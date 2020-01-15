@@ -25,7 +25,7 @@ services:
     labels:
       - "logging=true"
   publicatie:
-    image: lblod/frontend-gelinkt-notuleren-publicatie:0.10.2
+    image: lblod/frontend-gelinkt-notuleren-publicatie:0.12.3
     links:
       - identifier:backend
     restart: always
@@ -145,11 +145,19 @@ services:
   besluit-publicatie:
     image: lblod/besluit-publicatie-publish-service:0.4.0
     links:
-      - virtuoso:database #TODO replace with database (but currently issue mu-delta)
+      - database:database
     restart: always
     logging: *default-logging
     labels:
       - "logging=true"
+  publicatie-melding:
+    image: lblod/besluit-publicatie-melding-service:0.3.0
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
+    links:
+      - database:database
   adressenregister:
     image: lblod/adressenregister-fuzzy-search-service:0.5.0
     restart: always
