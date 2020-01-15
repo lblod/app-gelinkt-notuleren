@@ -45,6 +45,7 @@ services:
     image: semtech/mu-delta-notifier:0.1.0
     volumes:
       - ./config/delta:/config
+    restart: always
   dispatcher:
     image: semtech/mu-dispatcher:1.1.2
     volumes:
