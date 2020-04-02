@@ -74,7 +74,10 @@
                                   :as "realisatie")
              (behandeling-van-agendapunt :via ,(s-prefix "prov:generated")
                                          :inverse t
-                                         :as "volgend-uit-behandeling-van-agendapunt"))
+                                         :as "volgend-uit-behandeling-van-agendapunt")
+             (besluitenlijst :via ,(s-prefix "ext:besluitenlijstBesluit")
+                             :inverse t
+                             :as "besluitenlijst"))
   :has-many `((published-resource :via ,(s-prefix "prov:wasDerivedFrom")
                                   :as "publications"))
   :resource-base (s-url "http://data.lblod.info/id/besluiten/")
