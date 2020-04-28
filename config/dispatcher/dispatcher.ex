@@ -206,6 +206,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/editor-document-statuses/"
   end
 
+  match "/editor-document-folders/*path" do
+    Proxy.forward conn, path, "http://cache/editor-document-folders/"
+  end
+
   match "/rdfs-classes/*path" do
     Proxy.forward conn, path, "http://cache/rdfs-classes/"
   end

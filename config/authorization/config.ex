@@ -43,6 +43,7 @@ defmodule Acl.UserGroups.Config do
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://mu.semte.ch/vocabularies/ext/EditorDocumentStatus",
+                        "http://mu.semte.ch/vocabularies/ext/EditorDocumentFolder",
                         "http://mu.semte.ch/vocabularies/ext/Template",
                         "http://www.w3.org/2000/01/rdf-schema#Class",
                         "http://www.w3.org/2000/01/rdf-schema#Property",
