@@ -75,7 +75,7 @@ defmodule Dispatcher do
   end
 
   match "/bestuursorganen/*path" do
-    Proxy.forward conn, path, "http://resource/bestuursorganen/"
+    Proxy.forward conn, path, "http://cache/bestuursorganen/"
   end
 
   match "/bestuursorgaan-classificatie-codes/*path" do
