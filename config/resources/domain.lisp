@@ -18,6 +18,7 @@
 (read-domain-file "tasklist-domain.lisp")
 (read-domain-file "master-editor.lisp")
 (read-domain-file "master-mobiliteit.lisp")
+(read-domain-file "master-log-domain.lisp")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; USERS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define-resource gebruiker ()
