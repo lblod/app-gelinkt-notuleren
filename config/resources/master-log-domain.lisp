@@ -3,6 +3,7 @@
   :properties `((:class-name :url ,(s-prefix "rlog:className"))
                 (:message :string ,(s-prefix "rlog:message"))
                 (:specific-information :string ,(s-prefix "ext:specificInformation"))
+                (:resource :string ,(s-prefix "rlog:resource"))
                 (:datetime :datetime ,(s-prefix "rlog:date")))
   :has-one `((log-level :via ,(s-prefix "rlog:level")
                    :as "log-level")
