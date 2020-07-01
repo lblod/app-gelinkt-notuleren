@@ -80,7 +80,10 @@ defmodule Acl.UserGroups.Config do
                         "http://data.lblod.info/vocabularies/mobiliteit/MaatregelConcept",
                         "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordcategorie",
                         "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordconcept",
-                        "http://data.lblod.info/vocabularies/mobiliteit/VerkeersbordconceptStatusCode"
+                        "http://data.lblod.info/vocabularies/mobiliteit/VerkeersbordconceptStatusCode",
+                        "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Entry",
+                        "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Level",
+                        "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#LogSource"
                       ]
                     } },
                   %GraphSpec{
@@ -98,17 +101,17 @@ defmodule Acl.UserGroups.Config do
       #                 resource_prefix: "http://mu.semte.ch/sessions/"
       #               } } ] },
 
-      # %GroupSpec{
-      #   name: "public-wf",
-      #   useage: [:write, :read_for_write],
-      #   access: %AlwaysAccessible{}, # TODO: Should be only for logged in users
-      #   graphs: [%GraphSpec{
-      #               graph: "http://mu.semte.ch/graphs/public",
-      #               constraint: %ResourceConstraint{
-      #                 resource_types: [
-
-      #                 ]
-      #               } } ] },
+      %GroupSpec{
+         name: "public-wf",
+         useage: [:write, :read_for_write],
+         access: %AlwaysAccessible{}, # TODO: Should be only for logged in users
+         graphs: [%GraphSpec{
+                     graph: "http://mu.semte.ch/graphs/public",
+                     constraint: %ResourceConstraint{
+                       resource_types: [
+                          "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Entry"
+                       ]
+                     } } ] },
 
       # // ORGANIZATION HAS POSSIBLY DUPLICATE USER DATA
       %GroupSpec{
