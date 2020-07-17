@@ -1,7 +1,7 @@
 version: "3.4"
 services:
   remotelogin:
-    image: lblod/remote-login-service
+    image: lblod/remote-login-service:0.1.0
     environment:
       MU_APPLICATION_GRAPH: 'http://mu.semte.ch/graphs/public'
     volumes:
