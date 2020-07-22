@@ -355,15 +355,15 @@ defmodule Dispatcher do
   end
 
   match "/log-entries/*path" do
-    Proxy.forward conn, [], "http://resource/log-entries"
+    Proxy.forward conn, path, "http://resource/log-entries/"
   end
 
   match "/log-sources/*path" do
-    Proxy.forward conn, [], "http://resource/log-sources"
+    Proxy.forward conn, path, "http://resource/log-sources/"
   end
 
   match "/log-levels/*path" do
-    Proxy.forward conn, [], "http://resource/log-levels"
+    Proxy.forward conn, path, "http://resource/log-levels/"
   end
 
   match _ do
