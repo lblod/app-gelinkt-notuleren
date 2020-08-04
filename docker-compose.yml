@@ -164,3 +164,9 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
+  resource-labels:
+    image: lblod/semantic-labels-service:0.0.0
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"

@@ -354,6 +354,10 @@ defmodule Dispatcher do
     Proxy.forward conn, [], "http://remotelogin/remote-login"
   end
 
+  match "/resource-labels/*path" do
+    Proxy.forward conn, path, "http://resource-labels/"
+  end
+
   match _ do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
