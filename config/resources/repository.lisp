@@ -18,7 +18,7 @@
 (add-prefix "person" "http://www.w3.org/ns/person#")
 (add-prefix "org" "http://www.w3.org/ns/org#")
 (add-prefix "prov" "http://www.w3.org/ns/prov#")
-(add-prefix "regorg" "https://www.w3.org/ns/regorg#")
+(add-prefix "regorg" "http://www.w3.org/ns/regorg#")
 (add-prefix "skos" "http://www.w3.org/2004/02/skos/core#")
 (add-prefix "foaf" "http://xmlns.com/foaf/0.1/")
 (add-prefix "nao" "http://www.semanticdesktop.org/ontologies/2007/08/15/nao#")

@@ -1,0 +1,17 @@
+INSERT {
+    GRAPH ?g {
+    ?s <http://www.w3.org/ns/regorg#legalName> ?name .
+    }
+}
+WHERE {
+    GRAPH ?h {
+        ?s <https://www.w3.org/ns/regorg#legalName> ?name .
+    }
+    BIND(?h as ?g)
+};
+DELETE WHERE{
+    GRAPH ?g {
+        ?s <https://www.w3.org/ns/regorg#legalName> ?name .
+    }
+}
+
