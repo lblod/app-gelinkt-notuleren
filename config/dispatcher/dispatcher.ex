@@ -355,7 +355,7 @@ defmodule Dispatcher do
   end
 
   match "/resource-labels/*path" do
-    Proxy.forward conn, path, "http://resource-labels/"
+    Proxy.forward conn, path, "http://label-cache/"
   end
 
   match _ do

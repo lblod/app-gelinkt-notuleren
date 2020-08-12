@@ -170,3 +170,11 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
+  label-cache:
+    image: semtech/mu-cache:2.0.1
+    links:
+      - resource-labels:backend
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
