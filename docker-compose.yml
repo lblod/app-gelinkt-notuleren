@@ -166,3 +166,12 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
+  mandatarissen-consumer:
+    image: lblod/gelinkt-notuleren-mandatarissen-consumer:0.1.1
+    environment:
+      SYNC_BASE_URL: 'https://mandaten.lblod.info' # replace with link to MDB API
+      INGEST_INTERVAL: 60000 # each minute
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
