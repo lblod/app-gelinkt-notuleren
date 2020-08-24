@@ -6,10 +6,6 @@ services:
       - ./config/proxy:/etc/nginx/conf.d
     ports:
       - "443:443"
-  cooluris:
-    restart: "no"
-  cooluris-proxy:
-    restart: "no"
   publicatie:
     restart: "no"
   editor:
