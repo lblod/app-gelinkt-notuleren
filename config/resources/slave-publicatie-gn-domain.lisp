@@ -189,3 +189,11 @@
   :resource-base (s-url "http://data.lblod.info/id/besluitenlijsten/")
   :features '(include-uri)
   :on-path "besluitenlijsten")
+
+(define-resource publication-status-code ()
+  :class (s-prefix "bibo:DocumentStatus")
+  :properties `((:label :string ,(s-prefix "skos:prefLabel"))
+                (:scope-note :string ,(s-prefix "skos:scopeNote")))
+  :resource-base (s-url "http://data.vlaanderen.be/id/concept/MandatarisStatusCode/")
+  :features '(include-uri)
+  :on-path "publication-status-codes")

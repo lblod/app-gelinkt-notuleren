@@ -142,6 +142,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/mandataris-status-codes/"
   end
 
+  match "/publication-status-codes/*path" do
+    Proxy.forward conn, path, "http://cache/publication-status-codes/"
+  end
+
   match "/beleidsdomein-codes/*path" do
     Proxy.forward conn, path, "http://cache/beleidsdomein-codes/"
   end
@@ -225,9 +229,6 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://adressenregister/"
   end
 
-  ############
-  # Blockchain
-  ############
   match "/prepublish/*path" do
     Proxy.forward conn, path, "http://preimporter/prepublish/"
   end
