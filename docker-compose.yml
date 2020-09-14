@@ -1,5 +1,4 @@
 version: "3.4"
-
 x-logging: &default-logging
   driver: "json-file"
   options:
@@ -14,14 +13,11 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
-  publicatie:
-    image: lblod/frontend-gelinkt-notuleren-publicatie:0.15.1
-    links:
-      - identifier:backend
+  deltanotifier:
+    image: semtech/mu-delta-notifier:0.1.0
+    volumes:
+      - ./config/delta:/config
     restart: always
-    logging: *default-logging
-    labels:
-      - "logging=true"
   identifier:
     image: semtech/mu-identifier:1.8.1
     restart: always
@@ -124,30 +120,14 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
-  sync:
-    image: lblod/gemeente-ocmw-sync-service:0.2.4
-    links:
-      - virtuoso:database #TODO replace with database when possible
-    restart: always
-    logging: *default-logging
-    labels:
-      - "logging=true"
-  besluit-publicatie:
-    image: lblod/besluit-publicatie-publish-service:0.5.0
-    links:
-      - database:database
-    restart: always
-    logging: *default-logging
-    labels:
-      - "logging=true"
-  publicatie-melding:
-    image: lblod/besluit-publicatie-melding-service:0.3.7
-    restart: always
-    logging: *default-logging
-    labels:
-      - "logging=true"
-    links:
-      - database:database
+  # sync:
+  #   image: lblod/gemeente-ocmw-sync-service:0.2.4
+  #   links:
+  #     - virtuoso:database #TODO replace with database when possible
+  #   restart: always
+  #   logging: *default-logging
+  #   labels:
+  #     - "logging=true"
   adressenregister:
     image: lblod/adressenregister-fuzzy-search-service:0.5.0
     restart: always

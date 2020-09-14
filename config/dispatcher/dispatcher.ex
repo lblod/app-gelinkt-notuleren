@@ -218,10 +218,6 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/rdfs-properties/"
   end
 
-  post "/sync/*path" do
-    Proxy.forward conn, path, "http://sync/sync"
-  end
-
   #################################################################
   # Adressenregister
   #################################################################
