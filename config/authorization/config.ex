@@ -63,7 +63,6 @@ defmodule Acl.UserGroups.Config do
                         "http://www.w3.org/ns/prov#Location",
                         "http://data.vlaanderen.be/ns/mandaat#Kandidatenlijst",
                         "http://data.vlaanderen.be/ns/mandaat#Verkiezingsresultaat",
-                        "http://data.vlaanderen.be/ns/besluit#Zitting",
                         "http://data.vlaanderen.be/ns/besluit#Stemming",
                         "http://data.vlaanderen.be/ns/besluit#Besluit",
                         "http://data.vlaanderen.be/ns/besluit#Artikel",
@@ -183,6 +182,7 @@ defmodule Acl.UserGroups.Config do
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://mu.semte.ch/vocabularies/ext/EditorDocument",
+                        "http://data.vlaanderen.be/ns/besluit#Zitting",
                         "http://mu.semte.ch/vocabularies/ext/DocumentContainer",
                         "http://mu.semte.ch/vocabularies/ext/VersionedAgenda",
                         "http://mu.semte.ch/vocabularies/ext/VersionedNotulen",
