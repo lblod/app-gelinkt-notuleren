@@ -160,7 +160,7 @@ It is considered an external feature at this point and requires a manual setup.
    ```
      mandatarissen-consumer:
        environment:
-         SYNC_BASE_URL: 'https://dev.mandaten.lblod.info' # the endpoint you want to sync from
+         SYNC_BASE_URL: 'https://mandaten.lokaalbestuur.vlaanderen.be' # the endpoint you want to sync from
          START_FROM_DELTA_TIMESTAMP: '2020-09-18T03:15:00.112Z' # a timestamp from TTL converted to ISO
    ```
 7. start the stack
