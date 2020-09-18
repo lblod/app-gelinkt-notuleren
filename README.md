@@ -145,24 +145,24 @@ It is considered an external feature at this point and requires a manual setup.
 
 0. Make sure only virtuoso and migrations service is running.
 1. Download the data dump from the relevant source, most likely it will be the turtle-file from https://mandaten.lokaalbestuur.vlaanderen.be .
-  - The timestamp of the turtle file (in filename) is important. (e.g. 20200918031500112 in mandaten-20200918031500112.ttl)
+    - The timestamp of the turtle file (in filename) is important. (e.g. 20200918031500112 in mandaten-20200918031500112.ttl)
 2. The turtle file should be added to the migrations folder and should be migrated to `<http://mu.semte.ch/graphs/temp-ingest-graph>`
-  - Consult https://github.com/mu-semtech/mu-migrations-service for more info about how ttl files can be injected in a graph
+    - Consult https://github.com/mu-semtech/mu-migrations-service for more info about how ttl files can be injected in a graph
 3. Copy the migration templates from `config/consumer/mandatarissen/setup/template-migrations/*` and add them to the migrations
-  - Don't forget a timestamp like other migrations.
-  - They should run *AFTER* the turtle file from step 2.
+    - Don't forget a timestamp like other migrations.
+    - They should run *AFTER* the turtle file from step 2.
 4. `drc restart migrations`
-  - Wait until they ran. (Might take a while).
+    - Wait until they ran. (Might take a while).
 5. Once finished, an extra docker file should be included.
-  - Something like `docker-compose -f docker-compose.yml -f docker-compose.external-delta-sync.yml -f docker-compose.override.yml`
-  - Or create a `.env` file with the following lines `COMPOSE_FILE=docker-compose.yml:docker-compose.external-delta-sync.yml:docker-compose.override.yml`;
+    - Something like `docker-compose -f docker-compose.yml -f docker-compose.external-delta-sync.yml -f docker-compose.override.yml`
+    - Or create a `.env` file with the following lines `COMPOSE_FILE=docker-compose.yml:docker-compose.external-delta-sync.yml:docker-compose.override.yml`;
 6. You will need to update your `docker-compose.override.yml` file too, with following lines:
-   `
+   ```
      mandatarissen-consumer:
        environment:
          SYNC_BASE_URL: 'https://dev.mandaten.lblod.info' # the endpoint you want to sync from
          START_FROM_DELTA_TIMESTAMP: '2020-09-18T03:15:00.112Z' # a timestamp from TTL converted to ISO
-   `
+   ```
 7. start the stack
 
 
