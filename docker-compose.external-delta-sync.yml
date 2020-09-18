@@ -1,0 +1,18 @@
+version: "3.4"
+
+x-logging: &default-logging
+  driver: "json-file"
+  options:
+    max-size: "10m"
+    max-file: "3"
+services:
+  mandatarissen-consumer:
+    image: lblod/gelinkt-notuleren-mandatarissen-consumer:0.1.1
+    environment:
+      SYNC_BASE_URL: 'https://mandaten.lblod.info' # replace with link to MDB API
+      DOWNLOAD_FILE_PATH : '/delta-files/:id/download'
+      INGEST_INTERVAL: 60000 # each minute
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
