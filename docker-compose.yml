@@ -15,7 +15,7 @@ services:
     labels:
       - "logging=true"
   publicatie:
-    image: lblod/frontend-gelinkt-notuleren-publicatie:0.15.1
+    image: lblod/frontend-gelinkt-notuleren-publicatie:0.16.0
     links:
       - identifier:backend
     restart: always
