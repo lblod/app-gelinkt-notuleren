@@ -137,7 +137,7 @@ Make sure to wait for the migrations to run.
 
 ### Setting up external delta sync [EXPERIMENTAL]
 
-This feature allows syncing data from external applications, to be immediatly reflected in the current application.
+This feature allows syncing data from external applications, to be immediately reflected in the current application.
 It is considered an external feature at this point and requires a manual setup.
 
 #### mandatarissen-consumer
