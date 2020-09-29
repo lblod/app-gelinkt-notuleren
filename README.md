@@ -148,7 +148,10 @@ To ensure both the producer and consumer work correctly, the respecting stacks s
 
 1. Download a data-dump from [Mandatendatabank](https://mandaten.lokaalbestuur.vlaanderen.be)
 2. Run the provided helper script to set up the needed migrations:
-    ```console
+   
+   > If you want to learn more about mu-semtech migrations, consult [mu-migrations-service]( https://github.com/mu-semtech/mu-migrations-service)
+    
+   ```console
     foo@device:~project-root$ sudo /bin/bash prepare-data-sync-migration.sh mdb-data-dump.ttl
     ```
    after running, you should be able to see that the following has been generated on path `./config/migrations`:
@@ -156,8 +159,6 @@ To ensure both the producer and consumer work correctly, the respecting stacks s
         - `<timestamp>-mdb-export.graph`
         - `<timestamp>-mdb-export.ttl` (should contain the data-export)
         - `<timestamp>-ingest-mdb-triples.sparql`
-    
-    > ℹ️If you want to learn more about mu-semtech migrations, consult [mu-migrations-service]( https://github.com/mu-semtech/mu-migrations-service)
     
 3. Restart the migrations:
     ```console
