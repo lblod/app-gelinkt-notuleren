@@ -135,35 +135,71 @@ At some times you may want te clean the database and make sure it's in a pristin
 
 Make sure to wait for the migrations to run.
 
-### Setting up external delta sync [EXPERIMENTAL]
+### External delta sync [EXPERIMENTAL]
+
+*DISCLAIMER: this is not 100% bulletproof*
 
 This feature allows syncing data from external applications, to be immediately reflected in the current application.
 It is considered an external feature at this point and requires a manual setup.
 
-#### mandatarissen-consumer
-*DISCLAIMER: this is not 100% bulletproof*
+#### Sync MDB with GN
 
-0. Make sure only virtuoso and migrations service is running.
-1. Download the data dump from the relevant source, most likely it will be the turtle-file from https://mandaten.lokaalbestuur.vlaanderen.be .
-    - The timestamp of the turtle file (in filename) is important. (e.g. 20200918031500112 in mandaten-20200918031500112.ttl)
-2. The turtle file should be added to the migrations folder and should be migrated to `<http://mu.semte.ch/graphs/temp-ingest-graph>`
-    - Consult https://github.com/mu-semtech/mu-migrations-service for more info about how ttl files can be injected in a graph
-3. Copy the migration templates from `config/consumer/mandatarissen/setup/template-migrations/*` and add them to the migrations
-    - Don't forget a timestamp like other migrations.
-    - They should run *AFTER* the turtle file from step 2.
-4. `drc restart migrations`
-    - Wait until they ran. (Might take a while).
-5. Once finished, an extra docker file should be included.
-    - Something like `docker-compose -f docker-compose.yml -f docker-compose.external-delta-sync.yml -f docker-compose.override.yml`
-    - Or create a `.env` file with the following lines `COMPOSE_FILE=docker-compose.yml:docker-compose.external-delta-sync.yml:docker-compose.override.yml`;
-6. You will need to update your `docker-compose.override.yml` file too, with following lines:
-   ```
+To ensure both the producer and consumer work correctly, the respecting stacks should both start from the same base-state. By performing the following steps we can achieve this.
+
+1. Download a data-dump from [Mandatendatabank](https://mandaten.lokaalbestuur.vlaanderen.be)
+2. Run the provided helper script to set up the needed migrations:
+    ```console
+    foo@device:~project-root$ sudo /bin/bash prepare-data-sync-migration.sh mdb-data-dump.ttl
+    ```
+   after running, you should be able to see that the following has been generated on path `./config/migrations`:
+    - `<timestamp>-data-sync-with-mdb`
+        - `<timestamp>-mdb-export.graph`
+        - `<timestamp>-mdb-export.ttl` (should contain the data-export)
+        - `<timestamp>-ingest-mdb-triples.sparql`
+    
+    > ℹ️If you want to learn more about mu-semtech migrations, consult [mu-migrations-service]( https://github.com/mu-semtech/mu-migrations-service)
+    
+3. Restart the migrations:
+    ```console
+    foo@device:~project-root$ docker-compose restart migrations
+    ```
+   **NOTE**: This could take a while, make sure the migrations have run successfully before continuing. 
+   You can simply do this by consulting at the logs:
+    ```console
+    foo@device:~project-root$ docker-compose logs -f migrations
+   
+    migrations_1          | /data/migrations/20200929102725-data-sync-with-mdb/20200929102725-mdb-export.ttl [DONE]
+    migrations_1          | /data/migrations/20200929102725-data-sync-with-mdb/20200929102726-ingest-mdb-triples.sparql [DONE]
+    migrations_1          |
+    migrations_1          | [2020-09-29 08:32:37] INFO  WEBrick 1.4.2
+    migrations_1          | [2020-09-29 08:32:37] INFO  ruby 2.5.1 (2018-03-29) [x86_64-linux]
+    migrations_1          | == Sinatra (v1.4.8) has taken the stage on 80 for production with backup from WEBrick
+    migrations_1          | [2020-09-29 08:32:37] INFO  WEBrick::HTTPServer#start: pid=12 port=80
+    ```
+4. Restart the cache and resource services to make sure they are aware of the new data:
+    ```console
+    foo@device:~project-root$ docker-compose restart cache resource
+    ```
+
+#### Setting up mandatarissen-consumer
+
+
+1. Create/update the `docker-compose.override.yml` file with following lines:
+   ```dockerfile
      mandatarissen-consumer:
        environment:
          SYNC_BASE_URL: 'https://mandaten.lokaalbestuur.vlaanderen.be' # the endpoint you want to sync from
          START_FROM_DELTA_TIMESTAMP: '2020-09-18T03:15:00.112Z' # a timestamp from TTL converted to ISO
    ```
-7. start the stack
+
+2. Include the `mandatarissen-consumer` container to the stack by including the provided `docker-compose.external-delta-sync.yml` to a `.env` file:
+    ```text
+    COMPOSE_FILE=docker-compose.yml:docker-compose.external-delta-sync.yml:docker-compose.override.yml
+    ```
+3. Update the stack:
+    ```console
+    foo@device:~project-root$ docker-compose up -d
+    ```
 
 
 
