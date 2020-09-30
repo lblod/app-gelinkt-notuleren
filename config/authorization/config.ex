@@ -66,7 +66,8 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/besluit#Stemming",
                         "http://data.vlaanderen.be/ns/besluit#Besluit",
                         "http://data.vlaanderen.be/ns/besluit#Artikel",
-                        "http://data.vlaanderen.be/ns/besluit#Agenda",
+                        "http://data.vlaanderen.be/ns/besluit#Agenda",#is this really necessary?
+                        "http://mu.semte.ch/vocabularies/ext/Agenda",
                         "http://data.vlaanderen.be/ns/besluit#Agendapunt",
                         "http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt",
                         "http://data.vlaanderen.be/ns/mandaat#Mandaat",
@@ -159,7 +160,8 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/besluit#Stemming",
                         "http://data.vlaanderen.be/ns/besluit#Besluit",
                         "http://data.vlaanderen.be/ns/besluit#Artikel",
-                        "http://data.vlaanderen.be/ns/besluit#Agenda",
+                        "http://data.vlaanderen.be/ns/besluit#Agenda",#is this really necessary?
+                        "http://mu.semte.ch/vocabularies/ext/Agenda",
                         "http://data.vlaanderen.be/ns/besluit#Agendapunt",
                         "http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt",
                         "http://data.vlaanderen.be/ns/mandaat#Mandaat",
@@ -183,6 +185,8 @@ defmodule Acl.UserGroups.Config do
                       resource_types: [
                         "http://mu.semte.ch/vocabularies/ext/EditorDocument",
                         "http://data.vlaanderen.be/ns/besluit#Zitting",
+                        "http://mu.semte.ch/vocabularies/ext/Agenda",
+                        "http://data.vlaanderen.be/ns/besluit#Agendapunt",
                         "http://mu.semte.ch/vocabularies/ext/DocumentContainer",
                         "http://mu.semte.ch/vocabularies/ext/VersionedAgenda",
                         "http://mu.semte.ch/vocabularies/ext/VersionedNotulen",
