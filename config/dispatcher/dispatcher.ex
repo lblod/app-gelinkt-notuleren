@@ -47,7 +47,7 @@ defmodule Dispatcher do
   end
 
   match "/agendapunten/*path" do
-    Proxy.forward conn, path, "http://resource/agendapunten/"
+    Proxy.forward conn, path, "http://cache/agendapunten/"
   end
 
   match "/artikels/*path" do
@@ -95,7 +95,7 @@ defmodule Dispatcher do
   end
 
   match "/zittingen/*path" do
-    Proxy.forward conn, path, "http://resource/zittingen/"
+    Proxy.forward conn, path, "http://cache/zittingen/"
   end
 
   match "/notulen/*path" do
