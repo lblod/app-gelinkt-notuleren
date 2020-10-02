@@ -215,7 +215,7 @@
   :properties `((:geplande-start :datetime ,(s-prefix "besluit:geplandeStart"))
                 (:gestart-op-tijdstip :datetime ,(s-prefix "prov:startedAtTime"))
                 (:geeindigd-op-tijdstip :datetime ,(s-prefix "prov:endedAtTime"))
-                (:op-locatie :url ,(s-prefix "prov:atLocation")))
+                (:op-locatie :string ,(s-prefix "prov:atLocation")))
 
   :has-many `((mandataris :via ,(s-prefix "besluit:heeftAanwezigeBijStart")
                           :as "aanwezigen-bij-start")
