@@ -56,7 +56,7 @@
                          :as "secretaris")
              (mandataris :via ,(s-prefix "besluit:heeftVoorzitter")
                          :as "voorzitter"))
-  :resource-base (s-url "http://data.lblod.info/id/behandelingen-van-agendapunt")
+  :resource-base (s-url "http://data.lblod.info/id/behandelingen-van-agendapunten/")
   :features '(include-uri)
   :on-path "behandelingen-van-agendapunten")
 
