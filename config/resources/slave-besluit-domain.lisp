@@ -56,6 +56,8 @@
                          :as "secretaris")
              (mandataris :via ,(s-prefix "besluit:heeftVoorzitter")
                          :as "voorzitter"))
+             (document-container :via , (s-prefix "ext:hasDocumentContainer")
+                                  :as "document"))
   :resource-base (s-url "http://data.lblod.info/id/behandelingen-van-agendapunten/")
   :features '(include-uri)
   :on-path "behandelingen-van-agendapunten")
