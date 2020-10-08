@@ -1,0 +1,35 @@
+[
+  {"type": "http://mu.semte.ch/vocabularies/ext/MandatarisStatusCode"},
+  {"type": "http://mu.semte.ch/vocabularies/ext/BeleidsdomeinCode'"},
+  {"type": "http://data.vlaanderen.be/ns/mandaat#Mandataris"},
+  {"type": "http://www.w3.org/ns/org#Membership"},
+  {"type": "http://data.vlaanderen.be/ns/mandaat#Fractie"},
+  {"type": "http://data.vlaanderen.be/ns/mandaat#Mandaat"},
+  {"type": "http://mu.semte.ch/vocabularies/ext/BestuursfunctieCode"},
+  {"type": "http://data.vlaanderen.be/ns/besluit#Bestuursorgaan"},
+  {"type": "http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode"},
+  {"type": "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid"},
+  {"type": "http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode"},
+  {"type": "http://www.w3.org/ns/prov#Location"},
+  {
+    "type": "http://www.w3.org/ns/person#Person",
+    "pathToOrg": [
+      "^http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan",
+      "http://www.w3.org/ns/org#holds",
+      "^http://www.w3.org/ns/org#hasPost",
+      "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
+      "http://data.vlaanderen.be/ns/besluit#bestuurt"
+    ]
+  },
+  {
+    "type": "http://data.vlaanderen.be/ns/persoon#Geboorte",
+    "pathToOrg": [
+      "^http://data.vlaanderen.be/ns/persoon#heeftGeboorte",
+      "^http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan",
+      "http://www.w3.org/ns/org#holds",
+      "^http://www.w3.org/ns/org#hasPost",
+      "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
+      "http://data.vlaanderen.be/ns/besluit#bestuurt"
+    ]
+  }
+]
