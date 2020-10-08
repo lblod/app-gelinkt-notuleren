@@ -1,0 +1,23 @@
+[
+  {"type": "http://data.vlaanderen.be/ns/besluit#Bestuurseenheid"},
+  {"type": "http://data.vlaanderen.be/ns/besluit#Bestuursorgaan"},
+  {"type": "http://mu.semte.ch/vocabularies/ext/BestuursfunctieCode"},
+  {"type": "http://www.w3.org/ns/locn#Address"},
+  {"type": "http://data.lblod.info/vocabularies/leidinggevenden/Bestuursfunctie"},
+  {"type": "http://schema.org/ContactPoint"},
+  {"type": "http://data.lblod.info/vocabularies/leidinggevenden/Functionaris"},
+  {"type": "http://data.lblod.info/vocabularies/leidinggevenden/FunctionarisStatusCode"},
+  {"type": "http://www.w3.org/ns/prov#Location"},
+  {"type": "http://mu.semte.ch/vocabularies/ext/BestuurseenheidClassificatieCode"},
+  {"type": "http://mu.semte.ch/vocabularies/ext/BestuursorgaanClassificatieCode"},
+  {
+    "type": "http://www.w3.org/ns/person#Person",
+    "pathToOrg": [
+      "^http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan",
+      "http://www.w3.org/ns/org#holds",
+      "^http://www.w3.org/ns/org#hasPost",
+      "http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan",
+      "http://data.vlaanderen.be/ns/besluit#bestuurt"
+    ]
+  }
+]

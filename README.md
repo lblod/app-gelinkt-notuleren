@@ -160,6 +160,7 @@ To ensure both the producer and consumer work correctly, the respecting stacks s
         - `<timestamp>-mdb-export.ttl` (should contain the data-export)
         - `<timestamp>-ingest-mdb-triples.sparql`
     
+
 3. Restart the migrations:
     ```console
     foo@device:~project-root$ docker-compose restart migrations
