@@ -142,23 +142,27 @@ Make sure to wait for the migrations to run.
 This feature allows syncing data from external applications, to be immediately reflected in the current application.
 It is considered an external feature at this point and requires a manual setup.
 
-#### Sync MDB with GN
+#### Sync producer stack with Gelinkt Notuleren
+
+> **Prerequisites**:  
+> This setup makes use of [mu-cli](https://github.com/mu-semtech/mu-cli), so make sure to install it first.
+
 
 To ensure both the producer and consumer work correctly, the respecting stacks should both start from the same base-state. By performing the following steps we can achieve this.
 
-1. Download a data-dump from [Mandatendatabank](https://mandaten.lokaalbestuur.vlaanderen.be)
-2. Run the provided helper script to set up the needed migrations:
+1. Download a data-dump from the producing service you wish to sync up with. Ex: [Mandatendatabank](https://mandaten.lokaalbestuur.vlaanderen.be)
+2. Run the provided mu-script to set up the migrations we need:
    
-   > If you want to learn more about mu-semtech migrations, consult [mu-migrations-service]( https://github.com/mu-semtech/mu-migrations-service)
+   >  - If you want to learn more about mu-semtech migrations, consult [mu-migrations-service]( https://github.com/mu-semtech/mu-migrations-service)
     
    ```console
-    foo@device:~project-root$ sudo /bin/bash prepare-data-sync-migration.sh mdb-data-dump.ttl
+    foo@device:~project-root$  mu script project-scripts setup-data-sync ./data-dump.ttl
     ```
    after running, you should be able to see that the following has been generated on path `./config/migrations`:
-    - `<timestamp>-data-sync-with-mdb`
-        - `<timestamp>-mdb-export.graph`
-        - `<timestamp>-mdb-export.ttl` (should contain the data-export)
-        - `<timestamp>-ingest-mdb-triples.sparql`
+    - `<timestamp>-data-sync`
+        - `<timestamp>-export.graph`
+        - `<timestamp>-export.ttl` (should contain the data-export)
+        - `<timestamp>-ingest-exported-triples.sparql`
     
 
 3. Restart the migrations:

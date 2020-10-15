@@ -156,3 +156,8 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
+  project-scripts:
+    image: semtech/mu-scripts:1.0.0
+    volumes:
+      - ./scripts/project:/app/scripts/
+    restart: "no"

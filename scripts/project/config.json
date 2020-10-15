@@ -1,0 +1,22 @@
+{
+  "version": "0.1",
+  "scripts": [
+    {
+      "documentation": {
+        "command": "setup-data-sync",
+        "description": "Creates migrations to sync the local triple-store with a given data-dump.",
+        "arguments": [
+          "data-dump.ttl"
+        ]
+      },
+      "environment": {
+        "image": "ubuntu",
+        "interactive": true,
+        "script": "prepare-data-sync-migrations/run.sh"
+      },
+      "mounts": {
+        "app": "/data/app/"
+      }
+    }
+  ]
+}
