@@ -16,7 +16,12 @@
                          :as "vorige-agendapunt")
              (behandeling-van-agendapunt :via ,(s-prefix "dct:subject")
                                          :inverse t
-                                         :as "behandeling"))
+                                         :as "behandeling")
+             (agenda :via ,(s-prefix "bv:isOnderdeelVan")
+                     :inverse t
+                     :as "agenda"
+                     )
+             )
   :resource-base (s-url "http://data.lblod.info/id/agendapunten/")
   :features '(include-uri)
   :on-path "agendapunten")
@@ -225,8 +230,9 @@
                           :as "agendapunten")
               (uittreksel :via ,(s-prefix "ext:uittreksel")
                           :as "uittreksels")
-              (agenda :via ,(s-prefix "ext:agenda")
-                          :as "agendas"))
+              (agenda :via ,(s-prefix "bv:isAgendaVoor")
+                      :inverse t
+                      :as "publicatie-agendas"))
 
   :has-one `((bestuursorgaan :via ,(s-prefix "besluit:isGehoudenDoor")
                              :as "bestuursorgaan")
