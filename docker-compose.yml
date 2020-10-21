@@ -120,6 +120,12 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
+  file:
+    image: semtech/mu-file-service:3.1.0
+    links:
+      - database:database
+    volumes:
+      - ./data/files/:/share/
   # sync:
   #   image: lblod/gemeente-ocmw-sync-service:0.2.4
   #   links:
