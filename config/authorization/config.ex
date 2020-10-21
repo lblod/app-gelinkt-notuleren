@@ -81,7 +81,8 @@ defmodule Acl.UserGroups.Config do
                         "http://data.lblod.info/vocabularies/mobiliteit/MaatregelConcept",
                         "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordcategorie",
                         "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordconcept",
-                        "http://data.lblod.info/vocabularies/mobiliteit/VerkeersbordconceptStatusCode"
+                        "http://data.lblod.info/vocabularies/mobiliteit/VerkeersbordconceptStatusCode",
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject"
                       ]
                     } },
                   %GraphSpec{
