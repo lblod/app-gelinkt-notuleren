@@ -134,3 +134,9 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
+  published-resource-producer:
+    image: lblod/published-resource-producer:0.0.1
+    volumes:
+      - ./data/files:/share
+    environment:
+      RELATIVE_FILE_PATH: "deltas/published-resource"
