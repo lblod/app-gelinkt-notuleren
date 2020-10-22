@@ -167,7 +167,7 @@
                                  :as "published-resource")
              )
   :has-many `(
-              (agendapunt :via ,(s-prefix "bv:isOnderdeelVan")
+              (agendapunt :via ,(s-prefix "dct:isPartOf")
                           :inverse t
                           :as "agendapunten")
               (signed-resource :via ,(s-prefix "ext:signsAgenda")

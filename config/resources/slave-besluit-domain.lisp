@@ -17,7 +17,7 @@
              (behandeling-van-agendapunt :via ,(s-prefix "dct:subject")
                                          :inverse t
                                          :as "behandeling")
-             (agenda :via ,(s-prefix "bv:isOnderdeelVan")
+             (agenda :via ,(s-prefix "dct:isPartOf")
                      :inverse t
                      :as "agenda"
                      )
