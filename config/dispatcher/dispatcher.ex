@@ -21,6 +21,13 @@ defmodule Dispatcher do
   # match "/themes/*path" do
   #   Proxy.forward conn, path, "http://resource/themes/"
   # end
+  #
+  get "/sync/files/*path" do
+    Proxy.forward conn, path, "http://published-resource-producer/files/"
+  end
+  match "/files/*path" do
+    Proxy.forward conn, path, "http://file/files/"
+  end
 
   match "/blockchain/*path" do
     Proxy.forward conn, path, "http://blockchain/"

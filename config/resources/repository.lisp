@@ -4,6 +4,7 @@
 (add-prefix "tmp" "http://mu.semte.ch/vocabularies/tmp/")
 
 (add-prefix "besluit" "http://data.vlaanderen.be/ns/besluit#")
+(add-prefix "bv" "http://data.vlaanderen.be/ns/besluitvorming#")
 (add-prefix "mandaat" "http://data.vlaanderen.be/ns/mandaat#")
 (add-prefix "persoon" "http://data.vlaanderen.be/ns/persoon#")
 (add-prefix "generiek" "http://data.vlaanderen.be/ns/generiek#")

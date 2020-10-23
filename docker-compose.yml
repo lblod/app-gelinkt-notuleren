@@ -120,6 +120,12 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
+  file:
+    image: semtech/mu-file-service:3.1.0
+    links:
+      - database:database
+    volumes:
+      - ./data/files/:/share/
   # sync:
   #   image: lblod/gemeente-ocmw-sync-service:0.2.4
   #   links:
@@ -134,3 +140,9 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
+  published-resource-producer:
+    image: lblod/published-resource-producer:0.0.2
+    volumes:
+      - ./data/files:/share
+    environment:
+      RELATIVE_FILE_PATH: "deltas/published-resource"
