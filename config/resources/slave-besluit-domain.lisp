@@ -15,8 +15,11 @@
   :has-one `((agendapunt :via ,(s-prefix "besluit:aangebrachtNa")
                          :as "vorige-agendapunt")
              (behandeling-van-agendapunt :via ,(s-prefix "dct:subject")
-                                         :inverse t
+                                         :inverse t 
                                          :as "behandeling")
+             (zitting :via ,(s-prefix "besluit:behandelt")
+                      :inverse t
+                      :as "zitting")
              (agenda :via ,(s-prefix "dct:isPartOf")
                      :inverse t
                      :as "agenda"
