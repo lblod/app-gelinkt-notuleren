@@ -12,7 +12,6 @@ services:
       SERVICE_NAME: "gelinkt-notuleren-madatarissen-consumer"
       # replace with link to MDB API
       #SYNC_BASE_URL: 'https://mandaten.lblod.info'
-      SYNC_BASE_URL: 'https://dev.mandaten.lblod.info'
       SYNC_FILES_PATH: '/sync/mandatarissen/files'
       DOWNLOAD_FILE_PATH: '/delta-files/:id/download'
       INGEST_INTERVAL: 60000 # each minute
@@ -28,7 +27,6 @@ services:
       SERVICE_NAME: "gelinkt-notuleren-functionarissen-consumer"
       # replace with link to MDB API
       #SYNC_BASE_URL: 'https://leidinggevenden.lblod.info'
-      SYNC_BASE_URL: 'https://dev.leidinggevenden.lblod.info'
       SYNC_FILES_PATH: '/sync/functionarissen/files'
       DOWNLOAD_FILE_PATH: '/files/:id/download'
       INGEST_INTERVAL: 60000 # each minute
