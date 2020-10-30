@@ -41,9 +41,10 @@ services:
     labels:
       - "logging=true"
   database:
-    image: semtech/mu-authorization:0.6.0-beta.3
+    image: semtech/mu-authorization:0.6.0-beta.5
     environment:
       MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+      DATABASE_COMPATIBILITY: Virtuoso
     volumes:
       - ./config/authorization:/config
     restart: always
