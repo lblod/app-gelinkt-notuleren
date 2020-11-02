@@ -5,17 +5,21 @@
   :properties `((:state :string ,(s-prefix "ext:stateString"))
                 (:content :string ,(s-prefix "ext:content"))
                 (:kind :string ,(s-prefix "ext:agendaKind")))
-  :has-many `((signed-resource :via ,(s-prefix "ext:signsAgenda")
+  :has-many `(
+              (signed-resource :via ,(s-prefix "ext:signsAgenda")
                                :inverse t
-                               :as "signed-resources"))
-  :has-one `((published-resource :via ,(s-prefix "ext:publishesAgenda")
+                               :as "signed-resources")
+              )
+  :has-one `(
+             (published-resource :via ,(s-prefix "ext:publishesAgenda")
                                  :inverse t
                                  :as "published-resource")
              (editor-document :via ,(s-prefix "prov:wasDerivedFrom")
                               :as "editor-document")
              (document-container :via ,(s-prefix "ext:hasVersionedAgenda")
                                  :inverse t
-                                 :as "document-container"))
+                                 :as "document-container")
+             )
   :resource-base (s-url "http://data.lblod.info/prepublished-agendas/")
   :features '(include-uri)
   :on-path "versioned-agendas")
@@ -90,8 +94,8 @@
                 (:created-on :datetime ,(s-prefix "dct:created")))
   :has-one `((blockchain-status :via ,(s-prefix "sign:status")
                                 :as "status")
-             (versioned-agenda :via ,(s-prefix "ext:signsAgenda")
-                               :as "versioned-agenda")
+             (agenda :via ,(s-prefix "ext:signsAgenda")
+                               :as "agenda")
              (versioned-besluiten-lijst :via ,(s-prefix "ext:signsBesluitenlijst")
                                         :as "versioned-besluiten-lijst")
              (versioned-notulen :via ,(s-prefix "ext:signsNotulen")
@@ -112,8 +116,8 @@
                 (:submission-status :uri ,(s-prefix "ext:submissionStatus")))
   :has-one `((blockchain-status :via ,(s-prefix "sign:status")
                                 :as "status")
-             (versioned-agenda :via ,(s-prefix "ext:publishesAgenda")
-                               :as "versioned-agenda")
+             (agenda :via ,(s-prefix "ext:publishesAgenda")
+                               :as "agenda")
              (versioned-besluiten-lijst :via ,(s-prefix "ext:publishesBesluitenlijst")
                                         :as "versioned-besluiten-lijst")
              (versioned-behandeling :via ,(s-prefix "ext:publishesBehandeling")
@@ -148,15 +152,28 @@
   :on-path "notulen")
 
 (define-resource agenda ()
-  :class (s-prefix "ext:Agenda")
-  :properties `((:inhoud :string ,(s-prefix "prov:value")))
-  :has-one `((published-resource :via ,(s-prefix "prov:wasDerivedFrom")
-                             :as "publication")
-             (zitting :via ,(s-prefix "ext:agenda")
-                      :inverse t
-                      :as "zitting"))
-  :has-many `((agendapunt :via ,(s-prefix "ext:agendaAgendapunt")
-                                  :as "agendapunten"))
+  :class (s-prefix "bv:Agenda")
+  :properties `(
+                (:inhoud :string ,(s-prefix "prov:value"))
+                (:agenda-status :string ,(s-prefix "bv:agendaStatus"))
+                (:agenda-type :string ,(s-prefix "bv:agendaType"))
+                (:rendered-content :string ,(s-prefix "ext:renderedContent"))
+                )
+  :has-one `(
+             (zitting :via ,(s-prefix "bv:isAgendaVoor")
+                      :as "zitting")
+             (published-resource :via ,(s-prefix "ext:publishesAgenda")
+                                 :inverse t
+                                 :as "published-resource")
+             )
+  :has-many `(
+              (agendapunt :via ,(s-prefix "dct:isPartOf")
+                          :inverse t
+                          :as "agendapunten")
+              (signed-resource :via ,(s-prefix "ext:signsAgenda")
+                               :inverse t
+                               :as "signed-resources")
+              )
   :resource-base (s-url "http://data.lblod.info/id/agendas/")
   :features '(include-uri)
   :on-path "agendas")
@@ -189,3 +206,11 @@
   :resource-base (s-url "http://data.lblod.info/id/besluitenlijsten/")
   :features '(include-uri)
   :on-path "besluitenlijsten")
+
+(define-resource publication-status-code ()
+  :class (s-prefix "bibo:DocumentStatus")
+  :properties `((:label :string ,(s-prefix "skos:prefLabel"))
+                (:scope-note :string ,(s-prefix "skos:scopeNote")))
+  :resource-base (s-url "http://data.vlaanderen.be/id/concept/MandatarisStatusCode/")
+  :features '(include-uri)
+  :on-path "publication-status-codes")

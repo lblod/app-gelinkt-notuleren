@@ -42,6 +42,7 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/public",
                     constraint: %ResourceConstraint{
                       resource_types: [
+                        "http://data.vlaanderen.be/ns/besluitvorming#Agenda",
                         "http://mu.semte.ch/vocabularies/ext/EditorDocumentStatus",
                         "http://mu.semte.ch/vocabularies/ext/EditorDocumentFolder",
                         "http://mu.semte.ch/vocabularies/ext/Template",
@@ -63,11 +64,11 @@ defmodule Acl.UserGroups.Config do
                         "http://www.w3.org/ns/prov#Location",
                         "http://data.vlaanderen.be/ns/mandaat#Kandidatenlijst",
                         "http://data.vlaanderen.be/ns/mandaat#Verkiezingsresultaat",
-                        "http://data.vlaanderen.be/ns/besluit#Zitting",
                         "http://data.vlaanderen.be/ns/besluit#Stemming",
                         "http://data.vlaanderen.be/ns/besluit#Besluit",
                         "http://data.vlaanderen.be/ns/besluit#Artikel",
-                        "http://data.vlaanderen.be/ns/besluit#Agenda",
+                        "http://data.vlaanderen.be/ns/besluit#Agenda",#is this really necessary?
+                        "http://mu.semte.ch/vocabularies/ext/Agenda",
                         "http://data.vlaanderen.be/ns/besluit#Agendapunt",
                         "http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt",
                         "http://data.vlaanderen.be/ns/mandaat#Mandaat",
@@ -80,7 +81,8 @@ defmodule Acl.UserGroups.Config do
                         "http://data.lblod.info/vocabularies/mobiliteit/MaatregelConcept",
                         "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordcategorie",
                         "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordconcept",
-                        "http://data.lblod.info/vocabularies/mobiliteit/VerkeersbordconceptStatusCode"
+                        "http://data.lblod.info/vocabularies/mobiliteit/VerkeersbordconceptStatusCode",
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject"
                       ]
                     } },
                   %GraphSpec{
@@ -125,6 +127,7 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
+                        "http://data.vlaanderen.be/ns/besluitvorming#Agenda",
                         "http://mu.semte.ch/vocabularies/ext/EditorDocument",
                         "http://mu.semte.ch/vocabularies/ext/DocumentContainer",
                         "http://mu.semte.ch/vocabularies/ext/VersionedAgenda",
@@ -156,11 +159,13 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/temporary-sync-",
                     constraint: %ResourceConstraint{
                       resource_types: [
+                        "http://data.vlaanderen.be/ns/besluitvorming#Agenda",
                         "http://data.vlaanderen.be/ns/besluit#Zitting",
                         "http://data.vlaanderen.be/ns/besluit#Stemming",
                         "http://data.vlaanderen.be/ns/besluit#Besluit",
                         "http://data.vlaanderen.be/ns/besluit#Artikel",
-                        "http://data.vlaanderen.be/ns/besluit#Agenda",
+                        "http://data.vlaanderen.be/ns/besluit#Agenda",#is this really necessary?
+                        "http://mu.semte.ch/vocabularies/ext/Agenda",
                         "http://data.vlaanderen.be/ns/besluit#Agendapunt",
                         "http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt",
                         "http://data.vlaanderen.be/ns/mandaat#Mandaat",
@@ -182,7 +187,13 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
+                        "http://data.vlaanderen.be/ns/besluitvorming#Agenda",
                         "http://mu.semte.ch/vocabularies/ext/EditorDocument",
+                        "http://data.vlaanderen.be/ns/besluit#Zitting",
+                        "http://mu.semte.ch/vocabularies/ext/Agenda",
+                        "http://data.vlaanderen.be/ns/besluit#Agendapunt",
+                        "http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt",
+                        "http://data.vlaanderen.be/ns/besluit#Stemming",
                         "http://mu.semte.ch/vocabularies/ext/DocumentContainer",
                         "http://mu.semte.ch/vocabularies/ext/VersionedAgenda",
                         "http://mu.semte.ch/vocabularies/ext/VersionedNotulen",

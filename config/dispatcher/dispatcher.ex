@@ -21,6 +21,13 @@ defmodule Dispatcher do
   # match "/themes/*path" do
   #   Proxy.forward conn, path, "http://resource/themes/"
   # end
+  #
+  get "/sync/files/*path" do
+    Proxy.forward conn, path, "http://published-resource-producer/files/"
+  end
+  match "/files/*path" do
+    Proxy.forward conn, path, "http://file/files/"
+  end
 
   match "/blockchain/*path" do
     Proxy.forward conn, path, "http://blockchain/"
@@ -47,7 +54,7 @@ defmodule Dispatcher do
   end
 
   match "/agendapunten/*path" do
-    Proxy.forward conn, path, "http://resource/agendapunten/"
+    Proxy.forward conn, path, "http://cache/agendapunten/"
   end
 
   match "/artikels/*path" do
@@ -95,7 +102,7 @@ defmodule Dispatcher do
   end
 
   match "/zittingen/*path" do
-    Proxy.forward conn, path, "http://resource/zittingen/"
+    Proxy.forward conn, path, "http://cache/zittingen/"
   end
 
   match "/notulen/*path" do
@@ -140,6 +147,10 @@ defmodule Dispatcher do
 
   match "/mandataris-status-codes/*path" do
     Proxy.forward conn, path, "http://cache/mandataris-status-codes/"
+  end
+
+  match "/publication-status-codes/*path" do
+    Proxy.forward conn, path, "http://cache/publication-status-codes/"
   end
 
   match "/beleidsdomein-codes/*path" do
@@ -218,10 +229,6 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/rdfs-properties/"
   end
 
-  post "/sync/*path" do
-    Proxy.forward conn, path, "http://sync/sync"
-  end
-
   #################################################################
   # Adressenregister
   #################################################################
@@ -229,9 +236,6 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://adressenregister/"
   end
 
-  ############
-  # Blockchain
-  ############
   match "/prepublish/*path" do
     Proxy.forward conn, path, "http://preimporter/prepublish/"
   end

@@ -1,5 +1,4 @@
 version: "3.4"
-
 x-logging: &default-logging
   driver: "json-file"
   options:
@@ -14,14 +13,10 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
-  publicatie:
-    image: lblod/frontend-gelinkt-notuleren-publicatie:0.16.3
-    links:
-      - identifier:backend
-    restart: always
-    logging: *default-logging
-    labels:
-      - "logging=true"
+  deltanotifier:
+    image: semtech/mu-delta-notifier:0.1.0
+    volumes:
+      - ./config/delta:/config
   identifier:
     image: semtech/mu-identifier:1.8.1
     restart: always
@@ -48,6 +43,7 @@ services:
     image: semtech/mu-authorization:0.6.0-beta.5
     environment:
       MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+      DATABASE_COMPATIBILITY: Virtuoso
     volumes:
       - ./config/authorization:/config
     restart: always
@@ -121,38 +117,34 @@ services:
     labels:
       - "logging=true"
   preimporter:
-    image: lblod/notulen-prepublish-service:0.4.0
+    image: lblod/notulen-prepublish-service:0.5.0
     restart: always
     logging: *default-logging
     labels:
       - "logging=true"
-  sync:
-    image: lblod/gemeente-ocmw-sync-service:0.2.4
-    links:
-      - virtuoso:database #TODO replace with database when possible
-    restart: always
-    logging: *default-logging
-    labels:
-      - "logging=true"
-  besluit-publicatie:
-    image: lblod/besluit-publicatie-publish-service:0.5.0
+  file:
+    image: semtech/mu-file-service:3.1.0
     links:
       - database:database
-    restart: always
-    logging: *default-logging
-    labels:
-      - "logging=true"
-  publicatie-melding:
-    image: lblod/besluit-publicatie-melding-service:0.3.7
-    restart: always
-    logging: *default-logging
-    labels:
-      - "logging=true"
-    links:
-      - database:database
+    volumes:
+      - ./data/files/:/share/
+  # sync:
+  #   image: lblod/gemeente-ocmw-sync-service:0.2.4
+  #   links:
+  #     - virtuoso:database #TODO replace with database when possible
+  #   restart: always
+  #   logging: *default-logging
+  #   labels:
+  #     - "logging=true"
   adressenregister:
     image: lblod/adressenregister-fuzzy-search-service:0.5.0
     restart: always
     logging: *default-logging
     labels:
       - "logging=true"
+  published-resource-producer:
+    image: lblod/published-resource-producer:0.0.2
+    volumes:
+      - ./data/files:/share
+    environment:
+      RELATIVE_FILE_PATH: "deltas/published-resource"

@@ -4,10 +4,8 @@ services:
     image: nginx:1.13
     volumes:
       - ./config/proxy:/etc/nginx/conf.d
-    ##ports:
-    ##  - "443:443"
-  publicatie:
-    restart: "no"
+    ports:
+      - "443:443"
   editor:
     restart: "no"
   identifier:
