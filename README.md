@@ -10,7 +10,7 @@ Backend systems and editor built on top of the Besluit and Mandaat model and app
 
 This repository harvest three setups.  The base of these setups resides in the standard docker-compose.yml.
 
-* *docker-compose.yml* This provides you with the backend components.  There is a frontend application included which you can publish using a separate proxy (we tend to put a letsencrypt proxy in front).  
+* *docker-compose.yml* This provides you with the backend components.  There is a frontend application included which you can publish using a separate proxy (we tend to put a letsencrypt proxy in front).
 * *docker-compose.dev.yml* Provides changes for a good frontend development setup.
   - publishes the backend services on port 80 directly, so you can run `ember serve --proxy http://localhost` when developing the frontend apps natively.
   - publishes the database instance on port 8890 so you can easily see what content is stored in the base triplestore
@@ -36,13 +36,13 @@ Execute the following:
 
     # Clone this repository
     git clone https://github.com/lblod/app-gelinkt-notuleren.git
-    
+
     # Move into the directory
     cd app-gelinkt-notuleren
-    
+
     # Make sure git-lfs is enabled after installation
     git lfs install
-    
+
     # Start the system
     docker-compose -f docker-compose.yml -f docker-compose.demo.yml up -d
 
@@ -58,13 +58,13 @@ Execute the following:
 
     # Make sure git-lfs is enabled after installation
     git lfs install
-    
+
     # Clone this repository
     git clone https://github.com/lblod/app-gelinkt-notuleren.git
-    
+
     # Move into the directory
     cd app-gelinkt-notuleren
-    
+
     # Start the system
     docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
 
@@ -82,7 +82,7 @@ First we bring down the stack so we can upgrade things easily:
 
     # Move to the right directory
     cd place-where-you-clone-repository/app-gelinkt-notuleren
-    
+
     # Bring the application down
     docker-compose -f docker-compose.yml -f docker-compose.demo.yml down
 
@@ -90,7 +90,7 @@ If you don't need the database of your current setup anymore, you may whish to r
 
     # Remove all contents in the database folder
     rm -Rf data/db
-    
+
     # Checkout the required files from the repository
     git checkout data/db
 
@@ -98,7 +98,7 @@ Next up is pulling in the changes from the upstream and launching the stack agai
 
     # Pull in the changes
     git pull origin master
-    
+
     # Launch the stack
     docker-compose -f docker-compose.yml -f docker-compose.demo.yml up
 
@@ -134,6 +134,76 @@ At some times you may want te clean the database and make sure it's in a pristin
     docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
 
 Make sure to wait for the migrations to run.
+
+### External delta sync [EXPERIMENTAL]
+
+*DISCLAIMER: this is not 100% bulletproof*
+
+This feature allows syncing data from external applications, to be immediately reflected in the current application.
+It is considered an external feature at this point and requires a manual setup.
+
+#### Sync MDB with GN
+
+To ensure both the producer and consumer work correctly, the respecting stacks should both start from the same base-state. By performing the following steps we can achieve this.
+
+1. Download a data-dump from [Mandatendatabank](https://mandaten.lokaalbestuur.vlaanderen.be)
+2. Run the provided helper script to set up the needed migrations:
+   
+   > If you want to learn more about mu-semtech migrations, consult [mu-migrations-service]( https://github.com/mu-semtech/mu-migrations-service)
+    
+   ```console
+    foo@device:~project-root$ sudo /bin/bash prepare-data-sync-migration.sh mdb-data-dump.ttl
+    ```
+   after running, you should be able to see that the following has been generated on path `./config/migrations`:
+    - `<timestamp>-data-sync-with-mdb`
+        - `<timestamp>-mdb-export.graph`
+        - `<timestamp>-mdb-export.ttl` (should contain the data-export)
+        - `<timestamp>-ingest-mdb-triples.sparql`
+    
+
+3. Restart the migrations:
+    ```console
+    foo@device:~project-root$ docker-compose restart migrations
+    ```
+   **NOTE**: This could take a while, make sure the migrations have run successfully before continuing. 
+   You can simply do this by consulting at the logs:
+    ```console
+    foo@device:~project-root$ docker-compose logs -f migrations
+   
+    migrations_1          | /data/migrations/20200929102725-data-sync-with-mdb/20200929102725-mdb-export.ttl [DONE]
+    migrations_1          | /data/migrations/20200929102725-data-sync-with-mdb/20200929102726-ingest-mdb-triples.sparql [DONE]
+    migrations_1          |
+    migrations_1          | [2020-09-29 08:32:37] INFO  WEBrick 1.4.2
+    migrations_1          | [2020-09-29 08:32:37] INFO  ruby 2.5.1 (2018-03-29) [x86_64-linux]
+    migrations_1          | == Sinatra (v1.4.8) has taken the stage on 80 for production with backup from WEBrick
+    migrations_1          | [2020-09-29 08:32:37] INFO  WEBrick::HTTPServer#start: pid=12 port=80
+    ```
+4. Restart the cache and resource services to make sure they are aware of the new data:
+    ```console
+    foo@device:~project-root$ docker-compose restart cache resource
+    ```
+
+#### Setting up mandatarissen-consumer
+
+
+1. Create/update the `docker-compose.override.yml` file with following lines:
+   ```dockerfile
+     mandatarissen-consumer:
+       environment:
+         SYNC_BASE_URL: 'https://mandaten.lokaalbestuur.vlaanderen.be' # the endpoint you want to sync from
+         START_FROM_DELTA_TIMESTAMP: '2020-09-18T03:15:00.112Z' # a timestamp from TTL converted to ISO
+   ```
+
+2. Include the `mandatarissen-consumer` container to the stack by including the provided `docker-compose.external-delta-sync.yml` to a `.env` file:
+    ```text
+    COMPOSE_FILE=docker-compose.yml:docker-compose.external-delta-sync.yml:docker-compose.override.yml
+    ```
+3. Update the stack:
+    ```console
+    foo@device:~project-root$ docker-compose up -d
+    ```
+
+
 
 
 ## General application structure

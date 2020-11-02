@@ -6,7 +6,7 @@ x-logging: &default-logging
     max-file: "3"
 services:
   editor:
-    image: lblod/frontend-gelinkt-notuleren:1.12.0
+    image: lblod/frontend-gelinkt-notuleren:1.14.0
     links:
       - identifier:backend
     restart: always
@@ -17,7 +17,6 @@ services:
     image: semtech/mu-delta-notifier:0.1.0
     volumes:
       - ./config/delta:/config
-    restart: always
   identifier:
     image: semtech/mu-identifier:1.8.1
     restart: always
@@ -104,9 +103,11 @@ services:
     labels:
       - "logging=true"
   resource:
-    image: semtech/mu-cl-resources:1.18.0
+    image: semtech/mu-cl-resources:1.19.0
     volumes:
       - ./config/resources:/config
+    environment:
+      CACHE_CLEAR_PATH: "http://cache/.mu/clear-keys"
     restart: always
     logging:
       driver: "json-file"
