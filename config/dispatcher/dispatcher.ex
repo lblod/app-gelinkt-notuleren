@@ -260,6 +260,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/versioned-besluiten-lijsten/"
   end
 
+  match "/besluiten-lijsten/*path" do
+    Proxy.forward conn, path, "http://resource/besluiten-lijsten/"
+  end
+
   match "/versioned-behandelingen/*path" do
     Proxy.forward conn, path, "http://resource/versioned-behandelingen/"
   end
