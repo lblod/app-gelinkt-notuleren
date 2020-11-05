@@ -34,12 +34,10 @@
   :has-one `((published-resource :via ,(s-prefix "ext:publishesBesluitenlijst")
                                  :inverse t
                                  :as "published-resource")
-             (editor-document :via ,(s-prefix "prov:wasDerivedFrom")
-                              :as "editor-document")
              (zitting :via ,(s-prefix "ext:hasBesluitenLijst")
                                  :inverse t
                                  :as "zitting"))
-  :resource-base (s-url "http://data.lblod.info/prepublished-besluiten-lijsten/")
+  :resource-base (s-url "http://data.lblod.info/besluiten-lijsten/")
   :features '(include-uri)
   :on-path "besluiten-lijsten")
 

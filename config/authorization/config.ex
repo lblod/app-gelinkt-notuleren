@@ -128,6 +128,7 @@ defmodule Acl.UserGroups.Config do
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://data.vlaanderen.be/ns/besluitvorming#Agenda",
+                        "http://mu.semte.ch/vocabularies/ext/BesluitenLijst",
                         "http://mu.semte.ch/vocabularies/ext/EditorDocument",
                         "http://mu.semte.ch/vocabularies/ext/DocumentContainer",
                         "http://mu.semte.ch/vocabularies/ext/VersionedAgenda",
@@ -188,6 +189,7 @@ defmodule Acl.UserGroups.Config do
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://data.vlaanderen.be/ns/besluitvorming#Agenda",
+                        "http://mu.semte.ch/vocabularies/ext/BesluitenLijst",
                         "http://mu.semte.ch/vocabularies/ext/EditorDocument",
                         "http://data.vlaanderen.be/ns/besluit#Zitting",
                         "http://mu.semte.ch/vocabularies/ext/Agenda",
