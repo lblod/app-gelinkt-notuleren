@@ -141,10 +141,11 @@ Make sure to wait for the migrations to run.
 
 This feature allows syncing data from external applications, to be immediately reflected in the current application.
 It is considered an external feature at this point and requires a manual setup.
+The next steps assume you have never setup the sync before in this instance of the stack. Else you will need to run the re-import [TODO]
 
-#### Sync producer stack with Gelinkt Notuleren
+#### Step 1: Sync producer stack with Gelinkt Notuleren
 
-> **Prerequisites**:  
+> **Prerequisites**:
 > This setup makes use of [mu-cli](https://github.com/mu-semtech/mu-cli), so make sure to install it first.
 
 
@@ -153,9 +154,8 @@ To ensure both the producer and consumer work correctly, the respecting stacks s
 1. Download a data-dump from the producing service you wish to sync up with. Ex: [Mandatendatabank](https://mandaten.lokaalbestuur.vlaanderen.be)
 2. Place the data-dump file in the project root.
 3. Run the provided mu-script to set-up the migrations we need:
-   
    >  - If you want to learn more about mu-semtech migrations, consult [mu-migrations-service]( https://github.com/mu-semtech/mu-migrations-service)
-    
+
    ```console
     foo@device:~project-root$  mu script project-scripts setup-data-sync data-dump.ttl
     ```
@@ -164,17 +164,17 @@ To ensure both the producer and consumer work correctly, the respecting stacks s
         - `<timestamp>-export.graph`
         - `<timestamp>-export.ttl` (should contain the data-export)
         - `<timestamp>-ingest-exported-triples.sparql`
-    
+
 
 4. Restart the migrations:
     ```console
     foo@device:~project-root$ docker-compose restart migrations
     ```
-   **NOTE**: This could take a while, make sure the migrations have run successfully before continuing. 
+   **NOTE**: This could take a while, make sure the migrations have run successfully before continuing.
    You can simply do this by consulting at the logs:
     ```console
     foo@device:~project-root$ docker-compose logs -f migrations
-   
+
     migrations_1          | /data/migrations/20200929102725-data-sync-with-mdb/20200929102725-mdb-export.ttl [DONE]
     migrations_1          | /data/migrations/20200929102725-data-sync-with-mdb/20200929102726-ingest-mdb-triples.sparql [DONE]
     migrations_1          |
@@ -189,8 +189,7 @@ To ensure both the producer and consumer work correctly, the respecting stacks s
     ```
 6. (optional) remove the data-dump file in the project root.
 
-#### Setting up mandatarissen-consumer
-
+#### Step 2: Setting up mandatarissen-consumer
 
 1. Create/update the `docker-compose.override.yml` file with following lines:
    ```dockerfile
