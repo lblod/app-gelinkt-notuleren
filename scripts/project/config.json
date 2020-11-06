@@ -4,7 +4,7 @@
     {
       "documentation": {
         "command": "setup-data-sync",
-        "description": "Creates migrations to sync the local triple-store with a given data-dump.",
+        "description": "Creates migrations to sync the local triple-store with a given data-dump. Expects the name off the data-dump to be given and placed in the project root",
         "arguments": [
           "data-dump.ttl"
         ]
@@ -15,7 +15,7 @@
         "script": "prepare-data-sync-migrations/run.sh"
       },
       "mounts": {
-        "app": "/data/app/"
+        "app": "/project/"
       }
     }
   ]

@@ -3,7 +3,7 @@ export="$1"
 tstamp=$(date +%Y%m%d%H%M%S)
 dir="/data/app/config/migrations/$tstamp-data-sync"
 mkdir -p "$dir"
-cat "$export" >> "$dir/$tstamp-export.ttl"
+cat "/project/$export" >> "$dir/$tstamp-export.ttl"
 cat <<EOF > "$dir/$tstamp-export.graph"
 http://mu.semte.ch/graphs/temp-ingest-graph
 EOF
