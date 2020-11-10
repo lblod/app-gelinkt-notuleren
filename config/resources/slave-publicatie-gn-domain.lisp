@@ -36,9 +36,9 @@
                                  :as "published-resource")
              (editor-document :via ,(s-prefix "prov:wasDerivedFrom")
                               :as "editor-document")
-             (document-container :via ,(s-prefix "ext:hasVersionedBesluitenLijst")
+             (zitting :via ,(s-prefix "besluit:heeftBesluitenlijst")
                                  :inverse t
-                                 :as "document-container"))
+                                 :as "zitting"))
   :resource-base (s-url "http://data.lblod.info/prepublished-besluiten-lijsten/")
   :features '(include-uri)
   :on-path "versioned-besluiten-lijsten")
