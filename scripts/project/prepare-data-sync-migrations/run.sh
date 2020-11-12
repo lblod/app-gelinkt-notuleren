@@ -1,14 +1,14 @@
-#!/bin/sh
+#!/bin/bash
 export="$1"
-timestamp="$(date +%Y%m%d%H%M%S)"
-migrdir="./config/migrations/$timestamp-data-sync-with-mdb"
-mkdir -p "$migrdir"
-cat "$export" >> "$migrdir/$timestamp-mdb-export.ttl"
-cat <<EOF > "$migrdir/$timestamp-mdb-export.graph"
+tstamp=$(date +%Y%m%d%H%M%S)
+dir="/project/config/migrations/$tstamp-data-sync"
+mkdir -p "$dir"
+cat "/project/$export" >> "$dir/$tstamp-export.ttl"
+cat <<EOF > "$dir/$tstamp-export.graph"
 http://mu.semte.ch/graphs/temp-ingest-graph
 EOF
-((timestamp++))
-cat <<EOF > $migrdir/$timestamp-ingest-mdb-triples.sparql
+((tstamp++))
+cat <<EOF > "$dir/$tstamp-ingest-exported-triples.sparql"
 DELETE {
     GRAPH <http://mu.semte.ch/graphs/public> {
         ?s ?p ?o .
