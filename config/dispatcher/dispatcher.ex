@@ -69,6 +69,14 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://resource/besluiten/"
   end
 
+  match "/concepts/*path" do
+    Proxy.forward conn, path, "http://resource/concepts/"
+  end
+
+  match "/concept-schemes/*path" do
+    Proxy.forward conn, path, "http://resource/concept-schemes/"
+  end
+
   match "/bestuurseenheden/*path" do
     Proxy.forward conn, path, "http://cache/bestuurseenheden/"
   end

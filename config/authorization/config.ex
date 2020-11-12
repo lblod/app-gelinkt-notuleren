@@ -70,6 +70,8 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/besluit#Agenda",#is this really necessary?
                         "http://mu.semte.ch/vocabularies/ext/Agenda",
                         "http://data.vlaanderen.be/ns/besluit#Agendapunt",
+                        "http://www.w3.org/2004/02/skos/core#ConceptScheme",
+                        "http://www.w3.org/2004/02/skos/core#Concept",
                         "http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt",
                         "http://data.vlaanderen.be/ns/mandaat#Mandaat",
                         "http://data.vlaanderen.be/ns/mandaat#Mandataris",
@@ -167,6 +169,8 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/besluit#Agenda",#is this really necessary?
                         "http://mu.semte.ch/vocabularies/ext/Agenda",
                         "http://data.vlaanderen.be/ns/besluit#Agendapunt",
+                        "http://www.w3.org/2004/02/skos/core#ConceptScheme",
+                        "http://www.w3.org/2004/02/skos/core#Concept",
                         "http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt",
                         "http://data.vlaanderen.be/ns/mandaat#Mandaat",
                         "http://data.vlaanderen.be/ns/mandaat#Mandataris",
@@ -192,6 +196,8 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/besluit#Zitting",
                         "http://mu.semte.ch/vocabularies/ext/Agenda",
                         "http://data.vlaanderen.be/ns/besluit#Agendapunt",
+                        "http://www.w3.org/2004/02/skos/core#ConceptScheme",
+                        "http://www.w3.org/2004/02/skos/core#Concept",
                         "http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt",
                         "http://data.vlaanderen.be/ns/besluit#Stemming",
                         "http://mu.semte.ch/vocabularies/ext/DocumentContainer",
