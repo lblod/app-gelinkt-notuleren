@@ -117,7 +117,7 @@ services:
     labels:
       - "logging=true"
   preimporter:
-    image: lblod/notulen-prepublish-service:0.5.0
+    image: lblod/notulen-prepublish-service:0.5.1
     restart: always
     logging: *default-logging
     labels:
@@ -128,14 +128,6 @@ services:
       - database:database
     volumes:
       - ./data/files/:/share/
-  # sync:
-  #   image: lblod/gemeente-ocmw-sync-service:0.2.4
-  #   links:
-  #     - virtuoso:database #TODO replace with database when possible
-  #   restart: always
-  #   logging: *default-logging
-  #   labels:
-  #     - "logging=true"
   adressenregister:
     image: lblod/adressenregister-fuzzy-search-service:0.5.0
     restart: always
@@ -148,7 +140,6 @@ services:
       - ./data/files:/share
     environment:
       RELATIVE_FILE_PATH: "deltas/published-resource"
-
   project-scripts:
     image: semtech/mu-scripts:1.0.0
     volumes:
