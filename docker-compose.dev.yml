@@ -32,6 +32,8 @@ services:
     restart: "no"
   preimporter:
     restart: "no"
+  deltanotifier:
+    restart: "no"
   mocklogin:
     image: lblod/mock-login-service:0.4.0
   adressenregister:
