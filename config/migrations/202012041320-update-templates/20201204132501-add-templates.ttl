@@ -2,6 +2,7 @@
   <http://purl.org/dc/terms/title> "Artikel (klassieke stijl)";
   <http://mu.semte.ch/vocabularies/core/uuid> "47f93bc4-2bad-11e9-a77b-9f29cd804da8";
   <http://mu.semte.ch/vocabularies/ext/activeInContext> <http://mu.semte.ch/vocabularies/ext/BesluitKlassiekeStijl>;
+  <http://mu.semte.ch/vocabularies/ext/disabledInContext> <http://data.vlaanderen.be/ns/besluit#Artikel>;
   <http://mu.semte.ch/vocabularies/ext/templateContent> """
   <div property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
     <div property="eli:number" datatype="xsd:string">Artikel <span class="mark-highlight-manual">nummer</span></div> <!-- will be automated but not now -->
@@ -9,7 +10,7 @@
     <div property="prov:value" datatype="xsd:string"><span class="mark-highlight-manual">Voer inhoud in</span></div>
   </div>
   <br>
-  <span class="mark-highlight-manual">Voeg nieuw artikel in</span> <!-- Plugin en rdfa nakijken -->
+  <div class="mark-highlight-manual">Voeg nieuw artikel in</div> <!-- Plugin en rdfa nakijken -->
   <br>
 """;
 <http://mu.semte.ch/vocabularies/ext/templateMatches> "Voeg nieuw artikel in" .
@@ -18,6 +19,7 @@
   <http://purl.org/dc/terms/title> "Generiek besluit (klassieke stijl)";
   <http://mu.semte.ch/vocabularies/core/uuid> "39c31a7e-2ba9-11e9-88cf-83ebfda837dc";
   <http://mu.semte.ch/vocabularies/ext/activeInContext> <http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt>;
+  <http://mu.semte.ch/vocabularies/ext/disabledInContext> <http://data.vlaanderen.be/ns/besluit#Besluit>;
   <http://mu.semte.ch/vocabularies/ext/templateContent> """
 
 <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit ext:BesluitKlassiekeStijl">
@@ -63,7 +65,7 @@
       <div property="prov:value" datatype="xsd:string"><span class="mark-highlight-manual">Voer inhoud in</span></div>
     </div>
     <br>
-    <div>Voeg nieuw artikel in</div>
+    <div class="mark-highlight-manual">Voeg nieuw artikel in</div> <!-- Plugin en rdfa nakijken -->
     <br>
   </div>
 </div>
@@ -75,6 +77,7 @@
   <http://purl.org/dc/terms/title> "Generiek besluit (nieuwe stijl)";
   <http://mu.semte.ch/vocabularies/core/uuid> "6933312e-2bac-11e9-af69-3baeff70b1a8";
   <http://mu.semte.ch/vocabularies/ext/activeInContext> <http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt>;
+  <http://mu.semte.ch/vocabularies/ext/disabledInContext> <http://data.vlaanderen.be/ns/besluit#Besluit>;
   <http://mu.semte.ch/vocabularies/ext/templateContent> """
 
 <div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit ext:BesluitNieuweStijl">
@@ -128,7 +131,7 @@
       </div>
     </div>
     <br>
-    <span class="mark-highlight-manual">Voeg nieuw artikel in</span> <!-- Plugin en rdfa nakijken -->
+    <div class="mark-highlight-manual">Voeg nieuw artikel in</div> <!-- Plugin en rdfa nakijken -->
     <br>
   </div>
 
@@ -144,3 +147,24 @@
     <p><span class="mark-highlight-manual">Vrije tekst voor bijvoorbeeld vraag, antwoord, amendement, mededeling of tussenkomst.</span></p>
 """;
 <http://mu.semte.ch/vocabularies/ext/templateMatches> "Voeg sjabloon in voor besluit of vrij tekstveld (bijvoorbeeld voor een vraag, antwoord of tussenkomst)" .
+
+<http://lblod.info/templates/49891d8e-2bb1-11e9-82f2-bf43ce7fc64b> a <http://mu.semte.ch/vocabularies/ext/Template>;
+  <http://purl.org/dc/terms/title> "Artikel (nieuwe stijl)";
+  <http://mu.semte.ch/vocabularies/core/uuid> "49891d8e-2bb1-11e9-82f2-bf43ce7fc64b";
+  <http://mu.semte.ch/vocabularies/ext/activeInContext> <http://mu.semte.ch/vocabularies/ext/BesluitNieuweStijl>;
+  <http://mu.semte.ch/vocabularies/ext/disabledInContext> <http://data.vlaanderen.be/ns/besluit#Artikel>;
+  <http://mu.semte.ch/vocabularies/ext/templateContent> """
+
+  <div property="eli:has_part" resource="http://data.lblod.info/artikels/${generateUuid()}" typeof="besluit:Artikel">
+    <div property="eli:number" datatype="xsd:string">Artikel <span class="mark-highlight-manual">nummer</span></div>
+    <span style="display:none;" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD" typeof="skos:Concept">&nbsp;</span>
+    <div property="prov:value" datatype="xsd:string">
+      <span class="mark-highlight-manual">Voer inhoud in</span>
+    </div>
+  </div>
+  <br>
+  <div class="mark-highlight-manual">Voeg nieuw artikel in</span> <!-- Plugin en rdfa nakijken -->
+  <br>
+
+""";
+<http://mu.semte.ch/vocabularies/ext/templateMatches> "Voeg nieuw artikel in" .
