@@ -101,7 +101,7 @@
                           :as "tijdelijke-vervangingen")
               (beleidsdomein-code :via ,(s-prefix "mandaat:beleidsdomein")
                                   :as "beleidsdomein")
-              (behandeling :via ,(s-prefix "besluit:heeftAanwezige")
+              (behandeling-van-agendapunt :via ,(s-prefix "besluit:heeftAanwezige")
                            :inverse t
                            :as "aanwezig-bij-behandeling")
               (zitting :via ,(s-prefix "besluit:heeftAanwezigeBijStart")
