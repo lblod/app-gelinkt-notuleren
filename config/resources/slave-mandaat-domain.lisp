@@ -72,10 +72,7 @@
                                    :as "bestuursfunctie"))
   :has-many `((bestuursorgaan :via ,(s-prefix "org:hasPost")
                               :inverse t
-                              :as "bevat-in")
-              (behandeling :via ,(s-prefix "besluit:heeftAanwezige")
-                           :inverse t
-                           :as "aanwezig-bij-behandeling"))
+                              :as "bevat-in"))
   :resource-base (s-url "http://data.lblod.info/id/mandaten/")
   :features '(include-uri)
   :on-path "mandaten")
@@ -103,7 +100,13 @@
               (mandataris :via ,(s-prefix "mandaat:isTijdelijkVervangenDoor")
                           :as "tijdelijke-vervangingen")
               (beleidsdomein-code :via ,(s-prefix "mandaat:beleidsdomein")
-                                  :as "beleidsdomein"))
+                                  :as "beleidsdomein")
+              (behandeling :via ,(s-prefix "besluit:heeftAanwezige")
+                           :inverse t
+                           :as "aanwezig-bij-behandeling")
+              (zitting :via ,(s-prefix "besluit:heeftAanwezigeBijStart")
+                           :inverse t
+                           :as "aanwezig-bij-zitting"))
   :has-one `((mandaat :via ,(s-prefix "org:holds")
                       :as "bekleedt")
              (lidmaatschap :via ,(s-prefix "org:hasMembership")
