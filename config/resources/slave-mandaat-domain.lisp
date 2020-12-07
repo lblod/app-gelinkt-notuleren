@@ -72,7 +72,10 @@
                                    :as "bestuursfunctie"))
   :has-many `((bestuursorgaan :via ,(s-prefix "org:hasPost")
                               :inverse t
-                              :as "bevat-in"))
+                              :as "bevat-in")
+              (behandeling :via ,(s-prefix "besluit:heeftAanwezige")
+                           :inverse t
+                           :as "aanwezig-bij-behandeling"))
   :resource-base (s-url "http://data.lblod.info/id/mandaten/")
   :features '(include-uri)
   :on-path "mandaten")
