@@ -60,7 +60,7 @@
                                          :as "vorige-behandeling-van-agendapunt")
              (agendapunt :via ,(s-prefix "dct:subject")
                               :as "onderwerp")
-             (mandataris :via ,(s-prefix "besluit:heeftSecretaris")
+             (functionaris :via ,(s-prefix "besluit:heeftSecretaris")
                          :as "secretaris")
              (mandataris :via ,(s-prefix "besluit:heeftVoorzitter")
                          :as "voorzitter")
@@ -239,7 +239,7 @@
 
   :has-one `((bestuursorgaan :via ,(s-prefix "besluit:isGehoudenDoor")
                              :as "bestuursorgaan")
-             (mandataris :via ,(s-prefix "besluit:heeftSecretaris")
+             (functionaris :via ,(s-prefix "besluit:heeftSecretaris")
                          :as "secretaris")
              (mandataris :via ,(s-prefix "besluit:heeftVoorzitter")
                          :as "voorzitter")
