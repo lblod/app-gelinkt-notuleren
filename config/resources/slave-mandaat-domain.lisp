@@ -100,7 +100,13 @@
               (mandataris :via ,(s-prefix "mandaat:isTijdelijkVervangenDoor")
                           :as "tijdelijke-vervangingen")
               (beleidsdomein-code :via ,(s-prefix "mandaat:beleidsdomein")
-                                  :as "beleidsdomein"))
+                                  :as "beleidsdomein")
+              (behandeling-van-agendapunt :via ,(s-prefix "besluit:heeftAanwezige")
+                           :inverse t
+                           :as "aanwezig-bij-behandeling")
+              (zitting :via ,(s-prefix "besluit:heeftAanwezigeBijStart")
+                           :inverse t
+                           :as "aanwezig-bij-zitting"))
   :has-one `((mandaat :via ,(s-prefix "org:holds")
                       :as "bekleedt")
              (lidmaatschap :via ,(s-prefix "org:hasMembership")
