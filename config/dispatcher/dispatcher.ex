@@ -57,24 +57,16 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/agendapunten/"
   end
 
-  match "/artikels/*path" do
-    Proxy.forward conn, path, "http://resource/artikels/"
-  end
-
   match "/behandelingen-van-agendapunten/*path" do
-    Proxy.forward conn, path, "http://resource/behandelingen-van-agendapunten/"
-  end
-
-  match "/besluiten/*path" do
-    Proxy.forward conn, path, "http://resource/besluiten/"
+    Proxy.forward conn, path, "http://cache/behandelingen-van-agendapunten/"
   end
 
   match "/concepts/*path" do
-    Proxy.forward conn, path, "http://resource/concepts/"
+    Proxy.forward conn, path, "http://cache/concepts/"
   end
 
   match "/concept-schemes/*path" do
-    Proxy.forward conn, path, "http://resource/concept-schemes/"
+    Proxy.forward conn, path, "http://cache/concept-schemes/"
   end
 
   match "/bestuurseenheden/*path" do
@@ -97,16 +89,8 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://cache/bestuursorgaan-classificatie-codes/"
   end
 
-  match "/rechtsgronden-besluit/*path" do
-    Proxy.forward conn, path, "http://resource/rechtsgronden-besluit/"
-  end
-
-  match "/rechtsgronden-artikel/*path" do
-    Proxy.forward conn, path, "http://resource/rechtsgronden-artikel/"
-  end
-
   match "/stemmingen/*path" do
-    Proxy.forward conn, path, "http://resource/stemmingen/"
+    Proxy.forward conn, path, "http://cache/stemmingen/"
   end
 
   match "/zittingen/*path" do
