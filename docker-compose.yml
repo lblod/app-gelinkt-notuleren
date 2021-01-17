@@ -103,7 +103,7 @@ services:
     labels:
       - "logging=true"
   resource:
-    image: semtech/mu-cl-resources:1.19.0
+    image: semtech/mu-cl-resources:1.20.0
     volumes:
       - ./config/resources:/config
     environment:
@@ -117,7 +117,7 @@ services:
     labels:
       - "logging=true"
   preimporter:
-    image: lblod/notulen-prepublish-service:0.5.8
+    image: lblod/notulen-prepublish-service:0.6.0
     restart: always
     logging: *default-logging
     labels:
