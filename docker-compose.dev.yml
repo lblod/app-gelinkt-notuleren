@@ -36,5 +36,12 @@ services:
     restart: "no"
   mocklogin:
     image: lblod/mock-login-service:0.4.0
+  yasgui:
+    image: erikap/yasgui
+    ports:
+      - 8891:80
+    environment:
+      ENABLE_ENDPOINT_SELECTOR: "true"
+      DEFAULT_SPARQL_ENDPOINT: "http://localhost:8890/sparql"
   adressenregister:
     restart: "no"
