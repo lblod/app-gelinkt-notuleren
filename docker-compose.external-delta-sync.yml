@@ -7,7 +7,7 @@ x-logging: &default-logging
     max-file: "3"
 services:
   mandatarissen-consumer:
-    image: lblod/gelinkt-notuleren-consumer:0.1.3
+    image: lblod/gelinkt-notuleren-consumer:0.1.5
     environment:
       SERVICE_NAME: "gelinkt-notuleren-madatarissen-consumer"
       # replace with link to MDB API
@@ -23,7 +23,7 @@ services:
     labels:
       - "logging=true"
   functionarissen-consumer:
-    image: lblod/gelinkt-notuleren-consumer:0.1.3
+    image: lblod/gelinkt-notuleren-consumer:0.1.5
     environment:
       SERVICE_NAME: "gelinkt-notuleren-functionarissen-consumer"
       # replace with link to MDB API
