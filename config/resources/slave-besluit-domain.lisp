@@ -166,7 +166,10 @@
   :properties `((:label :string ,(s-prefix "skos:prefLabel"))
                 (:scope-note :string ,(s-prefix "skos:scopeNote")))
   :has-many `((bestuursfunctie-code :via ,(s-prefix "ext:hasDefaultType")
-                        :as "standaard-type"))
+                                    :as "standaard-type")
+              (bestuursorgaan :via ,(s-prefix "besluit:classificatie")
+                              :inverse t
+                              :as "is-classificatie-van"))
   :resource-base (s-url "http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/")
   :features '(include-uri)
   :on-path "bestuursorgaan-classificatie-codes")
