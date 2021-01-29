@@ -58,9 +58,9 @@
                                  :as "published-resource")
              (editor-document :via ,(s-prefix "prov:wasDerivedFrom")
                               :as "editor-document")
-             (document-container :via ,(s-prefix "ext:hasVersionedNotulen")
+             (zitting :via ,(s-prefix "ext:hasVersionedNotulen")
                                  :inverse t
-                                 :as "document-container"))
+                                 :as "zitting"))
   :resource-base (s-url "http://data.lblod.info/prepublished-notulen/")
   :features '(include-uri)
   :on-path "versioned-notulen")
