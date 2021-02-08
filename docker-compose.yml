@@ -62,7 +62,7 @@ services:
     labels:
       - "logging=true"
   migrations:
-    image: semtech/mu-migrations-service:0.5.0
+    image: semtech/mu-migrations-service:0.7.0
     links:
       - virtuoso:database
     volumes:
