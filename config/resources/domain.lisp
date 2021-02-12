@@ -43,3 +43,4 @@
                          :as "gebruiker"))
   :on-path "accounts"
 )
+(run-validations)

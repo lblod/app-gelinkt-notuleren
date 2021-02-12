@@ -1,0 +1,52 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX mu:<http://mu.semte.ch/vocabularies/core/>
+PREFIX ext:<http://mu.semte.ch/vocabularies/ext/>
+
+INSERT {
+  GRAPH ?g {
+  ?persoon a foaf:Person;
+           mu:uuid ?uuidPersoon;
+           foaf:firstName ?classificatie;
+           foaf:familyName ?naam;
+           foaf:member <http://data.lblod.info/id/bestuurseenheden/b2ee8ae754844119d83712a384587b6086358c0673645a27bca3a66e845bce84>;
+           foaf:account ?account.
+           ?account a foaf:OnlineAccount;
+           mu:uuid ?uuidAccount;
+           foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>;
+           ext:sessionRole ?role.
+ }
+ GRAPH <http://mu.semte.ch/graphs/public> {
+           ?persoon a foaf:Person;
+           mu:uuid ?uuidPersoon;
+           foaf:firstName ?classificatie;
+           foaf:familyName ?naam;
+           foaf:member <http://data.lblod.info/id/bestuurseenheden/b2ee8ae754844119d83712a384587b6086358c0673645a27bca3a66e845bce84>;
+           foaf:account ?account.
+           ?account a foaf:OnlineAccount;
+           mu:uuid ?uuidAccount;
+           foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>;
+           ext:sessionRole ?role.
+           }
+}
+WHERE {
+  GRAPH ?g {
+     <http://data.lblod.info/id/bestuurseenheden/b2ee8ae754844119d83712a384587b6086358c0673645a27bca3a66e845bce84> a besluit:Bestuurseenheid;
+     skos:prefLabel ?eenheid;
+     besluit:classificatie/skos:prefLabel ?classificatie.
+     VALUES ?role {
+     "GelinktNotuleren-schrijver"
+     "GelinktNotuleren-lezer"
+     "GelinktNotuleren-sjablonen_valideerder"
+     "GelinktNotuleren-ondertekenaar"
+     "GelinktNotuleren-publiceerder"
+     }
+     BIND(CONCAT(?eenheid, " ",  ?role) as ?naam)
+     BIND(CONCAT(?classificatie, " ", ?naam) as ?volledigeNaam)
+     BIND(MD5(?volledigeNaam) as ?uuidPersoon)
+     BIND(MD5(CONCAT(?volledigeNaam,"ACCOUNT")) as ?uuidAccount)
+     BIND(IRI(CONCAT("http://data.lblod.info/id/persoon/", ?uuidPersoon)) AS ?persoon)
+     BIND(IRI(CONCAT("http://data.lblod.info/id/account/", ?uuidAccount)) AS ?account)
+  }
+}

@@ -1,0 +1,11 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://mu.semte.ch/application/editor-document-statuses/5A8304E8C093B00009000010> a skos:Concept;
+          skos:inScheme <http://mu.semte.ch/application/concept-schemes/082b89ce4a8e42678689e9b35c6479d7>.
+
+}}

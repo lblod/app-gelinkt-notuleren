@@ -6,7 +6,7 @@ x-logging: &default-logging
     max-file: "3"
 services:
   editor:
-    image: lblod/frontend-gelinkt-notuleren:2.0.4
+    image: lblod/frontend-gelinkt-notuleren:2.0.5
     links:
       - identifier:backend
     restart: always
@@ -62,7 +62,7 @@ services:
     labels:
       - "logging=true"
   migrations:
-    image: semtech/mu-migrations-service:0.5.0
+    image: semtech/mu-migrations-service:0.7.0
     links:
       - virtuoso:database
     volumes:
@@ -117,7 +117,7 @@ services:
     labels:
       - "logging=true"
   preimporter:
-    image: lblod/notulen-prepublish-service:0.6.0
+    image: lblod/notulen-prepublish-service:0.7.1
     restart: always
     logging: *default-logging
     labels:
