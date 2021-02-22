@@ -151,17 +151,17 @@ The next steps assume you have never setup the sync before in this instance of t
 
 To ensure both the producer and consumer work correctly, the respecting stacks should both start from the same base-state. By performing the following steps we can achieve this.
 
-1. Download a data-dump from the producing service you wish to sync up with. Ex:
-- [Mandatendatabank (mdb)](https://mandaten.lokaalbestuur.vlaanderen.be)
-- [Leidinggevendendatabank (ldb)](https://leidinggevenden.lokaalbestuur.vlaanderen.be)
+1. Download a data-dump from the producing service you wish to sync up with:
+    - [Mandatendatabank (mdb)](https://mandaten.lokaalbestuur.vlaanderen.be)
+    - [Leidinggevendendatabank (ldb)](https://leidinggevenden.lokaalbestuur.vlaanderen.be)
 2. Place the data-dump file in the project root.
 3. Run the provided mu-script to set-up the migrations we need:
-   >  - If you want to learn more about mu-semtech migrations, consult [mu-migrations-service]( https://github.com/mu-semtech/mu-migrations-service)
+   >  **Note:** if you want to learn more about mu-semtech migrations, consult [mu-migrations-service]( https://github.com/mu-semtech/mu-migrations-service)
 
    ```console
     foo@device:~project-root$ mu script project-scripts setup-data-sync-[mdb|ldb] data-dump.ttl
     ```
-   after running, you should be able to see that the following has been generated on path `./config/migrations`:
+   You should be able to see that the following files have been generated in `./config/migrations`:
     - `<timestamp>-data-sync-[mdb|ldb]`
         - `<timestamp>-export.graph`
         - `<timestamp>-export.ttl` (should contain the data-export)
@@ -172,8 +172,8 @@ To ensure both the producer and consumer work correctly, the respecting stacks s
     ```console
     foo@device:~project-root$ docker-compose restart migrations
     ```
-   **NOTE**: This could take a while, make sure the migrations have run successfully before continuing.
-   You can simply do this by consulting at the logs:
+   Make sure the migrations ran successfully before continuing:
+   
     ```console
     foo@device:~project-root$ docker-compose logs -f migrations
 
@@ -185,6 +185,8 @@ To ensure both the producer and consumer work correctly, the respecting stacks s
     migrations_1          | == Sinatra (v1.4.8) has taken the stage on 80 for production with backup from WEBrick
     migrations_1          | [2020-09-29 08:32:37] INFO  WEBrick::HTTPServer#start: pid=12 port=80
     ```
+   > **Note**: This could take a while, so go grab yourself a coffee.
+   > 
 5. Restart the cache and resource services to make sure they are aware of the new data:
     ```console
     foo@device:~project-root$ docker-compose restart cache resource
