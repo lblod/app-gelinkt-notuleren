@@ -4,19 +4,19 @@ services:
     image: nginx:1.13
     volumes:
       - ./config/proxy:/etc/nginx/conf.d
-    ports:
-      - "443:443"
+    # ports:
+    #   - "443:443"
   editor:
     restart: "no"
   identifier:
     ports:
-      - "80:80"
+      - "81:80"
     restart: "no"
   database:
     restart: "no"
   virtuoso:
-    ports:
-      - "8890:8890"
+    # ports:
+    #   - "8890:8890"
     restart: "no"
   dispatcher:
     restart: "no"
@@ -38,8 +38,8 @@ services:
     image: lblod/mock-login-service:0.4.0
   yasgui:
     image: erikap/yasgui
-    ports:
-      - 8891:80
+    # ports:
+    #   - 8891:80
     environment:
       ENABLE_ENDPOINT_SELECTOR: "true"
       DEFAULT_SPARQL_ENDPOINT: "http://localhost:8890/sparql"
