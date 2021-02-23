@@ -54,6 +54,8 @@
                        :as "besluiten")
               (mandataris :via ,(s-prefix "besluit:heeftAanwezige")
                           :as "aanwezigen")
+              (mandataris :via ,(s-prefix "ext:heeftAfwezige")
+                          :as "afwezigen")
               (stemming :via ,(s-prefix "besluit:heeftStemming")
                           :as "stemmingen"))
   :has-one `((behandeling-van-agendapunt :via ,(s-prefix "besluit:gebeurtNa")
@@ -232,6 +234,8 @@
 
   :has-many `((mandataris :via ,(s-prefix "besluit:heeftAanwezigeBijStart")
                           :as "aanwezigen-bij-start")
+              (mandataris :via ,(s-prefix "ext:heeftAfwezigeBijStart")
+                          :as "afwezigen-bij-start")
               (agendapunt :via ,(s-prefix "besluit:behandelt")
                           :as "agendapunten")
               (uittreksel :via ,(s-prefix "ext:uittreksel")

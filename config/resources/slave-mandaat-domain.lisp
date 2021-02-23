@@ -107,9 +107,15 @@
               (behandeling-van-agendapunt :via ,(s-prefix "besluit:heeftAanwezige")
                            :inverse t
                            :as "aanwezig-bij-behandeling")
+              (behandeling-van-agendapunt :via ,(s-prefix "ext:heeftAfwezige")
+                           :inverse t
+                           :as "afwezig-bij-behandeling")
               (zitting :via ,(s-prefix "besluit:heeftAanwezigeBijStart")
                            :inverse t
-                           :as "aanwezig-bij-zitting"))
+                           :as "aanwezig-bij-zitting")
+              (zitting :via ,(s-prefix "ext:heeftAfwezigeBijStart")
+                           :inverse t
+                           :as "afwezig-bij-zitting"))
   :has-one `((mandaat :via ,(s-prefix "org:holds")
                       :as "bekleedt")
              (lidmaatschap :via ,(s-prefix "org:hasMembership")
