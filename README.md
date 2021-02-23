@@ -186,7 +186,7 @@ To ensure both the producer and consumer work correctly, the respecting stacks s
     migrations_1          | [2020-09-29 08:32:37] INFO  WEBrick::HTTPServer#start: pid=12 port=80
     ```
    > **Note**: This could take a while, so go grab yourself a coffee.
-   > 
+
 5. Restart the cache and resource services to make sure they are aware of the new data:
     ```console
     foo@device:~project-root$ docker-compose restart cache resource
