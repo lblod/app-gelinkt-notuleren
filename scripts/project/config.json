@@ -3,8 +3,8 @@
   "scripts": [
     {
       "documentation": {
-        "command": "setup-data-sync",
-        "description": "Creates migrations to sync the local triple-store with a given data-dump. Expects the name off the data-dump to be given and placed in the project root",
+        "command": "setup-data-sync-mdb",
+        "description": "Creates migrations to sync the local triple-store with a given mandatendatabank data-dump. Expects the name of the data-dump to be given and placed in the project root",
         "arguments": [
           "data-dump.ttl"
         ]
@@ -12,7 +12,24 @@
       "environment": {
         "image": "ubuntu",
         "interactive": true,
-        "script": "prepare-data-sync-migrations/run.sh"
+        "script": "prepare-data-sync-migrations-mdb/run.sh"
+      },
+      "mounts": {
+        "app": "/project/"
+      }
+    },
+    {
+      "documentation": {
+        "command": "setup-data-sync-ldb",
+        "description": "Creates migrations to sync the local triple-store with a given leidinggevenden data-dump. Expects the name of the data-dump to be given and placed in the project root",
+        "arguments": [
+          "data-dump.ttl"
+        ]
+      },
+      "environment": {
+        "image": "ubuntu",
+        "interactive": true,
+        "script": "prepare-data-sync-migrations-ldb/run.sh"
       },
       "mounts": {
         "app": "/project/"
