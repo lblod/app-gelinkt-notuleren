@@ -22,8 +22,7 @@ DELETE {
             <http://data.lblod.info/vocabularies/leidinggevenden/Bestuursfunctie>,
             <http://www.w3.org/ns/locn#Address>,
             <http://schema.org/ContactPoint>,
-            <http://www.w3.org/ns/prov#Location>,
-            <http://mu.semte.ch/vocabularies/ext/BestuursfunctieCode>
+            <http://www.w3.org/ns/prov#Location>
             ))
     }
 }
@@ -41,9 +40,28 @@ INSERT {
             <http://data.lblod.info/vocabularies/leidinggevenden/Bestuursfunctie>,
             <http://www.w3.org/ns/locn#Address>,
             <http://schema.org/ContactPoint>,
-            <http://www.w3.org/ns/prov#Location>,
+            <http://www.w3.org/ns/prov#Location>
+            ))
+    }
+}
+;
+DELETE {
+    GRAPH <http://mu.semte.ch/graphs/public> {
+        ?s ?p ?old .
+    }
+} INSERT{
+    GRAPH <http://mu.semte.ch/graphs/public> {
+        ?s ?p ?new .
+    }
+} WHERE {
+    GRAPH <http://mu.semte.ch/graphs/temp-ingest-graph> {
+        ?s a ?type ; ?p ?new .
+        FILTER (?type IN (
             <http://mu.semte.ch/vocabularies/ext/BestuursfunctieCode>
             ))
+    }
+    GRAPH <http://mu.semte.ch/graphs/public> {
+      ?s ?p ?old .
     }
 }
 ;
