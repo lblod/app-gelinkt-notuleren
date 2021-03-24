@@ -147,3 +147,6 @@ services:
     volumes:
       - ./scripts/project:/app/scripts/
     restart: "no"
+  codex-proxy:
+    image: lblod/codex-reverse-proxy-service
+

@@ -23,6 +23,10 @@ defmodule Dispatcher do
     forward conn, path, "http://blockchain/"
   end
 
+  match "/codex/sparql/*path" do
+    forward conn, path, "http://codex-proxy/sparql/"
+  end
+
   match "/decisionservice/*path" do
     forward conn, path, "http://decisionservice/"
   end
