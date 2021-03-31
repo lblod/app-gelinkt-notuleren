@@ -65,11 +65,26 @@ DELETE {
     }
 }
 ;
+
 DELETE {
     GRAPH ?organizationalGraph {
         ?s ?p ?old .
     }
-} INSERT {
+}  WHERE {
+    GRAPH <http://mu.semte.ch/graphs/temp-ingest-graph> {
+        ?s a <http://www.w3.org/ns/person#Person>.
+    }
+    ?s ^<http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan>/<http://www.w3.org/ns/org#holds>/^<http://www.w3.org/ns/org#hasPost>/<http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>/<http://data.vlaanderen.be/ns/besluit#bestuurt> ?organization .
+    GRAPH <http://mu.semte.ch/graphs/public> {
+        ?organization <http://mu.semte.ch/vocabularies/core/uuid> ?organizationUuid .
+     }
+    BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?organizationUuid)) as ?organizationalGraph)
+     GRAPH ?organizationalGraph {
+        ?s ?p ?old .
+    }
+}
+;
+INSERT {
     GRAPH ?organizationalGraph {
         ?s ?p ?new .
     }
@@ -81,10 +96,8 @@ DELETE {
     ?s ^<http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan>/<http://www.w3.org/ns/org#holds>/^<http://www.w3.org/ns/org#hasPost>/<http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>/<http://data.vlaanderen.be/ns/besluit#bestuurt> ?organization .
     GRAPH <http://mu.semte.ch/graphs/public> {
         ?organization <http://mu.semte.ch/vocabularies/core/uuid> ?organizationUuid .
-        ?s ?p ?old .
     }
     BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?organizationUuid)) as ?organizationalGraph)
 }
-;
 CLEAR GRAPH <http://mu.semte.ch/graphs/temp-ingest-graph>
 EOF
