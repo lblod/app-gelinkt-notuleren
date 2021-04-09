@@ -321,6 +321,10 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/functionaris-status-codes/"
   end
 
+  match "/agendapoint-service/*path" do
+    forward conn, path, "http://agendapoint-service/"
+  end
+
   #########
   # login
   ########
