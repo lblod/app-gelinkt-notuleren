@@ -149,4 +149,8 @@ services:
     restart: "no"
   codex-proxy:
     image: lblod/codex-reverse-proxy-service
+  agendapoint-service:
+    image: lblod/gn-agendapoint-service:1.0.0
+    links:
+      - database:databaseº
 
