@@ -6,7 +6,7 @@ x-logging: &default-logging
     max-file: "3"
 services:
   editor:
-    image: lblod/frontend-gelinkt-notuleren:2.0.13
+    image: lblod/frontend-gelinkt-notuleren:2.0.14
     links:
       - identifier:backend
     restart: always
