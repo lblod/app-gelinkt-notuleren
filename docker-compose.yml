@@ -150,7 +150,7 @@ services:
   codex-proxy:
     image: lblod/codex-reverse-proxy-service
   agendapoint-service:
-    image: lblod/gn-agendapoint-service:1.0.1
+    image: lblod/gn-agendapoint-service:1.0.2
     links:
-      - database:databaseº
+      - database:database
 
