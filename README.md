@@ -159,6 +159,7 @@ To ensure both the producer and consumer work correctly, the respecting stacks s
    >  **Note:** if you want to learn more about mu-semtech migrations, consult [mu-migrations-service]( https://github.com/mu-semtech/mu-migrations-service)
 
    ```console
+    foo@device:~project-root$ docker-compose up -d project-scripts # project-scripts container needs to be running
     foo@device:~project-root$ mu script project-scripts setup-data-sync-[mdb|ldb] data-dump.ttl
     ```
    You should be able to see that the following files have been generated in `./config/migrations`:
