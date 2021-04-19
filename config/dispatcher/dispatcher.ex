@@ -278,6 +278,10 @@ defmodule Dispatcher do
     forward conn, path, "http://resource/verkeersbordconcept-status-codes/"
   end
 
+  match "/intermissions/*path" do
+    forward conn, path, "http://resource/intermissions/"
+  end
+
   #######
   # Tasks
   #######

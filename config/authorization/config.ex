@@ -163,6 +163,7 @@ defmodule Acl.UserGroups.Config do
                       resource_types: [
                         "http://data.vlaanderen.be/ns/besluitvorming#Agenda",
                         "http://data.vlaanderen.be/ns/besluit#Zitting",
+                        "http://mu.semte.ch/vocabularies/ext/Intermission",
                         "http://data.vlaanderen.be/ns/besluit#Stemming",
                         "http://data.vlaanderen.be/ns/besluit#Besluit",
                         "http://data.vlaanderen.be/ns/besluit#Artikel",
@@ -192,6 +193,7 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/besluitvorming#Agenda",
                         "http://mu.semte.ch/vocabularies/ext/EditorDocument",
                         "http://data.vlaanderen.be/ns/besluit#Zitting",
+                        "http://mu.semte.ch/vocabularies/ext/Intermission",
                         "http://mu.semte.ch/vocabularies/ext/Agenda",
                         "http://data.vlaanderen.be/ns/besluit#Agendapunt",
                         "http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt",

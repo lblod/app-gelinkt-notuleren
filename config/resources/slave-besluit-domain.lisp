@@ -224,6 +224,18 @@
   :features '(include-uri)
   :on-path "stemmingen")
 
+(define-resource intermission ()
+  :class (s-prefix "ext:Intermission")
+  :properties `((:started-at :datetime ,(s-prefix "prov:startedAtTime"))
+                (:ended-at :datetime ,(s-prefix "prov:endedAtTime"))
+                (:comment :string ,(s-prefix "rdfs:comment")))
+  :has-one `((zitting :via ,(s-prefix "ext:hasIntermission")
+                      :inverse t
+                      :as "zitting"))
+  :resource-base (s-url "http://data.lblod.info/id/intermissions/")
+  :features '(include-uri)
+  :on-path "intermissions")
+
 ;;TODO how to relate to superclass 'Agent' for heeftAanwezige
 (define-resource zitting ()
   :class (s-prefix "besluit:Zitting")
@@ -240,6 +252,8 @@
                           :as "agendapunten")
               (uittreksel :via ,(s-prefix "ext:uittreksel")
                           :as "uittreksels")
+              (intermission :via ,(s-prefix "ext:hasIntermission")
+                      :as "intermissions")
               (agenda :via ,(s-prefix "bv:isAgendaVoor")
                       :inverse t
                       :as "publicatie-agendas"))
@@ -259,5 +273,6 @@
   :resource-base (s-url "http://data.lblod.info/id/zittingen/")
   :features '(include-uri)
   :on-path "zittingen")
+
 
 (read-domain-file "slave-publicatie-gn-domain.lisp")
