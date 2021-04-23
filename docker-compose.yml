@@ -13,10 +13,6 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
-  deltanotifier:
-    image: semtech/mu-delta-notifier:0.1.0
-    volumes:
-      - ./config/delta:/config
   identifier:
     image: semtech/mu-identifier:1.8.1
     restart: always
@@ -31,6 +27,9 @@ services:
     volumes:
       - ./config/delta:/config
     restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
   dispatcher:
     image: semtech/mu-dispatcher:2.1.0-beta.1
     volumes:
@@ -142,6 +141,8 @@ services:
       - ./data/files:/share
     environment:
       RELATIVE_FILE_PATH: "deltas/published-resource"
+    logging: *default-logging
+    restart: always
   project-scripts:
     image: semtech/mu-scripts:1.0.0
     volumes:
@@ -149,8 +150,9 @@ services:
     restart: "no"
   codex-proxy:
     image: lblod/codex-reverse-proxy-service
+    logging: *default-logging
+    restart: always
   agendapoint-service:
     image: lblod/gn-agendapoint-service:1.0.2
-    links:
-      - database:database
-
+    logging: *default-logging
+    restart: always
