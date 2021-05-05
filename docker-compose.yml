@@ -22,6 +22,8 @@ services:
     environment:
       DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: "[{\"variables\":[],\"name\":\"public\"}]"
       DEFAULT_ACCESS_CONTROL_ALLOW_ORIGIN_HEADER: '*'
+      SESSION_COOKIE_SECURE: "on"
+      SESSION_COOKIE_SAME_SITE: "None"
   deltanotifier:
     image: semtech/mu-delta-notifier:0.1.0
     volumes:
