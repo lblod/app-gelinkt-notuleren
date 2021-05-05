@@ -1,0 +1,21 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX mu:<http://mu.semte.ch/vocabularies/core/>
+INSERT {
+GRAPH ?orgGraph  {
+           ?account a foaf:OnlineAccount;
+           mu:uuid ?uuidAccount;
+           foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>.
+           }
+}
+WHERE {
+ GRAPH <http://mu.semte.ch/graphs/public> {
+     ?bestuurseenheid mu:uuid ?orgId.
+           ?persoon a foaf:Person;
+           foaf:member ?bestuurseenheid;
+           foaf:account ?account.
+           ?account a foaf:OnlineAccount;
+           mu:uuid ?uuidAccount;
+           foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>.
+           }
+           BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/",?orgId)) as ?orgGraph)
+}
