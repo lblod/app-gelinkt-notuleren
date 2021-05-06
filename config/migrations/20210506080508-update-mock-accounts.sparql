@@ -1,0 +1,81 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX mu:<http://mu.semte.ch/vocabularies/core/>
+PREFIX ext:<http://mu.semte.ch/vocabularies/ext/>
+DELETE {
+GRAPH ?g {
+        ?persoon a foaf:Person;
+           mu:uuid ?uuidPersoon;
+           foaf:firstName ?classificatie;
+           foaf:familyName ?naam;
+           foaf:member ?bestuurseenheid;
+           foaf:account ?account.
+           }
+ GRAPH <http://mu.semte.ch/graphs/public> {
+           ?account a foaf:OnlineAccount;
+           mu:uuid ?uuidAccount;
+           foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>;
+           ext:sessionRole ?role.
+  }
+}
+WHERE {
+GRAPH ?g {
+        ?persoon a foaf:Person;
+           mu:uuid ?uuidPersoon;
+           foaf:firstName ?firstname;
+           foaf:familyName ?naam;
+           foaf:member ?bestuurseenheid;
+           foaf:account ?account.
+           }
+ GRAPH <http://mu.semte.ch/graphs/public> {
+           ?bestuurseenheid a besluit:Bestuurseenheid.
+           ?account a foaf:OnlineAccount;
+           mu:uuid ?uuidAccount;
+           foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>;
+           ext:sessionRole ?role.
+  }
+};
+INSERT {
+ GRAPH ?orgGraph  {
+           ?account a foaf:OnlineAccount;
+           mu:uuid ?uuidAccount;
+           foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>.
+ }
+ GRAPH <http://mu.semte.ch/graphs/public> {
+           ?persoon a foaf:Person;
+           mu:uuid ?uuidPersoon;
+           foaf:firstName ?classificatie;
+           foaf:familyName ?naam;
+           foaf:member ?bestuurseenheid;
+           foaf:account ?account.
+           ?account a foaf:OnlineAccount;
+           mu:uuid ?uuidAccount;
+           foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>;
+           ext:sessionRole ?role, "GelinktNotuleren-ondertekenaar", "GelinktNotuleren-publiceerder" .
+           }
+}
+WHERE {
+  GRAPH ?g {
+     ?bestuurseenheid a besluit:Bestuurseenheid;
+     mu:uuid ?orgId;
+     skos:prefLabel ?eenheid;
+     besluit:classificatie ?classificatieURI.
+     ?classificatieURI skos:prefLabel ?classificatie.
+     VALUES ?role {
+     "GelinktNotuleren-schrijver"
+     "GelinktNotuleren-lezer"
+     }
+     BIND( <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002> as ?OCMW)
+     BIND( <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000000> as ?provincie)
+     BIND( <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001> as ?gemeente)
+     FILTER(?classificatieURI IN (?OCMW, ?provincie, ?gemeente))
+     BIND(CONCAT(?eenheid, " ",  ?role) as ?naam)
+     BIND(CONCAT(?classificatie, " ", ?naam) as ?volledigeNaam)
+     BIND(MD5(?volledigeNaam) as ?uuidPersoon)
+     BIND(MD5(CONCAT(?volledigeNaam,"ACCOUNT")) as ?uuidAccount)
+     BIND(IRI(CONCAT("http://data.lblod.info/id/persoon/", ?uuidPersoon)) AS ?persoon)
+     BIND(IRI(CONCAT("http://data.lblod.info/id/account/", ?uuidAccount)) AS ?account)
+     BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/",?orgId)) as ?orgGraph) 
+  }
+}
