@@ -242,7 +242,9 @@
   :properties `((:geplande-start :datetime ,(s-prefix "besluit:geplandeStart"))
                 (:gestart-op-tijdstip :datetime ,(s-prefix "prov:startedAtTime"))
                 (:geeindigd-op-tijdstip :datetime ,(s-prefix "prov:endedAtTime"))
-                (:op-locatie :string ,(s-prefix "prov:atLocation")))
+                (:op-locatie :string ,(s-prefix "prov:atLocation"))
+                (:intro :string ,(s-prefix "ext:intro"))
+                (:outro :string ,(s-prefix "ext:outro")))
 
   :has-many `((mandataris :via ,(s-prefix "besluit:heeftAanwezigeBijStart")
                           :as "aanwezigen-bij-start")
