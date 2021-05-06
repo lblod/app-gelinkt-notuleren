@@ -95,7 +95,8 @@ defmodule Acl.UserGroups.Config do
                   PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
                   SELECT ?session_group WHERE {
                     <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
-                                 ext:sessionRole \"GelinktNotuleren-lezer\".
+                                 ext:sessionRole ?role.
+                     FILTER(?role in (\"GelinktNotuleren-lezer\",\"GelinktNotuleren-schrijver\", \"GelinktNotuleren-publiceerder\",  \"GelinktNotuleren-ondertekenaar\"))
                     }" },
         graphs: [ %GraphSpec{
                     graph: "http://mu.semte.ch/graphs/organizations/",
@@ -125,7 +126,7 @@ defmodule Acl.UserGroups.Config do
 
       %GroupSpec{
         name: "org-wf",
-        useage: [:read, :write, :read_for_write],
+        useage: [:write, :read_for_write],
         access: %AccessByQuery{
           vars: ["session_group"],
           query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
@@ -138,7 +139,6 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
-                        "http://data.vlaanderen.be/ns/besluitvorming#Agenda",
                         "http://mu.semte.ch/vocabularies/ext/EditorDocument",
                         "http://data.vlaanderen.be/ns/besluit#Zitting",
                         "http://mu.semte.ch/vocabularies/ext/Intermission",
@@ -147,65 +147,58 @@ defmodule Acl.UserGroups.Config do
                         "http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt",
                         "http://data.vlaanderen.be/ns/besluit#Stemming",
                         "http://mu.semte.ch/vocabularies/ext/DocumentContainer",
-                        "http://mu.semte.ch/vocabularies/ext/VersionedAgenda",
-                        "http://mu.semte.ch/vocabularies/ext/VersionedNotulen",
-                        "http://mu.semte.ch/vocabularies/ext/VersionedBesluitenLijst",
-                        "http://mu.semte.ch/vocabularies/ext/VersionedBehandeling",
                         "http://mu.semte.ch/vocabularies/ext/TaskSolution",
                         "http://mu.semte.ch/vocabularies/ext/TasklistSolution",
                         "http://www.w3.org/ns/person#Person",
                         "http://data.vlaanderen.be/ns/persoon#Geboorte",
                         "http://www.w3.org/ns/adms#Identifier",
-                        "http://mu.semte.ch/vocabularies/ext/signing/SignedResource",
+                      ] } } ] },
+
+      %GroupSpec{
+        name: "org-publish",
+        useage: [:write, :read_for_write],
+        access: %AccessByQuery{
+          vars: ["session_group"],
+          query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+                  PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+                  SELECT ?session_group WHERE {
+                    <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
+                                 ext:sessionRole \"GelinktNotuleren-publiceerder\".
+                    }" },
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/organizations/",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://data.vlaanderen.be/ns/besluitvorming#Agenda",
+                        "http://mu.semte.ch/vocabularies/ext/VersionedAgenda",
+                        "http://mu.semte.ch/vocabularies/ext/VersionedNotulen",
+                        "http://mu.semte.ch/vocabularies/ext/VersionedBesluitenLijst",
+                        "http://mu.semte.ch/vocabularies/ext/VersionedBehandeling",
                         "http://mu.semte.ch/vocabularies/ext/signing/PublishedResource",
                       ] } } ] },
 
-      # when signing and publishing role are needed, uncomment groupsec below and remove the necessary types from the org-wf groupsec
-      # %GroupSpec{
-      #   name: "org-publish",
-      #   useage: [:write, :read_for_write],
-      #   access: %AccessByQuery{
-      #     vars: ["session_group"],
-      #     query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
-      #             PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-      #             SELECT ?session_group WHERE {
-      #               <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
-      #                            ext:sessionRole \"GelinktNotuleren-publiceerder\".
-      #               }" },
-      #   graphs: [ %GraphSpec{
-      #               graph: "http://mu.semte.ch/graphs/organizations/",
-      #               constraint: %ResourceConstraint{
-      #                 resource_types: [
-      #                   "http://data.vlaanderen.be/ns/besluitvorming#Agenda",
-      #                   "http://mu.semte.ch/vocabularies/ext/VersionedAgenda",
-      #                   "http://mu.semte.ch/vocabularies/ext/VersionedNotulen",
-      #                   "http://mu.semte.ch/vocabularies/ext/VersionedBesluitenLijst",
-      #                   "http://mu.semte.ch/vocabularies/ext/VersionedBehandeling",
-      #                   "http://mu.semte.ch/vocabularies/ext/signing/PublishedResource",
-      #                 ] } } ] },
-
-      # %GroupSpec{
-      #   name: "org-sign",
-      #   useage: [:write, :read_for_write],
-      #   access: %AccessByQuery{
-      #     vars: ["session_group"],
-      #     query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
-      #             PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-      #             SELECT ?session_group WHERE {
-      #               <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
-      #                            ext:sessionRole \"GelinktNotuleren-ondertekenaar\".
-      #               }" },
-      #   graphs: [ %GraphSpec{
-      #               graph: "http://mu.semte.ch/graphs/organizations/",
-      #               constraint: %ResourceConstraint{
-      #                 resource_types: [
-      #                   "http://data.vlaanderen.be/ns/besluitvorming#Agenda",
-      #                   "http://mu.semte.ch/vocabularies/ext/VersionedAgenda",
-      #                   "http://mu.semte.ch/vocabularies/ext/VersionedNotulen",
-      #                   "http://mu.semte.ch/vocabularies/ext/VersionedBesluitenLijst",
-      #                   "http://mu.semte.ch/vocabularies/ext/VersionedBehandeling",
-      #                   "http://mu.semte.ch/vocabularies/ext/signing/SignedResource",
-      #                 ] } } ] },
+      %GroupSpec{
+        name: "org-sign",
+        useage: [:write, :read_for_write],
+        access: %AccessByQuery{
+          vars: ["session_group"],
+          query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+                  PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+                  SELECT ?session_group WHERE {
+                    <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
+                                 ext:sessionRole \"GelinktNotuleren-ondertekenaar\".
+                    }" },
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/organizations/",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://data.vlaanderen.be/ns/besluitvorming#Agenda",
+                        "http://mu.semte.ch/vocabularies/ext/VersionedAgenda",
+                        "http://mu.semte.ch/vocabularies/ext/VersionedNotulen",
+                        "http://mu.semte.ch/vocabularies/ext/VersionedBesluitenLijst",
+                        "http://mu.semte.ch/vocabularies/ext/VersionedBehandeling",
+                        "http://mu.semte.ch/vocabularies/ext/signing/SignedResource",
+                      ] } } ] },
 
       # // CLEANUP
       #
