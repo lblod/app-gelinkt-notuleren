@@ -93,7 +93,7 @@ defmodule Acl.UserGroups.Config do
           vars: ["session_group"],
           query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
                   PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-                  SELECT ?session_group WHERE {
+                  SELECT DISTINCT ?session_group WHERE {
                     <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
                                  ext:sessionRole ?role.
                      FILTER(?role in (\"GelinktNotuleren-lezer\",\"GelinktNotuleren-schrijver\", \"GelinktNotuleren-publiceerder\",  \"GelinktNotuleren-ondertekenaar\"))
@@ -131,7 +131,7 @@ defmodule Acl.UserGroups.Config do
           vars: ["session_group"],
           query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
                   PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-                  SELECT ?session_group WHERE {
+                  SELECT DISTINCT ?session_group WHERE {
                     <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
                                  ext:sessionRole \"GelinktNotuleren-schrijver\".
                     }" },
@@ -161,7 +161,7 @@ defmodule Acl.UserGroups.Config do
           vars: ["session_group"],
           query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
                   PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-                  SELECT ?session_group WHERE {
+                  SELECT DISTINCT ?session_group WHERE {
                     <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
                                  ext:sessionRole \"GelinktNotuleren-publiceerder\".
                     }" },
@@ -184,7 +184,7 @@ defmodule Acl.UserGroups.Config do
           vars: ["session_group"],
           query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
                   PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-                  SELECT ?session_group WHERE {
+                  SELECT DISTINCT ?session_group WHERE {
                     <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
                                  ext:sessionRole \"GelinktNotuleren-ondertekenaar\".
                     }" },
