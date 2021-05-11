@@ -21,6 +21,8 @@ services:
   dispatcher:
     restart: "no"
   migrations:
+    volumes:
+      - ./config/dev-migrations:/data/migrations/dev/
     restart: "no"
   login:
     restart: "no"

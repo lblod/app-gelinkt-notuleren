@@ -1,0 +1,53 @@
+DELETE {
+    GRAPH <http://mu.semte.ch/graphs/public> {
+        ?s ?p ?o .
+    }
+} WHERE {
+    GRAPH <http://mu.semte.ch/graphs/public> {
+        ?s a ?type ; ?p ?o .
+        FILTER (?type IN (
+            <http://mu.semte.ch/vocabularies/ext/MandatarisStatusCode>,
+            <http://data.vlaanderen.be/ns/mandaat#Mandataris>,
+            <http://data.vlaanderen.be/ns/mandaat#Mandaat>
+            ))
+    }
+}
+;
+INSERT {
+    GRAPH <http://mu.semte.ch/graphs/public> {
+        ?s ?p ?o .
+    }
+} WHERE {
+    GRAPH <http://mu.semte.ch/graphs/temp-ingest-graph> {
+        ?s a ?type ; ?p ?o .
+        FILTER (?type IN (
+            <http://mu.semte.ch/vocabularies/ext/MandatarisStatusCode>,
+            <http://data.vlaanderen.be/ns/mandaat#Mandataris>,
+            <http://data.vlaanderen.be/ns/mandaat#Mandaat>
+            ))
+    }
+}
+;
+DELETE {
+    GRAPH <http://mu.semte.ch/graphs/public> {
+        ?s ?p ?old .
+    }
+} INSERT{
+    GRAPH <http://mu.semte.ch/graphs/public> {
+        ?s ?p ?new .
+    }
+} WHERE {
+    GRAPH <http://mu.semte.ch/graphs/temp-ingest-graph> {
+        ?s a ?type ; ?p ?new .
+        FILTER (?type IN (
+            <http://mu.semte.ch/vocabularies/ext/BeleidsdomeinCode>,
+            <http://www.w3.org/ns/org#Membership>,
+            <http://data.vlaanderen.be/ns/mandaat#Fractie>,
+            <http://mu.semte.ch/vocabularies/ext/BestuursfunctieCode>
+            ))
+    }
+    GRAPH <http://mu.semte.ch/graphs/public> {
+      ?s ?p ?old .
+    }
+}
+;
