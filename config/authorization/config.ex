@@ -5,6 +5,8 @@ alias Acl.GraphSpec.Constraint.Resource, as: ResourceConstraint
 alias Acl.GraphSpec, as: GraphSpec
 alias Acl.GroupSpec, as: GroupSpec
 alias Acl.GroupSpec.GraphCleanup, as: GraphCleanup
+alias Acl.GraphSpec.Constraint.Resource.NoPredicates, as: NoPredicates
+alias Acl.GraphSpec.Constraint.Resource.AllPredicates, as: AllPredicates
 
 defmodule Acl.UserGroups.Config do
   def user_groups do
@@ -175,7 +177,9 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/VersionedBesluitenLijst",
                         "http://mu.semte.ch/vocabularies/ext/VersionedBehandeling",
                         "http://mu.semte.ch/vocabularies/ext/signing/PublishedResource",
-                      ] } } ] },
+                      ],
+                      inverse_predicates: %AllPredicates{}
+                      } } ] },
 
       %GroupSpec{
         name: "org-sign",
@@ -198,7 +202,9 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/VersionedBesluitenLijst",
                         "http://mu.semte.ch/vocabularies/ext/VersionedBehandeling",
                         "http://mu.semte.ch/vocabularies/ext/signing/SignedResource",
-                      ] } } ] },
+                      ],
+                      inverse_predicates: %AllPredicates{}
+                    } } ] },
 
       # // CLEANUP
       #
