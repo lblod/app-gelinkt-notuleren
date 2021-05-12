@@ -34,6 +34,19 @@
       "mounts": {
         "app": "/project/"
       }
+    },
+    {
+      "documentation": {
+        "command": "build-mock-data",
+        "description": "build mock documents, agendapoints and meetings for testing",
+        "arguments": []
+      },
+      "environment": {
+        "image": "ruby",
+        "interactive": true,
+        "script": "mock-data/build.sh",
+        "join_networks": true
+      }
     }
   ]
 }
