@@ -78,7 +78,7 @@ EOF
   end
 
   def authority_as_html
-    citations = @agendapoint.dig("decision", "motivation", "authority") || []
+    authority = @agendapoint.dig("decision", "motivation", "authority") || []
     if authority.length > 0
       <<EOF
  <h5>Bevoegdheid</h5>
@@ -118,12 +118,15 @@ EOF
       ""
     end
   end
-  def content
-    <<EOF
-      #{@agendapoint["freetext"]}
+
+  def decision_as_html
+    if @agendapoint["decision"]
+      <<EOF
     <div property="prov:generated" resource="http://mockdata.example.com/decisions/#{SecureRandom.uuid}" typeof="besluit:Besluit">
       <h4 class="h4" property="eli:title" datatype="xsd:string">#{@agendapoint["decision"]["title"]}</h4>
       <div property="besluit:motivering" lang="nl">
+       #{authority_as_html}
+       <br>
        #{citations_as_html}
        <br>
        #{context_as_html}
@@ -134,11 +137,19 @@ EOF
       </div>
   </div>
 EOF
+    else
+      ""
+    end
+  end
+  def content
+    <<EOF
+      #{@agendapoint["freetext"]}
+      #{decision_as_html}
+EOF
   end
 end
 
 def generate(target_graph)
-  target_graph = "http://mu.semte.ch/graphs/organizations/974816591f269bb7d74aa1720922651529f3d3b2a787f5c60b73e5a0384950a4"
   print "loading data templates..."
   agendapoints = YAML.load_file("./agendapoints.yml")
   puts "loaded #{agendapoints.length} agendapoints"
