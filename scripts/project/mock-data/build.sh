@@ -237,7 +237,8 @@ if (units.length > 1)
   end
   target_graph=graphs[pref_index.to_i][:graph]
 else
-  target_graph=units[0][:graph]
+  puts units.inspect
+  target_graph=graphs[0][:graph]
 end
 puts "generating data in #{target_graph}"
 generate(target_graph)
