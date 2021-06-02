@@ -203,7 +203,7 @@
 
 (define-resource stemming ()
   :class (s-prefix "besluit:Stemming")
-  :properties `((:index :number ,(s-prefix "ext:stemmingIndex"))
+  :properties `((:position :int ,(s-prefix "schema:position"))
                 (:aantal-onthouders :number ,(s-prefix "besluit:aantalOnthouders"))
                 (:aantal-tegenstanders :number ,(s-prefix "besluit:aantalTegenstanders"))
                 (:aantal-voorstanders :number ,(s-prefix "besluit:aantalVoorstanders"))
