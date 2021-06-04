@@ -65,7 +65,7 @@ EOF
     output = []
     articles.each_with_index do |item, index|
       output << <<EOF
-    <div property="eli:has_part" resource="http://mockdata.example.com/articles/#{SecureRandom.uuid}}" typeof="besluit:Artikel">
+    <div property="eli:has_part" resource="http://mockdata.example.com/articles/#{SecureRandom.uuid}" typeof="besluit:Artikel">
       <div property="eli:number" datatype="xsd:string">Artikel #{index+1}</div>
       <span style="display:none;" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD" typeof="skos:Concept">&nbsp;</span>
       <div property="prov:value" datatype="xsd:string">
