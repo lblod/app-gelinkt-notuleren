@@ -244,8 +244,8 @@
                 (:gestart-op-tijdstip :datetime ,(s-prefix "prov:startedAtTime"))
                 (:geeindigd-op-tijdstip :datetime ,(s-prefix "prov:endedAtTime"))
                 (:op-locatie :string ,(s-prefix "prov:atLocation"))
-                (:intro :string ,(s-prefix "ext:intro"))
-                (:outro :string ,(s-prefix "ext:outro")))
+                (:intro :string ,(s-prefix "notulen:intro"))
+                (:outro :string ,(s-prefix "notulen:outro")))
 
   :has-many `((mandataris :via ,(s-prefix "besluit:heeftAanwezigeBijStart")
                           :as "aanwezigen-bij-start")
