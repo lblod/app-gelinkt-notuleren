@@ -203,7 +203,8 @@
 
 (define-resource stemming ()
   :class (s-prefix "besluit:Stemming")
-  :properties `((:aantal-onthouders :number ,(s-prefix "besluit:aantalOnthouders"))
+  :properties `((:position :int ,(s-prefix "schema:position"))
+                (:aantal-onthouders :number ,(s-prefix "besluit:aantalOnthouders"))
                 (:aantal-tegenstanders :number ,(s-prefix "besluit:aantalTegenstanders"))
                 (:aantal-voorstanders :number ,(s-prefix "besluit:aantalVoorstanders"))
                 (:geheim :boolean ,(s-prefix "besluit:geheim"))
@@ -246,8 +247,8 @@
                 (:gestart-op-tijdstip :datetime ,(s-prefix "prov:startedAtTime"))
                 (:geeindigd-op-tijdstip :datetime ,(s-prefix "prov:endedAtTime"))
                 (:op-locatie :string ,(s-prefix "prov:atLocation"))
-                (:intro :string ,(s-prefix "ext:intro"))
-                (:outro :string ,(s-prefix "ext:outro")))
+                (:intro :string ,(s-prefix "notulen:intro"))
+                (:outro :string ,(s-prefix "notulen:outro")))
 
   :has-many `((mandataris :via ,(s-prefix "besluit:heeftAanwezigeBijStart")
                           :as "aanwezigen-bij-start")
