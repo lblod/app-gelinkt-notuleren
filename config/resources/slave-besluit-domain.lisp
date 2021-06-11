@@ -232,10 +232,22 @@
                 (:comment :string ,(s-prefix "rdfs:comment")))
   :has-one `((zitting :via ,(s-prefix "ext:hasIntermission")
                       :inverse t
-                      :as "zitting"))
+                      :as "zitting")
+              (agenda-position :via ,(s-prefix "ext:agendaPosition")
+                      :as "agenda-position"))
   :resource-base (s-url "http://data.lblod.info/id/intermissions/")
   :features '(include-uri)
   :on-path "intermissions")
+
+(define-resource agenda-position ()
+  :class (s-prefix "ext:AgendaPosition")
+  :has-one `((agendapunt :via ,(s-prefix "dct:related")
+                         :as "agendapoint")
+                (concept :via ,(s-prefix "ext:location")
+                         :as "position"))
+  :resource-base (s-url "http://data.lblod.info/id/agenda-positions/")
+  :features '(include-uri)
+  :on-path "agenda-positions")
 
 ;;TODO how to relate to superclass 'Agent' for heeftAanwezige
 (define-resource zitting ()
