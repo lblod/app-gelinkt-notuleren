@@ -107,7 +107,7 @@ DELETE {
     GRAPH <http://mu.semte.ch/graphs/temp-ingest-graph> {
         ?s a <http://data.vlaanderen.be/ns/persoon#Geboorte>.
     }
-    ?s ^<http://data.vlaanderen.be/ns/persoon#heeftGeboorte/>^<http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan>/<http://www.w3.org/ns/org#holds>/^<http://www.w3.org/ns/org#hasPost>/<http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>/<http://data.vlaanderen.be/ns/besluit#bestuurt> ?organization .
+    ?s ^<http://data.vlaanderen.be/ns/persoon#heeftGeboorte>/^<http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan>/<http://www.w3.org/ns/org#holds>/^<http://www.w3.org/ns/org#hasPost>/<http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>/<http://data.vlaanderen.be/ns/besluit#bestuurt> ?organization .
     GRAPH <http://mu.semte.ch/graphs/public> {
         ?organization <http://mu.semte.ch/vocabularies/core/uuid> ?organizationUuid .
     }
@@ -126,7 +126,7 @@ DELETE {
         ?s a <http://data.vlaanderen.be/ns/persoon#Geboorte> ;
            ?p ?new .
     }
-    ?s ^<http://data.vlaanderen.be/ns/persoon#heeftGeboorte/>^<http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan>/<http://www.w3.org/ns/org#holds>/^<http://www.w3.org/ns/org#hasPost>/<http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>/<http://data.vlaanderen.be/ns/besluit#bestuurt> ?organization .
+    ?s ^<http://data.vlaanderen.be/ns/persoon#heeftGeboorte>/^<http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan>/<http://www.w3.org/ns/org#holds>/^<http://www.w3.org/ns/org#hasPost>/<http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>/<http://data.vlaanderen.be/ns/besluit#bestuurt> ?organization .
     GRAPH <http://mu.semte.ch/graphs/public> {
         ?organization <http://mu.semte.ch/vocabularies/core/uuid> ?organizationUuid .
     }
