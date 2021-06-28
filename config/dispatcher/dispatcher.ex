@@ -286,6 +286,9 @@ defmodule Dispatcher do
     forward conn, path, "http://resource/agenda-positions/"
   end
 
+  match "/files/*path" do
+    forward conn, path, "http://file/files/"
+  end
   #######
   # Tasks
   #######

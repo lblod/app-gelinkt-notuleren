@@ -35,3 +35,7 @@
 (add-prefix "lblodlg" "http://data.lblod.info/vocabularies/leidinggevenden/")
 (add-prefix "bibo" "http://purl.org/ontology/bibo/")
 (add-prefix "notulen" "http://lblod.data.gift/vocabularies/notulen/")
+
+(add-prefix "nfo" "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#")
+(add-prefix "nie" "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#")
+(add-prefix "dbpedia" "http://dbpedia.org/ontology/")
