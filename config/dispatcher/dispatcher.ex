@@ -15,8 +15,13 @@ defmodule Dispatcher do
   get "/sync/files/*path" do
     forward conn, path, "http://published-resource-producer/files/"
   end
+  
   match "/files/*path" do
     forward conn, path, "http://file/files/"
+  end
+
+  match "/file-resources/*path" do
+    forward conn, path, "http://resource/file-resources/"
   end
 
   match "/blockchain/*path" do
@@ -284,10 +289,6 @@ defmodule Dispatcher do
 
   match "/agenda-positions/*path" do
     forward conn, path, "http://resource/agenda-positions/"
-  end
-
-  match "/files/*path" do
-    forward conn, path, "http://file/files/"
   end
   #######
   # Tasks

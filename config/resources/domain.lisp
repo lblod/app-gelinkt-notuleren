@@ -45,7 +45,7 @@
 )
 (run-validations)
 
-(define-resource file ()
+(define-resource file-resource ()
   :class (s-prefix "nfo:FileDataObject")
   :properties `((:name :string ,(s-prefix "nfo:fileName"))
                 (:format :string ,(s-prefix "dct:format"))
@@ -57,4 +57,4 @@
                    :as "download"))
   :resource-base (s-url "http://data.example.com/files/")
   :features `(include-uri)
-  :on-path "files")
+  :on-path "file-resources")
