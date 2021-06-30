@@ -63,6 +63,19 @@
   :features `(include-uri)
   :on-path "concepts"
 )
+(define-resource attachment ()
+  :class (s-prefix "ext:Attachment")
+  :properties `((:type :uri ,(s-prefix "ext:attachmentType")))
+  :has-one `((document-container :via ,(s-prefix "ext:hasDocumentContainer")
+                            :as "document-container")
+                   (besluit :via ,(s-prefix "prov:generated")
+                            :as "besluit")
+             (file-resource :via ,(s-prefix "ext:hasFile")
+                            :as "file-resource"))
+  :resource-base (s-url "http://lblod.data.gift/attachment/")
+  :features `(include-uri)
+  :on-path "attachments"
+)
 
 (define-resource document-container ()
   :class (s-prefix "ext:DocumentContainer")

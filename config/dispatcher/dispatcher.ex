@@ -24,6 +24,10 @@ defmodule Dispatcher do
     forward conn, path, "http://resource/file-resources/"
   end
 
+  match "/attachments/*path" do
+    forward conn, path, "http://resource/attachments/"
+  end
+
   match "/blockchain/*path" do
     forward conn, path, "http://blockchain/"
   end
