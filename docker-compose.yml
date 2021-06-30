@@ -6,7 +6,7 @@ x-logging: &default-logging
     max-file: "3"
 services:
   editor:
-    image: lblod/frontend-gelinkt-notuleren:2.6.0
+    image: lblod/frontend-gelinkt-notuleren:2.7.1
     links:
       - identifier:backend
     restart: always
@@ -118,7 +118,7 @@ services:
     labels:
       - "logging=true"
   preimporter:
-    image: lblod/notulen-prepublish-service:0.12.0
+    image: lblod/notulen-prepublish-service:0.13.0
     environment: 
       TZ: "Europe/Brussels"
     restart: always
