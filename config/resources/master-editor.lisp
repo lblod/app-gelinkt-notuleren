@@ -66,7 +66,8 @@
 (define-resource attachment ()
   :class (s-prefix "ext:Attachment")
   :properties `((:decision :uri ,(s-prefix "dct:isPartOf")))
-  :has-one `((document-container :via ,(s-prefix "ext:hasDocumentContainer")
+  :has-one `((document-container :via ,(s-prefix "ext:hasAttachments")
+                            :inverse t
                             :as "document-container")
              (file-resource :via ,(s-prefix "ext:hasFile")
                             :as "file-resource")
@@ -96,7 +97,9 @@
               (versioned-notulen :via ,(s-prefix "ext:hasVersionedNotulen")
                                  :as "versioned-notulen")
               (versioned-besluiten-lijst :via ,(s-prefix "ext:hasVersionedBesluitenLijst")
-                                         :as "versioned-besluiten-lijsten"))
+                                         :as "versioned-besluiten-lijsten")
+              (attachment :via ,(s-prefix "ext:hasAttachments")
+                          :as "attachments"))
   :resource-base (s-url "http://data.lblod.info/document-containers/")
   :on-path "document-containers")
 
