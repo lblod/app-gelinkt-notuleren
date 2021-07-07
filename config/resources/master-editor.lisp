@@ -69,8 +69,8 @@
   :has-one `((document-container :via ,(s-prefix "ext:hasAttachments")
                             :inverse t
                             :as "document-container")
-             (file-resource :via ,(s-prefix "ext:hasFile")
-                            :as "file-resource")
+             (file :via ,(s-prefix "ext:hasFile")
+                            :as "file")
                    (concept :via ,(s-prefix "ext:attachmentType")
                             :as "type"))
   :resource-base (s-url "http://lblod.data.gift/attachment/")

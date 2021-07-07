@@ -16,12 +16,20 @@ defmodule Dispatcher do
     forward conn, path, "http://published-resource-producer/files/"
   end
   
-  match "/files/*path" do
-    forward conn, path, "http://file/files/"
+  post "/files/*path" do
+    Proxy.forward conn, path, "http://file/files/"
   end
 
-  match "/file-resources/*path" do
-    forward conn, path, "http://resource/file-resources/"
+  get "/files/*path" do
+    Proxy.forward conn, path, "http://resource/files/"
+  end
+
+  patch "/files/*path" do
+    Proxy.forward conn, path, "http://resource/files/"
+  end
+
+  delete "/files/*path" do
+    Proxy.forward conn, path, "http://file/files/"
   end
 
   match "/attachments/*path" do
