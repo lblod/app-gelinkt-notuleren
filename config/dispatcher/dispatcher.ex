@@ -16,6 +16,10 @@ defmodule Dispatcher do
     forward conn, path, "http://published-resource-producer/files/"
   end
   
+  get "/files/:id/download" do
+    Proxy.forward conn, [], "http://file/files/" <> id <> "/download"
+  end
+  
   post "/files/*path" do
     Proxy.forward conn, path, "http://file/files/"
   end
