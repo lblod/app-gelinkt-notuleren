@@ -63,6 +63,20 @@
   :features `(include-uri)
   :on-path "concepts"
 )
+(define-resource attachment ()
+  :class (s-prefix "ext:Attachment")
+  :properties `((:decision :uri ,(s-prefix "dct:isPartOf")))
+  :has-one `((document-container :via ,(s-prefix "ext:hasAttachments")
+                            :inverse t
+                            :as "document-container")
+             (file :via ,(s-prefix "ext:hasFile")
+                            :as "file")
+                   (concept :via ,(s-prefix "ext:attachmentType")
+                            :as "type"))
+  :resource-base (s-url "http://lblod.data.gift/attachment/")
+  :features `(include-uri)
+  :on-path "attachments"
+)
 
 (define-resource document-container ()
   :class (s-prefix "ext:DocumentContainer")
@@ -83,7 +97,9 @@
               (versioned-notulen :via ,(s-prefix "ext:hasVersionedNotulen")
                                  :as "versioned-notulen")
               (versioned-besluiten-lijst :via ,(s-prefix "ext:hasVersionedBesluitenLijst")
-                                         :as "versioned-besluiten-lijsten"))
+                                         :as "versioned-besluiten-lijsten")
+              (attachment :via ,(s-prefix "ext:hasAttachments")
+                          :as "attachments"))
   :resource-base (s-url "http://data.lblod.info/document-containers/")
   :on-path "document-containers")
 

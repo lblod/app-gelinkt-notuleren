@@ -15,8 +15,29 @@ defmodule Dispatcher do
   get "/sync/files/*path" do
     forward conn, path, "http://published-resource-producer/files/"
   end
-  match "/files/*path" do
-    forward conn, path, "http://file/files/"
+  
+  get "/files/:id/download" do
+    Proxy.forward conn, [], "http://file/files/" <> id <> "/download"
+  end
+  
+  post "/files/*path" do
+    Proxy.forward conn, path, "http://file/files/"
+  end
+
+  get "/files/*path" do
+    Proxy.forward conn, path, "http://resource/files/"
+  end
+
+  patch "/files/*path" do
+    Proxy.forward conn, path, "http://resource/files/"
+  end
+
+  delete "/files/*path" do
+    Proxy.forward conn, path, "http://file/files/"
+  end
+
+  match "/attachments/*path" do
+    forward conn, path, "http://resource/attachments/"
   end
 
   match "/blockchain/*path" do
@@ -285,7 +306,6 @@ defmodule Dispatcher do
   match "/agenda-positions/*path" do
     forward conn, path, "http://resource/agenda-positions/"
   end
-
   #######
   # Tasks
   #######
