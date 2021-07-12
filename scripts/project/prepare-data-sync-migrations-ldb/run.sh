@@ -74,7 +74,7 @@ DELETE {
     GRAPH <http://mu.semte.ch/graphs/temp-ingest-graph> {
         ?s a <http://www.w3.org/ns/person#Person>.
     }
-    ?s ^<http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan>/<http://www.w3.org/ns/org#holds>/^<http://www.w3.org/ns/org#hasPost>/<http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>/<http://data.vlaanderen.be/ns/besluit#bestuurt> ?organization .
+    ?s ^<http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan>/<http://www.w3.org/ns/org#holds>/^<http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie>/<http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>/<http://data.vlaanderen.be/ns/besluit#bestuurt> ?organization .
     GRAPH <http://mu.semte.ch/graphs/public> {
         ?organization <http://mu.semte.ch/vocabularies/core/uuid> ?organizationUuid .
      }
@@ -93,7 +93,7 @@ INSERT {
         ?s a <http://www.w3.org/ns/person#Person> ;
            ?p ?new .
     }
-    ?s ^<http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan>/<http://www.w3.org/ns/org#holds>/^<http://www.w3.org/ns/org#hasPost>/<http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>/<http://data.vlaanderen.be/ns/besluit#bestuurt> ?organization .
+    ?s ^<http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan>/<http://www.w3.org/ns/org#holds>/^<http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie>/<http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>/<http://data.vlaanderen.be/ns/besluit#bestuurt> ?organization .
     GRAPH <http://mu.semte.ch/graphs/public> {
         ?organization <http://mu.semte.ch/vocabularies/core/uuid> ?organizationUuid .
     }
