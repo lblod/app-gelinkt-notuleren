@@ -1,0 +1,11 @@
+@prefix mu:   <http://mu.semte.ch/vocabularies/core/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+<http://lblod.data.gift/concept-schemes/b12655fe-cb8c-481e-a948-24fbf0b4ff6c> a skos:ConceptScheme;
+     mu:uuid "b12655fe-cb8c-481e-a948-24fbf0b4ff6c";
+     skos:prefLabel "attachment types".
+
+<http://lblod.data.gift/concepts/14e264b4-92db-483f-9dd1-3e806ad6d26c> a skos:Concept;
+  skos:prefLabel "regulatory";
+  mu:uuid "14e264b4-92db-483f-9dd1-3e806ad6d26c";
+  skos:inScheme <http://lblod.data.gift/concept-schemes/b12655fe-cb8c-481e-a948-24fbf0b4ff6c>;
+  skos:topConceptOf <http://lblod.data.gift/concept-schemes/b12655fe-cb8c-481e-a948-24fbf0b4ff6c>.
