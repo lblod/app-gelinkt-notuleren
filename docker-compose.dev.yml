@@ -1,21 +1,5 @@
 version: '3.4'
 services:
-  cors-proxy:
-    image: semtech/mu-javascript-template
-    ports:
-      - 9229:9229
-    environment:
-      NODE_ENV: "development"
-    volumes:
-      - /home/sergey/Desktop/gn/cors-proxy-service/:/app/
-  meeting:
-    image: semtech/mu-javascript-template
-    ports:
-      - 9230:9229
-    environment:
-      NODE_ENV: "development"
-    volumes:
-      - /home/sergey/Desktop/gn/meeting-service/:/app/
   proxy:
     image: nginx:1.13
     volumes:
