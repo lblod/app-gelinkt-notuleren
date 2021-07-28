@@ -5,6 +5,8 @@ x-logging: &default-logging
     max-size: "10m"
     max-file: "3"
 services:
+  cors-proxy:
+    image: lblod/cors-proxy-service
   editor:
     image: lblod/frontend-gelinkt-notuleren:2.9.0
     links:
