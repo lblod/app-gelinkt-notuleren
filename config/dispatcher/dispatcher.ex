@@ -40,6 +40,10 @@ defmodule Dispatcher do
     forward conn, path, "http://resource/attachments/"
   end
 
+  match "/cors-proxy/*path" do
+    forward conn, path, "http://cors-proxy/"
+  end
+
   match "/blockchain/*path" do
     forward conn, path, "http://blockchain/"
   end
@@ -106,6 +110,10 @@ defmodule Dispatcher do
 
   match "/stemmingen/*path" do
     forward conn, path, "http://cache/stemmingen/"
+  end
+
+  delete "/zittingen/*path" do
+    Proxy.forward conn, path, "http://meeting/"
   end
 
   match "/zittingen/*path" do
