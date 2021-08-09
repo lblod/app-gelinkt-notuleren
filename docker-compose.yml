@@ -176,7 +176,7 @@ services:
     environment:
       OUTBOX: "http://data.lblod.info/id/mail-folders/2"
     volumes:
-      - ./config/delta-producer-consumer/report-generator:/config
+      - ./config/consumer/report-generator:/config
     logging: *default-logging
     restart: always
   mandatarissen-consumer:
