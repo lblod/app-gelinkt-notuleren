@@ -1,0 +1,15 @@
+DELETE {
+    GRAPH <http://mu.semte.ch/graphs/public> {
+        ?s ?p ?o .
+    }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+  ?s a ?type ;
+    ?p ?o .
+  }
+  FILTER (?type IN (
+      <http://data.vlaanderen.be/ns/mandaat#Mandataris>,
+      <http://data.vlaanderen.be/ns/mandaat#Mandaat>
+      ))
+}

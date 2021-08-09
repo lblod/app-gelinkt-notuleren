@@ -1,0 +1,19 @@
+DELETE {
+  GRAPH ?organizationalGraph {
+      ?s ?p ?o.
+  }
+}
+WHERE {
+  ?s a <http://www.w3.org/ns/person#Person>.
+
+  ?s ^<http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan>/<http://www.w3.org/ns/org#holds>/^<http://www.w3.org/ns/org#hasPost>/<http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>/<http://data.vlaanderen.be/ns/besluit#bestuurt> ?organization .
+
+  GRAPH <http://mu.semte.ch/graphs/public> {
+     ?organization <http://mu.semte.ch/vocabularies/core/uuid> ?organizationUuid .
+  }
+  BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?organizationUuid)) as ?organizationalGraph)
+
+  GRAPH ?organizationalGraph {
+    ?s ?p ?o.
+  }
+}
