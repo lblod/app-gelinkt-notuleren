@@ -180,7 +180,7 @@ services:
     logging: *default-logging
     restart: always
   mandatarissen-consumer:
-    image: lblod/delta-consumer-single-graph-maintainer:0.3.4
+    image: lblod/gelinkt-notuleren-consumer:0.2.0-beta.1
     environment:
       SYNC_BASE_URL: 'https://loket.lblod.info' # replace with link to Loket API
       SERVICE_NAME: 'gelinkt-notuleren-mandatarissen-consumer'
