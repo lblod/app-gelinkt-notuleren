@@ -174,6 +174,9 @@ To proceed:
 5. `drc restart resource cache` is still needed after the intial sync.
 
 #### Additional notes:
+##### nightly restart cache resource
+Unfortunatly there is an issue in cache clearing on some ingestion of deltas. It needs to be investigated what the issue is, but for now, a cronjob
+that needs restart cache/resource is advised.
 ##### Endpoints to choose for ingestion.
 On abstract level, all applications which produce deltas provided `delta-producer-*` services set, and talk about the AP-model defined in [mandatendatabank](http://data.vlaanderen.be/doc/applicatieprofiel/mandatendatabank)
 In practice, it is going to be loket and their dev and QA variations.
