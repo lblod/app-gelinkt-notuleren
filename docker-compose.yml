@@ -160,3 +160,43 @@ services:
     image: lblod/gn-agendapoint-service:1.0.2
     logging: *default-logging
     restart: always
+################################################################################
+# DELTAS
+################################################################################
+  deliver-email-service:
+    image: redpencil/deliver-email-service:0.2.0
+    environment:
+      MAILBOX_URI: 'http://data.lblod.info/id/mailboxes/1'
+    labels:
+      - "logging=true"
+    logging: *default-logging
+    restart: always
+  delta-producer-report-generator:
+    image: lblod/delta-producer-report-generator:0.3.0
+    environment:
+      OUTBOX: "http://data.lblod.info/id/mail-folders/2"
+    volumes:
+      - ./config/delta-producer-consumer/report-generator:/config
+    logging: *default-logging
+    restart: always
+  mandatarissen-consumer:
+    image: lblod/delta-consumer-single-graph-maintainer:0.3.4
+    environment:
+      SYNC_BASE_URL: 'https://loket.lblod.info' # replace with link to Loket API
+      SERVICE_NAME: 'gelinkt-notuleren-mandatarissen-consumer'
+      SYNC_FILES_PATH: '/sync/mandatarissen/files'
+      SYNC_DATASET_SUBJECT: "http://data.lblod.info/datasets/delta-producer/dumps/MandatarissenCacheGraphDump"
+      INITIAL_SYNC_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/consumer/initialSync/mandatarissen"
+      JOB_CREATOR_URI: "http://data.lblod.info/services/id/mandatarissen-consumer-gelinkt-notuleren"
+      DISABLE_INITIAL_SYNC: 'true'
+      BYPASS_MU_AUTH_FOR_EXPENSIVE_QUERIES: 'true' # this should be moved out one day
+      KEEP_DELTA_FILES: 'true'
+      DELTA_FILE_FOLDER: '/consumer-files'
+      INGEST_GRAPH: "http://redpencil.data.gift/id/deltas/consumer/gelinkt-notuleren-mandatarissen-consumer-graph"
+      BATCH_SIZE_FOR_GRAPH_MOVE: 100 # on PROD may be easily 500
+      BATCH_SIZE: 100 # on PROD may be easily 500
+    logging: *default-logging
+    restart: always
+    volumes:
+      - ./config/consumer/mandatarissen/:/config/
+      - ./data/files/consumer-files/mandatarissen:/consumer-files/
