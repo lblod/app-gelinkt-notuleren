@@ -135,87 +135,61 @@ At some times you may want te clean the database and make sure it's in a pristin
 
 Make sure to wait for the migrations to run.
 
-### External delta sync [EXPERIMENTAL]
+### External delta sync
+The data regarding `mandaat:Mandataris` `lblodBesluit:Functionaris` are fetched from external datasource
+At the time of writing, for production, the datasource will be [loket.lokaalbestuur.vlaanderen.be](https://loket.lokaalbestuur.vlaanderen.be/).
+The ingestion should be a one time operation per deployment, and is currenlty semi-automatic for various reasons (mainly related to performance)
+The ingestion is disabled by default.
 
-*DISCLAIMER: this is not 100% bulletproof*
-
-This feature allows syncing data from external applications, to be immediately reflected in the current application.
-It is considered an external feature at this point and requires a manual setup.
-The next steps assume you have never setup the sync before in this instance of the stack. Else you will need to run the re-import [TODO]
-
-#### Step 1: Sync producer stacks with Gelinkt Notuleren
-
-> **Prerequisites**:
-> This setup makes use of [mu-cli](https://github.com/mu-semtech/mu-cli), so make sure to install it first.
-
-
-To ensure both the producer and consumer work correctly, the respecting stacks should both start from the same base-state. By performing the following steps we can achieve this.
-
-1. Download a data-dump from the producing service you wish to sync up with:
-    - [Mandatendatabank (mdb)](https://mandaten.lokaalbestuur.vlaanderen.be)
-    - [Leidinggevendendatabank (ldb)](https://leidinggevenden.lokaalbestuur.vlaanderen.be)
-2. Place the data-dump file in the project root.
-3. Run the provided mu-script to set-up the migrations we need:
-   >  **Note:** if you want to learn more about mu-semtech migrations, consult [mu-migrations-service]( https://github.com/mu-semtech/mu-migrations-service)
-
-   ```console
-    foo@device:~project-root$ docker-compose up -d project-scripts # project-scripts container needs to be running
-    foo@device:~project-root$ mu script project-scripts setup-data-sync-[mdb|ldb] data-dump.ttl
-    ```
-   You should be able to see that the following files have been generated in `./config/migrations`:
-    - `<timestamp>-data-sync-[mdb|ldb]`
-        - `<timestamp>-export.graph`
-        - `<timestamp>-export.ttl` (should contain the data-export)
-        - `<timestamp>-ingest-exported-triples.sparql`
-
-
-4. Restart the migrations:
-    ```console
-    foo@device:~project-root$ docker-compose restart migrations
-    ```
-   Make sure the migrations ran successfully before continuing:
-   
-    ```console
-    foo@device:~project-root$ docker-compose logs -f migrations
-
-    migrations_1          | /data/migrations/20200929102725-data-sync-with-mdb/20200929102725-mdb-export.ttl [DONE]
-    migrations_1          | /data/migrations/20200929102725-data-sync-with-mdb/20200929102726-ingest-mdb-triples.sparql [DONE]
-    migrations_1          |
-    migrations_1          | [2020-09-29 08:32:37] INFO  WEBrick 1.4.2
-    migrations_1          | [2020-09-29 08:32:37] INFO  ruby 2.5.1 (2018-03-29) [x86_64-linux]
-    migrations_1          | == Sinatra (v1.4.8) has taken the stage on 80 for production with backup from WEBrick
-    migrations_1          | [2020-09-29 08:32:37] INFO  WEBrick::HTTPServer#start: pid=12 port=80
-    ```
-   > **Note**: This could take a while, so go grab yourself a coffee.
-
-5. Restart the cache and resource services to make sure they are aware of the new data:
-    ```console
-    foo@device:~project-root$ docker-compose restart cache resource
-    ```
-6. (optional) remove the data-dump file in the project root.
-
-#### Step 2: Setting up mandatarissen-consumer and functionarissen-consumer
-
-1. Create/update the `docker-compose.override.yml` file with following lines:
-   ```dockerfile
-     mandatarissen-consumer:
-       environment:
-         SYNC_BASE_URL: 'https://mandaten.lokaalbestuur.vlaanderen.be' # the endpoint you want to sync from
-         START_FROM_DELTA_TIMESTAMP: '2020-09-18T03:15:00.112Z' # a timestamp from TTL converted to ISO
-     functionarissen-consumer:
-       environment:
-         SYNC_BASE_URL: 'https://leidinggevenden.lokaalbestuur.vlaanderen.be' # the endpoint you want to sync from
-         START_FROM_DELTA_TIMESTAMP: '2020-09-18T03:15:00.112Z' # a timestamp from TTL converted to ISO
+To proceed:
+1. make sure the app is up and running. And the migrations have run.
+2. In docker-compose.override.yml (preferably) override the following parameters for mandatarissen-consumer
+```
+# (...)
+  mandatarissen-consumer:
+    environment:
+      SYNC_BASE_URL: 'https://loket.lblod.info' # The endpoint of your choice (see later what to choose)
+      DISABLE_INITIAL_SYNC: 'false'
+```
+3. `docker-compose up -d mandatarissen-consumer` should start the ingestion.
+  This might take a while if you ingest production data.
+4. Check the logs, at some point this message should show up
+  `Initial sync was success, proceeding in Normal operation mode: ingest deltas`
+   or execute in the database:
    ```
+   PREFIX adms: <http://www.w3.org/ns/adms#>
+   PREFIX task: <http://redpencil.data.gift/vocabularies/tasks/>
+   PREFIX dct: <http://purl.org/dc/terms/>
+   PREFIX cogs: <http://vocab.deri.ie/cogs#>
 
-2. Include the `mandatarissen-consumer` container to the stack by including the provided `docker-compose.external-delta-sync.yml` to a `.env` file:
-    ```text
-    COMPOSE_FILE=docker-compose.yml:docker-compose.external-delta-sync.yml:docker-compose.override.yml
-    ```
-3. Update the stack:
-    ```console
-    foo@device:~project-root$ docker-compose up -d
-    ```
+   SELECT ?s ?status ?created WHERE {
+     ?s a <http://vocab.deri.ie/cogs#Job> ;
+       adms:status ?status ;
+       task:operation <http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/consumer/initialSync/mandatarissen> ;
+       dct:created ?created ;
+       dct:creator <http://data.lblod.info/services/id/mandatendatabank-consumer> .
+    }
+    ORDER BY DESC(?created)
+   ```
+5. `drc restart resource cache` is still needed after the intial sync.
+
+#### Additional notes:
+##### Endpoints to choose for ingestion.
+On abstract level, all applications which produce deltas provided `delta-producer-*` services set, and talk about the AP-model defined in [mandatendatabank](http://data.vlaanderen.be/doc/applicatieprofiel/mandatendatabank)
+In practice, it is going to be loket and their dev and QA variations.
+##### Performance
+- The default virtuoso settings might be too weak if you need to ingest the production data. Hence, there is better config, you can take over in your `docker-compose.override.yml`
+```
+  virtuoso:
+    volumes:
+      - ./data/db:/data
+      - ./config/virtuoso/virtuoso-production.ini:/data/virtuoso.ini
+      - ./config/virtuoso/:/opt/virtuoso-scripts
+```
+##### delta-producer-report-generator
+Not all required parameters are provided, since deploy specific, see [report-generator](https://github.com/lblod/delta-producer-report-generator)
+##### deliver-email-service
+Should have credentials provided, see [deliver-email-service](https://github.com/redpencilio/deliver-email-service)
 
 ## General application structure
 
