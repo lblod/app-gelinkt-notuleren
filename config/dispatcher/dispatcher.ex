@@ -247,6 +247,11 @@ defmodule Dispatcher do
     forward conn, path, "http://preimporter/prepublish/"
   end
 
+
+  post "/extract-previews" do
+    forward conn, [], "http://preimporter/extract-previews"
+  end
+
   match "/signing/*path" do
     forward conn, path, "http://preimporter/signing/"
   end
