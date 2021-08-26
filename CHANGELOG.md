@@ -1,3 +1,12 @@
+## 2.2.1 (2021-08-18)
+
+#### :house: Internal
+* [#38](https://github.com/lblod/app-gelinkt-notuleren/pull/38) Bump frontend and prepublisher ([@abeforgit](https://github.com/abeforgit))
+
+#### Committers: 1
+- Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
+
+
 ## 2.2.0 (2021-07-16)
 
 #### :rocket: Enhancement
