@@ -6,13 +6,11 @@ x-logging: &default-logging
     max-file: "3"
 services:
   meeting:
-    image: semtech/mu-javascript-template
-    ports:
-      - 9229:9229
-    environment:
-      NODE_ENV: "development"
-    volumes:
-      - /home/sergey/Desktop/gn/meeting-service/:/app/
+    image: lblod/meeting-service 
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
   editor:
     image: lblod/frontend-gelinkt-notuleren:2.9.0
     links:
