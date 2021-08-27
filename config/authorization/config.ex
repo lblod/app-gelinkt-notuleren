@@ -54,7 +54,6 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/SyncTask",
                         "http://mu.semte.ch/vocabularies/ext/Task",
                         "http://mu.semte.ch/vocabularies/ext/Tasklist",
-                        "http://redpencil.data.gift/vocabularies/tasks/Task",
                         "http://mu.semte.ch/vocabularies/ext/Template",
                         "http://mu.semte.ch/vocabularies/ext/VerkiezingsresultaatGevolgCode",
                         "http://mu.semte.ch/vocabularies/ext/signing/BlockchainStatus",
@@ -121,6 +120,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/VersionedNotulen",
                         "http://mu.semte.ch/vocabularies/ext/VersionedBesluitenLijst",
                         "http://mu.semte.ch/vocabularies/ext/VersionedBehandeling",
+                        "http://redpencil.data.gift/vocabularies/tasks/Task",
                         "http://mu.semte.ch/vocabularies/ext/TaskSolution",
                         "http://mu.semte.ch/vocabularies/ext/TasklistSolution",
                         "http://www.w3.org/ns/person#Person",
@@ -185,6 +185,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/VersionedBesluitenLijst",
                         "http://mu.semte.ch/vocabularies/ext/VersionedBehandeling",
                         "http://mu.semte.ch/vocabularies/ext/signing/PublishedResource",
+                        "http://redpencil.data.gift/vocabularies/tasks/Task",
                       ],
                       inverse_predicates: %AllPredicates{}
                       } } ] },
@@ -210,6 +211,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/VersionedBesluitenLijst",
                         "http://mu.semte.ch/vocabularies/ext/VersionedBehandeling",
                         "http://mu.semte.ch/vocabularies/ext/signing/SignedResource",
+                        "http://redpencil.data.gift/vocabularies/tasks/Task",
                       ],
                       inverse_predicates: %AllPredicates{}
                     } } ] },
