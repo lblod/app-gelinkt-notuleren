@@ -1,3 +1,11 @@
+## 2.3.0 (2021-08-27)
+
+#### :rocket: Enhancement
+* [#40](https://github.com/lblod/app-gelinkt-notuleren/pull/40) set up dispatcher and permission for publication tasks ([@lagartoverde](https://github.com/lagartoverde))
+
+#### Committers: 1
+- Oscar Rodriguez Villalobos ([@lagartoverde](https://github.com/lagartoverde))
+
 ## 2.2.1 (2021-08-18)
 
 #### :house: Internal
