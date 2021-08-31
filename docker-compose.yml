@@ -138,7 +138,7 @@ services:
     labels:
       - "logging=true"
   published-resource-producer:
-    image: lblod/published-resource-producer:1.1.0
+    image: lblod/published-resource-producer:1.1.1
     volumes:
       - ./data/files:/share
     environment:
