@@ -1,3 +1,11 @@
+## 2.4.0 (2021-08-31)
+
+#### :rocket: Enhancement
+* [#41](https://github.com/lblod/app-gelinkt-notuleren/pull/41) Enhancement/async signing and publication of notulen ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 1
+- Niels V ([@nvdk](https://github.com/nvdk))
+
 ## 2.3.0 (2021-08-27)
 
 #### :rocket: Enhancement
