@@ -1,3 +1,15 @@
+
+## 2.5.0 (2021-09-01)
+
+#### :bug: Bug Fix
+* [#42](https://github.com/lblod/app-gelinkt-notuleren/pull/42) bump published-resource-producer ([@lagartoverde](https://github.com/lagartoverde))
+
+#### :house: Internal
+* [#43](https://github.com/lblod/app-gelinkt-notuleren/pull/43) bump frontend ([@lagartoverde](https://github.com/lagartoverde))
+
+#### Committers: 1
+- Oscar Rodriguez Villalobos ([@lagartoverde](https://github.com/lagartoverde))
+
 ## 2.4.0 (2021-08-31)
 
 #### :rocket: Enhancement
