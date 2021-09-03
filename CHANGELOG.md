@@ -1,4 +1,10 @@
 
+## 2.5.1 (2021-09-03)
+
+### :house: Internal
+ - bumped frontend
+
+
 ## 2.5.0 (2021-09-01)
 
 #### :bug: Bug Fix
