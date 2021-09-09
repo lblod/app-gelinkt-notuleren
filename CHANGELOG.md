@@ -1,3 +1,13 @@
+
+## 2.4.1 (2021-09-09)
+
+#### :bug: Bug Fix
+* [#46](https://github.com/lblod/app-gelinkt-notuleren/pull/46) correctly update agenda title ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 1
+- Niels V ([@nvdk](https://github.com/nvdk))
+
+
 ## 2.4.0 (2021-08-31)
 
 #### :rocket: Enhancement
