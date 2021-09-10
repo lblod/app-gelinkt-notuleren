@@ -1,4 +1,12 @@
 
+## 2.6.1 (2021-09-10)
+
+#### :bug: Bug Fix
+* [#50](https://github.com/lblod/app-gelinkt-notuleren/pull/50) bump prepublishler ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 1
+- Niels V ([@nvdk](https://github.com/nvdk))
+
 ## 2.6.0 (2021-09-10)
 
 #### :rocket: Enhancement
