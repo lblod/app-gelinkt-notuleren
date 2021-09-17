@@ -1,4 +1,12 @@
 
+## 2.6.3 (2021-09-17)
+
+#### :house: Internal
+* [#53](https://github.com/lblod/app-gelinkt-notuleren/pull/53) bump frontend and prepublisher ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 1
+- Niels V ([@nvdk](https://github.com/nvdk))
+
 ## 2.6.2 (2021-09-14)
 
 #### :house: Internal
