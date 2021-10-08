@@ -1,4 +1,15 @@
 
+## 2.7.0 (2021-10-08)
+
+#### :rocket: Enhancement
+* [#55](https://github.com/lblod/app-gelinkt-notuleren/pull/55) bump frontend ([@nvdk](https://github.com/nvdk))
+
+#### :bug: Bug Fix
+* [#57](https://github.com/lblod/app-gelinkt-notuleren/pull/57) bumpy prepublisher to 1.4.2 ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 1
+- Niels V ([@nvdk](https://github.com/nvdk))
+
 ## 2.6.5 (2021-10-06)
 
 #### :bug: Bug Fix
