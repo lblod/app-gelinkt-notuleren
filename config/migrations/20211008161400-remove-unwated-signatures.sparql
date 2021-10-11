@@ -1,6 +1,11 @@
 DELETE WHERE { 
   GRAPH ?g {
     <http://data.lblod.info/signed-resources/686b52c0-1796-11ec-94e7-41e8f3984e1f> ?a ?b.
+    <http://data.lblod.info/signed-resources/686b52c0-1796-11ec-94e7-41e8f3984e1f> ext:signsAgenda ?agendaOne.
+    ?agendaOne ?e ?f.
+
     <http://data.lblod.info/signed-resources/5ff7c790-1796-11ec-94e7-41e8f3984e1f> ?c ?d.
+    <http://data.lblod.info/signed-resources/5ff7c790-1796-11ec-94e7-41e8f3984e1f> ext:signsAgenda ?agendaTwo.
+    ?agendaTwo ?h ?i.
   }
 }
