@@ -3,6 +3,7 @@
 (define-resource template ()
   :class (s-prefix "ext:Template")
   :properties `((:title :string ,(s-prefix "dct:title"))
+                (:description :string ,(s-prefix "dct:title"))
                 (:matches :string-set ,(s-prefix "ext:templateMatches"))
                 (:body :string ,(s-prefix "ext:templateContent"))
                 (:contexts :uri-set ,(s-prefix "ext:activeInContext"))
