@@ -1,4 +1,16 @@
 
+## 2.7.2 (2021-11-18)
+
+#### :rocket: Enhancement
+* [#61](https://github.com/lblod/app-gelinkt-notuleren/pull/61) initial implementation of mobility template ([@nvdk](https://github.com/nvdk))
+
+#### :bug: Bug Fix
+* [#63](https://github.com/lblod/app-gelinkt-notuleren/pull/63) bump frontend ([@nvdk](https://github.com/nvdk))
+* [#62](https://github.com/lblod/app-gelinkt-notuleren/pull/62) bump publish resource producer ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 1
+- Niels V ([@nvdk](https://github.com/nvdk))
+
 ## 2.7.1 (2021-10-21)
 
 #### :house: Internal
