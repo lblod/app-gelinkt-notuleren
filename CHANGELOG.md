@@ -1,4 +1,14 @@
 
+## 2.8.0 (2022-01-19)
+
+#### :rocket: Enhancement
+* [#67](https://github.com/lblod/app-gelinkt-notuleren/pull/67) include irgn  ([@nvdk](https://github.com/nvdk))
+* [#64](https://github.com/lblod/app-gelinkt-notuleren/pull/64) bump prepublisher ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 2
+- Niels V ([@nvdk](https://github.com/nvdk))
+- Oscar Rodriguez Villalobos ([@lagartoverde](https://github.com/lagartoverde))
+
 ## 2.7.2 (2021-11-18)
 
 #### :rocket: Enhancement
