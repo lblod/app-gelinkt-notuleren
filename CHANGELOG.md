@@ -1,4 +1,12 @@
 
+## 2.8.1 (2022-01-26)
+
+#### :rocket: Enhancement
+* [#69](https://github.com/lblod/app-gelinkt-notuleren/pull/69) add support for measures with variable signage + performance improvements in mobility plugin ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 1
+- Niels V ([@nvdk](https://github.com/nvdk))
+
 ## 2.8.0 (2022-01-19)
 
 #### :rocket: Enhancement
