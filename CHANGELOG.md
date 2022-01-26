@@ -1,4 +1,12 @@
 
+## 2.8.2 (2022-01-26)
+
+#### :rocket: Enhancement
+* [#66](https://github.com/lblod/app-gelinkt-notuleren/pull/66) Remove both article templates as they are now handled in besluit plugin ([@lagartoverde](https://github.com/lagartoverde))
+
+#### Committers: 1
+- Oscar Rodriguez Villalobos ([@lagartoverde](https://github.com/lagartoverde))
+
 ## 2.8.1 (2022-01-26)
 
 #### :rocket: Enhancement
