@@ -1,4 +1,13 @@
 
+
+## 2.8.4 (2022-02-04)
+
+#### :bug: Bug Fix
+* [#73](https://github.com/lblod/app-gelinkt-notuleren/pull/73) bump frontend ([@lagartoverde](https://github.com/lagartoverde))
+
+#### Committers: 1
+- Oscar Rodriguez Villalobos ([@lagartoverde](https://github.com/lagartoverde))
+
 ## 2.8.3 (2022-02-03)
 
 #### :rocket: Enhancement
