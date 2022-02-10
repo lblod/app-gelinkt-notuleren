@@ -8,10 +8,13 @@ services:
       - "443:443"
   editor:
     restart: "no"
-  identifier:
+  editor-identifier:
     ports:
       - "80:80"
     restart: "no"
+    networks:
+      - default
+      - identifier
   database:
     restart: "no"
   virtuoso:
@@ -53,3 +56,5 @@ services:
     restart: "no"
   agendapoint-service:
     restart: "no"
+networks:
+  identifier:

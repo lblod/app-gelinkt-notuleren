@@ -8,12 +8,12 @@ services:
   editor:
     image: lblod/frontend-gelinkt-notuleren:2.20.4
     links:
-      - identifier:backend
+      - editor-identifier:backend
     restart: always
     logging: *default-logging
     labels:
       - "logging=true"
-  identifier:
+  editor-identifier:
     image: semtech/mu-identifier:1.9.1
     restart: always
     logging: *default-logging
