@@ -1,6 +1,16 @@
 
 
 
+
+## 2.8.6 (2022-02-11)
+
+#### :rocket: Enhancement
+* [#77](https://github.com/lblod/app-gelinkt-notuleren/pull/77) Bump editor from 2.20.5 to 2.20.6 ([@lagartoverde](https://github.com/lagartoverde))
+* [#76](https://github.com/lblod/app-gelinkt-notuleren/pull/76) Bump editor from 2.20.4 to 2.20.5 ([@lagartoverde](https://github.com/lagartoverde))
+
+#### Committers: 1
+- Oscar Rodriguez Villalobos ([@lagartoverde](https://github.com/lagartoverde))
+
 ## 2.8.5 (2022-02-11)
 
 #### :rocket: Enhancement
