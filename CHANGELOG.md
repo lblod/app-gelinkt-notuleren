@@ -1,4 +1,35 @@
 
+
+## 2.8.4 (2022-02-04)
+
+#### :bug: Bug Fix
+* [#73](https://github.com/lblod/app-gelinkt-notuleren/pull/73) bump frontend ([@lagartoverde](https://github.com/lagartoverde))
+
+#### Committers: 1
+- Oscar Rodriguez Villalobos ([@lagartoverde](https://github.com/lagartoverde))
+
+## 2.8.3 (2022-02-03)
+
+#### :rocket: Enhancement
+* [#71](https://github.com/lblod/app-gelinkt-notuleren/pull/71) Annotate new KB ([@abeforgit](https://github.com/abeforgit))
+
+#### :bug: Bug Fix
+* [#72](https://github.com/lblod/app-gelinkt-notuleren/pull/72) bump frontend ([@nvdk](https://github.com/nvdk))
+* [#70](https://github.com/lblod/app-gelinkt-notuleren/pull/70) added restart always to file service ([@Asergey91](https://github.com/Asergey91))
+
+#### Committers: 3
+- Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
+- Niels V ([@nvdk](https://github.com/nvdk))
+- Sergey Andreev ([@Asergey91](https://github.com/Asergey91))
+
+## 2.8.2 (2022-01-26)
+
+#### :rocket: Enhancement
+* [#66](https://github.com/lblod/app-gelinkt-notuleren/pull/66) Remove both article templates as they are now handled in besluit plugin ([@lagartoverde](https://github.com/lagartoverde))
+
+#### Committers: 1
+- Oscar Rodriguez Villalobos ([@lagartoverde](https://github.com/lagartoverde))
+
 ## 2.8.1 (2022-01-26)
 
 #### :rocket: Enhancement
