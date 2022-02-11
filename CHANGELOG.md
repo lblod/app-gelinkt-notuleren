@@ -1,5 +1,15 @@
 
 
+
+## 2.8.5 (2022-02-11)
+
+#### :rocket: Enhancement
+* [#75](https://github.com/lblod/app-gelinkt-notuleren/pull/75) Fix some typos in AR template ([@abeforgit](https://github.com/abeforgit))
+
+#### Committers: 1
+- Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
+
+
 ## 2.8.4 (2022-02-04)
 
 #### :bug: Bug Fix
