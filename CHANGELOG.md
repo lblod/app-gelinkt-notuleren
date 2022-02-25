@@ -2,6 +2,18 @@
 
 
 
+## 2.8.7 (2022-02-25)
+
+#### :bug: Bug Fix
+* [#78](https://github.com/lblod/app-gelinkt-notuleren/pull/78) Fix the title of the besluit mobilitiet template ([@lagartoverde](https://github.com/lagartoverde))
+
+#### :house: Internal
+* [#80](https://github.com/lblod/app-gelinkt-notuleren/pull/80) bump frontend from 2.20.6 to 2.21.0 ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 2
+- Niels V ([@nvdk](https://github.com/nvdk))
+- Oscar Rodriguez Villalobos ([@lagartoverde](https://github.com/lagartoverde))
+
 ## 2.8.6 (2022-02-11)
 
 #### :rocket: Enhancement
