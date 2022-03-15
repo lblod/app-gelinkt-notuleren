@@ -186,6 +186,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/VersionedBehandeling",
                         "http://mu.semte.ch/vocabularies/ext/signing/PublishedResource",
                         "http://redpencil.data.gift/vocabularies/tasks/Task",
+                        "http://mu.semte.ch/vocabularies/ext/DocumentContainer", # needed to update status on publishing decision/notulen
                       ],
                       inverse_predicates: %AllPredicates{}
                       } } ] },
