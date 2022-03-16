@@ -2,6 +2,16 @@
 
 
 
+## 2.9.0 (2022-03-14)
+
+#### :rocket: Enhancement
+* [#82](https://github.com/lblod/app-gelinkt-notuleren/pull/82) upgrade frontend to 2.21.1 ([@nvdk](https://github.com/nvdk))
+* [#81](https://github.com/lblod/app-gelinkt-notuleren/pull/81) added new route for notulen preview ([@lagartoverde](https://github.com/lagartoverde))
+
+#### Committers: 2
+- Niels V ([@nvdk](https://github.com/nvdk))
+- Oscar Rodriguez Villalobos ([@lagartoverde](https://github.com/lagartoverde))
+
 ## 2.8.7 (2022-02-25)
 
 #### :bug: Bug Fix
