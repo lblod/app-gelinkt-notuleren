@@ -2,6 +2,19 @@
 
 
 
+## 2.10.0 (2022-03-17)
+
+#### :rocket: Enhancement
+* [#86](https://github.com/lblod/app-gelinkt-notuleren/pull/86) bump frontend to 2.22.0 ([@nvdk](https://github.com/nvdk))
+
+#### :bug: Bug Fix
+* [#85](https://github.com/lblod/app-gelinkt-notuleren/pull/85) add 404 route to dispatcher ([@nvdk](https://github.com/nvdk))
+* [#84](https://github.com/lblod/app-gelinkt-notuleren/pull/84) bump prepublisher to 1.6.0: bugfix notulen publication preview ([@nvdk](https://github.com/nvdk))
+* [#83](https://github.com/lblod/app-gelinkt-notuleren/pull/83) Bugfix: make sure that users who can publish can update the status of documents ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 1
+- Niels V ([@nvdk](https://github.com/nvdk))
+
 ## 2.9.0 (2022-03-14)
 
 #### :rocket: Enhancement
