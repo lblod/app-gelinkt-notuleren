@@ -2,6 +2,14 @@
 
 
 
+## 2.10.2 (2022-03-22)
+
+#### :bug: Bug Fix
+* [#88](https://github.com/lblod/app-gelinkt-notuleren/pull/88) bugfix notulen validation on publication ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 1
+- Niels V ([@nvdk](https://github.com/nvdk))
+
 ## 2.10.1 (2022-03-18)
 
 #### :bug: Bug Fix
