@@ -2,6 +2,14 @@
 
 
 
+## 2.11.0 (2022-03-30)
+
+#### :rocket: Enhancement
+* [#89](https://github.com/lblod/app-gelinkt-notuleren/pull/89) bump frontend to 2.23.1 ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 1
+- Niels V ([@nvdk](https://github.com/nvdk))
+
 ## 2.10.2 (2022-03-22)
 
 #### :bug: Bug Fix
