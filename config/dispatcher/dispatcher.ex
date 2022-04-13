@@ -256,8 +256,16 @@ defmodule Dispatcher do
     forward conn, [], "http://preimporter/extract-previews"
   end
 
+   post "/meeting-notes-previews" do
+    forward conn, [], "http://preimporter/meeting-notes-previews"
+  end
+
   match "/signing/*path" do
     forward conn, path, "http://preimporter/signing/"
+  end
+
+  match "/publication-tasks/*path" do
+    forward conn, path, "http://preimporter/publication-tasks/"
   end
 
   match "/signed-resources/*path" do
@@ -388,7 +396,7 @@ defmodule Dispatcher do
   match "/query/*path" do
     forward conn, path, "http://yasgui/"
   end
-  # match _ do
-  #   send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
-  # end
+  match "/*_" do
+    send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
+  end
 end

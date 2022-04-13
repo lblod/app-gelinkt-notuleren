@@ -12,7 +12,7 @@ services:
     labels:
       - "logging=true"
   editor:
-    image: lblod/frontend-gelinkt-notuleren:2.9.1
+    image: lblod/frontend-gelinkt-notuleren:2.23.1
     links:
       - identifier:backend
     restart: always
@@ -124,7 +124,7 @@ services:
     labels:
       - "logging=true"
   preimporter:
-    image: lblod/notulen-prepublish-service:1.0.0
+    image: lblod/notulen-prepublish-service:1.6.0
     environment: 
       TZ: "Europe/Brussels"
     restart: always
@@ -133,6 +133,7 @@ services:
       - "logging=true"
   file:
     image: semtech/mu-file-service:3.1.0
+    restart: always
     links:
       - database:database
     volumes:
@@ -144,7 +145,7 @@ services:
     labels:
       - "logging=true"
   published-resource-producer:
-    image: lblod/published-resource-producer:1.1.0
+    image: lblod/published-resource-producer:1.1.2
     volumes:
       - ./data/files:/share
     environment:
