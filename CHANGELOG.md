@@ -3,6 +3,14 @@
 
 
 
+## 2.12.1 (2022-05-05)
+
+#### :bug: Bug Fix
+* [#93](https://github.com/lblod/app-gelinkt-notuleren/pull/93) fix title of mobility template again ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 1
+- Niels V ([@nvdk](https://github.com/nvdk))
+
 ## 2.12.0 (2022-05-05)
 
 #### :rocket: Enhancement
