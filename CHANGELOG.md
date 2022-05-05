@@ -3,6 +3,18 @@
 
 
 
+## 2.12.0 (2022-05-05)
+
+#### :rocket: Enhancement
+* [#92](https://github.com/lblod/app-gelinkt-notuleren/pull/92) bump frontend to 2.24.0 ([@nvdk](https://github.com/nvdk))
+* [#91](https://github.com/lblod/app-gelinkt-notuleren/pull/91) Bump frontend to latest prerelease ([@abeforgit](https://github.com/abeforgit))
+* [#90](https://github.com/lblod/app-gelinkt-notuleren/pull/90) Setup migration for correctly annotating the last missing citation ([@abeforgit](https://github.com/abeforgit))
+
+#### Committers: 1
+- Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
+- Niels V ([@nvdk](https://github.com/nvdk))
+
+
 ## 2.12.0-0 (2022-04-08)
 
 #### :rocket: Enhancement
