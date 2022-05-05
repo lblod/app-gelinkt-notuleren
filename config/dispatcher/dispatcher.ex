@@ -109,11 +109,11 @@ defmodule Dispatcher do
   end
   
   delete "/zittingen/*path" do
-    Proxy.forward conn, path, "http://meeting/"
+    forward conn, path, "http://meeting/"
   end
 
   match "/zittingen/*path" do
-    forward conn, path, "http://resource/zittingen/"
+    forward conn, path, "http://cache/zittingen/"
   end
 
   match "/notulen/*path" do
