@@ -3,6 +3,16 @@
 
 
 
+
+## 2.12.2 (2022-05-20)
+
+#### :bug: Bug Fix
+* [#94](https://github.com/lblod/app-gelinkt-notuleren/pull/94) Bump frontend to v2.24.1 to fix editor-initialization bug ([@abeforgit](https://github.com/abeforgit))
+
+#### Committers: 1
+- Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
+
+
 ## 2.12.1 (2022-05-05)
 
 #### :bug: Bug Fix
