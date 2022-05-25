@@ -4,6 +4,16 @@
 
 
 
+
+## 2.12.3 (2022-05-25)
+
+#### :bug: Bug Fix
+* [#95](https://github.com/lblod/app-gelinkt-notuleren/pull/95) Bump frontend to fix bug with copying text ([@abeforgit](https://github.com/abeforgit))
+
+#### Committers: 1
+- Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
+
+
 ## 2.12.2 (2022-05-20)
 
 #### :bug: Bug Fix
