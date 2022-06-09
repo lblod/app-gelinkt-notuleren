@@ -5,8 +5,14 @@ x-logging: &default-logging
     max-size: "10m"
     max-file: "3"
 services:
+  meeting:
+    image: lblod/meeting-service
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
   editor:
-    image: lblod/frontend-gelinkt-notuleren:2.24.2
+    image: lblod/frontend-gelinkt-notuleren:2.25.1
     links:
       - identifier:backend
     restart: always
@@ -104,7 +110,7 @@ services:
     labels:
       - "logging=true"
   resource:
-    image: semtech/mu-cl-resources:1.20.0
+    image: semtech/mu-cl-resources:1.21.0
     volumes:
       - ./config/resources:/config
     environment:
