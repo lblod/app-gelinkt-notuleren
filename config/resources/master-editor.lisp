@@ -23,9 +23,12 @@
                 (:created-on :datetime ,(s-prefix "pav:createdOn"))
                 (:updated-on :datetime ,(s-prefix "pav:lastUpdateOn"))
                 (:starred :boolean ,(s-prefix "tmp:starred"))
+                (:identifier :string ,(s-prefix "dct:identifier"))
                 (:origin :string ,(s-prefix "pav:providedBy"))) ;;de gemeente Niel
   :has-one `((editor-document :via ,(s-prefix "pav:previousVersion")
                               :as "previous-version")
+             (concept :via ,(s-prefix "dct:type")
+                   :as "type")
              (editor-document :via ,(s-prefix "pav:previousVersion")
                               :inverse t
                               :as "next-version")
