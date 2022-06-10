@@ -165,3 +165,18 @@ services:
     image: lblod/gn-agendapoint-service:1.0.2
     logging: *default-logging
     restart: always
+  dashboard:
+    image: lblod/frontend-dashboard
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
+    links:
+      - identifier:backend
+  report-generation:
+    image: lblod/loket-report-generation-service:0.5.0
+    links:
+      - database:database
+    volumes:
+      - ./data/reports:/share
+      - ./config/reports:/app/reports
