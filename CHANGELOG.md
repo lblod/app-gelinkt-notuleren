@@ -3,6 +3,38 @@
 
 
 
+
+
+## 2.13.0 (2022-06-09)
+
+#### :rocket: Enhancement
+* [#39](https://github.com/lblod/app-gelinkt-notuleren/pull/39) Feature/delete meetings ([@Asergey91](https://github.com/Asergey91))
+
+#### :house: Internal
+* [#98](https://github.com/lblod/app-gelinkt-notuleren/pull/98) upgrade frontend ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 2
+- Niels V ([@nvdk](https://github.com/nvdk))
+- Sergey Andreev ([@Asergey91](https://github.com/Asergey91))
+
+## 2.12.3 (2022-05-25)
+
+#### :bug: Bug Fix
+* [#95](https://github.com/lblod/app-gelinkt-notuleren/pull/95) Bump frontend to fix bug with copying text ([@abeforgit](https://github.com/abeforgit))
+
+#### Committers: 1
+- Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
+
+
+## 2.12.2 (2022-05-20)
+
+#### :bug: Bug Fix
+* [#94](https://github.com/lblod/app-gelinkt-notuleren/pull/94) Bump frontend to v2.24.1 to fix editor-initialization bug ([@abeforgit](https://github.com/abeforgit))
+
+#### Committers: 1
+- Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
+
+
 ## 2.12.1 (2022-05-05)
 
 #### :bug: Bug Fix
