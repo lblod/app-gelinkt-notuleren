@@ -5,6 +5,18 @@
 
 
 
+## 2.14.0 (2022-06-10)
+
+#### :rocket: Enhancement
+* [#99](https://github.com/lblod/app-gelinkt-notuleren/pull/99) :cloud: Upgrade editor to 2.26.0 ([@nvdk](https://github.com/nvdk))
+
+#### :house: Internal
+* [#97](https://github.com/lblod/app-gelinkt-notuleren/pull/97) add type and identifier to document container ([@nvdk](https://github.com/nvdk))
+* [#96](https://github.com/lblod/app-gelinkt-notuleren/pull/96) add irg archive folder ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 1
+- Niels V ([@nvdk](https://github.com/nvdk))
+
 ## 2.13.0 (2022-06-09)
 
 #### :rocket: Enhancement
