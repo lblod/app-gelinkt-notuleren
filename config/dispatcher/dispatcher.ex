@@ -396,6 +396,42 @@ defmodule Dispatcher do
   match "/query/*path" do
     forward conn, path, "http://yasgui/"
   end
+
+  
+  #################################################################
+  # Dashboard routes
+  #################################################################
+
+  # Reports
+  match "/reports/*path" do
+    Proxy.forward conn, path, "http://resource/reports/"
+  end
+
+  # Logs
+  match "/log-entries/*path" do
+    Proxy.forward conn, path, "http://resource/log-entries/"
+  end
+
+  match "/log-levels/*path" do
+    Proxy.forward conn, path, "http://resource/log-levels/"
+  end
+
+  match "/status-codes/*path" do
+    Proxy.forward conn, path, "http://resource/status-codes/"
+  end
+
+  match "/log-sources/*path" do
+    Proxy.forward conn, path, "http://resource/log-sources/"
+  end
+
+  match "/status-codes/*path" do
+    Proxy.forward conn, path, "http://resource/acm-idm-service-log-entries/"
+  end
+  
+  # Jobs
+  match "/jobs/*path" do
+    Proxy.forward conn, path, "http://resource/jobs/"
+  end
   match "/*_" do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
