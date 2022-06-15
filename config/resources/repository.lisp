@@ -39,3 +39,6 @@
 (add-prefix "nfo" "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#")
 (add-prefix "nie" "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#")
 (add-prefix "dbpedia" "http://dbpedia.org/ontology/")
+
+(add-prefix "rlog" "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#")
+(add-prefix "cogs" "http://vocab.deri.ie/cogs#")
