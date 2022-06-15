@@ -1,5 +1,8 @@
 version: '3.4'
 services:
+  dashboard:
+    ports:
+      - "81:80"
   proxy:
     image: nginx:1.13
     volumes:
