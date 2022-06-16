@@ -79,6 +79,11 @@ defmodule Acl.UserGroups.Config do
                         "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordcategorie",
                         "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordconcept",
                         "https://data.vlaanderen.be/ns/mobiliteit#VerkeersbordconceptStatus",
+                        # For logs, reports (dashboard and report service)
+                        "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Entry",
+                        "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Level",
+                        "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#StatusCode",
+                        "http://mu.semte.ch/vocabularies/ext/LogSource",
                       ]
                     } },
                   %GraphSpec{
