@@ -42,3 +42,5 @@
 
 (add-prefix "rlog" "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#")
 (add-prefix "cogs" "http://vocab.deri.ie/cogs#")
+(add-prefix "oslc" "http://open-services.net/ns/core#")
+(add-prefix "task" "http://redpencil.data.gift/vocabularies/tasks/")
