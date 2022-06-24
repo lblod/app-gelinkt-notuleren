@@ -1,15 +1,32 @@
 import { generateReportFromData } from "../helpers.js";
 import { querySudo as query } from "@lblod/mu-auth-sudo";
 
+const months = [
+	"Januari",
+	"Februari",
+	"Maart",
+	"April",
+	"Mei",
+	"Juni",
+	"Juli",
+	"Augustus",
+	"September",
+	"Oktober",
+	"November",
+  "December"
+];
 export default {
 	cronPattern: "0 0 23 L * ?",
 	name: "monthlyReport",
 	execute: async () => {
+		const now = new Date();
+		const month = now.getMonth() + 1;
+		const year = now.getFullYear();
 		const reportData = {
-			title: "Maandelijkse statistieken over het aantal aangemaakte, ondertekende en gepubliceerde documenten",
+			title: `Statistieken ${months[month - 1]} ${year}`,
 			description:
-				"Monthly statistics on the number of created, signed and published documents",
-			filePrefix: "monthlyReport",
+				"Maandelijkse statistieken over het aantal aangemaakte, ondertekende en gepubliceerde documenten",
+			filePrefix: `statistieken-${month}-${year}`,
 		};
 
 		const queryString = `
@@ -102,6 +119,7 @@ export default {
       }   
     }
     GROUP BY ?bestuurseenheid ?bestuurseenheidPrefix (month(?timestamp) as ?month) (year(?timestamp) as ?year)
+    HAVING (?year = ${year} && ?month = ${month})
     `;
 
 		const queryResponse = await query(queryString);
@@ -162,7 +180,7 @@ export default {
 				"aantalGepubliceerdeNotulen",
 				"aantalGepubliceerdeAgendas",
 				"aantalGepubliceerdeBesluitenLijsten",
-        "aantalGepubliceerdeBehandelingen"
+				"aantalGepubliceerdeBehandelingen",
 			],
 			reportData
 		);
