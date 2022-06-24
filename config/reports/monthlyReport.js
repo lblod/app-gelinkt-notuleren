@@ -13,78 +13,95 @@ export default {
 		};
 
 		const queryString = `
-      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-      PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
-      PREFIX dct: <http://purl.org/dc/terms/>
-      PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-      PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-      PREFIX sign: <http://mu.semte.ch/vocabularies/ext/signing/>
-      PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
-      SELECT DISTINCT ?bestuurseenheid 
-                      ?bestuurseenheidPrefix 
-                      (count(distinct ?zitting) as ?aantalZittingen)
-                      (count(distinct ?agendapunt) as ?aantalAgendapunten)
-                      (count(distinct ?signedNotulen) as ?aantalOndertekendeNotulen)
-                      (count(distinct ?signedAgenda) as ?aantalOndertekendeAgendas)
-                      (count(distinct ?signedBesluitenLijst) as ?aantalOndertekendeBesluitenLijsten)
-                      (count(distinct ?signedBehandeling) as ?aantalOndertekendeBehandelingen)
-                      (count(distinct ?publishedNotulen) as ?aantalGepubliceerdeNotulen)
-                      (count(distinct ?publishedAgenda) as ?aantalGepubliceerdeAgendas)
-                      (count(distinct ?publishedBesluitenLijst) as ?aantalGepubliceerdeBesluitenLijsten)
-                      (count(distinct ?publishedBehandeling) as ?aantalGepubliceerdeBehandelingen)
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+    PREFIX dct: <http://purl.org/dc/terms/>
+    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+    PREFIX sign: <http://mu.semte.ch/vocabularies/ext/signing/>
+    PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+    PREFIX pav: <http://purl.org/pav/>
 
-      WHERE {
-        GRAPH <http://mu.semte.ch/graphs/public> {
-          ?eenheid a besluit:Bestuurseenheid;
-                  mu:uuid ?bestuurseenheidUUID.
-          OPTIONAL {
-            ?eenheid skos:prefLabel ?bestuurseenheid.
-          }
-          OPTIONAL {
-            ?eenheid besluit:classificatie ?classificatie.
-            ?classificatie skos:prefLabel ?bestuurseenheidPrefix.
-          }
+    SELECT DISTINCT ?bestuurseenheid 
+                    ?bestuurseenheidPrefix
+                    ?month
+                    ?year
+                    (count(distinct ?zitting) as ?aantalZittingen)
+                    (count(distinct ?agendapunt) as ?aantalAgendapunten)
+                    (count(distinct ?signedNotulen) as ?aantalOndertekendeNotulen)
+                    (count(distinct ?signedAgenda) as ?aantalOndertekendeAgendas)
+                    (count(distinct ?signedBesluitenLijst) as ?aantalOndertekendeBesluitenLijsten)
+                    (count(distinct ?signedBehandeling) as ?aantalOndertekendeBehandelingen)
+                    (count(distinct ?publishedNotulen) as ?aantalGepubliceerdeNotulen)
+                    (count(distinct ?publishedAgenda) as ?aantalGepubliceerdeAgendas)
+                    (count(distinct ?publishedBesluitenLijst) as ?aantalGepubliceerdeBesluitenLijsten)
+                    (count(distinct ?publishedBehandeling) as ?aantalGepubliceerdeBehandelingen)
+
+    WHERE {
+      GRAPH <http://mu.semte.ch/graphs/public> {
+        ?eenheid a besluit:Bestuurseenheid;
+                mu:uuid ?bestuurseenheidUUID.
+        OPTIONAL {
+          ?eenheid skos:prefLabel ?bestuurseenheid.
         }
-        BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?bestuurseenheidUUID)) as ?graph)
-        GRAPH ?graph {
-          OPTIONAL {
-            ?zitting a besluit:Zitting .
-          }
-          OPTIONAL {
-            ?agendapunt a besluit:Agendapunt .
-          }
-          OPTIONAL {
-            ?signedResource a sign:SignedResource .
-          }
-          OPTIONAL {
-            ?signedResource ext:signsNotulen ?signedNotulen .
-          }
-          OPTIONAL {
-            ?signedResource ext:signsAgenda ?signedAgenda .
-          }
-          OPTIONAL {
-            ?signedResource ext:signsBesluitenLijst ?signedBesluitenLijst .
-          }
-          OPTIONAL {
-            ?signedResource ext:signsBehandeling ?signedBehandeling .
-          }
-          OPTIONAL {
-            ?publishedResource a sign:PublishedResource .
-          }
-          OPTIONAL {
-            ?publishedResource ext:publishesNotulen ?publishedNotulen .
-          }
-          OPTIONAL {
-            ?publishedResource ext:publishesAgenda ?publishedAgenda .
-          }
-          OPTIONAL {
-            ?publishedResource ext:publishesBesluitenlijst ?publishedBesluitenLijst .
-          }
-          OPTIONAL {
-            ?publishedResource ext:publishesBehandeling ?publishedBehandeling .
-          }
+        OPTIONAL {
+          ?eenheid besluit:classificatie ?classificatie.
+          ?classificatie skos:prefLabel ?bestuurseenheidPrefix.
         }
       }
+      BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?bestuurseenheidUUID)) as ?graph)
+      GRAPH ?graph {
+        OPTIONAL {
+          ?zitting a besluit:Zitting .
+        ?zitting besluit:geplandeStart ?timestamp .
+        }
+        OPTIONAL {
+          ?agendapunt a ext:DocumentContainer .
+          ?agendapunt ext:editorDocumentFolder <http://mu.semte.ch/application/editor-document-folder/ae5feaed-7b70-4533-9417-10fbbc480a4c> .
+        }
+        OPTIONAL {
+          ?signedResource a sign:SignedResource .
+           ?signedResource dct:created ?timestamp .
+        }
+        OPTIONAL {
+          ?signedResource ext:signsNotulen ?signedNotulen .
+        }
+        OPTIONAL {
+          ?signedResource ext:signsAgenda ?signedAgenda .
+        }
+        OPTIONAL {
+          ?signedResource ext:signsBesluitenLijst ?signedBesluitenLijst .
+        }
+        OPTIONAL {
+          ?signedResource ext:signsBehandeling ?signedBehandeling .
+        }
+        OPTIONAL {
+          ?publishedResource a sign:PublishedResource .
+        ?publishedResource dct:created ?timestamp .
+        }
+        OPTIONAL {
+          ?publishedResource ext:publishesNotulen ?publishedNotulen .
+        }
+        OPTIONAL {
+          ?publishedResource ext:publishesAgenda ?publishedAgenda .
+        }
+        OPTIONAL {
+          ?publishedResource ext:publishesBesluitenlijst ?publishedBesluitenLijst .
+        }
+        OPTIONAL {
+          ?publishedResource ext:publishesBehandeling ?publishedBehandeling .
+        }
+      }
+      OPTIONAL {
+        ?agendapunt pav:hasCurrentVersion ?currentVersion .
+        ?currentVersion pav:previousVersion*/pav:createdOn ?timestamp .
+        filter not exists {
+          ?currentVersion pav:previousVersion*/pav:createdOn ?timestamp2
+          filter (?timestamp > ?timestamp2)
+        }
+      }   
+    }
+    GROUP BY ?bestuurseenheid ?bestuurseenheidPrefix (month(?timestamp) as ?month) (year(?timestamp) as ?year)
     `;
 
 		const queryResponse = await query(queryString);
