@@ -9,7 +9,6 @@ export default {
 		const start = new Date(1970, 0, 1);
 		const { month, year } = getLastMonth();
     const end = getMonthDates(month, year).end;
-    console.log(start)
 		const metadata = {
 			title: `Historische statistieken t.e.m. ${MONTHS[month]} ${year}`,
 			description:

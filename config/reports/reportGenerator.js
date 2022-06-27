@@ -121,7 +121,6 @@ export default async function generateReport(
   `;
 
 	const queryResponse = await query(queryString);
-	console.log(queryResponse);
 	const data = queryResponse.results.bindings.map((entry) => {
 		return {
 			aantalZittingen: getValue(entry, "aantalZittingen"),
