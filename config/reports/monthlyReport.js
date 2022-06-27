@@ -8,7 +8,6 @@ export default {
 	execute: async () => {
 		const { month, year } = getLastMonth();
 		const { start, end } = getMonthDates(month, year);
-		console.log(start, end);
 		const metadata = {
 			title: `Statistieken ${MONTHS[month]} ${year}`,
 			description:
