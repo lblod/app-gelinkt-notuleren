@@ -1,33 +1,20 @@
-import { generateReportFromData } from "../helpers.js";
-import { querySudo as query } from "@lblod/mu-auth-sudo";
 import generateReport from "./reportGenerator.js";
+import { MONTHS } from "./utils/constants.js";
+import { getLastMonth, getMonthDates } from "./utils/date.js";
 
-const months = [
-	"Januari",
-	"Februari",
-	"Maart",
-	"April",
-	"Mei",
-	"Juni",
-	"Juli",
-	"Augustus",
-	"September",
-	"Oktober",
-	"November",
-  "December"
-];
 export default {
 	cronPattern: "0 0 12 1 * *",
 	name: "monthlyReport",
 	execute: async () => {
-		const date = new Date();
-    date.setDate(date.getDate() - 1)
-		const month = date.getMonth() + 1;
-		const year = date.getFullYear();
-    await generateReport(month, year);
+		const { month, year } = getLastMonth();
+		const { start, end } = getMonthDates(month, year);
+		console.log(start, end);
+		const metadata = {
+			title: `Statistieken ${MONTHS[month]} ${year}`,
+			description:
+				"Maandelijkse statistieken over het aantal aangemaakte, ondertekende en gepubliceerde documenten",
+			filePrefix: `statistieken-${month + 1}-${year}`,
+		};
+		await generateReport(start, end, metadata);
 	},
 };
-
-function getValue(entry, property, defaultValue = 0) {
-	return entry[property] ? entry[property].value : defaultValue;
-}
