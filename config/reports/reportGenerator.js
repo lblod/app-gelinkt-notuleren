@@ -35,6 +35,7 @@ export default async function generateReport(
         ?month
         ?year
         (count(distinct ?agendapunt) as ?aantalAgendapunten)
+        (count(?copiedAgendapunt) as ?aantalGekopieerdeAgendapunten)
         (count(distinct ?zitting) as ?aantalZittingen)
         (count(distinct ?signedNotulen) as ?aantalOndertekendeNotulen)
         (count(distinct ?signedAgenda) as ?aantalOndertekendeAgendas)
@@ -64,6 +65,10 @@ export default async function generateReport(
       }
       ?agendapunt pav:hasCurrentVersion ?currentVersion .
       ?currentVersion pav:previousVersion*/pav:createdOn ?timestamp .
+      OPTIONAL {
+        ?agendapunt pav:derivedFrom ?copiedFrom .
+        BIND(?agendapunt as ?copiedAgendapunt)
+      }
       filter not exists {
         ?currentVersion pav:previousVersion*/pav:createdOn ?timestamp2
         filter (?timestamp > ?timestamp2)
@@ -125,6 +130,7 @@ export default async function generateReport(
 		return {
 			aantalZittingen: getValue(entry, "aantalZittingen"),
 			aantalAgendapunten: getValue(entry, "aantalAgendapunten"),
+      aantalGekopieerdeAgendapunten: getValue(entry, "aantalGekopieerdeAgendapunten"),
 			aantalOndertekendeNotulen: getValue(
 				entry,
 				"aantalOndertekendeNotulen"
@@ -174,6 +180,7 @@ export default async function generateReport(
 			"jaar",
 			"aantalZittingen",
 			"aantalAgendapunten",
+      "aantalGekopieerdeAgendapunten",
 			"aantalOndertekendeNotulen",
 			"aantalOndertekendeAgendas",
 			"aantalOndertekendeBesluitenLijsten",
