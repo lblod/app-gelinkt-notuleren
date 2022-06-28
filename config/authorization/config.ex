@@ -78,19 +78,7 @@ defmodule Acl.UserGroups.Config do
                         "http://xmlns.com/foaf/0.1/Person",
                         "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordcategorie",
                         "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordconcept",
-                        "https://data.vlaanderen.be/ns/mobiliteit#VerkeersbordconceptStatus",
-                        # For logs, reports (dashboard and report service)
-                        # TODO move to proper protected graph
-                        "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Entry",
-                        "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Level",
-                        "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#StatusCode",
-                        "http://mu.semte.ch/vocabularies/ext/LogSource",
-                        "http://lblod.data.gift/vocabularies/reporting/Report",
-                        "http://vocab.deri.ie/cogs#Job",
-                        "http://open-services.net/ns/core#Error",
-                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer",
-                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
-                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer"
+                        "https://data.vlaanderen.be/ns/mobiliteit#VerkeersbordconceptStatus"
                       ]
                     } },
                   %GraphSpec{
@@ -228,7 +216,33 @@ defmodule Acl.UserGroups.Config do
                       ],
                       inverse_predicates: %AllPredicates{}
                     } } ] },
-
+      %GroupSpec{
+        name: "org-reports",
+        useage: [:read],
+        access: %AccessByQuery{
+          vars: [],
+          query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+                  PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+                  SELECT DISTINCT ?session_group WHERE {
+                    <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
+                                 ext:sessionRole \"GelinktNotuleren-report-admin\".
+                    }"},
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/reports",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        # For logs, reports (dashboard and report service)
+                        "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Entry",
+                        "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Level",
+                        "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#StatusCode",
+                        "http://mu.semte.ch/vocabularies/ext/LogSource",
+                        "http://lblod.data.gift/vocabularies/reporting/Report",
+                        "http://vocab.deri.ie/cogs#Job",
+                        "http://open-services.net/ns/core#Error",
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer",
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer"
+                      ]}}]}, 
       # // CLEANUP
       #
       %GraphCleanup{
