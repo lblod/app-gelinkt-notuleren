@@ -178,7 +178,7 @@ services:
     links:
       - database:database
     environment:
-      DEFAULT_GRAPH: "http://mu.semte.ch/graphs/public"
+      DEFAULT_GRAPH: "http://mu.semte.ch/graphs/reports"
     volumes:
       - ./data/files:/share
       - ./config/reports:/app/reports
