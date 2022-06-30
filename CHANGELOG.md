@@ -5,6 +5,15 @@
 
 
 
+## 2.14.2 (2022-06-30)
+
+#### :rocket: Enhancement
+* [#103](https://github.com/lblod/app-gelinkt-notuleren/pull/103) :cloud: Upgrade meeting to 0.0.3 validates if meeting can be deleted ([@nvdk](https://github.com/nvdk))
+* [#102](https://github.com/lblod/app-gelinkt-notuleren/pull/102) :cloud: Upgrade frontend to 2.28.0 ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 1
+- Niels V ([@nvdk](https://github.com/nvdk))
+
 ## 2.14.1 (2022-06-17)
 
 #### :house: Internal
