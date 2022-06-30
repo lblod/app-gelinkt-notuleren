@@ -66,6 +66,29 @@ defmodule Dispatcher do
   get "/jobs/*path", %{ accept: %{json: true}, layer: :api} do
     Proxy.forward conn, path, "http://resource/jobs/"
   end
+
+  ###############################################################
+  # dashboard frontend layer
+  ###############################################################
+  match "/assets/*path", %{ accept: %{any: true}, layer: :frontend } do
+    Proxy.forward conn, path, "http://dashboard/assets/"
+  end
+
+  match "/@appuniversum/*path", %{ accept: %{any: true}, layer: :frontend } do
+    Proxy.forward conn, path, "http://dashboard/@appuniversum/"
+  end
+
+  match "/*path", %{ accept: %{html: true}, layer: :frontend } do
+    Proxy.forward conn, [], "http://dashboard/index.html"
+  end
+
+  match "/*_path", %{ accept: %{html: true}, layer: :frontend } do
+    Proxy.forward conn, [], "http://dashboard/index.html"
+  end
+
+  ###############################################################
+  # Not found
+  ###############################################################
   match "/*_", %{ accept: %{any: true}, layer: :not_found} do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
