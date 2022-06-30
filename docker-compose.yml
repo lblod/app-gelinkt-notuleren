@@ -6,7 +6,7 @@ x-logging: &default-logging
     max-file: "3"
 services:
   meeting:
-    image: lblod/meeting-service
+    image: lblod/meeting-service:0.0.3
     restart: always
     logging: *default-logging
     labels:
