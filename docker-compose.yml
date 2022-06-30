@@ -173,6 +173,27 @@ services:
       - "logging=true"
     links:
       - identifier:backend
+  dashboard-identifier:
+    image: semtech/mu-identifier:1.9.1
+    links:
+      - dashboard-dispatcher:dispatcher
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
+    environment:
+      DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: "[{\"variables\":[],\"name\":\"public\"}]"
+      DEFAULT_ACCESS_CONTROL_ALLOW_ORIGIN_HEADER: '*'
+      SESSION_COOKIE_SECURE: "on"
+      SESSION_COOKIE_SAME_SITE: "None"
+  dashboard-dispatcher:
+    image: semtech/mu-dispatcher:2.1.0-beta.1
+    volumes:
+      - ./config/dashboard-dispatcher:/config
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
   report-generation:
     image: lblod/loket-report-generation-service:0.5.0
     links:
