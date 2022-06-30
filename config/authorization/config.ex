@@ -223,9 +223,9 @@ defmodule Acl.UserGroups.Config do
           vars: [],
           query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
                   PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-                  SELECT DISTINCT ?session_group WHERE {
-                    <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
-                                 ext:sessionRole \"GelinktNotuleren-report-admin\".
+                  PREFIX session: <http://mu.semte.ch/vocabularies/session/>
+                  SELECT DISTINCT * WHERE {
+                    <SESSION_ID> session:account/ext:sessionRole \"GelinktNotuleren-report-admin\".
                     }"},
         graphs: [ %GraphSpec{
                     graph: "http://mu.semte.ch/graphs/reports",

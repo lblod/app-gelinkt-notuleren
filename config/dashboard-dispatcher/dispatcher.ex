@@ -23,6 +23,10 @@ defmodule Dispatcher do
     forward conn, path, "http://mocklogin/sessions/"
   end
 
+  match "/sessions/*path", %{ accept: %{json: true}, layer: :api} do
+    Proxy.forward conn, path, "http://dashboard-login/sessions/"
+  end
+
   match "/gebruikers/*path", %{ accept: %{json: true}, layer: :api} do
     forward conn, path, "http://cache/gebruikers/"
   end

@@ -1,0 +1,29 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX people: <http://ext.data.gift/people/>
+PREFIX accounts: <http://ext.data.gift/accounts/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX mu:      <http://mu.semte.ch/vocabularies/core/>
+PREFIX account: <http://mu.semte.ch/vocabularies/account/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ext:<http://mu.semte.ch/vocabularies/ext/>
+
+INSERT DATA {
+   GRAPH <http://mu.semte.ch/graphs/public> {
+     people:8932fb56-3383-4b78-a693-e467a2e74658 a foaf:Person ;
+                   foaf:name "ABB Admin Test" ;
+                   foaf:account accounts:a14509a7-f378-48aa-aac4-d30ca17e202f ;
+                   mu:uuid "8932fb56-3383-4b78-a693-e467a2e74658" ;
+                   dcterms:created "2022-06-30T12:04:54+00:00"^^xsd:datetime ;
+                   dcterms:modified "2022-06-30T12:04:54+00:00"^^xsd:datetime .
+     accounts:a14509a7-f378-48aa-aac4-d30ca17e202f a foaf:OnlineAccount ;
+                   foaf:accountName "abbadmintest" ;
+                   mu:uuid "a14509a7-f378-48aa-aac4-d30ca17e202f" ;
+                   account:password """$2a$12$kTobDVts.lU52R45QCiV2OLrkN7poNXMQVAXWpCULzBMyDXYhaYk.""" ;
+                   account:salt "329168e38cff7a75d4d449b465690e99" ;
+                   account:status <http://mu.semte.ch/vocabularies/account/status/active> ;
+                   dcterms:created "2022-06-30T12:04:54+00:00"^^xsd:datetime ;
+                   dcterms:modified "2022-06-30T12:04:54+00:00"^^xsd:datetime ;
+                   foaf:accountServiceHomepage <https://github.com/lblod/mu-login-service>;
+                   ext:sessionRole "GelinktNotuleren-report-admin" .
+    }
+}
