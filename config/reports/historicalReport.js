@@ -3,7 +3,6 @@ import { MONTHS } from "./utils/constants";
 import { getLastMonth, getMonthDates } from "./utils/date";
 
 export default {
-	cronPattern: "* * * * 1970 *",
 	name: "historicalReport",
 	execute: async () => {
 		const start = new Date(1970, 0, 1);
