@@ -5,6 +5,14 @@
 
 
 
+## 2.14.3 (2022-07-06)
+
+#### :house: Internal
+* [#105](https://github.com/lblod/app-gelinkt-notuleren/pull/105) :cloud: Upgrade frontend to 2.28.1 ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 1
+- Niels V ([@nvdk](https://github.com/nvdk))
+
 ## 2.14.2 (2022-06-30)
 
 #### :rocket: Enhancement
