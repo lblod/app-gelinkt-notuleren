@@ -2,7 +2,11 @@ version: '3.4'
 services:
   dashboard:
     ports:
+      - "82:80"
+  dashboard-identifier:
+    ports:
       - "81:80"
+    restart: "no"
   proxy:
     image: nginx:1.13
     volumes:
