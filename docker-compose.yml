@@ -201,10 +201,10 @@ services:
     environment:
       USERS_GRAPH: "http://mu.semte.ch/graphs/public"
       SESSIONS_GRAPH: "http://mu.semte.ch/graphs/sessions"
-  dashboard-registration:
-    image: semtech/mu-registration-service:2.7.1
-    links:
-      - database:database
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
   report-generation:
     image: lblod/loket-report-generation-service:0.5.0
     links:
@@ -214,3 +214,7 @@ services:
     volumes:
       - ./data/files:/share
       - ./config/reports:/app/reports
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
