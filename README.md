@@ -140,6 +140,14 @@ This project includes the report dashboard. To make use of it, set a salt for th
 ```
 mu script project-scripts generate-dashboard-login
 ```
+
+A report is generated each month, the historic report needs to be created manually. It can be triggered via curl:
+
+```
+curl -XPOST -H 'Content-Type: application/json' -d '{"data":{"attributes": {"reportName": "historicalReport"}}}' $IP_OF_REPORTS_SERVICE/reports
+
+```
+
 ### External delta sync [EXPERIMENTAL]
 
 *DISCLAIMER: this is not 100% bulletproof*
