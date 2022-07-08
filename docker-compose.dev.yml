@@ -60,10 +60,6 @@ services:
     restart: "no"
   agendapoint-service:
     restart: "no"
-  dashboard-registration:
-    image: semtech/mu-registration-service:2.7.1
-    links:
-      - database:database
   report-generation:
     restart: "no"
   dashboard-identifier:
