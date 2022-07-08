@@ -5,6 +5,16 @@
 
 
 
+## 2.15.0 (2022-07-08)
+
+#### :rocket: Enhancement
+* [#100](https://github.com/lblod/app-gelinkt-notuleren/pull/100) Adding reporting service and dashboard frontend ([@benjay10](https://github.com/benjay10))
+* [#104](https://github.com/lblod/app-gelinkt-notuleren/pull/104) Addition of report generators and mu-login-service in order to access the reports. ([@elpoelma](https://github.com/elpoelma))
+
+#### Committers: 2
+- Ben ([@benjay10](https://github.com/benjay10))
+- Elena Poelman ([@elpoelma](https://github.com/elpoelma))
+
 ## 2.14.3 (2022-07-06)
 
 #### :house: Internal
