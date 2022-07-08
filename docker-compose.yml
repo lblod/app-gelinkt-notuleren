@@ -166,7 +166,7 @@ services:
     logging: *default-logging
     restart: always
   dashboard:
-    image: lblod/frontend-dashboard
+    image: lblod/frontend-dashboard:1.4.0
     restart: always
     logging: *default-logging
     labels:
