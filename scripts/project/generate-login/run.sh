@@ -51,6 +51,7 @@ PREFIX people: <http://#{domain}/people/>
 PREFIX accounts: <http://#{domain}/accounts/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX mu:      <http://mu.semte.ch/vocabularies/core/>
+PREFIX ext:      <http://mu.semte.ch/vocabularies/ext/>
 PREFIX account: <http://mu.semte.ch/vocabularies/account/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 INSERT DATA {
@@ -68,6 +69,7 @@ INSERT DATA {
                                                    account:salt "#{account_salt}";
                                                    account:status <http://mu.semte.ch/vocabularies/account/status/active>;
                                                    dcterms:created "#{now}"^^xsd:datetime;
+                                                   ext:sessionRole "GelinktNotuleren-report-admin";
                                                    dcterms:modified "#{now}"^^xsd:datetime.
 }}
 )
