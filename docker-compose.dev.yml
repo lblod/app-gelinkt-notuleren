@@ -64,3 +64,11 @@ services:
     image: semtech/mu-registration-service:2.7.1
     links:
       - database:database
+  report-generation:
+    restart: "no"
+  dashboard-identifier:
+    restart: "no"
+  dashboard-dispatcher:
+    restart: "no"
+  dashboard-login:
+    restart: "no"
