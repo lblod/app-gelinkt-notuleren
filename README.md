@@ -135,6 +135,11 @@ At some times you may want te clean the database and make sure it's in a pristin
 
 Make sure to wait for the migrations to run.
 
+### Reports
+This project includes the report dashboard. To make use of it, set a salt for the dashboard-login service in the docker-compose.override.yml and make sure to create a user running:
+```
+mu script project-scripts generate-dashboard-login
+```
 ### External delta sync [EXPERIMENTAL]
 
 *DISCLAIMER: this is not 100% bulletproof*
