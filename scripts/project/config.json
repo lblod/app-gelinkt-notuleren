@@ -47,6 +47,22 @@
         "script": "mock-data/build.sh",
         "join_networks": true
       }
+    },
+    {
+      "documentation": {
+        "command": "generate-dashboard-login",
+        "description": "generate a login account",
+        "arguments": [
+        ]
+      },
+      "environment": {
+        "image": "ruby",
+        "interactive": true,
+        "script": "generate-login/run.sh"
+      },
+      "mounts": {
+        "app": "/project/"
+      }
     }
   ]
 }
