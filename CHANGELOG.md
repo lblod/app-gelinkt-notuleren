@@ -5,6 +5,22 @@
 
 
 
+
+## 2.16.0 (2022-09-09)
+
+#### :bug: Bug Fix
+* [#108](https://github.com/lblod/app-gelinkt-notuleren/pull/108) Bump mu-cl-resources to 1.21.1 ([@elpoelma](https://github.com/elpoelma))
+
+#### :house: Internal
+* [#109](https://github.com/lblod/app-gelinkt-notuleren/pull/109) Bump frontend to v2.31.0 ([@abeforgit](https://github.com/abeforgit))
+* [#107](https://github.com/lblod/app-gelinkt-notuleren/pull/107) :cloud: Upgrade frontend to 2.29.0 ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 3
+- Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
+- Elena Poelman ([@elpoelma](https://github.com/elpoelma))
+- Niels V ([@nvdk](https://github.com/nvdk))
+
+
 ## 2.15.1 (2022-07-12)
 
 #### :house: Internal
