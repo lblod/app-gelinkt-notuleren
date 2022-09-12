@@ -5,8 +5,14 @@ x-logging: &default-logging
     max-size: "10m"
     max-file: "3"
 services:
+  meeting:
+    image: lblod/meeting-service:0.0.3
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
   editor:
-    image: lblod/frontend-gelinkt-notuleren:2.23.1
+    image: lblod/frontend-gelinkt-notuleren:2.31.0
     links:
       - identifier:backend
     restart: always
@@ -104,7 +110,7 @@ services:
     labels:
       - "logging=true"
   resource:
-    image: semtech/mu-cl-resources:1.20.0
+    image: semtech/mu-cl-resources:1.21.1
     volumes:
       - ./config/resources:/config
     environment:
@@ -159,3 +165,56 @@ services:
     image: lblod/gn-agendapoint-service:1.0.2
     logging: *default-logging
     restart: always
+  dashboard:
+    image: lblod/frontend-dashboard:1.4.0
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
+    links:
+      - identifier:backend
+  dashboard-identifier:
+    image: semtech/mu-identifier:1.9.1
+    links:
+      - dashboard-dispatcher:dispatcher
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
+    environment:
+      DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: "[{\"variables\":[],\"name\":\"public\"}]"
+      DEFAULT_ACCESS_CONTROL_ALLOW_ORIGIN_HEADER: '*'
+      SESSION_COOKIE_SECURE: "on"
+      SESSION_COOKIE_SAME_SITE: "None"
+  dashboard-dispatcher:
+    image: semtech/mu-dispatcher:2.1.0-beta.1
+    volumes:
+      - ./config/dashboard-dispatcher:/config
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
+  dashboard-login:
+    image: semtech/mu-login-service:2.9.1
+    links:
+      - database:database
+    environment:
+      USERS_GRAPH: "http://mu.semte.ch/graphs/users"
+      SESSIONS_GRAPH: "http://mu.semte.ch/graphs/sessions"
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
+  report-generation:
+    image: lblod/loket-report-generation-service:0.5.0
+    links:
+      - database:database
+    environment:
+      DEFAULT_GRAPH: "http://mu.semte.ch/graphs/reports"
+    volumes:
+      - ./data/files:/share
+      - ./config/reports:/app/reports
+    restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
