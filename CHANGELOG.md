@@ -2,6 +2,140 @@
 
 
 
+
+
+
+
+## 2.16.0 (2022-09-09)
+
+#### :bug: Bug Fix
+* [#108](https://github.com/lblod/app-gelinkt-notuleren/pull/108) Bump mu-cl-resources to 1.21.1 ([@elpoelma](https://github.com/elpoelma))
+
+#### :house: Internal
+* [#109](https://github.com/lblod/app-gelinkt-notuleren/pull/109) Bump frontend to v2.31.0 ([@abeforgit](https://github.com/abeforgit))
+* [#107](https://github.com/lblod/app-gelinkt-notuleren/pull/107) :cloud: Upgrade frontend to 2.29.0 ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 3
+- Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
+- Elena Poelman ([@elpoelma](https://github.com/elpoelma))
+- Niels V ([@nvdk](https://github.com/nvdk))
+
+
+## 2.15.1 (2022-07-12)
+
+#### :house: Internal
+* [#106](https://github.com/lblod/app-gelinkt-notuleren/pull/106) :cloud: Upgrade frontend to 2.28.2 ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 1
+- Niels V ([@nvdk](https://github.com/nvdk))
+
+## 2.15.0 (2022-07-08)
+
+#### :rocket: Enhancement
+* [#100](https://github.com/lblod/app-gelinkt-notuleren/pull/100) Adding reporting service and dashboard frontend ([@benjay10](https://github.com/benjay10))
+* [#104](https://github.com/lblod/app-gelinkt-notuleren/pull/104) Addition of report generators and mu-login-service in order to access the reports. ([@elpoelma](https://github.com/elpoelma))
+
+#### Committers: 2
+- Ben ([@benjay10](https://github.com/benjay10))
+- Elena Poelman ([@elpoelma](https://github.com/elpoelma))
+
+## 2.14.3 (2022-07-06)
+
+#### :house: Internal
+* [#105](https://github.com/lblod/app-gelinkt-notuleren/pull/105) :cloud: Upgrade frontend to 2.28.1 ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 1
+- Niels V ([@nvdk](https://github.com/nvdk))
+
+## 2.14.2 (2022-06-30)
+
+#### :rocket: Enhancement
+* [#103](https://github.com/lblod/app-gelinkt-notuleren/pull/103) :cloud: Upgrade meeting to 0.0.3 validates if meeting can be deleted ([@nvdk](https://github.com/nvdk))
+* [#102](https://github.com/lblod/app-gelinkt-notuleren/pull/102) :cloud: Upgrade frontend to 2.28.0 ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 1
+- Niels V ([@nvdk](https://github.com/nvdk))
+
+## 2.14.1 (2022-06-17)
+
+#### :house: Internal
+* [#101](https://github.com/lblod/app-gelinkt-notuleren/pull/101) :cloud: Upgrade editor to 2.27.0 ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 1
+- Niels V ([@nvdk](https://github.com/nvdk))
+
+## 2.14.0 (2022-06-10)
+
+#### :rocket: Enhancement
+* [#99](https://github.com/lblod/app-gelinkt-notuleren/pull/99) :cloud: Upgrade editor to 2.26.0 ([@nvdk](https://github.com/nvdk))
+
+#### :house: Internal
+* [#97](https://github.com/lblod/app-gelinkt-notuleren/pull/97) add type and identifier to document container ([@nvdk](https://github.com/nvdk))
+* [#96](https://github.com/lblod/app-gelinkt-notuleren/pull/96) add irg archive folder ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 1
+- Niels V ([@nvdk](https://github.com/nvdk))
+
+## 2.13.0 (2022-06-09)
+
+#### :rocket: Enhancement
+* [#39](https://github.com/lblod/app-gelinkt-notuleren/pull/39) Feature/delete meetings ([@Asergey91](https://github.com/Asergey91))
+
+#### :house: Internal
+* [#98](https://github.com/lblod/app-gelinkt-notuleren/pull/98) upgrade frontend ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 2
+- Niels V ([@nvdk](https://github.com/nvdk))
+- Sergey Andreev ([@Asergey91](https://github.com/Asergey91))
+
+## 2.12.3 (2022-05-25)
+
+#### :bug: Bug Fix
+* [#95](https://github.com/lblod/app-gelinkt-notuleren/pull/95) Bump frontend to fix bug with copying text ([@abeforgit](https://github.com/abeforgit))
+
+#### Committers: 1
+- Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
+
+
+## 2.12.2 (2022-05-20)
+
+#### :bug: Bug Fix
+* [#94](https://github.com/lblod/app-gelinkt-notuleren/pull/94) Bump frontend to v2.24.1 to fix editor-initialization bug ([@abeforgit](https://github.com/abeforgit))
+
+#### Committers: 1
+- Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
+
+
+## 2.12.1 (2022-05-05)
+
+#### :bug: Bug Fix
+* [#93](https://github.com/lblod/app-gelinkt-notuleren/pull/93) fix title of mobility template again ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 1
+- Niels V ([@nvdk](https://github.com/nvdk))
+
+## 2.12.0 (2022-05-05)
+
+#### :rocket: Enhancement
+* [#92](https://github.com/lblod/app-gelinkt-notuleren/pull/92) bump frontend to 2.24.0 ([@nvdk](https://github.com/nvdk))
+* [#91](https://github.com/lblod/app-gelinkt-notuleren/pull/91) Bump frontend to latest prerelease ([@abeforgit](https://github.com/abeforgit))
+* [#90](https://github.com/lblod/app-gelinkt-notuleren/pull/90) Setup migration for correctly annotating the last missing citation ([@abeforgit](https://github.com/abeforgit))
+
+#### Committers: 1
+- Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
+- Niels V ([@nvdk](https://github.com/nvdk))
+
+
+## 2.12.0-0 (2022-04-08)
+
+#### :rocket: Enhancement
+* [#91](https://github.com/lblod/app-gelinkt-notuleren/pull/91) Bump frontend to latest prerelease ([@abeforgit](https://github.com/abeforgit))
+* [#90](https://github.com/lblod/app-gelinkt-notuleren/pull/90) Setup migration for correctly annotating the last missing citation ([@abeforgit](https://github.com/abeforgit))
+
+#### Committers: 1
+- Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
+
+
 ## 2.11.0 (2022-03-30)
 
 #### :rocket: Enhancement

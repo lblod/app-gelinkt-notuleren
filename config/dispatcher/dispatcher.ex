@@ -107,6 +107,10 @@ defmodule Dispatcher do
   match "/stemmingen/*path" do
     forward conn, path, "http://cache/stemmingen/"
   end
+  
+  delete "/zittingen/*path" do
+    forward conn, path, "http://meeting/"
+  end
 
   match "/zittingen/*path" do
     forward conn, path, "http://cache/zittingen/"
@@ -392,6 +396,7 @@ defmodule Dispatcher do
   match "/query/*path" do
     forward conn, path, "http://yasgui/"
   end
+  
   match "/*_" do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
