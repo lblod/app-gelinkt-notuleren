@@ -16,6 +16,8 @@ services:
   editor:
     restart: "no"
   identifier:
+    environment:
+      SESSION_COOKIE_SECURE: "false"
     ports:
       - "80:80"
     restart: "no"
