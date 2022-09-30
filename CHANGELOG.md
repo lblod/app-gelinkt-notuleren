@@ -6,6 +6,15 @@
 
 
 
+## 2.16.2 (2022-09-30)
+
+#### :house: Internal
+* [#110](https://github.com/lblod/app-gelinkt-notuleren/pull/110) Chore/move 2021 templates to own folder ([@nvdk](https://github.com/nvdk))
+* [#113](https://github.com/lblod/app-gelinkt-notuleren/pull/113) :cloud: Upgrade editor to 2.31.1 ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 1
+- Niels V ([@nvdk](https://github.com/nvdk))
+
 ## 2.16.1 (2022-09-19)
 
 ## 2.16.0 (2022-09-09)
