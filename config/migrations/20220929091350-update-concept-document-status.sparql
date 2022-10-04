@@ -1,0 +1,14 @@
+
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+DELETE WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://mu.semte.ch/application/editor-document-statuses/cfd751588a6c453296de9f9c0dff2af4> ext:EditorDocumentStatusName ?name.
+  }
+};
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://mu.semte.ch/application/editor-document-statuses/cfd751588a6c453296de9f9c0dff2af4> ext:EditorDocumentStatusName "in voorbereiding".
+  }
+}
