@@ -6,6 +6,18 @@
 
 
 
+
+## 2.17.0 (2022-10-06)
+
+#### :house: Internal
+* [#114](https://github.com/lblod/app-gelinkt-notuleren/pull/114) chore(deps): bump frontend to v2.23.0 ([@abeforgit](https://github.com/abeforgit))
+* [#112](https://github.com/lblod/app-gelinkt-notuleren/pull/112) Add migrations which rename 'concept' to 'in voorbereiding' ([@elpoelma](https://github.com/elpoelma))
+
+#### Committers: 2
+- Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
+- Elena Poelman ([@elpoelma](https://github.com/elpoelma))
+
+
 ## 2.16.2 (2022-09-30)
 
 #### :house: Internal
