@@ -6,6 +6,11 @@
 
 
 
+## 2.16.3 (2022-10-10)
+#### :bug: Bug Fix
+* hotfix: make sure actual start date of meeting is set correctly on create
+
+
 ## 2.16.2 (2022-09-30)
 
 #### :house: Internal
