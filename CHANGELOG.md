@@ -6,6 +6,11 @@
 
 
 
+## 2.16.4 (2022-10-17)
+* hotfix: reset table styles on print: seems to be the cause of the infinite pages on print
+
+
+
 ## 2.16.3 (2022-10-10)
 #### :bug: Bug Fix
 * hotfix: make sure actual start date of meeting is set correctly on create
