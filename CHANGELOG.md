@@ -6,6 +6,11 @@
 
 
 
+## 2.16.5 (2022-10-25)
+
+* Hotfix: fix selection bug with besluit-plugin
+
+
 ## 2.16.4 (2022-10-17)
 * hotfix: reset table styles on print: seems to be the cause of the infinite pages on print
 
