@@ -36,7 +36,10 @@
                                  :inverse t
                                  :as "document-container"))
   :has-many `((tasklist-solution :via ,(s-prefix "ext:editorDocumentTasklistSolution")
-                                 :as "tasklist-solutions"))
+                                 :as "tasklist-solutions")
+              (document-container :via ,(s-prefix "besluitpublicatie:Documentonderdeel")
+                                         :inverse t
+                                         :as "has-parts"))
   :resource-base (s-url "http://data.lblod.info/editor-documents/")
   :features `(no-pagination-defaults)
   :on-path "editor-documents")
@@ -103,8 +106,11 @@
               (versioned-besluiten-lijst :via ,(s-prefix "ext:hasVersionedBesluitenLijst")
                                          :as "versioned-besluiten-lijsten")
               (attachment :via ,(s-prefix "ext:hasAttachments")
-                          :as "attachments"))
+                          :as "attachments")
+              (editor-document :via ,(s-prefix "besluitpublicatie:Documentonderdeel")
+                                         :as "is-part-of"))
   :resource-base (s-url "http://data.lblod.info/document-containers/")
+  :features `(include-uri)
   :on-path "document-containers")
 
 (define-resource editor-document-status ()
