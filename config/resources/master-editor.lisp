@@ -37,7 +37,7 @@
                                  :as "document-container"))
   :has-many `((tasklist-solution :via ,(s-prefix "ext:editorDocumentTasklistSolution")
                                  :as "tasklist-solutions")
-              (document-container :via ,(s-prefix "besluitpublicatie:Documentonderdeel")
+              (document-container :via ,(s-prefix "dct:isPartOf")
                                          :inverse t
                                          :as "has-parts"))
   :resource-base (s-url "http://data.lblod.info/editor-documents/")
@@ -107,7 +107,7 @@
                                          :as "versioned-besluiten-lijsten")
               (attachment :via ,(s-prefix "ext:hasAttachments")
                           :as "attachments")
-              (editor-document :via ,(s-prefix "besluitpublicatie:Documentonderdeel")
+              (editor-document :via ,(s-prefix "dct:isPartOf")
                                          :as "is-part-of"))
   :resource-base (s-url "http://data.lblod.info/document-containers/")
   :features `(include-uri)
