@@ -9,7 +9,6 @@
 (add-prefix "persoon" "http://data.vlaanderen.be/ns/persoon#")
 (add-prefix "generiek" "http://data.vlaanderen.be/ns/generiek#")
 (add-prefix "mobiliteit" "https://data.vlaanderen.be/ns/mobiliteit#")
-(add-prefix "besluitpublicatie" "https://data.vlaanderen.be/doc/applicatieprofiel/besluit-publicatie#")
 
 (add-prefix "eli" "http://data.europa.eu/eli/ontology#")
 (add-prefix "m8g" "http://data.europa.eu/m8g/")
