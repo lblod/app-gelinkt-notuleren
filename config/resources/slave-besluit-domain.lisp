@@ -214,6 +214,9 @@
                 (:title :string ,(s-prefix "dct:title"))
                 (:gevolg :string ,(s-prefix "besluit:gevolg"))
                 (:onderwerp :string ,(s-prefix "besluit:onderwerp")))
+  :has-one  `((behandeling-van-agendapunt :via ,(s-prefix "besluit:heeftStemming")
+                          :inverse t
+                          :as "behandeling-van-agendapunt"))
   :has-many `((mandataris :via ,(s-prefix "besluit:heeftAanwezige")
                           :as "aanwezigen")
               (mandataris :via ,(s-prefix "besluit:heeftOnthouder")
