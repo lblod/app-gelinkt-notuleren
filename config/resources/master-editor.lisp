@@ -105,6 +105,7 @@
               (attachment :via ,(s-prefix "ext:hasAttachments")
                           :as "attachments"))
   :resource-base (s-url "http://data.lblod.info/document-containers/")
+  :features `(include-uri)
   :on-path "document-containers")
 
 (define-resource editor-document-status ()
