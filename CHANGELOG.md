@@ -6,6 +6,19 @@
 
 
 
+
+## 2.16.6 (2022-11-07)
+
+#### :rocket: Enhancement
+* [#120](https://github.com/lblod/app-gelinkt-notuleren/pull/120) HOTFIX: add inverse agendapoint relation to stemming ([@abeforgit](https://github.com/abeforgit))
+
+#### :house: Internal
+* [#121](https://github.com/lblod/app-gelinkt-notuleren/pull/121) chore(deps): bump frontend to v2.31.5 ([@abeforgit](https://github.com/abeforgit))
+
+#### Committers: 1
+- Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
+
+
 ## 2.16.5 (2022-10-25)
 
 * Hotfix: fix selection bug with besluit-plugin
