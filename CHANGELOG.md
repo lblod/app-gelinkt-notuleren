@@ -10,6 +10,18 @@
 
 
 
+
+## 2.20.0 (2022-11-07)
+
+#### :rocket: Enhancement
+* [#123](https://github.com/lblod/app-gelinkt-notuleren/pull/123) Add include-uri to document-container model ([@elpoelma](https://github.com/elpoelma))
+
+#### :house: Internal
+* [#124](https://github.com/lblod/app-gelinkt-notuleren/pull/124) Update frontend to 2.34.0 ([@elpoelma](https://github.com/elpoelma))
+
+#### Committers: 1
+- Elena Poelman ([@elpoelma](https://github.com/elpoelma))
+
 ## 2.19.0 (2022-11-07)
 
 #### :rocket: Enhancement
