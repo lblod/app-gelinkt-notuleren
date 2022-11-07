@@ -9,6 +9,16 @@
 
 
 
+
+## 2.19.0 (2022-11-07)
+
+#### :rocket: Enhancement
+* [#118](https://github.com/lblod/app-gelinkt-notuleren/pull/118) Add inverse agendapoint relation to stemming ([@elpoelma](https://github.com/elpoelma))
+
+#### Committers: 1
+- Elena Poelman ([@elpoelma](https://github.com/elpoelma))
+
+
 ## 2.18.1 (2022-10-25)
 
 #### :house: Internal
