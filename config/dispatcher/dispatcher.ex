@@ -292,8 +292,8 @@ defmodule Dispatcher do
     forward conn, path, "http://resource/versioned-notulen/"
   end
 
-  match "/versioned-reglementaire-bijlagen/*path" do
-    forward conn, path, "http://resource/versioned-reglementaire-bijlagen/"
+  match "/versioned-regulatory-statements/*path" do
+    forward conn, path, "http://resource/versioned-regulatory-statements/"
   end
 
   match "/blockchain-statuses/*path" do
