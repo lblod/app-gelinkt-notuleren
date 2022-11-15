@@ -94,9 +94,9 @@
   :has-one `((published-resource :via ,(s-prefix "ext:publishesReglementaireBijlage")
                                  :inverse t
                                  :as "published-resource")
-             (zitting :via ,(s-prefix "ext:hasVersionedReglementaireBijlage")
+             (versioned-behandeling :via ,(s-prefix "ext:hasVersionedReglementaireBijlage")
                                  :inverse t
-                                 :as "zitting")
+                                 :as "versioned-behandeling")
              (editor-document :via ,(s-prefix "ext:reglementaireBijlage")
                                          :as "reglementaireBijlage"))
   :resource-base (s-url "http://data.lblod.info/prepublished-reglementaire-bijlage/")
