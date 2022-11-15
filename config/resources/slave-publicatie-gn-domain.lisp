@@ -84,6 +84,25 @@
   :features '(include-uri)
   :on-path "versioned-behandelingen")
 
+(define-resource versioned-reglementaire-bijlage ()
+  :class (s-prefix "ext:VersionedReglementaireBijlage")
+  :properties `((:state :string ,(s-prefix "ext:stateString"))
+                (:content :string ,(s-prefix "ext:content")))
+  :has-many `((signed-resource :via ,(s-prefix "ext:signsReglementaireBijlage")
+                               :inverse t
+                               :as "signed-resources"))
+  :has-one `((published-resource :via ,(s-prefix "ext:publishesReglementaireBijlage")
+                                 :inverse t
+                                 :as "published-resource")
+             (zitting :via ,(s-prefix "ext:hasVersionedReglementaireBijlage")
+                                 :inverse t
+                                 :as "zitting")
+             (editor-document :via ,(s-prefix "ext:reglementaireBijlage")
+                                         :as "reglementaireBijlage"))
+  :resource-base (s-url "http://data.lblod.info/prepublished-reglementaire-bijlage/")
+  :features '(include-uri)
+  :on-path "versioned-reglementaire-bijlagen")
+
 
 (define-resource signed-resource ()
   :class (s-prefix "sign:SignedResource")
