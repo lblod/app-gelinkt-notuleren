@@ -15,11 +15,11 @@ defmodule Dispatcher do
   get "/sync/files/*path" do
     forward conn, path, "http://published-resource-producer/files/"
   end
-  
+
   get "/files/:id/download" do
     Proxy.forward conn, [], "http://file/files/" <> id <> "/download"
   end
-  
+
   post "/files/*path" do
     Proxy.forward conn, path, "http://file/files/"
   end
@@ -107,7 +107,7 @@ defmodule Dispatcher do
   match "/stemmingen/*path" do
     forward conn, path, "http://cache/stemmingen/"
   end
-  
+
   delete "/zittingen/*path" do
     forward conn, path, "http://meeting/"
   end
@@ -292,6 +292,10 @@ defmodule Dispatcher do
     forward conn, path, "http://resource/versioned-notulen/"
   end
 
+  match "/versioned-reglementaire-bijlagen/*path" do
+    forward conn, path, "http://resource/versioned-reglementaire-bijlagen/"
+  end
+
   match "/blockchain-statuses/*path" do
     forward conn, path, "http://resource/blockchain-statuses/"
   end
@@ -396,7 +400,7 @@ defmodule Dispatcher do
   match "/query/*path" do
     forward conn, path, "http://yasgui/"
   end
-  
+
   match "/*_" do
     send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
   end
