@@ -86,8 +86,7 @@
 
 (define-resource versioned-regulatory-statement ()
   :class (s-prefix "ext:VersionedRegulatoryStatement")
-  :properties `((:state :string ,(s-prefix "ext:stateString"))
-                (:content :string ,(s-prefix "ext:content")))
+  :properties `((:state :string ,(s-prefix "ext:stateString")))
   :has-many `((signed-resource :via ,(s-prefix "ext:signsRegulatoryStatement")
                                :inverse t
                                :as "signed-resources"))
@@ -98,7 +97,9 @@
                                  :inverse t
                                  :as "versioned-behandeling")
              (editor-document :via ,(s-prefix "ext:regulatoryStatement")
-                                         :as "regulatoryStatement"))
+                                         :as "regulatoryStatement")
+             (file :via ,(s-prefix "prov:generated")
+                            :as "file"))
   :resource-base (s-url "http://data.lblod.info/prepublished-regulatory-statement/")
   :features '(include-uri)
   :on-path "versioned-regulatory-statements")
