@@ -120,6 +120,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/VersionedNotulen",
                         "http://mu.semte.ch/vocabularies/ext/VersionedBesluitenLijst",
                         "http://mu.semte.ch/vocabularies/ext/VersionedBehandeling",
+                        "http://mu.semte.ch/vocabularies/ext/VersionedRegulatoryStatement",
                         "http://redpencil.data.gift/vocabularies/tasks/Task",
                         "http://mu.semte.ch/vocabularies/ext/TaskSolution",
                         "http://mu.semte.ch/vocabularies/ext/TasklistSolution",
@@ -184,6 +185,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/VersionedNotulen",
                         "http://mu.semte.ch/vocabularies/ext/VersionedBesluitenLijst",
                         "http://mu.semte.ch/vocabularies/ext/VersionedBehandeling",
+                        "http://mu.semte.ch/vocabularies/ext/VersionedRegulatoryStatement",
                         "http://mu.semte.ch/vocabularies/ext/signing/PublishedResource",
                         "http://redpencil.data.gift/vocabularies/tasks/Task",
                         "http://mu.semte.ch/vocabularies/ext/DocumentContainer", # needed to update status on publishing decision/notulen
@@ -242,7 +244,7 @@ defmodule Acl.UserGroups.Config do
                         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer",
                         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
                         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer"
-                      ]}}]}, 
+                      ]}}]},
       # // CLEANUP
       #
       %GraphCleanup{
