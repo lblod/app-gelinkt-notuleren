@@ -131,6 +131,8 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
+    volumes:
+      - ./data/files/:/share/
   file:
     image: semtech/mu-file-service:3.1.0
     restart: always
