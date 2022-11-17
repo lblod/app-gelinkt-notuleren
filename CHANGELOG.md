@@ -11,6 +11,18 @@
 
 
 
+
+## 2.20.1 (2022-11-17)
+
+#### :rocket: Enhancement
+* [#119](https://github.com/lblod/app-gelinkt-notuleren/pull/119) Feature: linking documents as parts of other documents. ([@elpoelma](https://github.com/elpoelma))
+
+#### :bug: Bug Fix
+* [#128](https://github.com/lblod/app-gelinkt-notuleren/pull/128) Add migration which replaces bepaald by bepaalt in besluit nieuwe stijl ([@elpoelma](https://github.com/elpoelma))
+
+#### Committers: 1
+- Elena Poelman ([@elpoelma](https://github.com/elpoelma))
+
 ## 2.20.0 (2022-11-07)
 
 #### :rocket: Enhancement
