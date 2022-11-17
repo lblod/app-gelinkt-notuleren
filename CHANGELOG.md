@@ -7,6 +7,15 @@
 
 
 
+
+## 2.16.7 (2022-11-17)
+
+#### :bug: Bug Fix
+* [#126](https://github.com/lblod/app-gelinkt-notuleren/pull/126) Add migration to fix 'bepaald' typo in besluit nieuwe stijl template ([@elpoelma](https://github.com/elpoelma))
+
+#### Committers: 1
+- Elena Poelman ([@elpoelma](https://github.com/elpoelma))
+
 ## 2.16.6 (2022-11-07)
 
 #### :rocket: Enhancement
