@@ -12,6 +12,19 @@
 
 
 
+
+## 2.21.0 (2022-11-18)
+
+#### :rocket: Enhancement
+* [#125](https://github.com/lblod/app-gelinkt-notuleren/pull/125) Regulatory statement publishing support ([@elpoelma](https://github.com/elpoelma))
+
+#### :house: Internal
+* [#130](https://github.com/lblod/app-gelinkt-notuleren/pull/130) Bump frontend to 2.35.0 ([@elpoelma](https://github.com/elpoelma))
+* [#129](https://github.com/lblod/app-gelinkt-notuleren/pull/129) Bump prepublish service to 1.7.0 ([@elpoelma](https://github.com/elpoelma))
+
+#### Committers: 1
+- Elena Poelman ([@elpoelma](https://github.com/elpoelma))
+
 ## 2.20.1 (2022-11-17)
 
 #### :rocket: Enhancement
