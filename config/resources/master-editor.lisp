@@ -29,6 +29,8 @@
                               :as "previous-version")
              (concept :via ,(s-prefix "dct:type")
                    :as "type")
+             (concept :via ,(s-prefix "ext:editorDocumentStatus")
+                      :as "status")
              (editor-document :via ,(s-prefix "pav:previousVersion")
                               :inverse t
                               :as "next-version")

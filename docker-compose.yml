@@ -124,13 +124,15 @@ services:
     labels:
       - "logging=true"
   preimporter:
-    image: lblod/notulen-prepublish-service:1.6.0
+    image: lblod/notulen-prepublish-service:1.7.0
     environment: 
       TZ: "Europe/Brussels"
     restart: always
     logging: *default-logging
     labels:
       - "logging=true"
+    volumes:
+      - ./data/files/:/share/
   file:
     image: semtech/mu-file-service:3.1.0
     restart: always
