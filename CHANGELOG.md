@@ -13,6 +13,14 @@
 
 
 
+## 2.21.2 (2022-12-07)
+
+#### :house: Internal
+* [#132](https://github.com/lblod/app-gelinkt-notuleren/pull/132) :cloud: Upgrade editor to 2.36.1 ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 1
+- Niels V ([@nvdk](https://github.com/nvdk))
+
 ## 2.21.1 (2022-12-07)
 
 #### :house: Internal
