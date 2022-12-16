@@ -1,4 +1,5 @@
 #!/bin/bash
+set -eu
 export="$1"
 tstamp=$(date +%Y%m%d%H%M%S)
 dir="/project/config/migrations/$tstamp-data-sync-mdb"
