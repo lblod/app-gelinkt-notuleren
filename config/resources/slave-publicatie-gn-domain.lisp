@@ -97,7 +97,7 @@
                                  :inverse t
                                  :as "versioned-behandeling")
              (editor-document :via ,(s-prefix "ext:regulatoryStatement")
-                                         :as "regulatoryStatement")
+                                         :as "regulatory-statement")
              (file :via ,(s-prefix "prov:generated")
                             :as "file"))
   :resource-base (s-url "http://data.lblod.info/prepublished-regulatory-statement/")
