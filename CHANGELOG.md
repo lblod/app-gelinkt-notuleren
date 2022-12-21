@@ -13,6 +13,10 @@
 
 
 
+## 2.21.3 (2022-12-21)
+bump frontend to v2.36.2 (hotfix)
+
+
 ## 2.21.2 (2022-12-07)
 
 #### :house: Internal
