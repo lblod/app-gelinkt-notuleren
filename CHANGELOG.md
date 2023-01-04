@@ -13,6 +13,23 @@
 
 
 
+
+## 2.21.4 (2023-01-04)
+
+#### :bug: Bug Fix
+* [#133](https://github.com/lblod/app-gelinkt-notuleren/pull/133) Fix wrong cased relationshipt on regulatory statement ([@lagartoverde](https://github.com/lagartoverde))
+
+#### :house: Internal
+* [#137](https://github.com/lblod/app-gelinkt-notuleren/pull/137) chore(deps): bump frontend to v2.37.0 ([@abeforgit](https://github.com/abeforgit))
+* [#136](https://github.com/lblod/app-gelinkt-notuleren/pull/136) Bump prepublisher ([@lagartoverde](https://github.com/lagartoverde))
+* [#134](https://github.com/lblod/app-gelinkt-notuleren/pull/134) bump migrations service ([@nvdk](https://github.com/nvdk))
+
+#### Committers: 3
+- Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
+- Niels V ([@nvdk](https://github.com/nvdk))
+- Oscar Rodriguez Villalobos ([@lagartoverde](https://github.com/lagartoverde))
+
+
 ## 2.21.3 (2022-12-21)
 bump frontend to v2.36.2 (hotfix)
 
