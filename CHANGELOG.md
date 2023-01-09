@@ -14,6 +14,15 @@
 
 
 
+
+## 2.21.5 (2023-01-09)
+
+#### :house: Internal
+* [#138](https://github.com/lblod/app-gelinkt-notuleren/pull/138) Bump prepublisher to 1.8.1 ([@elpoelma](https://github.com/elpoelma))
+
+#### Committers: 1
+- Elena Poelman ([@elpoelma](https://github.com/elpoelma))
+
 ## 2.21.4 (2023-01-04)
 
 #### :bug: Bug Fix
