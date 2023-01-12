@@ -15,6 +15,20 @@
 
 
 
+
+## 2.21.6 (2023-01-12)
+
+#### :rocket: Enhancement
+* [#140](https://github.com/lblod/app-gelinkt-notuleren/pull/140) Update mu-cl-resources with case-insensitive sort feature ([@elpoelma](https://github.com/elpoelma))
+
+#### :house: Internal
+* [#142](https://github.com/lblod/app-gelinkt-notuleren/pull/142) Update frontend to v2.37.3 ([@elpoelma](https://github.com/elpoelma))
+* [#141](https://github.com/lblod/app-gelinkt-notuleren/pull/141) Update frontend to v2.37.2 ([@elpoelma](https://github.com/elpoelma))
+* [#139](https://github.com/lblod/app-gelinkt-notuleren/pull/139) Update frontend to 2.37.1 ([@elpoelma](https://github.com/elpoelma))
+
+#### Committers: 1
+- Elena Poelman ([@elpoelma](https://github.com/elpoelma))
+
 ## 2.21.5 (2023-01-09)
 
 #### :house: Internal
