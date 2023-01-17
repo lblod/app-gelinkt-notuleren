@@ -1,0 +1,13 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://mu.semte.ch/application/concepts/81BE41E2-C6DA-4ED4-B076-6BDC82CE4F31> a skos:Concept;
+        mu:uuid "81BE41E2-C6DA-4ED4-B076-6BDC82CE4F31";
+        skos:prefLabel "toegewezen";
+        skos:inScheme <http://mu.semte.ch/application/concept-schemes/082b89ce4a8e42678689e9b35c6479d7>.
+  }
+}
