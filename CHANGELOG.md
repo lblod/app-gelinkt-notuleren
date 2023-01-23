@@ -13,6 +13,15 @@
 
 
 
+
+## 2.21.3-1 (2023-01-23)
+
+#### :house: Internal
+* [#144](https://github.com/lblod/app-gelinkt-notuleren/pull/144) Hotfix: bump frontend to 2.36.4 ([@elpoelma](https://github.com/elpoelma))
+
+#### Committers: 1
+- Elena Poelman ([@elpoelma](https://github.com/elpoelma))
+
 ## 2.21.3 (2022-12-21)
 bump frontend to v2.36.2 (hotfix)
 
