@@ -16,6 +16,25 @@
 
 
 
+
+## 3.0.0 (2023-01-25)
+
+#### :house: Internal
+* [#145](https://github.com/lblod/app-gelinkt-notuleren/pull/145) chore(deps): bump frontend to 3.0.0 ([@abeforgit](https://github.com/abeforgit))
+
+#### Committers: 1
+- Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
+
+
+## v2.21.3-1 (2023-01-23)
+
+#### :house: Internal
+* [#144](https://github.com/lblod/app-gelinkt-notuleren/pull/144) Hotfix: bump frontend to 2.36.4 ([@elpoelma](https://github.com/elpoelma))
+
+#### Committers: 1
+- Elena Poelman ([@elpoelma](https://github.com/elpoelma))
+
+
 ## 2.21.6 (2023-01-12)
 
 #### :rocket: Enhancement
