@@ -18,6 +18,20 @@
 
 
 
+
+## 3.1.0 (2023-01-26)
+
+#### :rocket: Enhancement
+* [#143](https://github.com/lblod/app-gelinkt-notuleren/pull/143) Add new status toegewezen for regulatory statements ([@lagartoverde](https://github.com/lagartoverde))
+
+#### :house: Internal
+* [#147](https://github.com/lblod/app-gelinkt-notuleren/pull/147) chore(frontend): bump frontend to 3.1.0 ([@abeforgit](https://github.com/abeforgit))
+
+#### Committers: 2
+- Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
+- Oscar Rodriguez Villalobos ([@lagartoverde](https://github.com/lagartoverde))
+
+
 ## 3.0.1 (2023-01-25)
 
 #### :house: Internal
