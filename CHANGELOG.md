@@ -19,6 +19,15 @@
 
 
 
+
+## 3.2.0 (2023-02-06)
+
+#### :house: Internal
+* [#148](https://github.com/lblod/app-gelinkt-notuleren/pull/148) Update frontend to 3.2.0 ([@elpoelma](https://github.com/elpoelma))
+
+#### Committers: 1
+- Elena Poelman ([@elpoelma](https://github.com/elpoelma))
+
 ## 3.1.0 (2023-01-26)
 
 #### :rocket: Enhancement
