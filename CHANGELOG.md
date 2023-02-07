@@ -1,34 +1,28 @@
+# Changelog
 
+All notable changes to this project will be documented in this file.
 
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
 
+### Changed
 
+- move to keep-a-changelog for changelog management
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 3.2.0 (2023-02-06)
+## [3.2.0] - 2023-02-06
 
 #### :house: Internal
-* [#148](https://github.com/lblod/app-gelinkt-notuleren/pull/148) Update frontend to 3.2.0 ([@elpoelma](https://github.com/elpoelma))
+
+* [#148](https://github.com/lblod/app-gelinkt-notuleren/pull/148) Update frontend to
+  3.2.0 ([@elpoelma](https://github.com/elpoelma))
 
 #### Committers: 1
+
 - Elena Poelman ([@elpoelma](https://github.com/elpoelma))
 
-## 3.1.0 (2023-01-26)
+## [3.1.0] - 2023-01-26
 
 #### :rocket: Enhancement
 * [#143](https://github.com/lblod/app-gelinkt-notuleren/pull/143) Add new status toegewezen for regulatory statements ([@lagartoverde](https://github.com/lagartoverde))
