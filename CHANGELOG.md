@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.2.1] - 2023-02-08
+
 ### Changed
 
 - bump frontend to v3.2.1
@@ -620,3 +622,6 @@ bump frontend to v2.36.2 (hotfix)
 #### Committers: 1
 - Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
 
+
+[unreleased]: https://github.com/lblod/app-gelinkt-notuleren/compare/v3.2.1...HEAD
+[3.2.1]: https://github.com/lblod/app-gelinkt-notuleren/compare/v3.2.0...v3.2.1
