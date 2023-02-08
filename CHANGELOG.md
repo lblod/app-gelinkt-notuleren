@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- bump frontend to v3.2.1
 - move to keep-a-changelog for changelog management
 
 ## [3.2.0] - 2023-02-06
