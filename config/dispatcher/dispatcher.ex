@@ -240,6 +240,10 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/rdfs-properties/"
   end
 
+  match "/publishing-logs/*path" do
+    forward conn, path, "http://cache/publishing-logs/"
+  end
+
   #################################################################
   # Adressenregister
   #################################################################
