@@ -115,6 +115,23 @@
   :features `(include-uri)
   :on-path "document-containers")
 
+(define-resource publishing-log ()
+  :class (s-prefix "ext:PublishingLog")
+  :properties `((:action :string ,(s-prefix "ext:publishingAction"))
+              (:date :datetime ,(s-prefix "pav:createdOn")))
+  :has-one `((published-resource :via ,(s-prefix "ext:hasPublishedResource")
+                               :as "published-resource")
+             (signed-resource :via ,(s-prefix "ext:hasSignedResource")
+                               :as "signed-resource")
+              (gebruiker :via ,(s-prefix "ext:responsibleUser")
+                                         :as "user")
+              (zitting :via ,(s-prefix "ext:hasPublishingLog")
+                                         :inverse t
+                                         :as "zitting"))
+  :resource-base (s-url "http://data.lblod.info/publishing-logs/")
+  :features `(include-uri)
+  :on-path "publishing-logs")
+
 (define-resource editor-document-status ()
   :class (s-prefix "ext:EditorDocumentStatus")
   :properties `((:name :string ,(s-prefix "ext:EditorDocumentStatusName")))
