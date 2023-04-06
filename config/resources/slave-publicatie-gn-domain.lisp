@@ -145,7 +145,7 @@
                                         :as "versioned-besluiten-lijst")
              (versioned-behandeling :via ,(s-prefix "ext:publishesBehandeling")
                                         :as "versioned-behandeling")
-             (versioned-notulen :via ,(s-prefix "ext:publiseshNotulen")
+             (versioned-notulen :via ,(s-prefix "ext:publishesNotulen")
                                 :as "versioned-notulen")
              (gebruiker :via ,(s-prefix "sign:signatory")
                         :as "gebruiker"))
