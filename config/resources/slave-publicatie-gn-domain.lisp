@@ -4,7 +4,8 @@
   :class (s-prefix "ext:VersionedAgenda")
   :properties `((:state :string ,(s-prefix "ext:stateString"))
                 (:content :string ,(s-prefix "ext:content"))
-                (:kind :string ,(s-prefix "ext:agendaKind")))
+                (:kind :string ,(s-prefix "ext:agendaKind"))
+                (:deleted :boolean ,(s-prefix "ext:deleted")))
   :has-many `(
               (signed-resource :via ,(s-prefix "ext:signsAgenda")
                                :inverse t
@@ -27,7 +28,8 @@
 (define-resource versioned-besluiten-lijst ()
   :class (s-prefix "ext:VersionedBesluitenLijst")
   :properties `((:state :string ,(s-prefix "ext:stateString"))
-                (:content :string ,(s-prefix "ext:content")))
+                (:content :string ,(s-prefix "ext:content"))
+                (:deleted :boolean ,(s-prefix "ext:deleted")))
   :has-many `((signed-resource :via ,(s-prefix "ext:signsBesluitenlijst")
                                :inverse t
                                :as "signed-resources"))
@@ -49,7 +51,8 @@
                 (:content :string ,(s-prefix "ext:content"))
                 (:public-content :string ,(s-prefix "ext:publicContent"))
                 (:public-behandelingen :uri-set ,(s-prefix "ext:publicBehandeling"))
-                (:kind :string ,(s-prefix "ext:notulenKind")))
+                (:kind :string ,(s-prefix "ext:notulenKind"))
+                (:deleted :boolean ,(s-prefix "ext:deleted")))
   :has-many `((signed-resource :via ,(s-prefix "ext:signsNotulen")
                                :inverse t
                                :as "signed-resources"))
@@ -68,7 +71,8 @@
 (define-resource versioned-behandeling ()
   :class (s-prefix "ext:VersionedBehandeling")
   :properties `((:state :string ,(s-prefix "ext:stateString"))
-                (:content :string ,(s-prefix "ext:content")))
+                (:content :string ,(s-prefix "ext:content"))
+                (:deleted :boolean ,(s-prefix "ext:deleted")))
   :has-many `((signed-resource :via ,(s-prefix "ext:signsBehandeling")
                                :inverse t
                                :as "signed-resources"))
@@ -109,7 +113,8 @@
   :class (s-prefix "sign:SignedResource")
   :properties `((:content :string ,(s-prefix "sign:text"))
                 (:hash-value :string ,(s-prefix "sign:hashValue"))
-                (:created-on :datetime ,(s-prefix "dct:created")))
+                (:created-on :datetime ,(s-prefix "dct:created"))
+                (:deleted :boolean ,(s-prefix "ext:deleted")))
   :has-one `((blockchain-status :via ,(s-prefix "sign:status")
                                 :as "status")
              (agenda :via ,(s-prefix "ext:signsAgenda")
@@ -140,7 +145,7 @@
                                         :as "versioned-besluiten-lijst")
              (versioned-behandeling :via ,(s-prefix "ext:publishesBehandeling")
                                         :as "versioned-behandeling")
-             (versioned-notulen :via ,(s-prefix "ext:publiseshNotulen")
+             (versioned-notulen :via ,(s-prefix "ext:publishesNotulen")
                                 :as "versioned-notulen")
              (gebruiker :via ,(s-prefix "sign:signatory")
                         :as "gebruiker"))
@@ -176,6 +181,7 @@
                 (:agenda-status :string ,(s-prefix "bv:agendaStatus"))
                 (:agenda-type :string ,(s-prefix "bv:agendaType"))
                 (:rendered-content :string ,(s-prefix "ext:renderedContent"))
+                (:deleted :boolean ,(s-prefix "ext:deleted"))
                 )
   :has-one `(
              (zitting :via ,(s-prefix "bv:isAgendaVoor")
