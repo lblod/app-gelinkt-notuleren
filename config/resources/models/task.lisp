@@ -23,6 +23,9 @@
   :features '(include-uri)
   :on-path "tasks")
 
+
+;; Old (overwritten) version of the task model
+;;
 ;; (define-resource task ()
 ;;   :class (s-prefix "ext:Task")
 ;;   :properties `((:title :string ,(s-prefix "ext:taskTitle"))
