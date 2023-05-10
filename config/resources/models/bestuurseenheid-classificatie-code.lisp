@@ -1,0 +1,7 @@
+(define-resource bestuurseenheid-classificatie-code ()
+  :class (s-prefix "ext:BestuurseenheidClassificatieCode")
+  :properties `((:label :string ,(s-prefix "skos:prefLabel"))
+                (:scope-note :string ,(s-prefix "skos:scopeNote")))
+  :resource-base (s-url "http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/")
+  :features '(include-uri)
+  :on-path "bestuurseenheid-classificatie-codes")

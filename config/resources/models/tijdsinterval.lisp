@@ -1,0 +1,7 @@
+(define-resource tijdsinterval ()
+  :class (s-prefix "dct:PeriodOfTime")
+  :properties `((:begin :datetime ,(s-prefix "generiek:begin"))
+                (:einde :datetime ,(s-prefix "generiek:einde")))
+  :resource-base (s-url "http://data.lblod.info/id/tijdsintervallen/")
+  :features '(include-uri)
+  :on-path "tijdsintervallen")

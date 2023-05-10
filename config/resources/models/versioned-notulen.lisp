@@ -1,0 +1,22 @@
+(define-resource versioned-notulen ()
+  :class (s-prefix "ext:VersionedNotulen")
+  :properties `((:state :string ,(s-prefix "ext:stateString"))
+                (:content :string ,(s-prefix "ext:content"))
+                (:public-content :string ,(s-prefix "ext:publicContent"))
+                (:public-behandelingen :uri-set ,(s-prefix "ext:publicBehandeling"))
+                (:kind :string ,(s-prefix "ext:notulenKind"))
+                (:deleted :boolean ,(s-prefix "ext:deleted")))
+  :has-many `((signed-resource :via ,(s-prefix "ext:signsNotulen")
+                               :inverse t
+                               :as "signed-resources"))
+  :has-one `((published-resource :via ,(s-prefix "ext:publishesNotulen")
+                                 :inverse t
+                                 :as "published-resource")
+             (editor-document :via ,(s-prefix "prov:wasDerivedFrom")
+                              :as "editor-document")
+             (zitting :via ,(s-prefix "ext:hasVersionedNotulen")
+                                 :inverse t
+                                 :as "zitting"))
+  :resource-base (s-url "http://data.lblod.info/prepublished-notulen/")
+  :features '(include-uri)
+  :on-path "versioned-notulen")

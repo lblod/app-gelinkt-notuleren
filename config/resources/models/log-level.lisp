@@ -1,0 +1,7 @@
+(define-resource log-level ()
+  :class (s-prefix "rlog:Level")
+  :properties `((:priority :number ,(s-prefix "rlog:priority"))
+                (:label :string ,(s-prefix "skos:prefLabel")))
+  :resource-base (s-url "http://data.lblod.info/id/log-levels/")
+  :features `(include-uri)
+  :on-path "log-levels")

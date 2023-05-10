@@ -1,0 +1,7 @@
+(define-resource geslacht-code ()
+  :class (s-prefix "ext:GeslachtCode")
+  :properties `((:label :string ,(s-prefix "skos:prefLabel"))
+                (:scope-note :string ,(s-prefix "skos:scopeNote")))
+  :resource-base (s-url "http://data.vlaanderen.be/id/concept/GeslachtCode/")
+  :features '(include-uri)
+  :on-path "geslacht-codes")

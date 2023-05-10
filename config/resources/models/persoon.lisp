@@ -1,0 +1,23 @@
+(define-resource persoon ()
+  :class (s-prefix "person:Person")
+  :properties `((:achternaam :string ,(s-prefix "foaf:familyName"))
+                (:alternatieve-naam :string ,(s-prefix "foaf:name"))
+                (:gebruikte-voornaam :string ,(s-prefix "persoon:gebruikteVoornaam")))
+  :has-many `((mandataris :via ,(s-prefix "mandaat:isBestuurlijkeAliasVan")
+                          :inverse t
+                          :as "is-aangesteld-als")
+              (kandidatenlijst :via ,(s-prefix "mandaat:heeftKandidaat")
+                               :inverse t
+                               :as "is-kandidaat-voor")
+              (verkiezingsresultaat :via ,(s-prefix "mandaat:isResultaatVan")
+                        :inverse t
+                        :as "verkiezingsresultaten"))
+  :has-one `((geboorte :via ,(s-prefix "persoon:heeftGeboorte")
+                       :as "geboorte")
+             (identificator :via ,(s-prefix "adms:identifier")
+                            :as "identificator")
+             (geslacht-code :via ,(s-prefix "persoon:geslacht")
+                            :as "geslacht"))
+  :resource-base (s-url "http://data.lblod.info/id/personen/")
+  :features '(include-uri)
+  :on-path "personen")

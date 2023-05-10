@@ -1,0 +1,12 @@
+;;TODO how to relate to superclass 'Rechtsgrond' for citeert/corrigeert/gecorrigeerd door/verandert/...
+(define-resource rechtsgrond-besluit ()
+  :class (s-prefix "eli:LegalResource")
+  :properties `((:buitenwerkingtreding :date ,(s-prefix "eli:date_no_longer_in_force"))
+                (:inwerkingtreding :date ,(s-prefix "eli:first_date_entry_in_force")))
+  :has-many `((rechtsgrond-artikel :via ,(s-prefix "eli:has_part")
+                                   :as "rechtsgronden-artikel"))
+  :has-one `((bestuursorgaan :via ,(s-prefix "eli:passed_by")
+                             :as "bestuursorgaan"))
+  :resource-base (s-url "http://data.lblod.info/id/rechtsgronden-besluit/")
+  :features '(include-uri)
+  :on-path "rechtsgronden-besluit")

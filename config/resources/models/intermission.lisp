@@ -1,0 +1,13 @@
+(define-resource intermission ()
+  :class (s-prefix "ext:Intermission")
+  :properties `((:started-at :datetime ,(s-prefix "prov:startedAtTime"))
+                (:ended-at :datetime ,(s-prefix "prov:endedAtTime"))
+                (:comment :string ,(s-prefix "rdfs:comment")))
+  :has-one `((zitting :via ,(s-prefix "ext:hasIntermission")
+                      :inverse t
+                      :as "zitting")
+              (agenda-position :via ,(s-prefix "ext:agendaPosition")
+                      :as "agenda-position"))
+  :resource-base (s-url "http://data.lblod.info/id/intermissions/")
+  :features '(include-uri)
+  :on-path "intermissions")
