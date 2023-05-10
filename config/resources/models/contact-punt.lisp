@@ -11,3 +11,20 @@
   :features '(include-uri)
   :resource-base (s-url "http://data.lblod.info/id/contact-punten/")
   :on-path "contact-punten")
+
+;; Old (overwritten) version of contact-punt
+;;
+;; (define-resource contact-punt ()
+;;   :class (s-prefix "schema:PostalAddress")
+;;   :properties `((:land :string ,(s-prefix "schema:addressCountry"))
+;;                 (:gemeente :string ,(s-prefix "schema:addressLocality"))
+;;                 (:adres :string ,(s-prefix "schema:streetAddress"))
+;;                 (:postcode :string ,(s-prefix "schema:postalCode"))
+;;                 (:email :string ,(s-prefix "schema:email"))
+;;                 (:telephone :string ,(s-prefix "schema:telephone"))
+;;                 (:fax :string ,(s-prefix "schema:faxNumber"))
+;;                 (:website :string ,(s-prefix "schema:url")))
+;;   :resource-base (s-url "http://data.lblod.info/id/contactpunt/")
+;;   :features '(include-uri)
+;;   :on-path "contact-punten"
+;;   )
