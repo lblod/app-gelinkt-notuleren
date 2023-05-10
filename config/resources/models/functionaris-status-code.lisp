@@ -1,0 +1,7 @@
+(define-resource functionaris-status-code ()
+  :class (s-prefix "lblodlg:FunctionarisStatusCode")
+  :properties `((:label :string ,(s-prefix "skos:prefLabel"))
+                (:scope-note :string ,(s-prefix "skos:scopeNote")))
+  :resource-base (s-url "http://data.vlaanderen.be/id/concept/functionarisStatusCode/")
+  :features '(include-uri)
+  :on-path "functionaris-status-codes")

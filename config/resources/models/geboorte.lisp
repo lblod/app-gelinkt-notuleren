@@ -1,0 +1,6 @@
+(define-resource geboorte ()
+  :class (s-prefix "persoon:Geboorte")
+  :properties `((:datum :date ,(s-prefix "persoon:datum")))
+  :resource-base (s-url "http://data.lblod.info/id/geboortes/")
+  :features '(include-uri)
+  :on-path "geboortes")

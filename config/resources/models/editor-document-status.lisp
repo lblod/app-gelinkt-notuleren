@@ -1,0 +1,6 @@
+(define-resource editor-document-status ()
+  :class (s-prefix "ext:EditorDocumentStatus")
+  :properties `((:name :string ,(s-prefix "ext:EditorDocumentStatusName")))
+  :resource-base (s-url "http://data.lblod.info/editor-document-statuses/")
+  :features `(no-pagination-defaults)
+  :on-path "editor-document-statuses")

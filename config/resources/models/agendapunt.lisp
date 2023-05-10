@@ -1,0 +1,28 @@
+(define-resource agendapunt ()
+  :class (s-prefix "besluit:Agendapunt")
+  :properties `((:beschrijving :string ,(s-prefix "dct:description"))
+                (:gepland-openbaar :boolean ,(s-prefix "besluit:geplandOpenbaar"))
+                (:heeft-ontwerpbesluit :url ,(s-prefix "besluit:heeftOntwerpbesluit"))
+                (:titel :string ,(s-prefix "dct:title"))
+                (:type :uri-set ,(s-prefix "besluit:Agendapunt.type"))
+                (:position :int ,(s-prefix "schema:position")))
+  :has-many `((agendapunt :via ,(s-prefix "dct:references")
+                          :as "referenties")
+              (published-resource :via ,(s-prefix "prov:wasDerivedFrom")
+                                  :as "publications"))
+  :has-one `((agendapunt :via ,(s-prefix "besluit:aangebrachtNa")
+                         :as "vorige-agendapunt")
+             (behandeling-van-agendapunt :via ,(s-prefix "dct:subject")
+                                         :inverse t 
+                                         :as "behandeling")
+             (zitting :via ,(s-prefix "besluit:behandelt")
+                      :inverse t
+                      :as "zitting")
+             (agenda :via ,(s-prefix "dct:isPartOf")
+                     :inverse t
+                     :as "agenda"
+                     )
+             )
+  :resource-base (s-url "http://data.lblod.info/id/agendapunten/")
+  :features '(include-uri)
+  :on-path "agendapunten")

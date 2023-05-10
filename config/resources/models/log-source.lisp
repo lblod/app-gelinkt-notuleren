@@ -1,0 +1,6 @@
+(define-resource log-source ()
+  :class (s-prefix "ext:LogSource")
+  :properties `((:label :string ,(s-prefix "skos:prefLabel")))
+  :resource-base (s-url "http://data.lblod.info/id/log-sources/")
+  :features `(include-uri)
+  :on-path "log-sources")

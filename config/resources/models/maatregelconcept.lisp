@@ -1,0 +1,10 @@
+(define-resource maatregelconcept ()
+  :class (s-prefix "lblodmow:MaatregelConcept")
+  :properties `((:beschrijving :string ,(s-prefix "dct:description")))
+  :has-one `((verkeersbordcombinatie :via ,(s-prefix "dct:hasPart")
+                                     :inverse t
+                                     :as "combinaties")
+             (verkeersbordconcept :via ,(s-prefix "lblodmow:verkeersbordconcept")
+                                  :as "verkeersbordconcept"))
+  :resource-base (s-url "http://data.lblod.info/maatregelconcepten/")
+  :on-path "maatregelconcepten")

@@ -1,0 +1,12 @@
+(define-resource lidmaatschap ()
+  :class (s-prefix "org:Membership")
+  :has-one `((fractie :via ,(s-prefix "org:organisation")
+                      :as "binnen-fractie")
+             (mandataris :via ,(s-prefix "org:hasMembership")
+                         :inverse t
+                         :as "lid")
+             (tijdsinterval :via ,(s-prefix "org:memberDuring")
+                            :as "lid-gedurende"))
+  :resource-base (s-url "http://data.lblod.info/id/lidmaatschappen/")
+  :features '(include-uri)
+  :on-path "lidmaatschappen")

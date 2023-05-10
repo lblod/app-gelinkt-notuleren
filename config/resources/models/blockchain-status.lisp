@@ -1,0 +1,7 @@
+(define-resource blockchain-status ()
+  :class (s-prefix "sign:BlockchainStatus")
+  :properties `((:title :string ,(s-prefix "dct:title"))
+                (:description :string ,(s-prefix "dct:description")))
+  :resource-base (s-url "http://data.lblod.info/blockchain-statuses/")
+  :features '(include-uri)
+  :on-path "blockchain-statuses")
