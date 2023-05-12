@@ -271,6 +271,9 @@ defmodule Dispatcher do
   match "/publication-tasks/*path" do
     forward conn, path, "http://preimporter/publication-tasks/"
   end
+  post "/signed-resources" do
+    forward conn, [], "http://preimporter/signed-resources"
+  end
 
   match "/signed-resources/*path" do
     forward conn, path, "http://resource/signed-resources/"
