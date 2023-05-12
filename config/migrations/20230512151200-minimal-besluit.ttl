@@ -1,0 +1,17 @@
+<http://lblod.info/templates/b04fc03e-e8ff-496a-9343-1f07b4f55551> a <http://mu.semte.ch/vocabularies/ext/Template>;
+  <http://purl.org/dc/terms/title> "Minimaal besluit (nieuwe stijl)";
+  <http://mu.semte.ch/vocabularies/core/uuid> "b04fc03e-e8ff-496a-9343-1f07b4f55551";
+  <http://mu.semte.ch/vocabularies/ext/activeInContext> <http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt>;
+  <http://mu.semte.ch/vocabularies/ext/disabledInContext> <http://data.vlaanderen.be/ns/besluit#Besluit>;
+  <http://mu.semte.ch/vocabularies/ext/templateContent> """
+
+<div property="prov:generated" resource="http://data.lblod.info/id/besluiten/${generateUuid()}" typeof="besluit:Besluit ext:BesluitNieuweStijl">
+  <p>Openbare titel besluit:</p>
+  <h4 class="h4" property="eli:title" datatype="xsd:string"><span class="mark-highlight-manual">Geef titel besluit op</span></h4>
+  <span style="display:none;" property="eli:language" resource="http://publications.europa.eu/resource/authority/language/NLD" typeof="skos:Concept">&nbsp;</span>
+  <br>
+  <p>Korte openbare beschrijving:</p>
+  <p property="eli:description" datatype="xsd:string"><span class="mark-highlight-manual">Geef korte beschrijving op</span></p>
+</div>
+""";
+<http://mu.semte.ch/vocabularies/ext/templateMatches> "Voeg sjabloon in voor besluit of vrij tekstveld (bijvoorbeeld voor een vraag, antwoord of tussenkomst)".
