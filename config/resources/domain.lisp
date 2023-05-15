@@ -189,9 +189,7 @@
              (document-container :via ,(s-prefix "pav:hasVersion")
                                  :inverse t
                                  :as "document-container"))
-  :has-many `((tasklist-solution :via ,(s-prefix "ext:editorDocumentTasklistSolution")
-                                 :as "tasklist-solutions")
-              (document-container :via ,(s-prefix "dct:isPartOf")
+  :has-many `((document-container :via ,(s-prefix "dct:isPartOf")
                                          :inverse t
                                          :as "parts"))
   :resource-base (s-url "http://data.lblod.info/editor-documents/")
