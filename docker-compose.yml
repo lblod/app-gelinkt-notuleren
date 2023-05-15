@@ -47,7 +47,7 @@ services:
     labels:
       - "logging=true"
   database:
-    image: semtech/mu-authorization:0.6.0-beta.5
+    image: semtech/mu-authorization:0.6.0-beta.8
     environment:
       MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
       DATABASE_COMPATIBILITY: Virtuoso
@@ -110,7 +110,7 @@ services:
     labels:
       - "logging=true"
   resource:
-    image: semtech/mu-cl-resources:feature-case-insensitive-sort
+    image: semtech/mu-cl-resources:1.22.1
     volumes:
       - ./config/resources:/config
     environment:

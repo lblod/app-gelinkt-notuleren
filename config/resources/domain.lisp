@@ -9,7 +9,73 @@
    of responses in the result object's meta.")
 (defparameter *max-group-sorted-properties* nil)
 (setf sparql:*experimental-no-application-graph-for-sudo-select-queries* t)
+(define-typed-literal-importer "http://www.w3.org/2001/XMLSchema#decimal"
+    (value object)
+  (declare (ignore object))
+  value)
 
+(define-typed-literal-importer "http://www.w3.org/2001/XMLSchema#string"
+    (value object)
+  (declare (ignore object))
+  value)
+
+(define-typed-literal-importer "http://www.w3.org/2001/XMLSchema#float"
+    (value object)
+  (declare (ignore object))
+  value)
+
+(define-typed-literal-importer "http://www.w3.org/2001/XMLSchema#double"
+    (value object)
+  (declare (ignore object))
+  value)
+
+(define-typed-literal-importer "http://www.w3.org/2001/XMLSchema#integer"
+    (value object)
+  (declare (ignore object))
+  value)
+
+(define-typed-literal-importer "http://www.w3.org/2001/XMLSchema#int"
+    (value object)
+  (declare (ignore object))
+  value)
+(defun handle-relation-get-call (base-path id relation)
+  (handler-case
+      (progn
+        (verify-json-api-request-accept-header)
+        (let* ((resource (find-resource-by-path base-path))
+               (link (find-resource-link-by-path resource relation)))
+          (show-relation-call resource id link)))
+    (incorrect-accept-header (condition)
+      (respond-not-acceptable (jsown:new-js
+                                ("errors" (jsown:new-js
+                                            ("title" (description condition)))))))
+    (configuration-error (condition)
+      (respond-server-error
+       (jsown:new-js
+         ("errors" (jsown:new-js
+                     ("title" (s+ "Server configuration issue: " (description condition))))))))
+    (no-such-resource ()
+      (respond-not-found))
+    (no-such-property (condition)
+      (let ((message
+             (format nil "Could not find property (~A) on resource (~A)."
+                     (path condition) (json-type (resource condition)))))
+        (respond-not-acceptable (jsown:new-js
+                                  ("errors" (jsown:new-js
+                                              ("title" message)))))))
+    (cl-fuseki:sesame-exception (exception)
+      (declare (ignore exception))
+      (respond-server-error
+       (jsown:new-js
+         ("errors" (jsown:new-js
+                     ("title" (s+ "Could not execute SPARQL query.")))))))
+    (no-such-link (condition)
+      (let ((message
+             (format nil "Could not find link (~A) on resource (~A)."
+                     (path condition) (json-type (resource condition)))))
+        (respond-not-acceptable (jsown:new-js
+                                  ("errors" (jsown:new-js
+                                              ("title" message)))))))))
 (read-domain-file "slave-besluit-domain.lisp")
 (read-domain-file "slave-mandaat-domain.lisp")
 (read-domain-file "slave-organisatie-domain.lisp")
