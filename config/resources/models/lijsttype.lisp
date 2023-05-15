@@ -1,7 +1,0 @@
-(define-resource lijsttype ()
-  :class (s-prefix "ext:KandidatenlijstLijsttype")
-  :properties `((:label :string ,(s-prefix "skos:prefLabel"))
-                (:scope-note :string ,(s-prefix "skos:scopeNote")))
-  :resource-base (s-url "http://data.vlaanderen.be/id/concept/KandidatenlijstLijsttype/")
-  :features '(include-uri)
-  :on-path "lijsttypes")

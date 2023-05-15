@@ -1,6 +1,0 @@
-(define-resource status-code ()
-  :class (s-prefix "rlog:StatusCode")
-  :properties `((:code :number ,(s-prefix "rlog:codeId")))
-  :resource-base (s-url "http://data.lblod.info/id/status-codes/")
-  :features `(include-uri)
-  :on-path "status-codes")
