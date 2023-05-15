@@ -1282,51 +1282,6 @@
   :on-path "data-containers"
 )
 
-;;TODO: is this model still in use/relevant?
-(define-resource tasklist-solution ()
-  :class (s-prefix "ext:TasklistSolution")
-
-  :properties `((:name :string ,(s-prefix "ext:tasklistSolutionName"))
-                (:index :number ,(s-prefix "ext:tasklistSolutionIndex")))
-
-  :has-one `((tasklist :via ,(s-prefix "ext:tasklistSolutionTasklist")
-                        :as "tasklist"))
-
-  :has-many `((task-solution :via ,(s-prefix "ext:tasklistSolutionTaskSolution")
-                   :as "task-solutions"))
-
-  :resource-base (s-url "http://data.lblod.info/id/tasklist-solutions/")
-  :features '(include-uri)
-  :on-path "tasklist-solutions"
-)
-
-;;TODO: is this model still in use/relevant?
-(define-resource tasklist ()
-  :class (s-prefix "ext:Tasklist")
-
-  :properties `((:name :string ,(s-prefix "ext:tasklistName")))
-
-  :has-many `((task :via ,(s-prefix "ext:tasklistTask")
-                   :as "tasks"))
-
-  :resource-base (s-url "http://data.lblod.info/id/tasklists/")
-  :features '(include-uri)
-  :on-path "tasklists"
-)
-
-;;TODO: is this model still in use/relevant?
-(define-resource task-solution ()
-  :class (s-prefix "ext:TaskSolution")
-  :properties `((:status :bool ,(s-prefix "ext:taskSolutionStatus")))
-
-  :has-one `((task :via ,(s-prefix "ext:taskSolutionTask")
-                   :as "task"))
-
-  :resource-base (s-url "http://data.lblod.info/id/task-solutions/")
-  :features '(include-uri)
-  :on-path "task-solutions"
-)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; LOG MODELS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
