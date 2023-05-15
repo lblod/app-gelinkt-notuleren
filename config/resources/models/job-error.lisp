@@ -1,6 +1,0 @@
-(define-resource job-error ()
-  :class (s-prefix "oslc:Error")
-  :properties `((:message :string ,(s-prefix "oslc:message")))
-  :resource-base (s-url "http://redpencil.data.gift/id/jobs/error/")
-  :features '(include-uri)
-  :on-path "job-errors")

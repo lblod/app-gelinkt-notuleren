@@ -1,7 +1,0 @@
-(define-resource verkiezingsresultaat-gevolg-code ()
-  :class (s-prefix "ext:VerkiezingsresultaatGevolgCode")
-  :properties `((:label :string ,(s-prefix "skos:prefLabel"))
-                (:scope-note :string ,(s-prefix "skos:scopeNote")))
-  :resource-base (s-url "http://data.vlaanderen.be/id/concept/VerkiezingsresultaatGevolgCode/")
-  :features '(include-uri)
-  :on-path "verkiezingsresultaat-gevolg-codes")
