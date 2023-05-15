@@ -375,9 +375,7 @@
                 (:taal :url ,(s-prefix "eli:language"))
                 (:titel :string ,(s-prefix "eli:title"))
                 (:score :float ,(s-prefix "nao:score")))
-  :has-one `((rechtsgrond-besluit :via ,(s-prefix "eli:realizes")
-                                  :as "realisatie")
-             (behandeling-van-agendapunt :via ,(s-prefix "prov:generated")
+  :has-one `((behandeling-van-agendapunt :via ,(s-prefix "prov:generated")
                                          :inverse t
                                          :as "volgend-uit-behandeling-van-agendapunt")
              (besluitenlijst :via ,(s-prefix "ext:besluitenlijstBesluit")
@@ -475,47 +473,6 @@
   :resource-base (s-url "http://data.lblod.info/id/intermissions/")
   :features '(include-uri)
   :on-path "intermissions"
-)
-
-(define-resource artikel ()
-  :class (s-prefix "besluit:Artikel")
-  :properties `((:nummer :string ,(s-prefix "eli:number"))
-                (:inhoud :string ,(s-prefix "prov:value"))
-                (:taal :url ,(s-prefix "eli:language"))
-                (:titel :string ,(s-prefix "eli:title"))
-                (:page :url ,(s-prefix "foaf:page"))
-                (:score :float ,(s-prefix "nao:score")))
-  :has-one `((rechtsgrond-artikel :via ,(s-prefix "eli:realizes")
-                                    :as "realisatie"))
-  :resource-base (s-url "http://data.lblod.info/id/artikels/")
-  :features '(include-uri)
-  :on-path "artikels"
-)
-
-(define-resource rechtsgrond-artikel ()
-  :class (s-prefix "eli:LegalResourceSubdivision")
-  :properties `((:buitenwerkingtreding :date ,(s-prefix "eli:date_no_longer_in_force"))
-                (:inwerkingtreding :date ,(s-prefix "eli:first_date_entry_in_force")))
-  :has-one `((rechtsgrond-besluit :via ,(s-prefix "eli:has_part")
-                                  :inverse t
-                                  :as "rechtsgrond-besluit"))
-  :resource-base (s-url "http://data.lblod.info/id/rechtsgronden-artikel/")
-  :features '(include-uri)
-  :on-path "rechtsgronden-artikel"
-)
-
-;;TODO how to relate to superclass 'Rechtsgrond' for citeert/corrigeert/gecorrigeerd door/verandert/...
-(define-resource rechtsgrond-besluit ()
-  :class (s-prefix "eli:LegalResource")
-  :properties `((:buitenwerkingtreding :date ,(s-prefix "eli:date_no_longer_in_force"))
-                (:inwerkingtreding :date ,(s-prefix "eli:first_date_entry_in_force")))
-  :has-many `((rechtsgrond-artikel :via ,(s-prefix "eli:has_part")
-                                   :as "rechtsgronden-artikel"))
-  :has-one `((bestuursorgaan :via ,(s-prefix "eli:passed_by")
-                             :as "bestuursorgaan"))
-  :resource-base (s-url "http://data.lblod.info/id/rechtsgronden-besluit/")
-  :features '(include-uri)
-  :on-path "rechtsgronden-besluit"
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
