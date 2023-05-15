@@ -335,20 +335,8 @@ defmodule Dispatcher do
   # Tasks
   #######
 
-  match "/tasklists/*path" do
-    forward conn, path, "http://cache/tasklists/"
-  end
-
   match "/tasks/*path" do
     forward conn, path, "http://cache/tasks/"
-  end
-
-  match "/tasklist-solutions/*path" do
-    forward conn, path, "http://cache/tasklist-solutions/"
-  end
-
-  match "/task-solutions/*path" do
-    forward conn, path, "http://cache/task-solutions/"
   end
 
   #################################################################
