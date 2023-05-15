@@ -1268,8 +1268,6 @@
   :properties `((:has-graph :url ,(s-prefix "task:hasGraph")))
   :has-many `((file :via ,(s-prefix "task:hasFile") ;;subProperty of dct:hasPart because mu-resource does not like the same predicate linked to multiple types
                     :as "files")
-              (harvesting-collection :via ,(s-prefix "task:hasHarvestingCollection")
-                                     :as "harvesting-collections")
               (task :via ,(s-prefix "task:resultsContainer")
                     :inverse t
                     :as "result-from-tasks")
