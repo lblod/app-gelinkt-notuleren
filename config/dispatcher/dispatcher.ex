@@ -112,10 +112,6 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/zittingen/"
   end
 
-  match "/notulen/*path" do
-    forward conn, path, "http://resource/notulen/"
-  end
-
   match "/fracties/*path" do
     forward conn, path, "http://resource/fracties/"
   end

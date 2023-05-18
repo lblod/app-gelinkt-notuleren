@@ -322,8 +322,6 @@
                          :as "secretaris")
              (mandataris :via ,(s-prefix "besluit:heeftVoorzitter")
                          :as "voorzitter")
-             (notulen :via ,(s-prefix "besluit:heeftNotulen")
-                      :as "notulen")
              (publication-status-code :via , (s-prefix "bibo:status")
                                   :as "publicatie-status"))
   :resource-base (s-url "http://data.lblod.info/id/zittingen/")
@@ -647,19 +645,6 @@
   :resource-base (s-url "http://data.lblod.info/id/uittreksels/")
   :features '(include-uri)
   :on-path "uittreksels"
-)
-
-(define-resource notulen ()
-  :class (s-prefix "ext:Notulen")
-  :properties `((:inhoud :string ,(s-prefix "prov:value")))
-  :has-one `((zitting :via ,(s-prefix "besluit:heeftNotulen")
-                      :inverse t
-                      :as "zitting"))
-  :has-many `((published-resource :via ,(s-prefix "prov:wasDerivedFrom")
-                                  :as "publications"))
-  :resource-base (s-url "http://data.lblod.info/id/notulen/")
-  :features '(include-uri)
-  :on-path "notulen"
 )
 
 (define-resource publishing-log ()
