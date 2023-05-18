@@ -324,8 +324,6 @@
                          :as "voorzitter")
              (notulen :via ,(s-prefix "besluit:heeftNotulen")
                       :as "notulen")
-             (besluitenlijst :via ,(s-prefix "ext:besluitenlijst")
-                             :as "besluitenlijst")
              (publication-status-code :via , (s-prefix "bibo:status")
                                   :as "publicatie-status"))
   :resource-base (s-url "http://data.lblod.info/id/zittingen/")
@@ -375,10 +373,7 @@
                 (:score :float ,(s-prefix "nao:score")))
   :has-one `((behandeling-van-agendapunt :via ,(s-prefix "prov:generated")
                                          :inverse t
-                                         :as "volgend-uit-behandeling-van-agendapunt")
-             (besluitenlijst :via ,(s-prefix "ext:besluitenlijstBesluit")
-                             :inverse t
-                             :as "besluitenlijst"))
+                                         :as "volgend-uit-behandeling-van-agendapunt"))
   :has-many `((published-resource :via ,(s-prefix "prov:wasDerivedFrom")
                                   :as "publications"))
   :resource-base (s-url "http://data.lblod.info/id/besluiten/")
@@ -637,22 +632,6 @@
   :resource-base (s-url "http://data.lblod.info/id/agendas/")
   :features '(include-uri)
   :on-path "agendas"
-)
-
-(define-resource besluitenlijst ()
-  :class (s-prefix "ext:Besluitenlijst")
-  :properties `((:inhoud :string ,(s-prefix "prov:value"))
-                (:publicatiedatum :date ,(s-prefix "eli:date_publication")))
-  :has-one `((published-resource :via ,(s-prefix "prov:wasDerivedFrom")
-                                 :as "publication")
-             (zitting :via ,(s-prefix "ext:besluitenlijst")
-                      :inverse t
-                      :as "zitting"))
-  :has-many `((besluit :via ,(s-prefix "ext:besluitenlijstBesluit")
-                                          :as "besluiten"))
-  :resource-base (s-url "http://data.lblod.info/id/besluitenlijsten/")
-  :features '(include-uri)
-  :on-path "besluitenlijsten"
 )
 
 (define-resource uittreksel ()
