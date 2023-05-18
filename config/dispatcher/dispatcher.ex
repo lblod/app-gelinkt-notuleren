@@ -56,10 +56,6 @@ defmodule Dispatcher do
     forward conn, path, "http://resource/agendas/"
   end
 
-  match "/uittreksels/*path" do
-    forward conn, path, "http://resource/uittreksels/"
-  end
-
   match "/prepublished-agendas/*path" do
     forward conn, path, "http://resource/prepublished-agendas/"
   end

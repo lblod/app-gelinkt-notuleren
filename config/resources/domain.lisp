@@ -308,8 +308,6 @@
                           :as "afwezigen-bij-start")
               (agendapunt :via ,(s-prefix "besluit:behandelt")
                           :as "agendapunten")
-              (uittreksel :via ,(s-prefix "ext:uittreksel")
-                          :as "uittreksels")
               (intermission :via ,(s-prefix "ext:hasIntermission")
                       :as "intermissions")
               (agenda :via ,(s-prefix "bv:isAgendaVoor")
@@ -630,21 +628,6 @@
   :resource-base (s-url "http://data.lblod.info/id/agendas/")
   :features '(include-uri)
   :on-path "agendas"
-)
-
-(define-resource uittreksel ()
-  :class (s-prefix "ext:Uittreksel")
-  :properties `((:inhoud :string ,(s-prefix "prov:value")))
-  :has-one `((published-resource :via ,(s-prefix "prov:wasDerivedFrom")
-                                 :as "publication")
-             (behandeling-van-agendapunt :via ,(s-prefix "ext:uittrekselBvap")
-                                         :as "behandeling-van-agendapunt")
-             (zitting :via ,(s-prefix "ext:uittreksel")
-                      :inverse t
-                      :as "zitting"))
-  :resource-base (s-url "http://data.lblod.info/id/uittreksels/")
-  :features '(include-uri)
-  :on-path "uittreksels"
 )
 
 (define-resource publishing-log ()
