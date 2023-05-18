@@ -319,9 +319,7 @@
              (functionaris :via ,(s-prefix "besluit:heeftSecretaris")
                          :as "secretaris")
              (mandataris :via ,(s-prefix "besluit:heeftVoorzitter")
-                         :as "voorzitter")
-             (publication-status-code :via , (s-prefix "bibo:status")
-                                  :as "publicatie-status"))
+                         :as "voorzitter"))
   :resource-base (s-url "http://data.lblod.info/id/zittingen/")
   :features '(include-uri)
   :on-path "zittingen"
@@ -646,15 +644,6 @@
   :resource-base (s-url "http://data.lblod.info/publishing-logs/")
   :features `(include-uri)
   :on-path "publishing-logs"
-)
-
-(define-resource publication-status-code ()
-  :class (s-prefix "bibo:DocumentStatus")
-  :properties `((:label :string ,(s-prefix "skos:prefLabel"))
-                (:scope-note :string ,(s-prefix "skos:scopeNote")))
-  :resource-base (s-url "http://data.vlaanderen.be/id/concept/MandatarisStatusCode/")
-  :features '(include-uri)
-  :on-path "publication-status-codes"
 )
 
 (define-resource blockchain-status ()

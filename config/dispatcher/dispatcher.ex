@@ -148,10 +148,6 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/mandataris-status-codes/"
   end
 
-  match "/publication-status-codes/*path" do
-    forward conn, path, "http://cache/publication-status-codes/"
-  end
-
   match "/beleidsdomein-codes/*path" do
     forward conn, path, "http://cache/beleidsdomein-codes/"
   end
