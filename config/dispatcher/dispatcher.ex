@@ -280,10 +280,6 @@ defmodule Dispatcher do
     forward conn, path, "http://resource/published-resources/"
   end
 
-  match "/versioned-agendas/*path" do
-    forward conn, path, "http://resource/versioned-agendas/"
-  end
-
   match "/versioned-besluiten-lijsten/*path" do
     forward conn, path, "http://resource/versioned-besluiten-lijsten/"
   end
