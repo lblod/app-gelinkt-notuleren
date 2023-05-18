@@ -838,11 +838,7 @@
                 (:datum-eedaflegging :datetime ,(s-prefix "ext:datumEedaflegging"))
                 (:datum-ministrieel-besluit :datetime ,(s-prefix "ext:datumMinistrieelBesluit"))
                 (:generated-from :uri-set ,(s-prefix "ext:generatedFrom"))) ;;if it e.g. comes from gelinkt-notuleren
-  :has-many `((rechtsgrond-aanstelling :via ,(s-prefix "mandaat:isAangesteldDoor")
-                                       :as "rechtsgronden-aanstelling")
-              (rechtsgrond-beeindiging :via ,(s-prefix "mandaat:isOntslagenDoor")
-                                       :as "rechtsgronden-beeindiging")
-              (mandataris :via ,(s-prefix "mandaat:isTijdelijkVervangenDoor")
+  :has-many `((mandataris :via ,(s-prefix "mandaat:isTijdelijkVervangenDoor")
                           :as "tijdelijke-vervangingen")
               (beleidsdomein-code :via ,(s-prefix "mandaat:beleidsdomein")
                                   :as "beleidsdomein")
@@ -913,42 +909,6 @@
   :resource-base (s-url "http://data.lblod.info/id/tijdsintervallen/")
   :features '(include-uri)
   :on-path "tijdsintervallen"
-)
-
-(define-resource rechtsgrond-aanstelling ()
-  :class (s-prefix "mandaat:RechtsgrondAanstelling")
-  :properties `((:buitenwerkingtreding :date ,(s-prefix "eli:date_no_longer_in_force"))
-                (:inwekingtreding :date ,(s-prefix "eli:first_date_entry_in_force"))
-                (:type-document :uri-set ,(s-prefix "eli:type_document")))
-  :has-many `((mandataris :via ,(s-prefix "mandaat:isAangesteldDoor")
-                          :inverse t
-                          :as "bekrachtigt-aanstellingen-van"))
-  :resource-base (s-url "http://data.ldblod.info/id/rechtsgronden-aanstelling/")
-  :features '(include-uri)
-  :on-path "rechtsgronden-aanstelling"
-)
-
-(define-resource rechtsgrond-beeindiging ()
-  :class (s-prefix "mandaat:RechtsgrondBeeindiging")
-  :properties `((:buitenwerkingtreding :date ,(s-prefix "eli:date_no_longer_in_force"))
-              (:inwekingtreding :date ,(s-prefix "eli:first_date_entry_in_force"))
-              (:type-document :uri-set ,(s-prefix "eli:type_document")))
-  :has-many `((mandataris :via ,(s-prefix "mandaat:isOntslagenDoor")
-                          :inverse t
-                          :as "bekrachtigt-ontslagen-van"))
-  :resource-base (s-url "http://data.lblod.info/id/rechtsgronden-beeindiging/")
-  :features '(include-uri)
-  :on-path "rechtsgronden-beeindiging"
-)
-
-(define-resource rechtsgrond ()
-  :class (s-prefix "eli:LegalResource")
-  :properties `((:buitenwerkingtreding :date ,(s-prefix "eli:date_no_longer_in_force"))
-                (:inwekingtreding :date ,(s-prefix "eli:first_date_entry_in_force"))
-                (:type-document :uri-set ,(s-prefix "eli:type_document"))) ;;TODO: what about predefined lists?
-  :resource-base (s-url "https://data.lblod.info/id/rechtsgronden/")
-  :features '(include-uri)
-  :on-path "rechtsgronden"
 )
 
 (define-resource rechtstreekse-verkiezing ()
