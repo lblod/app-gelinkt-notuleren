@@ -164,20 +164,8 @@ defmodule Dispatcher do
     forward conn, path, "http://resource/identificatoren/"
   end
 
-  match "/rechtsgronden-aanstelling/*path" do
-    forward conn, path, "http://resource/rechtsgronden-aanstelling/"
-  end
-
-  match "/rechtsgronden-beeindiging/*path" do
-    forward conn, path, "http://resource/rechtsgronden-beeindiging/"
-  end
-
   match "/rechtstreekse-verkiezingen/*path" do
     forward conn, path, "http://cache/rechtstreekse-verkiezingen/"
-  end
-
-  match "/rechtsgronden/*path" do
-    forward conn, path, "http://resource/rechtsgronden/"
   end
 
   match "/tijdsgebonden-entiteiten/*path" do
