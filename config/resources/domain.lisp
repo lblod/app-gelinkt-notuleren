@@ -158,14 +158,6 @@
                               :as "publisher"))
   :has-many `((editor-document :via ,(s-prefix "pav:hasVersion")
                                :as "revisions")
-              (versioned-agenda :via ,(s-prefix "ext:hasVersionedAgenda")
-                                :as "versioned-agendas")
-              (versioned-behandeling :via ,(s-prefix "ext:hasVersionedBehandeling")
-                                     :as "versioned-behandelingen")
-              (versioned-notulen :via ,(s-prefix "ext:hasVersionedNotulen")
-                                 :as "versioned-notulen")
-              (versioned-besluiten-lijst :via ,(s-prefix "ext:hasVersionedBesluitenLijst")
-                                         :as "versioned-besluiten-lijsten")
               (attachment :via ,(s-prefix "ext:hasAttachments")
                           :as "attachments")
               (editor-document :via ,(s-prefix "dct:isPartOf")
@@ -197,9 +189,7 @@
              (document-container :via ,(s-prefix "pav:hasVersion")
                                  :inverse t
                                  :as "document-container"))
-  :has-many `((tasklist-solution :via ,(s-prefix "ext:editorDocumentTasklistSolution")
-                                 :as "tasklist-solutions")
-              (document-container :via ,(s-prefix "dct:isPartOf")
+  :has-many `((document-container :via ,(s-prefix "dct:isPartOf")
                                          :inverse t
                                          :as "parts"))
   :resource-base (s-url "http://data.lblod.info/editor-documents/")
@@ -318,8 +308,6 @@
                           :as "afwezigen-bij-start")
               (agendapunt :via ,(s-prefix "besluit:behandelt")
                           :as "agendapunten")
-              (uittreksel :via ,(s-prefix "ext:uittreksel")
-                          :as "uittreksels")
               (intermission :via ,(s-prefix "ext:hasIntermission")
                       :as "intermissions")
               (agenda :via ,(s-prefix "bv:isAgendaVoor")
@@ -331,13 +319,7 @@
              (functionaris :via ,(s-prefix "besluit:heeftSecretaris")
                          :as "secretaris")
              (mandataris :via ,(s-prefix "besluit:heeftVoorzitter")
-                         :as "voorzitter")
-             (notulen :via ,(s-prefix "besluit:heeftNotulen")
-                      :as "notulen")
-             (besluitenlijst :via ,(s-prefix "ext:besluitenlijst")
-                             :as "besluitenlijst")
-             (publication-status-code :via , (s-prefix "bibo:status")
-                                  :as "publicatie-status"))
+                         :as "voorzitter"))
   :resource-base (s-url "http://data.lblod.info/id/zittingen/")
   :features '(include-uri)
   :on-path "zittingen"
@@ -383,14 +365,9 @@
                 (:taal :url ,(s-prefix "eli:language"))
                 (:titel :string ,(s-prefix "eli:title"))
                 (:score :float ,(s-prefix "nao:score")))
-  :has-one `((rechtsgrond-besluit :via ,(s-prefix "eli:realizes")
-                                  :as "realisatie")
-             (behandeling-van-agendapunt :via ,(s-prefix "prov:generated")
+  :has-one `((behandeling-van-agendapunt :via ,(s-prefix "prov:generated")
                                          :inverse t
-                                         :as "volgend-uit-behandeling-van-agendapunt")
-             (besluitenlijst :via ,(s-prefix "ext:besluitenlijstBesluit")
-                             :inverse t
-                             :as "besluitenlijst"))
+                                         :as "volgend-uit-behandeling-van-agendapunt"))
   :has-many `((published-resource :via ,(s-prefix "prov:wasDerivedFrom")
                                   :as "publications"))
   :resource-base (s-url "http://data.lblod.info/id/besluiten/")
@@ -485,47 +462,6 @@
   :on-path "intermissions"
 )
 
-(define-resource artikel ()
-  :class (s-prefix "besluit:Artikel")
-  :properties `((:nummer :string ,(s-prefix "eli:number"))
-                (:inhoud :string ,(s-prefix "prov:value"))
-                (:taal :url ,(s-prefix "eli:language"))
-                (:titel :string ,(s-prefix "eli:title"))
-                (:page :url ,(s-prefix "foaf:page"))
-                (:score :float ,(s-prefix "nao:score")))
-  :has-one `((rechtsgrond-artikel :via ,(s-prefix "eli:realizes")
-                                    :as "realisatie"))
-  :resource-base (s-url "http://data.lblod.info/id/artikels/")
-  :features '(include-uri)
-  :on-path "artikels"
-)
-
-(define-resource rechtsgrond-artikel ()
-  :class (s-prefix "eli:LegalResourceSubdivision")
-  :properties `((:buitenwerkingtreding :date ,(s-prefix "eli:date_no_longer_in_force"))
-                (:inwerkingtreding :date ,(s-prefix "eli:first_date_entry_in_force")))
-  :has-one `((rechtsgrond-besluit :via ,(s-prefix "eli:has_part")
-                                  :inverse t
-                                  :as "rechtsgrond-besluit"))
-  :resource-base (s-url "http://data.lblod.info/id/rechtsgronden-artikel/")
-  :features '(include-uri)
-  :on-path "rechtsgronden-artikel"
-)
-
-;;TODO how to relate to superclass 'Rechtsgrond' for citeert/corrigeert/gecorrigeerd door/verandert/...
-(define-resource rechtsgrond-besluit ()
-  :class (s-prefix "eli:LegalResource")
-  :properties `((:buitenwerkingtreding :date ,(s-prefix "eli:date_no_longer_in_force"))
-                (:inwerkingtreding :date ,(s-prefix "eli:first_date_entry_in_force")))
-  :has-many `((rechtsgrond-artikel :via ,(s-prefix "eli:has_part")
-                                   :as "rechtsgronden-artikel"))
-  :has-one `((bestuursorgaan :via ,(s-prefix "eli:passed_by")
-                             :as "bestuursorgaan"))
-  :resource-base (s-url "http://data.lblod.info/id/rechtsgronden-besluit/")
-  :features '(include-uri)
-  :on-path "rechtsgronden-besluit"
-)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; PUBLICATION MODELS ;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -574,32 +510,6 @@
   :resource-base (s-url "http://data.lblod.info/published-resources/")
   :features '(include-uri)
   :on-path "published-resources"
-)
-
-(define-resource versioned-agenda ()
-  :class (s-prefix "ext:VersionedAgenda")
-  :properties `((:state :string ,(s-prefix "ext:stateString"))
-                (:content :string ,(s-prefix "ext:content"))
-                (:kind :string ,(s-prefix "ext:agendaKind"))
-                (:deleted :boolean ,(s-prefix "ext:deleted")))
-  :has-many `(
-              (signed-resource :via ,(s-prefix "ext:signsAgenda")
-                               :inverse t
-                               :as "signed-resources")
-              )
-  :has-one `(
-             (published-resource :via ,(s-prefix "ext:publishesAgenda")
-                                 :inverse t
-                                 :as "published-resource")
-             (editor-document :via ,(s-prefix "prov:wasDerivedFrom")
-                              :as "editor-document")
-             (document-container :via ,(s-prefix "ext:hasVersionedAgenda")
-                                 :inverse t
-                                 :as "document-container")
-             )
-  :resource-base (s-url "http://data.lblod.info/prepublished-agendas/")
-  :features '(include-uri)
-  :on-path "versioned-agendas"
 )
 
 (define-resource versioned-behandeling ()
@@ -718,50 +628,6 @@
   :on-path "agendas"
 )
 
-(define-resource besluitenlijst ()
-  :class (s-prefix "ext:Besluitenlijst")
-  :properties `((:inhoud :string ,(s-prefix "prov:value"))
-                (:publicatiedatum :date ,(s-prefix "eli:date_publication")))
-  :has-one `((published-resource :via ,(s-prefix "prov:wasDerivedFrom")
-                                 :as "publication")
-             (zitting :via ,(s-prefix "ext:besluitenlijst")
-                      :inverse t
-                      :as "zitting"))
-  :has-many `((besluit :via ,(s-prefix "ext:besluitenlijstBesluit")
-                                          :as "besluiten"))
-  :resource-base (s-url "http://data.lblod.info/id/besluitenlijsten/")
-  :features '(include-uri)
-  :on-path "besluitenlijsten"
-)
-
-(define-resource uittreksel ()
-  :class (s-prefix "ext:Uittreksel")
-  :properties `((:inhoud :string ,(s-prefix "prov:value")))
-  :has-one `((published-resource :via ,(s-prefix "prov:wasDerivedFrom")
-                                 :as "publication")
-             (behandeling-van-agendapunt :via ,(s-prefix "ext:uittrekselBvap")
-                                         :as "behandeling-van-agendapunt")
-             (zitting :via ,(s-prefix "ext:uittreksel")
-                      :inverse t
-                      :as "zitting"))
-  :resource-base (s-url "http://data.lblod.info/id/uittreksels/")
-  :features '(include-uri)
-  :on-path "uittreksels"
-)
-
-(define-resource notulen ()
-  :class (s-prefix "ext:Notulen")
-  :properties `((:inhoud :string ,(s-prefix "prov:value")))
-  :has-one `((zitting :via ,(s-prefix "besluit:heeftNotulen")
-                      :inverse t
-                      :as "zitting"))
-  :has-many `((published-resource :via ,(s-prefix "prov:wasDerivedFrom")
-                                  :as "publications"))
-  :resource-base (s-url "http://data.lblod.info/id/notulen/")
-  :features '(include-uri)
-  :on-path "notulen"
-)
-
 (define-resource publishing-log ()
   :class (s-prefix "ext:PublishingLog")
   :properties `((:action :string ,(s-prefix "ext:publishingAction"))
@@ -778,15 +644,6 @@
   :resource-base (s-url "http://data.lblod.info/publishing-logs/")
   :features `(include-uri)
   :on-path "publishing-logs"
-)
-
-(define-resource publication-status-code ()
-  :class (s-prefix "bibo:DocumentStatus")
-  :properties `((:label :string ,(s-prefix "skos:prefLabel"))
-                (:scope-note :string ,(s-prefix "skos:scopeNote")))
-  :resource-base (s-url "http://data.vlaanderen.be/id/concept/MandatarisStatusCode/")
-  :features '(include-uri)
-  :on-path "publication-status-codes"
 )
 
 (define-resource blockchain-status ()
@@ -981,11 +838,7 @@
                 (:datum-eedaflegging :datetime ,(s-prefix "ext:datumEedaflegging"))
                 (:datum-ministrieel-besluit :datetime ,(s-prefix "ext:datumMinistrieelBesluit"))
                 (:generated-from :uri-set ,(s-prefix "ext:generatedFrom"))) ;;if it e.g. comes from gelinkt-notuleren
-  :has-many `((rechtsgrond-aanstelling :via ,(s-prefix "mandaat:isAangesteldDoor")
-                                       :as "rechtsgronden-aanstelling")
-              (rechtsgrond-beeindiging :via ,(s-prefix "mandaat:isOntslagenDoor")
-                                       :as "rechtsgronden-beeindiging")
-              (mandataris :via ,(s-prefix "mandaat:isTijdelijkVervangenDoor")
+  :has-many `((mandataris :via ,(s-prefix "mandaat:isTijdelijkVervangenDoor")
                           :as "tijdelijke-vervangingen")
               (beleidsdomein-code :via ,(s-prefix "mandaat:beleidsdomein")
                                   :as "beleidsdomein")
@@ -1056,42 +909,6 @@
   :resource-base (s-url "http://data.lblod.info/id/tijdsintervallen/")
   :features '(include-uri)
   :on-path "tijdsintervallen"
-)
-
-(define-resource rechtsgrond-aanstelling ()
-  :class (s-prefix "mandaat:RechtsgrondAanstelling")
-  :properties `((:buitenwerkingtreding :date ,(s-prefix "eli:date_no_longer_in_force"))
-                (:inwekingtreding :date ,(s-prefix "eli:first_date_entry_in_force"))
-                (:type-document :uri-set ,(s-prefix "eli:type_document")))
-  :has-many `((mandataris :via ,(s-prefix "mandaat:isAangesteldDoor")
-                          :inverse t
-                          :as "bekrachtigt-aanstellingen-van"))
-  :resource-base (s-url "http://data.ldblod.info/id/rechtsgronden-aanstelling/")
-  :features '(include-uri)
-  :on-path "rechtsgronden-aanstelling"
-)
-
-(define-resource rechtsgrond-beeindiging ()
-  :class (s-prefix "mandaat:RechtsgrondBeeindiging")
-  :properties `((:buitenwerkingtreding :date ,(s-prefix "eli:date_no_longer_in_force"))
-              (:inwekingtreding :date ,(s-prefix "eli:first_date_entry_in_force"))
-              (:type-document :uri-set ,(s-prefix "eli:type_document")))
-  :has-many `((mandataris :via ,(s-prefix "mandaat:isOntslagenDoor")
-                          :inverse t
-                          :as "bekrachtigt-ontslagen-van"))
-  :resource-base (s-url "http://data.lblod.info/id/rechtsgronden-beeindiging/")
-  :features '(include-uri)
-  :on-path "rechtsgronden-beeindiging"
-)
-
-(define-resource rechtsgrond ()
-  :class (s-prefix "eli:LegalResource")
-  :properties `((:buitenwerkingtreding :date ,(s-prefix "eli:date_no_longer_in_force"))
-                (:inwekingtreding :date ,(s-prefix "eli:first_date_entry_in_force"))
-                (:type-document :uri-set ,(s-prefix "eli:type_document"))) ;;TODO: what about predefined lists?
-  :resource-base (s-url "https://data.lblod.info/id/rechtsgronden/")
-  :features '(include-uri)
-  :on-path "rechtsgronden"
 )
 
 (define-resource rechtstreekse-verkiezing ()
@@ -1217,16 +1034,6 @@
   :features '(include-uri)
   :resource-base (s-url "http://data.lblod.info/id/adressen/")
   :on-path "adressen"
-)
-
-;;TODO: is this model still in use/relevant?
-(define-resource vestiging ()
-  :class (s-prefix "org:Site")
-  :has-one `((contact-punt :via ,(s-prefix "schema:contactPoint")
-                           :as "vestigingsadres"))
-  :resource-base (s-url "http://data.lblod.info/id/vestiging/")
-  :features '(include-uri)
-  :on-path "vestigingen"
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1355,8 +1162,6 @@
   :properties `((:has-graph :url ,(s-prefix "task:hasGraph")))
   :has-many `((file :via ,(s-prefix "task:hasFile") ;;subProperty of dct:hasPart because mu-resource does not like the same predicate linked to multiple types
                     :as "files")
-              (harvesting-collection :via ,(s-prefix "task:hasHarvestingCollection")
-                                     :as "harvesting-collections")
               (task :via ,(s-prefix "task:resultsContainer")
                     :inverse t
                     :as "result-from-tasks")
@@ -1367,51 +1172,6 @@
   :resource-base (s-url "http://redpencil.data.gift/id/dataContainers/")
   :features '(include-uri)
   :on-path "data-containers"
-)
-
-;;TODO: is this model still in use/relevant?
-(define-resource tasklist-solution ()
-  :class (s-prefix "ext:TasklistSolution")
-
-  :properties `((:name :string ,(s-prefix "ext:tasklistSolutionName"))
-                (:index :number ,(s-prefix "ext:tasklistSolutionIndex")))
-
-  :has-one `((tasklist :via ,(s-prefix "ext:tasklistSolutionTasklist")
-                        :as "tasklist"))
-
-  :has-many `((task-solution :via ,(s-prefix "ext:tasklistSolutionTaskSolution")
-                   :as "task-solutions"))
-
-  :resource-base (s-url "http://data.lblod.info/id/tasklist-solutions/")
-  :features '(include-uri)
-  :on-path "tasklist-solutions"
-)
-
-;;TODO: is this model still in use/relevant?
-(define-resource tasklist ()
-  :class (s-prefix "ext:Tasklist")
-
-  :properties `((:name :string ,(s-prefix "ext:tasklistName")))
-
-  :has-many `((task :via ,(s-prefix "ext:tasklistTask")
-                   :as "tasks"))
-
-  :resource-base (s-url "http://data.lblod.info/id/tasklists/")
-  :features '(include-uri)
-  :on-path "tasklists"
-)
-
-;;TODO: is this model still in use/relevant?
-(define-resource task-solution ()
-  :class (s-prefix "ext:TaskSolution")
-  :properties `((:status :bool ,(s-prefix "ext:taskSolutionStatus")))
-
-  :has-one `((task :via ,(s-prefix "ext:taskSolutionTask")
-                   :as "task"))
-
-  :resource-base (s-url "http://data.lblod.info/id/task-solutions/")
-  :features '(include-uri)
-  :on-path "task-solutions"
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
