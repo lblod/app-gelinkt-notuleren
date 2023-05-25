@@ -400,7 +400,10 @@
               (mandataris :via ,(s-prefix "ext:heeftAfwezige")
                           :as "afwezigen")
               (stemming :via ,(s-prefix "besluit:heeftStemming")
-                          :as "stemmingen"))
+                          :as "stemmingen")
+              (versioned-behandeling :via ,(s-prefix "ext:behandeling")
+                                     :inverse t
+                                     :as "versioned-behandelingen"))
   :has-one `((behandeling-van-agendapunt :via ,(s-prefix "besluit:gebeurtNa")
                                          :as "vorige-behandeling-van-agendapunt")
              (agendapunt :via ,(s-prefix "dct:subject")
@@ -410,10 +413,7 @@
              (mandataris :via ,(s-prefix "besluit:heeftVoorzitter")
                          :as "voorzitter")
              (document-container :via , (s-prefix "ext:hasDocumentContainer")
-                                  :as "document-container")
-             (versioned-behandeling :via ,(s-prefix "ext:behandeling")
-                                 :inverse t
-                                 :as "versioned-behandeling"))
+                                  :as "document-container"))
   :resource-base (s-url "http://data.lblod.info/id/behandelingen-van-agendapunten/")
   :features '(include-uri)
   :on-path "behandelingen-van-agendapunten"
