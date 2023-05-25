@@ -56,14 +56,6 @@ defmodule Dispatcher do
     forward conn, path, "http://resource/agendas/"
   end
 
-  match "/besluitenlijsten/*path" do
-    forward conn, path, "http://resource/besluitenlijsten/"
-  end
-
-  match "/uittreksels/*path" do
-    forward conn, path, "http://resource/uittreksels/"
-  end
-
   match "/prepublished-agendas/*path" do
     forward conn, path, "http://resource/prepublished-agendas/"
   end
@@ -116,10 +108,6 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/zittingen/"
   end
 
-  match "/notulen/*path" do
-    forward conn, path, "http://resource/notulen/"
-  end
-
   match "/fracties/*path" do
     forward conn, path, "http://resource/fracties/"
   end
@@ -160,10 +148,6 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/mandataris-status-codes/"
   end
 
-  match "/publication-status-codes/*path" do
-    forward conn, path, "http://cache/publication-status-codes/"
-  end
-
   match "/beleidsdomein-codes/*path" do
     forward conn, path, "http://cache/beleidsdomein-codes/"
   end
@@ -180,20 +164,8 @@ defmodule Dispatcher do
     forward conn, path, "http://resource/identificatoren/"
   end
 
-  match "/rechtsgronden-aanstelling/*path" do
-    forward conn, path, "http://resource/rechtsgronden-aanstelling/"
-  end
-
-  match "/rechtsgronden-beeindiging/*path" do
-    forward conn, path, "http://resource/rechtsgronden-beeindiging/"
-  end
-
   match "/rechtstreekse-verkiezingen/*path" do
     forward conn, path, "http://cache/rechtstreekse-verkiezingen/"
-  end
-
-  match "/rechtsgronden/*path" do
-    forward conn, path, "http://resource/rechtsgronden/"
   end
 
   match "/tijdsgebonden-entiteiten/*path" do
@@ -280,10 +252,6 @@ defmodule Dispatcher do
     forward conn, path, "http://resource/published-resources/"
   end
 
-  match "/versioned-agendas/*path" do
-    forward conn, path, "http://resource/versioned-agendas/"
-  end
-
   match "/versioned-besluiten-lijsten/*path" do
     forward conn, path, "http://resource/versioned-besluiten-lijsten/"
   end
@@ -335,20 +303,8 @@ defmodule Dispatcher do
   # Tasks
   #######
 
-  match "/tasklists/*path" do
-    forward conn, path, "http://cache/tasklists/"
-  end
-
   match "/tasks/*path" do
     forward conn, path, "http://cache/tasks/"
-  end
-
-  match "/tasklist-solutions/*path" do
-    forward conn, path, "http://cache/tasklist-solutions/"
-  end
-
-  match "/task-solutions/*path" do
-    forward conn, path, "http://cache/task-solutions/"
   end
 
   #################################################################
