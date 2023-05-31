@@ -345,10 +345,6 @@
              (zitting :via ,(s-prefix "besluit:behandelt")
                       :inverse t
                       :as "zitting")
-             (agenda :via ,(s-prefix "dct:isPartOf")
-                     :inverse t
-                     :as "agenda"
-                     )
              )
   :resource-base (s-url "http://data.lblod.info/id/agendapunten/")
   :features '(include-uri)
@@ -616,9 +612,6 @@
                                  :as "published-resource")
              )
   :has-many `(
-              (agendapunt :via ,(s-prefix "dct:isPartOf")
-                          :inverse t
-                          :as "agendapunten")
               (signed-resource :via ,(s-prefix "ext:signsAgenda")
                                :inverse t
                                :as "signed-resources")
