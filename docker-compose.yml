@@ -110,7 +110,7 @@ services:
     labels:
       - "logging=true"
   resource:
-    image: semtech/mu-cl-resources:feature-case-insensitive-sort
+    image: semtech/mu-cl-resources:1.22.2
     volumes:
       - ./config/resources:/config
     environment:

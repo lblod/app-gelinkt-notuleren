@@ -65,7 +65,7 @@ defmodule Dispatcher do
   end
 
   match "/behandelingen-van-agendapunten/*path" do
-    forward conn, path, "http://cache/behandelingen-van-agendapunten/"
+    forward conn, path, "http://resource/behandelingen-van-agendapunten/"
   end
 
   match "/concepts/*path" do
@@ -242,6 +242,9 @@ defmodule Dispatcher do
 
   match "/publication-tasks/*path" do
     forward conn, path, "http://preimporter/publication-tasks/"
+  end
+  post "/signed-resources" do
+    forward conn, [], "http://preimporter/signed-resources/"
   end
 
   match "/signed-resources/*path" do
