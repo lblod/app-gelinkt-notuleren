@@ -7,10 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- bump frontend to v5.0.0
+- bump prepublisher to v2.0.0
+- add support for deleting signatures
+- remove unused agendapunten relation from agenda
+- restructure & clean up mu-cl-resources models
+
+### Added
+- add minimal decision template
+
 ## [4.0.2] - 2023-05-19
 
 ### Changed
-
+[CHANGELOG.md](CHANGELOG.md)
 - bump frontend to v4.0.2
 
 ## [4.0.1] - 2023-05-18
