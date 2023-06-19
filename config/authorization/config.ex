@@ -217,6 +217,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/VersionedBehandeling",
                         "http://mu.semte.ch/vocabularies/ext/signing/SignedResource",
                         "http://redpencil.data.gift/vocabularies/tasks/Task",
+                        "http://mu.semte.ch/vocabularies/ext/PublishingLog",
                       ],
                       inverse_predicates: %AllPredicates{}
                     } } ] },
