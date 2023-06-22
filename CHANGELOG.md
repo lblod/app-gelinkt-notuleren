@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - user with `signer` (ondertekenaar) role can create a `PublishingLog` (logs signing/deletion of signature)
+- bump frontend to v5.2.0
 
 ## [5.1.0] - 2023-06-18
 
