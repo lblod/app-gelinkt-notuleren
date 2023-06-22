@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.2.0] - 2023-06-22
+
 ### Changed
 - user with `signer` (ondertekenaar) role can create a `PublishingLog` (logs signing/deletion of signature)
 - bump frontend to v5.2.0
@@ -694,7 +696,8 @@ bump frontend to v2.36.2 (hotfix)
 - Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
 
 
-[unreleased]: https://github.com/lblod/app-gelinkt-notuleren/compare/v5.1.0...HEAD
+[unreleased]: https://github.com/lblod/app-gelinkt-notuleren/compare/v5.2.0...HEAD
+[5.2.0]: https://github.com/lblod/app-gelinkt-notuleren/compare/v5.1.0...v5.2.0
 [5.1.0]: https://github.com/lblod/app-gelinkt-notuleren/compare/v5.0.0...v5.1.0
 [5.0.0]: https://github.com/lblod/app-gelinkt-notuleren/compare/v4.0.2...v5.0.0
 [4.0.2]: https://github.com/lblod/app-gelinkt-notuleren/compare/v4.0.0...v4.0.2
