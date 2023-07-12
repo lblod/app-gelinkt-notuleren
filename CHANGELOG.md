@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.3.2] - 2023-07-12
+
 ### Changed
 - bump mu-auth to beta.8 -> this was always required for mu-cl-resources 1.22.x
 
@@ -715,7 +717,8 @@ bump frontend to v2.36.2 (hotfix)
 - Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
 
 
-[unreleased]: https://github.com/lblod/app-gelinkt-notuleren/compare/v5.3.1...HEAD
+[unreleased]: https://github.com/lblod/app-gelinkt-notuleren/compare/v5.3.2...HEAD
+[5.3.2]: https://github.com/lblod/app-gelinkt-notuleren/compare/v5.3.1...v5.3.2
 [5.3.1]: https://github.com/lblod/app-gelinkt-notuleren/compare/v5.3.0...v5.3.1
 [5.3.0]: https://github.com/lblod/app-gelinkt-notuleren/compare/v5.2.1...v5.3.0
 [5.2.1]: https://github.com/lblod/app-gelinkt-notuleren/compare/v5.2.0...v5.2.1
