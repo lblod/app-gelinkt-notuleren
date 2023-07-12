@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- bump mu-auth to beta.8 -> this was always required for mu-cl-resources 1.22.x
+
 ## [5.3.1] - 2023-07-11
 
 ### Changed
