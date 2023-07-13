@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed 
+- bump frontend to [v5.4.2](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.4.2)
+
 ## [5.3.2] - 2023-07-12
 
 ### Changed
