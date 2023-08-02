@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.3.4] - 2023-08-02
+
 ### Changed
 - bump frontend to [v5.4.3](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.4.3)
 
@@ -725,7 +727,8 @@ bump frontend to v2.36.2 (hotfix)
 - Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
 
 
-[unreleased]: https://github.com/lblod/app-gelinkt-notuleren/compare/v5.3.3...HEAD
+[unreleased]: https://github.com/lblod/app-gelinkt-notuleren/compare/v5.3.4...HEAD
+[5.3.4]: https://github.com/lblod/app-gelinkt-notuleren/compare/v5.3.3...v5.3.4
 [5.3.3]: https://github.com/lblod/app-gelinkt-notuleren/compare/v5.3.2...v5.3.3
 [5.3.2]: https://github.com/lblod/app-gelinkt-notuleren/compare/v5.3.1...v5.3.2
 [5.3.1]: https://github.com/lblod/app-gelinkt-notuleren/compare/v5.3.0...v5.3.1
