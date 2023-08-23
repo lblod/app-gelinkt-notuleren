@@ -81,7 +81,7 @@ INSERT{
             ))
     }
 }
-
+;
 EOF
 ((tstamp++))
 cat <<EOF > "$dir/$tstamp-ingest-exported-triples-2.sparql"
