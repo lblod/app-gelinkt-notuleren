@@ -123,7 +123,7 @@ Once the migrations have ran, you can go on with your current setup.
 
 ### Cleaning the database
 
-At some times you may want te clean the database and make sure it's in a pristine state.  For development this is the following (for demo, replace the docker-compose.dev.yml with docker-compose.demo.yml):
+At some times you may want to clean the database and make sure it's in a pristine state.  For development this is the following (for demo, replace the docker-compose.dev.yml with docker-compose.demo.yml):
 
     # Bring down our current setup
     docker-compose -f docker-compose.yml -f docker-compose.dev.yml down
@@ -134,6 +134,19 @@ At some times you may want te clean the database and make sure it's in a pristin
     docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
 
 Make sure to wait for the migrations to run.
+
+### Loading a backup to the database
+You might want to load a backup from a server as test data locally. First create backup like other stacks and put it in `data/db/backups`.  
+Because the stack uses an old virtuoso version, loading a backup won't work by itself. Add the following configuration to your docker-compose file (`docker-compose.override.yml` would be a good place). The important part is overriding the image.
+```
+version: "3.4"
+services:
+  virtuoso:
+    restart: "no"
+    image: tenforce/virtuoso:latest
+    environment:
+      BACKUP_PREFIX: "virtuoso_backup_230101T1212-"
+```
 
 ### Reports
 This project includes the report dashboard. To make use of it, set a salt for the dashboard-login service in the docker-compose.override.yml and make sure to create a user running:
