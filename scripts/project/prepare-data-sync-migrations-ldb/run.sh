@@ -45,13 +45,13 @@ INSERT {
     }
 }
 ;
+# here we want to only replace data or insert new data, never remove old data.
+
+# First delete triples that exist in the public graph and will be inserted again from temp-ingest-graph 
+# The difference here is that data not being overwritten bij temp-ingest-graph will stay in the public graph
 DELETE {
     GRAPH <http://mu.semte.ch/graphs/public> {
         ?s ?p ?old .
-    }
-} INSERT{
-    GRAPH <http://mu.semte.ch/graphs/public> {
-        ?s ?p ?new .
     }
 } WHERE {
     GRAPH <http://mu.semte.ch/graphs/temp-ingest-graph> {
@@ -65,7 +65,22 @@ DELETE {
     }
 }
 ;
-
+# Secondly, insert all related data to the public graph.
+# this will insert triples removed from the public graph in the above query 
+# and triples that are "new" (were not present in public graph before)
+INSERT{
+    GRAPH <http://mu.semte.ch/graphs/public> {
+        ?s ?p ?new .
+    }
+} WHERE {
+    GRAPH <http://mu.semte.ch/graphs/temp-ingest-graph> {
+        ?s a ?type ; ?p ?new .
+        FILTER (?type IN (
+            <http://mu.semte.ch/vocabularies/ext/BestuursfunctieCode>
+            ))
+    }
+}
+;
 DELETE {
     GRAPH ?organizationalGraph {
         ?s ?p ?old .

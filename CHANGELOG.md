@@ -6,8 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
 - add extra configuration explanation for loading a backup.
 
+### Fixed
+- GN-4439: also insert data in public graph that is new in mdb and ldb exports (intead of just changes). This fixes some missing data in `bestuursfunctieCodes` in QA, which was the reason for broken mandatees.
 ## [5.3.5] - 2023-08-07
 ### Changed
 
