@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - add extra configuration explanation for loading a backup.
+- bump frontend to [v5.6.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.6.0)
 
 ### Fixed
 - GN-4439: also insert data in public graph that is new in mdb and ldb exports (intead of just changes). This fixes some missing data in `bestuursfunctieCodes` in QA, which was the reason for broken mandatees.
