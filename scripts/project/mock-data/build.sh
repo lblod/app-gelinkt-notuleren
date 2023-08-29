@@ -9,7 +9,7 @@ puts "GN factory for mock data."
 print "installing dependencies..."
 gemfile do
   source 'https://rubygems.org'
-  gem 'linkeddata'
+  gem 'linkeddata', '< 3.2'
 end
 puts "done"
 
