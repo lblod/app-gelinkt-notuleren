@@ -1009,6 +1009,8 @@
   :on-path "contact-punten"
 )
 
+;; !! This resource has no `mu:uuid` defined in production (source is from ldb export)
+;; and might not work as expected !!
 (define-resource adres ()
   :class (s-prefix "locn:Address")
   :properties `((:busnummer :string ,(s-prefix "adres:Adresvoorstelling.busnummer"))
