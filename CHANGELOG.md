@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [5.5.0] - 2023-09-19
 - bump frontend to [v5.7.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.7.0)
 
 ## [5.4.0] - 2023-08-30
@@ -741,7 +743,8 @@ bump frontend to v2.36.2 (hotfix)
 - Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
 
 
-[unreleased]: https://github.com/lblod/app-gelinkt-notuleren/compare/v5.4.0...HEAD
+[unreleased]: https://github.com/lblod/app-gelinkt-notuleren/compare/v5.5.0...HEAD
+[5.5.0]: https://github.com/lblod/app-gelinkt-notuleren/compare/v5.4.0...v5.5.0
 [5.4.0]: https://github.com/lblod/app-gelinkt-notuleren/compare/v5.3.5...v5.4.0
 [5.3.5]: https://github.com/lblod/app-gelinkt-notuleren/compare/v5.3.4...v5.3.5
 [5.3.4]: https://github.com/lblod/app-gelinkt-notuleren/compare/v5.3.3...v5.3.4
