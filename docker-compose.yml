@@ -12,7 +12,7 @@ services:
     labels:
       - "logging=true"
   editor:
-    image: lblod/frontend-gelinkt-notuleren:5.6.0
+    image: lblod/frontend-gelinkt-notuleren:5.7.0
     links:
       - identifier:backend
     restart: always
