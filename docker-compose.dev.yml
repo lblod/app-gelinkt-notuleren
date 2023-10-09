@@ -3,6 +3,7 @@ services:
   dashboard:
     ports:
       - "82:80"
+    restart: "no"
   dashboard-identifier:
     ports:
       - "81:80"
@@ -13,11 +14,15 @@ services:
       - ./config/proxy:/etc/nginx/conf.d
     ports:
       - "443:443"
+  meeting:
+    restart: "no"
   editor:
     restart: "no"
   identifier:
     environment:
       SESSION_COOKIE_SECURE: "false"
+      # SAME_SITE: "None" doesn't work with insecure cookies
+      SESSION_COOKIE_SAME_SITE: "Lax"
     ports:
       - "80:80"
     restart: "no"
@@ -54,6 +59,8 @@ services:
     environment:
       ENABLE_ENDPOINT_SELECTOR: "true"
       DEFAULT_SPARQL_ENDPOINT: "http://localhost:8890/sparql"
+  file:
+    restart: "no"
   adressenregister:
     restart: "no"
   published-resource-producer:
