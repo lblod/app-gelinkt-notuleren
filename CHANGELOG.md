@@ -1,5 +1,6 @@
 # app-gelinkt-notuleren
 
+
 ## 5.5.2
 
 ### Patch Changes
@@ -26,6 +27,19 @@
 ### Fixed
 
 - GN-4439: also insert data in public graph that is new in mdb and ldb exports (intead of just changes). This fixes some missing data in `bestuursfunctieCodes` in QA, which was the reason for broken mandatees.
+
+## 5.3.6
+
+### Patch Changes
+
+- [`151429d`](https://github.com/lblod/app-gelinkt-notuleren/commit/151429dc0ab505ee5d652d39efefac9c625807b2) Thanks [@abeforgit](https://github.com/abeforgit)! - switch to changesets for version management
+
+- [`6f08b1f`](https://github.com/lblod/app-gelinkt-notuleren/commit/6f08b1f9d3353a35f3b3832b5ffd0967e4de59bc) Thanks [@abeforgit](https://github.com/abeforgit)! - bump prepublisher service
+
+  This bump adds a hack for very large meetings: if an
+  `ext:optimizeSpaces "true"^^<http://mu.semte.ch/vocabularies/typed-literals/boolean>"`
+  is present on the meeting, it aggressively collapses spaces to save on characters when publishing
+  the notulen.
 
 ## [5.3.5] - 2023-08-07
 
