@@ -1,5 +1,21 @@
 # app-gelinkt-notuleren
 
+## 5.6.0
+
+### Minor Changes
+
+- [`f8f5ee2`](https://github.com/lblod/app-gelinkt-notuleren/commit/f8f5ee20cb778a7e9d75e6acb3d52782767a154a) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [5.9.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.9.0)
+
+### Patch Changes
+
+- [#172](https://github.com/lblod/app-gelinkt-notuleren/pull/172) [`630b792`](https://github.com/lblod/app-gelinkt-notuleren/commit/630b792919b69d5021b95e27e279693f6230c97a) Thanks [@piemonkey](https://github.com/piemonkey)! - Fix issues in dev for latest browsers
+
+- [`cfa6b0c`](https://github.com/lblod/app-gelinkt-notuleren/commit/cfa6b0c22b40db7fd5263b5463b835ca98159cee) Thanks [@abeforgit](https://github.com/abeforgit)! - bump prepublisher service
+
+  This bump adds a hack for very large meetings: if an
+  `ext:optimizeSpaces "true"^^<http://mu.semte.ch/vocabularies/typed-literals/boolean>"`
+  is present on the meeting, it aggressively collapses spaces to save on characters when publishing
+  the notulen.
 
 ## 5.5.2
 
