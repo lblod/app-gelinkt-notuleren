@@ -123,7 +123,7 @@ services:
         max-file: "3"
     labels:
       - "logging=true"
-  preimporter:
+  prepublish:
     image: lblod/notulen-prepublish-service:2.1.1
     environment:
       TZ: "Europe/Brussels"
