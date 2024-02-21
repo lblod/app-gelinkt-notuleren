@@ -1,5 +1,70 @@
 # app-gelinkt-notuleren
 
+## 5.7.4
+
+### Patch Changes
+
+- [`eff50e3`](https://github.com/lblod/app-gelinkt-notuleren/commit/eff50e30eefe992b8d8d3bb9dcbcec6f5d202bea) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [5.11.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.11.0)
+
+## 5.7.3
+
+### Patch Changes
+
+- [`7471f2d`](https://github.com/lblod/app-gelinkt-notuleren/commit/7471f2ddafe6b483478093fd2489eb9223a5d05b) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to 5.10.3
+
+## 5.7.2
+
+### Patch Changes
+
+- [`e5c2077`](https://github.com/lblod/app-gelinkt-notuleren/commit/e5c2077fc2eaae26fe56ea25c9d8ccc8fff8726b) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to 5.10.2
+
+## 5.7.1
+
+### Patch Changes
+
+- [`ec0126b`](https://github.com/lblod/app-gelinkt-notuleren/commit/ec0126b5670f128d5e5dad0852e183f914b241f4) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to version [5.10.1](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.10.1)
+
+## 5.7.0
+
+### Minor Changes
+
+- [`f6252ab`](https://github.com/lblod/app-gelinkt-notuleren/commit/f6252ab129b0c0e3da829e4aa4913da052ae372d) Thanks [@dkozickis](https://github.com/dkozickis)! - bump frontend to [v5.10.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.10.0)
+
+## 5.6.3
+
+### Patch Changes
+
+- [`6758532`](https://github.com/lblod/app-gelinkt-notuleren/commit/6758532b1954d5fe5c770f50f7a6f0329201a33a) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [v5.9.3](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.9.3)
+
+## 5.6.2
+
+### Patch Changes
+
+- [`3c28b13`](https://github.com/lblod/app-gelinkt-notuleren/commit/3c28b1352674123893b24789bb197bcbc7100e59) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [v5.9.2](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.9.2)
+
+## 5.6.1
+
+### Patch Changes
+
+- [`f14566f`](https://github.com/lblod/app-gelinkt-notuleren/commit/f14566f26400d314dcf0922885d1f8f94b0c7f18) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to version [5.9.1](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.9.1)
+
+## 5.6.0
+
+### Minor Changes
+
+- [`f8f5ee2`](https://github.com/lblod/app-gelinkt-notuleren/commit/f8f5ee20cb778a7e9d75e6acb3d52782767a154a) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [5.9.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.9.0)
+
+### Patch Changes
+
+- [#172](https://github.com/lblod/app-gelinkt-notuleren/pull/172) [`630b792`](https://github.com/lblod/app-gelinkt-notuleren/commit/630b792919b69d5021b95e27e279693f6230c97a) Thanks [@piemonkey](https://github.com/piemonkey)! - Fix issues in dev for latest browsers
+
+- [`cfa6b0c`](https://github.com/lblod/app-gelinkt-notuleren/commit/cfa6b0c22b40db7fd5263b5463b835ca98159cee) Thanks [@abeforgit](https://github.com/abeforgit)! - bump prepublisher service
+
+  This bump adds a hack for very large meetings: if an
+  `ext:optimizeSpaces "true"^^<http://mu.semte.ch/vocabularies/typed-literals/boolean>"`
+  is present on the meeting, it aggressively collapses spaces to save on characters when publishing
+  the notulen.
+
 ## 5.5.2
 
 ### Patch Changes
@@ -26,6 +91,19 @@
 ### Fixed
 
 - GN-4439: also insert data in public graph that is new in mdb and ldb exports (intead of just changes). This fixes some missing data in `bestuursfunctieCodes` in QA, which was the reason for broken mandatees.
+
+## 5.3.6
+
+### Patch Changes
+
+- [`151429d`](https://github.com/lblod/app-gelinkt-notuleren/commit/151429dc0ab505ee5d652d39efefac9c625807b2) Thanks [@abeforgit](https://github.com/abeforgit)! - switch to changesets for version management
+
+- [`6f08b1f`](https://github.com/lblod/app-gelinkt-notuleren/commit/6f08b1f9d3353a35f3b3832b5ffd0967e4de59bc) Thanks [@abeforgit](https://github.com/abeforgit)! - bump prepublisher service
+
+  This bump adds a hack for very large meetings: if an
+  `ext:optimizeSpaces "true"^^<http://mu.semte.ch/vocabularies/typed-literals/boolean>"`
+  is present on the meeting, it aggressively collapses spaces to save on characters when publishing
+  the notulen.
 
 ## [5.3.5] - 2023-08-07
 
