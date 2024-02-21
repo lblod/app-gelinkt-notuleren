@@ -1,5 +1,35 @@
 # app-gelinkt-notuleren
 
+## 5.7.4
+
+### Patch Changes
+
+- [`eff50e3`](https://github.com/lblod/app-gelinkt-notuleren/commit/eff50e30eefe992b8d8d3bb9dcbcec6f5d202bea) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [5.11.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.11.0)
+
+## 5.7.3
+
+### Patch Changes
+
+- [`7471f2d`](https://github.com/lblod/app-gelinkt-notuleren/commit/7471f2ddafe6b483478093fd2489eb9223a5d05b) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to 5.10.3
+
+## 5.7.2
+
+### Patch Changes
+
+- [`e5c2077`](https://github.com/lblod/app-gelinkt-notuleren/commit/e5c2077fc2eaae26fe56ea25c9d8ccc8fff8726b) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to 5.10.2
+
+## 5.7.1
+
+### Patch Changes
+
+- [`ec0126b`](https://github.com/lblod/app-gelinkt-notuleren/commit/ec0126b5670f128d5e5dad0852e183f914b241f4) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to version [5.10.1](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.10.1)
+
+## 5.7.0
+
+### Minor Changes
+
+- [`f6252ab`](https://github.com/lblod/app-gelinkt-notuleren/commit/f6252ab129b0c0e3da829e4aa4913da052ae372d) Thanks [@dkozickis](https://github.com/dkozickis)! - bump frontend to [v5.10.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.10.0)
+
 ## 5.6.3
 
 ### Patch Changes
