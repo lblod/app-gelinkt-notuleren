@@ -12,7 +12,7 @@ services:
     labels:
       - "logging=true"
   editor:
-    image: lblod/frontend-gelinkt-notuleren:5.8.0
+    image: lblod/frontend-gelinkt-notuleren:5.11.0
     links:
       - identifier:backend
     restart: always
@@ -124,8 +124,8 @@ services:
     labels:
       - "logging=true"
   preimporter:
-    image: lblod/notulen-prepublish-service:2.1.0
-    environment: 
+    image: lblod/notulen-prepublish-service:2.1.1
+    environment:
       TZ: "Europe/Brussels"
     restart: always
     logging: *default-logging
