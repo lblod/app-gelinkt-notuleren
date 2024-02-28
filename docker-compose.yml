@@ -31,7 +31,7 @@ services:
       SESSION_COOKIE_SECURE: "on"
       SESSION_COOKIE_SAME_SITE: "None"
   deltanotifier:
-    image: semtech/mu-delta-notifier:0.1.0
+    image: semtech/mu-delta-notifier:0.2.0
     volumes:
       - ./config/delta:/config
     restart: always
@@ -58,7 +58,7 @@ services:
     labels:
       - "logging=true"
   virtuoso:
-    image: tenforce/virtuoso:1.3.2-virtuoso7.2.5.1
+    image: redpencil/virtuoso:1.2.0-rc.1
     environment:
       SPARQL_UPDATE: "true"
       DEFAULT_GRAPH: "http://mu.semte.ch/application"
@@ -110,7 +110,7 @@ services:
     labels:
       - "logging=true"
   resource:
-    image: semtech/mu-cl-resources:1.22.2
+    image: semtech/mu-cl-resources:1.23.0
     volumes:
       - ./config/resources:/config
     environment:
