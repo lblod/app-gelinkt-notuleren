@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.6.4
+
+### Patch Changes
+
+- [#178](https://github.com/lblod/app-gelinkt-notuleren/pull/178) [`5481773`](https://github.com/lblod/app-gelinkt-notuleren/commit/54817739154452232a39f2be2e3f73b1b91b4110) Thanks [@elpoelma](https://github.com/elpoelma)! - Remove unresolvable `report-content` raltionship from `log-entry` model
+
 ## 5.7.4
 
 ### Patch Changes
