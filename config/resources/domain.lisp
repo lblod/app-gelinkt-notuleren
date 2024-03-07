@@ -1187,8 +1187,6 @@
                    :as "status-code")
               (log-source :via ,(s-prefix "dct:source")
                    :as "log-source"))
-  :has-many `((report-content :via ,(s-prefix "ext:belongsToReport")
-                   :as "report-content"))
   :resource-base (s-url "http://data.lblod.info/id/log-entries/")
   :features `(include-uri)
   :on-path "log-entries"
