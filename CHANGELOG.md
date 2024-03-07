@@ -1,5 +1,25 @@
 # app-gelinkt-notuleren
 
+## 5.8.0
+
+### Minor Changes
+
+- [#173](https://github.com/lblod/app-gelinkt-notuleren/pull/173) [`dab9545`](https://github.com/lblod/app-gelinkt-notuleren/commit/dab9545e184b5e985e51bf4f4ef4d2b4f8c75d4f) Thanks [@elpoelma](https://github.com/elpoelma)! - Update virtuoso image to redpencil/virtuoso:1.2.0-rc.1
+
+### Patch Changes
+
+- [#174](https://github.com/lblod/app-gelinkt-notuleren/pull/174) [`75cf199`](https://github.com/lblod/app-gelinkt-notuleren/commit/75cf1996a8463d66a472b6711e30cf163682f7bc) Thanks [@nvdk](https://github.com/nvdk)! - bump delta notifier to 0.2.0 for better error reporting
+
+- [`730f73b`](https://github.com/lblod/app-gelinkt-notuleren/commit/730f73bdafe3c05c536930699b09835ff8868393) Thanks [@abeforgit](https://github.com/abeforgit)! - bump mu-cl-resources to 1.23.0
+
+- [#178](https://github.com/lblod/app-gelinkt-notuleren/pull/178) [`5481773`](https://github.com/lblod/app-gelinkt-notuleren/commit/54817739154452232a39f2be2e3f73b1b91b4110) Thanks [@elpoelma](https://github.com/elpoelma)! - Remove unresolvable `report-content` raltionship from `log-entry` model
+
+## 5.6.4
+
+### Patch Changes
+
+- [#178](https://github.com/lblod/app-gelinkt-notuleren/pull/178) [`5481773`](https://github.com/lblod/app-gelinkt-notuleren/commit/54817739154452232a39f2be2e3f73b1b91b4110) Thanks [@elpoelma](https://github.com/elpoelma)! - Remove unresolvable `report-content` raltionship from `log-entry` model
+
 ## 5.7.4
 
 ### Patch Changes
