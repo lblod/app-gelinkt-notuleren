@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.9.0
+
+### Minor Changes
+
+- [`2e3d6ff`](https://github.com/lblod/app-gelinkt-notuleren/commit/2e3d6ff4be723bec2ccd25d703daf9a99f3a04d8) Thanks [@abeforgit](https://github.com/abeforgit)! - [#175](https://github.com/lblod/app-gelinkt-notuleren/pull/175) [`d985108`](https://github.com/lblod/app-gelinkt-notuleren/commit/d9851088bf7268c296aac89f6b66978b93541003) Thanks [@nvdk](https://github.com/nvdk)! - [GN-3030](https://binnenland.atlassian.net/browse/GN-3030) publication as files
+
 ## 5.8.0
 
 ### Minor Changes
