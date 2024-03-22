@@ -12,7 +12,7 @@ services:
     labels:
       - "logging=true"
   editor:
-    image: lblod/frontend-gelinkt-notuleren:5.11.0
+    image: lblod/frontend-gelinkt-notuleren:5.12.0
     links:
       - identifier:backend
     restart: always
@@ -124,7 +124,7 @@ services:
     labels:
       - "logging=true"
   prepublish:
-    image: lblod/notulen-prepublish-service:2.1.1
+    image: lblod/notulen-prepublish-service:2.2.0
     # build:
     #   context: https://github.com/lblod/notulen-prepublish-service#enhancement/better-support-for-large-content
     environment:
@@ -149,7 +149,7 @@ services:
     labels:
       - "logging=true"
   published-resource-producer:
-    image: lblod/published-resource-producer:1.1.2
+    image: lblod/published-resource-producer:1.2.0
     volumes:
       - ./data/files:/share
     environment:
