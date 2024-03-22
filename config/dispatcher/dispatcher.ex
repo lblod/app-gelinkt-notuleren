@@ -224,27 +224,27 @@ defmodule Dispatcher do
   end
 
   match "/prepublish/*path" do
-    forward conn, path, "http://preimporter/prepublish/"
+    forward conn, path, "http://prepublish/prepublish/"
   end
 
 
   post "/extract-previews" do
-    forward conn, [], "http://preimporter/extract-previews"
+    forward conn, [], "http://prepublish/extract-previews"
   end
 
    post "/meeting-notes-previews" do
-    forward conn, [], "http://preimporter/meeting-notes-previews"
+    forward conn, [], "http://prepublish/meeting-notes-previews"
   end
 
   match "/signing/*path" do
-    forward conn, path, "http://preimporter/signing/"
+    forward conn, path, "http://prepublish/signing/"
   end
 
   match "/publication-tasks/*path" do
-    forward conn, path, "http://preimporter/publication-tasks/"
+    forward conn, path, "http://prepublish/publication-tasks/"
   end
   post "/signed-resources" do
-    forward conn, [], "http://preimporter/signed-resources/"
+    forward conn, [], "http://prepublish/signed-resources/"
   end
 
   match "/signed-resources/*path" do

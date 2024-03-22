@@ -564,6 +564,8 @@
   :has-one `((published-resource :via ,(s-prefix "ext:publishesNotulen")
                                  :inverse t
                                  :as "published-resource")
+             (file :via ,(s-prefix "prov:generated")
+                   :as "file")
              (editor-document :via ,(s-prefix "prov:wasDerivedFrom")
                               :as "editor-document")
              (zitting :via ,(s-prefix "ext:hasVersionedNotulen")
