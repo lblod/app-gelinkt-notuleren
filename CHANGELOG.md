@@ -1,5 +1,14 @@
 # app-gelinkt-notuleren
 
+## 5.9.1
+
+### Patch Changes
+
+- [`a112bed`](https://github.com/lblod/app-gelinkt-notuleren/commit/a112bedd06ab2d3f278f81b1a8f15efc1b5f4169) Thanks [@abeforgit](https://github.com/abeforgit)! - GN-4745: Solve cache issue in mu-cl-resources
+
+  use a feature branch of mu-cl-resources to resolve caching issues
+  with filtered queries
+
 ## 5.9.0
 
 ### Minor Changes
