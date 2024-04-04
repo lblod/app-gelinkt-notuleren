@@ -142,12 +142,6 @@ services:
       - database:database
     volumes:
       - ./data/files/:/share/
-  adressenregister:
-    image: lblod/adressenregister-fuzzy-search-service:0.5.0
-    restart: always
-    logging: *default-logging
-    labels:
-      - "logging=true"
   published-resource-producer:
     image: lblod/published-resource-producer:1.2.0
     volumes:
