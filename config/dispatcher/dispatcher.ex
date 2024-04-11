@@ -216,17 +216,9 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/publishing-logs/"
   end
 
-  #################################################################
-  # Adressenregister
-  #################################################################
-  match "/adressenregister/*path" do
-    forward conn, path, "http://adressenregister/"
-  end
-
   match "/prepublish/*path" do
     forward conn, path, "http://prepublish/prepublish/"
   end
-
 
   post "/extract-previews" do
     forward conn, [], "http://prepublish/extract-previews"
