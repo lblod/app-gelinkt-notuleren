@@ -1,5 +1,17 @@
 # app-gelinkt-notuleren
 
+## 5.9.4
+
+### Patch Changes
+
+- [#180](https://github.com/lblod/app-gelinkt-notuleren/pull/180) [`628c598`](https://github.com/lblod/app-gelinkt-notuleren/commit/628c5985ce5759e8c4f5b1456d50d8436206f53d) Thanks [@piemonkey](https://github.com/piemonkey)! - Remove unused adressenregister-fuzzy-search-service
+
+- [#181](https://github.com/lblod/app-gelinkt-notuleren/pull/181) [`2a961f7`](https://github.com/lblod/app-gelinkt-notuleren/commit/2a961f7e3ac68321cc44e1c47443819adedf53ff) Thanks [@piemonkey](https://github.com/piemonkey)! - Bump editor frontend version to 5.13.0
+
+- [#181](https://github.com/lblod/app-gelinkt-notuleren/pull/181) [`1b42aa3`](https://github.com/lblod/app-gelinkt-notuleren/commit/1b42aa33354abc1b5b031b4bd2391c6af6c293e6) Thanks [@piemonkey](https://github.com/piemonkey)! - Return file details for SignedResources and PublishedResources if they exist
+
+- [#181](https://github.com/lblod/app-gelinkt-notuleren/pull/181) [`d3d6c74`](https://github.com/lblod/app-gelinkt-notuleren/commit/d3d6c74925b8ffb08085d4dfd8541b17cb304294) Thanks [@piemonkey](https://github.com/piemonkey)! - Bump prepublish service to 2.3.0
+
 ## 5.9.3
 
 ### Patch Changes
