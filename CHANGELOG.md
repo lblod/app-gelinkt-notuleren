@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.9.5
+
+### Patch Changes
+
+- [`dea6186`](https://github.com/lblod/app-gelinkt-notuleren/commit/dea6186fdc5ca8b68f9185ff058ffd876a436c6a) Thanks [@dkozickis](https://github.com/dkozickis)! - Update editor frontend to 5.13.1
+
 ## 5.9.4
 
 ### Patch Changes
