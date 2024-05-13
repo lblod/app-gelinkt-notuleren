@@ -329,6 +329,19 @@ defmodule Dispatcher do
     forward conn, path, "http://agendapoint-service/"
   end
 
+  options "/lmb-proxy/*path", _ do
+    conn
+    |> Plug.Conn.put_resp_header( "access-control-allow-headers", "content-type,accept" )
+    |> Plug.Conn.put_resp_header( "access-control-allow-methods", "*" )
+    |> send_resp( 200, "{ \"message\": \"ok\" }" )
+  end
+
+  match "/lmb-proxy/*path" do
+    forward conn, path, "http://lmb-proxy/"
+  end
+  
+  
+
   #########
   # login
   ########
@@ -351,6 +364,8 @@ defmodule Dispatcher do
   post "/remote-login/*path" do
     forward conn, [], "http://remotelogin/remote-login"
   end
+
+  
 
   match "/query/*path" do
     forward conn, path, "http://yasgui/"
