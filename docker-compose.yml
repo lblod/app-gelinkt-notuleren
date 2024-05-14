@@ -217,4 +217,6 @@ services:
     labels:
       - "logging=true"
   lmb-proxy:
-    image: lblod/lmb-sparql-proxy:0.0.1
+    image: !reset null
+    build: https://github.com/lblod/lmb-proxy-service.git
+    
