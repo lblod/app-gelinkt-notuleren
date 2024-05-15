@@ -216,7 +216,12 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
-  lmb-proxy:
+  vendor-proxy:
     image: !reset null
-    build: https://github.com/lblod/lmb-proxy-service.git
-    
+    build: https://github.com/lblod/vendor-proxy-service.git
+    environment:
+      QUERY_BASE_URL: 'https://mandatenbeheer.lblod.info'
+      VENDOR_KEY: 'secret'
+      VENDOR_URI: 'http://data.lblod.info/vendors/75ad4503-1699-4e43-8cab-a494142ae571'
+      AUTH_GROUP: 'org'
+
