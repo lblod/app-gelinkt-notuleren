@@ -216,3 +216,8 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
+  lpdc-service:
+    image: nginx:1.18
+    volumes:
+      - ./config/lpdc-service:/etc/nginx/conf.d
+      - ./config/lpdc-service/template-variables:/etc/nginx/templates/10-variables.conf.template:ro
