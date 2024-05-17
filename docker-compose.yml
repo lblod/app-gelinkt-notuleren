@@ -221,3 +221,6 @@ services:
     volumes:
       - ./config/lpdc-service:/etc/nginx/conf.d
       - ./config/lpdc-service/template-variables:/etc/nginx/templates/10-variables.conf.template:ro
+    environment:
+      API_URL: "https://api.ipdc.vlaanderen.be"
+      API_KEY: "VERY_SECRET_KEY_REPLACE_ME"
