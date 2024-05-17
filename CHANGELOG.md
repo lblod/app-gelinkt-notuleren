@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.10.1
+
+### Patch Changes
+
+- [`6043f73`](https://github.com/lblod/app-gelinkt-notuleren/commit/6043f7376ae84d7e1b96325d5ed021058c6d687a) Thanks [@lagartoverde](https://github.com/lagartoverde)! - Bump prepublish service
+
 ## 5.10.0
 
 ### Minor Changes
