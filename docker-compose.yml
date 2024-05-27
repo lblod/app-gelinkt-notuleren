@@ -216,3 +216,12 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
+  lpdc-service:
+    image: lblod/api-proxy-service:1.0.1
+    links:
+      - database:database
+    environment:
+      API_URL: "https://api.ipdc.vlaanderen.be"
+      API_KEY: "VERY_SECRET_KEY_REPLACE_ME"
+      REQUIRED_ROLES: "GelinktNotuleren-publiceerder,GelinktNotuleren-schrijver,GelinktNotuleren-ondertekenaar"
+    restart: always

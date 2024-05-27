@@ -330,6 +330,13 @@ defmodule Dispatcher do
   end
 
   #########
+  # LPDC
+  ########
+  match "/lpdc-service/*path" do
+    forward conn, path, "http://lpdc-service/"
+  end
+
+  #########
   # login
   ########
   match "/mock/sessions/*path" do
