@@ -217,10 +217,12 @@ services:
     labels:
       - "logging=true"
   lpdc-service:
-    image: nginx:1.18
-    volumes:
-      - ./config/lpdc-service:/etc/nginx/conf.d
-      - ./config/lpdc-service/template-variables:/etc/nginx/templates/10-variables.conf.template:ro
+    image: !reset null
+    build: https://github.com/lblod/api-proxy-service.git
+    links:
+      - database:database
     environment:
       API_URL: "https://api.ipdc.vlaanderen.be"
       API_KEY: "VERY_SECRET_KEY_REPLACE_ME"
+      REQUIRED_ROLES: "GelinktNotuleren-publiceerder,GelinktNotuleren-schrijver,GelinktNotuleren-ondertekenaar"
+    restart: always
