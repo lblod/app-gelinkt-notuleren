@@ -1,5 +1,13 @@
 # app-gelinkt-notuleren
 
+## 5.14.0
+
+### Minor Changes
+
+- [`b20175c`](https://github.com/lblod/app-gelinkt-notuleren/commit/b20175c4f95df650ef360f4b77a64cdee91ea7b1) Thanks [@piemonkey](https://github.com/piemonkey)! - Update frontend to 5.18.0
+
+- [#183](https://github.com/lblod/app-gelinkt-notuleren/pull/183) [`764f085`](https://github.com/lblod/app-gelinkt-notuleren/commit/764f085f4c81a09828c1edaed82315407f2add64) Thanks [@dkozickis](https://github.com/dkozickis)! - GN-4693: Proxy to LPDC service
+
 ## 5.13.0
 
 ### Minor Changes
