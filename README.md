@@ -13,6 +13,7 @@ This repository harvest three setups.  The base of these setups resides in the s
 * *docker-compose.yml* This provides you with the backend components.  There is a frontend application included which you can publish using a separate proxy (we tend to put a letsencrypt proxy in front).
 * *docker-compose.dev.yml* Provides changes for a good frontend development setup.
   - publishes the backend services on port 80 directly, so you can run `ember serve --proxy http://localhost` when developing the frontend apps natively.
+  - publishes the included frontend on port 83, so you can visit the app at http://localhost:83/
   - publishes the database instance on port 8890 so you can easily see what content is stored in the base triplestore
   - provides a mock-login backend service so you don't need the ACM/IDM integration.
 * *docker-compose.demo.yml* Provides a setup for demo purposes.  It is similar to the dev setup, but publishes the frontend application directly:
