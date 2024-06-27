@@ -12,7 +12,7 @@ services:
     labels:
       - "logging=true"
   editor:
-    image: lblod/frontend-gelinkt-notuleren:5.19.0
+    image: lblod/frontend-gelinkt-notuleren:5.19.1
     links:
       - identifier:backend
     restart: always
@@ -26,8 +26,8 @@ services:
     labels:
       - "logging=true"
     environment:
-      DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: "[{\"variables\":[],\"name\":\"public\"}]"
-      DEFAULT_ACCESS_CONTROL_ALLOW_ORIGIN_HEADER: '*'
+      DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: '[{"variables":[],"name":"public"}]'
+      DEFAULT_ACCESS_CONTROL_ALLOW_ORIGIN_HEADER: "*"
       SESSION_COOKIE_SECURE: "on"
       SESSION_COOKIE_SAME_SITE: "None"
   deltanotifier:
@@ -180,8 +180,8 @@ services:
     labels:
       - "logging=true"
     environment:
-      DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: "[{\"variables\":[],\"name\":\"public\"}]"
-      DEFAULT_ACCESS_CONTROL_ALLOW_ORIGIN_HEADER: '*'
+      DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: '[{"variables":[],"name":"public"}]'
+      DEFAULT_ACCESS_CONTROL_ALLOW_ORIGIN_HEADER: "*"
       SESSION_COOKIE_SECURE: "on"
       SESSION_COOKIE_SAME_SITE: "None"
   dashboard-dispatcher:
