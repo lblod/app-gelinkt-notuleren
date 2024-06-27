@@ -458,6 +458,17 @@
   :on-path "intermissions"
 )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; INSTALLATION MEETING MODELS ;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(define-resource installatievergadering (zitting)
+  :class (s-prefix "ext:Installatievergadering")
+  :resource-base (s-url "http://data.lblod.info/id/installatievergaderingen/")
+  :features '(include-uri)
+  :on-path "installatievergaderingen"
+)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; PUBLICATION MODELS ;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
