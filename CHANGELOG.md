@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.16.0
+
+### Minor Changes
+
+- [`8459904`](https://github.com/lblod/app-gelinkt-notuleren/commit/8459904ea19fbfa68a921b9664e4c93ce111a98f) Thanks [@dkozickis](https://github.com/dkozickis)! - Bump frontend to 5.19.1
+
 ## 5.15.0
 
 ### Minor Changes
