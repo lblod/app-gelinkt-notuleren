@@ -18,6 +18,10 @@ services:
     restart: "no"
   editor:
     restart: "no"
+    ports:
+      - "83:80"
+    environment:
+      EMBER_ENVIRONMENT_NAME: "local"
   identifier:
     environment:
       SESSION_COOKIE_SECURE: "false"
