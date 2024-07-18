@@ -367,7 +367,20 @@ defmodule Dispatcher do
     forward conn, path, "http://yasgui/"
   end
 
-  match "/*_" do
-    send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
+  ###############################################################
+  # frontend layer
+  ###############################################################
+
+  match "/assets/*path" do
+    Proxy.forward conn, path, "http://editor/assets/"
   end
+
+  match "/@appuniversum/*path" do
+    Proxy.forward conn, path, "http://editor/@appuniversum/"
+  end
+
+  match "/*_path" do
+    Proxy.forward conn, [], "http://editor/index.html"
+  end
+  
 end
