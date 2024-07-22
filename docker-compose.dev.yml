@@ -18,6 +18,8 @@ services:
     restart: "no"
   editor:
     restart: "no"
+    environment:
+      EMBER_ENVIRONMENT_NAME: "local"
   identifier:
     environment:
       SESSION_COOKIE_SECURE: "false"
@@ -72,4 +74,6 @@ services:
   dashboard-dispatcher:
     restart: "no"
   dashboard-login:
+    restart: "no"
+  lpdc-service:
     restart: "no"
