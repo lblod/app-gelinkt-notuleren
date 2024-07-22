@@ -108,6 +108,10 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/zittingen/"
   end
 
+  match "/installatievergaderingen/*path" do
+    forward conn, path, "http://cache/installatievergaderingen/"
+  end
+
   match "/fracties/*path" do
     forward conn, path, "http://resource/fracties/"
   end
@@ -343,6 +347,13 @@ defmodule Dispatcher do
   
 
   #########
+  # LPDC
+  ########
+  match "/lpdc-service/*path" do
+    forward conn, path, "http://lpdc-service/"
+  end
+
+  #########
   # login
   ########
   match "/mock/sessions/*path" do
@@ -371,7 +382,20 @@ defmodule Dispatcher do
     forward conn, path, "http://yasgui/"
   end
 
-  match "/*_" do
-    send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
+  ###############################################################
+  # frontend layer
+  ###############################################################
+
+  match "/assets/*path" do
+    Proxy.forward conn, path, "http://editor/assets/"
   end
+
+  match "/@appuniversum/*path" do
+    Proxy.forward conn, path, "http://editor/@appuniversum/"
+  end
+
+  match "/*_path" do
+    Proxy.forward conn, [], "http://editor/index.html"
+  end
+  
 end

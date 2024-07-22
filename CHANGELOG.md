@@ -1,5 +1,69 @@
 # app-gelinkt-notuleren
 
+## 5.17.1
+
+### Patch Changes
+
+- [#188](https://github.com/lblod/app-gelinkt-notuleren/pull/188) [`6354173`](https://github.com/lblod/app-gelinkt-notuleren/commit/6354173fc7bef5de73d1fc19a3eacc77402aeff2) Thanks [@lagartoverde](https://github.com/lagartoverde)! - Update frontend to version 5.20.1
+
+## 5.17.0
+
+### Minor Changes
+
+- [`24cbf56`](https://github.com/lblod/app-gelinkt-notuleren/commit/24cbf56f469efaf67e68750e38ce2ab181c3643e) Thanks [@elpoelma](https://github.com/elpoelma)! - update frontend to version 5.20.0
+
+- [#187](https://github.com/lblod/app-gelinkt-notuleren/pull/187) [`49bee5b`](https://github.com/lblod/app-gelinkt-notuleren/commit/49bee5be7451fec23bdd81e8d944cf57e8613b23) Thanks [@elpoelma](https://github.com/elpoelma)! - Set-up basic 'installatievergadering' (derived from 'zitting') resource-model in order to represent installation meetings
+
+## 5.16.0
+
+### Minor Changes
+
+- [`8459904`](https://github.com/lblod/app-gelinkt-notuleren/commit/8459904ea19fbfa68a921b9664e4c93ce111a98f) Thanks [@dkozickis](https://github.com/dkozickis)! - Bump frontend to 5.19.1
+
+## 5.15.0
+
+### Minor Changes
+
+- [`fc4afc8`](https://github.com/lblod/app-gelinkt-notuleren/commit/fc4afc8d403c01cab2481eba724cca70c37ee1b0) Thanks [@lagartoverde](https://github.com/lagartoverde)! - Update frontend to 5.19.0
+
+## 5.14.1
+
+### Patch Changes
+
+- [`9ed894c`](https://github.com/lblod/app-gelinkt-notuleren/commit/9ed894c3dc915f64c1cf08c50605a217cce2d436) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to version 5.18.1
+
+## 5.14.0
+
+### Minor Changes
+
+- [`b20175c`](https://github.com/lblod/app-gelinkt-notuleren/commit/b20175c4f95df650ef360f4b77a64cdee91ea7b1) Thanks [@piemonkey](https://github.com/piemonkey)! - Update frontend to 5.18.0
+
+- [#183](https://github.com/lblod/app-gelinkt-notuleren/pull/183) [`764f085`](https://github.com/lblod/app-gelinkt-notuleren/commit/764f085f4c81a09828c1edaed82315407f2add64) Thanks [@dkozickis](https://github.com/dkozickis)! - GN-4693: Proxy to LPDC service
+
+## 5.13.0
+
+### Minor Changes
+
+- [`a295b2c`](https://github.com/lblod/app-gelinkt-notuleren/commit/a295b2c0f58bac7e6b78690369bde1bb4f43faf7) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [5.17.2](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.17.2)
+
+## 5.12.0
+
+### Minor Changes
+
+- [`5e23875`](https://github.com/lblod/app-gelinkt-notuleren/commit/5e23875fbec29bbcba1658c84a907ff373a96410) Thanks [@dkozickis](https://github.com/dkozickis)! - Bump frontend to [5.17.1](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.17.1)
+
+## 5.11.0
+
+### Minor Changes
+
+- [`961b31a`](https://github.com/lblod/app-gelinkt-notuleren/commit/961b31a2153cf56faf992e282982aab3089875b1) Thanks [@dkozickis](https://github.com/dkozickis)! - Bump frontend to [5.17.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.17.0)
+
+## 5.10.1
+
+### Patch Changes
+
+- [`6043f73`](https://github.com/lblod/app-gelinkt-notuleren/commit/6043f7376ae84d7e1b96325d5ed021058c6d687a) Thanks [@lagartoverde](https://github.com/lagartoverde)! - Bump prepublish service
+
 ## 5.10.0
 
 ### Minor Changes
