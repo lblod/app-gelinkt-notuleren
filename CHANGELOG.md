@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.17.2
+
+### Patch Changes
+
+- [`aaddb10`](https://github.com/lblod/app-gelinkt-notuleren/commit/aaddb10c4f6d572f7e03a644b27125711bece9b9) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to version 5.20.2
+
 ## 5.17.1
 
 ### Patch Changes
