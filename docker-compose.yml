@@ -223,3 +223,29 @@ services:
       API_KEY: "VERY_SECRET_KEY_REPLACE_ME"
       REQUIRED_ROLES: "GelinktNotuleren-publiceerder,GelinktNotuleren-schrijver,GelinktNotuleren-ondertekenaar"
     restart: always
+  lmb-fractie-consumer:
+    image: redpencil/ldes-consumer:0.8.0-rc1
+    environment:
+      # LDES_STREAM: "http://ldes-backend/fractie" TODO: LDES of mandatenbeheer
+      # LDES_ENDPOINT_VIEW: "http://ldes-backend/fractie/1" TODO: LDES of of mandatenbeheer
+      CRON_PATTERN: "*/1 * * * *" # run the job every 1 minute
+      REPLACE_VERSIONS: true 
+      MU_SPARQL_ENDPOINT: 'http://database:8890/sparql'
+      MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/lmb-mandaten-staging"
+      PERSIST_STATE: "false"
+    labels:
+        - "logging=true"
+    restart: always
+    logging: *default-logging
+  lmb-upsert-ldes-entity:
+    image: lblod/ldes-make-object-service:latest
+    depends_on:
+      - lmb-fractie-consumer
+    environment:
+      LANDING_ZONE_GRAPH: "http://mu.semte.ch/graphs/lmb-mandaten-staging"
+      TARGET_GRAPH: "http://mu.semte.ch/graphs/lmb-mandaten"
+    labels:
+        - "logging=true"
+    restart: always
+    logging: *default-logging
+
