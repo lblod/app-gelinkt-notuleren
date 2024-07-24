@@ -85,6 +85,20 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/sessions",
                     constraint: %ResourceFormatConstraint{
                       resource_prefix: "http://mu.semte.ch/sessions/"
+                    } },
+                  %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/lmb-mandaten",
+                   constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://data.vlaanderen.be/ns/mandaat#Fractie",
+                        "http://data.vlaanderen.be/ns/mandaat#Kandidatenlijst",
+                        "http://data.vlaanderen.be/ns/mandaat#Mandaat",
+                        "http://data.vlaanderen.be/ns/mandaat#Mandataris",
+                        "http://data.vlaanderen.be/ns/persoon#Geboorte",
+                        "http://www.w3.org/ns/org#Membership",
+                        "http://purl.org/dc/terms/PeriodOfTime",
+                        "http://data.lblod.info/vocabularies/contacthub/AgentInPositie"
+                      ]
                     } } ] },
 
       # // ORGANIZATION HAS POSSIBLY DUPLICATE USER DATA

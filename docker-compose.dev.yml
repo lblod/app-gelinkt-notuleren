@@ -77,3 +77,11 @@ services:
     restart: "no"
   lpdc-service:
     restart: "no"
+  lmb-fractie-consumer:
+    environment:
+      LDES_STREAM: "https://mandatenbeheer.lblod.info/streams/ldes/public"
+      LDES_ENDPOINT_VIEW: "https://mandatenbeheer.lblod.info/streams/ldes/public/1"
+      CRON_PATTERN: "*/15 * * * * *" # run the job every 15 seconds
+    restart: "no"
+  lmb-upsert-ldes-entity:
+    restart: "no"
