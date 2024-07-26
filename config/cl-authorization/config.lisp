@@ -95,7 +95,8 @@
   :rlog "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#"
   :rdfs "http://www.w3.org/2000/01/rdf-schema#"
   :tasks "http://redpencil.data.gift/vocabularies/tasks/"
-  :dct "http://purl.org/dc/terms/")
+  :dct "http://purl.org/dc/terms/"
+  :contacthub "http://data.lblod.info/vocabularies/contacthub/")
 
 (define-graph public ("http://mu.semte.ch/graphs/public")
   ("leidinggevenden:Bestuursfunctie" -> _)
@@ -155,6 +156,16 @@
 (define-graph sessions ("http://mu.semte.ch/graphs/sessions")
   ("musession:Session" -> _))
 
+(define-graph mandates ("http://mu.semte.ch/graphs/lmb-mandaten")
+  ("mandaat:Fractie" -> _)
+  ("mandaat:Kandidatenlijst" -> _)
+  ("mandaat:Mandaat" -> _)
+  ("mandaat:Mandataris" -> _)
+  ("persoon:Geboorte" -> _)
+  ("org:Membership" -> _)
+  ("dct:PeriodOfTime" -> _)
+  ("contacthub:AgentInPositie" -> _))
+
 (supply-allowed-group "public")
 
 (grant (read)
@@ -163,6 +174,10 @@
 
 (grant (read)
        :to-graph sessions
+       :for-allowed-group "public")
+
+(grant (read)
+       :to-graph mandates
        :for-allowed-group "public")
 
 
