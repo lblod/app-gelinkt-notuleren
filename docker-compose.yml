@@ -45,12 +45,9 @@ services:
     labels:
       - "logging=true"
   database:
-    image: semtech/mu-authorization:0.6.0-beta.8
-    environment:
-      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
-      DATABASE_COMPATIBILITY: Virtuoso
+    image: semtech/sparql-parser:feature-quad-transformations
     volumes:
-      - ./config/authorization:/config
+      - ./config/cl-authorization:/config
     restart: always
     logging: *default-logging
     labels:
