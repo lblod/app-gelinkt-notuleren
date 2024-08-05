@@ -464,6 +464,7 @@
 
 (define-resource installatievergadering (zitting)
   :class (s-prefix "ext:Installatievergadering")
+  :properties `((:synchronized-on :datetime ,(s-prefix "ext:synchronizedOn")))
   :resource-base (s-url "http://data.lblod.info/id/installatievergaderingen/")
   :features '(include-uri)
   :on-path "installatievergaderingen"
