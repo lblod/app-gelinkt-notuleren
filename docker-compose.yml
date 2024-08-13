@@ -231,3 +231,27 @@ services:
       API_KEY: "VERY_SECRET_KEY_REPLACE_ME"
       REQUIRED_ROLES: "GelinktNotuleren-publiceerder,GelinktNotuleren-schrijver,GelinktNotuleren-ondertekenaar"
     restart: always
+  ldio-workbench:
+    image: ldes/ldi-orchestrator:2.4.0-SNAPSHOT
+    volumes:
+      - ./config/ldio/ldio.config.yml:/ldio/application.yml:ro
+    links:
+      - java-to-virtuoso:database
+  lmb-upsert-ldes-entity:
+    image: lblod/ldes-make-object-service:latest
+    depends_on:
+      - ldio-workbench
+    environment:
+      LANDING_ZONE_GRAPH: "http://mu.semte.ch/graphs/lmb-mandaten-staging"
+      TARGET_GRAPH: "http://mu.semte.ch/graphs/lmb-mandaten"
+    labels:
+        - "logging=true"
+    restart: always
+    logging: *default-logging
+  java-to-virtuoso:
+    image: java-to-virtuoso
+    ports:
+      - "8123:8080"
+    links:
+      - virtuoso:database
+    

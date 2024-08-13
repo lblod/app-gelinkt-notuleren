@@ -1,0 +1,22 @@
+orchestrator:
+  logging:
+    level:
+        be.vlaanderen.informatievlaanderen: DEBUG
+  pipelines:
+    - name: my-first-pipeline
+      input:
+        name: Ldio:LdesClient
+        config:
+          urls:
+            - https://dev.mandatenbeheer.lblod.info/streams/ldes/public/1
+          sourceFormat: text/turtle
+          materialisation:
+            enabled: true
+          retries:
+            enabled: true
+      outputs:
+        - name: Ldio:RepositoryMaterialiser
+          config:
+            sparql-host: "http://database:8080/rdf4j-server/"
+            repository-id: "123"
+            named-graph: "http://mu.semte.ch/graphs/lmb-mandaten-staging"
