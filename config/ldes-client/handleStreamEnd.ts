@@ -8,7 +8,7 @@ const PREFIXES = `
     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
     PREFIX foaf: <http://xmlns.com/foaf/0.1/>
     PREFIX adms: <http://www.w3.org/ns/adms#>
-    PREFIX org: <http://www.w3.org/ns/org>
+    PREFIX org: <http://www.w3.org/ns/org#>
     PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
     PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
 `
@@ -21,7 +21,7 @@ async function moveToPublic(type) {
                     ?predicateMandataris ?objectManadataris.
             }
         }INSERT {
-            GRAPH <http://mu.semte.ch/graphs/public> {
+            GRAPH <http://mu.semte.ch/graphs/lmb-data-public> {
                 ?mandataris a ${type};
                     ?predicateMandataris ?objectManadataris.
             }
@@ -45,7 +45,7 @@ export async function handleStreamEnd(){
     const personPublicQuery = `
         ${PREFIXES}
         INSERT {
-            GRAPH <http://mu.semte.ch/graphs/public> {
+            GRAPH <http://mu.semte.ch/graphs/lmb-data-public> {
                 ?person a person:Person;
                     ?predicatePerson ?objectPerson.
                 ?person persoon:heeftGeboorte ?birthdate.
@@ -96,16 +96,19 @@ export async function handleStreamEnd(){
                     ?identifier ?identifierPredicate ?identifierObject.
                 }
             }
-            GRAPH <http://mu.semte.ch/graphs/public> {
+            GRAPH <http://mu.semte.ch/graphs/lmb-data-public> {
                 ?mandataris mandaat:isBestuurlijkeAliasVan ?person.
                 
                 ?mandataris org:holds ?mandat.
+                
+            }
+            GRAPH <http://mu.semte.ch/graphs/public> {
                 ?temporaryBestuursorgan org:hasPost ?mandat;
                     mandaat:isTijdspecialisatieVan ?bestuursorgan.
                 ?bestuursorgan besluit:bestuurt ?adminUnit.
                 ?adminUnit mu:uuid ?adminUnitUuid.
             }
-            BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?adminUnitUuid)) AS ?g)
+            BIND(IRI(CONCAT("http://mu.semte.ch/graphs/lmb-data-private/", ?adminUnitUuid)) AS ?g)
 
         }
     `
