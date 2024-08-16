@@ -1,5 +1,13 @@
 # app-gelinkt-notuleren
 
+## 5.16.1
+
+### Patch Changes
+
+- [`52e36cb`](https://github.com/lblod/app-gelinkt-notuleren/commit/52e36cb8fbe1149101fe9ee961acc24b29fcc586) Thanks [@abeforgit](https://github.com/abeforgit)! - GN-4976: exclude ember-leaflet assets from fingerprinting
+
+  Update frontend to 5.19.2 hotfix
+
 ## 5.16.0
 
 ### Minor Changes
