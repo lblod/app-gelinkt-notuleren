@@ -233,7 +233,7 @@ services:
     restart: always
 
   ldes-client:
-    image: ldes-client-2
+    build: https://github.com/lblod/ldes-client.git
     volumes:
       - ./config/ldes-client/handleStreamEnd.ts:/config/handleStreamEnd.ts
     links:
