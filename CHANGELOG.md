@@ -26,6 +26,14 @@
 
 - [#187](https://github.com/lblod/app-gelinkt-notuleren/pull/187) [`49bee5b`](https://github.com/lblod/app-gelinkt-notuleren/commit/49bee5be7451fec23bdd81e8d944cf57e8613b23) Thanks [@elpoelma](https://github.com/elpoelma)! - Set-up basic 'installatievergadering' (derived from 'zitting') resource-model in order to represent installation meetings
 
+## 5.16.1
+
+### Patch Changes
+
+- [`52e36cb`](https://github.com/lblod/app-gelinkt-notuleren/commit/52e36cb8fbe1149101fe9ee961acc24b29fcc586) Thanks [@abeforgit](https://github.com/abeforgit)! - GN-4976: exclude ember-leaflet assets from fingerprinting
+
+  Update frontend to 5.19.2 hotfix
+
 ## 5.16.0
 
 ### Minor Changes
