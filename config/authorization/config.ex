@@ -250,7 +250,7 @@ defmodule Acl.UserGroups.Config do
                      FILTER(?role in (\"GelinktNotuleren-lezer\",\"GelinktNotuleren-schrijver\", \"GelinktNotuleren-publiceerder\",  \"GelinktNotuleren-ondertekenaar\"))
                     }" },
         graphs: [ %GraphSpec{
-                    graph: "http://mu.semte.ch/graphs/lmb-data-private",
+                    graph: "http://mu.semte.ch/graphs/lmb-data-private/",
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "http://www.w3.org/ns/person#Person",
