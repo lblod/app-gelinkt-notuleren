@@ -1,5 +1,13 @@
 # app-gelinkt-notuleren
 
+## 5.18.0
+
+### Minor Changes
+
+- [#182](https://github.com/lblod/app-gelinkt-notuleren/pull/182) [`5b27815`](https://github.com/lblod/app-gelinkt-notuleren/commit/5b278156ea503c285b737152891fef429367bce2) Thanks [@lagartoverde](https://github.com/lagartoverde)! - Add lmb-proxy service
+
+- [`1ecd927`](https://github.com/lblod/app-gelinkt-notuleren/commit/1ecd927bbbd40e30fe8bbb3b266ee1e684840b71) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to version 5.21.0
+
 ## 5.17.3
 
 ### Patch Changes
