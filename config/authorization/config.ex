@@ -129,7 +129,9 @@ defmodule Acl.UserGroups.Config do
                         "http://www.w3.org/ns/adms#Identifier",
                         "http://mu.semte.ch/vocabularies/ext/signing/SignedResource",
                         "http://mu.semte.ch/vocabularies/ext/signing/PublishedResource",
-                        "http://mu.semte.ch/vocabularies/ext/PublishingLog"
+                        "http://mu.semte.ch/vocabularies/ext/PublishingLog",
+                        "http://mu.semte.ch/vocabularies/ext/Installatievergadering",
+                        "http://mu.semte.ch/vocabularies/ext/InstallatievergaderingSynchronizationStatus",
                       ] } } ] },
 
       %GroupSpec{
@@ -164,7 +166,9 @@ defmodule Acl.UserGroups.Config do
                         "http://www.w3.org/ns/person#Person",
                         "http://data.vlaanderen.be/ns/persoon#Geboorte",
                         "http://www.w3.org/ns/adms#Identifier",
-                        "http://mu.semte.ch/vocabularies/ext/PublishingLog"
+                        "http://mu.semte.ch/vocabularies/ext/PublishingLog",
+                        "http://mu.semte.ch/vocabularies/ext/Installatievergadering",
+                        "http://mu.semte.ch/vocabularies/ext/InstallatievergaderingSynchronizationStatus",
                       ] } } ] },
 
       %GroupSpec{
