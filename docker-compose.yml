@@ -24,7 +24,7 @@ services:
     labels:
       - "logging=true"
     environment:
-      DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: '[{"variables":[],"name":"public"}]'
+      DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: '[{"variables":[],"name":"public"}, {"variables":[],"name":"lmb-public"}]'
       DEFAULT_ACCESS_CONTROL_ALLOW_ORIGIN_HEADER: "*"
       SESSION_COOKIE_SECURE: "on"
       SESSION_COOKIE_SAME_SITE: "None"
