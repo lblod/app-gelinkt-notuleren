@@ -33,7 +33,7 @@ async function moveToPublic(type) {
 
         }
     `
-    await updateSudo(query, {}, {sparqlEndpoint: "http://virtuoso:8890/sparql"});
+    await updateSudo(query);
 }
 
 export async function handleStreamEnd(){
@@ -68,7 +68,7 @@ export async function handleStreamEnd(){
         }
     
     `
-    await updateSudo(personPublicQuery, {}, {sparqlEndpoint: "http://virtuoso:8890/sparql"});
+    await updateSudo(personPublicQuery);
     const personQuery = `
         ${PREFIXES}
         DELETE {
@@ -112,6 +112,6 @@ export async function handleStreamEnd(){
 
         }
     `
-    await updateSudo(personQuery, {}, {sparqlEndpoint: "http://virtuoso:8890/sparql"});
+    await updateSudo(personQuery);
     console.log('LDES postproccessed')
   }
