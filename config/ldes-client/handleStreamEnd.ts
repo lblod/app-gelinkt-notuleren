@@ -13,7 +13,7 @@ const PREFIXES = `
     PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
 `
 
-const PAGE_SIZE = 500
+const PAGE_SIZE = 50
 
 async function moveToPublic(type) {
     const subjectQuery = `
@@ -88,11 +88,6 @@ export async function handleStreamEnd(){
             GRAPH <http://mu.semte.ch/graphs/mandaten-staging> {
                 ?subject a person:Person.
             }
-            FILTER NOT EXISTS {
-                GRAPH <http://mu.semte.ch/graphs/lmb-data-public> {
-                    ?person a person:Person.
-                }
-            }
         }
     `
     const responsePublic = await querySudo(personPublicSubjectQuery, {}, {sparqlEndpoint: "http://virtuoso:8890/sparql"});
@@ -107,16 +102,12 @@ export async function handleStreamEnd(){
                 GRAPH <http://mu.semte.ch/graphs/lmb-data-public> {
                     ?person a person:Person;
                         ?predicatePerson ?objectPerson.
-                    ?person persoon:heeftGeboorte ?birthdate.
-                    ?birthdate ?birthdatePredicate ?birthdateObject.
                 }
 
             } WHERE {
                 GRAPH <http://mu.semte.ch/graphs/lmb-data-public> {
                     ?person a person:Person;
                         ?predicatePerson ?objectPerson.
-                    ?person persoon:heeftGeboorte ?birthdate.
-                    ?birthdate ?birthdatePredicate ?birthdateObject.
                 }
                 VALUES ?predicatePerson{
                     dct:modified
@@ -132,27 +123,15 @@ export async function handleStreamEnd(){
         await updateSudo(personPublicDeleteOldDataQuery);
         const personPublicQuery = `
             ${PREFIXES}
-            DELETE {
+            INSERT {
                 GRAPH <http://mu.semte.ch/graphs/lmb-data-public> {
                     ?person a person:Person;
                         ?predicatePerson ?objectPerson.
-                    ?person persoon:heeftGeboorte ?birthdate.
-                    ?birthdate ?birthdatePredicate ?birthdateObject.
-                }
-
-            } INSERT {
-                GRAPH <http://mu.semte.ch/graphs/lmb-data-public> {
-                    ?person a person:Person;
-                        ?predicatePerson ?objectPerson.
-                    ?person persoon:heeftGeboorte ?birthdate.
-                    ?birthdate ?birthdatePredicate ?birthdateObject.
                 }
             }WHERE {
                 GRAPH <http://mu.semte.ch/graphs/mandaten-staging> {
                     ?person a person:Person;
                         ?predicatePerson ?objectPerson.
-                    ?person persoon:heeftGeboorte ?birthdate.
-                    ?birthdate ?birthdatePredicate ?birthdateObject.
                 }
                 VALUES ?predicatePerson{
                     dct:modified
@@ -173,6 +152,8 @@ export async function handleStreamEnd(){
     }
 
     // We move to the person staging because we want to keep all the data, but not influence future public person migration
+    // Person in mandaten staging graph = waiting to be moved to lmb-public
+    // Person in person staging graph = waiting to be moved to lmb-private
     const moveToPersonStagingQuery = `
         ${PREFIXES}
         DELETE {
@@ -180,6 +161,10 @@ export async function handleStreamEnd(){
                 ?person a person:Person;
                     ?predicatePerson ?objectPerson.
                 ?person persoon:heeftGeboorte ?birthdate.
+                OPTIONAL {
+                    ?subject adms:identifier ?identifier.
+                    ?identifier ?identifierPredicate ?identifierObject.
+                }
               } 
         } INSERT {
             GRAPH <http://mu.semte.ch/graphs/person-staging> {
@@ -187,6 +172,10 @@ export async function handleStreamEnd(){
                     ?predicatePerson ?objectPerson.
                 ?person persoon:heeftGeboorte ?birthdate.
                 ?birthdate ?birthdatePredicate ?birthdateObject.
+                OPTIONAL {
+                    ?subject adms:identifier ?identifier.
+                    ?identifier ?identifierPredicate ?identifierObject.
+                }
             }
         }WHERE {
             GRAPH <http://mu.semte.ch/graphs/mandaten-staging> {
@@ -194,6 +183,10 @@ export async function handleStreamEnd(){
                     ?predicatePerson ?objectPerson.
                 ?person persoon:heeftGeboorte ?birthdate.
                 ?birthdate ?birthdatePredicate ?birthdateObject.
+                OPTIONAL {
+                    ?subject adms:identifier ?identifier.
+                    ?identifier ?identifierPredicate ?identifierObject.
+                }
             } 
         }
 
