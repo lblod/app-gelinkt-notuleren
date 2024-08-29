@@ -1,5 +1,13 @@
 # app-gelinkt-notuleren
 
+## 5.22.0
+
+### Minor Changes
+
+- [`705019c`](https://github.com/lblod/app-gelinkt-notuleren/commit/705019cb62bf5261c3b5342856fe2a8d612193ec) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to version 5.26.0
+
+- [#189](https://github.com/lblod/app-gelinkt-notuleren/pull/189) [`d5feed6`](https://github.com/lblod/app-gelinkt-notuleren/commit/d5feed618693d1cf518b76caebdfb1cb369808dc) Thanks [@elpoelma](https://github.com/elpoelma)! - Add `synchronized-on` property to `installatievergadering` model
+
 ## 5.21.0
 
 ### Minor Changes
