@@ -161,10 +161,8 @@ export async function handleStreamEnd(){
                 ?person a person:Person;
                     ?predicatePerson ?objectPerson.
                 ?person persoon:heeftGeboorte ?birthdate.
-                OPTIONAL {
-                    ?subject adms:identifier ?identifier.
-                    ?identifier ?identifierPredicate ?identifierObject.
-                }
+                ?subject adms:identifier ?identifier.
+                ?identifier ?identifierPredicate ?identifierObject.
               } 
         } INSERT {
             GRAPH <http://mu.semte.ch/graphs/person-staging> {
@@ -172,10 +170,8 @@ export async function handleStreamEnd(){
                     ?predicatePerson ?objectPerson.
                 ?person persoon:heeftGeboorte ?birthdate.
                 ?birthdate ?birthdatePredicate ?birthdateObject.
-                OPTIONAL {
-                    ?subject adms:identifier ?identifier.
-                    ?identifier ?identifierPredicate ?identifierObject.
-                }
+                ?subject adms:identifier ?identifier.
+                ?identifier ?identifierPredicate ?identifierObject.
             }
         }WHERE {
             GRAPH <http://mu.semte.ch/graphs/mandaten-staging> {
