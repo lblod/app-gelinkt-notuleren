@@ -161,7 +161,7 @@ export async function handleStreamEnd(){
                 ?person a person:Person;
                     ?predicatePerson ?objectPerson.
                 ?person persoon:heeftGeboorte ?birthdate.
-                ?subject adms:identifier ?identifier.
+                ?person adms:identifier ?identifier.
                 ?identifier ?identifierPredicate ?identifierObject.
               } 
         } INSERT {
@@ -170,7 +170,7 @@ export async function handleStreamEnd(){
                     ?predicatePerson ?objectPerson.
                 ?person persoon:heeftGeboorte ?birthdate.
                 ?birthdate ?birthdatePredicate ?birthdateObject.
-                ?subject adms:identifier ?identifier.
+                ?person adms:identifier ?identifier.
                 ?identifier ?identifierPredicate ?identifierObject.
             }
         }WHERE {
@@ -180,7 +180,7 @@ export async function handleStreamEnd(){
                 ?person persoon:heeftGeboorte ?birthdate.
                 ?birthdate ?birthdatePredicate ?birthdateObject.
                 OPTIONAL {
-                    ?subject adms:identifier ?identifier.
+                    ?person adms:identifier ?identifier.
                     ?identifier ?identifierPredicate ?identifierObject.
                 }
             } 
