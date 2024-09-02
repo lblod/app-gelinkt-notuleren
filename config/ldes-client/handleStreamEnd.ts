@@ -13,7 +13,7 @@ const PREFIXES = `
     PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
 `
 
-const PAGE_SIZE = 50
+const PAGE_SIZE = 500
 
 async function moveToPublic(type) {
     const subjectQuery = `
@@ -154,35 +154,58 @@ export async function handleStreamEnd(){
     // We move to the person staging because we want to keep all the data, but not influence future public person migration
     // Person in mandaten staging graph = waiting to be moved to lmb-public
     // Person in person staging graph = waiting to be moved to lmb-private
+    const moveIdentifiersToPersonStagingQuery = `
+    ${PREFIXES}
+        DELETE {
+            GRAPH <http://mu.semte.ch/graphs/mandaten-staging> {
+                ?identifier ?identifierPredicate ?identifierObject.
+            } 
+        } INSERT {
+            GRAPH <http://mu.semte.ch/graphs/person-staging> {
+                ?identifier ?identifierPredicate ?identifierObject.
+            }
+        }WHERE {
+            GRAPH <http://mu.semte.ch/graphs/mandaten-staging> {
+                ?person a person:Person.
+                ?person adms:identifier ?identifier.
+                ?identifier ?identifierPredicate ?identifierObject.
+            } 
+        }
+    `
+    const moveBirthdaysToPersonStagingQuery = `
+    ${PREFIXES}
+        DELETE {
+            GRAPH <http://mu.semte.ch/graphs/mandaten-staging> {
+                ?birthdate ?birthdatePredicate ?birthdateObject.
+            } 
+        } INSERT {
+            GRAPH <http://mu.semte.ch/graphs/person-staging> {
+                ?birthdate ?birthdatePredicate ?birthdateObject.
+            }
+        }WHERE {
+            GRAPH <http://mu.semte.ch/graphs/mandaten-staging> {
+                ?person a person:Person;
+                ?person persoon:heeftGeboorte ?birthdate.
+                ?birthdate ?birthdatePredicate ?birthdateObject.
+            } 
+        }
+    `
     const moveToPersonStagingQuery = `
         ${PREFIXES}
         DELETE {
             GRAPH <http://mu.semte.ch/graphs/mandaten-staging> {
                 ?person a person:Person;
                     ?predicatePerson ?objectPerson.
-                ?person persoon:heeftGeboorte ?birthdate.
-                ?person adms:identifier ?identifier.
-                ?identifier ?identifierPredicate ?identifierObject.
               } 
         } INSERT {
             GRAPH <http://mu.semte.ch/graphs/person-staging> {
                 ?person a person:Person;
                     ?predicatePerson ?objectPerson.
-                ?person persoon:heeftGeboorte ?birthdate.
-                ?birthdate ?birthdatePredicate ?birthdateObject.
-                ?person adms:identifier ?identifier.
-                ?identifier ?identifierPredicate ?identifierObject.
             }
         }WHERE {
             GRAPH <http://mu.semte.ch/graphs/mandaten-staging> {
                 ?person a person:Person;
                     ?predicatePerson ?objectPerson.
-                ?person persoon:heeftGeboorte ?birthdate.
-                ?birthdate ?birthdatePredicate ?birthdateObject.
-                OPTIONAL {
-                    ?person adms:identifier ?identifier.
-                    ?identifier ?identifierPredicate ?identifierObject.
-                }
             } 
         }
 
