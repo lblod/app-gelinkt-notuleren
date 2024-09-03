@@ -249,3 +249,5 @@ services:
       EXTRA_HEADERS: "secret"
       FIRST_PAGE: "https:/dev.mandatenbeheer.lblod.info/streams/ldes/abb/1"
       LDES_BASE: "https:/dev.mandatenbeheer.lblod.info/streams/ldes/abb/"
+    labels:
+      - "logging=true"
