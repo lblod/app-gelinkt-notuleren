@@ -1,0 +1,176 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "#### IVGR2: Onderzoek van de geloofsbrieven",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "##### IVGR2-LMB-1: De gemeenteraad keurt de geloofsbrieven goed van volgende verkozenen:",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX org: <http://www.w3.org/ns/org#>\nPREFIX ext: <http://mu.semte.ch/vocabularies/ext/>\nPREFIX lmb: <http://lblod.data.gift/vocabularies/lmb/>\nPREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>\nPREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\nSELECT DISTINCT ?persoon ?naam WHERE {\n  # TODO: replace this by the correct 'bestuursperiode'\n  ?bestuursorgaan lmb:heeftBestuursperiode <http://data.lblod.info/id/concept/Bestuursperiode/a2b977a3-ce68-4e42-80a6-4397f66fc5ca>.\n  ?bestuursorgaan org:hasPost ?mandaat.\n  ?mandataris org:holds ?mandaat.\n  ?mandataris mandaat:isBestuurlijkeAliasVan ?persoon.\n  ?persoon persoon:gebruikteVoornaam ?voornaam.\n  ?persoon foaf:familyName ?achternaam.\n  BIND(CONCAT(?voornaam, \" \", ?achternaam) AS ?naam)\n} \n# TODO: remove this limit in production\nLIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "#### IVGR3: Eedaflegging van de verkozen gemeenteraadsleden ",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "##### IVGR3-LMB-1: De gemeenteraad neemt kennis van de eedaflegging van de volgende verkozenen op datum van",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX org: <http://www.w3.org/ns/org#>\nPREFIX ext: <http://mu.semte.ch/vocabularies/ext/>\nPREFIX lmb: <http://lblod.data.gift/vocabularies/lmb/>\nPREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>\nPREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\nSELECT DISTINCT ?persoon ?naam ?datum_eedaflegging WHERE {\n  # TODO: replace this by the correct 'bestuursperiode'\n  ?bestuursorgaan lmb:heeftBestuursperiode <http://data.lblod.info/id/concept/Bestuursperiode/a2b977a3-ce68-4e42-80a6-4397f66fc5ca>.\n  ?bestuursorgaan org:hasPost ?mandaat.\n  ?mandataris org:holds ?mandaat.\n  ?mandataris mandaat:isBestuurlijkeAliasVan ?persoon.\n  ?persoon persoon:gebruikteVoornaam ?voornaam.\n  ?persoon foaf:familyName ?achternaam.\n  BIND(CONCAT(?voornaam, \" \", ?achternaam) AS ?naam)\n  # TODO: replace this by the correct date (start or ending of the inauguration meeting)\n  BIND(NOW() AS ?datum_eedaflegging)\n} \n# TODO: remove this limit in production\nLIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "#### IVGR4",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "##### IVGR4-LMB-1: De rangorde van de gemeenteraadsleden is als volgt vastgesteld",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX org: <http://www.w3.org/ns/org#>\nPREFIX ext: <http://mu.semte.ch/vocabularies/ext/>\nPREFIX lmb: <http://lblod.data.gift/vocabularies/lmb/>\nPREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>\nPREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\nSELECT DISTINCT ?persoon ?naam ?rang WHERE {\n  # TODO: replace this by the correct 'bestuursperiode'\n  ?bestuursorgaan lmb:heeftBestuursperiode <http://data.lblod.info/id/concept/Bestuursperiode/a2b977a3-ce68-4e42-80a6-4397f66fc5ca>.\n  ?bestuursorgaan org:hasPost ?mandaat.\n  # TODO: Do we only want information on 'gemeenteraadsleden'?\n  ?mandaat org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000011>.\n  ?mandataris org:holds ?mandaat.\n  ?mandataris mandaat:isBestuurlijkeAliasVan ?persoon.\n  # TODO: ?rangorde is a string or number?\n  ?mandataris mandaat:rangorde ?rang.\n  ?persoon persoon:gebruikteVoornaam ?voornaam.\n  ?persoon foaf:familyName ?achternaam.\n  BIND(CONCAT(?voornaam, \" \", ?achternaam) AS ?naam)\n} \nORDER BY ?rang\n# TODO: remove this limit in production\nLIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "#### IVGR5",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "##### IVGR5-LMB-1: Splitsing fracties: één of meerdere lijsten hebben in de akte van voordracht van kandidaten aangegeven te zullen splitsen in twee fracties.",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nPREFIX ext: <http://mu.semte.ch/vocabularies/ext/>\nSELECT ?kandidatenlijst ?fractie1 ?fractie2 WHERE {\n  # TODO: is this the right election?\n  ?kandidatenlijst mandaat:behoortTot <http://data.lblod.info/id/rechtstreekse-verkiezingen/612a57de-7fc2-40af-a7dc-17d544e5de20>.\n  ?kandidatenlijst skos:prefLabel ?label.\n  ?kandidatenlijst ext:produceertFractie ?fractie1.\n  ?kandidatenlijst ext:produceertFractie ?fractie2.\n} \nGROUP BY ?kandidatenlijst\nHAVING (?fractie1 != ?fractie2)",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "# TODO: for each of the fraction results of the previous query, get its members",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "##### IVGR5-LMB-2: De gemeenteraad stelt de grootte van de fracties als volgt vast",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX org: <http://www.w3.org/ns/org#>\nPREFIX ext: <http://mu.semte.ch/vocabularies/ext/>\nPREFIX lmb: <http://lblod.data.gift/vocabularies/lmb/>\nPREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>\nPREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\n# TODO: http or https?\nPREFIX regorg: <https://www.w3.org/ns/regorg#>\nSELECT DISTINCT ?fractie ?legalName (COUNT(DISTINCT ?lidmaatschap) as ?aantal_zetels) WHERE {\n  # TODO: replace this by the correct 'bestuursperiode'\n  ?bestuursorgaan lmb:heeftBestuursperiode <http://data.lblod.info/id/concept/Bestuursperiode/a2b977a3-ce68-4e42-80a6-4397f66fc5ca>.\n  ?fractie org:memberOf ?bestuursorgaan.\n  ?fractie regorg:legalName ?legalName.\n  OPTIONAL {\n    ?lidmaatschap a org:Membership.\n    ?lidmaatschap org:organisation ?fractie.\n  }\n} ",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "##### IVGR5-LMB-3: De gemeenteraad stelt de samenstelling van de fracties voorlopig als volgt vast",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX org: <http://www.w3.org/ns/org#>\nPREFIX ext: <http://mu.semte.ch/vocabularies/ext/>\nPREFIX lmb: <http://lblod.data.gift/vocabularies/lmb/>\nPREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>\nPREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\nPREFIX regorg: <https://www.w3.org/ns/regorg#>\nSELECT DISTINCT ?persoon ?naam ?fractie ?fractieNaam WHERE {\n  # TODO: replace this by the correct 'bestuursperiode'\n  ?bestuursorgaan lmb:heeftBestuursperiode <http://data.lblod.info/id/concept/Bestuursperiode/a2b977a3-ce68-4e42-80a6-4397f66fc5ca>.\n  ?bestuursorgaan org:hasPost ?mandaat.\n  ?mandataris org:holds ?mandaat.\n  ?mandataris mandaat:isBestuurlijkeAliasVan ?persoon.\n  ?persoon persoon:gebruikteVoornaam ?voornaam.\n  ?persoon foaf:familyName ?achternaam.\n  BIND(CONCAT(?voornaam, \" \", ?achternaam) AS ?naam)\n  ?mandataris org:hasMembership ?lidmaatschap.\n  ?lidmaatschap org:organisation ?fractie.\n  ?fractie regorg:legalName ?fractieNaam.\n} \n# TODO: remove this limit in production\nLIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "#### IVGR7",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "##### IVGR7-LMB-1: De voorgedragen kandidaat-schepenen zijn",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX org: <http://www.w3.org/ns/org#>\nPREFIX ext: <http://mu.semte.ch/vocabularies/ext/>\nPREFIX lmb: <http://lblod.data.gift/vocabularies/lmb/>\nPREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>\nPREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\nSELECT DISTINCT ?persoon ?naam ?rang WHERE {\n  # TODO: replace this by the correct 'bestuursperiode'\n  ?bestuursorgaan lmb:heeftBestuursperiode <http://data.lblod.info/id/concept/Bestuursperiode/a2b977a3-ce68-4e42-80a6-4397f66fc5ca>.\n  ?bestuursorgaan org:hasPost ?mandaat.\n  # Filter on 'schepen'\n  ?mandaat org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000014>.\n  ?mandataris org:holds ?mandaat.\n  ?mandataris mandaat:isBestuurlijkeAliasVan ?persoon.\n  # TODO: ?rangorde is a string or number?\n  ?mandataris mandaat:rangorde ?rang.\n  ?persoon persoon:gebruikteVoornaam ?voornaam.\n  ?persoon foaf:familyName ?achternaam.\n  BIND(CONCAT(?voornaam, \" \", ?achternaam) AS ?naam)\n} \n# TODO: Unsure how we will sort 'rang'\nORDER BY ?rang\n# TODO: remove this limit in production\nLIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "##### IVGR7-LMB-2: De gemeenteraad neemt kennis van de ontvankelijkheid van de gezamenlijke akte van voordracht en verklaart de voorgedragen kandidaat-schepenen verkozen in de rangorde van de gezamenlijke akte van voordracht van kandidaat-schepenen",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX org: <http://www.w3.org/ns/org#>\nPREFIX ext: <http://mu.semte.ch/vocabularies/ext/>\nPREFIX lmb: <http://lblod.data.gift/vocabularies/lmb/>\nPREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>\nPREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nSELECT DISTINCT ?rang ?naam ?status ?begindatum_mandaat ?einddatum_mandaat ?opvolger WHERE {\n  # TODO: replace this by the correct 'bestuursperiode'\n  ?bestuursorgaan lmb:heeftBestuursperiode <http://data.lblod.info/id/concept/Bestuursperiode/a2b977a3-ce68-4e42-80a6-4397f66fc5ca>.\n  ?bestuursorgaan org:hasPost ?mandaat.\n  # Filter on 'schepen'\n  ?mandaat org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000014>.\n  ?mandataris org:holds ?mandaat.\n  ?mandataris mandaat:isBestuurlijkeAliasVan ?persoon.\n  # TODO: ?rangorde is a string or number?\n  ?mandataris mandaat:rangorde ?rang.\n  ?mandataris mandaat:status/skos:prefLabel ?status.\n  ?persoon persoon:gebruikteVoornaam ?voornaam.\n  ?persoon foaf:familyName ?achternaam.\n  BIND(CONCAT(?voornaam, \" \", ?achternaam) AS ?naam)\n  # TODO: This should be the date of the meeting\n  BIND(NOW() as ?begindatum_mandaat)\n  VALUES ?einddatum_mandaat { undef }\n  # TODO: unsure how we will fetch the 'opvolger'\n  VALUES ?opvolger { undef }\n\n} \n# TODO: Unsure how we will sort 'rang'\nORDER BY ?rang\n# TODO: remove this limit in production\nLIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "##### IVGR7-LMB-3: De gemeenteraad neemt kennis van de ontvankelijkheid van de gezamenlijke akte van voordracht en verklaart de voorgedragen kandidaat-schepenen verkozen in de rangorde van de gezamenlijke akte van voordracht van kandidaat-schepenen",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX org: <http://www.w3.org/ns/org#>\nPREFIX ext: <http://mu.semte.ch/vocabularies/ext/>\nPREFIX lmb: <http://lblod.data.gift/vocabularies/lmb/>\nPREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>\nPREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\n\nSELECT DISTINCT ?persoon ?naam WHERE {\n  # TODO: replace this by the correct 'bestuursperiode'\n  ?bestuursorgaan lmb:heeftBestuursperiode <http://data.lblod.info/id/concept/Bestuursperiode/a2b977a3-ce68-4e42-80a6-4397f66fc5ca>.\n  ?bestuursorgaan org:hasPost ?mandaat.\n  # Filter on 'schepen'\n  ?mandaat org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000014>.\n  ?mandataris org:holds ?mandaat.\n  ?mandataris mandaat:isBestuurlijkeAliasVan ?persoon.\n  # TODO: ?rangorde is a string or number?\n  ?persoon persoon:gebruikteVoornaam ?voornaam.\n  ?persoon foaf:familyName ?achternaam.\n  BIND(CONCAT(?voornaam, \" \", ?achternaam) AS ?naam)\n} \n# TODO: Unsure how we will sort 'rang'\nORDER BY ?rang\n# TODO: remove this limit in production\nLIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "#### IVGR8",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "##### IVGR8-LMB-1: De volgende gemeenteraadsleden zijn verkozen als schepen",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX org: <http://www.w3.org/ns/org#>\nPREFIX ext: <http://mu.semte.ch/vocabularies/ext/>\nPREFIX lmb: <http://lblod.data.gift/vocabularies/lmb/>\nPREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>\nPREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\nPREFIX regorg: <https://www.w3.org/ns/regorg#>\nSELECT DISTINCT ?persoon ?naam ?fractieNaam WHERE {\n  # TODO: replace this by the correct 'bestuursperiode'\n  ?bestuursorgaan lmb:heeftBestuursperiode <http://data.lblod.info/id/concept/Bestuursperiode/a2b977a3-ce68-4e42-80a6-4397f66fc5ca>.\n  ?bestuursorgaan org:hasPost ?mandaat.\n  # Filter on 'schepen'\n  ?mandaat org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000014>.\n  ?mandataris org:holds ?mandaat.\n  ?mandataris mandaat:isBestuurlijkeAliasVan ?persoon.\n  ?persoon persoon:gebruikteVoornaam ?voornaam.\n  ?persoon foaf:familyName ?achternaam.\n  BIND(CONCAT(?voornaam, \" \", ?achternaam) AS ?naam)\n  OPTIONAL {\n    ?mandataris org:hasMembership ?lidmaatschap.\n    ?lidmaatschap org:organisation/regorg:legalName ?fractieNaam.\n  }\n  \n} \n# TODO: remove this limit in production\nLIMIT 10",
+    "metadata": {}
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "##### IVGR8-LMB-2: Op basis van de verkiezing van de schepenen en de voorzitter van het bijzonder comité voor de sociale dienst behoren de volgende fracties tot de coalitie",
+    "metadata": {}
+  },
+  {
+    "kind": 2,
+    "language": "sparql",
+    "value": "PREFIX org: <http://www.w3.org/ns/org#>\nPREFIX ext: <http://mu.semte.ch/vocabularies/ext/>\nPREFIX lmb: <http://lblod.data.gift/vocabularies/lmb/>\nPREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>\nPREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\nPREFIX regorg: <https://www.w3.org/ns/regorg#>\nSELECT DISTINCT ?fractie ?fractieNaam WHERE {\n  # TODO: replace this by the correct 'bestuursperiode'\n  ?bestuursorgaan lmb:heeftBestuursperiode <http://data.lblod.info/id/concept/Bestuursperiode/a2b977a3-ce68-4e42-80a6-4397f66fc5ca>.\n  ?bestuursorgaan org:hasPost ?mandaat.\n  # Filter on 'schepen', 'voorzitter van het bijzonder comité voor de sociale dienst'\n  ?mandaat org:role ?role.\n  VALUES ?role {\n    <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e00001a>\n    <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000014>\n  }\n\n  ?mandataris org:holds ?mandaat.\n  OPTIONAL {\n    ?mandataris org:hasMembership ?lidmaatschap.\n    ?lidmaatschap org:organisation ?fractie.\n    ?fractie regorg:legalName ?fractieNaam.\n  }\n  \n} \n# TODO: remove this limit in production\nLIMIT 10",
+    "metadata": {}
+  }
+]
