@@ -215,8 +215,7 @@ services:
     labels:
       - "logging=true"
   vendor-proxy:
-    # image: lblod/vendor-proxy-service:0.1.0
-    build: https://github.com/lblod/vendor-proxy-service.git#feat/content-type-response-type
+    image: lblod/vendor-proxy-service:0.2.0
     environment:
       QUERY_BASE_URL: 'https://mandatenbeheer.lblod.info'
       VENDOR_KEY: 'secret'
