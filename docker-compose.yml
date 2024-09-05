@@ -221,7 +221,7 @@ services:
       VENDOR_KEY: 'secret'
       VENDOR_URI: 'http://data.lblod.info/vendors/75ad4503-1699-4e43-8cab-a494142ae571'
       AUTH_GROUP: 'org'
-
+    restart: always
   lpdc-service:
     image: lblod/api-proxy-service:1.0.1
     links:
