@@ -1,5 +1,19 @@
 # app-gelinkt-notuleren
 
+## 5.23.1
+
+### Patch Changes
+
+- [`e87f17c`](https://github.com/lblod/app-gelinkt-notuleren/commit/e87f17c7e6ffd5ad8ef813ef8340c78929863381) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to version 5.27.1
+
+- [#192](https://github.com/lblod/app-gelinkt-notuleren/pull/192) [`ff28518`](https://github.com/lblod/app-gelinkt-notuleren/commit/ff285180fe5c9eecc835e1149158f5bc9303d7ff) Thanks [@piemonkey](https://github.com/piemonkey)! - Add restart config for vendor-proxy service
+
+## 5.23.0
+
+### Minor Changes
+
+- [`69cea9df`](https://github.com/lblod/app-gelinkt-notuleren/commit/69cea9df70ddf6d14acab767bac89c1d6198b3a1) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [v5.27.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.27.0)
+
 ## 5.22.0
 
 ### Minor Changes
