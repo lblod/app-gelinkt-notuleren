@@ -73,6 +73,19 @@
 - [`24cbf56`](https://github.com/lblod/app-gelinkt-notuleren/commit/24cbf56f469efaf67e68750e38ce2ab181c3643e) Thanks [@elpoelma](https://github.com/elpoelma)! - update frontend to version 5.20.0
 
 - [#187](https://github.com/lblod/app-gelinkt-notuleren/pull/187) [`49bee5b`](https://github.com/lblod/app-gelinkt-notuleren/commit/49bee5be7451fec23bdd81e8d944cf57e8613b23) Thanks [@elpoelma](https://github.com/elpoelma)! - Set-up basic 'installatievergadering' (derived from 'zitting') resource-model in order to represent installation meetings
+## 5.16.3
+
+### Patch Changes
+
+- [#193](https://github.com/lblod/app-gelinkt-notuleren/pull/193) [`431d7b78`](https://github.com/lblod/app-gelinkt-notuleren/commit/431d7b78d50fda36026cd2d091625f7c3c8b37c8) Thanks [@elpoelma](https://github.com/elpoelma)! - Add migration which marks `signed-notulen` resources as deleted if they are linked to signed resources which are marked as deleted
+
+- [#193](https://github.com/lblod/app-gelinkt-notuleren/pull/193) [`a69cd3cd`](https://github.com/lblod/app-gelinkt-notuleren/commit/a69cd3cdec2bc153c87daac6db9fb8046ef027ed) Thanks [@elpoelma](https://github.com/elpoelma)! - bump frontend to [5.19.4](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.19.4)
+
+## 5.16.2
+
+### Patch Changes
+
+- [`75bf3286`](https://github.com/lblod/app-gelinkt-notuleren/commit/75bf3286ccc253a41ee657783851c131dec5f0e4) Thanks [@abeforgit](https://github.com/abeforgit)! - hotfix bump frontend to v5.19.3 and prepublisher to v2.3.2
 
 ## 5.16.1
 

@@ -1,0 +1,25 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX person: <http://www.w3.org/ns/person#>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+DELETE {
+  GRAPH ?g {
+  	?versioned_notulen ext:deleted "false"^^<http://mu.semte.ch/vocabularies/typed-literals/boolean>.
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?versioned_notulen ext:deleted "true"^^<http://mu.semte.ch/vocabularies/typed-literals/boolean>.
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?versioned_notulen a ext:VersionedNotulen;
+                       ext:notulenKind 'full';
+                       ext:deleted "false"^^<http://mu.semte.ch/vocabularies/typed-literals/boolean>.
+    ?signed_resource ext:signsNotulen ?versioned_notulen.
+    FILTER NOT EXISTS {
+        ?signed_resource ext:deleted "false"^^<http://mu.semte.ch/vocabularies/typed-literals/boolean>.
+    }
+  }
+}
