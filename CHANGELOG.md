@@ -1,5 +1,61 @@
 # app-gelinkt-notuleren
 
+## 5.23.2
+
+### Patch Changes
+
+- [`a65ffd3`](https://github.com/lblod/app-gelinkt-notuleren/commit/a65ffd36bb00832660e8b1a12454c6e8cb75d553) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to version 5.27.2
+
+- [`fd754b9`](https://github.com/lblod/app-gelinkt-notuleren/commit/fd754b907b25cb6b5f9f4e300f461bbc6c9a8c6c) Thanks [@elpoelma](https://github.com/elpoelma)! - Add migration which marks `signed-notulen` resources as deleted if they are linked to signed resources which are marked as deleted
+
+## 5.23.1
+
+### Patch Changes
+
+- [`e87f17c`](https://github.com/lblod/app-gelinkt-notuleren/commit/e87f17c7e6ffd5ad8ef813ef8340c78929863381) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to version 5.27.1
+
+- [#192](https://github.com/lblod/app-gelinkt-notuleren/pull/192) [`ff28518`](https://github.com/lblod/app-gelinkt-notuleren/commit/ff285180fe5c9eecc835e1149158f5bc9303d7ff) Thanks [@piemonkey](https://github.com/piemonkey)! - Add restart config for vendor-proxy service
+
+## 5.23.0
+
+### Minor Changes
+
+- [`69cea9df`](https://github.com/lblod/app-gelinkt-notuleren/commit/69cea9df70ddf6d14acab767bac89c1d6198b3a1) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [v5.27.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.27.0)
+
+## 5.22.0
+
+### Minor Changes
+
+- [`705019c`](https://github.com/lblod/app-gelinkt-notuleren/commit/705019cb62bf5261c3b5342856fe2a8d612193ec) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to version 5.26.0
+
+- [#189](https://github.com/lblod/app-gelinkt-notuleren/pull/189) [`d5feed6`](https://github.com/lblod/app-gelinkt-notuleren/commit/d5feed618693d1cf518b76caebdfb1cb369808dc) Thanks [@elpoelma](https://github.com/elpoelma)! - Add `synchronized-on` property to `installatievergadering` model
+
+## 5.21.0
+
+### Minor Changes
+
+- [`159f868`](https://github.com/lblod/app-gelinkt-notuleren/commit/159f8683fc1f21e9930c104e8780d23f93e3e6b4) Thanks [@lagartoverde](https://github.com/lagartoverde)! - Bump frontend to 5.24.0
+
+## 5.20.0
+
+### Minor Changes
+
+- [`c344b7f`](https://github.com/lblod/app-gelinkt-notuleren/commit/c344b7f7640efa2c6b6e945dd6346710ceb7d7e8) Thanks [@lagartoverde](https://github.com/lagartoverde)! - Bump frontend to 5.23.0
+
+## 5.19.0
+
+### Minor Changes
+
+- [`fe6b4ec`](https://github.com/lblod/app-gelinkt-notuleren/commit/fe6b4ec573091a626bfe9773fe0cf914cd2128eb) Thanks [@lagartoverde](https://github.com/lagartoverde)! - Update frontend to version 5.22.0
+
+## 5.18.0
+
+### Minor Changes
+
+- [#182](https://github.com/lblod/app-gelinkt-notuleren/pull/182) [`5b27815`](https://github.com/lblod/app-gelinkt-notuleren/commit/5b278156ea503c285b737152891fef429367bce2) Thanks [@lagartoverde](https://github.com/lagartoverde)! - Add lmb-proxy service
+
+- [`1ecd927`](https://github.com/lblod/app-gelinkt-notuleren/commit/1ecd927bbbd40e30fe8bbb3b266ee1e684840b71) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to version 5.21.0
+
 ## 5.17.3
 
 ### Patch Changes
@@ -25,6 +81,28 @@
 - [`24cbf56`](https://github.com/lblod/app-gelinkt-notuleren/commit/24cbf56f469efaf67e68750e38ce2ab181c3643e) Thanks [@elpoelma](https://github.com/elpoelma)! - update frontend to version 5.20.0
 
 - [#187](https://github.com/lblod/app-gelinkt-notuleren/pull/187) [`49bee5b`](https://github.com/lblod/app-gelinkt-notuleren/commit/49bee5be7451fec23bdd81e8d944cf57e8613b23) Thanks [@elpoelma](https://github.com/elpoelma)! - Set-up basic 'installatievergadering' (derived from 'zitting') resource-model in order to represent installation meetings
+
+## 5.16.3
+
+### Patch Changes
+
+- [#193](https://github.com/lblod/app-gelinkt-notuleren/pull/193) [`431d7b78`](https://github.com/lblod/app-gelinkt-notuleren/commit/431d7b78d50fda36026cd2d091625f7c3c8b37c8) Thanks [@elpoelma](https://github.com/elpoelma)! - Add migration which marks `signed-notulen` resources as deleted if they are linked to signed resources which are marked as deleted
+
+- [#193](https://github.com/lblod/app-gelinkt-notuleren/pull/193) [`a69cd3cd`](https://github.com/lblod/app-gelinkt-notuleren/commit/a69cd3cdec2bc153c87daac6db9fb8046ef027ed) Thanks [@elpoelma](https://github.com/elpoelma)! - bump frontend to [5.19.4](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.19.4)
+
+## 5.16.2
+
+### Patch Changes
+
+- [`75bf3286`](https://github.com/lblod/app-gelinkt-notuleren/commit/75bf3286ccc253a41ee657783851c131dec5f0e4) Thanks [@abeforgit](https://github.com/abeforgit)! - hotfix bump frontend to v5.19.3 and prepublisher to v2.3.2
+
+## 5.16.1
+
+### Patch Changes
+
+- [`52e36cb`](https://github.com/lblod/app-gelinkt-notuleren/commit/52e36cb8fbe1149101fe9ee961acc24b29fcc586) Thanks [@abeforgit](https://github.com/abeforgit)! - GN-4976: exclude ember-leaflet assets from fingerprinting
+
+  Update frontend to 5.19.2 hotfix
 
 ## 5.16.0
 

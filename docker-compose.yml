@@ -12,7 +12,7 @@ services:
     labels:
       - "logging=true"
   editor:
-    image: lblod/frontend-gelinkt-notuleren:5.20.2
+    image: lblod/frontend-gelinkt-notuleren:5.27.2
     restart: always
     logging: *default-logging
     labels:
@@ -211,6 +211,14 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
+  vendor-proxy:
+    image: lblod/vendor-proxy-service:0.1.0
+    environment:
+      QUERY_BASE_URL: 'https://mandatenbeheer.lblod.info'
+      VENDOR_KEY: 'secret'
+      VENDOR_URI: 'http://data.lblod.info/vendors/75ad4503-1699-4e43-8cab-a494142ae571'
+      AUTH_GROUP: 'org'
+    restart: always
   lpdc-service:
     image: lblod/api-proxy-service:1.0.1
     links:

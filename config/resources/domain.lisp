@@ -464,9 +464,21 @@
 
 (define-resource installatievergadering (zitting)
   :class (s-prefix "ext:Installatievergadering")
+  :has-one `((installatievergadering-synchronization-status :via ,(s-prefix "ext:synchronizationStatus")
+                    :as "synchronization-status"))
   :resource-base (s-url "http://data.lblod.info/id/installatievergaderingen/")
   :features '(include-uri)
   :on-path "installatievergaderingen"
+)
+
+(define-resource installatievergadering-synchronization-status ()
+  :class (s-prefix "ext:InstallatievergaderingSynchronizationStatus")
+  :properties `((:timestamp :datetime ,(s-prefix "ext:timestamp"))
+                (:success :boolean ,(s-prefix "ext:success"))
+                (:error-message :string ,(s-prefix "ext:errorMessage")))
+  :resource-base (s-url "http://data.lblod.info/id/installatievergadering-synchronization-statuses/")
+  :features '(include-uri)
+  :on-path "installatievergadering-synchronization-statuses"
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

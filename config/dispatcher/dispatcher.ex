@@ -112,6 +112,10 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/installatievergaderingen/"
   end
 
+  match "/installatievergadering-synchronization-statuses/*path" do
+    forward conn, path, "http://cache/installatievergadering-synchronization-statuses/"
+  end
+
   match "/fracties/*path" do
     forward conn, path, "http://resource/fracties/"
   end
@@ -333,6 +337,19 @@ defmodule Dispatcher do
     forward conn, path, "http://agendapoint-service/"
   end
 
+  options "/vendor-proxy/*path", _ do
+    conn
+    |> Plug.Conn.put_resp_header( "access-control-allow-headers", "content-type,accept" )
+    |> Plug.Conn.put_resp_header( "access-control-allow-methods", "*" )
+    |> send_resp( 200, "{ \"message\": \"ok\" }" )
+  end
+
+  match "/vendor-proxy/*path" do
+    forward conn, path, "http://vendor-proxy/"
+  end
+  
+  
+
   #########
   # LPDC
   ########
@@ -362,6 +379,8 @@ defmodule Dispatcher do
   post "/remote-login/*path" do
     forward conn, [], "http://remotelogin/remote-login"
   end
+
+  
 
   match "/query/*path" do
     forward conn, path, "http://yasgui/"
