@@ -45,9 +45,10 @@ services:
     labels:
       - "logging=true"
   database:
-    image: semtech/sparql-parser:feature-quad-transformations
+    image: semtech/sparql-parser:0.0.8
     volumes:
       - ./config/cl-authorization:/config
+      - ./data/authorization:/data/
     restart: always
     logging: *default-logging
     labels:
