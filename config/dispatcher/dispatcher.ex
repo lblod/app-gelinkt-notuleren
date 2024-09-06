@@ -112,6 +112,10 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/installatievergaderingen/"
   end
 
+  match "/installatievergadering-synchronization-statuses/*path" do
+    forward conn, path, "http://cache/installatievergadering-synchronization-statuses/"
+  end
+
   match "/fracties/*path" do
     forward conn, path, "http://resource/fracties/"
   end
