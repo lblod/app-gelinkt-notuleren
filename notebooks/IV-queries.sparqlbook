@@ -134,18 +134,6 @@
   {
     "kind": 1,
     "language": "markdown",
-    "value": "##### IVGR7-LMB-3: De gemeenteraad neemt akte van de eedaflegging van volgende schepen(en), overeenkomstig artikel 44 van het decreet over het lokaal bestuur",
-    "metadata": {}
-  },
-  {
-    "kind": 2,
-    "language": "sparql",
-    "value": "PREFIX org: <http://www.w3.org/ns/org#>\nPREFIX ext: <http://mu.semte.ch/vocabularies/ext/>\nPREFIX lmb: <http://lblod.data.gift/vocabularies/lmb/>\nPREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>\nPREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>\nPREFIX foaf: <http://xmlns.com/foaf/0.1/>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\n\nSELECT DISTINCT ?persoon ?naam WHERE {\n  # TODO: replace this by the correct 'bestuursperiode'\n  ?bestuursorgaan lmb:heeftBestuursperiode <http://data.lblod.info/id/concept/Bestuursperiode/a2b977a3-ce68-4e42-80a6-4397f66fc5ca>.\n  ?bestuursorgaan org:hasPost ?mandaat.\n  # Filter on 'schepen'\n  ?mandaat org:role <http://data.vlaanderen.be/id/concept/BestuursfunctieCode/5ab0e9b8a3b2ca7c5e000014>.\n  ?mandataris org:holds ?mandaat.\n  ?mandataris mandaat:isBestuurlijkeAliasVan ?persoon.\n  # TODO: ?rangorde is a string or number?\n  ?persoon persoon:gebruikteVoornaam ?voornaam.\n  ?persoon foaf:familyName ?achternaam.\n  BIND(CONCAT(?voornaam, \" \", ?achternaam) AS ?naam)\n} \n# TODO: remove this limit in production\nLIMIT 10",
-    "metadata": {}
-  },
-  {
-    "kind": 1,
-    "language": "markdown",
     "value": "#### IVGR8",
     "metadata": {}
   },
