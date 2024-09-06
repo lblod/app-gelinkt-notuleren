@@ -13,7 +13,7 @@ const PREFIXES = `
     PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
 `
 
-const PAGE_SIZE = 500
+const PAGE_SIZE = 200
 
 async function moveToPublic(type) {
     const subjectQuery = `
@@ -154,24 +154,7 @@ export async function handleStreamEnd(){
     // We move to the person staging because we want to keep all the data, but not influence future public person migration
     // Person in mandaten staging graph = waiting to be moved to lmb-public
     // Person in person staging graph = waiting to be moved to lmb-private
-    const moveIdentifiersToPersonStagingQuery = `
-    ${PREFIXES}
-        DELETE {
-            GRAPH <http://mu.semte.ch/graphs/mandaten-staging> {
-                ?identifier ?identifierPredicate ?identifierObject.
-            } 
-        } INSERT {
-            GRAPH <http://mu.semte.ch/graphs/person-staging> {
-                ?identifier ?identifierPredicate ?identifierObject.
-            }
-        }WHERE {
-            GRAPH <http://mu.semte.ch/graphs/mandaten-staging> {
-                ?person a person:Person.
-                ?person adms:identifier ?identifier.
-                ?identifier ?identifierPredicate ?identifierObject.
-            } 
-        }
-    `
+    
     const moveBirthdaysToPersonStagingQuery = `
     ${PREFIXES}
         DELETE {
@@ -184,12 +167,14 @@ export async function handleStreamEnd(){
             }
         }WHERE {
             GRAPH <http://mu.semte.ch/graphs/mandaten-staging> {
-                ?person a person:Person;
+                ?person a person:Person.
                 ?person persoon:heeftGeboorte ?birthdate.
                 ?birthdate ?birthdatePredicate ?birthdateObject.
             } 
         }
     `
+
+    await updateSudo(moveBirthdaysToPersonStagingQuery, {}, {sparqlEndpoint: "http://virtuoso:8890/sparql"});
     const moveToPersonStagingQuery = `
         ${PREFIXES}
         DELETE {
@@ -252,19 +237,12 @@ export async function handleStreamEnd(){
                 GRAPH ?g {
                     ?person a person:Person;
                         ?predicatePerson ?objectPerson.
-                    ?identifier ?identifierPredicate ?identifierObject.
                 }
 
             } WHERE {
                 GRAPH <http://mu.semte.ch/graphs/person-staging> {
                     ?person a person:Person;
                         ?predicatePerson ?objectPerson.
-                    ?person persoon:heeftGeboorte ?birthdate.
-                    ?birthdate ?birthdatePredicate ?birthdateObject.
-                    OPTIONAL {
-                        ?person adms:identifier ?identifier.
-                        ?identifier ?identifierPredicate ?identifierObject.
-                    }
                 }
                 GRAPH <http://mu.semte.ch/graphs/lmb-data-public> {
                     ?mandataris mandaat:isBestuurlijkeAliasVan ?person.
@@ -295,14 +273,12 @@ export async function handleStreamEnd(){
                 GRAPH <http://mu.semte.ch/graphs/person-staging> {
                     ?person a person:Person;
                         ?predicatePerson ?objectPerson.
-                    ?identifier ?identifierPredicate ?identifierObject.
                 }
             }INSERT {
                 GRAPH ?g {
                     ?person a person:Person;
                         ?predicatePerson ?objectPerson.
-                    ?birthdate ?birthdatePredicate ?birthdateObject.
-                    ?identifier ?identifierPredicate ?identifierObject.
+                    ?birthdate ?birthdatePredicate ?birthdateObject. 
                 }
             }WHERE {
                 GRAPH <http://mu.semte.ch/graphs/person-staging> {
@@ -310,10 +286,6 @@ export async function handleStreamEnd(){
                         ?predicatePerson ?objectPerson.
                     ?person persoon:heeftGeboorte ?birthdate.
                     ?birthdate ?birthdatePredicate ?birthdateObject.
-                    OPTIONAL {
-                        ?person adms:identifier ?identifier.
-                        ?identifier ?identifierPredicate ?identifierObject.
-                    }
                 }
                 GRAPH <http://mu.semte.ch/graphs/lmb-data-public> {
                     ?mandataris mandaat:isBestuurlijkeAliasVan ?person.
