@@ -1,5 +1,13 @@
 # app-gelinkt-notuleren
 
+## 5.16.3
+
+### Patch Changes
+
+- [#193](https://github.com/lblod/app-gelinkt-notuleren/pull/193) [`431d7b78`](https://github.com/lblod/app-gelinkt-notuleren/commit/431d7b78d50fda36026cd2d091625f7c3c8b37c8) Thanks [@elpoelma](https://github.com/elpoelma)! - Add migration which marks `signed-notulen` resources as deleted if they are linked to signed resources which are marked as deleted
+
+- [#193](https://github.com/lblod/app-gelinkt-notuleren/pull/193) [`a69cd3cd`](https://github.com/lblod/app-gelinkt-notuleren/commit/a69cd3cdec2bc153c87daac6db9fb8046ef027ed) Thanks [@elpoelma](https://github.com/elpoelma)! - bump frontend to [5.19.4](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.19.4)
+
 ## 5.16.2
 
 ### Patch Changes
