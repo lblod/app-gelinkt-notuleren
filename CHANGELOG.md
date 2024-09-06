@@ -1,5 +1,13 @@
 # app-gelinkt-notuleren
 
+## 5.23.2
+
+### Patch Changes
+
+- [`a65ffd3`](https://github.com/lblod/app-gelinkt-notuleren/commit/a65ffd36bb00832660e8b1a12454c6e8cb75d553) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to version 5.27.2
+
+- [`fd754b9`](https://github.com/lblod/app-gelinkt-notuleren/commit/fd754b907b25cb6b5f9f4e300f461bbc6c9a8c6c) Thanks [@elpoelma](https://github.com/elpoelma)! - Add migration which marks `signed-notulen` resources as deleted if they are linked to signed resources which are marked as deleted
+
 ## 5.23.1
 
 ### Patch Changes
@@ -73,6 +81,7 @@
 - [`24cbf56`](https://github.com/lblod/app-gelinkt-notuleren/commit/24cbf56f469efaf67e68750e38ce2ab181c3643e) Thanks [@elpoelma](https://github.com/elpoelma)! - update frontend to version 5.20.0
 
 - [#187](https://github.com/lblod/app-gelinkt-notuleren/pull/187) [`49bee5b`](https://github.com/lblod/app-gelinkt-notuleren/commit/49bee5be7451fec23bdd81e8d944cf57e8613b23) Thanks [@elpoelma](https://github.com/elpoelma)! - Set-up basic 'installatievergadering' (derived from 'zitting') resource-model in order to represent installation meetings
+
 ## 5.16.3
 
 ### Patch Changes
