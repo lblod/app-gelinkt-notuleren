@@ -226,6 +226,45 @@ defmodule Acl.UserGroups.Config do
                       inverse_predicates: %AllPredicates{}
                     } } ] },
       %GroupSpec{
+        name: "lmb-public",
+        useage: [:read,:read_for_write],
+        access: %AlwaysAccessible{}, # TODO: Should be only for logged in users
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/lmb-data-public",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://data.vlaanderen.be/ns/mandaat#Mandataris",
+                        "http://data.vlaanderen.be/ns/mandaat#Fractie",
+                        "http://www.w3.org/ns/org#Membership",
+                        "http://www.w3.org/ns/person#Person",
+                      ]
+                    }
+        }]
+      },
+      %GroupSpec{
+        name: "lmb-private",
+        useage: [:read,:read_for_write],
+        access: %AccessByQuery{
+          vars: ["session_group"],
+          query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+                  PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+                  SELECT DISTINCT ?session_group WHERE {
+                    <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
+                                 ext:sessionRole ?role.
+                     FILTER(?role in (\"GelinktNotuleren-lezer\",\"GelinktNotuleren-schrijver\", \"GelinktNotuleren-publiceerder\",  \"GelinktNotuleren-ondertekenaar\"))
+                    }" },
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/lmb-data-private/",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://www.w3.org/ns/person#Person",
+                        "http://data.vlaanderen.be/ns/persoon#Geboorte",
+                        "http://www.w3.org/ns/adms#Identifier",
+                      ]
+                    }
+        }]
+      },
+      %GroupSpec{
         name: "org-reports",
         useage: [:read],
         access: %AccessByQuery{
