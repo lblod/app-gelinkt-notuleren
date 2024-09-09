@@ -24,7 +24,7 @@ services:
     labels:
       - "logging=true"
     environment:
-      DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: '[{"variables":[],"name":"public"}, {"variables":[],"name":"lmb-public"}]'
+      DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: '[{"variables":[],"name":"public"}]'
       DEFAULT_ACCESS_CONTROL_ALLOW_ORIGIN_HEADER: "*"
       SESSION_COOKIE_SECURE: "on"
       SESSION_COOKIE_SAME_SITE: "None"
@@ -231,23 +231,3 @@ services:
       API_KEY: "VERY_SECRET_KEY_REPLACE_ME"
       REQUIRED_ROLES: "GelinktNotuleren-publiceerder,GelinktNotuleren-schrijver,GelinktNotuleren-ondertekenaar"
     restart: always
-
-  ldes-client:
-    build: https://github.com/lblod/ldes-client.git
-    volumes:
-      - ./config/ldes-client/handleStreamEnd.ts:/config/handleStreamEnd.ts
-    links:
-      - database:database
-      - virtuoso:virtuoso
-    environment:
-      NODE_ENV: "development"
-      TARGET_GRAPH: "http://mu.semte.ch/graphs/mandaten-staging"
-      DIRECT_DATABASE_CONNECTION: "http://virtuoso:8890/sparql"
-      RANDOMIZE_GRAPHS: "true"
-      BATCH_SIZE: 200
-      BYPASS_MU_AUTH: "true"
-      EXTRA_HEADERS: "secret"
-      FIRST_PAGE: "https:/dev.mandatenbeheer.lblod.info/streams/ldes/abb/1"
-      LDES_BASE: "https:/dev.mandatenbeheer.lblod.info/streams/ldes/abb/"
-    labels:
-      - "logging=true"
