@@ -12,7 +12,8 @@ services:
     labels:
       - "logging=true"
   editor:
-    image: lblod/frontend-gelinkt-notuleren:5.27.2
+    # image: lblod/frontend-gelinkt-notuleren:5.27.2
+    build: https://github.com/lblod/frontend-gelinkt-notuleren.git#hack/aanvraag
     restart: always
     logging: *default-logging
     labels:
