@@ -1243,3 +1243,14 @@
   :features `(include-uri)
   :on-path "status-codes"
 )
+
+
+(define-resource aanvraag ()
+  :class (s-prefix "ext:Aanvraag")
+  :properties `((:created :datetime ,(s-prefix "dct:created"))
+                (:awv-status :uri ,(s-prefix "ext:statusSendAwv"))
+                (:decision :uri ,(s-prefix "ext:decision")))
+  :resource-base (s-url "http://data.lblod.info/id/aanvragen/")
+  :features `(include-uri)
+  :on-path "aanvragen"
+)
