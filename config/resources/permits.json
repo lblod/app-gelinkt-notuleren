@@ -14,6 +14,10 @@
       "name": "case",
       "class": "dbpedia:Case",
       "attributes": {
+        "created": {
+          "type": "datetime",
+          "predicate": "dct:created"
+        }
       },
       "relationships": {
         "identifier": {
@@ -74,10 +78,6 @@
         "date": {
           "type": "datetime",
           "predicate": "omgeving:ingangsdatum"
-        },
-        "created": {
-          "type": "datetime",
-          "predicate": "dct:created"
         }
       },
       "relationships": {
