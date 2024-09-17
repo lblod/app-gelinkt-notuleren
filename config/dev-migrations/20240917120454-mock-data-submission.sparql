@@ -31,7 +31,7 @@ INSERT DATA {
 
       <http://data.lblod.gift/id/aanvraag/mocksubmission1> a omgeving:Aanvraag ;
         mu:uuid "mocksubmission1" ;
-        omgeving:ingangsdatum "2024-01-01T12:04:54+00:00"^^xsd:datetime;
+        omgeving:ingangsdatum "2024-01-01T12:04:54+00:00"^^xsd:dateTime;
         omgeving:aanvrager <http://data.lblod.gift/id/organization/41d1c434-a8c9-446c-82da-1db73c21be49> ;
         # Beringen
         omgeving:Rechtshandeling.verantwoordelijke <http://data.lblod.info/id/bestuurseenheden/004eac6350757ce2688115f284907f42f1ce6ca39ec6b8819e105eaaef005647> .
@@ -39,13 +39,13 @@ INSERT DATA {
 
       <http://data.lblod.gift/id/aanvraag/mocksubmission2> a omgeving:Aanvraag ;
         mu:uuid "mocksubmission2" ;
-        omgeving:ingangsdatum "2024-01-01T12:04:54+00:00"^^xsd:datetime;
+        omgeving:ingangsdatum "2024-01-01T12:04:54+00:00"^^xsd:dateTime;
         omgeving:aanvrager <http://data.lblod.gift/id/organization/41d1c434-a8c9-446c-82da-1db73c21be49> ;
         # Oudsbergen
         omgeving:Rechtshandeling.verantwoordelijke <http://data.lblod.info/id/bestuurseenheden/13b25c80-8d3a-4821-95b0-ffc4e850cb4b> .
 
       <http://data.lblod.gift/id/tijdsduur/mocktimeframe> a time:Interval ;
-        time:hasBeginning "2024-09-27T12:04:54+00:00"^^xsd:datetime ;
-        time:hasEnd "2024-09-28T12:04:54+00:00"^^xsd:datetime .
+        time:hasBeginning "2024-09-27T12:04:54+00:00"^^xsd:dateTime ;
+        time:hasEnd "2024-09-28T12:04:54+00:00"^^xsd:dateTime .
    }
 }
