@@ -7,7 +7,8 @@
     "adms": "http://www.w3.org/ns/adms#",
     "dct": "http://purl.org/dc/terms/",
     "time": "http://www.w3.org/2006/time#",
-    "geosparql": "http://www.opengis.net/ont/geosparql#"
+    "geosparql": "http://www.opengis.net/ont/geosparql#",
+    "dbpedia": "https://dbpedia.org/ontology/"
   },
   "resources": {
     "cases": {
@@ -47,18 +48,18 @@
         }
       },
       "relationships": {
-        "case": {
+        "cases": {
           "predicate": "dct:subject",
           "target": "case",
           "cardinality": "many",
           "inverse": true
         },
-        "location": {
+        "locations": {
           "predicate": "omgeving:locatie",
           "target": "location",
           "cardinality": "many"
         },
-        "timeframe": {
+        "timeframes": {
           "predicate": "omgeving:Activiteit.tijdsbestek",
           "target": "timeframe",
           "cardinality": "many"
@@ -90,7 +91,12 @@
         },
         "administrative-unit": {
           "predicate": "omgeving:Rechtshandeling.verantwoordelijke",
-          "target": "administrative-unit",
+          "target": "bestuurseenheid",
+          "cardinality": "one"
+        },
+        "editor-document": {
+          "predicate": "ext:editorDocument",
+          "target": "editor-document",
           "cardinality": "one"
         }
       },
