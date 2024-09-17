@@ -365,8 +365,8 @@ defmodule Dispatcher do
     forward conn, path, "http://resource/submissions/"
   end
 
-  match "/identifiers/*path" do
-    forward conn, path, "http://resource/identifiers/"
+  match "/identificatoren/*path" do
+    forward conn, path, "http://resource/identificatoren/"
   end
   
   match "/locations/*path" do
