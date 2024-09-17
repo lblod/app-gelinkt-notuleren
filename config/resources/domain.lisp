@@ -806,10 +806,7 @@
   :on-path "fracties"
 )
 
-(define-resource fractietype ()
-  :class (s-prefix "ext:Fractietype")
-  :properties `((:label :string ,(s-prefix "skos:prefLabel"))
-                (:scope-note :string ,(s-prefix "skos:scopeNote")))
+(define-resource fractietype ()skos-prefix "skos:scopeNote")))
   :resource-base (s-url "http://data.vlaanderen.be/id/concept/Fractietype/")
   :features '(include-uri)
   :on-path "fractietypes"
@@ -1244,13 +1241,25 @@
   :on-path "status-codes"
 )
 
+; Same as resource bestuurseenheid, but this is the config similar to loketportaal for hackathon
+(define-resource administrative-unit ()
+  :class (s-prefix "besluit:Bestuurseenheid")
+  :properties `((:name :string ,(s-prefix "skos:prefLabel"))
+                 (:classification :url ,(s-prefix "besluit:classificatie")))
+  :has-many `((submission :via ,(s-prefix "omgeving:Rechtshandeling.verantwoordelijke")
+                :as "submissions"
+                :inverse t))
+  :resource-base (s-url "http://data.lblod.info/id/bestuurseenheden/")
+  :features '(include-uri)
+  :on-path "administrative-units"
+)
 
-(define-resource aanvraag ()
-  :class (s-prefix "ext:Aanvraag")
-  :properties `((:created :datetime ,(s-prefix "dct:created"))
-                (:awv-status :uri ,(s-prefix "ext:statusSendAwv"))
-                (:decision :uri ,(s-prefix "ext:decision")))
-  :resource-base (s-url "http://data.lblod.info/id/aanvragen/")
-  :features `(include-uri)
-  :on-path "aanvragen"
+(define-resource organization ()
+  :class (s-prefix "org:Organization")
+  :properties `((:name :string ,(s-prefix "skos:prefLabel")))
+  :has-many `((user :via ,(s-prefix "foaf:member")
+                :as "members"))
+  :resource-base (s-url "http://data.lblod.info/id/organisations/")
+  :features '(include-uri)
+  :on-path "organizations"
 )
