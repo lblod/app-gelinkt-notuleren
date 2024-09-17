@@ -134,7 +134,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/InstallatievergaderingSynchronizationStatus",
 
                         # Hackathon
-                        "https://dbpedia.org/ontology/Case",
+                        "http://dbpedia.org/ontology/Case",
                         "https://data.vlaanderen.be/ns/omgevingsvergunning#Activiteit",
                         "https://data.vlaanderen.be/ns/omgevingsvergunning#Aanvraag",
                         "http://www.opengis.net/ont/geosparql#Feature",
@@ -178,7 +178,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/InstallatievergaderingSynchronizationStatus",
 
                         # Hackathon
-                        "https://dbpedia.org/ontology/Case",
+                        "http://dbpedia.org/ontology/Case",
                         "https://data.vlaanderen.be/ns/omgevingsvergunning#Activiteit",
                         "https://data.vlaanderen.be/ns/omgevingsvergunning#Aanvraag",
                         "http://www.opengis.net/ont/geosparql#Feature",
