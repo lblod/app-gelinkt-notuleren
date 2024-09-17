@@ -10,6 +10,9 @@
 (defparameter *max-group-sorted-properties* nil)
 (setf sparql:*experimental-no-application-graph-for-sudo-select-queries* t)
 
+
+(read-domain-file "permits.json")
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; COMMON MODELS ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

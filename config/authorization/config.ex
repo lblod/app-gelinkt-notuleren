@@ -132,6 +132,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/PublishingLog",
                         "http://mu.semte.ch/vocabularies/ext/Installatievergadering",
                         "http://mu.semte.ch/vocabularies/ext/InstallatievergaderingSynchronizationStatus",
+                        "https://data.vlaanderen.be/ns/omgevingsvergunning#Aanvraag",
                       ] } } ] },
 
       %GroupSpec{
@@ -169,6 +170,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/PublishingLog",
                         "http://mu.semte.ch/vocabularies/ext/Installatievergadering",
                         "http://mu.semte.ch/vocabularies/ext/InstallatievergaderingSynchronizationStatus",
+                        "https://data.vlaanderen.be/ns/omgevingsvergunning#Aanvraag",
                       ] } } ] },
 
       %GroupSpec{
