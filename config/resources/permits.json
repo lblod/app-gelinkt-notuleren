@@ -19,7 +19,7 @@
       "relationships": {
         "identifier": {
           "predicate": "adms:identifier",
-          "target": "identifier",
+          "target": "identificator",
           "cardinality": "one",
           "_comment": "Cardinality must be many"
         },
@@ -102,30 +102,6 @@
       },
       "features": ["include-uri"],
       "new-resource-base": "http://data.lblod.gift/id/aanvraag/"
-    },
-    "identifiers": {
-      "name": "identifier",
-      "class": "adms:Identifier",
-      "attributes": {
-        "value": {
-          "type": "string",
-          "predicate": "skos:notation"
-        },
-        "agency": {
-          "type": "string",
-          "predicate": "adms:schemaAgency"
-        }
-      },
-      "relationships": {
-        "case":{
-          "predicate": "adms:identifier",
-          "target": "case",
-          "cardinality": "one",
-          "inverse": true
-        }
-      },
-      "features": ["include-uri"],
-      "new-resource-base": "http://data.lblod.gift/id/identificator/"
     },
     "locations": {
       "name": "location",
