@@ -252,10 +252,5 @@ services:
       - "logging=true"
 
   aanvragen-sync:
-    image: semtech/mu-javascript-template:1.8.0
-    environment:
-      NODE_ENV: "development"
-    ports:
-      - 102:80
-    volumes:
-      - ../aanvragen-sync-service-group-9/:/app/
+    image: lblod/aanvragen-sync-service-group-9:0.1.0
+    restart: always
