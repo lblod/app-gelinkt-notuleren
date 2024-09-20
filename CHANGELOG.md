@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.16.4
+
+### Patch Changes
+
+- [`71838d8`](https://github.com/lblod/app-gelinkt-notuleren/commit/71838d86393582ad8976fbaeea8742a630459265) Thanks [@abeforgit](https://github.com/abeforgit)! - fix [GN-5050](https://binnenland.atlassian.net/browse/GN-5050) Handle logical file uris with no related physical file information
+
 ## 5.16.3
 
 ### Patch Changes
