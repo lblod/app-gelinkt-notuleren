@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.24.0
+
+### Minor Changes
+
+- [#190](https://github.com/lblod/app-gelinkt-notuleren/pull/190) [`80c86ee`](https://github.com/lblod/app-gelinkt-notuleren/commit/80c86ee10eb13a9b773f200debd0c2bc68341f49) Thanks [@lagartoverde](https://github.com/lagartoverde)! - Consume LMB Mandatees
+
 ## 5.23.2
 
 ### Patch Changes
