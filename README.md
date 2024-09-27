@@ -16,6 +16,8 @@ This repository harvest three setups.  The base of these setups resides in the s
   - publishes the included frontend on port 83, so you can visit the app at http://localhost:83/
   - publishes the database instance on port 8890 so you can easily see what content is stored in the base triplestore
   - provides a mock-login backend service so you don't need the ACM/IDM integration.
+  - provides some information on how to setup the ldes-client you can add to
+  your override
 * *docker-compose.demo.yml* Provides a setup for demo purposes.  It is similar to the dev setup, but publishes the frontend application directly:
   - publishes the frontend editor on port 80 so you can visit the app at http://localhost/
   - publishes the database instance on port 8890 so you can easily see what content is stored in the base triplestore
