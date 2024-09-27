@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.25.0
+
+### Minor Changes
+
+- [#195](https://github.com/lblod/app-gelinkt-notuleren/pull/195) [`bd8d7c5e`](https://github.com/lblod/app-gelinkt-notuleren/commit/bd8d7c5efcee99ec3928e164480f0e8e4f389bfe) Thanks [@elpoelma](https://github.com/elpoelma)! - Directly move LDES members to the correct graph using a custom `processPage`
+
 ## 5.24.2
 
 ### Patch Changes
