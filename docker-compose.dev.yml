@@ -79,3 +79,10 @@ services:
     restart: "no"
   lpdc-service:
     restart: "no"
+## add this to your override file
+# ldes-client:
+#   environment:
+#     EXTRA_HEADERS: "{\"Authorization\": \"Basic blablablatokengoeshere==\"}"
+#     For the initial ingest, bypass mu auth. remove this after it's
+#     finished and restart the stack
+#     BYPASS_MU_AUTH: "true"

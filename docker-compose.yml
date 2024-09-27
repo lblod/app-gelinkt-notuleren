@@ -235,7 +235,7 @@ services:
   ldes-client:
     image: lblod/ldes-client:0.0.3
     volumes:
-      - ./config/ldes-client/handleStreamEnd.ts:/config/handleStreamEnd.ts
+      - ./config/ldes-client/processPage.ts:/config/processPage.ts
     links:
       - database:database
       - virtuoso:virtuoso
@@ -243,8 +243,8 @@ services:
       TARGET_GRAPH: "http://mu.semte.ch/graphs/mandaten-staging"
       DIRECT_DATABASE_CONNECTION: "http://virtuoso:8890/sparql"
       RANDOMIZE_GRAPHS: "true"
-      BATCH_SIZE: 200
-      BYPASS_MU_AUTH: "true"
+      BATCH_SIZE: 100
+      BYPASS_MU_AUTH: "false"
       EXTRA_HEADERS: "secret"
       FIRST_PAGE: "https:/dev.mandatenbeheer.lblod.info/streams/ldes/abb/1"
       LDES_BASE: "https:/dev.mandatenbeheer.lblod.info/streams/ldes/abb/"
