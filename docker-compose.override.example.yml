@@ -1,0 +1,9 @@
+# services:
+  # Re-enable the ldes-client in testing instead of disabling it to conserve resources
+  # ldes-client:
+  #   command: !reset null
+  #   environment:
+  #     EXTRA_HEADERS: "{\"Authorization\": \"Basic blablablatokengoeshere==\"}"
+  #     # For the initial ingest, bypass mu auth. remove this after it's
+  #     # finished and restart the stack
+  #     # BYPASS_MU_AUTH: "true"
