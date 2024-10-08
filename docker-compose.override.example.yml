@@ -1,0 +1,41 @@
+# This file contains overrides that are useful for different development situations. These are
+# intended to be used at the same time as the docker-compose.dev.yml file.
+
+# Network for testing publications locally. Needs tweaked identifier config as well.
+# networks:
+#   shared-gn-pub:
+#     name: shared-gn-pub
+
+# services:
+  # Extra logging from mu-auth
+  # database:
+  #   environment:
+  #     LOG_ERRORS: "true"
+  #     LOG_ACCESS_RIGHTS: "true"
+
+  # Do not run migrations
+  # migrations:
+  #   volumes: !reset null
+
+  # Configure LPDC service authentication
+  # lpdc-service:
+  #   environment:
+  #     API_URL: "https://api.ipdc.tni-vlaanderen.be"
+  #     API_KEY: "some secret key"
+
+  # Identifier config to test publications locally. Needs matching network configuration.
+  # identifier:
+  #   networks:
+  #     default:
+  #     shared-gn-pub:
+  #       aliases:
+  #         - "identifier-gelinkt-notuleren"
+
+  # Re-enable the ldes-client in testing instead of disabling it to conserve resources
+  # ldes-client:
+  #   command: !reset null
+  #   environment:
+  #     EXTRA_HEADERS: "{\"Authorization\": \"Basic blablablatokengoeshere==\"}"
+  #     # For the initial ingest, bypass mu auth. remove this after it's
+  #     # finished and restart the stack
+  #     # BYPASS_MU_AUTH: "true"

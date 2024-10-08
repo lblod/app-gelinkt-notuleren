@@ -1,9 +1,9 @@
-version: "3.4"
 x-logging: &default-logging
   driver: "json-file"
   options:
     max-size: "10m"
     max-file: "3"
+
 services:
   meeting:
     image: lblod/meeting-service:0.0.3
@@ -239,6 +239,7 @@ services:
     links:
       - database:database
       - virtuoso:virtuoso
+    restart: always
     environment:
       TARGET_GRAPH: "http://mu.semte.ch/graphs/mandaten-staging"
       DIRECT_DATABASE_CONNECTION: "http://virtuoso:8890/sparql"
