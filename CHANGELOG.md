@@ -1,5 +1,15 @@
 # app-gelinkt-notuleren
 
+## 5.28.0
+
+### Minor Changes
+
+- [`f2363b5`](https://github.com/lblod/app-gelinkt-notuleren/commit/f2363b5b62dcd0580e96f072ddbbaf6de856508d) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to version [5.31.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.31.0)
+
+### Patch Changes
+
+- [#197](https://github.com/lblod/app-gelinkt-notuleren/pull/197) [`fd60d37`](https://github.com/lblod/app-gelinkt-notuleren/commit/fd60d37817e2314dcc4e8e0ea266fa341fd81f30) Thanks [@piemonkey](https://github.com/piemonkey)! - Add restart config for ldes-client
+
 ## 5.27.0
 
 ### Minor Changes
