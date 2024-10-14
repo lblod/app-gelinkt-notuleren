@@ -1,0 +1,12 @@
+PREFIX gn: <http://data.lblod.info/vocabularies/gelinktnotuleren/>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+INSERT {
+    GRAPH ?g {
+        ?subject a gn:StandardStemming.
+        ?subject a besluit:Stemming.
+    }
+} WHERE {
+    GRAPH ?g {
+        ?subject a besluit:Stemming.
+    }
+}
