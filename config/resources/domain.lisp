@@ -420,6 +420,9 @@
 (define-resource stemming ()
   :class (s-prefix "besluit:Stemming")
   :properties `((:position :int ,(s-prefix "schema:position")))
+  :has-one  `((behandeling-van-agendapunt :via ,(s-prefix "besluit:heeftStemming")
+                          :inverse t
+                          :as "behandeling-van-agendapunt"))
   :resource-base (s-url "http://data.lblod.info/id/stemmingen/")
   :features '(include-uri)
   :on-path "stemmingen"
@@ -434,9 +437,6 @@
                 (:title :string ,(s-prefix "dct:title"))
                 (:gevolg :string ,(s-prefix "besluit:gevolg"))
                 (:onderwerp :string ,(s-prefix "besluit:onderwerp")))
-  :has-one  `((behandeling-van-agendapunt :via ,(s-prefix "besluit:heeftStemming")
-                          :inverse t
-                          :as "behandeling-van-agendapunt"))
   :has-many `((mandataris :via ,(s-prefix "besluit:heeftAanwezige")
                           :as "aanwezigen")
               (mandataris :via ,(s-prefix "besluit:heeftOnthouder")
@@ -456,10 +456,7 @@
   :class (s-prefix "gn:AangepasteStemming")
   :has-one  `((document-container :via ,(s-prefix "ext:votingDocument")
                           :inverse t
-                          :as "voting-document")
-              (behandeling-van-agendapunt :via ,(s-prefix "besluit:heeftStemming")
-                          :inverse t
-                          :as "behandeling-van-agendapunt"))
+                          :as "voting-document"))
   :resource-base (s-url "http://data.lblod.info/id/aangepaste-stemmingen/")
   :features '(include-uri)
   :on-path "custom-votings"
