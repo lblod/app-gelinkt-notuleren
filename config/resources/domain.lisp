@@ -455,7 +455,6 @@
 (define-resource custom-voting (stemming)
   :class (s-prefix "gn:AangepasteStemming")
   :has-one  `((document-container :via ,(s-prefix "ext:votingDocument")
-                          :inverse t
                           :as "voting-document"))
   :resource-base (s-url "http://data.lblod.info/id/aangepaste-stemmingen/")
   :features '(include-uri)
