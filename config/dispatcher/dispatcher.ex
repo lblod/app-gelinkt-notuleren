@@ -100,6 +100,14 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/stemmingen/"
   end
 
+  match "/standard-votings/*path" do
+    forward conn, path, "http://cache/standard-votings/"
+  end
+
+  match "/custom-votings/*path" do
+    forward conn, path, "http://cache/custom-votings/"
+  end
+
   delete "/zittingen/*path" do
     forward conn, path, "http://meeting/"
   end
