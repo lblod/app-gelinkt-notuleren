@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.28.5
+
+### Patch Changes
+
+- [`a3843872`](https://github.com/lblod/app-gelinkt-notuleren/commit/a384387206a7d1e2859ee77ad76ccebd2b95eb1d) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [5.34.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.34.0)
+
 ## 5.28.4
 
 ### Patch Changes
