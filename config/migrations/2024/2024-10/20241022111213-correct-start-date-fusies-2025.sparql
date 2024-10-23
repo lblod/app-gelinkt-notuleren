@@ -1,0 +1,38 @@
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX lmb: <http://lblod.data.gift/vocabularies/lmb/>
+PREFIX bestuursperiode: <http://data.lblod.info/id/concept/Bestuursperiode/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX adms: <http://www.w3.org/ns/adms#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX bestuurseenheidscode: <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/>
+
+# Change dates of fusiegemeentes to 02/01/2025
+DELETE {
+  GRAPH ?g {
+    ?orgaanIt mandaat:bindingStart ?start .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?orgaanIt mandaat:bindingStart "2025-01-02T00:00:00"^^xsd:dateTime .
+  }
+}
+WHERE {
+  ?bestuurseenheid besluit:werkingsgebied / rdfs:label ?naam .
+  ?bestuurseenheid besluit:classificatie ?classificatie .
+  # Gemeente, OCMW and districts
+  VALUES ?classificatie { bestuurseenheidscode:5ab0e9b8a3b2ca7c5e000001 bestuurseenheidscode:5ab0e9b8a3b2ca7c5e000002 bestuurseenheidscode:5ab0e9b8a3b2ca7c5e000003 }
+  
+  VALUES ?naam {"Antwerpen" "Beveren-Kruibeke-Zwijndrecht" "Bilzen" "Tongeren" "Nazareth-De Pinte" "Pajottegem" "Ham" "Hasselt" "Lochristi" "Lokeren" "Merelbeke-Melle" "Tielt" "Wingene" }
+
+  GRAPH ?g {
+    ?orgaan besluit:bestuurt ?bestuurseenheid .
+    ?orgaanIt mandaat:isTijdspecialisatieVan ?orgaan ;
+      lmb:heeftBestuursperiode bestuursperiode:96efb929-5d83-48fa-bfbb-b98dfb1180c7 .
+    OPTIONAL {
+      ?orgaanIt mandaat:bindingStart ?start .
+    }
+  }
+}
