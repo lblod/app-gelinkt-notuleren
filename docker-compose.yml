@@ -251,3 +251,8 @@ services:
       LDES_BASE: "https:/dev.mandatenbeheer.lblod.info/streams/ldes/abb/"
     labels:
       - "logging=true"
+  sparql-cache:
+    image: redpencil/varnish-post:1.0.0
+    environment:
+      BACKEND_HOST: database
+    restart: always
