@@ -1,0 +1,14 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX lmb: <http://lblod.data.gift/vocabularies/lmb/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/bestuursorganen/570a7769-89e0-4f40-aa1a-da17755f3bf4> 
+      lmb:heeftBestuursperiode <http://data.lblod.info/id/concept/Bestuursperiode/96efb929-5d83-48fa-bfbb-b98dfb1180c7>.
+    <http://data.lblod.info/id/bestuursorganen/d8cedeff-a243-41f9-90ea-15867149aefd> 
+      lmb:heeftBestuursperiode <http://data.lblod.info/id/concept/Bestuursperiode/96efb929-5d83-48fa-bfbb-b98dfb1180c7>.
+    <http://data.lblod.info/id/bestuursorganen/547c5e2a-fa22-4c0c-b142-9df2d7602e20>
+      lmb:heeftBestuursperiode <http://data.lblod.info/id/concept/Bestuursperiode/96efb929-5d83-48fa-bfbb-b98dfb1180c7>.
+  }
+}
