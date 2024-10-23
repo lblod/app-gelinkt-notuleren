@@ -1,0 +1,292 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix besluit:	<http://data.vlaanderen.be/ns/besluit#> .
+@prefix dcterms:	<http://purl.org/dc/terms/> .
+@prefix org:	<http://www.w3.org/ns/org#> .
+@prefix skos:	<http://www.w3.org/2004/02/skos/core#> .
+@prefix bestuurseenheden:	<http://data.lblod.info/id/bestuurseenheden/> .
+@prefix werkingsgebieden:	<http://data.lblod.info/id/werkingsgebieden/> .
+@prefix mu:	<http://mu.semte.ch/vocabularies/core/> .
+@prefix prov:	<http://www.w3.org/ns/prov#> .
+@prefix rdfs:	<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ext:	<http://mu.semte.ch/vocabularies/ext/> .
+@prefix bestuursorganen:	<http://data.lblod.info/id/bestuursorganen/> .
+
+<http://data.lblod.info/id/bestuurseenheden/19483103-318e-435a-aa37-45e485406ee9>	rdf:type	besluit:Bestuurseenheid .
+<http://data.lblod.info/id/bestuurseenheden/19483103-318e-435a-aa37-45e485406ee9>	rdf:type	dcterms:Agent .
+<http://data.lblod.info/id/bestuurseenheden/19483103-318e-435a-aa37-45e485406ee9>	rdf:type	org:Organization ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001> .
+<http://data.lblod.info/id/bestuurseenheden/19483103-318e-435a-aa37-45e485406ee9>	skos:prefLabel	"Beveren-Kruibeke-Zwijndrecht" .
+<http://data.lblod.info/id/bestuurseenheden/19483103-318e-435a-aa37-45e485406ee9>	org:linkedTo	bestuurseenheden:fd41f573-7d9a-4d9f-b7d0-d5b6114d1622 .
+<http://data.lblod.info/id/bestuurseenheden/19483103-318e-435a-aa37-45e485406ee9>	besluit:werkingsgebied	werkingsgebieden:b97c1b58-6431-4509-ab94-3300d27759a8 .
+<http://data.lblod.info/id/bestuurseenheden/19483103-318e-435a-aa37-45e485406ee9>	mu:uuid	"19483103-318e-435a-aa37-45e485406ee9" .
+
+werkingsgebieden:b97c1b58-6431-4509-ab94-3300d27759a8	rdf:type	prov:Location .
+werkingsgebieden:b97c1b58-6431-4509-ab94-3300d27759a8	rdfs:label	"Beveren-Kruibeke-Zwijndrecht" .
+werkingsgebieden:b97c1b58-6431-4509-ab94-3300d27759a8	ext:werkingsgebiedNiveau	"Gemeente" ;
+	mu:uuid	"b97c1b58-6431-4509-ab94-3300d27759a8" .
+
+<http://data.lblod.info/id/bestuursorganen/5702cf37-57ca-4cba-b290-b34a14babc30>	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/4955bd72cd0e4eb895fdbfab08da0284> ;
+	skos:prefLabel	"Burgemeester Beveren-Kruibeke-Zwijndrecht" ;
+	besluit:bestuurt	<http://data.lblod.info/id/bestuurseenheden/19483103-318e-435a-aa37-45e485406ee9> ;
+	mu:uuid	"5702cf37-57ca-4cba-b290-b34a14babc30" .
+
+bestuursorganen:dae95870-aa0d-4117-924b-3e8564d548a0	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"dae95870-aa0d-4117-924b-3e8564d548a0" .
+bestuursorganen:e280902f-347d-45f5-90ae-80dc141425b3	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000005> ;
+	skos:prefLabel	"Gemeenteraad Beveren-Kruibeke-Zwijndrecht" ;
+	besluit:bestuurt	<http://data.lblod.info/id/bestuurseenheden/19483103-318e-435a-aa37-45e485406ee9> ;
+	mu:uuid	"e280902f-347d-45f5-90ae-80dc141425b3" .
+<http://data.lblod.info/id/bestuursorganen/6dc36bdc-8cd4-4a6d-b4c7-9e7982cd2b3b>	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"6dc36bdc-8cd4-4a6d-b4c7-9e7982cd2b3b" .
+<http://data.lblod.info/id/bestuursorganen/6d467254-0948-482f-b4f5-44e88195eab0>	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000006> ;
+	skos:prefLabel	"College van Burgemeester en Schepenen Beveren-Kruibeke-Zwijndrecht" ;
+	besluit:bestuurt	<http://data.lblod.info/id/bestuurseenheden/19483103-318e-435a-aa37-45e485406ee9> ;
+	mu:uuid	"6d467254-0948-482f-b4f5-44e88195eab0" .
+<http://data.lblod.info/id/bestuursorganen/585cc532-19ce-4270-a2db-317657d35210>	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"585cc532-19ce-4270-a2db-317657d35210" .
+<http://data.lblod.info/id/bestuurseenheden/1ca65d65-54ff-4b44-b750-bd70c91191af>	rdf:type	org:Organization ,
+		dcterms:Agent ,
+		besluit:Bestuurseenheid ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001> ;
+	skos:prefLabel	"Nazareth-De Pinte" ;
+	org:linkedTo	<http://data.lblod.info/id/bestuurseenheden/7d53f659-3a3b-44b1-9e77-3ea067678c0e> ;
+	besluit:werkingsgebied	<http://data.lblod.info/id/werkingsgebieden/41362ab2-5130-4160-b76b-4bfa5d9a1f59> ;
+	mu:uuid	"1ca65d65-54ff-4b44-b750-bd70c91191af" .
+<http://data.lblod.info/id/werkingsgebieden/41362ab2-5130-4160-b76b-4bfa5d9a1f59>	rdf:type	prov:Location ;
+	rdfs:label	"Nazareth-De Pinte" ;
+	ext:werkingsgebiedNiveau	"Gemeente" ;
+	mu:uuid	"41362ab2-5130-4160-b76b-4bfa5d9a1f59" .
+<http://data.lblod.info/id/bestuursorganen/0598ba1e-3bbc-4ff7-896e-a53db4d382c9>	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderenW.be/id/concept/BestuursorgaanClassificatieCode/4955bd72cd0e4eb895fdbfab08da0284> ;
+	skos:prefLabel	"Burgemeester Nazareth-De Pinte" ;
+	besluit:bestuurt	<http://data.lblod.info/id/bestuurseenheden/1ca65d65-54ff-4b44-b750-bd70c91191af> ;
+	mu:uuid	"0598ba1e-3bbc-4ff7-896e-a53db4d382c9" .
+bestuursorganen:b2a885d8-7ea3-476a-a55f-8359dc05263f	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"b2a885d8-7ea3-476a-a55f-8359dc05263f" .
+<http://data.lblod.info/id/bestuursorganen/4bc6b373-dd44-4c30-ad5b-47f9a28f3b08>	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000005> ;
+	skos:prefLabel	"Gemeenteraad Nazareth-De Pinte" ;
+	besluit:bestuurt	<http://data.lblod.info/id/bestuurseenheden/1ca65d65-54ff-4b44-b750-bd70c91191af> ;
+	mu:uuid	"4bc6b373-dd44-4c30-ad5b-47f9a28f3b08" .
+<http://data.lblod.info/id/bestuursorganen/281b5474-0f6d-4ac8-94ef-55afd338d3f8>	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"281b5474-0f6d-4ac8-94ef-55afd338d3f8" .
+<http://data.lblod.info/id/bestuursorganen/4b1cd816-114a-48c8-b722-d050fd5a37a1>	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000006> ;
+	skos:prefLabel	"College van Burgemeester en Schepenen Nazareth-De Pinte" ;
+	besluit:bestuurt	<http://data.lblod.info/id/bestuurseenheden/1ca65d65-54ff-4b44-b750-bd70c91191af> ;
+	mu:uuid	"4b1cd816-114a-48c8-b722-d050fd5a37a1" .
+<http://data.lblod.info/id/bestuursorganen/4a89eba8-120f-4184-accb-7b616173eb0d>	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"4a89eba8-120f-4184-accb-7b616173eb0d" .
+bestuurseenheden:add1e4eb-9ec7-4ea6-af82-335aa76b7d48	rdf:type	org:Organization ,
+		dcterms:Agent ,
+		besluit:Bestuurseenheid ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001> ;
+	skos:prefLabel	"Pajottegem" ;
+	org:linkedTo	<http://data.lblod.info/id/bestuurseenheden/650378e7-1bee-4737-91ff-5b20ac4623cf> ;
+	besluit:werkingsgebied	<http://data.lblod.info/id/werkingsgebieden/92398c49-30d5-46b2-af90-37f135c89e47> ;
+	mu:uuid	"add1e4eb-9ec7-4ea6-af82-335aa76b7d48" .
+<http://data.lblod.info/id/werkingsgebieden/92398c49-30d5-46b2-af90-37f135c89e47>	rdf:type	prov:Location ;
+	rdfs:label	"Pajottegem" ;
+	ext:werkingsgebiedNiveau	"Gemeente" ;
+	mu:uuid	"92398c49-30d5-46b2-af90-37f135c89e47" .
+<http://data.lblod.info/id/bestuursorganen/3e1c31ea-3c48-44e7-85e9-b07280d89951>	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/4955bd72cd0e4eb895fdbfab08da0284> ;
+	skos:prefLabel	"Burgemeester Pajottegem" ;
+	besluit:bestuurt	bestuurseenheden:add1e4eb-9ec7-4ea6-af82-335aa76b7d48 ;
+	mu:uuid	"3e1c31ea-3c48-44e7-85e9-b07280d89951" .
+bestuursorganen:d9739d4c-d6e6-4b01-8a70-d720777aad69	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"d9739d4c-d6e6-4b01-8a70-d720777aad69" .
+<http://data.lblod.info/id/bestuursorganen/08f55558-6453-4c2c-acd6-bef1d9bb3ee0>	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000005> ;
+	skos:prefLabel	"Gemeenteraad Pajottegem" ;
+	besluit:bestuurt	bestuurseenheden:add1e4eb-9ec7-4ea6-af82-335aa76b7d48 ;
+	mu:uuid	"08f55558-6453-4c2c-acd6-bef1d9bb3ee0" .
+<http://data.lblod.info/id/bestuursorganen/4d9c89bb-446b-4602-b32d-292b173db00b>	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"4d9c89bb-446b-4602-b32d-292b173db00b" .
+<http://data.lblod.info/id/bestuursorganen/39b53e88-c9c0-481b-8f8e-7e3f4950c79b>	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000006> ;
+	skos:prefLabel	"College van Burgemeester en Schepenen Pajottegem" ;
+	besluit:bestuurt	bestuurseenheden:add1e4eb-9ec7-4ea6-af82-335aa76b7d48 ;
+	mu:uuid	"39b53e88-c9c0-481b-8f8e-7e3f4950c79b" .
+<http://data.lblod.info/id/bestuursorganen/1cd382ca-87a9-4693-8216-a4e5e16af3fa>	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"1cd382ca-87a9-4693-8216-a4e5e16af3fa" .
+bestuurseenheden:b8bb293d-aa22-4b43-bda4-0b6af76e9493	rdf:type	dcterms:Agent ,
+		besluit:Bestuurseenheid ,
+		org:Organization ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001> ;
+	skos:prefLabel	"Merelbeke-Melle" ;
+	org:linkedTo	<http://data.lblod.info/id/bestuurseenheden/5d94b2fd-60ee-4e56-a1f0-a586d596adf6> ;
+	besluit:werkingsgebied	<http://data.lblod.info/id/werkingsgebieden/62fef519-b1de-4a0f-911a-c63a5365c17b> ;
+	mu:uuid	"b8bb293d-aa22-4b43-bda4-0b6af76e9493" .
+<http://data.lblod.info/id/werkingsgebieden/62fef519-b1de-4a0f-911a-c63a5365c17b>	rdf:type	prov:Location ;
+	rdfs:label	"Merelbeke-Melle" ;
+	ext:werkingsgebiedNiveau	"Gemeente" ;
+	mu:uuid	"62fef519-b1de-4a0f-911a-c63a5365c17b" .
+bestuursorganen:a4cb3685-80fe-479e-a5a2-867ed5e3b932	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/4955bd72cd0e4eb895fdbfab08da0284> ;
+	skos:prefLabel	"Burgemeester Merelbeke-Melle" ;
+	besluit:bestuurt	bestuurseenheden:b8bb293d-aa22-4b43-bda4-0b6af76e9493 ;
+	mu:uuid	"a4cb3685-80fe-479e-a5a2-867ed5e3b932" .
+bestuursorganen:e2364a39-e432-40f9-99d4-51c9e66f8eb0	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"e2364a39-e432-40f9-99d4-51c9e66f8eb0" .
+<http://data.lblod.info/id/bestuursorganen/9c337100-8c65-45de-8bef-919993501c5f>	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000005> ;
+	skos:prefLabel	"Gemeenteraad Merelbeke-Melle" ;
+	besluit:bestuurt	bestuurseenheden:b8bb293d-aa22-4b43-bda4-0b6af76e9493 ;
+	mu:uuid	"9c337100-8c65-45de-8bef-919993501c5f" .
+<http://data.lblod.info/id/bestuursorganen/8e701cb7-3e65-44ed-a537-153ba2f6e03f>	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"8e701cb7-3e65-44ed-a537-153ba2f6e03f" .
+<http://data.lblod.info/id/bestuursorganen/9ccc9b4c-1616-42ec-a29a-335cac1aa0f5>	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000006> ;
+	skos:prefLabel	"College van Burgemeester en Schepenen Merelbeke-Melle" ;
+	besluit:bestuurt	bestuurseenheden:b8bb293d-aa22-4b43-bda4-0b6af76e9493 ;
+	mu:uuid	"9ccc9b4c-1616-42ec-a29a-335cac1aa0f5" .
+<http://data.lblod.info/id/bestuursorganen/62cd72ea-8ea7-47a0-ba04-4ddfc123c595>	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"62cd72ea-8ea7-47a0-ba04-4ddfc123c595" .
+bestuurseenheden:fd41f573-7d9a-4d9f-b7d0-d5b6114d1622	rdf:type	org:Organization ,
+		dcterms:Agent ,
+		besluit:Bestuurseenheid ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002> ;
+	skos:prefLabel	"Beveren-Kruibeke-Zwijndrecht" ;
+	org:linkedTo	<http://data.lblod.info/id/bestuurseenheden/19483103-318e-435a-aa37-45e485406ee9> ;
+	besluit:werkingsgebied	werkingsgebieden:b97c1b58-6431-4509-ab94-3300d27759a8 ;
+	mu:uuid	"fd41f573-7d9a-4d9f-b7d0-d5b6114d1622" .
+<http://data.lblod.info/id/bestuursorganen/6cde76c5-7e01-4d8a-97f6-a29cde21e39c>	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/53c0d8cd-f3a2-411d-bece-4bd83ae2bbc9> ;
+	skos:prefLabel	"Voorzitter van het Bijzonder Comit\u00E9 voor de Sociale Dienst Beveren-Kruibeke-Zwijndrecht" ;
+	besluit:bestuurt	bestuurseenheden:fd41f573-7d9a-4d9f-b7d0-d5b6114d1622 ;
+	mu:uuid	"6cde76c5-7e01-4d8a-97f6-a29cde21e39c" .
+bestuursorganen:e9cb34fd-d695-4f2b-89ba-2a99ba4946d2	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"e9cb34fd-d695-4f2b-89ba-2a99ba4946d2" .
+bestuursorganen:a258188e-6dc4-4572-9910-b157b7a4b101	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000007> ;
+	skos:prefLabel	"Raad voor Maatschappelijk Welzijn Beveren-Kruibeke-Zwijndrecht" ;
+	besluit:bestuurt	bestuurseenheden:fd41f573-7d9a-4d9f-b7d0-d5b6114d1622 ;
+	mu:uuid	"a258188e-6dc4-4572-9910-b157b7a4b101" .
+<http://data.lblod.info/id/bestuursorganen/5810d67e-0f46-48a6-a796-ffe899574d67>	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"5810d67e-0f46-48a6-a796-ffe899574d67" .
+<http://data.lblod.info/id/bestuursorganen/872e56ab-da37-457a-b271-ef4129617b02>	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000008> ;
+	skos:prefLabel	"Vast Bureau Beveren-Kruibeke-Zwijndrecht" ;
+	besluit:bestuurt	bestuurseenheden:fd41f573-7d9a-4d9f-b7d0-d5b6114d1622 ;
+	mu:uuid	"872e56ab-da37-457a-b271-ef4129617b02" .
+bestuursorganen:a88d76d7-c685-47d2-828c-729454858a91	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"a88d76d7-c685-47d2-828c-729454858a91" .
+<http://data.lblod.info/id/bestuursorganen/7edacf5a-b622-49ea-9e08-471a2d38a2cb>	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000009> ;
+	skos:prefLabel	"Bijzonder Comit\u00E9 voor de Sociale Dienst Beveren-Kruibeke-Zwijndrecht" ;
+	besluit:bestuurt	bestuurseenheden:fd41f573-7d9a-4d9f-b7d0-d5b6114d1622 ;
+	mu:uuid	"7edacf5a-b622-49ea-9e08-471a2d38a2cb" .
+<http://data.lblod.info/id/bestuursorganen/117d0f32-cea1-442b-9a74-322b058e5061>	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"117d0f32-cea1-442b-9a74-322b058e5061" .
+<http://data.lblod.info/id/bestuurseenheden/7d53f659-3a3b-44b1-9e77-3ea067678c0e>	rdf:type	besluit:Bestuurseenheid ,
+		dcterms:Agent ,
+		org:Organization ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002> ;
+	skos:prefLabel	"Nazareth-De Pinte" ;
+	org:linkedTo	<http://data.lblod.info/id/bestuurseenheden/1ca65d65-54ff-4b44-b750-bd70c91191af> ;
+	besluit:werkingsgebied	<http://data.lblod.info/id/werkingsgebieden/41362ab2-5130-4160-b76b-4bfa5d9a1f59> ;
+	mu:uuid	"7d53f659-3a3b-44b1-9e77-3ea067678c0e" .
+bestuursorganen:dbeab922-9e02-4612-8dc7-62327c3eb894	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/53c0d8cd-f3a2-411d-bece-4bd83ae2bbc9> ;
+	skos:prefLabel	"Voorzitter van het Bijzonder Comit\u00E9 voor de Sociale Dienst Nazareth-De Pinte" ;
+	besluit:bestuurt	<http://data.lblod.info/id/bestuurseenheden/7d53f659-3a3b-44b1-9e77-3ea067678c0e> ;
+	mu:uuid	"dbeab922-9e02-4612-8dc7-62327c3eb894" .
+<http://data.lblod.info/id/bestuursorganen/43afb048-eaff-4248-9c32-01c3bb665faa>	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"43afb048-eaff-4248-9c32-01c3bb665faa" .
+<http://data.lblod.info/id/bestuursorganen/093ca80d-1040-4551-bb98-b122b34b8593>	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000007> ;
+	skos:prefLabel	"Raad voor Maatschappelijk Welzijn Nazareth-De Pinte" ;
+	besluit:bestuurt	<http://data.lblod.info/id/bestuurseenheden/7d53f659-3a3b-44b1-9e77-3ea067678c0e> ;
+	mu:uuid	"093ca80d-1040-4551-bb98-b122b34b8593" .
+bestuursorganen:dbcee0db-e76b-4a23-8973-3c2588a46f7c	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"dbcee0db-e76b-4a23-8973-3c2588a46f7c" .
+<http://data.lblod.info/id/bestuursorganen/891bfe31-6471-4999-b91f-9adfc47e3130>	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000008> ;
+	skos:prefLabel	"Vast Bureau Nazareth-De Pinte" ;
+	besluit:bestuurt	<http://data.lblod.info/id/bestuurseenheden/7d53f659-3a3b-44b1-9e77-3ea067678c0e> ;
+	mu:uuid	"891bfe31-6471-4999-b91f-9adfc47e3130" .
+<http://data.lblod.info/id/bestuursorganen/3fe60a78-e32c-43b0-b3d9-82e3c6c9088f>	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"3fe60a78-e32c-43b0-b3d9-82e3c6c9088f" .
+bestuursorganen:ee93c337-089c-488e-a1b6-24a3d5eef2ba	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000009> ;
+	skos:prefLabel	"Bijzonder Comit\u00E9 voor de Sociale Dienst Nazareth-De Pinte" ;
+	besluit:bestuurt	<http://data.lblod.info/id/bestuurseenheden/7d53f659-3a3b-44b1-9e77-3ea067678c0e> ;
+	mu:uuid	"ee93c337-089c-488e-a1b6-24a3d5eef2ba" .
+bestuursorganen:acc9b28e-f0ff-4f53-9009-8fafeebe9cde	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"acc9b28e-f0ff-4f53-9009-8fafeebe9cde" .
+<http://data.lblod.info/id/bestuurseenheden/650378e7-1bee-4737-91ff-5b20ac4623cf>	rdf:type	dcterms:Agent ,
+		besluit:Bestuurseenheid ,
+		org:Organization ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002> ;
+	skos:prefLabel	"Pajottegem" ;
+	org:linkedTo	bestuurseenheden:add1e4eb-9ec7-4ea6-af82-335aa76b7d48 ;
+	besluit:werkingsgebied	<http://data.lblod.info/id/werkingsgebieden/92398c49-30d5-46b2-af90-37f135c89e47> ;
+	mu:uuid	"650378e7-1bee-4737-91ff-5b20ac4623cf" .
+<http://data.lblod.info/id/bestuursorganen/398b2bb6-11fd-4ee0-b9de-d07261bc68e9>	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/53c0d8cd-f3a2-411d-bece-4bd83ae2bbc9> ;
+	skos:prefLabel	"Voorzitter van het Bijzonder Comit\u00E9 voor de Sociale Dienst Pajottegem" ;
+	besluit:bestuurt	<http://data.lblod.info/id/bestuurseenheden/650378e7-1bee-4737-91ff-5b20ac4623cf> ;
+	mu:uuid	"398b2bb6-11fd-4ee0-b9de-d07261bc68e9" .
+bestuursorganen:be114016-84a5-47c1-8591-92fb1b570c4a	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"be114016-84a5-47c1-8591-92fb1b570c4a" .
+<http://data.lblod.info/id/bestuursorganen/618ea2d4-ac37-4cb0-850a-6f24ad93eee4>	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000007> ;
+	skos:prefLabel	"Raad voor Maatschappelijk Welzijn Pajottegem" ;
+	besluit:bestuurt	<http://data.lblod.info/id/bestuurseenheden/650378e7-1bee-4737-91ff-5b20ac4623cf> ;
+	mu:uuid	"618ea2d4-ac37-4cb0-850a-6f24ad93eee4" .
+bestuursorganen:facc6a43-b3cc-4184-89e0-c2fbec9f178f	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"facc6a43-b3cc-4184-89e0-c2fbec9f178f" .
+<http://data.lblod.info/id/bestuursorganen/2d89723b-979a-44c8-b208-de9ce2738597>	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000008> ;
+	skos:prefLabel	"Vast Bureau Pajottegem" ;
+	besluit:bestuurt	<http://data.lblod.info/id/bestuurseenheden/650378e7-1bee-4737-91ff-5b20ac4623cf> ;
+	mu:uuid	"2d89723b-979a-44c8-b208-de9ce2738597" .
+<http://data.lblod.info/id/bestuursorganen/66798124-a5cd-41e9-be11-bee92f3e1bfb>	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"66798124-a5cd-41e9-be11-bee92f3e1bfb" .
+<http://data.lblod.info/id/bestuursorganen/01ce97e0-015c-4e03-bdbc-6d644b2cfe2e>	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000009> ;
+	skos:prefLabel	"Bijzonder Comit\u00E9 voor de Sociale Dienst Pajottegem" ;
+	besluit:bestuurt	<http://data.lblod.info/id/bestuurseenheden/650378e7-1bee-4737-91ff-5b20ac4623cf> ;
+	mu:uuid	"01ce97e0-015c-4e03-bdbc-6d644b2cfe2e" .
+<http://data.lblod.info/id/bestuursorganen/1995c190-8217-4331-bc14-c4e2707fb33f>	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"1995c190-8217-4331-bc14-c4e2707fb33f" .
+<http://data.lblod.info/id/bestuurseenheden/5d94b2fd-60ee-4e56-a1f0-a586d596adf6>	rdf:type	org:Organization ,
+		besluit:Bestuurseenheid ,
+		dcterms:Agent ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000002> ;
+	skos:prefLabel	"Merelbeke-Melle" ;
+	org:linkedTo	bestuurseenheden:b8bb293d-aa22-4b43-bda4-0b6af76e9493 ;
+	besluit:werkingsgebied	<http://data.lblod.info/id/werkingsgebieden/62fef519-b1de-4a0f-911a-c63a5365c17b> ;
+	mu:uuid	"5d94b2fd-60ee-4e56-a1f0-a586d596adf6" .
+<http://data.lblod.info/id/bestuursorganen/1930d6e3-3afd-4633-940e-d9e83e6542c5>	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/53c0d8cd-f3a2-411d-bece-4bd83ae2bbc9> ;
+	skos:prefLabel	"Voorzitter van het Bijzonder Comit\u00E9 voor de Sociale Dienst Merelbeke-Melle" ;
+	besluit:bestuurt	<http://data.lblod.info/id/bestuurseenheden/5d94b2fd-60ee-4e56-a1f0-a586d596adf6> ;
+	mu:uuid	"1930d6e3-3afd-4633-940e-d9e83e6542c5" .
+<http://data.lblod.info/id/bestuursorganen/802f5214-caea-4667-9a2c-199f6224a31c>	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"802f5214-caea-4667-9a2c-199f6224a31c" .
+bestuursorganen:b5b90481-3fc8-491f-aee2-7f5a5ea37137	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000007> ;
+	skos:prefLabel	"Raad voor Maatschappelijk Welzijn Merelbeke-Melle" ;
+	besluit:bestuurt	<http://data.lblod.info/id/bestuurseenheden/5d94b2fd-60ee-4e56-a1f0-a586d596adf6> ;
+	mu:uuid	"b5b90481-3fc8-491f-aee2-7f5a5ea37137" .
+<http://data.lblod.info/id/bestuursorganen/9e73295d-41c5-4232-a84b-04cea0e54b09>	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"9e73295d-41c5-4232-a84b-04cea0e54b09" .
+<http://data.lblod.info/id/bestuursorganen/27d40490-d644-458e-9be4-35770d82f267>	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000008> ;
+	skos:prefLabel	"Vast Bureau Merelbeke-Melle" ;
+	besluit:bestuurt	<http://data.lblod.info/id/bestuurseenheden/5d94b2fd-60ee-4e56-a1f0-a586d596adf6> ;
+	mu:uuid	"27d40490-d644-458e-9be4-35770d82f267" .
+bestuursorganen:c8cb77fe-5f30-4283-98f8-182148b4c1d7	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"c8cb77fe-5f30-4283-98f8-182148b4c1d7" .
+<http://data.lblod.info/id/bestuursorganen/95497015-1434-4473-87ea-6c451a3f8a25>	rdf:type	besluit:Bestuursorgaan ;
+	besluit:classificatie	<http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/5ab0e9b8a3b2ca7c5e000009> ;
+	skos:prefLabel	"Bijzonder Comit\u00E9 voor de Sociale Dienst Merelbeke-Melle" ;
+	besluit:bestuurt	<http://data.lblod.info/id/bestuurseenheden/5d94b2fd-60ee-4e56-a1f0-a586d596adf6> ;
+	mu:uuid	"95497015-1434-4473-87ea-6c451a3f8a25" .
+<http://data.lblod.info/id/bestuursorganen/78cfa035-6de7-4250-a877-c5325f853292>	rdf:type	besluit:Bestuursorgaan ;
+	mu:uuid	"78cfa035-6de7-4250-a877-c5325f853292" .
