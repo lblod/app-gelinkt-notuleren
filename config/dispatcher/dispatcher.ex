@@ -302,6 +302,10 @@ defmodule Dispatcher do
   match "/agenda-positions/*path" do
     forward conn, path, "http://resource/agenda-positions/"
   end
+
+  match "/bestuursperiodes/*path" do
+    forward conn, path, "http://cache/bestuursperiodes/"
+  end
   #######
   # Tasks
   #######
