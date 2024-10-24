@@ -1,5 +1,27 @@
 # app-gelinkt-notuleren
 
+## 5.29.0
+
+### Minor Changes
+
+- [#201](https://github.com/lblod/app-gelinkt-notuleren/pull/201) [`cf74d8c1`](https://github.com/lblod/app-gelinkt-notuleren/commit/cf74d8c100c23959e74b899a4e78e9cb6c5abbea) Thanks [@elpoelma](https://github.com/elpoelma)! - Addition of migrations to insert new 'fusiegemeente' resources in the triplestore
+
+- [#201](https://github.com/lblod/app-gelinkt-notuleren/pull/201) [`6d6f2932`](https://github.com/lblod/app-gelinkt-notuleren/commit/6d6f2932f7ecff0fddcc0d7ac255a41687e8349e) Thanks [@elpoelma](https://github.com/elpoelma)! - Add migration with the kieslijsten data for the 2024 local elections
+
+- [#201](https://github.com/lblod/app-gelinkt-notuleren/pull/201) [`de9291de`](https://github.com/lblod/app-gelinkt-notuleren/commit/de9291de171025425046e1fa7fb5eb8eceb232dd) Thanks [@elpoelma](https://github.com/elpoelma)! - Addition of migrations to insert the correct 'bestuursorganen-tijdspecialisatie' resources for the 2024-... legislation in the triplestore
+
+- [#201](https://github.com/lblod/app-gelinkt-notuleren/pull/201) [`773de8a8`](https://github.com/lblod/app-gelinkt-notuleren/commit/773de8a83e42e4405393fe5cc6cd74e49a12a281) Thanks [@elpoelma](https://github.com/elpoelma)! - Add migrations to insert concept of bestuursperiodes in database
+
+- [#200](https://github.com/lblod/app-gelinkt-notuleren/pull/200) [`613d4adc`](https://github.com/lblod/app-gelinkt-notuleren/commit/613d4adc9763331d5cc36923ad89e63d143a790a) Thanks [@elpoelma](https://github.com/elpoelma)! - Internal: restructure migrations into their respective year folders
+
+- [#201](https://github.com/lblod/app-gelinkt-notuleren/pull/201) [`25d546d5`](https://github.com/lblod/app-gelinkt-notuleren/commit/25d546d50f46229e727c0f989b097570dc448463) Thanks [@elpoelma](https://github.com/elpoelma)! - Addition of migrations to insert necessary 'district' resources in the triplestore
+
+### Patch Changes
+
+- [#199](https://github.com/lblod/app-gelinkt-notuleren/pull/199) [`e49f4bf2`](https://github.com/lblod/app-gelinkt-notuleren/commit/e49f4bf25aaf33ad6cb7ded99ca4e3fc02301b4a) Thanks [@lagartoverde](https://github.com/lagartoverde)! - Add only article attribute to besluit templates
+
+- [`e57843ec`](https://github.com/lblod/app-gelinkt-notuleren/commit/e57843ecaec1f7a24dcece7cf0355dfc2835a9c0) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [v5.35.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.35.0)
+
 ## 5.28.6
 
 ### Patch Changes
