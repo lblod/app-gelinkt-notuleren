@@ -738,7 +738,10 @@
                              :as "is-tijdsspecialisatie-van")
              (rechtstreekse-verkiezing :via ,(s-prefix "mandaat:steltSamen")
                                       :inverse t
-                                      :as "wordt-samengesteld-door"))
+                                      :as "wordt-samengesteld-door")
+             (bestuursperiode :via ,(s-prefix "lmb:heeftBestuursperiode")
+                              :as "bestuursperiode"))
+                              
   :has-many `((bestuursorgaan :via ,(s-prefix "mandaat:isTijdspecialisatieVan")
                        :inverse t
                        :as "heeft-tijdsspecialisaties")
@@ -763,6 +766,16 @@
   :resource-base (s-url "http://data.vlaanderen.be/id/concept/BestuursorgaanClassificatieCode/")
   :features '(include-uri)
   :on-path "bestuursorgaan-classificatie-codes"
+)
+
+(define-resource bestuursperiode ()
+  :class (s-prefix "lmb:Bestuursperiode")
+  :properties `((:start-year :number ,(s-prefix "lmb:startYear"))
+                (:end-year :number ,(s-prefix "lmb:endYear"))
+                (:label :string ,(s-prefix "skos:prefLabel")))
+  :resource-base (s-url "http://data.lblod.info/id/concept/Bestuursperiode/")
+  :features '(include-uri)
+  :on-path "bestuursperiodes"
 )
 
 (define-resource bestuursfunctie ()

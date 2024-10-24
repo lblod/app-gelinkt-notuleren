@@ -1,0 +1,25 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX lmb: <http://lblod.data.gift/vocabularies/lmb/>
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?boit lmb:heeftBestuursperiode ?bestuursperiode.
+  }
+}
+WHERE {
+  ?boit a besluit:Bestuursorgaan;
+        mandaat:isTijdspecialisatieVan ?bo;
+        mandaat:bindingStart ?start.
+  OPTIONAL {
+    ?boit mandaat:bindingEinde ?end.
+  }
+
+  ?bestuursperiode a lmb:Bestuursperiode;
+                   lmb:startYear ?startYear.
+  OPTIONAL {
+    ?bestuursperiode lmb:endYear ?endYear.
+  }
+  FILTER (?startYear = year(?start)).
+  FILTER (!bound(?end) || ?endYear = year(?end)).
+}
