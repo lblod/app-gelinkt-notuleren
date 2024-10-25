@@ -1,0 +1,68 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX bestuurseenheidscode: <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/>
+
+DELETE {
+  GRAPH ?g {
+    ?bestuurseenheid skos:prefLabel ?eenheidsNaam .
+  }
+  GRAPH ?h {
+    ?orgaan skos:prefLabel ?orgaanNaam .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?bestuurseenheid skos:prefLabel ?eenheidsNaamNew .
+  }
+  GRAPH ?h {
+    ?orgaan skos:prefLabel ?orgaanNaamNew .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?bestuurseenheid a besluit:Bestuurseenheid ;
+      skos:prefLabel ?eenheidsNaam ;
+      besluit:classificatie ?bestuurseenheidscodes .
+    VALUES (?eenheidsNaam ?eenheidsNaamNew) { ("Bilzen" "Bilzen-Hoeselt") ("Tongeren" "Tongeren-Borgloon") ("Ham" "Tessenderlo-Ham") }
+    FILTER (?bestuurseenheidscodes IN ( bestuurseenheidscode:5ab0e9b8a3b2ca7c5e000001, bestuurseenheidscode:5ab0e9b8a3b2ca7c5e000002 ))
+  }
+  GRAPH ?h {
+    ?orgaan a besluit:Bestuursorgaan ;
+      besluit:bestuurt ?bestuurseenheid ;
+      skos:prefLabel ?orgaanNaam .
+  }
+  FILTER (STRENDS(?orgaanNaam, ?eenheidsNaam))
+  BIND (REPLACE(?orgaanNaam, ?eenheidsNaam, ?eenheidsNaamNew) AS ?orgaanNaamNew)
+};
+
+DELETE {
+  GRAPH ?g {
+    ?persoon foaf:familyName ?naam .
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?persoon foaf:familyName ?naamNew .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?persoon a foaf:Person;
+      foaf:firstName ?classificatieLabel;
+      foaf:familyName ?naam;
+      foaf:account ?account.
+    ?account a foaf:OnlineAccount;
+      foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>.
+  }
+  VALUES (?naam ?naamNew) { 
+    ("Bilzen GelinktNotuleren-lezer" "Bilzen-Hoeselt GelinktNotuleren-lezer") 
+    ("Bilzen GelinktNotuleren-schrijver" "Bilzen-Hoeselt GelinktNotuleren-schrijver") 
+    ("Tongeren GelinktNotuleren-lezer" "Tongeren-Borgloon GelinktNotuleren-lezer") 
+    ("Tongeren GelinktNotuleren-schrijver" "Tongeren-Borgloon GelinktNotuleren-schrijver")
+    ("Ham GelinktNotuleren-lezer" "Tessenderlo-Ham GelinktNotuleren-lezer") 
+    ("Ham GelinktNotuleren-schrijver" "Tessenderlo-Ham GelinktNotuleren-schrijver")
+  }
+  FILTER (?classificatieLabel IN ( "Gemeente", "OCMW" ))
+}
