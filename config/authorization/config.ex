@@ -78,7 +78,8 @@ defmodule Acl.UserGroups.Config do
                         "http://xmlns.com/foaf/0.1/Person",
                         "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordcategorie",
                         "https://data.vlaanderen.be/ns/mobiliteit#Verkeersbordconcept",
-                        "https://data.vlaanderen.be/ns/mobiliteit#VerkeersbordconceptStatus"
+                        "https://data.vlaanderen.be/ns/mobiliteit#VerkeersbordconceptStatus",
+                        "http://lblod.data.gift/vocabularies/lmb/Bestuursperiode"
                       ]
                     } },
                   %GraphSpec{

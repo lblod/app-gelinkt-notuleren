@@ -1,0 +1,22 @@
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
+PREFIX bestuursperiode: <http://data.lblod.info/id/concept/Bestuursperiode/>
+PREFIX lmb: <http://lblod.data.gift/vocabularies/lmb/>
+
+# Add all bestuursorganen that are not linked to a bestuursperiode yet to overige.
+INSERT {
+  GRAPH ?h {
+    ?boit lmb:heeftBestuursperiode bestuursperiode:9486222f-2696-4811-bde1-fef9dc4b5f68.
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?boit a besluit:Bestuursorgaan;
+    mandaat:isTijdspecialisatieVan ?bo.
+  }
+  FILTER NOT EXISTS {
+    ?boit lmb:heeftBestuursperiode ?periode.
+  }
+  BIND (?g AS ?h).
+}

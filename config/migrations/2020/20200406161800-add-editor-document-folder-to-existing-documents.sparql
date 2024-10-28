@@ -1,0 +1,12 @@
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+INSERT {
+  GRAPH ?h {
+    ?documentContainer ext:editorDocumentFolder <http://mu.semte.ch/application/editor-document-folder/0239c9f9-d7eb-48d2-8195-00d2c281206b> . # Meeting minutes
+  }
+} WHERE {
+  GRAPH ?g {
+    ?documentContainer a ext:DocumentContainer .
+  }
+  BIND (?g as ?h)
+}

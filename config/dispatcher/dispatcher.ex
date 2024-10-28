@@ -310,6 +310,10 @@ defmodule Dispatcher do
   match "/agenda-positions/*path" do
     forward conn, path, "http://resource/agenda-positions/"
   end
+
+  match "/bestuursperiodes/*path" do
+    forward conn, path, "http://cache/bestuursperiodes/"
+  end
   #######
   # Tasks
   #######
@@ -386,6 +390,19 @@ defmodule Dispatcher do
 
   post "/remote-login/*path" do
     forward conn, [], "http://remotelogin/remote-login"
+  end
+
+
+  #######################################################################
+  # SPARQL                                                              #
+  #######################################################################
+
+  match "/sparql" do
+    forward conn, [], "http://sparql-cache/sparql"
+  end
+
+  match "/raw-sparql" do
+    forward conn, [], "http://database:8890/sparql"
   end
 
   

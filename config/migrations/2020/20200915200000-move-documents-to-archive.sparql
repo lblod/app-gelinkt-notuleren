@@ -1,0 +1,12 @@
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+DELETE { GRAPH ?graph{
+    ?s ext:editorDocumentStatus <http://mu.semte.ch/application/editor-document-statuses/c02542af-e6be-4cc6-be60-4530477109fc>.#active status
+}}
+INSERT{ GRAPH ?graph{
+    ?s ext:editorDocumentStatus <http://mu.semte.ch/application/editor-document-statuses/cda8ec80-8508-40e2-9bbb-bee6d9536abb>.#archived folder
+}}
+WHERE{ GRAPH ?graph{
+    ?s ext:editorDocumentFolder <http://mu.semte.ch/application/editor-document-folder/0239c9f9-d7eb-48d2-8195-00d2c281206b>.#meeting minutes folder
+    ?s ext:editorDocumentStatus <http://mu.semte.ch/application/editor-document-statuses/c02542af-e6be-4cc6-be60-4530477109fc>.#active status
+}}

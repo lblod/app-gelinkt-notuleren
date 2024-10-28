@@ -1,0 +1,16 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://mu.semte.ch/application/editor-document-folder/0239c9f9-d7eb-48d2-8195-00d2c281206b>
+    a ext:EditorDocumentFolder;
+    mu:uuid "0239c9f9-d7eb-48d2-8195-00d2c281206b";
+    ext:EditorDocumentFolderName "meeting minutes".
+
+    <http://mu.semte.ch/application/editor-document-folder/ae5feaed-7b70-4533-9417-10fbbc480a4c>
+    a ext:EditorDocumentFolder;
+    mu:uuid "ae5feaed-7b70-4533-9417-10fbbc480a4c";
+    ext:EditorDocumentFolderName "draft decision".
+  }
+}

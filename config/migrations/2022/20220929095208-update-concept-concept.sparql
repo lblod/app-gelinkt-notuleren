@@ -1,0 +1,13 @@
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+DELETE WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://mu.semte.ch/application/concepts/a1974d071e6a47b69b85313ebdcef9f7> skos:prefLabel ?label.
+  }
+};
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://mu.semte.ch/application/concepts/a1974d071e6a47b69b85313ebdcef9f7> skos:prefLabel "in voorbereiding".
+  }
+}

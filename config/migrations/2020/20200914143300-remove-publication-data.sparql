@@ -1,0 +1,56 @@
+PREFIX prov:    <http://www.w3.org/ns/prov#>
+PREFIX dct:     <http://purl.org/dc/terms/>
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?zitting ?p ?o.
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?zitting a besluit:Zitting.
+    ?zitting ?p ?o.
+  }
+};
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?article ?p ?o.
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?lijst a <http://mu.semte.ch/vocabularies/ext/Besluitenlijst>.
+    ?lijst <http://mu.semte.ch/vocabularies/ext/besluitenlijstBesluit> ?besluit.
+    ?besluit <http://data.europa.eu/eli/ontology#has_part> ?article.
+  }
+};
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?besluit ?p ?o.
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?lijst a <http://mu.semte.ch/vocabularies/ext/Besluitenlijst>.
+    ?lijst <http://mu.semte.ch/vocabularies/ext/besluitenlijstBesluit> ?besluit.
+    ?besluit ?p ?o.
+  }
+};
+DELETE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s ?p ?o.
+  }
+}
+WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?s a ?type.
+    ?s ?p ?o.
+    VALUES ?type {
+    <http://mu.semte.ch/vocabularies/ext/Besluitenlijst>
+    <http://mu.semte.ch/vocabularies/ext/Agenda>
+    <http://data.vlaanderen.be/ns/besluit#Agendapunt>
+    <http://data.vlaanderen.be/ns/besluit#BehandelingVanAgendapunt>
+    <http://mu.semte.ch/vocabularies/ext/Notulen>
+    }
+  }
+}
