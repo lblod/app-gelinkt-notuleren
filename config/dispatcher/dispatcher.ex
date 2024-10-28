@@ -384,6 +384,19 @@ defmodule Dispatcher do
     forward conn, [], "http://remotelogin/remote-login"
   end
 
+
+  #######################################################################
+  # SPARQL                                                              #
+  #######################################################################
+
+  match "/sparql" do
+    forward conn, [], "http://sparql-cache/sparql"
+  end
+
+  match "/raw-sparql" do
+    forward conn, [], "http://database:8890/sparql"
+  end
+
   
 
   match "/query/*path" do
