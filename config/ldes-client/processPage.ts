@@ -74,6 +74,34 @@ async function replaceExistingData() {
           ?s ?pOld ?oOld.
         }
       }
+    };
+    DELETE {
+      GRAPH <http://mu.semte.ch/graphs/lmb-data-public> {
+        ?administrativeUnit ext:lastLMBUpdate ?oldTimestamp.
+      }
+    }
+    INSERT {
+      GRAPH <http://mu.semte.ch/graphs/lmb-data-public> {
+        ?administrativeUnit ext:lastLMBUpdate ?newTimestamp.
+      }
+    }
+    WHERE {
+      {
+        SELECT ?administrativeUnit (MAX(?timestamp) as ?newTimestamp)
+        {
+          GRAPH ${sparqlEscapeUri(BATCH_GRAPH)} {
+            ?stream <https://w3id.org/tree#member> ?versionedMember .
+            ?versionedMember ext:relatedTo ?administrativeUnit.
+            ?versionedMember ${sparqlEscapeUri(TIME_PREDICATE)} ?timestamp.
+          }
+        }
+        GROUP BY ?administrativeUnit
+      }
+      OPTIONAL {
+        GRAPH <http://mu.semte.ch/graphs/lmb-data-public> {
+          ?administrativeUnit ext:lastLMBUpdate ?oldTimestamp.
+        }
+      }
     }
   `
   await updateSudo(query, {}, options);
