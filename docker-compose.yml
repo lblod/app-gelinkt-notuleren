@@ -247,8 +247,6 @@ services:
       BATCH_SIZE: 100
       BYPASS_MU_AUTH: "false"
       EXTRA_HEADERS: "secret"
-      FIRST_PAGE: "https:/dev.mandatenbeheer.lblod.info/streams/ldes/abb/1"
-      LDES_BASE: "https:/dev.mandatenbeheer.lblod.info/streams/ldes/abb/"
     labels:
       - "logging=true"
   sparql-cache:
