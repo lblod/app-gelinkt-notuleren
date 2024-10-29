@@ -388,8 +388,6 @@
   :properties `((:openbaar :boolean ,(s-prefix "besluit:openbaar"))
                 (:gevolg :string ,(s-prefix "besluit:gevolg"))
                 (:afgeleid-uit :string ,(s-prefix "pav:derivedFrom"))
-                (:is-manual-voting :boolean ,(s-prefix "ext:isManualVoting"))
-                (:manual-voting :string ,(s-prefix "ext:manualVoting"))
                 (:position :int ,(s-prefix "schema:position")))
   :has-many `((besluit :via ,(s-prefix "prov:generated")
                        :as "besluiten")
@@ -399,6 +397,8 @@
                           :as "afwezigen")
               (stemming :via ,(s-prefix "besluit:heeftStemming")
                           :as "stemmingen")
+              (custom-voting :via ,(s-prefix "gn:heeftAangepasteStemming")
+                          :as "custom-votings")
               (versioned-behandeling :via ,(s-prefix "ext:behandeling")
                                      :inverse t
                                      :as "versioned-behandelingen"))
@@ -419,24 +419,17 @@
 
 (define-resource stemming ()
   :class (s-prefix "besluit:Stemming")
-  :properties `((:position :int ,(s-prefix "schema:position")))
-  :has-one  `((behandeling-van-agendapunt :via ,(s-prefix "besluit:heeftStemming")
-                          :inverse t
-                          :as "behandeling-van-agendapunt"))
-  :resource-base (s-url "http://data.lblod.info/id/stemmingen/")
-  :features '(include-uri)
-  :on-path "stemmingen"
-)
-
-(define-resource standard-voting (stemming)
-  :class (s-prefix "gn:StandardStemming")
-  :properties `((:aantal-onthouders :number ,(s-prefix "besluit:aantalOnthouders"))
+  :properties `((:position :int ,(s-prefix "schema:position"))
+                (:aantal-onthouders :number ,(s-prefix "besluit:aantalOnthouders"))
                 (:aantal-tegenstanders :number ,(s-prefix "besluit:aantalTegenstanders"))
                 (:aantal-voorstanders :number ,(s-prefix "besluit:aantalVoorstanders"))
                 (:geheim :boolean ,(s-prefix "besluit:geheim"))
                 (:title :string ,(s-prefix "dct:title"))
                 (:gevolg :string ,(s-prefix "besluit:gevolg"))
                 (:onderwerp :string ,(s-prefix "besluit:onderwerp")))
+  :has-one  `((behandeling-van-agendapunt :via ,(s-prefix "besluit:heeftStemming")
+                          :inverse t
+                          :as "behandeling-van-agendapunt"))
   :has-many `((mandataris :via ,(s-prefix "besluit:heeftAanwezige")
                           :as "aanwezigen")
               (mandataris :via ,(s-prefix "besluit:heeftOnthouder")
@@ -447,15 +440,19 @@
                           :as "tegenstanders")
               (mandataris :via ,(s-prefix "besluit:heeftVoorstander")
                           :as "voorstanders"))
-  :resource-base (s-url "http://data.lblod.info/id/standard-stemmingen/")
+  :resource-base (s-url "http://data.lblod.info/id/stemmingen/")
   :features '(include-uri)
-  :on-path "standard-votings"
+  :on-path "stemmingen"
 )
 
-(define-resource custom-voting (stemming)
+(define-resource custom-voting ()
   :class (s-prefix "gn:AangepasteStemming")
+  :properties `((:position :int ,(s-prefix "schema:position")))
   :has-one  `((document-container :via ,(s-prefix "ext:votingDocument")
-                          :as "voting-document"))
+                          :as "voting-document")
+              (behandeling-van-agendapunt :via ,(s-prefix "gn:heeftAangepasteStemming")
+                          :inverse t
+                          :as "behandeling-van-agendapunt"))
   :resource-base (s-url "http://data.lblod.info/id/aangepaste-stemmingen/")
   :features '(include-uri)
   :on-path "custom-votings"
