@@ -108,7 +108,7 @@ services:
     labels:
       - "logging=true"
   resource:
-    image: semtech/mu-cl-resources:feature-cache-keys-for-filters
+    image: semtech/mu-cl-resources:1.25.0
     volumes:
       - ./config/resources:/config
     environment:
