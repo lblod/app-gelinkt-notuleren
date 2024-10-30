@@ -22,7 +22,8 @@ async function replaceExistingData() {
     PREFIX foaf: <http://xmlns.com/foaf/0.1/>
     PREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>
     PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
-    PREFIX adms: <http://www.w3.org/ns/adms#>
+    PREFIX adms: <http://www.w3.org/ns/adms#> 
+    PREFIX as: <http://www.w3.org/ns/activitystreams#>
     DELETE {
       GRAPH ?target_graph {
           ?s ?pOld ?oOld.
@@ -41,7 +42,7 @@ async function replaceExistingData() {
 
         {
           ?versionedMember a ?type.
-          VALUES ?type { mandaat:Mandataris mandaat:Fractie org:Membership }
+          VALUES ?type { mandaat:Mandataris mandaat:Fractie org:Membership as:Tombstone }
           ?versionedMember ?pNew ?oNew.
           BIND(<http://mu.semte.ch/graphs/lmb-data-public> as ?target_graph)
         }
@@ -112,3 +113,4 @@ export async function processPage(){
   await replaceExistingData();
   return;
 }
+
