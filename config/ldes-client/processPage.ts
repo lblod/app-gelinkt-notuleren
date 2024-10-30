@@ -31,7 +31,6 @@ async function replaceExistingData() {
     }
     INSERT {
       GRAPH ?target_graph {
-          ?s a ?type.
           ?s ?pNew ?oNew.
       }
     }
@@ -41,14 +40,14 @@ async function replaceExistingData() {
         ?versionedMember ${sparqlEscapeUri(VERSION_PREDICATE)} ?s .
 
         {
-          ?versionedMember a ?type.
-          VALUES ?type { mandaat:Mandataris mandaat:Fractie org:Membership as:Tombstone }
+          ?versionedMember (a | as:formerType) ?type.
+          VALUES ?type { mandaat:Mandataris mandaat:Fractie org:Membership }
           ?versionedMember ?pNew ?oNew.
           BIND(<http://mu.semte.ch/graphs/lmb-data-public> as ?target_graph)
         }
         UNION
         {
-          ?versionedMember a ?type.
+          ?versionedMember (a | as:formerType) ?type.
           VALUES ?type { person:Person }
           ?versionedMember ?pNew ?oNew.
           VALUES ?pNew {
@@ -61,7 +60,7 @@ async function replaceExistingData() {
         }
         UNION
         {
-          ?versionedMember a ?type.
+          ?versionedMember (a | as:formerType) ?type.
           VALUES ?type { person:Person persoon:Geboorte }
           ?versionedMember ?pNew ?oNew.
           FILTER (?pNew NOT IN ( adms:identifier ))
