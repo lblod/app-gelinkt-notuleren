@@ -1,5 +1,29 @@
 # app-gelinkt-notuleren
 
+## 5.30.0
+
+### Minor Changes
+
+- [#206](https://github.com/lblod/app-gelinkt-notuleren/pull/206) [`f419180c`](https://github.com/lblod/app-gelinkt-notuleren/commit/f419180c7a6a4d0a269b871f6f559c8e19a29938) Thanks [@elpoelma](https://github.com/elpoelma)! - Adjust `ldes-client/processPage.ts` to include a timestamp for each 'bestuurseenheid' which denotes the last LDES/LMB update
+
+- [#203](https://github.com/lblod/app-gelinkt-notuleren/pull/203) [`1f91cdaf`](https://github.com/lblod/app-gelinkt-notuleren/commit/1f91cdaf58e70f787bb359e42945143a8fb9c098) Thanks [@lagartoverde](https://github.com/lagartoverde)! - Expose /sparql and /raw-sparql endpoints for plugin consumption
+
+### Patch Changes
+
+- [#204](https://github.com/lblod/app-gelinkt-notuleren/pull/204) [`4068d4dd`](https://github.com/lblod/app-gelinkt-notuleren/commit/4068d4dd670592d1b4cbd3d7dc15b2e22917ab5a) Thanks [@lagartoverde](https://github.com/lagartoverde)! - Add election results person public migration
+
+- [`f02ddfef`](https://github.com/lblod/app-gelinkt-notuleren/commit/f02ddfef073d319e24084d330ceb821711a283c3) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [v5.36.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.36.0)
+
+- [#205](https://github.com/lblod/app-gelinkt-notuleren/pull/205) [`286a2cc9`](https://github.com/lblod/app-gelinkt-notuleren/commit/286a2cc98af95948bf1799da35393c0291d5972f) Thanks [@elpoelma](https://github.com/elpoelma)! - Add two migrations to correctly re-initialize mock accounts for 'districten' and 'fusiegemeenten 2025'.
+  The re-initalization was necessary due to an error made related to account roles in the previous mock account migrations.
+
+- [#202](https://github.com/lblod/app-gelinkt-notuleren/pull/202) [`feeee698`](https://github.com/lblod/app-gelinkt-notuleren/commit/feeee698e1fc60e8ed2aad8e6eda6e6f901ad75b) Thanks [@elpoelma](https://github.com/elpoelma)! - Add migration which updates the names of the following 'fusiegemeenten':
+  'Bilzen' -> 'Bilzen-Hoeselt'
+  'Tongeren' -> 'Tongeren-Borgloon'
+  'Ham' -> 'Tessenderlo-Ham'
+
+- [#210](https://github.com/lblod/app-gelinkt-notuleren/pull/210) [`69b1ed7e`](https://github.com/lblod/app-gelinkt-notuleren/commit/69b1ed7ed943789e0f8284a0967a57a8b2d095ed) Thanks [@abeforgit](https://github.com/abeforgit)! - Handle Tombstone markers in the ldes feed correctly
+
 ## 5.29.0
 
 ### Minor Changes
