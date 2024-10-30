@@ -101,7 +101,7 @@ defmodule Dispatcher do
   end
 
   match "/custom-votings/*path" do
-    forward conn, path, "http://cache/custom-votings/"
+    forward conn, path, "http://resource/custom-votings/"
   end
 
   delete "/zittingen/*path" do
