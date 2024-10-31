@@ -1,5 +1,15 @@
 # app-gelinkt-notuleren
 
+## 5.31.0
+
+### Minor Changes
+
+- [`75e97739`](https://github.com/lblod/app-gelinkt-notuleren/commit/75e97739c939dc40329a33ba2b277311b42c4e57) Thanks [@piemonkey](https://github.com/piemonkey)! - Update to notulen-prepublish-service v2.4.1 to include agendapoint numbering change
+
+### Patch Changes
+
+- [#207](https://github.com/lblod/app-gelinkt-notuleren/pull/207) [`3a936f75`](https://github.com/lblod/app-gelinkt-notuleren/commit/3a936f75826e2e9022dc905f4d196cdc46e86574) Thanks [@elpoelma](https://github.com/elpoelma)! - Remove ununused `vendor-proxy` service
+
 ## 5.30.0
 
 ### Minor Changes
