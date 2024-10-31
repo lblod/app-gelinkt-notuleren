@@ -22,7 +22,8 @@ async function replaceExistingData() {
     PREFIX foaf: <http://xmlns.com/foaf/0.1/>
     PREFIX persoon: <http://data.vlaanderen.be/ns/persoon#>
     PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
-    PREFIX adms: <http://www.w3.org/ns/adms#>
+    PREFIX adms: <http://www.w3.org/ns/adms#> 
+    PREFIX as: <http://www.w3.org/ns/activitystreams#>
     DELETE {
       GRAPH ?target_graph {
           ?s ?pOld ?oOld.
@@ -30,7 +31,6 @@ async function replaceExistingData() {
     }
     INSERT {
       GRAPH ?target_graph {
-          ?s a ?type.
           ?s ?pNew ?oNew.
       }
     }
@@ -40,14 +40,14 @@ async function replaceExistingData() {
         ?versionedMember ${sparqlEscapeUri(VERSION_PREDICATE)} ?s .
 
         {
-          ?versionedMember a ?type.
+          ?versionedMember (a | as:formerType) ?type.
           VALUES ?type { mandaat:Mandataris mandaat:Fractie org:Membership }
           ?versionedMember ?pNew ?oNew.
           BIND(<http://mu.semte.ch/graphs/lmb-data-public> as ?target_graph)
         }
         UNION
         {
-          ?versionedMember a ?type.
+          ?versionedMember (a | as:formerType) ?type.
           VALUES ?type { person:Person }
           ?versionedMember ?pNew ?oNew.
           VALUES ?pNew {
@@ -60,7 +60,7 @@ async function replaceExistingData() {
         }
         UNION
         {
-          ?versionedMember a ?type.
+          ?versionedMember (a | as:formerType) ?type.
           VALUES ?type { person:Person persoon:Geboorte }
           ?versionedMember ?pNew ?oNew.
           FILTER (?pNew NOT IN ( adms:identifier ))
@@ -112,3 +112,4 @@ export async function processPage(){
   await replaceExistingData();
   return;
 }
+
