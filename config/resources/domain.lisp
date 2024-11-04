@@ -773,6 +773,11 @@
   :properties `((:start-year :number ,(s-prefix "lmb:startYear"))
                 (:end-year :number ,(s-prefix "lmb:endYear"))
                 (:label :string ,(s-prefix "skos:prefLabel")))
+  :has-one `((bestuursperiode :via ,(s-prefix "ext:previous") 
+                              :as "previous")
+             (bestuursperiode :via ,(s-prefix "ext:previous")
+                              :inverse t
+                              :as "next"))
   :resource-base (s-url "http://data.lblod.info/id/concept/Bestuursperiode/")
   :features '(include-uri)
   :on-path "bestuursperiodes"
