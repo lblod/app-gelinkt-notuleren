@@ -1,5 +1,13 @@
 # app-gelinkt-notuleren
 
+## 5.35.0
+
+### Minor Changes
+
+- [#198](https://github.com/lblod/app-gelinkt-notuleren/pull/198) [`e72f5dd7`](https://github.com/lblod/app-gelinkt-notuleren/commit/e72f5dd7f9549264c60bccd67b6ca8f6336d78d1) Thanks [@lagartoverde](https://github.com/lagartoverde)! - Add models to support the custom voting
+
+- [`48a5ee90`](https://github.com/lblod/app-gelinkt-notuleren/commit/48a5ee90dd7f6a3bdb29ade1726a1641ecf76f65) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [v5.41.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.41.0)
+
 ## 5.34.0
 
 ### Minor Changes
