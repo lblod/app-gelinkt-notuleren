@@ -1,0 +1,10 @@
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://mu.semte.ch/application/editor-document-folder/39fa1367-93dc-4025-af7b-4db8c7029dc3>
+    a ext:EditorDocumentFolder;
+    mu:uuid "39fa1367-93dc-4025-af7b-4db8c7029dc3";
+    ext:EditorDocumentFolderName "custom-votings".
+  }
+}

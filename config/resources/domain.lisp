@@ -397,6 +397,8 @@
                           :as "afwezigen")
               (stemming :via ,(s-prefix "besluit:heeftStemming")
                           :as "stemmingen")
+              (custom-voting :via ,(s-prefix "gn:heeftAangepasteStemming")
+                          :as "custom-votings")
               (versioned-behandeling :via ,(s-prefix "ext:behandeling")
                                      :inverse t
                                      :as "versioned-behandelingen"))
@@ -441,6 +443,19 @@
   :resource-base (s-url "http://data.lblod.info/id/stemmingen/")
   :features '(include-uri)
   :on-path "stemmingen"
+)
+
+(define-resource custom-voting ()
+  :class (s-prefix "gn:AangepasteStemming")
+  :properties `((:position :int ,(s-prefix "schema:position")))
+  :has-one  `((document-container :via ,(s-prefix "ext:votingDocument")
+                          :as "voting-document")
+              (behandeling-van-agendapunt :via ,(s-prefix "gn:heeftAangepasteStemming")
+                          :inverse t
+                          :as "behandeling-van-agendapunt"))
+  :resource-base (s-url "http://data.lblod.info/id/aangepaste-stemmingen/")
+  :features '(include-uri)
+  :on-path "custom-votings"
 )
 
 (define-resource intermission ()

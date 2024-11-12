@@ -44,4 +44,6 @@
 (add-prefix "cogs" "http://vocab.deri.ie/cogs#")
 (add-prefix "oslc" "http://open-services.net/ns/core#")
 (add-prefix "task" "http://redpencil.data.gift/vocabularies/tasks/")
+(add-prefix "gn" "http://data.lblod.info/vocabularies/gelinktnotuleren/")
+
 (add-prefix "lmb" "http://lblod.data.gift/vocabularies/lmb/")
