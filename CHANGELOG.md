@@ -1,5 +1,15 @@
 # app-gelinkt-notuleren
 
+## 5.36.0
+
+### Minor Changes
+
+- [`8eaf2f70`](https://github.com/lblod/app-gelinkt-notuleren/commit/8eaf2f70512c89cbb3286fe4ad6607de80bbc7b8) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [v5.41.4](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.41.4)
+
+### Patch Changes
+
+- [#212](https://github.com/lblod/app-gelinkt-notuleren/pull/212) [`0518cf2d`](https://github.com/lblod/app-gelinkt-notuleren/commit/0518cf2dfcf1dbd45dc9d46ae5944842f1cb7766) Thanks [@elpoelma](https://github.com/elpoelma)! - adjustment to ldes-client configuration: ensure the type of a person `http://www.w3.org/ns/person#Person` is correctly consumed into the public graph
+
 ## 5.35.1
 
 ### Patch Changes
