@@ -53,6 +53,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/MandatarisStatusCode",
                         "http://mu.semte.ch/vocabularies/ext/SyncTask",
                         "http://mu.semte.ch/vocabularies/ext/Task",
+                        "http://open-services.net/ns/core#Error",
                         "http://mu.semte.ch/vocabularies/ext/Tasklist",
                         "http://mu.semte.ch/vocabularies/ext/Template",
                         "http://mu.semte.ch/vocabularies/ext/VerkiezingsresultaatGevolgCode",
@@ -123,6 +124,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/VersionedBehandeling",
                         "http://mu.semte.ch/vocabularies/ext/VersionedRegulatoryStatement",
                         "http://redpencil.data.gift/vocabularies/tasks/Task",
+                        "http://open-services.net/ns/core#Error",
                         "http://mu.semte.ch/vocabularies/ext/TaskSolution",
                         "http://mu.semte.ch/vocabularies/ext/TasklistSolution",
                         "http://www.w3.org/ns/person#Person",
@@ -165,6 +167,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/TaskSolution",
                         "http://mu.semte.ch/vocabularies/ext/TasklistSolution",
                         "http://redpencil.data.gift/vocabularies/tasks/Task",
+                        "http://open-services.net/ns/core#Error",
                         "http://www.w3.org/ns/person#Person",
                         "http://data.vlaanderen.be/ns/persoon#Geboorte",
                         "http://www.w3.org/ns/adms#Identifier",
@@ -197,6 +200,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/VersionedRegulatoryStatement",
                         "http://mu.semte.ch/vocabularies/ext/signing/PublishedResource",
                         "http://redpencil.data.gift/vocabularies/tasks/Task",
+                        "http://open-services.net/ns/core#Error",
                         "http://mu.semte.ch/vocabularies/ext/DocumentContainer", # needed to update status on publishing decision/notulen
                       ],
                       inverse_predicates: %AllPredicates{}
@@ -224,6 +228,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/VersionedBehandeling",
                         "http://mu.semte.ch/vocabularies/ext/signing/SignedResource",
                         "http://redpencil.data.gift/vocabularies/tasks/Task",
+                        "http://open-services.net/ns/core#Error",
                         "http://mu.semte.ch/vocabularies/ext/PublishingLog",
                       ],
                       inverse_predicates: %AllPredicates{}
