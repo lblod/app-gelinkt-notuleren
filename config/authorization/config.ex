@@ -192,6 +192,7 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
                         "http://data.vlaanderen.be/ns/besluitvorming#Agenda",
                         "http://mu.semte.ch/vocabularies/ext/VersionedAgenda",
                         "http://mu.semte.ch/vocabularies/ext/VersionedNotulen",
@@ -221,6 +222,7 @@ defmodule Acl.UserGroups.Config do
                     graph: "http://mu.semte.ch/graphs/organizations/",
                     constraint: %ResourceConstraint{
                       resource_types: [
+                        "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
                         "http://data.vlaanderen.be/ns/besluitvorming#Agenda",
                         "http://mu.semte.ch/vocabularies/ext/VersionedAgenda",
                         "http://mu.semte.ch/vocabularies/ext/VersionedNotulen",
