@@ -1,5 +1,12 @@
 # app-gelinkt-notuleren
 
+## 5.37.2
+
+### Patch Changes
+
+- [`dcf425b`](https://github.com/lblod/app-gelinkt-notuleren/commit/dcf425bfe22a416b246b33b67eb30e6dfabea1e0) Thanks [@elpoelma](https://github.com/elpoelma)! - Downgrade mu-cl-resources to 1.24.0:
+  Version 1.25.0 contains a bug where `belongsTo` relationships are not correctly cleared when setting such a relationship 2+ times after eachother.
+
 ## 5.37.1
 
 ### Patch Changes
