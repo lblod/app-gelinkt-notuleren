@@ -108,7 +108,7 @@ services:
     labels:
       - "logging=true"
   resource:
-    image: semtech/mu-cl-resources:1.25.0
+    image: semtech/mu-cl-resources:1.24.0
     volumes:
       - ./config/resources:/config
     environment:
