@@ -51,6 +51,8 @@ async function replaceExistingData() {
           VALUES ?type { person:Person }
           ?versionedMember ?pNew ?oNew.
           VALUES ?pNew {
+              rdf:type
+              as:formerType
               dct:modified
               mu:uuid
               foaf:familyName

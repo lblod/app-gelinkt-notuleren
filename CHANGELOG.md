@@ -1,5 +1,58 @@
 # app-gelinkt-notuleren
 
+## 5.38.0
+
+### Minor Changes
+
+- [`a6383da5`](https://github.com/lblod/app-gelinkt-notuleren/commit/a6383da5f0b30db4c0abc3788496a1ec88b2de92) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [v5.43.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.43.0)
+
+## 5.37.4
+
+### Patch Changes
+
+- [`02174bf`](https://github.com/lblod/app-gelinkt-notuleren/commit/02174bf8fa6386e09562cd7df5f9c13c7b57ed2c) Thanks [@piemonkey](https://github.com/piemonkey)! - Bump frontend to v5.42.3
+
+## 5.37.3
+
+### Patch Changes
+
+- [`b87b73d3`](https://github.com/lblod/app-gelinkt-notuleren/commit/b87b73d3702876fbdd435c06a99693bb8c7e6517) Thanks [@abeforgit](https://github.com/abeforgit)! - bump fronted to [v5.42.2](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.42.2)
+
+## 5.37.2
+
+### Patch Changes
+
+- [`dcf425b`](https://github.com/lblod/app-gelinkt-notuleren/commit/dcf425bfe22a416b246b33b67eb30e6dfabea1e0) Thanks [@elpoelma](https://github.com/elpoelma)! - Downgrade mu-cl-resources to 1.24.0:
+  Version 1.25.0 contains a bug where `belongsTo` relationships are not correctly cleared when setting such a relationship 2+ times after eachother.
+
+## 5.37.1
+
+### Patch Changes
+
+- [`853e0bb`](https://github.com/lblod/app-gelinkt-notuleren/commit/853e0bb4623f4d88aa8a86abb8ff7f09450fa0f6) Thanks [@lagartoverde](https://github.com/lagartoverde)! - bump frontend to [v5.42.1](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.42.1)
+
+## 5.37.0
+
+### Minor Changes
+
+- [`d80d07c0`](https://github.com/lblod/app-gelinkt-notuleren/commit/d80d07c01028d6b06741ad0ae93dac78fbb023f0) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [v5.42.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.42.0)
+
+## 5.36.1
+
+### Patch Changes
+
+- [`f79e93d`](https://github.com/lblod/app-gelinkt-notuleren/commit/f79e93d3f2094d46d8d782f8f8b80e468fcbe1cb) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to version [5.41.5](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.41.5)
+
+## 5.36.0
+
+### Minor Changes
+
+- [`8eaf2f70`](https://github.com/lblod/app-gelinkt-notuleren/commit/8eaf2f70512c89cbb3286fe4ad6607de80bbc7b8) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [v5.41.4](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.41.4)
+
+### Patch Changes
+
+- [#212](https://github.com/lblod/app-gelinkt-notuleren/pull/212) [`0518cf2d`](https://github.com/lblod/app-gelinkt-notuleren/commit/0518cf2dfcf1dbd45dc9d46ae5944842f1cb7766) Thanks [@elpoelma](https://github.com/elpoelma)! - adjustment to ldes-client configuration: ensure the type of a person `http://www.w3.org/ns/person#Person` is correctly consumed into the public graph
+
 ## 5.35.1
 
 ### Patch Changes
