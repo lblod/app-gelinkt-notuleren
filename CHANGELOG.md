@@ -1,5 +1,13 @@
 # app-gelinkt-notuleren
 
+## 5.38.1
+
+### Patch Changes
+
+- [#214](https://github.com/lblod/app-gelinkt-notuleren/pull/214) [`5f37da5b`](https://github.com/lblod/app-gelinkt-notuleren/commit/5f37da5b060a19eb5eaa9a0fd973feac0f4454e9) Thanks [@elpoelma](https://github.com/elpoelma)! - Ensure accounts with the `GelinktNotuleren-publiceerder` and `GelinktNotuleren-ondertekenaar` roles are allowed to create files.
+
+- [`14cc136d`](https://github.com/lblod/app-gelinkt-notuleren/commit/14cc136d7b4a8368ce998e1258ca650bf448066c) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [v5.43.2](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.43.2)
+
 ## 5.38.0
 
 ### Minor Changes
