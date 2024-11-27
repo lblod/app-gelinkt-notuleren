@@ -1,0 +1,12 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+
+DELETE {
+  GRAPH ?g {
+    ?agendapoint besluit:aangebrachtNa <http://data.lblod.info/id/agendapunten/6735E0D5E7AA49C45553C1CC> .
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?agendapoint besluit:aangebrachtNa <http://data.lblod.info/id/agendapunten/6735E0D5E7AA49C45553C1CC> .
+  }
+}
