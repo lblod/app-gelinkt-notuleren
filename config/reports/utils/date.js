@@ -1,6 +1,5 @@
 export function getLastMonth() {
   const date = new Date();
-  console.log(date.toISOString());
   date.setDate(1);
   date.setMonth(date.getMonth() - 1);
   return { month: date.getMonth(), year: date.getFullYear() };
