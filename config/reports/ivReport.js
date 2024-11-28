@@ -12,7 +12,7 @@ export default {
     const metadata = {
       title: `IV Statistieken ${day} ${MONTHS[month]} ${year}`,
       description:
-        "Maandelijkse statistieken over het installatie vergadering gesynchroniseerd en niet",
+        "Dagelijkse statistieken over het aantal creaties en synchronisaties van installatievergaderingen per bestuursorgaan",
       filePrefix: `iv-statistieken-${day}-${month + 1}-${year}`,
     };
     await generateIvReport(metadata);
