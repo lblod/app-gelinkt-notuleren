@@ -1,0 +1,21 @@
+PREFIX as: <http://www.w3.org/ns/activitystreams#>
+
+DELETE {
+  GRAPH ?g {
+    ?tombstone a as:Tombstone.
+    ?tombstone ?p_out ?o_out.
+    ?s_in ?p_in ?tombstone.
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?tombstone a as:Tombstone.
+    {
+      ?tombstone ?p_out ?o_out.
+    }
+    UNION
+    {
+      ?s_in ?p_in ?tombstone.
+    }
+  }
+}
