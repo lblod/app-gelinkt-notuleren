@@ -25,18 +25,14 @@ async function generateIvReport(metadata) {
     PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
     PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
     PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-    SELECT ?adminUnitName (COUNT(DISTINCT ?ivMeeting) as ?installatieVergaderingCount) (COUNT(DISTINCT ?ivMeetingSync) as ?installatieVergaderingSyncedCount)  WHERE {
-        OPTIONAL {
-            ?ivMeeting a ext:Installatievergadering;
-                besluit:isGehoudenDoor ?adminUnit.
-        }
-        ?adminUnit mandaat:isTijdspecialisatieVan ?adminUnitSpecialised.
-        ?adminUnitSpecialised skos:prefLabel ?adminUnitName.
-        OPTIONAL {
-            ?ivMeetingSync a ext:Installatievergadering;
-                ext:synchronizationStatus ?syncStatus;
-                besluit:isGehoudenDoor ?adminUnit.
-        }
+    SELECT ?adminUnitName (COUNT(DISTINCT ?ivMeeting) as ?installatieVergaderingCount) (COUNT(DISTINCT ?syncStatus) as ?installatieVergaderingSyncedCount)  WHERE {
+      ?ivMeeting a ext:Installatievergadering;
+        besluit:isGehoudenDoor ?adminUnit.
+      ?adminUnit mandaat:isTijdspecialisatieVan ?adminUnitSpecialised.
+      ?adminUnitSpecialised skos:prefLabel ?adminUnitName.
+      OPTIONAL {
+          ?ivMeeting ext:synchronizationStatus ?syncStatus.
+      }
     } 
   `;
 
