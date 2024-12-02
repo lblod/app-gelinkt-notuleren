@@ -5,7 +5,7 @@ import { generateReportFromData } from "../helpers.js";
 import { querySudo as query } from "@lblod/mu-auth-sudo";
 
 export default {
-  cronPattern: "0 0 0 * * *",
+  cronPattern: "0 * * * * *",
   name: "ivReport",
   execute: async () => {
     const { day, month, year } = getToday();
@@ -25,13 +25,18 @@ async function generateIvReport(metadata) {
     PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
     PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
     PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-    SELECT ?adminUnitName (COUNT(DISTINCT ?ivMeeting) as ?installatieVergaderingCount) (COUNT(DISTINCT ?syncStatus) as ?installatieVergaderingSyncedCount)  WHERE {
+    SELECT ?adminUnitName (COUNT(DISTINCT ?ivMeeting) as ?installatieVergaderingCount) (COUNT(DISTINCT ?syncStatusSuccess) as ?installatieVergaderingSyncedCount) (COUNT(DISTINCT ?syncStatusFailed) as ?installatieVergaderingFailedSyncCount)  WHERE {
       ?ivMeeting a ext:Installatievergadering;
         besluit:isGehoudenDoor ?adminUnit.
       ?adminUnit mandaat:isTijdspecialisatieVan ?adminUnitSpecialised.
       ?adminUnitSpecialised skos:prefLabel ?adminUnitName.
       OPTIONAL {
-          ?ivMeeting ext:synchronizationStatus ?syncStatus.
+        ?ivMeeting ext:synchronizationStatus ?syncStatusSuccess.
+        ?syncStatusSuccess ext:success "true"^^<http://mu.semte.ch/vocabularies/typed-literals/boolean>
+      }
+      OPTIONAL {
+        ?ivMeeting ext:synchronizationStatus ?syncStatusFailed.
+        ?syncStatusFailed ext:success "false"^^<http://mu.semte.ch/vocabularies/typed-literals/boolean>
       }
     } 
   `;
@@ -48,6 +53,10 @@ async function generateIvReport(metadata) {
         entry,
         "installatieVergaderingSyncedCount"
       ),
+      installatieVergaderingFailedSyncCount: getValue(
+        entry,
+        "installatieVergaderingFailedSyncCount"
+      ),
     };
   });
 
@@ -57,6 +66,7 @@ async function generateIvReport(metadata) {
       "adminUnitName",
       "installatieVergaderingCount",
       "installatieVergaderingSyncedCount",
+      "installatieVergaderingFailedSyncCount",
     ],
     metadata
   );
