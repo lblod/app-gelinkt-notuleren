@@ -40,19 +40,18 @@ async function replaceExistingData() {
         ?versionedMember ${sparqlEscapeUri(VERSION_PREDICATE)} ?s .
 
         {
-          ?versionedMember (a | as:formerType) ?type.
+          ?versionedMember a ?type.
           VALUES ?type { mandaat:Mandataris mandaat:Fractie org:Membership }
           ?versionedMember ?pNew ?oNew.
           BIND(<http://mu.semte.ch/graphs/lmb-data-public> as ?target_graph)
         }
         UNION
         {
-          ?versionedMember (a | as:formerType) ?type.
+          ?versionedMember a ?type.
           VALUES ?type { person:Person }
           ?versionedMember ?pNew ?oNew.
           VALUES ?pNew {
               rdf:type
-              as:formerType
               dct:modified
               mu:uuid
               foaf:familyName
@@ -62,7 +61,7 @@ async function replaceExistingData() {
         }
         UNION
         {
-          ?versionedMember (a | as:formerType) ?type.
+          ?versionedMember a ?type.
           VALUES ?type { person:Person persoon:Geboorte }
           ?versionedMember ?pNew ?oNew.
           FILTER (?pNew NOT IN ( adms:identifier ))
@@ -76,6 +75,29 @@ async function replaceExistingData() {
           ?s ?pOld ?oOld.
         }
       }
+    };
+    DELETE {
+      GRAPH ?g {
+        ?member ?pOut ?oOut.
+        ?sIn ?pIn ?member.
+      }
+    }
+    WHERE {
+      GRAPH ${sparqlEscapeUri(BATCH_GRAPH)} {
+        ?stream <https://w3id.org/tree#member> ?versionedMember .
+        ?versionedMember ${sparqlEscapeUri(VERSION_PREDICATE)} ?member .
+        ?versionedMember a as:Tombstone.
+      }
+      GRAPH ?g {
+        {
+          ?member ?pOut ?oOut.
+        }
+        UNION
+        {
+          ?sIn ?pIn ?member.
+        }
+      }
+      FILTER(?g != ${sparqlEscapeUri(BATCH_GRAPH)})
     };
     DELETE {
       GRAPH <http://mu.semte.ch/graphs/lmb-data-public> {
