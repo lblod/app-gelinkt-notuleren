@@ -2,14 +2,13 @@ PREFIX as: <http://www.w3.org/ns/activitystreams#>
 
 DELETE {
   GRAPH ?g {
-    ?tombstone a as:Tombstone.
     ?tombstone ?p_out ?o_out.
     ?s_in ?p_in ?tombstone.
   }
 }
 WHERE {
+  ?tombstone a as:Tombstone.
   GRAPH ?g {
-    ?tombstone a as:Tombstone.
     {
       ?tombstone ?p_out ?o_out.
     }
