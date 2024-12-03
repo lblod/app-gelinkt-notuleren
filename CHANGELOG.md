@@ -1,5 +1,19 @@
 # app-gelinkt-notuleren
 
+## 5.39.0
+
+### Minor Changes
+
+- [#216](https://github.com/lblod/app-gelinkt-notuleren/pull/216) [`41da1e90`](https://github.com/lblod/app-gelinkt-notuleren/commit/41da1e902f0233adf967e26a2842dec4ecb8bd26) Thanks [@lagartoverde](https://github.com/lagartoverde)! - Add daily IV report
+
+- [#217](https://github.com/lblod/app-gelinkt-notuleren/pull/217) [`236ece65`](https://github.com/lblod/app-gelinkt-notuleren/commit/236ece65db6bc4f11edc0b81dbfcd66d6a868da1) Thanks [@elpoelma](https://github.com/elpoelma)! - Add migration which drops all data related to tombstones from our database
+
+- [#217](https://github.com/lblod/app-gelinkt-notuleren/pull/217) [`236ece65`](https://github.com/lblod/app-gelinkt-notuleren/commit/236ece65db6bc4f11edc0b81dbfcd66d6a868da1) Thanks [@elpoelma](https://github.com/elpoelma)! - Adjust ldes-client `processPage` logic to remove incoming tombstones entirely
+
+### Patch Changes
+
+- [#218](https://github.com/lblod/app-gelinkt-notuleren/pull/218) [`995bb763`](https://github.com/lblod/app-gelinkt-notuleren/commit/995bb763073dc8f74fa419aef8216da5e9b3625d) Thanks [@abeforgit](https://github.com/abeforgit)! - Update the lmb script to avoid entering duplicate data
+
 ## 5.38.2
 
 ### Patch Changes
