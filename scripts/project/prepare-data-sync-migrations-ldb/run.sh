@@ -2,12 +2,17 @@
 export="$1"
 tstamp=$(date +%Y%m%d%H%M%S)
 dir="/project/config/migrations/$tstamp-data-sync-ldb"
+
 mkdir -p "$dir"
+
 cat "/project/$export" >> "$dir/$tstamp-export.ttl"
+
 cat <<EOF > "$dir/$tstamp-export.graph"
 http://mu.semte.ch/graphs/temp-ingest-graph
 EOF
+
 ((tstamp++))
+
 cat <<EOF > "$dir/$tstamp-ingest-exported-triples.sparql"
 DELETE {
     GRAPH <http://mu.semte.ch/graphs/public> {
@@ -109,10 +114,18 @@ INSERT {
            ?p ?new .
     }
     ?s ^<http://data.vlaanderen.be/ns/mandaat#isBestuurlijkeAliasVan>/<http://www.w3.org/ns/org#holds>/^<http://data.lblod.info/vocabularies/leidinggevenden/heeftBestuursfunctie>/<http://data.vlaanderen.be/ns/mandaat#isTijdspecialisatieVan>/<http://data.vlaanderen.be/ns/besluit#bestuurt> ?organization .
+
     GRAPH <http://mu.semte.ch/graphs/public> {
         ?organization <http://mu.semte.ch/vocabularies/core/uuid> ?organizationUuid .
     }
     BIND(IRI(CONCAT("http://mu.semte.ch/graphs/organizations/", ?organizationUuid)) as ?organizationalGraph)
+
+    FILTER NOT EXISTS {
+      GRAPH <http://mu.semte.ch/graphs/lmb-data-public> {
+	?s ?anyP ?anyV.
+      }
+    }
+
 }
 CLEAR GRAPH <http://mu.semte.ch/graphs/temp-ingest-graph>
 EOF
