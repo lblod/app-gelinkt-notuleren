@@ -1,5 +1,15 @@
 # app-gelinkt-notuleren
 
+## 5.41.0
+
+### Minor Changes
+
+- [#219](https://github.com/lblod/app-gelinkt-notuleren/pull/219) [`28b47dae`](https://github.com/lblod/app-gelinkt-notuleren/commit/28b47dae56a1c3b95a41f19c15c33e57559ad3ae) Thanks [@nvdk](https://github.com/nvdk)! - Add login errors to dashboard
+
+### Patch Changes
+
+- [#220](https://github.com/lblod/app-gelinkt-notuleren/pull/220) [`5bf14e75`](https://github.com/lblod/app-gelinkt-notuleren/commit/5bf14e7580797e84dfe076b45fcf805533430b88) Thanks [@abeforgit](https://github.com/abeforgit)! - Add missing kbo numbers to new fusion organizations
+
 ## 5.40.0
 
 ### Minor Changes
