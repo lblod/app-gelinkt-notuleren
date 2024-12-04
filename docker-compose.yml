@@ -87,6 +87,7 @@ services:
       MU_APPLICATION_AUTH_CLIENT_SECRET: "secret"
       MU_APPLICATION_AUTH_ROLE_CLAIM: "abb_gelinktNotuleren_rol_3d"
       LOG_SINK_URL: "http://sink"
+      LOGS_GRAPH: "http://mu.semte.ch/graphs/login-error-logs"
     restart: always
     logging: *default-logging
     labels:

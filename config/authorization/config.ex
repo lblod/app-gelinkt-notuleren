@@ -274,6 +274,20 @@ defmodule Acl.UserGroups.Config do
                     }
         }]
       },
+      # // LOGIN ERROR LOGS
+      %GroupSpec {
+        name: "error-logs",
+        useage: [:write],
+        access: %AlwaysAccessible{},
+        graphs: [ %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/login-error-logs",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Entry"
+                      ]
+                    }}
+                ]
+      },
       %GroupSpec{
         name: "org-reports",
         useage: [:read],
@@ -300,7 +314,16 @@ defmodule Acl.UserGroups.Config do
                         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer",
                         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject",
                         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer"
-                      ]}}]},
+                      ]}},
+                  %GraphSpec{
+                    graph: "http://mu.semte.ch/graphs/login-error-logs",
+                    constraint: %ResourceConstraint{
+                      resource_types: [
+                        "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Entry"
+                      ]
+                    }}
+                ]
+      },
       # // CLEANUP
       #
       %GraphCleanup{
