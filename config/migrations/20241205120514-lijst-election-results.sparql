@@ -4,16 +4,18 @@ PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
 PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX lmb: <http://lblod.data.gift/vocabularies/lmb/>
 
 INSERT {
   GRAPH <http://mu.semte.ch/graphs/public> {
-    ?kandidaten_lijst ext:matched_stemmen ?votes . 
+    ?kandidaten_lijst ext:matched_stemmen ?votes .
   }
 }
 WHERE {
   ?bestuurseenheid skos:prefLabel ?name .
   ?bestuurseenheid a besluit:Bestuurseenheid .
-  ?bestuurseenheid besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001>.
+  ?bestuurseenheid besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001> .
+  ?bestuursorgaanIT lmb:heeftBestuursperiode <http://data.lblod.info/id/concept/Bestuursperiode/96efb929-5d83-48fa-bfbb-b98dfb1180c7> .
   ?fractie org:linkedTo ?bestuurseenheid .
   ?fractie a mandaat:Fractie .
   ?fractie ext:geproduceerdDoor ?kandidaten_lijst .
