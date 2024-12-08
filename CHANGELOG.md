@@ -1,5 +1,13 @@
 # app-gelinkt-notuleren
 
+## 5.42.0
+
+### Minor Changes
+
+- [`dc45ea06`](https://github.com/lblod/app-gelinkt-notuleren/commit/dc45ea0612639e4707dd0d74b6340d8e09b1373b) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [v5.45.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.45.0)
+
+- [#221](https://github.com/lblod/app-gelinkt-notuleren/pull/221) [`8d576b0c`](https://github.com/lblod/app-gelinkt-notuleren/commit/8d576b0c4c8ccaf5abecc5930f4d487e5665380c) Thanks [@piemonkey](https://github.com/piemonkey)! - Add election results for lists, not just for candidates, to enable sorting fractions correctly
+
 ## 5.41.2
 
 ### Patch Changes
