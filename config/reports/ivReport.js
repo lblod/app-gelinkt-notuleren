@@ -5,7 +5,7 @@ import { generateReportFromData } from "../helpers.js";
 import { querySudo as query } from "@lblod/mu-auth-sudo";
 
 export default {
-  cronPattern: "0 * * * * *",
+  cronPattern: "0 0 0 * * *",
   name: "ivReport",
   execute: async () => {
     const { day, month, year } = getToday();
