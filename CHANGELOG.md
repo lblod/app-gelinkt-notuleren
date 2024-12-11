@@ -1,5 +1,13 @@
 # app-gelinkt-notuleren
 
+## 5.42.1
+
+### Patch Changes
+
+- [#224](https://github.com/lblod/app-gelinkt-notuleren/pull/224) [`e8761731`](https://github.com/lblod/app-gelinkt-notuleren/commit/e876173178e6124eb3eb341ce193c5835b43c27f) Thanks [@piemonkey](https://github.com/piemonkey)! - Run ivReport every day, not every minute
+
+- [`e55eb85d`](https://github.com/lblod/app-gelinkt-notuleren/commit/e55eb85d6825cad78565a4b05e3b3fbf4c1c7bda) Thanks [@abeforgit](https://github.com/abeforgit)! - Make sure aangewezen burgemeester shows up in college participants
+
 ## 5.42.0
 
 ### Minor Changes
