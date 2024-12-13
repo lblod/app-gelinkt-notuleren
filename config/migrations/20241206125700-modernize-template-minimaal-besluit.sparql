@@ -1,0 +1,34 @@
+DELETE WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://lblod.info/templates/b04fc03e-e8ff-496a-9343-1f07b4f55551> <http://mu.semte.ch/vocabularies/ext/templateContent> ?templateContent
+  }
+};
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://lblod.info/templates/b04fc03e-e8ff-496a-9343-1f07b4f55551> <http://mu.semte.ch/vocabularies/ext/templateContent> 
+    """
+    <div
+      property="prov:generated"
+      resource="http://data.lblod.info/id/besluiten/--ref-uuid4-a03ac0ee-b301-42ef-bcfd-1db56cbf7a0a"
+      typeof="besluit:Besluit ext:BesluitNieuweStijl"
+      data-label="Besluit"
+    >
+      <div style="display: none" data-rdfa-container="true">
+        <span
+          property="eli:language"
+          resource="http://publications.europa.eu/resource/authority/language/NLD"
+        />
+      </div>
+      <div data-content-container="true">
+        <div property="eli:title" datatype="xsd:string" data-label="Openbare titel besluit">
+          <h4><span class="mark-highlight-manual">Geef titel besluit op</span></h4>
+        </div>
+        <br />
+        <div property="eli:description" datatype="xsd:string" data-label="Korte openbare beschrijving">
+          <p><span class="mark-highlight-manual">Geef korte beschrijving op</span></p>
+        </div>
+      </div>
+    </div>
+    """.
+  }
+}
