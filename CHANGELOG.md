@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.44.1
+
+### Patch Changes
+
+- [`b039b0f`](https://github.com/lblod/app-gelinkt-notuleren/commit/b039b0f2eb4becd32ff363d4c02e1c3bf6a0d626) Thanks [@piemonkey](https://github.com/piemonkey)! - Update frontend to 5.47.1
+
 ## 5.44.0
 
 ### Minor Changes
