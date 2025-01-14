@@ -234,6 +234,7 @@ services:
       - virtuoso:virtuoso
     restart: always
     environment:
+      CRON_PATTERN: "*/1 * * * *"
       TARGET_GRAPH: "http://mu.semte.ch/graphs/mandaten-staging"
       DIRECT_DATABASE_CONNECTION: "http://virtuoso:8890/sparql"
       RANDOMIZE_GRAPHS: "true"
