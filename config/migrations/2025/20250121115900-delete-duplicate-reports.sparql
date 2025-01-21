@@ -1,0 +1,13 @@
+PREFIX dct: <http://purl.org/dc/terms/>
+DELETE {
+    GRAPH <http://mu.semte.ch/graphs/reports> {
+        ?s2 ?p ?o.
+    }
+}WHERE {
+    ?s1 dct:title ?title.
+    ?s2 dct:title ?title;
+	    ?p ?o.
+    ?s1 a <http://lblod.data.gift/vocabularies/reporting/Report>.
+    ?s2 a <http://lblod.data.gift/vocabularies/reporting/Report>.
+    FILTER(STR(?s1) < STR(?s2))
+}
