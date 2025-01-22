@@ -2,11 +2,17 @@ PREFIX dct: <http://purl.org/dc/terms/>
 DELETE {
     GRAPH <http://mu.semte.ch/graphs/reports> {
         ?s2 ?p ?o.
+        ?file ?predicateFile ?objectFile.
+        ?physicalFile ?predicatePhysical ?objectPhysical.
     }
 }WHERE {
     ?s1 dct:title ?title.
     ?s2 dct:title ?title;
 	    ?p ?o.
+    ?s2 <http://www.w3.org/ns/prov#generated> ?file.
+    ?file ?predicateFile ?objectFile.
+    ?physicalFile <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#dataSource> ?file.
+    ?physicalFile ?predicatePhysical ?objectPhysical.
     ?s1 a <http://lblod.data.gift/vocabularies/reporting/Report>.
     ?s2 a <http://lblod.data.gift/vocabularies/reporting/Report>.
     FILTER(STR(?s1) < STR(?s2))
