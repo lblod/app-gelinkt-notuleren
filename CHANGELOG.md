@@ -1,5 +1,15 @@
 # app-gelinkt-notuleren
 
+## 5.45.0
+
+### Minor Changes
+
+- [`a4ef551`](https://github.com/lblod/app-gelinkt-notuleren/commit/a4ef5515371eac872b8b21b687b9475b91174796) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to version [5.48.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.48.0)
+
+### Patch Changes
+
+- [#225](https://github.com/lblod/app-gelinkt-notuleren/pull/225) [`9a36f2c`](https://github.com/lblod/app-gelinkt-notuleren/commit/9a36f2cfda5f5576048590f47b037721ab1d5b56) Thanks [@elpoelma](https://github.com/elpoelma)! - Increase the CRON interval of the ldes-client service from 5 seconds to 1 minute
+
 ## 5.44.3
 
 ### Patch Changes
