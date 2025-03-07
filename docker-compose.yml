@@ -123,9 +123,7 @@ services:
     labels:
       - "logging=true"
   prepublish:
-    image: lblod/notulen-prepublish-service:2.6.0
-    # build:
-    #   context: https://github.com/lblod/notulen-prepublish-service#enhancement/better-support-for-large-content
+    image: lblod/notulen-prepublish-service:2.6.1
     environment:
       TZ: "Europe/Brussels"
     restart: always
