@@ -124,7 +124,19 @@
                        :as "account")
               (bestuurseenheid :via ,(s-prefix "foaf:member")
                               :as "bestuurseenheden"))
+  :has-one `((user-preferences :via ,(s-prefix "ext:preferencesFor")
+                            :inverse t
+                            :as "preferences"))
   :on-path "gebruikers"
+)
+
+(define-resource user-preferences ()
+  :class (s-prefix "ext:UserPreferences")
+  :resource-base (s-url "http://data.lblod.gift/user-preferences/")
+  :properties `((:favourite-templates :string ,(s-prefix "ext:favouriteTemplates")))
+  :has-one `((gebruiker :via ,(s-prefix "ext:preferencesFor")
+                            :as "gebruiker"))
+  :on-path "user-preferences"
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
