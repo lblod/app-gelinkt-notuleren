@@ -1,3 +1,9 @@
+clone:
+  git:
+    image: woodpeckerci/plugin-git
+    settings:
+      lfs: false
+
 steps:
   validate-resource-models:
     image: madnificent/cl-resources-plantuml-generator
