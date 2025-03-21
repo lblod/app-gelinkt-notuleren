@@ -135,6 +135,9 @@ services:
   file:
     image: semtech/mu-file-service:3.1.0
     restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
     links:
       - database:database
     volumes:
@@ -155,10 +158,14 @@ services:
   codex-proxy:
     image: lblod/codex-reverse-proxy-service
     logging: *default-logging
+    labels:
+      - "logging=true"
     restart: always
   agendapoint-service:
     image: lblod/gn-agendapoint-service:1.0.3
     logging: *default-logging
+    labels:
+      - "logging=true"
     restart: always
   dashboard:
     image: lblod/frontend-dashboard:1.4.0
@@ -246,3 +253,6 @@ services:
     environment:
       BACKEND_HOST: database
     restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
