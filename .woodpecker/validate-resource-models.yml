@@ -1,0 +1,17 @@
+clone:
+  git:
+    image: woodpeckerci/plugin-git
+    settings:
+      lfs: false
+
+steps:
+  validate-resource-models:
+    image: madnificent/cl-resources-plantuml-generator
+    commands:
+      - mkdir /config/output
+      - cp -R ./config/resources/* /app/configuration/
+      - cd /
+      - sbcl --disable-debugger --load /usr/src/startup.lisp
+when:
+  event:
+    - pull_request
