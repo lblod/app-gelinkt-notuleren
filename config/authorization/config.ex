@@ -136,6 +136,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/Installatievergadering",
                         "http://mu.semte.ch/vocabularies/ext/InstallatievergaderingSynchronizationStatus",
                         "http://data.lblod.info/vocabularies/gelinktnotuleren/AangepasteStemming",
+                        "http://mu.semte.ch/vocabularies/ext/UserPreferences",
                       ] } } ] },
 
       %GroupSpec{
@@ -175,6 +176,7 @@ defmodule Acl.UserGroups.Config do
                         "http://mu.semte.ch/vocabularies/ext/Installatievergadering",
                         "http://mu.semte.ch/vocabularies/ext/InstallatievergaderingSynchronizationStatus",
                         "http://data.lblod.info/vocabularies/gelinktnotuleren/AangepasteStemming",
+                        "http://mu.semte.ch/vocabularies/ext/UserPreferences",
                       ] } } ] },
 
       %GroupSpec{

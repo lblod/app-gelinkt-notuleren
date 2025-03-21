@@ -372,6 +372,10 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/accounts/"
   end
 
+  match "/user-preferences/*path" do
+    forward conn, path, "http://cache/user-preferences/"
+  end
+
   post "/remote-login/*path" do
     forward conn, [], "http://remotelogin/remote-login"
   end
