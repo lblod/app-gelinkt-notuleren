@@ -1,5 +1,15 @@
 # app-gelinkt-notuleren
 
+## 5.48.0
+
+### Minor Changes
+
+- [`8347b27`](https://github.com/lblod/app-gelinkt-notuleren/commit/8347b27518b6cc6260196262982bddc5883cdcf7) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to version [5.52.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.52.0)
+
+### Patch Changes
+
+- [#227](https://github.com/lblod/app-gelinkt-notuleren/pull/227) [`f25c9ba`](https://github.com/lblod/app-gelinkt-notuleren/commit/f25c9ba86080360ea7922a7649efb25f88e80ebf) Thanks [@lagartoverde](https://github.com/lagartoverde)! - Add missing logging keys to docker-compose.yml
+
 ## 5.47.0
 
 ### Minor Changes
