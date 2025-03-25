@@ -1,12 +1,18 @@
 # app-gelinkt-notuleren
 
+## 5.49.1
+
+### Patch Changes
+
+- [`03c6e08b`](https://github.com/lblod/app-gelinkt-notuleren/commit/03c6e08b69230874cde0db6c4e082f76c49c3a38) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [v5.53.1](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.53.1)
+
 ## 5.49.0
 
 ### Minor Changes
 
-*   [#228](https://github.com/lblod/app-gelinkt-notuleren/pull/228) [`9751a6b`](https://github.com/lblod/app-gelinkt-notuleren/commit/9751a6b38504d79c42b25b724cd093f8e2345435) Thanks [@piemonkey](https://github.com/piemonkey)! - Update frontend to 5.53.0
+- [#228](https://github.com/lblod/app-gelinkt-notuleren/pull/228) [`9751a6b`](https://github.com/lblod/app-gelinkt-notuleren/commit/9751a6b38504d79c42b25b724cd093f8e2345435) Thanks [@piemonkey](https://github.com/piemonkey)! - Update frontend to 5.53.0
 
-*   [#228](https://github.com/lblod/app-gelinkt-notuleren/pull/228) [`ed04615`](https://github.com/lblod/app-gelinkt-notuleren/commit/ed04615b590feb00b98ca8110564eab3e5e0d5db) Thanks [@piemonkey](https://github.com/piemonkey)! - Add user preferences linked to gebruiker
+- [#228](https://github.com/lblod/app-gelinkt-notuleren/pull/228) [`ed04615`](https://github.com/lblod/app-gelinkt-notuleren/commit/ed04615b590feb00b98ca8110564eab3e5e0d5db) Thanks [@piemonkey](https://github.com/piemonkey)! - Add user preferences linked to gebruiker
 
 ## 5.48.0
 
