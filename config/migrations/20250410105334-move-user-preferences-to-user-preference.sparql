@@ -1,0 +1,28 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+DELETE {
+  GRAPH ?g {
+    ?userPreferences a ext:UserPreferences;
+                     ext:favouriteTemplates ?favouriteTemplates;
+                     ext:preferencesFor ?user.
+  }
+}
+INSERT {
+  GRAPH ?g {
+    ?userPreference a ext:UserPreference;
+                    # `favourite-templates` concept
+                    ext:type <http://lblod.data.gift/concepts/c9d00675-e6b8-4a83-b5e3-1631842f8e4a>;
+                    ext:value ?favouriteTemplates.
+  }
+}
+WHERE {
+  GRAPH ?g {
+    ?userPreferences a ext:UserPreferences;
+                  	 ext:favouriteTemplates ?favouriteTemplates;
+                     ext:preferencesFor ?user.
+  }
+  BIND(STRUUID() as ?userPreferenceId)
+  BIND(URI(CONCAT("http://data.lblod.gift/user-preference/", ?userPreferenceId)) as ?userPreference)
+}

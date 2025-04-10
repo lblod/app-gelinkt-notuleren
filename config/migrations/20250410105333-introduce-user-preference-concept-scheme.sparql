@@ -1,0 +1,42 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?uri a skos:ConceptScheme;
+         mu:uuid ?uuid;
+         skos:prefLabel "User preference schema".
+  }
+}
+WHERE {
+  BIND("f9bd0f31-8932-4a04-8c79-f92066c991f3" AS ?uuid)
+  BIND(URI(CONCAT("http://lblod.data.gift/concept-schemes/", ?uuid)) as ?uri)
+};
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?uri a skos:Concept;
+         mu:uuid ?uuid;
+         skos:inScheme <http://lblod.data.gift/concept-schemes/f9bd0f31-8932-4a04-8c79-f92066c991f3>;
+         skos:notation 'favourite-templates';
+         skos:prefLabel "Favourite templates";
+         skos:note "List of favourite templates which are shown when creating a new editor document".
+  }
+}
+WHERE {
+  BIND("c9d00675-e6b8-4a83-b5e3-1631842f8e4a" AS ?uuid)
+  BIND(URI(CONCAT("http://lblod.data.gift/concepts/", ?uuid)) as ?uri)
+};
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?uri a skos:Concept;
+         mu:uuid ?uuid;
+         skos:inScheme <http://lblod.data.gift/concept-schemes/f9bd0f31-8932-4a04-8c79-f92066c991f3>;
+         skos:notation 'meeting.sidebar.navigation.collapsed';
+         skos:prefLabel "Collapsed state of meeting navigation section";
+         skos:note "Controls whether or not the navigation section of the meeting sidebar is collapsed".
+  }
+}
+WHERE {
+  BIND("a006e8d3-904b-45a9-a737-3b622076c7d2" AS ?uuid)
+  BIND(URI(CONCAT("http://lblod.data.gift/concepts/", ?uuid)) as ?uri)
+}
