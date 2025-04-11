@@ -33,6 +33,7 @@
   :class (s-prefix "skos:Concept")
   :properties `((:label :string ,(s-prefix "skos:prefLabel"))
                 (:notation :string ,(s-prefix "skos:notation"))
+                (:note :string ,(s-prefix "skos:note"))
                 (:search-label :string ,(s-prefix "ext:searchLabel")))
   :has-many `((concept-scheme :via ,(s-prefix "skos:inScheme")
                               :as "concept-schemes")
@@ -123,19 +124,21 @@
   :has-many `((account :via ,(s-prefix "foaf:account")
                        :as "account")
               (bestuurseenheid :via ,(s-prefix "foaf:member")
-                              :as "bestuurseenheden"))
-  :has-one `((user-preferences :via ,(s-prefix "ext:preferencesFor")
-                            :inverse t
-                            :as "preferences"))
+                               :as "bestuurseenheden")
+              (user-preference :via ,(s-prefix "ext:preferenceFor")
+                               :inverse t
+                               :as "preferences"))
   :on-path "gebruikers"
 )
 
-(define-resource user-preferences ()
-  :class (s-prefix "ext:UserPreferences")
-  :resource-base (s-url "http://data.lblod.gift/user-preferences/")
-  :properties `((:favourite-templates :string ,(s-prefix "ext:favouriteTemplates")))
-  :has-one `((gebruiker :via ,(s-prefix "ext:preferencesFor")
-                            :as "gebruiker"))
+(define-resource user-preference ()
+  :class (s-prefix "ext:UserPreference")
+  :resource-base (s-url "http://data.lblod.gift/user-preference/")
+  :properties `((:value :string ,(s-prefix "ext:value")))
+  :has-one `((gebruiker :via ,(s-prefix "ext:preferenceFor")
+                            :as "gebruiker")
+             (concept :via ,(s-prefix "ext:type")
+                            :as "type"))
   :on-path "user-preferences"
 )
 

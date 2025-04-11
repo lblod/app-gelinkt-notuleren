@@ -3,6 +3,7 @@ clone:
     image: woodpeckerci/plugin-git
     settings:
       lfs: false
+      remote: ${CI_REPO_CLONE_URL}
 
 steps:
   validate-resource-models:
