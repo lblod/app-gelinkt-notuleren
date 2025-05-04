@@ -1,5 +1,16 @@
 # app-gelinkt-notuleren
 
+## 5.54.0
+
+### Minor Changes
+
+- [#231](https://github.com/lblod/app-gelinkt-notuleren/pull/231) [`b75d775a`](https://github.com/lblod/app-gelinkt-notuleren/commit/b75d775a0baa41baa72cb72725b048abefd27296) Thanks [@elpoelma](https://github.com/elpoelma)! - Add `niet-toegekende-mandatarissen` relationship to `zitting` and `behandeling-van-agendapunt` models.
+  This will allow users to assign mandatees as 'not assigned'/'does not have a mandate'.
+
+- [#230](https://github.com/lblod/app-gelinkt-notuleren/pull/230) [`c99af1f2`](https://github.com/lblod/app-gelinkt-notuleren/commit/c99af1f246459f3d81e0d5095985e84b03565938) Thanks [@elpoelma](https://github.com/elpoelma)! - Add support for generic user preferences
+
+- [`222c2800`](https://github.com/lblod/app-gelinkt-notuleren/commit/222c2800923c3e40d8622ac4fa5f92f67a3f7a30) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [5.58.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.58.0)
+
 ## 5.53.0
 
 ### Minor Changes
