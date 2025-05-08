@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.55.0
+
+### Minor Changes
+
+- [#232](https://github.com/lblod/app-gelinkt-notuleren/pull/232) [`de45352`](https://github.com/lblod/app-gelinkt-notuleren/commit/de453524dfd8124aae7d3548151982c7c3c0a305) Thanks [@lagartoverde](https://github.com/lagartoverde)! - Delete IV report
+
 ## 5.54.0
 
 ### Minor Changes
