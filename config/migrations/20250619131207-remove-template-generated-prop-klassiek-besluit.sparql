@@ -1,0 +1,73 @@
+DELETE WHERE {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://lblod.info/templates/39c31a7e-2ba9-11e9-88cf-83ebfda837dc> <http://mu.semte.ch/vocabularies/ext/templateContent> ?templateContent
+  }
+};
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://lblod.info/templates/39c31a7e-2ba9-11e9-88cf-83ebfda837dc> <http://mu.semte.ch/vocabularies/ext/templateContent> 
+    """
+    <div
+      resource="http://data.lblod.info/id/besluiten/--ref-uuid4-5ab24a9b-4760-4607-81c1-38dd53c13dff"
+      typeof="besluit:Besluit ext:BesluitKlassiekeStijl"
+      data-label="Besluit"
+    >
+      <div style="display: none" data-rdfa-container="true">
+        <span
+          property="eli:language"
+          resource="http://publications.europa.eu/resource/authority/language/NLD"
+        />
+      </div>
+      <div data-content-container="true">
+        <div
+          property="eli:title"
+          datatype="xsd:string"
+          data-label="Openbare titel besluit"
+        >
+          <h5><span class="mark-highlight-manual">Geef titel besluit op</span></h5>
+        </div>
+        <div
+          property="eli:description"
+          datatype="xsd:string"
+          data-label="Korte openbare beschrijving"
+        >
+          <p><span class="mark-highlight-manual">Geef korte beschrijving op</span></p>
+        </div>
+        <div property="besluit:motivering" lang="nl" data-label="Motivering">
+          <p><span class="mark-highlight-manual">geef bestuursorgaan op</span>,</p>
+          <br />
+          <div>
+            <ul class="bullet-list">
+              <li>Gelet op <span class="mark-highlight-manual">Voeg juridische grond in</span>;</li>
+            </ul>
+          </div>
+          <br />
+          <div>
+            <ul class="bullet-list">
+              <li>Overwegende dat <span class="mark-highlight-manual">Voeg motivering in</span>;</li>
+            </ul>
+          </div>
+        </div>
+        <br />
+        <br />
+        <p class="u-spacer--small">Beslist,</p>
+        <div property="prov:value" datatype="xsd:string" data-label="Artikels">
+          <div
+            property="eli:has_part"
+            resource="http://data.lblod.info/artikels/--ref-uuid4-69ba01d6-db79-4b36-8ed4-d824269724df"
+            typeof="besluit:Artikel"
+            data-say-is-only-article="true"
+          >
+            <div>
+              Artikel <span property="eli:number" datatype="xsd:string">1</span>
+            </div>
+            <div property="prov:value" datatype="xsd:string">
+              <span class="mark-highlight-manual">Voer inhoud in</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    """.
+  }
+}
