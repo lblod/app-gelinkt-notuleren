@@ -1,5 +1,17 @@
 # app-gelinkt-notuleren
 
+## 5.59.0
+
+### Minor Changes
+
+- [`f44cada`](https://github.com/lblod/app-gelinkt-notuleren/commit/f44cadacaf20e026df4a54b8310c51165e6c27ea) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to version [5.62.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.62.0)
+
+- [#234](https://github.com/lblod/app-gelinkt-notuleren/pull/234) [`7502120`](https://github.com/lblod/app-gelinkt-notuleren/commit/75021209142f1396a8ea577b79da944b4ae77acb) Thanks [@piemonkey](https://github.com/piemonkey)! - Remove property attribute from decisions in standard templates to prevent it being interpreted as a backlink in RDFa aware documents
+
+### Patch Changes
+
+- [`e1ccf1e`](https://github.com/lblod/app-gelinkt-notuleren/commit/e1ccf1eaffa6dbdc2d0e00635e1bfc3d9fbabdad) Thanks [@elpoelma](https://github.com/elpoelma)! - Update prepublish service to version [2.6.2](https://github.com/lblod/notulen-prepublish-service/releases/tag/v2.6.2)
+
 ## 5.58.0
 
 ### Minor Changes
