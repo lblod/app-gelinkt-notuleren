@@ -1,5 +1,13 @@
 # app-gelinkt-notuleren
 
+## 5.60.0
+
+### Minor Changes
+
+- [`2a3d073`](https://github.com/lblod/app-gelinkt-notuleren/commit/2a3d0732e1184463adaea84e03995a5bfcc6f14f) Thanks [@lagartoverde](https://github.com/lagartoverde)! - Update frontend to version [5.63.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.63.0)
+
+- [#233](https://github.com/lblod/app-gelinkt-notuleren/pull/233) [`b55f537`](https://github.com/lblod/app-gelinkt-notuleren/commit/b55f537031efc83efb9736f2eba4f7fcebd5b07b) Thanks [@elpoelma](https://github.com/elpoelma)! - Addition of migrations which sets the end-dates of the administrative bodies of the 2019-2024 legislation
+
 ## 5.59.0
 
 ### Minor Changes
