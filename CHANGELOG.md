@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.61.1
+
+### Patch Changes
+
+- [`bc95f958`](https://github.com/lblod/app-gelinkt-notuleren/commit/bc95f9583f6e7e6f0a1e36f906c61ac8faab3ee1) Thanks [@abeforgit](https://github.com/abeforgit)! - bump meeting service to [0.0.5](https://github.com/lblod/meeting-service/releases/tag/v0.0.5)
+
 ## 5.61.0
 
 ### Minor Changes
