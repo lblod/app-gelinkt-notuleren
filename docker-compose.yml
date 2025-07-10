@@ -6,7 +6,7 @@ x-logging: &default-logging
 
 services:
   meeting:
-    image: lblod/meeting-service:0.0.3
+    image: lblod/meeting-service:0.0.5
     restart: always
     logging: *default-logging
     labels:
