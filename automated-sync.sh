@@ -10,13 +10,12 @@ echo "$(date) - generating LDB migrations"
 # generate LDB migrations
 LDB="https://leidinggevenden.lokaalbestuur.vlaanderen.be"
 FILENAME=`curl -s "$LDB/exports?filter%5Bformat%5D=text%2Fturtle&page%5Bsize%5D=1&sort=-created" -H 'Accept: application/vnd.api+json'  -H 'Pragma: no-cache' -H 'Cache-Control: no-cache' | jq -r '.data[0].attributes.filename'`
-cd /data/app-gelinkt-notuleren
 curl "$LDB/files/$FILENAME" -o $FILENAME
 if [ $? -ne 0 ]; then    
     echo "download of LDB export failed, not generating migrations"
     exit -1
 else
-  /data/mu-cli/mu script project-scripts setup-data-sync-ldb $FILENAME
+  mu script project-scripts setup-data-sync-ldb $FILENAME
   rm $FILENAME
 fi
 
@@ -49,10 +48,11 @@ sleep 1200
 
 echo "$(date) - starting checks for successful migrations"
 # check if migrations successfull
-docker compose logs --tail 50 migrations | grep 'ingest-exported-triples.sparql \[DONE\]'
+DONE_REGEX="/$(date +%Y%m%d)[0-9]\+-ingest-exported-triples.sparql \[DONE\]"
+docker compose logs migrations | grep "$DONE_REGEX"
 while [ ! $? -eq 0 ]; do
     sleep 300;
-    docker compose logs --tail 50 migrations | grep 'ingest-exported-triples.sparql \[DONE\]'
+    docker compose logs migrations | grep "$DONE_REGEX"
 done
 
 echo "$(date) - migrations successful, making virtuoso checkpoints"
