@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.49.4
+
+### Patch Changes
+
+- [`77d88c8`](https://github.com/lblod/app-gelinkt-notuleren/commit/77d88c8e13edfad1df37ebdfa2dc12535bd52263) Thanks [@piemonkey](https://github.com/piemonkey)! - Improve automated sync script to check further in the migrations log but explicitly for the sync from the current day
+
 ## 5.49.3
 
 ### Patch Changes
