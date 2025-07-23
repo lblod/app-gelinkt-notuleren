@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.49.5
+
+### Patch Changes
+
+- [`3ad91c6`](https://github.com/lblod/app-gelinkt-notuleren/commit/3ad91c659d1c1c18f37b9ad75a4badb053624ce2) Thanks [@piemonkey](https://github.com/piemonkey)! - Correct automated-sync script to work correctly when run through cron
+
 ## 5.49.4
 
 ### Patch Changes
