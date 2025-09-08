@@ -1,5 +1,15 @@
 # app-gelinkt-notuleren
 
+## 5.62.2
+
+### Patch Changes
+
+- [`9a305b23`](https://github.com/lblod/app-gelinkt-notuleren/commit/9a305b23b42c15438cf3d71d4b8d60c9727a3008) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [v5.66.2](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.66.2)
+
+- [#236](https://github.com/lblod/app-gelinkt-notuleren/pull/236) [`6d658ce3`](https://github.com/lblod/app-gelinkt-notuleren/commit/6d658ce380e51f60f4dfdb2b78486d1a262fc655) Thanks [@piemonkey](https://github.com/piemonkey)! - Improve automated sync script to check further in the migrations log but explicitly for the sync from the current day
+
+- [#236](https://github.com/lblod/app-gelinkt-notuleren/pull/236) [`37a1753d`](https://github.com/lblod/app-gelinkt-notuleren/commit/37a1753db538d264da6cb86627a09917577ca30b) Thanks [@piemonkey](https://github.com/piemonkey)! - Correct automated-sync script to work correctly when run through cron
+
 ## 5.62.1
 
 ### Patch Changes
