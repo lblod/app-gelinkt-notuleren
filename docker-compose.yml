@@ -256,3 +256,33 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
+
+  consumer:
+    # image: redpencil/ldes-consumer:...
+    build:
+      context: https://github.com/piemonkey/ldes-consumer-service.git#feature/jwt-auth
+      dockerfile: ./Dockerfile
+    volumes:
+      - "./data/ldes-consumer:/data"
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+    environment:
+      LDES_VERSION_OF_PATH: "http://purl.org/dc/terms/isVersionOf"
+      LDES_TIMESTAMP_PATH: "http://purl.org/dc/terms/issued"
+      MU_SPARQL_ENDPOINT: "http://database:8890/sparql"
+      MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/awv/ldes"
+      INGEST_MODE: "MATERIALIZE"
+      PERSIST_STATE: true
+      LDES_ENDPOINT_VIEW: "https://services.apps-dev.mow.vlaanderen.be/ldes-server/geplande-opstellingen-v1/by-page"
+      LDES_SANITIZE_CONTENTS_STRING: "\\u0020"
+      JWT_USE_JWT_AUTH: true
+      JWT_CLIENT_ID: "d9718ad9-b093-4f64-80dc-a0f677ae15e5"
+      JWT_KEY_PATH: "/data/awv.json"
+      JWT_KEY_ALGORITHM: "RS256"
+      JWT_TOKEN_URL: "https://authenticatie.vlaanderen.be/op/v1/token"
+      JWT_TOKEN_REQUEST_AUDIENCE: "https://authenticatie.vlaanderen.be/op"
+      JWT_TOKEN_REQUEST_EXPIRY: "10minutes"
+      JWT_TOKEN_SCOPE: "awv_toep_services"
+      JWT_CLIENT_ASSERTION_TYPE: "urn:ietf:params:oauth:client-assertion-type:jwt-bearer"
