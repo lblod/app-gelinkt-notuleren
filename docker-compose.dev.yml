@@ -83,3 +83,8 @@ services:
     restart: "no"
   consumer:
     restart: "no"
+  vks-design-service:
+    build: https://github.com/lblod/vks-design-service.git#master
+    environment:
+      MOW_ENDPOINT: 'https://roadsigns.lblod.info/sparql'
+      NODE_ENV: "development"
