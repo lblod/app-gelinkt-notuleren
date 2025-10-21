@@ -286,3 +286,7 @@ services:
       JWT_TOKEN_REQUEST_EXPIRY: "10minutes"
       JWT_TOKEN_SCOPE: "awv_toep_services"
       JWT_CLIENT_ASSERTION_TYPE: "urn:ietf:params:oauth:client-assertion-type:jwt-bearer"
+  uuid-generation:
+    image: redpencil/uuid-generation:0.4.1
+    volumes:
+      - ./config/uuid-generation/:/config
