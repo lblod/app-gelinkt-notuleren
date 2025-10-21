@@ -279,14 +279,13 @@ defmodule Acl.UserGroups.Config do
       # // AWV LDES
       %GroupSpec{
         name: "ldes-graph",
-        useage: [:read,:read_for_write],
+        useage: [:read],
         access: %AccessByQuery{
-          vars: ["session_group"],
+          vars: [],
           query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
                   PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-                  SELECT DISTINCT ?session_group WHERE {
-                    <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
-                                 ext:sessionRole ?role.
+                  SELECT DISTINCT ?role WHERE {
+                    <SESSION_ID> ext:sessionRole ?role.
                      FILTER(?role in (\"GelinktNotuleren-lezer\",\"GelinktNotuleren-schrijver\", \"GelinktNotuleren-publiceerder\",  \"GelinktNotuleren-ondertekenaar\"))
                     }" },
         graphs: [ %GraphSpec{
