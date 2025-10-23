@@ -357,10 +357,10 @@ defmodule Dispatcher do
   # VKS
   ########
   get "/ar-designs/*path" do
-    forward conn, path, "http://vks-design-service/ar-designs"
+    forward conn, path, "http://vks-design-service/ar-designs/"
   end
   get "/measures/*path" do
-    forward conn, path, "http://vks-design-service/measures"
+    forward conn, path, "http://vks-design-service/measures/"
   end
 
   #########
