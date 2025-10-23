@@ -359,8 +359,8 @@ defmodule Dispatcher do
   get "/ar-designs/*path" do
     forward conn, path, "http://vks-design-service/ar-designs/"
   end
-  get "/measures/*path" do
-    forward conn, path, "http://vks-design-service/measures/"
+  get "/measure-concepts/*path" do
+    forward conn, path, "http://vks-design-service/measure-concepts/"
   end
 
   #########
