@@ -36,24 +36,47 @@ export default [
     },
   },
   {
-  match: {
-    predicate: {
-      type: 'uri',
-      value: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'
+    match: {
+      predicate: {
+        type: "uri",
+        value: "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      },
+      object: {
+        type: "uri",
+        value:
+          "https://data.vlaanderen.be/ns/mobiliteit#AanvullendReglementOntwerp",
+      },
     },
-    object: {
-      type: 'uri',
-      value: 'https://data.vlaanderen.be/ns/mobiliteit#AanvullendReglementOntwerp' // Example type.
-    }
+    callback: {
+      url: "http://uuid-generation/delta",
+      method: "POST",
+    },
+    options: {
+      resourceFormat: "v0.0.1",
+      gracePeriod: 250,
+      ignoreFromSelf: true,
+    },
   },
-  callback: {
-    url: 'http://uuid-generation/delta',
-    method: 'POST'
+  {
+    match: {
+      predicate: {
+        type: "uri",
+        value: "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      },
+      object: {
+        type: "uri",
+        value:
+          "https://data.vlaanderen.be/ns/mobiliteit#MobiliteitsmaatregelOntwerp",
+      },
+    },
+    callback: {
+      url: "http://uuid-generation/delta",
+      method: "POST",
+    },
+    options: {
+      resourceFormat: "v0.0.1",
+      gracePeriod: 250,
+      ignoreFromSelf: true,
+    },
   },
-  options: {
-    resourceFormat: 'v0.0.1',
-    gracePeriod: 250,
-    ignoreFromSelf: true
-  }
-}
 ];
