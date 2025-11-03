@@ -263,6 +263,9 @@ services:
     labels:
       - "logging=true"
 
+  ################################################################################
+  # AWV LDES Services
+  ################################################################################
   consumer:
     # image: redpencil/ldes-consumer:...
     build:
@@ -292,10 +295,20 @@ services:
       JWT_TOKEN_REQUEST_EXPIRY: "10minutes"
       JWT_TOKEN_SCOPE: "awv_toep_services"
       JWT_CLIENT_ASSERTION_TYPE: "urn:ietf:params:oauth:client-assertion-type:jwt-bearer"
+
   uuid-generation:
     image: redpencil/uuid-generation:0.4.1
     volumes:
       - ./config/uuid-generation/:/config
+    restart: always
+    labels:
+      - "logging=true"
+    logging: *default-logging
+
+  vks-design-service:
+    image: lblod/vks-design-service:feature-import-vks-designs
+    environment:
+      MOW_ENDPOINT: 'https://roadsigns.lblod.info/sparql'
     restart: always
     labels:
       - "logging=true"
