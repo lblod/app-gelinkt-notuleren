@@ -1,5 +1,29 @@
 # app-gelinkt-notuleren
 
+## 5.63.3
+
+### Patch Changes
+
+- [`65bca20`](https://github.com/lblod/app-gelinkt-notuleren/commit/65bca206bee2beb75c74fc27d07d545d39564f37) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to version [5.68.1](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.68.1)
+
+## 5.63.2
+
+### Patch Changes
+
+- [`fcc21b8`](https://github.com/lblod/app-gelinkt-notuleren/commit/fcc21b8ae3b9f1d3e38df72e907099c461b57ded) Thanks [@elpoelma](https://github.com/elpoelma)! - Update frontend to version [5.68.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.68.0)
+
+## 5.63.1
+
+### Patch Changes
+
+- [`32abd65`](https://github.com/lblod/app-gelinkt-notuleren/commit/32abd6520acfdce74cab4d59f11357c838aab041) Thanks [@piemonkey](https://github.com/piemonkey)! - Update frontend to [v5.67.1](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.67.1)
+
+## 5.63.0
+
+### Minor Changes
+
+- [`07cac97`](https://github.com/lblod/app-gelinkt-notuleren/commit/07cac97822ccd1284bc42c7f251637e8b9be179f) Thanks [@piemonkey](https://github.com/piemonkey)! - Bump frontend to [v5.67.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.67.0)
+
 ## 5.62.5
 
 ### Patch Changes
