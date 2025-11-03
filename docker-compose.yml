@@ -150,6 +150,8 @@ services:
       RELATIVE_FILE_PATH: "deltas/published-resource"
     logging: *default-logging
     restart: always
+    labels:
+      - "logging=true"
   project-scripts:
     image: semtech/mu-scripts:1.0.0
     volumes:
@@ -229,6 +231,9 @@ services:
       API_KEY: "VERY_SECRET_KEY_REPLACE_ME"
       REQUIRED_ROLES: "GelinktNotuleren-publiceerder,GelinktNotuleren-schrijver,GelinktNotuleren-ondertekenaar"
     restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
 
   ldes-client:
     image: lblod/ldes-client:0.0.3
@@ -246,6 +251,7 @@ services:
       BATCH_SIZE: 100
       BYPASS_MU_AUTH: "false"
       EXTRA_HEADERS: "secret"
+    logging: *default-logging
     labels:
       - "logging=true"
   sparql-cache:
@@ -290,3 +296,7 @@ services:
     image: redpencil/uuid-generation:0.4.1
     volumes:
       - ./config/uuid-generation/:/config
+    restart: always
+    labels:
+      - "logging=true"
+    logging: *default-logging
