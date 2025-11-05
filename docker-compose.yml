@@ -309,6 +309,32 @@ services:
     image: lblod/vks-design-service:feature-import-vks-designs
     environment:
       MOW_ENDPOINT: 'https://roadsigns.lblod.info/sparql'
+  op-public-consumer:
+    image: lblod/delta-consumer:0.1.6
+    environment:
+      DCR_SERVICE_NAME: "op-public-consumer"
+      DCR_SYNC_BASE_URL: "https://organisaties.abb.vlaanderen.be"
+      DCR_SYNC_FILES_PATH: "/sync/public/files"
+      DCR_SYNC_DATASET_SUBJECT: "http://data.lblod.info/datasets/delta-producer/dumps/PublicCacheGraphDump"
+      DCR_INITIAL_SYNC_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/consumer/initialSync/op-public"
+      DCR_DELTA_SYNC_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/consumer/deltaSync/op-public"
+      DCR_JOB_CREATOR_URI: "http://data.lblod.info/services/id/op-public-consumer"
+      DCR_START_FROM_DELTA_TIMESTAMP: "2011-01-01T00:00:00Z"
+      DCR_DISABLE_INITIAL_SYNC: "false"
+      DCR_WAIT_FOR_INITIAL_SYNC: "true"
+      DCR_KEEP_DELTA_FILES: "true"
+      DCR_DELTA_JOBS_RETENTION_PERIOD: "30"
+      DCR_ENABLE_TRIPLE_REMAPPING: "true"
+      DCR_LANDING_ZONE_GRAPH: "http://mu.semte.ch/graphs/landing-zone/op-public"
+      DCR_REMAPPING_GRAPH: "http://mu.semte.ch/graphs/public"
+      DCR_BATCH_SIZE: 1000
+      SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404,500,503"
+      SUDO_QUERY_RETRY: "true"
+      #DCR_CRON_PATTERN_DELTA_SYNC: '* * * * *' # this is every minute
+      DCR_DISABLE_DELTA_INGEST: "false"
+    volumes:
+      - ./config/op-consumer/mapping:/config/mapping
+      - ./data/files/consumer-files/op-public:/consumer-files/
     restart: always
     labels:
       - "logging=true"
