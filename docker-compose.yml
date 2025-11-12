@@ -306,7 +306,7 @@ services:
     logging: *default-logging
 
   vks-design-service:
-    image: lblod/vks-design-service:feature-import-vks-designs
+    image: lblod/vks-design-service:feature-build-for-vks-pagination-and-sorting
     environment:
       MOW_ENDPOINT: 'https://roadsigns.lblod.info/sparql'
   op-public-consumer:
