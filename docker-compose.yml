@@ -12,7 +12,7 @@ services:
     labels:
       - "logging=true"
   editor:
-    image: lblod/frontend-gelinkt-notuleren:feature-import-regulation-decision-flow
+    image: lblod/frontend-gelinkt-notuleren:feature-design-usage-status@sha256:84145f2d0241ca37f0ddb401f94ad7aae3532b04cff78072dabeff9025c4709d
     restart: always
     logging: *default-logging
     labels:
