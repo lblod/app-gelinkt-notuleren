@@ -47,7 +47,7 @@ services:
   database:
     image: semtech/mu-authorization:0.6.0-beta.8
     environment:
-      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+      MU_SPARQL_ENDPOINT: "http://triplestore:8890/sparql"
       DATABASE_COMPATIBILITY: Virtuoso
     volumes:
       - ./config/authorization:/config
@@ -55,7 +55,7 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
-  virtuoso:
+  triplestore:
     image: redpencil/virtuoso:1.2.0-rc.1
     environment:
       SPARQL_UPDATE: "true"
@@ -69,7 +69,7 @@ services:
   migrations:
     image: semtech/mu-migrations-service:0.8.0
     links:
-      - virtuoso:database
+      - triplestore:database
     volumes:
       - ./config/migrations:/data/migrations
     environment:
@@ -248,7 +248,6 @@ services:
     build: https://github.com/lblod/ldes-client.git#fix/crash-if-error-on-startup
     links:
       - database:database
-      - virtuoso:virtuoso
     restart: always
     volumes:
       - ./config/ldes-client:/config
@@ -256,7 +255,8 @@ services:
       RUN_AT_STARTUP: true
       DELAY: 1000
       CRON_PATTERN: "*/1 * * * *"
-      DIRECT_DATABASE_CONNECTION: "http://virtuoso:8890/sparql"
+      DIRECT_DATABASE_CONNECTION: "http://triplestore:8890/sparql"
+      GRAPH_STORE_URL: "http://triplestore:8890/sparql-graph-crud"
       RANDOMIZE_GRAPHS: "true"
       BATCH_SIZE: 100
       BYPASS_MU_AUTH: true

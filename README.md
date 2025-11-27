@@ -142,9 +142,8 @@ Make sure to wait for the migrations to run.
 You might want to load a backup from a server as test data locally. First create backup like other stacks and put it in `data/db/backups`.  
 Because the stack uses an old virtuoso version, loading a backup won't work by itself. Add the following configuration to your docker-compose file (`docker-compose.override.yml` would be a good place). The important part is overriding the image.
 ```
-version: "3.4"
 services:
-  virtuoso:
+  triplestore:
     restart: "no"
     image: tenforce/virtuoso:latest
     environment:
