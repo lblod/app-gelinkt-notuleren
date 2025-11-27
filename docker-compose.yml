@@ -47,7 +47,7 @@ services:
   database:
     image: semtech/mu-authorization:0.6.0-beta.8
     environment:
-      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+      MU_SPARQL_ENDPOINT: "http://triplestore:8890/sparql"
       DATABASE_COMPATIBILITY: Virtuoso
     volumes:
       - ./config/authorization:/config
@@ -55,7 +55,7 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
-  virtuoso:
+  triplestore:
     image: redpencil/virtuoso:1.2.0-rc.1
     environment:
       SPARQL_UPDATE: "true"
@@ -69,7 +69,7 @@ services:
   migrations:
     image: semtech/mu-migrations-service:0.8.0
     links:
-      - virtuoso:database
+      - triplestore:database
     volumes:
       - ./config/migrations:/data/migrations
     environment:
@@ -241,12 +241,11 @@ services:
       - ./config/ldes-client/processPage.ts:/config/processPage.ts
     links:
       - database:database
-      - virtuoso:virtuoso
     restart: always
     environment:
       CRON_PATTERN: "*/1 * * * *"
       TARGET_GRAPH: "http://mu.semte.ch/graphs/mandaten-staging"
-      DIRECT_DATABASE_CONNECTION: "http://virtuoso:8890/sparql"
+      DIRECT_DATABASE_CONNECTION: "http://triplestore:8890/sparql"
       RANDOMIZE_GRAPHS: "true"
       BATCH_SIZE: 100
       BYPASS_MU_AUTH: "false"
