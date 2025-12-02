@@ -245,7 +245,7 @@ services:
       - "logging=true"
 
   ldes-client:
-    build: https://github.com/lblod/ldes-client.git#feat/jwt-authorization
+    build: https://github.com/lblod/ldes-client.git#feat/delay-support
     links:
       - database:database
       - virtuoso:virtuoso
@@ -255,6 +255,7 @@ services:
     environment:
       NODE_ENV: "development"
       RUN_AT_STARTUP: true
+      DELAY: 1000
       CRON_PATTERN: "*/1 * * * *"
       DIRECT_DATABASE_CONNECTION: "http://virtuoso:8890/sparql"
       RANDOMIZE_GRAPHS: "true"
