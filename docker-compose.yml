@@ -138,8 +138,6 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
-    links:
-      - database:database
     volumes:
       - ./data/files/:/share/
   published-resource-producer:
@@ -200,8 +198,6 @@ services:
       - "logging=true"
   dashboard-login:
     image: semtech/mu-login-service:2.9.1
-    links:
-      - database:database
     environment:
       USERS_GRAPH: "http://mu.semte.ch/graphs/users"
       SESSIONS_GRAPH: "http://mu.semte.ch/graphs/sessions"
@@ -211,8 +207,6 @@ services:
       - "logging=true"
   report-generation:
     image: lblod/loket-report-generation-service:0.5.0
-    links:
-      - database:database
     environment:
       DEFAULT_GRAPH: "http://mu.semte.ch/graphs/reports"
     volumes:
@@ -224,8 +218,6 @@ services:
       - "logging=true"
   lpdc-service:
     image: lblod/api-proxy-service:1.0.1
-    links:
-      - database:database
     environment:
       API_URL: "https://api.ipdc.vlaanderen.be"
       API_KEY: "VERY_SECRET_KEY_REPLACE_ME"
@@ -246,8 +238,6 @@ services:
 
   ldes-client:
     build: https://github.com/lblod/ldes-client.git#fix/crash-if-error-on-startup
-    links:
-      - database:database
     restart: always
     volumes:
       - ./config/ldes-client:/config
