@@ -139,8 +139,6 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
-    links:
-      - database:database
     volumes:
       - ./data/files/:/share/
   published-resource-producer:
@@ -201,8 +199,6 @@ services:
       - "logging=true"
   dashboard-login:
     image: semtech/mu-login-service:2.9.1
-    links:
-      - database:database
     environment:
       USERS_GRAPH: "http://mu.semte.ch/graphs/users"
       SESSIONS_GRAPH: "http://mu.semte.ch/graphs/sessions"
@@ -225,8 +221,6 @@ services:
       - "logging=true"
   lpdc-service:
     image: lblod/api-proxy-service:1.0.1
-    links:
-      - database:database
     environment:
       API_URL: "https://api.ipdc.vlaanderen.be"
       API_KEY: "VERY_SECRET_KEY_REPLACE_ME"
