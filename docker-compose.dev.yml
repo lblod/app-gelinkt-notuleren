@@ -81,3 +81,11 @@ services:
     command: "/bin/false" # overwrite when testing
   sparql-cache:
     restart: "no"
+  consumer:
+    restart: "no"
+  uuid-generation:
+    restart: "no"
+  op-public-consumer:
+    restart: "no"
+  vks-design-service:
+    restart: "no"

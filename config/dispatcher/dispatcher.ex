@@ -353,6 +353,16 @@ defmodule Dispatcher do
     forward conn, path, "http://lpdc-service/"
   end
 
+  ########
+  # VKS
+  ########
+  get "/ar-designs/*path" do
+    forward conn, path, "http://vks-design-service/ar-designs/"
+  end
+  get "/measure-concepts/*path" do
+    forward conn, path, "http://vks-design-service/measure-concepts/"
+  end
+
   #########
   # login
   ########

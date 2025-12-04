@@ -12,7 +12,7 @@ services:
     labels:
       - "logging=true"
   editor:
-    image: lblod/frontend-gelinkt-notuleren:5.69.1
+    image: lblod/frontend-gelinkt-notuleren:feature-design-usage-status
     restart: always
     logging: *default-logging
     labels:
@@ -150,6 +150,8 @@ services:
       RELATIVE_FILE_PATH: "deltas/published-resource"
     logging: *default-logging
     restart: always
+    labels:
+      - "logging=true"
   project-scripts:
     image: semtech/mu-scripts:1.0.0
     volumes:
@@ -229,6 +231,9 @@ services:
       API_KEY: "VERY_SECRET_KEY_REPLACE_ME"
       REQUIRED_ROLES: "GelinktNotuleren-publiceerder,GelinktNotuleren-schrijver,GelinktNotuleren-ondertekenaar"
     restart: always
+    logging: *default-logging
+    labels:
+      - "logging=true"
 
   ldes-client:
     image: lblod/ldes-client:0.0.3
@@ -246,6 +251,7 @@ services:
       BATCH_SIZE: 100
       BYPASS_MU_AUTH: "false"
       EXTRA_HEADERS: "secret"
+    logging: *default-logging
     labels:
       - "logging=true"
   sparql-cache:
@@ -256,3 +262,80 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
+
+  ################################################################################
+  # AWV LDES Services
+  ################################################################################
+  consumer:
+    # image: redpencil/ldes-consumer:...
+    build:
+      context: https://github.com/piemonkey/ldes-consumer-service.git#feature/jwt-auth
+      dockerfile: ./Dockerfile
+    volumes:
+      - "./data/ldes-consumer:/data"
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+    environment:
+      LDES_VERSION_OF_PATH: "http://purl.org/dc/terms/isVersionOf"
+      LDES_TIMESTAMP_PATH: "http://purl.org/dc/terms/issued"
+      MU_SPARQL_ENDPOINT: "http://database:8890/sparql"
+      MU_APPLICATION_GRAPH: "http://mu.semte.ch/graphs/awv/ldes"
+      INGEST_MODE: "MATERIALIZE"
+      PERSIST_STATE: true
+      LDES_ENDPOINT_VIEW: "https://services.apps-dev.mow.vlaanderen.be/ldes-server/geplande-opstellingen-v1/by-page"
+      LDES_SANITIZE_CONTENTS_STRING: "\\u0020"
+      JWT_USE_JWT_AUTH: true
+      JWT_CLIENT_ID: "d9718ad9-b093-4f64-80dc-a0f677ae15e5"
+      JWT_KEY_PATH: "/data/awv.json"
+      JWT_KEY_ALGORITHM: "RS256"
+      JWT_TOKEN_URL: "https://authenticatie.vlaanderen.be/op/v1/token"
+      JWT_TOKEN_REQUEST_AUDIENCE: "https://authenticatie.vlaanderen.be/op"
+      JWT_TOKEN_REQUEST_EXPIRY: "10minutes"
+      JWT_TOKEN_SCOPE: "awv_toep_services"
+      JWT_CLIENT_ASSERTION_TYPE: "urn:ietf:params:oauth:client-assertion-type:jwt-bearer"
+
+  uuid-generation:
+    image: redpencil/uuid-generation:0.4.1
+    volumes:
+      - ./config/uuid-generation/:/config
+    restart: always
+    labels:
+      - "logging=true"
+    logging: *default-logging
+
+  vks-design-service:
+    image: lblod/vks-design-service:feature-build-for-vks-pagination-and-sorting
+    environment:
+      MOW_ENDPOINT: 'https://roadsigns.lblod.info/sparql'
+  op-public-consumer:
+    image: lblod/delta-consumer:0.1.6
+    environment:
+      DCR_SERVICE_NAME: "op-public-consumer"
+      DCR_SYNC_BASE_URL: "https://organisaties.abb.vlaanderen.be"
+      DCR_SYNC_FILES_PATH: "/sync/public/files"
+      DCR_SYNC_DATASET_SUBJECT: "http://data.lblod.info/datasets/delta-producer/dumps/PublicCacheGraphDump"
+      DCR_INITIAL_SYNC_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/consumer/initialSync/op-public"
+      DCR_DELTA_SYNC_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/consumer/deltaSync/op-public"
+      DCR_JOB_CREATOR_URI: "http://data.lblod.info/services/id/op-public-consumer"
+      DCR_START_FROM_DELTA_TIMESTAMP: "2011-01-01T00:00:00Z"
+      DCR_DISABLE_INITIAL_SYNC: "false"
+      DCR_WAIT_FOR_INITIAL_SYNC: "true"
+      DCR_KEEP_DELTA_FILES: "true"
+      DCR_DELTA_JOBS_RETENTION_PERIOD: "30"
+      DCR_ENABLE_TRIPLE_REMAPPING: "true"
+      DCR_LANDING_ZONE_GRAPH: "http://mu.semte.ch/graphs/landing-zone/op-public"
+      DCR_REMAPPING_GRAPH: "http://mu.semte.ch/graphs/public"
+      DCR_BATCH_SIZE: 1000
+      SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404,500,503"
+      SUDO_QUERY_RETRY: "true"
+      #DCR_CRON_PATTERN_DELTA_SYNC: '* * * * *' # this is every minute
+      DCR_DISABLE_DELTA_INGEST: "false"
+    volumes:
+      - ./config/op-consumer/mapping:/config/mapping
+      - ./data/files/consumer-files/op-public:/consumer-files/
+    restart: always
+    labels:
+      - "logging=true"
+    logging: *default-logging
