@@ -76,16 +76,13 @@ services:
     restart: "no"
   lpdc-service:
     restart: "no"
-  ldes-client:
-    restart: "no"
-    command: "/bin/false" # overwrite when testing
   sparql-cache:
-    restart: "no"
-  consumer:
     restart: "no"
   uuid-generation:
     restart: "no"
   op-public-consumer:
     restart: "no"
   vks-design-service:
+    restart: "no"
+  ldes-client:
     restart: "no"
