@@ -127,40 +127,6 @@
   ("lmb:Bestuursperiode" -> _)
 )
 
-(define-graph org-read-graph ("http://mu.semte.ch/graphs/organizations/")
-  ("nfo:FileDataObject" -> _)
-  ("ext:Attachment" -> _)
-  ("besluitvorming:Agenda" -> _)
-  ("ext:EditorDocument" -> _)
-  ("besluit:Zitting" -> _)
-  ("ext:Intermission" -> _)
-  ("ext:AgendaPosition" -> _)
-  ("ext:Agenda" -> _)
-  ("besluit:Agendapunt" -> _)
-  ("besluit:BehandelingVanAgendapunt" -> _)
-  ("besluit:Stemming" -> _)
-  ("ext:DocumentContainer" -> _)
-  ("ext:VersionedAgenda" -> _)
-  ("ext:VersionedNotulen" -> _)
-  ("ext:VersionedBesluitenLijst" -> _)
-  ("ext:VersionedBehandeling" -> _)
-  ("ext:VersionedRegulatoryStatement" -> _)
-  ("task:Task" -> _)
-  ("oslc:Error" -> _)
-  ("ext:TaskSolution" -> _)
-  ("ext:TasklistSolution" -> _)
-  ("person:Person" -> _)
-  ("persoon:Geboorte" -> _)
-  ("adms:Identifier" -> _)
-  ("sign:SignedResource" -> _)
-  ("sign:PublishedResource" -> _)
-  ("ext:PublishingLog" -> _)
-  ("ext:Installatievergadering" -> _)
-  ("ext:InstallatievergaderingSynchronizationStatus" -> _)
-  ("gn:AangepasteStemming" -> _)
-  ("ext:UserPreference" -> _)
-)
-
 (define-graph org-write-graph ("http://mu.semte.ch/graphs/organizations/")
   ("nfo:FileDataObject" -> _)
   ("ext:Attachment" -> _)
@@ -283,7 +249,6 @@
              FILTER(?role in (\"GelinktNotuleren-lezer\",\"GelinktNotuleren-schrijver\", \"GelinktNotuleren-publiceerder\",  \"GelinktNotuleren-ondertekenaar\"))
           }"
 )
-
 ; Same query as org-read but without the session_group param
 (supply-allowed-group "read"
   :parameters ()
@@ -304,7 +269,6 @@
                          ext:sessionRole \"GelinktNotuleren-schrijver\".
           }"
 )
-
 ; Same query as org-write but without the session_group param
 (supply-allowed-group "write"
   :parameters ()
@@ -344,52 +308,57 @@
           }"
 )
 
+; 'reader' group privileges
 (grant (read)
        :to-graph session-graph
        :for-allowed-group "read")
-
 (grant (read)
-       :to-graph org-read-graph
+       :to-graph org-write-graph
        :for-allowed-group "org-read")
-
+(grant (read)
+       :to-graph org-sign-graph
+       :for-allowed-group "org-read")
+(grant (read)
+       :to-graph org-pub-graph
+       :for-allowed-group "org-read")
 (grant (read)
        :to-graph lmb-private-graph
        :for-allowed-group "org-read")
 
+; 'writer' group privileges
+(grant (read)
+       :to-graph awv-ldes-graph
+       :for-allowed-group "write")
 (grant (write)
        :to-graph org-write-graph
        :for-allowed-group "org-write")
 
+; 'publisher' group privileges
 (grant (write)
        :to-graph org-pub-graph
        :for-allowed-group "org-pub")
 
+; 'signer' group privileges
 (grant (write)
        :to-graph org-sign-graph
        :for-allowed-group "org-sign")
 
+; 'reports' group privileges
 (grant (read)
        :to-graph reports-graph
        :for-allowed-group "reports")
-
 (grant (read)
        :to-graph error-log-graph
        :for-allowed-group "reports")
-
-(grant (read)
-       :to-graph awv-ldes-graph
-       :for-allowed-group "write")
 
 (supply-allowed-group "public")
 
 (grant (read)
        :to-graph public-graph
        :for-allowed-group "public")
-
 (grant (read)
        :to-graph lmb-public-graph
        :for-allowed-group "public")
-       
 (grant (write)
        :to-graph error-log-graph
        :for-allowed-group "public")
