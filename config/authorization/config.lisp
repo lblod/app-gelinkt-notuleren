@@ -209,6 +209,8 @@
   ("task:Task" -> _)
   ("oslc:Error" -> _)
   ("ext:PublishingLog" -> _)
+  ("besluit:Zitting" -> _) ; needed to update zitting to point to publishing log
+  ("besluit:Agendapunt" -> _) ; needed to set agendapoint type when publishing
 )
 
 (define-graph lmb-public-graph ("http://mu.semte.ch/graphs/lmb-data-public")
