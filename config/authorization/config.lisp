@@ -9,9 +9,11 @@
 ;;;;;;;;;;;;;;;;;
 ;;; configuration
 (in-package :client)
-(setf *log-sparql-query-roundtrip* t)
-(setf *log-incoming-requests* t)
 (setf *backend* "http://triplestore:8890/sparql")
+
+;;; Enable for extra logging
+; (setf *log-sparql-query-roundtrip* t)
+; (setf *log-incoming-requests* t)
 
 ;;;;;;;;;;;;;;;;;
 ;;; access rights
