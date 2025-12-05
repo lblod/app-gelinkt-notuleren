@@ -12,7 +12,7 @@ services:
     labels:
       - "logging=true"
   editor:
-    image: lblod/frontend-gelinkt-notuleren:feature-import-regulation-decision-flow
+    image: lblod/frontend-gelinkt-notuleren:feature-design-usage-status
     restart: always
     logging: *default-logging
     labels:
@@ -45,17 +45,15 @@ services:
     labels:
       - "logging=true"
   database:
-    image: semtech/mu-authorization:0.6.0-beta.8
-    environment:
-      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
-      DATABASE_COMPATIBILITY: Virtuoso
+    image: semtech/sparql-parser:feature-improve-float-writing
     volumes:
       - ./config/authorization:/config
+      - ./data/mu-auth:/data
     restart: always
     logging: *default-logging
     labels:
       - "logging=true"
-  virtuoso:
+  triplestore:
     image: redpencil/virtuoso:1.2.0-rc.1
     environment:
       SPARQL_UPDATE: "true"
@@ -69,7 +67,7 @@ services:
   migrations:
     image: semtech/mu-migrations-service:0.8.0
     links:
-      - virtuoso:database
+      - triplestore:database
     volumes:
       - ./config/migrations:/data/migrations
     environment:
@@ -101,7 +99,7 @@ services:
     labels:
       - "logging=true"
   cache:
-    image: semtech/mu-cache:2.0.1
+    image: semtech/mu-cache:2.0.2
     links:
       - resource:backend
     restart: always
@@ -109,7 +107,7 @@ services:
     labels:
       - "logging=true"
   resource:
-    image: semtech/mu-cl-resources:1.24.0
+    image: semtech/mu-cl-resources:1.27.2
     volumes:
       - ./config/resources:/config
     environment:
@@ -138,8 +136,6 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
-    links:
-      - database:database
     volumes:
       - ./data/files/:/share/
   published-resource-producer:
@@ -200,8 +196,6 @@ services:
       - "logging=true"
   dashboard-login:
     image: semtech/mu-login-service:2.9.1
-    links:
-      - database:database
     environment:
       USERS_GRAPH: "http://mu.semte.ch/graphs/users"
       SESSIONS_GRAPH: "http://mu.semte.ch/graphs/sessions"
@@ -211,8 +205,6 @@ services:
       - "logging=true"
   report-generation:
     image: lblod/loket-report-generation-service:0.5.0
-    links:
-      - database:database
     environment:
       DEFAULT_GRAPH: "http://mu.semte.ch/graphs/reports"
     volumes:
@@ -224,8 +216,6 @@ services:
       - "logging=true"
   lpdc-service:
     image: lblod/api-proxy-service:1.0.1
-    links:
-      - database:database
     environment:
       API_URL: "https://api.ipdc.vlaanderen.be"
       API_KEY: "VERY_SECRET_KEY_REPLACE_ME"
@@ -239,14 +229,11 @@ services:
     image: lblod/ldes-client:0.0.3
     volumes:
       - ./config/ldes-client/processPage.ts:/config/processPage.ts
-    links:
-      - database:database
-      - virtuoso:virtuoso
     restart: always
     environment:
       CRON_PATTERN: "*/1 * * * *"
       TARGET_GRAPH: "http://mu.semte.ch/graphs/mandaten-staging"
-      DIRECT_DATABASE_CONNECTION: "http://virtuoso:8890/sparql"
+      DIRECT_DATABASE_CONNECTION: "http://triplestore:8890/sparql"
       RANDOMIZE_GRAPHS: "true"
       BATCH_SIZE: 100
       BYPASS_MU_AUTH: "false"

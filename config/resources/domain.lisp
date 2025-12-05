@@ -191,7 +191,8 @@
                 (:updated-on :datetime ,(s-prefix "pav:lastUpdateOn"))
                 (:starred :boolean ,(s-prefix "tmp:starred"))
                 (:identifier :string ,(s-prefix "dct:identifier"))
-                (:origin :string ,(s-prefix "pav:providedBy"))) ;;de gemeente Niel
+                (:origin :string ,(s-prefix "pav:providedBy")) ;;de gemeente Niel
+                (:includes-ar-designs :uri-set ,(s-prefix "ext:includesArDesign")))
   :has-one `((editor-document :via ,(s-prefix "pav:previousVersion")
                               :as "previous-version")
              (concept :via ,(s-prefix "dct:type")
