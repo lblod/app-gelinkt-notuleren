@@ -197,7 +197,7 @@
   ("adms:Identifier" -> _)
 )
 
-(define-graph awv-ldes-graph ("http://mu.semte.ch/graphs/awv/ldes")
+(define-graph awv-org-graph ("http://mu.semte.ch/graphs/awv/ldes/")
   ("onderdeel:WordtAangeduidDoor" -> _)
   ("mobiliteit:VerkeersbordVerkeersteken" -> _)
   ("onderdeel:Realiseert" -> _)
@@ -326,6 +326,9 @@
 (grant (read)
        :to-graph lmb-private-graph
        :for-allowed-group "org-read")
+(grant (read)
+       :to-graph awv-org-graph
+       :for-allowed-group "org-read")
 
 ; 'writer' group privileges
 (grant (read)
@@ -333,6 +336,9 @@
        :for-allowed-group "write")
 (grant (write)
        :to-graph org-write-graph
+       :for-allowed-group "org-write")
+(grant (write)
+       :to-graph awv-org-graph
        :for-allowed-group "org-write")
 
 ; 'publisher' group privileges
