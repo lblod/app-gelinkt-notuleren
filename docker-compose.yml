@@ -309,6 +309,7 @@ services:
     image: lblod/vks-design-service:feature-build-for-vks-pagination-and-sorting
     environment:
       MOW_ENDPOINT: 'https://roadsigns.lblod.info/sparql'
+      ALLOW_MU_AUTH_SUDO: true
   op-public-consumer:
     image: lblod/delta-consumer:0.1.6
     environment:
