@@ -253,7 +253,6 @@ services:
     volumes:
       - ./config/ldes-client:/config
     environment:
-      NODE_ENV: "development"
       RUN_AT_STARTUP: true
       DELAY: 1000
       CRON_PATTERN: "*/1 * * * *"
