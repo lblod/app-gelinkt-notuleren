@@ -12,7 +12,7 @@ services:
     labels:
       - "logging=true"
   editor:
-    image: lblod/frontend-gelinkt-notuleren:5.69.1
+    image: lblod/frontend-gelinkt-notuleren:feature-design-usage-status
     restart: always
     logging: *default-logging
     labels:
@@ -150,6 +150,8 @@ services:
       RELATIVE_FILE_PATH: "deltas/published-resource"
     logging: *default-logging
     restart: always
+    labels:
+      - "logging=true"
   project-scripts:
     image: semtech/mu-scripts:1.0.0
     volumes:
@@ -229,25 +231,10 @@ services:
       API_KEY: "VERY_SECRET_KEY_REPLACE_ME"
       REQUIRED_ROLES: "GelinktNotuleren-publiceerder,GelinktNotuleren-schrijver,GelinktNotuleren-ondertekenaar"
     restart: always
-
-  ldes-client:
-    image: lblod/ldes-client:0.0.3
-    volumes:
-      - ./config/ldes-client/processPage.ts:/config/processPage.ts
-    links:
-      - database:database
-      - virtuoso:virtuoso
-    restart: always
-    environment:
-      CRON_PATTERN: "*/1 * * * *"
-      TARGET_GRAPH: "http://mu.semte.ch/graphs/mandaten-staging"
-      DIRECT_DATABASE_CONNECTION: "http://virtuoso:8890/sparql"
-      RANDOMIZE_GRAPHS: "true"
-      BATCH_SIZE: 100
-      BYPASS_MU_AUTH: "false"
-      EXTRA_HEADERS: "secret"
+    logging: *default-logging
     labels:
       - "logging=true"
+
   sparql-cache:
     image: redpencil/varnish-post:1.0.0
     environment:
@@ -256,3 +243,67 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
+
+  ldes-client:
+    build: https://github.com/lblod/ldes-client.git#feat/delay-support
+    links:
+      - database:database
+      - virtuoso:virtuoso
+    restart: always
+    volumes:
+      - ./config/ldes-client:/config
+    environment:
+      RUN_AT_STARTUP: true
+      DELAY: 1000
+      CRON_PATTERN: "*/1 * * * *"
+      DIRECT_DATABASE_CONNECTION: "http://virtuoso:8890/sparql"
+      RANDOMIZE_GRAPHS: "true"
+      BATCH_SIZE: 100
+      BYPASS_MU_AUTH: "false"
+    logging: *default-logging
+    labels:
+      - "logging=true"
+
+  uuid-generation:
+    image: redpencil/uuid-generation:0.4.1
+    volumes:
+      - ./config/uuid-generation/:/config
+    restart: always
+    labels:
+      - "logging=true"
+    logging: *default-logging
+
+  vks-design-service:
+    image: lblod/vks-design-service:feature-build-for-vks-pagination-and-sorting
+    environment:
+      MOW_ENDPOINT: 'https://roadsigns.lblod.info/sparql'
+  op-public-consumer:
+    image: lblod/delta-consumer:0.1.6
+    environment:
+      DCR_SERVICE_NAME: "op-public-consumer"
+      DCR_SYNC_BASE_URL: "https://organisaties.abb.vlaanderen.be"
+      DCR_SYNC_FILES_PATH: "/sync/public/files"
+      DCR_SYNC_DATASET_SUBJECT: "http://data.lblod.info/datasets/delta-producer/dumps/PublicCacheGraphDump"
+      DCR_INITIAL_SYNC_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/consumer/initialSync/op-public"
+      DCR_DELTA_SYNC_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/consumer/deltaSync/op-public"
+      DCR_JOB_CREATOR_URI: "http://data.lblod.info/services/id/op-public-consumer"
+      DCR_START_FROM_DELTA_TIMESTAMP: "2011-01-01T00:00:00Z"
+      DCR_DISABLE_INITIAL_SYNC: "false"
+      DCR_WAIT_FOR_INITIAL_SYNC: "true"
+      DCR_KEEP_DELTA_FILES: "true"
+      DCR_DELTA_JOBS_RETENTION_PERIOD: "30"
+      DCR_ENABLE_TRIPLE_REMAPPING: "true"
+      DCR_LANDING_ZONE_GRAPH: "http://mu.semte.ch/graphs/landing-zone/op-public"
+      DCR_REMAPPING_GRAPH: "http://mu.semte.ch/graphs/public"
+      DCR_BATCH_SIZE: 1000
+      SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404,500,503"
+      SUDO_QUERY_RETRY: "true"
+      #DCR_CRON_PATTERN_DELTA_SYNC: '* * * * *' # this is every minute
+      DCR_DISABLE_DELTA_INGEST: "false"
+    volumes:
+      - ./config/op-consumer/mapping:/config/mapping
+      - ./data/files/consumer-files/op-public:/consumer-files/
+    restart: always
+    labels:
+      - "logging=true"
+    logging: *default-logging
