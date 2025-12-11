@@ -38,6 +38,7 @@ async function replaceExistingData() {
       OPTIONAL {
         GRAPH ${sparqlEscapeUri(environment.getTargetGraph())} {
           ?s ?pOld ?oOld.
+          FILTER (?pOld NOT IN ( ${sparqlEscapeUri('mu:uuid') }))
         }
       }
     }`,
