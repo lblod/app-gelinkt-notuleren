@@ -281,15 +281,16 @@ defmodule Acl.UserGroups.Config do
         name: "ldes-graph",
         useage: [:read],
         access: %AccessByQuery{
-          vars: [],
+          vars: ["session_group"],
           query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
                   PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-                  SELECT DISTINCT ?role WHERE {
-                    <SESSION_ID> ext:sessionRole ?role.
+                  SELECT DISTINCT ?session_group WHERE {
+                    <SESSION_ID> ext:sessionGroup/mu:uuid ?session_group;
+                                 ext:sessionRole ?role.
                      FILTER(?role in (\"GelinktNotuleren-lezer\",\"GelinktNotuleren-schrijver\", \"GelinktNotuleren-publiceerder\",  \"GelinktNotuleren-ondertekenaar\"))
                     }" },
         graphs: [ %GraphSpec{
-                    graph: "http://mu.semte.ch/graphs/awv/ldes",
+                    graph: "http://mu.semte.ch/graphs/awv/ldes/",
                     constraint: %ResourceConstraint{
                       resource_types: [
                         "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WordtAangeduidDoor",
