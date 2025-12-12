@@ -1,5 +1,22 @@
 # app-gelinkt-notuleren
 
+## 5.65.0
+
+### Minor Changes
+
+- [#237](https://github.com/lblod/app-gelinkt-notuleren/pull/237) [`3f6fe463`](https://github.com/lblod/app-gelinkt-notuleren/commit/3f6fe463a2d96ad3104fdfad8b8a9f83b369fb92) Thanks [@piemonkey](https://github.com/piemonkey)! - Add ldes-consumer service to sync data from AWV
+
+- [#239](https://github.com/lblod/app-gelinkt-notuleren/pull/239) [`100fe133`](https://github.com/lblod/app-gelinkt-notuleren/commit/100fe1330bcd46ce769f546d99572f6bbe23a639) Thanks [@piemonkey](https://github.com/piemonkey)! - Store included AR designs in editor-documents
+
+- [#240](https://github.com/lblod/app-gelinkt-notuleren/pull/240) [`a41cf1cd`](https://github.com/lblod/app-gelinkt-notuleren/commit/a41cf1cddc09df2034f735d8e65d37acf0870147) Thanks [@elpoelma](https://github.com/elpoelma)! - Introduce single `ldes-client` service (based on `lblod/ldes-client`) to replace both the `awv` and `mdb` ldes client services.
+  This service is able to handle consuming two (or more) LDES feeds at the same time.
+
+- [#237](https://github.com/lblod/app-gelinkt-notuleren/pull/237) [`f1d47c2a`](https://github.com/lblod/app-gelinkt-notuleren/commit/f1d47c2adbd915bdb5faff487abd2dea4891a794) Thanks [@piemonkey](https://github.com/piemonkey)! - Add VKS design service to handle queries for data from AWV
+
+### Patch Changes
+
+- [#254](https://github.com/lblod/app-gelinkt-notuleren/pull/254) [`d6c7cd61`](https://github.com/lblod/app-gelinkt-notuleren/commit/d6c7cd616959f6def5cb889c7562364cf5f8ed98) Thanks [@abeforgit](https://github.com/abeforgit)! - Set MDB status graph to the one currently in use in GN
+
 ## 5.64.1
 
 ### Patch Changes
