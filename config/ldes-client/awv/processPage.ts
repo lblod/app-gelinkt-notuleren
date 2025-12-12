@@ -707,16 +707,29 @@ async function moveVerkeersbordVerkeersteken(uri) {
      PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
     select distinct ?adminUnitUuid where {
           GRAPH ${LDES_GRAPH} {
-            ?relHeeftOntwerp a onderdeel:HeeftOntwerp ;
-              relatie:bron ?ontwerpVerkeersteken;
-              relatie:doel ${sparqlEscapeUri(uri)}.
+            {
+              ?relWordtAangeduidDoor a onderdeel:WordtAangeduidDoor;
+                relatie:doel ${sparqlEscapeUri(uri)};
+                  relatie:bron ?mobiliteitsmaatregelOntwerp.
+              ?relBevatMaatregelOntwerp a onderdeel:BevatMaatregelOntwerp ;
+                relatie:bron ?aanvullendReglementOntwerp;
+                relatie:doel ?mobiliteitsmaatregelOntwerp.
+              ?relHeeftOntwerp a onderdeel:HeeftOntwerp ;
+                relatie:bron ?ontwerpVerkeersteken;
+                relatie:doel ?aanvullendReglementOntwerp.
+            }
+                UNION
+            {
+              ?relHeeftOntwerp a onderdeel:HeeftOntwerp ;
+                relatie:bron ?ontwerpVerkeersteken;
+                relatie:doel ${sparqlEscapeUri(uri)}.
+            }
             ?relBevatVerkeersteken a onderdeel:BevatVerkeersteken ;
               relatie:bron ?signalisatieOntwerp;
               relatie:doel ?ontwerpVerkeersteken.
             ?relHeeftBetrokkene a onderdeel:HeeftBetrokkene ;
               relatie:bron ?signalisatieOntwerp;
               relatie:doel ?ovoUri.
-            
           }
           GRAPH ${PUBLIC_GRAPH} {
             ?adminUnit owl:sameAs ?ovoUri;
@@ -778,6 +791,7 @@ const verkeerstekenQuery = `
       relatie:bron ?ontwerpVerkeersteken;
       relatie:doel ?aanvullendReglementOntwerp.
   }
+      UNION
   {
     ?relHeeftOntwerp a onderdeel:HeeftOntwerp ;
       relatie:bron ?ontwerpVerkeersteken;
@@ -789,8 +803,6 @@ const verkeerstekenQuery = `
   ?relHeeftBetrokkene a onderdeel:HeeftBetrokkene ;
     relatie:bron ?signalisatieOntwerp;
     relatie:doel ?ovoUri.
-  ?adminUnit owl:sameAs ?ovoUri;
-      mu:uuid ?adminUnitUuid.
 `;
 
 async function moveHeeftVerkeersteken(uri) {
@@ -805,6 +817,10 @@ async function moveHeeftVerkeersteken(uri) {
             ${sparqlEscapeUri(uri)} a onderdeel:HeeftVerkeersteken ;
               relatie:doel ?verkersteken.
             ${verkeerstekenQuery}
+          }
+          GRAPH ${PUBLIC_GRAPH} {
+            ?adminUnit owl:sameAs ?ovoUri;
+              mu:uuid ?adminUnitUuid.
           }
       }`;
   const queryResult = await querySudo(graphQuery);
@@ -864,6 +880,10 @@ async function moveVariableInstanceWithLiteralValue(uri) {
               relatie:doel ?verkersteken.
             ${verkeerstekenQuery}
           }
+          GRAPH ${PUBLIC_GRAPH} {
+            ?adminUnit owl:sameAs ?ovoUri;
+              mu:uuid ?adminUnitUuid.
+          }
       }`;
   const queryResult = await querySudo(graphQuery);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
@@ -922,6 +942,10 @@ async function moveVariableInstanceWithResourceValue(uri) {
               relatie:doel ?verkersteken.
             ${verkeerstekenQuery}
           }
+          GRAPH ${PUBLIC_GRAPH} {
+            ?adminUnit owl:sameAs ?ovoUri;
+              mu:uuid ?adminUnitUuid.
+          }
       }`;
   const queryResult = await querySudo(graphQuery);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
@@ -956,6 +980,10 @@ async function moveHeeftWaardeVoor(uri) {
               relatie:bron ?variableInstanceWithLiteralValue;
               relatie:doel ?verkersteken.
             ${verkeerstekenQuery}
+          }
+          GRAPH ${PUBLIC_GRAPH} {
+            ?adminUnit owl:sameAs ?ovoUri;
+              mu:uuid ?adminUnitUuid.
           }
       }`;
   const queryResult = await querySudo(graphQuery);
