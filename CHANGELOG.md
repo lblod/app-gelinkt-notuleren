@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.65.1
+
+### Patch Changes
+
+- [`beca206d`](https://github.com/lblod/app-gelinkt-notuleren/commit/beca206d2448b6676c1e25e206d1ead138a10ad5) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [v5.70.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.70.0) and latest build of vks-service
+
 ## 5.65.0
 
 ### Minor Changes
