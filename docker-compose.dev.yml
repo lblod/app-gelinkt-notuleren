@@ -8,7 +8,7 @@ services:
       - "81:80"
     restart: "no"
   proxy:
-    image: nginx:1.13
+    image: nginx:1.29
     volumes:
       - ./config/proxy:/etc/nginx/conf.d
     ports:
@@ -52,7 +52,7 @@ services:
   deltanotifier:
     restart: "no"
   mocklogin:
-    image: lblod/mock-login-service:0.4.0
+    image: lblod/mock-login-service:0.7.0
   yasgui:
     image: erikap/yasgui
     ports:
