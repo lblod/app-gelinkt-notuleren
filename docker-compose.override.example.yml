@@ -39,11 +39,16 @@
 
   # Re-enable the ldes-client in testing instead of disabling it to conserve resources
   # ldes-client:
-  #   command: !reset null
   #   environment:
-  #     EXTRA_HEADERS: "{\"Authorization\": \"Basic blablablatokengoeshere==\"}"
-  #     FIRST_PAGE: "https://dev.mandatenbeheer.lblod.info/streams/ldes/abb/1"
-  #     LDES_BASE: "https://dev.mandatenbeheer.lblod.info/streams/ldes/abb/"
-  #     # For the initial ingest, bypass mu auth. remove this after it's
-  #     # finished and restart the stack
-  #     # BYPASS_MU_AUTH: "true"
+
+  #     MDB_BASE: "https://dev.mandatenbeheer.lblod.info/streams/ldes/abb/"
+  #     MDB_FIRST_PAGE: "https://dev.mandatenbeheer.lblod.info/streams/ldes/abb/1"
+
+  #     AWV_BASE: "http://awv-mock-ldes/1.ttl"
+  #     AWV_FIRST_PAGE: "http://awv-mock-ldes/1.ttl"
+  # awv-mock-ldes:
+  #   image: nginx:1.29.4
+  #   ports:
+  #     - 9000:80
+  #   volumes:
+  #     - ./data/mocking/awv-ldes/:/usr/share/nginx/html/

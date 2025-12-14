@@ -1,0 +1,144 @@
+PREFIX by-page:                  <https://services.apps-tei.mow.vlaanderen.be/ldes-server/geplande-opstellingen-v1/by-page/>
+PREFIX dcat:                     <http://www.w3.org/ns/dcat#>
+PREFIX dct:                      <http://purl.org/dc/terms/>
+PREFIX foaf:                     <http://xmlns.com/foaf/0.1/>
+PREFIX geo:                      <http://www.opengis.net/ont/geosparql#>
+PREFIX geplande-opstellingen-v1: <https://services.apps-tei.mow.vlaanderen.be/ldes-server/geplande-opstellingen-v1/>
+PREFIX ldes:                     <https://w3id.org/ldes#>
+PREFIX m8g:                      <http://data.europa.eu/m8g/>
+PREFIX owl:                      <http://www.w3.org/2002/07/owl#>
+PREFIX prov:                     <http://www.w3.org/ns/prov#>
+PREFIX rdf:                      <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:                     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sh:                       <http://www.w3.org/ns/shacl#>
+PREFIX shsh:                     <http://www.w3.org/ns/shacl-shacl#>
+PREFIX skos:                     <http://www.w3.org/2004/02/skos/core#>
+PREFIX tree:                     <https://w3id.org/tree#>
+PREFIX xsd:                      <http://www.w3.org/2001/XMLSchema#>
+
+<https://does.not.resolve/HeeftWaardeVoor/74d36d60-5053-44a3-964e-b11f9c1868bb_Lengte/2025-12-12T12:26:47.400505919>
+        rdf:type         <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftWaardeVoor>;
+        dct:isVersionOf  <https://does.not.resolve/HeeftWaardeVoor/74d36d60-5053-44a3-964e-b11f9c1868bb_Lengte>;
+        dct:issued       "2025-12-12T12:26:47.4Z"^^xsd:dateTime;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus.isActief>
+                true;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.bron>
+                <https://lblod.data.gift/vocabularies/variables/variableinstancewithliteralvalue/74d36d60-5053-44a3-964e-b11f9c1868bb_Lengte>;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.doel>
+                <http://data.lblod.info/variables/68CBCEF311E4E1224CFC0B40>;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#VLAGAIMObject.assetId>
+                [ <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator>
+                          "HeeftWaardeVoor_74d36d60-5053-44a3-964e-b11f9c1868bb_Lengte" ];
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#VLAGAIMObject.typeURI>
+                <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftWaardeVoor> .
+
+<https://does.not.resolve/Realiseert/e3277147-9180-4a7b-98b8-ca344bfc9198/2025-12-12T12:26:47.400505919>
+        rdf:type         <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Realiseert>;
+        dct:isVersionOf  <https://does.not.resolve/Realiseert/e3277147-9180-4a7b-98b8-ca344bfc9198>;
+        dct:issued       "2025-12-12T12:26:47.4Z"^^xsd:dateTime;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus.isActief>
+                true;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.bron>
+                <https://data.vlaanderen.be/ns/mobiliteit#verkeersbordverkeersteken/e3277147-9180-4a7b-98b8-ca344bfc9198>;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.doel>
+                <https://does.not.resolve/bord/O-OIJLh_G-HOVtl_e3277147-9180-4a7b-98b8-ca344bfc9198>;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#VLAGAIMObject.assetId>
+                [ <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator>
+                          "Realiseert_e3277147-9180-4a7b-98b8-ca344bfc9198" ];
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#VLAGAIMObject.typeURI>
+                <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Realiseert> .
+
+<http://awv-mock-ldes/3.ttl>
+        rdf:type      tree:Node;
+        dct:isPartOf  <https://services.apps-tei.mow.vlaanderen.be/ldes-server/geplande-opstellingen-v1> .
+
+<https://data.vlaanderen.be/ns/mobiliteit#maatregelontwerp/M-xhoCp/2025-12-12T12:26:47.400505919>
+        rdf:type         <https://data.vlaanderen.be/ns/mobiliteit#MobiliteitsmaatregelOntwerp>;
+        dct:isVersionOf  <https://data.vlaanderen.be/ns/mobiliteit#maatregelontwerp/M-xhoCp>;
+        dct:issued       "2025-12-12T12:26:47.4Z"^^xsd:dateTime .
+
+<https://does.not.resolve/ontwerp/O-OIJLh/2025-12-12T12:26:47.400505919>
+        rdf:type         <https://data.vlaanderen.be/ns/mobiliteit#SignalisatieOntwerp>;
+        dct:isVersionOf  <https://does.not.resolve/ontwerp/O-OIJLh>;
+        dct:issued       "2025-12-12T12:26:47.4Z"^^xsd:dateTime;
+        <https://data.vlaanderen.be/ns/mobiliteit#SignalisatieOntwerp.datum>
+                "2025-12-12T10:17:02.414143670+01:00"^^xsd:dateTime;
+        <https://data.vlaanderen.be/ns/mobiliteit#SignalisatieOntwerp.naam>
+                "Test Signalisatieonwerp Elena 1";
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus.isActief>
+                true;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#VLAGAIMObject.assetId>
+                [ <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator>
+                          "O-OIJLh" ];
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#VLAGAIMObject.typeURI>
+                <https://data.vlaanderen.be/ns/mobiliteit#SignalisatieOntwerp>;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#VLAGAIMToestand.toestand>
+                <https://wegenenverkeer.data.vlaanderen.be/id/concept/KlAIMToestand/in-gebruik> .
+
+<https://does.not.resolve/IsGebaseerdOp/M-vEmzD/2025-12-12T12:26:47.400505919>
+        rdf:type         <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IsGebaseerdOp>;
+        dct:isVersionOf  <https://does.not.resolve/IsGebaseerdOp/M-vEmzD>;
+        dct:issued       "2025-12-12T12:26:47.4Z"^^xsd:dateTime;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus.isActief>
+                true;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.bron>
+                <https://data.vlaanderen.be/ns/mobiliteit#maatregelontwerp/M-vEmzD>;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.doel>
+                <http://data.lblod.info/traffic-measure-concepts/61C03F0BE324910008000008>;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#VLAGAIMObject.assetId>
+                [ <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator>
+                          "IsGebaseerdOp_M-vEmzD" ];
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#VLAGAIMObject.typeURI>
+                <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IsGebaseerdOp> .
+
+<https://services.apps-tei.mow.vlaanderen.be/ldes-server/geplande-opstellingen-v1>
+        rdf:type     ldes:EventStream;
+        tree:member  <https://does.not.resolve/HeeftOntwerp/e3277147-9180-4a7b-98b8-ca344bfc9198/2025-12-12T12:26:47.400505919> , <https://does.not.resolve/IsGebaseerdOp/M-vEmzD/2025-12-12T12:26:47.400505919> , <https://does.not.resolve/Realiseert/e3277147-9180-4a7b-98b8-ca344bfc9198/2025-12-12T12:26:47.400505919> , <https://does.not.resolve/ontwerp/O-OIJLh/2025-12-12T12:26:47.400505919> , <https://does.not.resolve/HeeftVerkeersteken/acd39868-cc27-413f-8218-8491fa948207_Snelheidsbeperking/2025-12-12T12:26:47.400505919> , <https://data.vlaanderen.be/ns/mobiliteit#maatregelontwerp/M-xhoCp/2025-12-12T12:26:47.400505919> , <https://does.not.resolve/HeeftWaardeVoor/acd39868-cc27-413f-8218-8491fa948207_Snelheidsbeperking/2025-12-12T12:26:47.400505919> , <https://does.not.resolve/HeeftWaardeVoor/74d36d60-5053-44a3-964e-b11f9c1868bb_Lengte/2025-12-12T12:26:47.400505919> .
+
+<https://does.not.resolve/HeeftVerkeersteken/acd39868-cc27-413f-8218-8491fa948207_Snelheidsbeperking/2025-12-12T12:26:47.400505919>
+        rdf:type         <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftVerkeersteken>;
+        dct:isVersionOf  <https://does.not.resolve/HeeftVerkeersteken/acd39868-cc27-413f-8218-8491fa948207_Snelheidsbeperking>;
+        dct:issued       "2025-12-12T12:26:47.4Z"^^xsd:dateTime;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus.isActief>
+                true;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.bron>
+                <https://lblod.data.gift/vocabularies/variables/variableinstancewithresourcevalue/acd39868-cc27-413f-8218-8491fa948207_Snelheidsbeperking>;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.doel>
+                <https://data.vlaanderen.be/ns/mobiliteit#verkeersbordverkeersteken/acd39868-cc27-413f-8218-8491fa948207>;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#VLAGAIMObject.assetId>
+                [ <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator>
+                          "HeeftVerkeersteken_acd39868-cc27-413f-8218-8491fa948207_Snelheidsbeperking" ];
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#VLAGAIMObject.typeURI>
+                <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftVerkeersteken> .
+
+<https://does.not.resolve/HeeftOntwerp/e3277147-9180-4a7b-98b8-ca344bfc9198/2025-12-12T12:26:47.400505919>
+        rdf:type         <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftOntwerp>;
+        dct:isVersionOf  <https://does.not.resolve/HeeftOntwerp/e3277147-9180-4a7b-98b8-ca344bfc9198>;
+        dct:issued       "2025-12-12T12:26:47.4Z"^^xsd:dateTime;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus.isActief>
+                true;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.bron>
+                <https://data.vlaanderen.be/ns/mobiliteit#verkeersbordverkeersteken/e3277147-9180-4a7b-98b8-ca344bfc9198>;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.doel>
+                <https://data.vlaanderen.be/ns/mobiliteit#ontwerpverkeersteken/e3277147-9180-4a7b-98b8-ca344bfc9198>;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#VLAGAIMObject.assetId>
+                [ <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator>
+                          "HeeftOntwerp_e3277147-9180-4a7b-98b8-ca344bfc9198" ];
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#VLAGAIMObject.typeURI>
+                <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftOntwerp> .
+
+<https://does.not.resolve/HeeftWaardeVoor/acd39868-cc27-413f-8218-8491fa948207_Snelheidsbeperking/2025-12-12T12:26:47.400505919>
+        rdf:type         <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftWaardeVoor>;
+        dct:isVersionOf  <https://does.not.resolve/HeeftWaardeVoor/acd39868-cc27-413f-8218-8491fa948207_Snelheidsbeperking>;
+        dct:issued       "2025-12-12T12:26:47.4Z"^^xsd:dateTime;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#AIMDBStatus.isActief>
+                true;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.bron>
+                <https://lblod.data.gift/vocabularies/variables/variableinstancewithresourcevalue/acd39868-cc27-413f-8218-8491fa948207_Snelheidsbeperking>;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.doel>
+                <http://data.lblod.info/variables/68CBD01811E4E1224CFC0B43>;
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#VLAGAIMObject.assetId>
+                [ <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#DtcIdentificator.identificator>
+                          "HeeftWaardeVoor_acd39868-cc27-413f-8218-8491fa948207_Snelheidsbeperking" ];
+        <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#VLAGAIMObject.typeURI>
+                <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftWaardeVoor> .

@@ -40,6 +40,7 @@ async function replaceExistingData() {
       OPTIONAL {
         GRAPH ${LDES_GRAPH} {
           ?s ?pOld ?oOld.
+          FILTER (?pOld NOT IN ( ${sparqlEscapeUri('mu:uuid') }))
         }
       }
     }`,

@@ -12,7 +12,7 @@ services:
     labels:
       - "logging=true"
   editor:
-    image: lblod/frontend-gelinkt-notuleren:feature-design-usage-status
+    image: lblod/frontend-gelinkt-notuleren:5.70.0
     restart: always
     logging: *default-logging
     labels:
@@ -274,7 +274,7 @@ services:
     logging: *default-logging
 
   vks-design-service:
-    image: lblod/vks-design-service:feature-build-for-vks-pagination-and-sorting
+    image: lblod/vks-design-service:feature-support-z-signs
     environment:
       MOW_ENDPOINT: 'https://roadsigns.lblod.info/sparql'
   op-public-consumer:
