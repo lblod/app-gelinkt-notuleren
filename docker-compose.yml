@@ -259,11 +259,11 @@ services:
       DIRECT_DATABASE_CONNECTION: "http://virtuoso:8890/sparql"
       RANDOMIZE_GRAPHS: "true"
       BATCH_SIZE: 100
-      BYPASS_MU_AUTH: "false"
+      BYPASS_MU_AUTH: true
     logging: *default-logging
     labels:
       - "logging=true"
-      
+
   vks-design-service:
     image: lblod/vks-design-service:feature-support-z-signs
     environment:
