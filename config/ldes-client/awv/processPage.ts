@@ -1277,10 +1277,26 @@ async function moveIsGebaseerdOp(uri: string) {
      PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
     select distinct ?adminUnitUuid where {
           GRAPH ${LDES_GRAPH} {
-           ${sparqlEscapeUri(uri)} a onderdeel:IsGebaseerdOp ;
-              relatie:bron ?verkeersteken.
-            ${verkeerstekenQuery}
-            
+            ${sparqlEscapeUri(uri)} a onderdeel:IsGebaseerdOp.
+            {
+                ${sparqlEscapeUri(uri)} relatie:bron ?verkeersteken.
+                ${verkeerstekenQuery}
+            } UNION
+            {
+              ${sparqlEscapeUri(uri)} relatie:bron ?mobiliteitsmaatregelOntwerp.
+                ?relBevatMaatregelOntwerp a onderdeel:BevatMaatregelOntwerp ;
+                relatie:bron ?aanvullendReglementOntwerp;
+                relatie:doel ?mobiliteitsmaatregelOntwerp.
+              ?relHeeftOntwerp a onderdeel:HeeftOntwerp ;
+                relatie:bron ?ontwerpVerkeersteken;
+                relatie:doel ?aanvullendReglementOntwerp.
+              ?relBevatVerkeersteken a onderdeel:BevatVerkeersteken ;
+                relatie:bron ?signalisatieOntwerp;
+                relatie:doel ?ontwerpVerkeersteken.
+              ?relHeeftBetrokkene a onderdeel:HeeftBetrokkene ;
+                relatie:bron ?signalisatieOntwerp;
+                relatie:doel ?ovoUri.
+            }
           }
           GRAPH ${PUBLIC_GRAPH} {
             ?adminUnit owl:sameAs ?ovoUri;
