@@ -221,7 +221,7 @@ async function moveSignalisatieOntwerp(uri: string) {
   const moveQuery = `
     DELETE {
       GRAPH ${sparqlEscapeUri(graph)} {
-        ?s ?pOld ?oOld.
+        ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
     }
     INSERT {
@@ -234,7 +234,7 @@ async function moveSignalisatieOntwerp(uri: string) {
       }
       OPTIONAL {
         GRAPH ${sparqlEscapeUri(graph)} {
-          ?s ?pOld ?oOld.
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
         }
       }
     }
@@ -296,7 +296,7 @@ async function moveBevatVerkeersteken(uri: string) {
   const moveQuery = `
     DELETE {
       GRAPH ${sparqlEscapeUri(graph)} {
-        ?s ?pOld ?oOld.
+        ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
     }
     INSERT {
@@ -309,7 +309,7 @@ async function moveBevatVerkeersteken(uri: string) {
       }
       OPTIONAL {
         GRAPH ${sparqlEscapeUri(graph)} {
-          ?s ?pOld ?oOld.
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
         }
       }
     }
@@ -371,7 +371,7 @@ async function moveOntwerpVerkeersteken(uri: string) {
   const moveQuery = `
     DELETE {
       GRAPH ${sparqlEscapeUri(graph)} {
-        ?s ?pOld ?oOld.
+        ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
     }
     INSERT {
@@ -384,7 +384,7 @@ async function moveOntwerpVerkeersteken(uri: string) {
       }
       OPTIONAL {
         GRAPH ${sparqlEscapeUri(graph)} {
-          ?s ?pOld ?oOld.
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
         }
       }
     }
@@ -448,7 +448,7 @@ async function moveHeeftOntwerp(uri: string) {
   const moveQuery = `
     DELETE {
       GRAPH ${sparqlEscapeUri(graph)} {
-        ?s ?pOld ?oOld.
+        ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
     }
     INSERT {
@@ -461,7 +461,7 @@ async function moveHeeftOntwerp(uri: string) {
       }
       OPTIONAL {
         GRAPH ${sparqlEscapeUri(graph)} {
-          ?s ?pOld ?oOld.
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
         }
       }
     }
@@ -526,7 +526,7 @@ async function moveAanvullendReglementOntwerp(uri: string) {
   const moveQuery = `
     DELETE {
       GRAPH ${sparqlEscapeUri(graph)} {
-        ?s ?pOld ?oOld.
+        ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
     }
     INSERT {
@@ -539,7 +539,7 @@ async function moveAanvullendReglementOntwerp(uri: string) {
       }
       OPTIONAL {
         GRAPH ${sparqlEscapeUri(graph)} {
-          ?s ?pOld ?oOld.
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
         }
       }
     }
@@ -606,7 +606,7 @@ async function moveBevatMaatregelOntwerp(uri: string) {
   const moveQuery = `
     DELETE {
       GRAPH ${sparqlEscapeUri(graph)} {
-        ?s ?pOld ?oOld.
+        ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
     }
     INSERT {
@@ -619,7 +619,7 @@ async function moveBevatMaatregelOntwerp(uri: string) {
       }
       OPTIONAL {
         GRAPH ${sparqlEscapeUri(graph)} {
-          ?s ?pOld ?oOld.
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
         }
       }
     }
@@ -687,7 +687,7 @@ async function moveMobiliteitsmaatregelOntwerp(uri: string) {
   const moveQuery = `
     DELETE {
       GRAPH ${sparqlEscapeUri(graph)} {
-        ?s ?pOld ?oOld.
+        ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
     }
     INSERT {
@@ -700,7 +700,7 @@ async function moveMobiliteitsmaatregelOntwerp(uri: string) {
       }
       OPTIONAL {
         GRAPH ${sparqlEscapeUri(graph)} {
-          ?s ?pOld ?oOld.
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
         }
       }
     }
@@ -770,7 +770,7 @@ async function moveWordtAangeduidDoor(uri: string) {
   const moveQuery = `
     DELETE {
       GRAPH ${sparqlEscapeUri(graph)} {
-        ?s ?pOld ?oOld.
+        ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
     }
     INSERT {
@@ -783,7 +783,7 @@ async function moveWordtAangeduidDoor(uri: string) {
       }
       OPTIONAL {
         GRAPH ${sparqlEscapeUri(graph)} {
-          ?s ?pOld ?oOld.
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
         }
       }
     }
@@ -861,7 +861,7 @@ async function moveVerkeersbordVerkeersteken(uri: string) {
   const moveQuery = `
     DELETE {
       GRAPH ${sparqlEscapeUri(graph)} {
-        ?s ?pOld ?oOld.
+        ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
     }
     INSERT {
@@ -874,7 +874,7 @@ async function moveVerkeersbordVerkeersteken(uri: string) {
       }
       OPTIONAL {
         GRAPH ${sparqlEscapeUri(graph)} {
-          ?s ?pOld ?oOld.
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
         }
       }
     }
@@ -958,7 +958,7 @@ async function moveHeeftVerkeersteken(uri: string) {
   const moveQuery = `
     DELETE {
       GRAPH ${sparqlEscapeUri(graph)} {
-        ?s ?pOld ?oOld.
+        ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
     }
     INSERT {
@@ -971,7 +971,7 @@ async function moveHeeftVerkeersteken(uri: string) {
       }
       OPTIONAL {
         GRAPH ${sparqlEscapeUri(graph)} {
-          ?s ?pOld ?oOld.
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
         }
       }
     }
@@ -1030,7 +1030,7 @@ async function moveVariableInstanceWithLiteralValue(uri: string) {
   const moveQuery = `
     DELETE {
       GRAPH ${sparqlEscapeUri(graph)} {
-        ?s ?pOld ?oOld.
+        ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
     }
     INSERT {
@@ -1043,7 +1043,7 @@ async function moveVariableInstanceWithLiteralValue(uri: string) {
       }
       OPTIONAL {
         GRAPH ${sparqlEscapeUri(graph)} {
-          ?s ?pOld ?oOld.
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
         }
       }
     }
@@ -1102,7 +1102,7 @@ async function moveVariableInstanceWithResourceValue(uri: string) {
   const moveQuery = `
     DELETE {
       GRAPH ${sparqlEscapeUri(graph)} {
-        ?s ?pOld ?oOld.
+        ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
     }
     INSERT {
@@ -1115,7 +1115,7 @@ async function moveVariableInstanceWithResourceValue(uri: string) {
       }
       OPTIONAL {
         GRAPH ${sparqlEscapeUri(graph)} {
-          ?s ?pOld ?oOld.
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
         }
       }
     }
@@ -1151,7 +1151,7 @@ async function moveHeeftWaardeVoor(uri: string) {
   const moveQuery = `
     DELETE {
       GRAPH ${sparqlEscapeUri(graph)} {
-        ?s ?pOld ?oOld.
+        ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
     }
     INSERT {
@@ -1164,7 +1164,7 @@ async function moveHeeftWaardeVoor(uri: string) {
       }
       OPTIONAL {
         GRAPH ${sparqlEscapeUri(graph)} {
-          ?s ?pOld ?oOld.
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
         }
       }
     }
@@ -1198,7 +1198,7 @@ async function moveVerkeersbordopstelling(uri: string) {
   const moveQuery = `
     DELETE {
       GRAPH ${sparqlEscapeUri(graph)} {
-        ?s ?pOld ?oOld.
+        ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
     }
     INSERT {
@@ -1211,7 +1211,7 @@ async function moveVerkeersbordopstelling(uri: string) {
       }
       OPTIONAL {
         GRAPH ${sparqlEscapeUri(graph)} {
-          ?s ?pOld ?oOld.
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
         }
       }
     }
@@ -1245,7 +1245,7 @@ async function moveHeeftBetrokkene(uri: string) {
   const moveQuery = `
     DELETE {
       GRAPH ${sparqlEscapeUri(graph)} {
-        ?s ?pOld ?oOld.
+        ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
     }
     INSERT {
@@ -1258,7 +1258,7 @@ async function moveHeeftBetrokkene(uri: string) {
       }
       OPTIONAL {
         GRAPH ${sparqlEscapeUri(graph)} {
-          ?s ?pOld ?oOld.
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
         }
       }
     }
@@ -1292,7 +1292,7 @@ async function moveIsGebaseerdOp(uri: string) {
   const moveQuery = `
     DELETE {
       GRAPH ${sparqlEscapeUri(graph)} {
-        ?s ?pOld ?oOld.
+        ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
     }
     INSERT {
@@ -1305,7 +1305,7 @@ async function moveIsGebaseerdOp(uri: string) {
       }
       OPTIONAL {
         GRAPH ${sparqlEscapeUri(graph)} {
-          ?s ?pOld ?oOld.
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
         }
       }
     }
