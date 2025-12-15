@@ -263,16 +263,7 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
-
-  uuid-generation:
-    image: redpencil/uuid-generation:0.4.1
-    volumes:
-      - ./config/uuid-generation/:/config
-    restart: always
-    labels:
-      - "logging=true"
-    logging: *default-logging
-
+      
   vks-design-service:
     image: lblod/vks-design-service:feature-support-z-signs
     environment:
