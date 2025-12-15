@@ -4,7 +4,7 @@ import { updateSudo, querySudo } from "@lblod/mu-auth-sudo";
 import { sparqlEscapeUri } from "mu";
 import { environment } from "../../environment";
 
-const LDES_GRAPH = 'http://mu.semte.ch/graphs/awv/ldes';
+const LDES_GRAPH = "http://mu.semte.ch/graphs/awv/ldes";
 const PUBLIC_GRAPH = "<http://mu.semte.ch/graphs/public>";
 
 async function replaceExistingData() {
@@ -41,7 +41,7 @@ async function replaceExistingData() {
       OPTIONAL {
         GRAPH ${LDES_GRAPH} {
           ?s ?pOld ?oOld.
-          FILTER (?pOld NOT IN ( ${sparqlEscapeUri('mu:uuid') }))
+          FILTER (?pOld NOT IN ( ${sparqlEscapeUri("mu:uuid")}))
         }
       }
     }`,
@@ -61,7 +61,7 @@ async function replaceExistingData() {
     `,
     options
   );
-  const subjects = new Set();
+  const subjects: Set<string> = new Set();
   for (let binding of subjectsQuery.results.bindings) {
     subjects.add(binding.s.value);
   }
@@ -70,15 +70,13 @@ async function replaceExistingData() {
   await moveByType(urisWithType);
 }
 
-
-
 export async function processPage() {
   logger.debug("Running custom logic to process the current page");
   await replaceExistingData();
   return;
 }
 
-async function mapUriToType(uri) {
+async function mapUriToType(uri: string) {
   const signUriQuery = `
         select distinct ?type where {
             GRAPH ${LDES_GRAPH} {
@@ -87,10 +85,13 @@ async function mapUriToType(uri) {
         } 
     `;
   const queryResult = await querySudo(signUriQuery);
-  return { uri, type: queryResult.results.bindings[0]?.type.value };
+  return {
+    uri,
+    type: queryResult.results.bindings[0]?.type.value as string | undefined,
+  };
 }
 
-async function moveByType(urisWithType) {
+async function moveByType(urisWithType: { uri: string; type?: string }[]) {
   for (const { uri, type } of urisWithType) {
     switch (type) {
       case "https://data.vlaanderen.be/ns/mobiliteit#SignalisatieOntwerp":
@@ -158,7 +159,7 @@ async function moveByType(urisWithType) {
   }
 }
 
-async function moveSignalisatieOntwerp(uri) {
+async function moveSignalisatieOntwerp(uri: string) {
   const graphQuery = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -221,7 +222,7 @@ async function moveSignalisatieOntwerp(uri) {
   }
 }
 
-async function moveBevatVerkeersteken(uri) {
+async function moveBevatVerkeersteken(uri: string) {
   const graphQuery = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -285,7 +286,7 @@ async function moveBevatVerkeersteken(uri) {
   }
 }
 
-async function moveOntwerpVerkeersteken(uri) {
+async function moveOntwerpVerkeersteken(uri: string) {
   const graphQuery = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -350,7 +351,7 @@ async function moveOntwerpVerkeersteken(uri) {
   }
 }
 
-async function moveHeeftOntwerp(uri) {
+async function moveHeeftOntwerp(uri: string) {
   const graphQuery = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -417,7 +418,7 @@ async function moveHeeftOntwerp(uri) {
   }
 }
 
-async function moveAanvullendReglementOntwerp(uri) {
+async function moveAanvullendReglementOntwerp(uri: string) {
   const graphQuery = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -485,7 +486,7 @@ async function moveAanvullendReglementOntwerp(uri) {
   }
 }
 
-async function moveBevatMaatregelOntwerp(uri) {
+async function moveBevatMaatregelOntwerp(uri: string) {
   const graphQuery = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -555,7 +556,7 @@ async function moveBevatMaatregelOntwerp(uri) {
   }
 }
 
-async function moveMobiliteitsmaatregelOntwerp(uri) {
+async function moveMobiliteitsmaatregelOntwerp(uri: string) {
   const graphQuery = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -626,7 +627,7 @@ async function moveMobiliteitsmaatregelOntwerp(uri) {
   }
 }
 
-async function moveWordtAangeduidDoor(uri) {
+async function moveWordtAangeduidDoor(uri: string) {
   const graphQuery = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -699,7 +700,7 @@ async function moveWordtAangeduidDoor(uri) {
   }
 }
 
-async function moveVerkeersbordVerkeersteken(uri) {
+async function moveVerkeersbordVerkeersteken(uri: string) {
   const graphQuery = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -806,7 +807,7 @@ const verkeerstekenQuery = `
     relatie:doel ?ovoUri.
 `;
 
-async function moveHeeftVerkeersteken(uri) {
+async function moveHeeftVerkeersteken(uri: string) {
   const graphQuery = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -867,7 +868,7 @@ async function moveHeeftVerkeersteken(uri) {
   }
 }
 
-async function moveVariableInstanceWithLiteralValue(uri) {
+async function moveVariableInstanceWithLiteralValue(uri: string) {
   const graphQuery = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -929,7 +930,7 @@ async function moveVariableInstanceWithLiteralValue(uri) {
   }
 }
 
-async function moveVariableInstanceWithResourceValue(uri) {
+async function moveVariableInstanceWithResourceValue(uri: string) {
   const graphQuery = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -966,7 +967,7 @@ async function moveVariableInstanceWithResourceValue(uri) {
   await updateSudo(moveQuery);
 }
 
-async function moveHeeftWaardeVoor(uri) {
+async function moveHeeftWaardeVoor(uri: string) {
   const graphQuery = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -1005,7 +1006,7 @@ async function moveHeeftWaardeVoor(uri) {
   await updateSudo(moveQuery);
 }
 
-async function moveVerkeersbordopstelling(uri) {
+async function moveVerkeersbordopstelling(uri: string) {
   const graphQuery = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -1042,7 +1043,7 @@ async function moveVerkeersbordopstelling(uri) {
   await updateSudo(moveQuery);
 }
 
-async function moveHeeftBetrokkene(uri) {
+async function moveHeeftBetrokkene(uri: string) {
   const graphQuery = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -1079,7 +1080,7 @@ async function moveHeeftBetrokkene(uri) {
   await updateSudo(moveQuery);
 }
 
-async function moveIsGebaseerdOp(uri) {
+async function moveIsGebaseerdOp(uri: string) {
   const graphQuery = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
