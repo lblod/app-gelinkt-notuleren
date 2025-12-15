@@ -74,7 +74,7 @@ async function replaceExistingData() {
 async function generateUuids() {
   const subjectsWithoutUuidsQuery = await querySudo(`
     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-    
+
     SELECT DISTINCT ?s WHERE {
       GRAPH ${LDES_GRAPH} {
         ?s a ?type
@@ -274,7 +274,9 @@ async function moveBevatVerkeersteken(uri: string) {
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX relatie: <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.>
     PREFIX onderdeel: <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#>
-     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
     select distinct ?adminUnitUuid where {
           GRAPH ${LDES_GRAPH} {
             ${sparqlEscapeUri(uri)} a onderdeel:BevatVerkeersteken ;
