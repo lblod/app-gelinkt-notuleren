@@ -1,10 +1,10 @@
 // this is a winston logger
 import { logger } from "../../logger";
 import { updateSudo, querySudo } from "@lblod/mu-auth-sudo";
-import { sparqlEscapeUri } from "mu";
+import { sparqlEscapeUri, sparqlEscapeString, uuid as generateUuid } from "mu";
 import { environment } from "../../environment";
 
-const LDES_GRAPH = "http://mu.semte.ch/graphs/awv/ldes";
+const LDES_GRAPH = "<http://mu.semte.ch/graphs/awv/ldes>";
 const PUBLIC_GRAPH = "<http://mu.semte.ch/graphs/public>";
 
 async function replaceExistingData() {
@@ -41,7 +41,7 @@ async function replaceExistingData() {
       OPTIONAL {
         GRAPH ${LDES_GRAPH} {
           ?s ?pOld ?oOld.
-          FILTER (?pOld NOT IN ( ${sparqlEscapeUri("mu:uuid")}))
+          FILTER (?pOld NOT IN ( mu:uuid))
         }
       }
     }`,
@@ -50,7 +50,7 @@ async function replaceExistingData() {
   );
   const subjectsQuery = await querySudo(
     `
-      SELECT ?s WHERE {
+      SELECT DISTINCT ?s WHERE {
           GRAPH ${sparqlEscapeUri(environment.BATCH_GRAPH)} {
             ?stream <https://w3id.org/tree#member> ?versionedMember .
             ?versionedMember ${sparqlEscapeUri(
@@ -61,13 +61,47 @@ async function replaceExistingData() {
     `,
     options
   );
-  const subjects: Set<string> = new Set();
-  for (let binding of subjectsQuery.results.bindings) {
-    subjects.add(binding.s.value);
-  }
+  const subjects = subjectsQuery.results.bindings.map(
+    (binding) => binding.s.value
+  );
+
+  await generateUuids();
 
   const urisWithType = await Promise.all([...subjects].map(mapUriToType));
   await moveByType(urisWithType);
+}
+
+async function generateUuids() {
+  const subjectsWithoutUuidsQuery = await querySudo(`
+    SELECT DISTINCT ?s WHERE {
+      GRAPH ${LDES_GRAPH} {
+        ?s a ?type
+        FILTER NOT EXISTS {
+          ?s ${sparqlEscapeUri("mu:uuid")} ?uuid
+        }
+      }
+    }
+  `);
+  const subjectsWithUuid = subjectsWithoutUuidsQuery.results.bindings.map(
+    (binding) => ({ subject: binding.s.value, uuid: generateUuid() })
+  );
+  if (!subjectsWithUuid.length) return;
+
+  const insertUuids = await updateSudo(`
+    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    INSERT DATA {
+      GRAPH ${LDES_GRAPH} {
+        ${subjectsWithUuid
+          .map(
+            (subjects) =>
+              `${sparqlEscapeUri(
+                subjects.subject
+              )} mu:uuid ${sparqlEscapeString(subjects.uuid)}`
+          )
+          .join(". \n")}
+      }
+    }
+  `);
 }
 
 export async function processPage() {
@@ -183,13 +217,23 @@ async function moveSignalisatieOntwerp(uri: string) {
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
+    DELETE {
+      GRAPH ${sparqlEscapeUri(graph)} {
+        ?s ?pOld ?oOld.
+      }
+    }
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
     } WHERE {
-     GRAPH ${LDES_GRAPH} {
+      GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
+      }
+      OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ?s ?pOld ?oOld.
+        }
       }
     }
   `;
@@ -248,13 +292,23 @@ async function moveBevatVerkeersteken(uri: string) {
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
+    DELETE {
+      GRAPH ${sparqlEscapeUri(graph)} {
+        ?s ?pOld ?oOld.
+      }
+    }
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
     } WHERE {
-     GRAPH ${LDES_GRAPH} {
+      GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
+      }
+      OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ?s ?pOld ?oOld.
+        }
       }
     }
   `;
@@ -313,13 +367,23 @@ async function moveOntwerpVerkeersteken(uri: string) {
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
+    DELETE {
+      GRAPH ${sparqlEscapeUri(graph)} {
+        ?s ?pOld ?oOld.
+      }
+    }
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
     } WHERE {
-     GRAPH ${LDES_GRAPH} {
+      GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
+      }
+      OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ?s ?pOld ?oOld.
+        }
       }
     }
   `;
@@ -380,13 +444,23 @@ async function moveHeeftOntwerp(uri: string) {
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
+    DELETE {
+      GRAPH ${sparqlEscapeUri(graph)} {
+        ?s ?pOld ?oOld.
+      }
+    }
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
     } WHERE {
-     GRAPH ${LDES_GRAPH} {
+      GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
+      }
+      OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ?s ?pOld ?oOld.
+        }
       }
     }
   `;
@@ -448,13 +522,23 @@ async function moveAanvullendReglementOntwerp(uri: string) {
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
+    DELETE {
+      GRAPH ${sparqlEscapeUri(graph)} {
+        ?s ?pOld ?oOld.
+      }
+    }
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
     } WHERE {
-     GRAPH ${LDES_GRAPH} {
+      GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
+      }
+      OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ?s ?pOld ?oOld.
+        }
       }
     }
   `;
@@ -518,13 +602,23 @@ async function moveBevatMaatregelOntwerp(uri: string) {
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
+    DELETE {
+      GRAPH ${sparqlEscapeUri(graph)} {
+        ?s ?pOld ?oOld.
+      }
+    }
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
     } WHERE {
-     GRAPH ${LDES_GRAPH} {
+      GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
+      }
+      OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ?s ?pOld ?oOld.
+        }
       }
     }
   `;
@@ -589,13 +683,23 @@ async function moveMobiliteitsmaatregelOntwerp(uri: string) {
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
+    DELETE {
+      GRAPH ${sparqlEscapeUri(graph)} {
+        ?s ?pOld ?oOld.
+      }
+    }
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
     } WHERE {
-     GRAPH ${LDES_GRAPH} {
+      GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
+      }
+      OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ?s ?pOld ?oOld.
+        }
       }
     }
   `;
@@ -662,13 +766,23 @@ async function moveWordtAangeduidDoor(uri: string) {
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
+    DELETE {
+      GRAPH ${sparqlEscapeUri(graph)} {
+        ?s ?pOld ?oOld.
+      }
+    }
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
     } WHERE {
-     GRAPH ${LDES_GRAPH} {
+      GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
+      }
+      OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ?s ?pOld ?oOld.
+        }
       }
     }
   `;
@@ -743,13 +857,23 @@ async function moveVerkeersbordVerkeersteken(uri: string) {
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
+    DELETE {
+      GRAPH ${sparqlEscapeUri(graph)} {
+        ?s ?pOld ?oOld.
+      }
+    }
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
     } WHERE {
-     GRAPH ${LDES_GRAPH} {
+      GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
+      }
+      OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ?s ?pOld ?oOld.
+        }
       }
     }
   `;
@@ -830,13 +954,23 @@ async function moveHeeftVerkeersteken(uri: string) {
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
+    DELETE {
+      GRAPH ${sparqlEscapeUri(graph)} {
+        ?s ?pOld ?oOld.
+      }
+    }
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
     } WHERE {
-     GRAPH ${LDES_GRAPH} {
+      GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
+      }
+      OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ?s ?pOld ?oOld.
+        }
       }
     }
   `;
@@ -892,13 +1026,23 @@ async function moveVariableInstanceWithLiteralValue(uri: string) {
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
+    DELETE {
+      GRAPH ${sparqlEscapeUri(graph)} {
+        ?s ?pOld ?oOld.
+      }
+    }
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
     } WHERE {
-     GRAPH ${LDES_GRAPH} {
+      GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
+      }
+      OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ?s ?pOld ?oOld.
+        }
       }
     }
   `;
@@ -954,13 +1098,23 @@ async function moveVariableInstanceWithResourceValue(uri: string) {
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
+    DELETE {
+      GRAPH ${sparqlEscapeUri(graph)} {
+        ?s ?pOld ?oOld.
+      }
+    }
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
     } WHERE {
-     GRAPH ${LDES_GRAPH} {
+      GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
+      }
+      OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ?s ?pOld ?oOld.
+        }
       }
     }
   `;
@@ -993,13 +1147,23 @@ async function moveHeeftWaardeVoor(uri: string) {
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
+    DELETE {
+      GRAPH ${sparqlEscapeUri(graph)} {
+        ?s ?pOld ?oOld.
+      }
+    }
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
     } WHERE {
-     GRAPH ${LDES_GRAPH} {
+      GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
+      }
+      OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ?s ?pOld ?oOld.
+        }
       }
     }
   `;
@@ -1030,13 +1194,23 @@ async function moveVerkeersbordopstelling(uri: string) {
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
+    DELETE {
+      GRAPH ${sparqlEscapeUri(graph)} {
+        ?s ?pOld ?oOld.
+      }
+    }
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
     } WHERE {
-     GRAPH ${LDES_GRAPH} {
+      GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
+      }
+      OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ?s ?pOld ?oOld.
+        }
       }
     }
   `;
@@ -1067,13 +1241,23 @@ async function moveHeeftBetrokkene(uri: string) {
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
+    DELETE {
+      GRAPH ${sparqlEscapeUri(graph)} {
+        ?s ?pOld ?oOld.
+      }
+    }
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
     } WHERE {
-     GRAPH ${LDES_GRAPH} {
+      GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
+      }
+      OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ?s ?pOld ?oOld.
+        }
       }
     }
   `;
@@ -1104,13 +1288,23 @@ async function moveIsGebaseerdOp(uri: string) {
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
+    DELETE {
+      GRAPH ${sparqlEscapeUri(graph)} {
+        ?s ?pOld ?oOld.
+      }
+    }
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
     } WHERE {
-     GRAPH ${LDES_GRAPH} {
+      GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
+      }
+      OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ?s ?pOld ?oOld.
+        }
       }
     }
   `;
