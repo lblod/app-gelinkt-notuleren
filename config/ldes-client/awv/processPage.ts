@@ -4,7 +4,8 @@ import { updateSudo, querySudo } from "@lblod/mu-auth-sudo";
 import { sparqlEscapeUri } from "mu";
 import { environment } from "../../environment";
 
-let LDES_GRAPH;
+const LDES_GRAPH = 'http://mu.semte.ch/graphs/awv/ldes';
+const PUBLIC_GRAPH = "<http://mu.semte.ch/graphs/public>";
 
 async function replaceExistingData() {
   let options = {};
@@ -69,10 +70,9 @@ async function replaceExistingData() {
   await moveByType(urisWithType);
 }
 
-const PUBLIC_GRAPH = "<http://mu.semte.ch/graphs/public>";
+
 
 export async function processPage() {
-  LDES_GRAPH = sparqlEscapeUri(environment.getTargetGraph());
   logger.debug("Running custom logic to process the current page");
   await replaceExistingData();
   return;
