@@ -73,6 +73,8 @@ async function replaceExistingData() {
 
 async function generateUuids() {
   const subjectsWithoutUuidsQuery = await querySudo(`
+    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    
     SELECT DISTINCT ?s WHERE {
       GRAPH ${LDES_GRAPH} {
         ?s a ?type
