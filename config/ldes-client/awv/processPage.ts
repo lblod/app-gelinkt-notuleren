@@ -77,7 +77,7 @@ async function generateUuids() {
       GRAPH ${LDES_GRAPH} {
         ?s a ?type
         FILTER NOT EXISTS {
-          ?s ${sparqlEscapeUri("mu:uuid")} ?uuid
+          ?s mu:uuid ?uuid
         }
       }
     }
