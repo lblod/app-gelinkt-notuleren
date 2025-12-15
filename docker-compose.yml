@@ -12,7 +12,7 @@ services:
     labels:
       - "logging=true"
   editor:
-    build: https://github.com/lblod/frontend-gelinkt-notuleren.git#13a4940403053dbb6fe3d7aa9166a2e226d7b5c7
+    image: lblod/frontend-gelinkt-notuleren:5.71.0
     restart: always
     logging: *default-logging
     labels:
