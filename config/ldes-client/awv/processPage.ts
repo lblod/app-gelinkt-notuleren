@@ -912,7 +912,7 @@ async function moveVerkeersbordVerkeersteken(uri: string) {
 const verkeerstekenQuery = `
   {
     ?relWordtAangeduidDoor a onderdeel:WordtAangeduidDoor;
-      relatie:doel ?verkersteken;
+      relatie:doel ?verkeersteken;
         relatie:bron ?mobiliteitsmaatregelOntwerp.
     ?relBevatMaatregelOntwerp a onderdeel:BevatMaatregelOntwerp ;
       relatie:bron ?aanvullendReglementOntwerp;
@@ -925,7 +925,7 @@ const verkeerstekenQuery = `
   {
     ?relHeeftOntwerp a onderdeel:HeeftOntwerp ;
       relatie:bron ?ontwerpVerkeersteken;
-      relatie:doel ?verkersteken.
+      relatie:doel ?verkeersteken.
   }
   ?relBevatVerkeersteken a onderdeel:BevatVerkeersteken ;
     relatie:bron ?signalisatieOntwerp;
@@ -945,7 +945,7 @@ async function moveHeeftVerkeersteken(uri: string) {
     select distinct ?adminUnitUuid where {
           GRAPH ${LDES_GRAPH} {
             ${sparqlEscapeUri(uri)} a onderdeel:HeeftVerkeersteken ;
-              relatie:doel ?verkersteken.
+              relatie:doel ?verkeersteken.
             ${verkeerstekenQuery}
           }
           GRAPH ${PUBLIC_GRAPH} {
@@ -1017,7 +1017,7 @@ async function moveVariableInstanceWithLiteralValue(uri: string) {
           GRAPH ${LDES_GRAPH} {
             ?relHeeftVerkeersteken a onderdeel:HeeftVerkeersteken ;
               relatie:bron ${sparqlEscapeUri(uri)};
-              relatie:doel ?verkersteken.
+              relatie:doel ?verkeersteken.
             ${verkeerstekenQuery}
           }
           GRAPH ${PUBLIC_GRAPH} {
@@ -1089,7 +1089,7 @@ async function moveVariableInstanceWithResourceValue(uri: string) {
           GRAPH ${LDES_GRAPH} {
             ?relHeeftVerkeersteken a onderdeel:HeeftVerkeersteken ;
               relatie:bron ${sparqlEscapeUri(uri)};
-              relatie:doel ?verkersteken.
+              relatie:doel ?verkeersteken.
             ${verkeerstekenQuery}
           }
           GRAPH ${PUBLIC_GRAPH} {
@@ -1138,7 +1138,7 @@ async function moveHeeftWaardeVoor(uri: string) {
               relatie:bron ?variableInstanceWithLiteralValue.
             ?relHeeftVerkeersteken a onderdeel:HeeftVerkeersteken ;
               relatie:bron ?variableInstanceWithLiteralValue;
-              relatie:doel ?verkersteken.
+              relatie:doel ?verkeersteken.
             ${verkeerstekenQuery}
           }
           GRAPH ${PUBLIC_GRAPH} {
