@@ -12,7 +12,7 @@ services:
     labels:
       - "logging=true"
   editor:
-    image: lblod/frontend-gelinkt-notuleren:5.70.0
+    image: lblod/frontend-gelinkt-notuleren:5.71.0
     restart: always
     logging: *default-logging
     labels:
@@ -245,7 +245,7 @@ services:
       - "logging=true"
 
   ldes-client:
-    build: https://github.com/lblod/ldes-client.git#feat/delay-support
+    build: https://github.com/lblod/ldes-client.git#fix/crash-if-error-on-startup
     links:
       - database:database
       - virtuoso:virtuoso
@@ -265,6 +265,6 @@ services:
       - "logging=true"
 
   vks-design-service:
-    image: lblod/vks-design-service:feature-support-z-signs
+    image: lblod/vks-design-service:0.1.0
     environment:
       MOW_ENDPOINT: 'https://roadsigns.lblod.info/sparql'
