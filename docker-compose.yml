@@ -274,7 +274,7 @@ services:
     logging: *default-logging
 
   vks-design-service:
-    image: lblod/vks-design-service:feature-support-z-signs
+    image: lblod/vks-design-service:feature-variable-instantiation
     environment:
       MOW_ENDPOINT: 'https://roadsigns.lblod.info/sparql'
   op-public-consumer:
