@@ -245,7 +245,7 @@ services:
       - "logging=true"
 
   ldes-client:
-    build: https://github.com/lblod/ldes-client.git#feat/delay-support
+    build: https://github.com/lblod/ldes-client.git#fix/crash-if-error-on-startup
     links:
       - database:database
       - virtuoso:virtuoso
