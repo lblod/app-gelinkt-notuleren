@@ -294,11 +294,17 @@ async function moveBevatVerkeersteken(uri: string) {
 
     select distinct ?adminUnitUuid where {
           GRAPH ${LDES_GRAPH} {
-            ${sparqlEscapeUri(uri)} a onderdeel:BevatVerkeersteken ;
-              relatie:bron ?signalisatieOntwerp.
-            ?relHeeftBetrokkene a onderdeel:HeeftBetrokkene ;
-              relatie:bron ?signalisatieOntwerp;
-              relatie:doel ?ovoUri.
+            {
+              ${sparqlEscapeUri(uri)} a onderdeel:BevatVerkeersteken ;
+                relatie:bron ?signalisatieOntwerp.
+              ?relHeeftBetrokkene a onderdeel:HeeftBetrokkene ;
+                relatie:bron ?signalisatieOntwerp;
+                relatie:doel ?ovoUri.
+            } UNION {
+             ${sparqlEscapeUri(uri)} a onderdeel:BevatVerkeersteken ;
+              relatie:bron ?verkeersteken.
+              ${verkeerstekenQuery}
+            }
             
           }
           GRAPH ${PUBLIC_GRAPH} {
@@ -307,6 +313,8 @@ async function moveBevatVerkeersteken(uri: string) {
           }
       }`;
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
+  console.log(JSON.stringify(queryResult));
+  console.log(sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
     logger.error(`No admin unit found for ${uri}`);
@@ -338,6 +346,8 @@ async function moveBevatVerkeersteken(uri: string) {
     }
   `;
   await updateSudo(moveQuery, {}, sudoOptions);
+
+  // This relationships can have 2 meanings so we have to move both children
   const queryUrisToMove = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -346,8 +356,10 @@ async function moveBevatVerkeersteken(uri: string) {
     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
     select distinct ?uriToMove where {
      GRAPH ${LDES_GRAPH} {
-        ${sparqlEscapeUri(uri)} a onderdeel:BevatVerkeersteken ;
+        {
+          ${sparqlEscapeUri(uri)} a onderdeel:BevatVerkeersteken ;
                 relatie:doel ?uriToMove.
+        }
       }
       FILTER NOT EXISTS {
         GRAPH ${sparqlEscapeUri(graph)} {
@@ -362,6 +374,7 @@ async function moveBevatVerkeersteken(uri: string) {
   );
   for (const uriToMove of urisToMove) {
     await moveOntwerpVerkeersteken(uriToMove);
+    await moveVerkeersbordVerkeersteken(uriToMove);
   }
 }
 
@@ -528,6 +541,7 @@ async function moveHeeftOntwerp(uri: string) {
   );
   for (const uriToMove of urisToMove) {
     await moveAanvullendReglementOntwerp(uriToMove);
+    await moveVerkeersbordVerkeersteken(uriToMove);
   }
 }
 
@@ -645,6 +659,7 @@ async function moveBevatMaatregelOntwerp(uri: string) {
           }
       }`;
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
+
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
     logger.error(`No admin unit found for ${uri}`);
@@ -878,6 +893,7 @@ async function moveWordtAangeduidDoor(uri: string) {
   );
   for (const uriToMove of urisToMove) {
     await moveVerkeersbordVerkeersteken(uriToMove);
+    await moveMobiliteitsmaatregelOntwerp(uriToMove);
   }
 }
 
@@ -976,6 +992,7 @@ async function moveVerkeersbordVerkeersteken(uri: string) {
   );
   for (const uriToMove of urisToMove) {
     await moveHeeftVerkeersteken(uriToMove);
+    await moveBevatVerkeersteken(uriToMove);
   }
 }
 
