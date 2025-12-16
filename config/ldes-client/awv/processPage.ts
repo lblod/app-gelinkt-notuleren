@@ -7,9 +7,11 @@ import { environment } from "../../environment";
 const LDES_GRAPH = "<http://mu.semte.ch/graphs/awv/ldes>";
 const PUBLIC_GRAPH = "<http://mu.semte.ch/graphs/public>";
 
-const sudoOptions = environment.BYPASS_MU_AUTH ? {
-  sparqlEndpoint: environment.DIRECT_DATABASE_CONNECTION,
-} : {};
+const sudoOptions = environment.BYPASS_MU_AUTH
+  ? {
+      sparqlEndpoint: environment.DIRECT_DATABASE_CONNECTION,
+    }
+  : {};
 
 async function replaceExistingData() {
   await updateSudo(
@@ -70,7 +72,8 @@ async function replaceExistingData() {
 }
 
 async function generateUuids() {
-  const subjectsWithoutUuidsQuery = await querySudo(`
+  const subjectsWithoutUuidsQuery = await querySudo(
+    `
     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
 
     SELECT DISTINCT ?s WHERE {
@@ -81,13 +84,17 @@ async function generateUuids() {
         }
       }
     }
-  `, {}, sudoOptions);
+  `,
+    {},
+    sudoOptions
+  );
   const subjectsWithUuid = subjectsWithoutUuidsQuery.results.bindings.map(
     (binding) => ({ subject: binding.s.value, uuid: generateUuid() })
   );
   if (!subjectsWithUuid.length) return;
 
-  const insertUuids = await updateSudo(`
+  const insertUuids = await updateSudo(
+    `
     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
     INSERT DATA {
       GRAPH ${LDES_GRAPH} {
@@ -101,7 +108,10 @@ async function generateUuids() {
           .join(". \n")}
       }
     }
-  `, {}, sudoOptions);
+  `,
+    {},
+    sudoOptions
+  );
 }
 
 export async function processPage() {
@@ -216,7 +226,7 @@ async function moveSignalisatieOntwerp(uri: string) {
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
-    logger.error(`No admin unit found for ${uri}`)
+    logger.error(`No admin unit found for ${uri}`);
     return;
   }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -225,7 +235,14 @@ async function moveSignalisatieOntwerp(uri: string) {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
-    }
+    } WHERE {
+     OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
+        }
+      }
+    };
+
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
@@ -234,11 +251,7 @@ async function moveSignalisatieOntwerp(uri: string) {
       GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
-      OPTIONAL {
-        GRAPH ${sparqlEscapeUri(graph)} {
-          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
-        }
-      }
+      
     }
   `;
   await updateSudo(moveQuery, {}, sudoOptions);
@@ -296,7 +309,7 @@ async function moveBevatVerkeersteken(uri: string) {
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
-    logger.error(`No admin unit found for ${uri}`)
+    logger.error(`No admin unit found for ${uri}`);
     return;
   }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -305,7 +318,14 @@ async function moveBevatVerkeersteken(uri: string) {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
-    }
+    } WHERE {
+     OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
+        }
+      }
+    };
+
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
@@ -314,11 +334,7 @@ async function moveBevatVerkeersteken(uri: string) {
       GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
-      OPTIONAL {
-        GRAPH ${sparqlEscapeUri(graph)} {
-          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
-        }
-      }
+      
     }
   `;
   await updateSudo(moveQuery, {}, sudoOptions);
@@ -375,7 +391,7 @@ async function moveOntwerpVerkeersteken(uri: string) {
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
-    logger.error(`No admin unit found for ${uri}`)
+    logger.error(`No admin unit found for ${uri}`);
     return;
   }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -384,7 +400,14 @@ async function moveOntwerpVerkeersteken(uri: string) {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
-    }
+    } WHERE {
+     OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
+        }
+      }
+    };
+
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
@@ -393,11 +416,7 @@ async function moveOntwerpVerkeersteken(uri: string) {
       GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
-      OPTIONAL {
-        GRAPH ${sparqlEscapeUri(graph)} {
-          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
-        }
-      }
+      
     }
   `;
   await updateSudo(moveQuery, {}, sudoOptions);
@@ -456,7 +475,7 @@ async function moveHeeftOntwerp(uri: string) {
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
-    logger.error(`No admin unit found for ${uri}`)
+    logger.error(`No admin unit found for ${uri}`);
     return;
   }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -465,7 +484,14 @@ async function moveHeeftOntwerp(uri: string) {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
-    }
+    } WHERE {
+     OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
+        }
+      }
+    };
+
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
@@ -474,11 +500,7 @@ async function moveHeeftOntwerp(uri: string) {
       GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
-      OPTIONAL {
-        GRAPH ${sparqlEscapeUri(graph)} {
-          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
-        }
-      }
+      
     }
   `;
   await updateSudo(moveQuery, {}, sudoOptions);
@@ -538,7 +560,7 @@ async function moveAanvullendReglementOntwerp(uri: string) {
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
-    logger.error(`No admin unit found for ${uri}`)
+    logger.error(`No admin unit found for ${uri}`);
     return;
   }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -547,7 +569,14 @@ async function moveAanvullendReglementOntwerp(uri: string) {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
-    }
+    } WHERE {
+     OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
+        }
+      }
+    };
+
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
@@ -556,11 +585,7 @@ async function moveAanvullendReglementOntwerp(uri: string) {
       GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
-      OPTIONAL {
-        GRAPH ${sparqlEscapeUri(graph)} {
-          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
-        }
-      }
+      
     }
   `;
   await updateSudo(moveQuery, {}, sudoOptions);
@@ -622,7 +647,7 @@ async function moveBevatMaatregelOntwerp(uri: string) {
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
-    logger.error(`No admin unit found for ${uri}`)
+    logger.error(`No admin unit found for ${uri}`);
     return;
   }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -631,7 +656,14 @@ async function moveBevatMaatregelOntwerp(uri: string) {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
-    }
+    } WHERE {
+     OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
+        }
+      }
+    };
+
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
@@ -640,11 +672,7 @@ async function moveBevatMaatregelOntwerp(uri: string) {
       GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
-      OPTIONAL {
-        GRAPH ${sparqlEscapeUri(graph)} {
-          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
-        }
-      }
+      
     }
   `;
   await updateSudo(moveQuery, {}, sudoOptions);
@@ -707,7 +735,7 @@ async function moveMobiliteitsmaatregelOntwerp(uri: string) {
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
-    logger.error(`No admin unit found for ${uri}`)
+    logger.error(`No admin unit found for ${uri}`);
     return;
   }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -716,7 +744,14 @@ async function moveMobiliteitsmaatregelOntwerp(uri: string) {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
-    }
+    } WHERE {
+     OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
+        }
+      }
+    };
+
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
@@ -725,11 +760,7 @@ async function moveMobiliteitsmaatregelOntwerp(uri: string) {
       GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
-      OPTIONAL {
-        GRAPH ${sparqlEscapeUri(graph)} {
-          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
-        }
-      }
+      
     }
   `;
   await updateSudo(moveQuery, {}, sudoOptions);
@@ -794,7 +825,7 @@ async function moveWordtAangeduidDoor(uri: string) {
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
-    logger.error(`No admin unit found for ${uri}`)
+    logger.error(`No admin unit found for ${uri}`);
     return;
   }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -803,7 +834,14 @@ async function moveWordtAangeduidDoor(uri: string) {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
-    }
+    } WHERE {
+     OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
+        }
+      }
+    };
+
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
@@ -812,11 +850,7 @@ async function moveWordtAangeduidDoor(uri: string) {
       GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
-      OPTIONAL {
-        GRAPH ${sparqlEscapeUri(graph)} {
-          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
-        }
-      }
+      
     }
   `;
   await updateSudo(moveQuery, {}, sudoOptions);
@@ -889,7 +923,7 @@ async function moveVerkeersbordVerkeersteken(uri: string) {
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
-    logger.error(`No admin unit found for ${uri}`)
+    logger.error(`No admin unit found for ${uri}`);
     return;
   }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -898,7 +932,14 @@ async function moveVerkeersbordVerkeersteken(uri: string) {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
-    }
+    } WHERE {
+     OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
+        }
+      }
+    };
+
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
@@ -907,11 +948,7 @@ async function moveVerkeersbordVerkeersteken(uri: string) {
       GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
-      OPTIONAL {
-        GRAPH ${sparqlEscapeUri(graph)} {
-          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
-        }
-      }
+      
     }
   `;
   await updateSudo(moveQuery, {}, sudoOptions);
@@ -990,7 +1027,7 @@ async function moveHeeftVerkeersteken(uri: string) {
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
-    logger.error(`No admin unit found for ${uri}`)
+    logger.error(`No admin unit found for ${uri}`);
     return;
   }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -999,7 +1036,14 @@ async function moveHeeftVerkeersteken(uri: string) {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
-    }
+    } WHERE {
+     OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
+        }
+      }
+    };
+
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
@@ -1008,11 +1052,7 @@ async function moveHeeftVerkeersteken(uri: string) {
       GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
-      OPTIONAL {
-        GRAPH ${sparqlEscapeUri(graph)} {
-          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
-        }
-      }
+      
     }
   `;
   await updateSudo(moveQuery, {}, sudoOptions);
@@ -1066,7 +1106,7 @@ async function moveVariableInstanceWithLiteralValue(uri: string) {
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
-    logger.error(`No admin unit found for ${uri}`)
+    logger.error(`No admin unit found for ${uri}`);
     return;
   }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -1075,7 +1115,14 @@ async function moveVariableInstanceWithLiteralValue(uri: string) {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
-    }
+    } WHERE {
+     OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
+        }
+      }
+    };
+
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
@@ -1084,11 +1131,7 @@ async function moveVariableInstanceWithLiteralValue(uri: string) {
       GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
-      OPTIONAL {
-        GRAPH ${sparqlEscapeUri(graph)} {
-          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
-        }
-      }
+      
     }
   `;
   await updateSudo(moveQuery, {}, sudoOptions);
@@ -1142,7 +1185,7 @@ async function moveVariableInstanceWithResourceValue(uri: string) {
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
-    logger.error(`No admin unit found for ${uri}`)
+    logger.error(`No admin unit found for ${uri}`);
     return;
   }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -1151,7 +1194,14 @@ async function moveVariableInstanceWithResourceValue(uri: string) {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
-    }
+    } WHERE {
+     OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
+        }
+      }
+    };
+
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
@@ -1160,11 +1210,7 @@ async function moveVariableInstanceWithResourceValue(uri: string) {
       GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
-      OPTIONAL {
-        GRAPH ${sparqlEscapeUri(graph)} {
-          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
-        }
-      }
+      
     }
   `;
   await updateSudo(moveQuery, {}, sudoOptions);
@@ -1195,7 +1241,7 @@ async function moveHeeftWaardeVoor(uri: string) {
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
-    logger.error(`No admin unit found for ${uri}`)
+    logger.error(`No admin unit found for ${uri}`);
     return;
   }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -1204,7 +1250,14 @@ async function moveHeeftWaardeVoor(uri: string) {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
-    }
+    } WHERE {
+     OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
+        }
+      }
+    };
+
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
@@ -1213,11 +1266,7 @@ async function moveHeeftWaardeVoor(uri: string) {
       GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
-      OPTIONAL {
-        GRAPH ${sparqlEscapeUri(graph)} {
-          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
-        }
-      }
+      
     }
   `;
   await updateSudo(moveQuery, {}, sudoOptions);
@@ -1246,7 +1295,7 @@ async function moveVerkeersbordopstelling(uri: string) {
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
-    logger.error(`No admin unit found for ${uri}`)
+    logger.error(`No admin unit found for ${uri}`);
     return;
   }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -1255,7 +1304,14 @@ async function moveVerkeersbordopstelling(uri: string) {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
-    }
+    } WHERE {
+     OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
+        }
+      }
+    };
+
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
@@ -1264,11 +1320,7 @@ async function moveVerkeersbordopstelling(uri: string) {
       GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
-      OPTIONAL {
-        GRAPH ${sparqlEscapeUri(graph)} {
-          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
-        }
-      }
+      
     }
   `;
   await updateSudo(moveQuery, {}, sudoOptions);
@@ -1297,7 +1349,7 @@ async function moveHeeftBetrokkene(uri: string) {
   const queryResult = await querySudo(graphQuery);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
-    logger.error(`No admin unit found for ${uri}`)
+    logger.error(`No admin unit found for ${uri}`);
     return;
   }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -1306,7 +1358,14 @@ async function moveHeeftBetrokkene(uri: string) {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
-    }
+    } WHERE {
+     OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
+        }
+      }
+    };
+
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
@@ -1315,11 +1374,7 @@ async function moveHeeftBetrokkene(uri: string) {
       GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
-      OPTIONAL {
-        GRAPH ${sparqlEscapeUri(graph)} {
-          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
-        }
-      }
+      
     }
   `;
   await updateSudo(moveQuery, {}, sudoOptions);
@@ -1364,7 +1419,7 @@ async function moveIsGebaseerdOp(uri: string) {
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
-    logger.error(`No admin unit found for ${uri}`)
+    logger.error(`No admin unit found for ${uri}`);
     return;
   }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -1373,7 +1428,14 @@ async function moveIsGebaseerdOp(uri: string) {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?pOld ?oOld.
       }
-    }
+    } WHERE {
+     OPTIONAL {
+        GRAPH ${sparqlEscapeUri(graph)} {
+          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
+        }
+      }
+    };
+
     INSERT {
       GRAPH ${sparqlEscapeUri(graph)} {
         ${sparqlEscapeUri(uri)} ?a ?b
@@ -1382,11 +1444,7 @@ async function moveIsGebaseerdOp(uri: string) {
       GRAPH ${LDES_GRAPH} {
         ${sparqlEscapeUri(uri)} ?a ?b
       }
-      OPTIONAL {
-        GRAPH ${sparqlEscapeUri(graph)} {
-          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
-        }
-      }
+      
     }
   `;
   await updateSudo(moveQuery, {}, sudoOptions);
