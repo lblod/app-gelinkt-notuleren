@@ -215,7 +215,10 @@ async function moveSignalisatieOntwerp(uri: string) {
       }`;
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
-  if (!adminUnitUuid) return;
+  if (!adminUnitUuid) {
+    logger.error(`No admin unit found for ${uri}`)
+    return;
+  }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
     DELETE {
@@ -292,7 +295,10 @@ async function moveBevatVerkeersteken(uri: string) {
       }`;
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
-  if (!adminUnitUuid) return;
+  if (!adminUnitUuid) {
+    logger.error(`No admin unit found for ${uri}`)
+    return;
+  }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
     DELETE {
@@ -368,7 +374,10 @@ async function moveOntwerpVerkeersteken(uri: string) {
       }`;
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
-  if (!adminUnitUuid) return;
+  if (!adminUnitUuid) {
+    logger.error(`No admin unit found for ${uri}`)
+    return;
+  }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
     DELETE {
@@ -446,7 +455,10 @@ async function moveHeeftOntwerp(uri: string) {
       }`;
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
-  if (!adminUnitUuid) return;
+  if (!adminUnitUuid) {
+    logger.error(`No admin unit found for ${uri}`)
+    return;
+  }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
     DELETE {
@@ -525,7 +537,10 @@ async function moveAanvullendReglementOntwerp(uri: string) {
       }`;
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
-  if (!adminUnitUuid) return;
+  if (!adminUnitUuid) {
+    logger.error(`No admin unit found for ${uri}`)
+    return;
+  }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
     DELETE {
@@ -606,7 +621,10 @@ async function moveBevatMaatregelOntwerp(uri: string) {
       }`;
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
-  if (!adminUnitUuid) return;
+  if (!adminUnitUuid) {
+    logger.error(`No admin unit found for ${uri}`)
+    return;
+  }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
     DELETE {
@@ -688,7 +706,10 @@ async function moveMobiliteitsmaatregelOntwerp(uri: string) {
       }`;
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
-  if (!adminUnitUuid) return;
+  if (!adminUnitUuid) {
+    logger.error(`No admin unit found for ${uri}`)
+    return;
+  }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
     DELETE {
@@ -772,7 +793,10 @@ async function moveWordtAangeduidDoor(uri: string) {
       }`;
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
-  if (!adminUnitUuid) return;
+  if (!adminUnitUuid) {
+    logger.error(`No admin unit found for ${uri}`)
+    return;
+  }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
     DELETE {
@@ -864,7 +888,10 @@ async function moveVerkeersbordVerkeersteken(uri: string) {
       }`;
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
-  if (!adminUnitUuid) return;
+  if (!adminUnitUuid) {
+    logger.error(`No admin unit found for ${uri}`)
+    return;
+  }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
     DELETE {
@@ -962,7 +989,10 @@ async function moveHeeftVerkeersteken(uri: string) {
       }`;
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
-  if (!adminUnitUuid) return;
+  if (!adminUnitUuid) {
+    logger.error(`No admin unit found for ${uri}`)
+    return;
+  }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
     DELETE {
@@ -1035,7 +1065,10 @@ async function moveVariableInstanceWithLiteralValue(uri: string) {
       }`;
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
-  if (!adminUnitUuid) return;
+  if (!adminUnitUuid) {
+    logger.error(`No admin unit found for ${uri}`)
+    return;
+  }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
     DELETE {
@@ -1108,7 +1141,10 @@ async function moveVariableInstanceWithResourceValue(uri: string) {
       }`;
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
-  if (!adminUnitUuid) return;
+  if (!adminUnitUuid) {
+    logger.error(`No admin unit found for ${uri}`)
+    return;
+  }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
     DELETE {
@@ -1158,7 +1194,10 @@ async function moveHeeftWaardeVoor(uri: string) {
       }`;
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
-  if (!adminUnitUuid) return;
+  if (!adminUnitUuid) {
+    logger.error(`No admin unit found for ${uri}`)
+    return;
+  }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
     DELETE {
@@ -1206,7 +1245,10 @@ async function moveVerkeersbordopstelling(uri: string) {
       }`;
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
-  if (!adminUnitUuid) return;
+  if (!adminUnitUuid) {
+    logger.error(`No admin unit found for ${uri}`)
+    return;
+  }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
     DELETE {
@@ -1254,7 +1296,10 @@ async function moveHeeftBetrokkene(uri: string) {
       }`;
   const queryResult = await querySudo(graphQuery);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
-  if (!adminUnitUuid) return;
+  if (!adminUnitUuid) {
+    logger.error(`No admin unit found for ${uri}`)
+    return;
+  }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
     DELETE {
@@ -1318,7 +1363,10 @@ async function moveIsGebaseerdOp(uri: string) {
       }`;
   const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
-  if (!adminUnitUuid) return;
+  if (!adminUnitUuid) {
+    logger.error(`No admin unit found for ${uri}`)
+    return;
+  }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
   const moveQuery = `
     DELETE {
