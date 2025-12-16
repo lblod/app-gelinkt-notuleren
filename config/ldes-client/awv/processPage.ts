@@ -202,6 +202,7 @@ async function moveSignalisatieOntwerp(uri: string) {
     PREFIX relatie: <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.>
     PREFIX onderdeel: <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#>
     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
     select distinct ?adminUnitUuid where {
           GRAPH ${LDES_GRAPH} {
             ?rel a  onderdeel:HeeftBetrokkene ;
@@ -350,7 +351,8 @@ async function moveOntwerpVerkeersteken(uri: string) {
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX relatie: <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.>
     PREFIX onderdeel: <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#>
-     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
     select distinct ?adminUnitUuid where {
           GRAPH ${LDES_GRAPH} {
             ?relBevatVerkeersteken a onderdeel:BevatVerkeersteken ;
@@ -425,7 +427,8 @@ async function moveHeeftOntwerp(uri: string) {
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX relatie: <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.>
     PREFIX onderdeel: <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#>
-     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
     select distinct ?adminUnitUuid where {
           GRAPH ${LDES_GRAPH} {
           ${sparqlEscapeUri(uri)} a onderdeel:HeeftOntwerp ;
@@ -502,7 +505,8 @@ async function moveAanvullendReglementOntwerp(uri: string) {
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX relatie: <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.>
     PREFIX onderdeel: <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#>
-     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
     select distinct ?adminUnitUuid where {
           GRAPH ${LDES_GRAPH} {
             ?relHeeftOntwerp a onderdeel:HeeftOntwerp ;
@@ -580,7 +584,8 @@ async function moveBevatMaatregelOntwerp(uri: string) {
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX relatie: <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.>
     PREFIX onderdeel: <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#>
-     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
     select distinct ?adminUnitUuid where {
           GRAPH ${LDES_GRAPH} {
             ${sparqlEscapeUri(uri)} a onderdeel:BevatMaatregelOntwerp ;
@@ -660,7 +665,8 @@ async function moveMobiliteitsmaatregelOntwerp(uri: string) {
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX relatie: <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.>
     PREFIX onderdeel: <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#>
-     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
     select distinct ?adminUnitUuid where {
           GRAPH ${LDES_GRAPH} {
             ?relBevatMaatregelOntwerp a onderdeel:BevatMaatregelOntwerp ;
@@ -741,7 +747,8 @@ async function moveWordtAangeduidDoor(uri: string) {
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX relatie: <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.>
     PREFIX onderdeel: <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#>
-     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
     select distinct ?adminUnitUuid where {
           GRAPH ${LDES_GRAPH} {
             ${sparqlEscapeUri(uri)} a onderdeel:WordtAangeduidDoor;
@@ -824,7 +831,8 @@ async function moveVerkeersbordVerkeersteken(uri: string) {
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX relatie: <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.>
     PREFIX onderdeel: <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#>
-     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
     select distinct ?adminUnitUuid where {
           GRAPH ${LDES_GRAPH} {
             {
@@ -941,7 +949,8 @@ async function moveHeeftVerkeersteken(uri: string) {
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX relatie: <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.>
     PREFIX onderdeel: <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#>
-     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
     select distinct ?adminUnitUuid where {
           GRAPH ${LDES_GRAPH} {
             ${sparqlEscapeUri(uri)} a onderdeel:HeeftVerkeersteken ;
@@ -1012,7 +1021,8 @@ async function moveVariableInstanceWithLiteralValue(uri: string) {
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX relatie: <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.>
     PREFIX onderdeel: <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#>
-     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
     select distinct ?adminUnitUuid where {
           GRAPH ${LDES_GRAPH} {
             ?relHeeftVerkeersteken a onderdeel:HeeftVerkeersteken ;
@@ -1084,7 +1094,8 @@ async function moveVariableInstanceWithResourceValue(uri: string) {
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX relatie: <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.>
     PREFIX onderdeel: <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#>
-     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
     select distinct ?adminUnitUuid where {
           GRAPH ${LDES_GRAPH} {
             ?relHeeftVerkeersteken a onderdeel:HeeftVerkeersteken ;
@@ -1131,7 +1142,8 @@ async function moveHeeftWaardeVoor(uri: string) {
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX relatie: <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.>
     PREFIX onderdeel: <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#>
-     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
     select distinct ?adminUnitUuid where {
           GRAPH ${LDES_GRAPH} {
             ${sparqlEscapeUri(uri)} a onderdeel:HeeftWaardeVoor ;
@@ -1180,7 +1192,8 @@ async function moveVerkeersbordopstelling(uri: string) {
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX relatie: <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.>
     PREFIX onderdeel: <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#>
-     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
     select distinct ?adminUnitUuid where {
           GRAPH ${LDES_GRAPH} {
             ?rel a onderdeel:HeeftBetrokkene ;
@@ -1227,7 +1240,8 @@ async function moveHeeftBetrokkene(uri: string) {
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX relatie: <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.>
     PREFIX onderdeel: <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#>
-     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
     select distinct ?adminUnitUuid where {
           GRAPH ${LDES_GRAPH} {
             ${sparqlEscapeUri(uri)} a onderdeel:HeeftBetrokkene ;
@@ -1274,7 +1288,8 @@ async function moveIsGebaseerdOp(uri: string) {
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX relatie: <https://wegenenverkeer.data.vlaanderen.be/ns/implementatieelement#RelatieObject.>
     PREFIX onderdeel: <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#>
-     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
     select distinct ?adminUnitUuid where {
           GRAPH ${LDES_GRAPH} {
             ${sparqlEscapeUri(uri)} a onderdeel:IsGebaseerdOp.
