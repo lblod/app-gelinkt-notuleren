@@ -7,13 +7,11 @@ import { environment } from "../../environment";
 const LDES_GRAPH = "<http://mu.semte.ch/graphs/awv/ldes>";
 const PUBLIC_GRAPH = "<http://mu.semte.ch/graphs/public>";
 
+const sudoOptions = environment.BYPASS_MU_AUTH ? {
+  sparqlEndpoint: environment.DIRECT_DATABASE_CONNECTION,
+} : {};
+
 async function replaceExistingData() {
-  let options = {};
-  if (environment.BYPASS_MU_AUTH) {
-    options = {
-      sparqlEndpoint: environment.DIRECT_DATABASE_CONNECTION,
-    };
-  }
   await updateSudo(
     `
     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
@@ -46,7 +44,7 @@ async function replaceExistingData() {
       }
     }`,
     {},
-    options
+    sudoOptions
   );
   const subjectsQuery = await querySudo(
     `
@@ -59,7 +57,7 @@ async function replaceExistingData() {
           }
       }
     `,
-    options
+    sudoOptions
   );
   const subjects = subjectsQuery.results.bindings.map(
     (binding) => binding.s.value
@@ -83,7 +81,7 @@ async function generateUuids() {
         }
       }
     }
-  `);
+  `, {}, sudoOptions);
   const subjectsWithUuid = subjectsWithoutUuidsQuery.results.bindings.map(
     (binding) => ({ subject: binding.s.value, uuid: generateUuid() })
   );
@@ -103,7 +101,7 @@ async function generateUuids() {
           .join(". \n")}
       }
     }
-  `);
+  `, {}, sudoOptions);
 }
 
 export async function processPage() {
@@ -120,7 +118,7 @@ async function mapUriToType(uri: string) {
             }
         } 
     `;
-  const queryResult = await querySudo(signUriQuery);
+  const queryResult = await querySudo(signUriQuery, {}, sudoOptions);
   return {
     uri,
     type: queryResult.results.bindings[0]?.type.value as string | undefined,
@@ -215,7 +213,7 @@ async function moveSignalisatieOntwerp(uri: string) {
               mu:uuid ?adminUnitUuid.
           }
       }`;
-  const queryResult = await querySudo(graphQuery);
+  const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -240,7 +238,7 @@ async function moveSignalisatieOntwerp(uri: string) {
       }
     }
   `;
-  await updateSudo(moveQuery);
+  await updateSudo(moveQuery, {}, sudoOptions);
   const queryUrisToMove = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -260,7 +258,7 @@ async function moveSignalisatieOntwerp(uri: string) {
     }
   `;
 
-  const moveQueryResult = await querySudo(queryUrisToMove);
+  const moveQueryResult = await querySudo(queryUrisToMove, {}, sudoOptions);
   const urisToMove = moveQueryResult.results.bindings.map(
     (binding) => binding.uriToMove.value
   );
@@ -292,7 +290,7 @@ async function moveBevatVerkeersteken(uri: string) {
               mu:uuid ?adminUnitUuid.
           }
       }`;
-  const queryResult = await querySudo(graphQuery);
+  const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -317,7 +315,7 @@ async function moveBevatVerkeersteken(uri: string) {
       }
     }
   `;
-  await updateSudo(moveQuery);
+  await updateSudo(moveQuery, {}, sudoOptions);
   const queryUrisToMove = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -336,7 +334,7 @@ async function moveBevatVerkeersteken(uri: string) {
       }
     }
   `;
-  const moveQueryResult = await querySudo(queryUrisToMove);
+  const moveQueryResult = await querySudo(queryUrisToMove, {}, sudoOptions);
   const urisToMove = moveQueryResult.results.bindings.map(
     (binding) => binding.uriToMove.value
   );
@@ -368,7 +366,7 @@ async function moveOntwerpVerkeersteken(uri: string) {
               mu:uuid ?adminUnitUuid.
           }
       }`;
-  const queryResult = await querySudo(graphQuery);
+  const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -393,7 +391,7 @@ async function moveOntwerpVerkeersteken(uri: string) {
       }
     }
   `;
-  await updateSudo(moveQuery);
+  await updateSudo(moveQuery, {}, sudoOptions);
   const queryUrisToMove = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -412,7 +410,7 @@ async function moveOntwerpVerkeersteken(uri: string) {
       }
     }
   `;
-  const moveQueryResult = await querySudo(queryUrisToMove);
+  const moveQueryResult = await querySudo(queryUrisToMove, {}, sudoOptions);
   const urisToMove = moveQueryResult.results.bindings.map(
     (binding) => binding.uriToMove.value
   );
@@ -446,7 +444,7 @@ async function moveHeeftOntwerp(uri: string) {
               mu:uuid ?adminUnitUuid.
           }
       }`;
-  const queryResult = await querySudo(graphQuery);
+  const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -471,7 +469,7 @@ async function moveHeeftOntwerp(uri: string) {
       }
     }
   `;
-  await updateSudo(moveQuery);
+  await updateSudo(moveQuery, {}, sudoOptions);
   const queryUrisToMove = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -490,7 +488,7 @@ async function moveHeeftOntwerp(uri: string) {
       }
     }
   `;
-  const moveQueryResult = await querySudo(queryUrisToMove);
+  const moveQueryResult = await querySudo(queryUrisToMove, {}, sudoOptions);
   const urisToMove = moveQueryResult.results.bindings.map(
     (binding) => binding.uriToMove.value
   );
@@ -525,7 +523,7 @@ async function moveAanvullendReglementOntwerp(uri: string) {
               mu:uuid ?adminUnitUuid.
           }
       }`;
-  const queryResult = await querySudo(graphQuery);
+  const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -550,7 +548,7 @@ async function moveAanvullendReglementOntwerp(uri: string) {
       }
     }
   `;
-  await updateSudo(moveQuery);
+  await updateSudo(moveQuery, {}, sudoOptions);
   const queryUrisToMove = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -569,7 +567,7 @@ async function moveAanvullendReglementOntwerp(uri: string) {
       }
     }
   `;
-  const moveQueryResult = await querySudo(queryUrisToMove);
+  const moveQueryResult = await querySudo(queryUrisToMove, {}, sudoOptions);
   const urisToMove = moveQueryResult.results.bindings.map(
     (binding) => binding.uriToMove.value
   );
@@ -606,7 +604,7 @@ async function moveBevatMaatregelOntwerp(uri: string) {
               mu:uuid ?adminUnitUuid.
           }
       }`;
-  const queryResult = await querySudo(graphQuery);
+  const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -631,7 +629,7 @@ async function moveBevatMaatregelOntwerp(uri: string) {
       }
     }
   `;
-  await updateSudo(moveQuery);
+  await updateSudo(moveQuery, {}, sudoOptions);
   const queryUrisToMove = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -650,7 +648,7 @@ async function moveBevatMaatregelOntwerp(uri: string) {
       }
     }
   `;
-  const moveQueryResult = await querySudo(queryUrisToMove);
+  const moveQueryResult = await querySudo(queryUrisToMove, {}, sudoOptions);
   const urisToMove = moveQueryResult.results.bindings.map(
     (binding) => binding.uriToMove.value
   );
@@ -688,7 +686,7 @@ async function moveMobiliteitsmaatregelOntwerp(uri: string) {
               mu:uuid ?adminUnitUuid.
           }
       }`;
-  const queryResult = await querySudo(graphQuery);
+  const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -713,7 +711,7 @@ async function moveMobiliteitsmaatregelOntwerp(uri: string) {
       }
     }
   `;
-  await updateSudo(moveQuery);
+  await updateSudo(moveQuery, {}, sudoOptions);
   const queryUrisToMove = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -732,7 +730,7 @@ async function moveMobiliteitsmaatregelOntwerp(uri: string) {
       }
     }
   `;
-  const moveQueryResult = await querySudo(queryUrisToMove);
+  const moveQueryResult = await querySudo(queryUrisToMove, {}, sudoOptions);
   const urisToMove = moveQueryResult.results.bindings.map(
     (binding) => binding.uriToMove.value
   );
@@ -772,7 +770,7 @@ async function moveWordtAangeduidDoor(uri: string) {
               mu:uuid ?adminUnitUuid.
           }
       }`;
-  const queryResult = await querySudo(graphQuery);
+  const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -797,7 +795,7 @@ async function moveWordtAangeduidDoor(uri: string) {
       }
     }
   `;
-  await updateSudo(moveQuery);
+  await updateSudo(moveQuery, {}, sudoOptions);
   const queryUrisToMove = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -816,7 +814,7 @@ async function moveWordtAangeduidDoor(uri: string) {
       }
     }
   `;
-  const moveQueryResult = await querySudo(queryUrisToMove);
+  const moveQueryResult = await querySudo(queryUrisToMove, {}, sudoOptions);
   const urisToMove = moveQueryResult.results.bindings.map(
     (binding) => binding.uriToMove.value
   );
@@ -864,7 +862,7 @@ async function moveVerkeersbordVerkeersteken(uri: string) {
               mu:uuid ?adminUnitUuid.
           }
       }`;
-  const queryResult = await querySudo(graphQuery);
+  const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -889,7 +887,7 @@ async function moveVerkeersbordVerkeersteken(uri: string) {
       }
     }
   `;
-  await updateSudo(moveQuery);
+  await updateSudo(moveQuery, {}, sudoOptions);
   const queryUrisToMove = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -908,7 +906,7 @@ async function moveVerkeersbordVerkeersteken(uri: string) {
       }
     }
   `;
-  const moveQueryResult = await querySudo(queryUrisToMove);
+  const moveQueryResult = await querySudo(queryUrisToMove, {}, sudoOptions);
   const urisToMove = moveQueryResult.results.bindings.map(
     (binding) => binding.uriToMove.value
   );
@@ -962,7 +960,7 @@ async function moveHeeftVerkeersteken(uri: string) {
               mu:uuid ?adminUnitUuid.
           }
       }`;
-  const queryResult = await querySudo(graphQuery);
+  const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -987,7 +985,7 @@ async function moveHeeftVerkeersteken(uri: string) {
       }
     }
   `;
-  await updateSudo(moveQuery);
+  await updateSudo(moveQuery, {}, sudoOptions);
   const queryUrisToMove = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -1006,7 +1004,7 @@ async function moveHeeftVerkeersteken(uri: string) {
       }
     }
   `;
-  const moveQueryResult = await querySudo(queryUrisToMove);
+  const moveQueryResult = await querySudo(queryUrisToMove, {}, sudoOptions);
   const urisToMove = moveQueryResult.results.bindings.map(
     (binding) => binding.uriToMove.value
   );
@@ -1035,7 +1033,7 @@ async function moveVariableInstanceWithLiteralValue(uri: string) {
               mu:uuid ?adminUnitUuid.
           }
       }`;
-  const queryResult = await querySudo(graphQuery);
+  const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -1060,7 +1058,7 @@ async function moveVariableInstanceWithLiteralValue(uri: string) {
       }
     }
   `;
-  await updateSudo(moveQuery);
+  await updateSudo(moveQuery, {}, sudoOptions);
   const queryUrisToMove = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -1079,7 +1077,7 @@ async function moveVariableInstanceWithLiteralValue(uri: string) {
       }
     }
   `;
-  const moveQueryResult = await querySudo(queryUrisToMove);
+  const moveQueryResult = await querySudo(queryUrisToMove, {}, sudoOptions);
   const urisToMove = moveQueryResult.results.bindings.map(
     (binding) => binding.uriToMove.value
   );
@@ -1108,7 +1106,7 @@ async function moveVariableInstanceWithResourceValue(uri: string) {
               mu:uuid ?adminUnitUuid.
           }
       }`;
-  const queryResult = await querySudo(graphQuery);
+  const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -1133,7 +1131,7 @@ async function moveVariableInstanceWithResourceValue(uri: string) {
       }
     }
   `;
-  await updateSudo(moveQuery);
+  await updateSudo(moveQuery, {}, sudoOptions);
 }
 
 async function moveHeeftWaardeVoor(uri: string) {
@@ -1158,7 +1156,7 @@ async function moveHeeftWaardeVoor(uri: string) {
               mu:uuid ?adminUnitUuid.
           }
       }`;
-  const queryResult = await querySudo(graphQuery);
+  const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -1183,7 +1181,7 @@ async function moveHeeftWaardeVoor(uri: string) {
       }
     }
   `;
-  await updateSudo(moveQuery);
+  await updateSudo(moveQuery, {}, sudoOptions);
 }
 
 async function moveVerkeersbordopstelling(uri: string) {
@@ -1206,7 +1204,7 @@ async function moveVerkeersbordopstelling(uri: string) {
               mu:uuid ?adminUnitUuid.
           }
       }`;
-  const queryResult = await querySudo(graphQuery);
+  const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -1231,7 +1229,7 @@ async function moveVerkeersbordopstelling(uri: string) {
       }
     }
   `;
-  await updateSudo(moveQuery);
+  await updateSudo(moveQuery, {}, sudoOptions);
 }
 
 async function moveHeeftBetrokkene(uri: string) {
@@ -1279,7 +1277,7 @@ async function moveHeeftBetrokkene(uri: string) {
       }
     }
   `;
-  await updateSudo(moveQuery);
+  await updateSudo(moveQuery, {}, sudoOptions);
 }
 
 async function moveIsGebaseerdOp(uri: string) {
@@ -1318,7 +1316,7 @@ async function moveIsGebaseerdOp(uri: string) {
               mu:uuid ?adminUnitUuid.
           }
       }`;
-  const queryResult = await querySudo(graphQuery);
+  const queryResult = await querySudo(graphQuery, {}, sudoOptions);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) return;
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
@@ -1343,5 +1341,5 @@ async function moveIsGebaseerdOp(uri: string) {
       }
     }
   `;
-  await updateSudo(moveQuery);
+  await updateSudo(moveQuery, {}, sudoOptions);
 }
