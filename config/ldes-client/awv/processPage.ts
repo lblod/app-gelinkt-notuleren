@@ -17,15 +17,13 @@ import { moveOntwerpVerkeersteken } from "./resourceHandlers/ontwerpVerkeersteke
 import { moveBevatVerkeersteken } from "./resourceHandlers/bevatVerkeersteken";
 import { moveSignalisatieOntwerp } from "./resourceHandlers/signalisatieOntwerp";
 import { moveHeeftBetrokkene } from "./resourceHandlers/heeftBetrokkene";
-
-export const LDES_GRAPH = "<http://mu.semte.ch/graphs/awv/ldes>";
-export const PUBLIC_GRAPH = "<http://mu.semte.ch/graphs/public>";
-
-export const sudoOptions = environment.BYPASS_MU_AUTH
-  ? {
-      sparqlEndpoint: environment.DIRECT_DATABASE_CONNECTION,
-    }
-  : {};
+import {
+  LDES_GRAPH,
+  PUBLIC_GRAPH,
+  sudoOptions,
+  BATCH_GRAPH,
+  VERSION_OF,
+} from "./utils/constants";
 
 async function replaceExistingData() {
   await updateSudo(
@@ -42,15 +40,11 @@ async function replaceExistingData() {
         ?s ?pNew ?oNew.
       }
     } WHERE {
-      GRAPH ${sparqlEscapeUri(environment.BATCH_GRAPH)} {
+      GRAPH ${BATCH_GRAPH} {
         ?stream <https://w3id.org/tree#member> ?versionedMember .
-        ?versionedMember ${sparqlEscapeUri(
-          environment.getVersionPredicate(),
-        )} ?s .
+        ?versionedMember ${VERSION_OF} ?s .
         ?versionedMember ?pNew ?oNew.
-        FILTER (?pNew NOT IN ( ${sparqlEscapeUri(
-          environment.getVersionPredicate(),
-        )} ))
+        FILTER (?pNew NOT IN ( ${VERSION_OF} ))
       }
       OPTIONAL {
         GRAPH ${LDES_GRAPH} {

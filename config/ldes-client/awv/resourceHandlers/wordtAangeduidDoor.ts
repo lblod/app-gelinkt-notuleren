@@ -3,7 +3,8 @@ import { sparqlEscapeUri } from "mu";
 // this is a winston logger
 import { logger } from "../../../logger";
 import { moveVerkeersbordVerkeersteken } from "./verkeersbordVerkeersteken";
-import { LDES_GRAPH, PUBLIC_GRAPH, sudoOptions } from "../processPage";
+import { PUBLIC_GRAPH, sudoOptions } from "../processPage";
+import { LDES_GRAPH } from "../LDES_GRAPH";
 import { moveMobiliteitsmaatregelOntwerp } from "./mobiliteitsmaatregelOntwerp";
 
 export async function moveWordtAangeduidDoor(uri: string) {

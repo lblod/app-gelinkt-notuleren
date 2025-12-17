@@ -4,11 +4,11 @@ import { sparqlEscapeUri } from "mu";
 import { logger } from "../../../logger";
 import { moveVariableInstanceWithLiteralValue } from "./variableInstanceWithLiteralValue";
 import {
-  LDES_GRAPH,
   verkeerstekenQuery,
   PUBLIC_GRAPH,
   sudoOptions,
 } from "../processPage";
+import { LDES_GRAPH } from "../LDES_GRAPH";
 
 export async function moveHeeftVerkeersteken(uri: string) {
   const graphQuery = `
@@ -29,7 +29,11 @@ export async function moveHeeftVerkeersteken(uri: string) {
               mu:uuid ?adminUnitUuid.
           }
       }`;
-  const queryResult = await querySudo(graphQuery, {}, sudoOptions);
+  const queryResult = await querySudo<{ adminUnitUuid: string }>(
+    graphQuery,
+    {},
+    sudoOptions,
+  );
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
     logger.error(`No admin unit found for ${uri}`);
@@ -79,7 +83,11 @@ export async function moveHeeftVerkeersteken(uri: string) {
       }
     }
   `;
-  const moveQueryResult = await querySudo(queryUrisToMove, {}, sudoOptions);
+  const moveQueryResult = await querySudo<{ uriToMove: string }>(
+    queryUrisToMove,
+    {},
+    sudoOptions,
+  );
   const urisToMove = moveQueryResult.results.bindings.map(
     (binding) => binding.uriToMove.value,
   );

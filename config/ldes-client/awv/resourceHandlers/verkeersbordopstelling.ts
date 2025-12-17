@@ -2,7 +2,8 @@ import { updateSudo, querySudo } from "@lblod/mu-auth-sudo";
 import { sparqlEscapeUri } from "mu";
 // this is a winston logger
 import { logger } from "../../../logger";
-import { LDES_GRAPH, PUBLIC_GRAPH, sudoOptions } from "../processPage";
+import { PUBLIC_GRAPH, sudoOptions } from "../processPage";
+import { LDES_GRAPH } from "../LDES_GRAPH";
 
 export async function moveVerkeersbordopstelling(uri: string) {
   const graphQuery = `
@@ -24,7 +25,11 @@ export async function moveVerkeersbordopstelling(uri: string) {
               mu:uuid ?adminUnitUuid.
           }
       }`;
-  const queryResult = await querySudo(graphQuery, {}, sudoOptions);
+  const queryResult = await querySudo<{ adminUnitUuid: string }>(
+    graphQuery,
+    {},
+    sudoOptions,
+  );
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
     logger.error(`No admin unit found for ${uri}`);

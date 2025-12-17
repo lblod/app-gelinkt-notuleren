@@ -3,7 +3,8 @@ import { sparqlEscapeUri } from "mu";
 // this is a winston logger
 import { logger } from "../../../logger";
 import { moveSignalisatieOntwerp } from "./signalisatieOntwerp";
-import { LDES_GRAPH, PUBLIC_GRAPH, sudoOptions } from "../processPage";
+import { PUBLIC_GRAPH, sudoOptions } from "../processPage";
+import { LDES_GRAPH } from "../LDES_GRAPH";
 
 export async function moveHeeftBetrokkene(uri: string) {
   const graphQuery = `
@@ -25,7 +26,7 @@ export async function moveHeeftBetrokkene(uri: string) {
               mu:uuid ?adminUnitUuid.
           }
       }`;
-  const queryResult = await querySudo(graphQuery);
+  const queryResult = await querySudo<{ adminUnitUuid: string }>(graphQuery);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
     logger.error(`No admin unit found for ${uri}`);
@@ -77,7 +78,11 @@ export async function moveHeeftBetrokkene(uri: string) {
     }
   `;
 
-  const moveQueryResult = await querySudo(queryUrisToMove, {}, sudoOptions);
+  const moveQueryResult = await querySudo<{ uriToMove: string }>(
+    queryUrisToMove,
+    {},
+    sudoOptions,
+  );
   const urisToMove = moveQueryResult.results.bindings.map(
     (binding) => binding.uriToMove.value,
   );

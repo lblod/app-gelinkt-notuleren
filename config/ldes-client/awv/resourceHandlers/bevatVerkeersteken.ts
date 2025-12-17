@@ -5,11 +5,11 @@ import { logger } from "../../../logger";
 import { moveOntwerpVerkeersteken } from "./ontwerpVerkeersteken";
 import { moveVerkeersbordVerkeersteken } from "./verkeersbordVerkeersteken";
 import {
-  LDES_GRAPH,
   verkeerstekenQuery,
   PUBLIC_GRAPH,
   sudoOptions,
 } from "../processPage";
+import { LDES_GRAPH } from "../LDES_GRAPH";
 
 export async function moveBevatVerkeersteken(uri: string) {
   const graphQuery = `

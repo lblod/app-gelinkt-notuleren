@@ -3,7 +3,7 @@ import { sparqlEscapeUri } from "mu";
 // this is a winston logger
 import { logger } from "../../../logger";
 import { moveBevatMaatregelOntwerp } from "./bevatMaatregelOntwerp";
-import { LDES_GRAPH, PUBLIC_GRAPH, sudoOptions } from "../processPage";
+import { LDES_GRAPH, sudoOptions, PUBLIC_GRAPH } from "../utils/constants";
 
 export async function moveAanvullendReglementOntwerp(uri: string) {
   const graphQuery = `
