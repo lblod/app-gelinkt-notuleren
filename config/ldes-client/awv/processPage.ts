@@ -69,10 +69,11 @@ async function replaceExistingData() {
   const subjects = subjectsQuery.results.bindings.map(
     (binding) => binding.s.value,
   );
-
+  logger.debug(`Found ${subjects.length} subjects, generating UUIDs`);
   await generateUuids();
-
+  logger.debug(`Fetching types for these ${subjects.length} subjects`);
   const urisWithType = await Promise.all([...subjects].map(mapUriToType));
+  logger.info(`Moving ${urisWithType.length} typed subjects`)
   await moveByType(urisWithType);
   logger.info("finished regular processing, switching to leftovers");
   await cleanupLeftovers();
@@ -91,9 +92,9 @@ async function replaceExistingData() {
  */
 async function cleanupLeftovers() {
   const queryStr = `
-    SELECT DISTINCT ?s WHERE {
+    SELECT DISTINCT ?s ?type WHERE {
       GRAPH ${LDES_GRAPH} {
-	?s ?p ?v.
+	?s a ?type.
       }
       FILTER NOT EXISTS {
 	GRAPH ?g {
@@ -103,21 +104,17 @@ async function cleanupLeftovers() {
       }
     }
     `;
-  logger.info(queryStr);
-  const leftOverSubjectsQuery = await querySudo<{ s: string }>(
+  const leftOverSubjectsQuery = await querySudo<{ s: string; type: string }>(
     queryStr,
     {},
     SUDO_OPTIONS
   );
 
-  const leftOverSubjects = leftOverSubjectsQuery.results.bindings.map(
-    (binding) => binding.s.value
+  const leftOverUrisWithType = leftOverSubjectsQuery.results.bindings.map(
+    (binding) => ({ uri: binding.s.value, type: binding.type.value })
   );
-  logger.info(`found ${leftOverSubjects.length} leftover subjects`);
+  logger.info(`found ${leftOverUrisWithType.length} leftover subjects`);
 
-  const leftOverUrisWithType = await Promise.all(
-    [...leftOverSubjects].map(mapUriToType)
-  );
   await moveByType(leftOverUrisWithType);
 }
 
