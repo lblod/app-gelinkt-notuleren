@@ -90,11 +90,7 @@ async function replaceExistingData() {
  * As an additional safety measure, it loops itself until it can no longer move any new resources.
  */
 async function cleanupLeftovers() {
-  let lastCount = Infinity;
-  let currentCount = Infinity;
-  do {
-    lastCount = currentCount;
-    const queryStr = `
+  const queryStr = `
     SELECT DISTINCT ?s WHERE {
       GRAPH ${LDES_GRAPH} {
 	?s ?p ?v.
@@ -107,23 +103,22 @@ async function cleanupLeftovers() {
       }
     }
     `;
-    logger.info(queryStr);
-    const leftOverSubjectsQuery = await querySudo<{ s: string }>(queryStr);
-
-    const leftOverSubjects = leftOverSubjectsQuery.results.bindings.map(
-      (binding) => binding.s.value,
-    );
-    currentCount = leftOverSubjects.length;
-    logger.info(`found ${currentCount} leftover subjects`, leftOverSubjects);
-
-    const leftOverUrisWithType = await Promise.all(
-      [...leftOverSubjects].map(mapUriToType),
-    );
-    await moveByType(leftOverUrisWithType);
-  } while (lastCount > currentCount);
-  logger.info(
-    `the last batch didn't reduce the amount of leftovers, so we stop. Final leftover count: ${currentCount}`,
+  logger.info(queryStr);
+  const leftOverSubjectsQuery = await querySudo<{ s: string }>(
+    queryStr,
+    {},
+    SUDO_OPTIONS
   );
+
+  const leftOverSubjects = leftOverSubjectsQuery.results.bindings.map(
+    (binding) => binding.s.value
+  );
+  logger.info(`found ${leftOverSubjects.length} leftover subjects`);
+
+  const leftOverUrisWithType = await Promise.all(
+    [...leftOverSubjects].map(mapUriToType)
+  );
+  await moveByType(leftOverUrisWithType);
 }
 
 async function generateUuids() {
