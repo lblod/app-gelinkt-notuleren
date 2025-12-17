@@ -16,7 +16,7 @@ export async function moveHeeftOntwerp(uri: string) {
     select distinct ?adminUnitUuid where {
           GRAPH ${LDES_GRAPH} {
           ${sparqlEscapeUri(uri)} a onderdeel:HeeftOntwerp ;
-              relatie:bron ?ontwerpVerkeersteken.
+              relatie:doel ?ontwerpVerkeersteken.
             ?relBevatVerkeersteken a onderdeel:BevatVerkeersteken ;
               relatie:bron ?signalisatieOntwerp;
               relatie:doel ?ontwerpVerkeersteken.
