@@ -77,6 +77,18 @@ async function replaceExistingData() {
   logger.info("finished regular processing, switching to leftovers");
   await cleanupLeftovers();
 }
+/**
+ * A hopefully robust way to deal with the potentially out-of-order arrival of resource information.
+ * The idea is this: we process all the resources in the BATCH graph first.
+ * Then, we call this function, which checks which resources exist in the awv/LDES graph but nowhere else
+ * This is expected to happen, as in order to move resources, we need the whole connection chain from that resource up to an OVO-uri to already exist in dhe ldes graph.
+ * That may not be the case yet, as it could be that connecting pieces arrive on a later page.
+ *
+ * After it checks, it essentially tries to move those resources again. For the first page, this is a redundant operation. However, for every consecutive page,
+ * more information is available.
+ *
+ * As an additional safety measure, it loops itself until it can no longer move any new resources.
+ */
 async function cleanupLeftovers() {
   let lastCount = Infinity;
   let currentCount = Infinity;
