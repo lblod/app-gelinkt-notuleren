@@ -1,10 +1,9 @@
-import { updateSudo, querySudo } from "@lblod/mu-auth-sudo";
+import { querySudo, updateSudo } from "@lblod/mu-auth-sudo";
 import { sparqlEscapeUri } from "mu";
-// this is a winston logger
 import { logger } from "../../../logger";
-import { moveVerkeersbordVerkeersteken } from "./verkeersbordVerkeersteken";
 import { LDES_GRAPH, PUBLIC_GRAPH, SUDO_OPTIONS } from "../utils/constants";
 import { moveMobiliteitsmaatregelOntwerp } from "./mobiliteitsmaatregelOntwerp";
+import { moveVerkeersbordVerkeersteken } from "./verkeersbordVerkeersteken";
 
 export async function moveWordtAangeduidDoor(uri: string) {
   const graphQuery = `

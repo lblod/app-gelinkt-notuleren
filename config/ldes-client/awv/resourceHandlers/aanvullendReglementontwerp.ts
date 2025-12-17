@@ -1,9 +1,8 @@
-import { updateSudo, querySudo } from "@lblod/mu-auth-sudo";
+import { querySudo, updateSudo } from "@lblod/mu-auth-sudo";
 import { sparqlEscapeUri } from "mu";
-// this is a winston logger
 import { logger } from "../../../logger";
+import { LDES_GRAPH, PUBLIC_GRAPH, SUDO_OPTIONS } from "../utils/constants";
 import { moveBevatMaatregelOntwerp } from "./bevatMaatregelOntwerp";
-import { LDES_GRAPH, SUDO_OPTIONS, PUBLIC_GRAPH } from "../utils/constants";
 
 export async function moveAanvullendReglementOntwerp(uri: string) {
   const graphQuery = `

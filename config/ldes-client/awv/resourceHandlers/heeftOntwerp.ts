@@ -1,9 +1,9 @@
-import { updateSudo, querySudo } from "@lblod/mu-auth-sudo";
+import { querySudo, updateSudo } from "@lblod/mu-auth-sudo";
 import { sparqlEscapeUri } from "mu";
 import { logger } from "../../../logger";
+import { LDES_GRAPH, PUBLIC_GRAPH, SUDO_OPTIONS } from "../utils/constants";
 import { moveAanvullendReglementOntwerp } from "./aanvullendReglementontwerp";
 import { moveVerkeersbordVerkeersteken } from "./verkeersbordVerkeersteken";
-import { LDES_GRAPH, PUBLIC_GRAPH, SUDO_OPTIONS } from "../utils/constants";
 
 export async function moveHeeftOntwerp(uri: string) {
   const graphQuery = `

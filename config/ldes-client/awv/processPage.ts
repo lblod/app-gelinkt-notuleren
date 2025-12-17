@@ -1,27 +1,25 @@
+import { querySudo, updateSudo } from "@lblod/mu-auth-sudo";
+import { uuid as generateUuid, sparqlEscapeString, sparqlEscapeUri } from "mu";
 import { logger } from "../../logger";
-import { updateSudo, querySudo } from "@lblod/mu-auth-sudo";
-import { sparqlEscapeUri, sparqlEscapeString, uuid as generateUuid } from "mu";
-import { environment } from "../../environment";
-import { moveIsGebaseerdOp } from "./resourceHandlers/isGebaseerdOp";
-import { moveVerkeersbordopstelling } from "./resourceHandlers/verkeersbordopstelling";
-import { moveVariableInstanceWithResourceValue } from "./resourceHandlers/variableInstanceWithResourceValue";
-import { moveVariableInstanceWithLiteralValue } from "./resourceHandlers/variableInstanceWithLiteralValue";
+import { moveAanvullendReglementOntwerp } from "./resourceHandlers/aanvullendReglementontwerp";
+import { moveBevatMaatregelOntwerp } from "./resourceHandlers/bevatMaatregelOntwerp";
+import { moveBevatVerkeersteken } from "./resourceHandlers/bevatVerkeersteken";
+import { moveHeeftBetrokkene } from "./resourceHandlers/heeftBetrokkene";
+import { moveHeeftOntwerp } from "./resourceHandlers/heeftOntwerp";
 import { moveHeeftVerkeersteken } from "./resourceHandlers/heeftVerkeersteken";
+import { moveIsGebaseerdOp } from "./resourceHandlers/isGebaseerdOp";
+import { moveMobiliteitsmaatregelOntwerp } from "./resourceHandlers/mobiliteitsmaatregelOntwerp";
+import { moveOntwerpVerkeersteken } from "./resourceHandlers/ontwerpVerkeersteken";
+import { moveSignalisatieOntwerp } from "./resourceHandlers/signalisatieOntwerp";
+import { moveVariableInstanceWithLiteralValue } from "./resourceHandlers/variableInstanceWithLiteralValue";
+import { moveVariableInstanceWithResourceValue } from "./resourceHandlers/variableInstanceWithResourceValue";
+import { moveVerkeersbordopstelling } from "./resourceHandlers/verkeersbordopstelling";
 import { moveVerkeersbordVerkeersteken } from "./resourceHandlers/verkeersbordVerkeersteken";
 import { moveWordtAangeduidDoor } from "./resourceHandlers/wordtAangeduidDoor";
-import { moveMobiliteitsmaatregelOntwerp } from "./resourceHandlers/mobiliteitsmaatregelOntwerp";
-import { moveBevatMaatregelOntwerp } from "./resourceHandlers/bevatMaatregelOntwerp";
-import { moveAanvullendReglementOntwerp } from "./resourceHandlers/aanvullendReglementontwerp";
-import { moveHeeftOntwerp } from "./resourceHandlers/heeftOntwerp";
-import { moveOntwerpVerkeersteken } from "./resourceHandlers/ontwerpVerkeersteken";
-import { moveBevatVerkeersteken } from "./resourceHandlers/bevatVerkeersteken";
-import { moveSignalisatieOntwerp } from "./resourceHandlers/signalisatieOntwerp";
-import { moveHeeftBetrokkene } from "./resourceHandlers/heeftBetrokkene";
 import {
-  LDES_GRAPH,
-  PUBLIC_GRAPH,
-  SUDO_OPTIONS,
   BATCH_GRAPH,
+  LDES_GRAPH,
+  SUDO_OPTIONS,
   VERSION_OF,
 } from "./utils/constants";
 
@@ -83,7 +81,7 @@ async function generateUuids() {
     `
     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
 
-    SELECT DISTINCT ?s WHERE {
+   SELECT DISTINCT ?s WHERE {
       GRAPH ${LDES_GRAPH} {
         ?s a ?type
         FILTER NOT EXISTS {
@@ -100,7 +98,7 @@ async function generateUuids() {
   );
   if (!subjectsWithUuid.length) return;
 
-  const insertUuids = await updateSudo(
+  await updateSudo(
     `
     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
     INSERT DATA {

@@ -1,4 +1,4 @@
-import { updateSudo, querySudo } from "@lblod/mu-auth-sudo";
+import { querySudo, updateSudo } from "@lblod/mu-auth-sudo";
 import { sparqlEscapeUri } from "mu";
 import { logger } from "../../../logger";
 import { verkeerstekenQuery } from "../processPage";
