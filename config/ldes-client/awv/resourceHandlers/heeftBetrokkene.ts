@@ -1,7 +1,7 @@
 import { querySudo } from "@lblod/mu-auth-sudo";
 import { sparqlEscapeUri } from "mu";
 import { logger } from "../../../logger";
-import { LDES_GRAPH, PUBLIC_GRAPH } from "../utils/constants";
+import { LDES_GRAPH, PUBLIC_GRAPH, SUDO_OPTIONS } from "../utils/constants";
 import { moveResource } from "../utils/moveResource";
 
 export async function moveHeeftBetrokkene(uri: string) {
@@ -31,7 +31,7 @@ export async function moveHeeftBetrokkene(uri: string) {
   );
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
-    logger.error(`No admin unit found for ${uri}`);
+    logger.debug(`No admin unit found for ${uri}`);
     return;
   }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;

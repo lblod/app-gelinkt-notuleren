@@ -32,7 +32,7 @@ export async function moveVariableInstanceWithResourceValue(uri: string) {
   );
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
-    logger.error(`No admin unit found for ${uri}`);
+    logger.debug(`No admin unit found for ${uri}`);
     return;
   }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
