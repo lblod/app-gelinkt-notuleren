@@ -57,10 +57,10 @@ async function replaceExistingData() {
   const subjectsQuery = await querySudo<{ s: string }>(
     `
       SELECT DISTINCT ?s WHERE {
-          GRAPH ${BATCH_GRAPH} {
-            ?stream <https://w3id.org/tree#member> ?versionedMember .
-            ?versionedMember ${VERSION_OF} ?s .
-          }
+	GRAPH ${BATCH_GRAPH} {
+	  ?stream <https://w3id.org/tree#member> ?versionedMember .
+	  ?versionedMember ${VERSION_OF} ?s .
+	}
       }
     `,
     {},
@@ -74,6 +74,33 @@ async function replaceExistingData() {
 
   const urisWithType = await Promise.all([...subjects].map(mapUriToType));
   await moveByType(urisWithType);
+  logger.info("finished regular processing, switching to leftovers");
+
+  const queryStr = `
+    SELECT DISTINCT ?s WHERE {
+      GRAPH ${LDES_GRAPH} {
+	?s ?p ?v.
+      }
+      FILTER NOT EXISTS {
+	GRAPH ?g {
+	  ?s ?p ?v.
+	}
+	FILTER (?g != ${LDES_GRAPH})
+      }
+    }
+    `;
+  logger.info(queryStr);
+  const leftOverSubjectsQuery = await querySudo<{ s: string }>(queryStr);
+
+  const leftOverSubjects = leftOverSubjectsQuery.results.bindings.map(
+    (binding) => binding.s.value,
+  );
+  logger.info("found leftover subjects", leftOverSubjects);
+
+  const leftOverUrisWithType = await Promise.all(
+    [...subjects].map(mapUriToType),
+  );
+  await moveByType(leftOverUrisWithType);
 }
 
 async function generateUuids() {
