@@ -276,49 +276,6 @@ defmodule Acl.UserGroups.Config do
                     }
         }]
       },
-      # // AWV LDES
-      %GroupSpec{
-        name: "ldes-graph",
-        useage: [:read],
-        access: %AccessByQuery{
-          vars: [],
-          query: "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
-                  PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-                  SELECT DISTINCT ?role WHERE {
-                    <SESSION_ID> ext:sessionRole ?role.
-                     FILTER(?role in (\"GelinktNotuleren-lezer\",\"GelinktNotuleren-schrijver\", \"GelinktNotuleren-publiceerder\",  \"GelinktNotuleren-ondertekenaar\"))
-                    }" },
-        graphs: [ %GraphSpec{
-                    graph: "http://mu.semte.ch/graphs/awv/ldes",
-                    constraint: %ResourceConstraint{
-                      resource_types: [
-                        "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#WordtAangeduidDoor",
-                        "https://data.vlaanderen.be/ns/mobiliteit#VerkeersbordVerkeersteken",
-                        "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Realiseert",
-                        "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BevatMaatregelOntwerp",
-                        "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IsGebaseerdOp",
-                        "https://lblod.data.gift/vocabularies/variables/VariableInstanceWithLiteralValue",
-                        "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HoortBij",
-                        "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftVerkeersteken",
-                        "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#AanzichtVerkeersbordopstelling",
-                        "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftBetrokkene",
-                        "https://data.vlaanderen.be/ns/mobiliteit#SignalisatieOntwerp",
-                        "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftAanzicht",
-                        "https://wegenenverkeer.data.vlaanderen.be/ns/installatie#Verkeersbordopstelling",
-                        "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftOntwerp",
-                        "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroreflecterendVerkeersbord",
-                        "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#BevatVerkeersteken",
-                        "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#IsOntwerpVan",
-                        "https://data.vlaanderen.be/ns/mobiliteit#MobiliteitsmaatregelOntwerp",
-                        "https://data.vlaanderen.be/ns/mobiliteit#OntwerpVerkeersteken",
-                        "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#RetroreflecterendeFolie",
-                        "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#Bevestiging",
-                        "https://data.vlaanderen.be/ns/mobiliteit#AanvullendReglementOntwerp",
-                        "https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#HeeftWaardeVoor",
-                      ]
-                    }
-        }]
-      },
       # // LOGIN ERROR LOGS
       %GroupSpec {
         name: "error-logs",
