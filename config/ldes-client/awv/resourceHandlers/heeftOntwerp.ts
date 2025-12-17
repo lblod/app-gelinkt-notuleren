@@ -12,23 +12,25 @@ export async function moveHeeftOntwerp(uri: string) {
     PREFIX onderdeel: <https://wegenenverkeer.data.vlaanderen.be/ns/onderdeel#>
     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
     PREFIX owl: <http://www.w3.org/2002/07/owl#>
-    select distinct ?adminUnitUuid where {
-          GRAPH ${LDES_GRAPH} {
-          ${sparqlEscapeUri(uri)} a onderdeel:HeeftOntwerp ;
-              relatie:doel ?ontwerpVerkeersteken.
-            ?relBevatVerkeersteken a onderdeel:BevatVerkeersteken ;
-              relatie:bron ?signalisatieOntwerp;
-              relatie:doel ?ontwerpVerkeersteken.
-            ?relHeeftBetrokkene a onderdeel:HeeftBetrokkene ;
-              relatie:bron ?signalisatieOntwerp;
-              relatie:doel ?ovoUri.
-            
-          }
-          GRAPH ${PUBLIC_GRAPH} {
-            ?adminUnit owl:sameAs ?ovoUri;
-              mu:uuid ?adminUnitUuid.
-          }
-      }`;
+    SELECT DISTINCT ?adminUnitUuid WHERE {
+      GRAPH ${LDES_GRAPH} {
+	${sparqlEscapeUri(uri)} a onderdeel:HeeftOntwerp ;
+	  (relatie:doel | relatie:bron) ?ontwerpVerkeersteken.
+
+	?relBevatVerkeersteken a onderdeel:BevatVerkeersteken ;
+	  relatie:bron ?signalisatieOntwerp;
+	  relatie:doel ?ontwerpVerkeersteken.
+
+	?relHeeftBetrokkene a onderdeel:HeeftBetrokkene ;
+	  relatie:bron ?signalisatieOntwerp;
+	  relatie:doel ?ovoUri.
+      }
+
+     GRAPH ${PUBLIC_GRAPH} {
+	?adminUnit owl:sameAs ?ovoUri;
+	  mu:uuid ?adminUnitUuid.
+      }
+    }`;
   const queryResult = await querySudo<{ adminUnitUuid: string }>(
     graphQuery,
     {},
