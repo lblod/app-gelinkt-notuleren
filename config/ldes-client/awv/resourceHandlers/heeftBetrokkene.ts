@@ -24,7 +24,11 @@ export async function moveHeeftBetrokkene(uri: string) {
               mu:uuid ?adminUnitUuid.
           }
       }`;
-  const queryResult = await querySudo<{ adminUnitUuid: string }>(graphQuery);
+  const queryResult = await querySudo<{ adminUnitUuid: string }>(
+    graphQuery,
+    {},
+    SUDO_OPTIONS
+  );
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
     logger.error(`No admin unit found for ${uri}`);
