@@ -50,6 +50,7 @@ services:
       MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
       DATABASE_COMPATIBILITY: Virtuoso
     volumes:
+      
       - ./config/authorization:/config
     restart: always
     logging: *default-logging
