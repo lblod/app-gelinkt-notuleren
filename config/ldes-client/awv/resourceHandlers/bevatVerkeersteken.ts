@@ -39,8 +39,6 @@ export async function moveBevatVerkeersteken(uri: string) {
     {},
     SUDO_OPTIONS,
   );
-  console.log(JSON.stringify(queryResult));
-  console.log(SUDO_OPTIONS);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
     logger.error(`No admin unit found for ${uri}`);
