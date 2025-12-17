@@ -1,7 +1,7 @@
 // this is a winston logger
 import { logger } from "../../logger";
 import { updateSudo } from "@lblod/mu-auth-sudo";
-import { sparqlEscapeUri } from "mu";
+import { sparqlEscapeUri, sparqlEscapeString, uuid } from "mu";
 import { environment } from "../../environment";
 
 async function replaceExistingData() {
@@ -12,8 +12,27 @@ async function replaceExistingData() {
     };
   }
   await updateSudo(
-    `
+    /* sparql */`
     PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+
+    INSERT {
+      GRAPH ${sparqlEscapeUri(environment.getTargetGraph())} {
+        ?s mu:uuid ?uuid.
+      }
+    } WHERE {
+      GRAPH ${sparqlEscapeUri(environment.BATCH_GRAPH)} {
+        ?stream <https://w3id.org/tree#member> ?versionedMember .
+        ?versionedMember ${sparqlEscapeUri(
+          environment.getVersionPredicate()
+        )} ?s .
+      }
+      FILTER NOT EXISTS {
+        GRAPH ${sparqlEscapeUri(environment.getTargetGraph())} {
+          ?s mu:uuid ?existingUuid.
+        }
+      }
+      BIND(LCASE(STRUUID()) AS ?uuid)
+    };
 
     DELETE {
       GRAPH ${sparqlEscapeUri(environment.getTargetGraph())} {
@@ -38,7 +57,7 @@ async function replaceExistingData() {
       OPTIONAL {
         GRAPH ${sparqlEscapeUri(environment.getTargetGraph())} {
           ?s ?pOld ?oOld.
-          FILTER (?pOld NOT IN ( ${sparqlEscapeUri('mu:uuid') }))
+          FILTER (?pOld NOT IN ( mu:uuid ))
         }
       }
     }`,
