@@ -3,8 +3,7 @@ import { sparqlEscapeUri } from "mu";
 import { logger } from "../../../logger";
 import { moveAanvullendReglementOntwerp } from "./aanvullendReglementontwerp";
 import { moveVerkeersbordVerkeersteken } from "./verkeersbordVerkeersteken";
-import { PUBLIC_GRAPH, sudoOptions } from "../processPage";
-import { LDES_GRAPH } from "../LDES_GRAPH";
+import { LDES_GRAPH, PUBLIC_GRAPH, SUDO_OPTIONS } from "../utils/constants";
 
 export async function moveHeeftOntwerp(uri: string) {
   const graphQuery = `
@@ -34,7 +33,7 @@ export async function moveHeeftOntwerp(uri: string) {
   const queryResult = await querySudo<{ adminUnitUuid: string }>(
     graphQuery,
     {},
-    sudoOptions,
+    SUDO_OPTIONS,
   );
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
@@ -66,7 +65,7 @@ export async function moveHeeftOntwerp(uri: string) {
       
     }
   `;
-  await updateSudo(moveQuery, {}, sudoOptions);
+  await updateSudo(moveQuery, {}, SUDO_OPTIONS);
   const queryUrisToMove = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -88,7 +87,7 @@ export async function moveHeeftOntwerp(uri: string) {
   const moveQueryResult = await querySudo<{ uriToMove: string }>(
     queryUrisToMove,
     {},
-    sudoOptions,
+    SUDO_OPTIONS,
   );
   const urisToMove = moveQueryResult.results.bindings.map(
     (binding) => binding.uriToMove.value,

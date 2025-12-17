@@ -2,12 +2,8 @@ import { updateSudo, querySudo } from "@lblod/mu-auth-sudo";
 import { sparqlEscapeUri } from "mu";
 // this is a winston logger
 import { logger } from "../../../logger";
-import {
-  verkeerstekenQuery,
-  PUBLIC_GRAPH,
-  sudoOptions,
-} from "../processPage";
-import { LDES_GRAPH } from "../LDES_GRAPH";
+import { verkeerstekenQuery } from "../processPage";
+import { LDES_GRAPH, PUBLIC_GRAPH, SUDO_OPTIONS } from "../utils/constants";
 
 export async function moveIsGebaseerdOp(uri: string) {
   const graphQuery = `
@@ -49,7 +45,7 @@ export async function moveIsGebaseerdOp(uri: string) {
   const queryResult = await querySudo<{ adminUnitUuid: string }>(
     graphQuery,
     {},
-    sudoOptions,
+    SUDO_OPTIONS,
   );
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
@@ -81,5 +77,5 @@ export async function moveIsGebaseerdOp(uri: string) {
       
     }
   `;
-  await updateSudo(moveQuery, {}, sudoOptions);
+  await updateSudo(moveQuery, {}, SUDO_OPTIONS);
 }

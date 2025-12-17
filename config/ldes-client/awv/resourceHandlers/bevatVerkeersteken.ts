@@ -4,12 +4,8 @@ import { sparqlEscapeUri } from "mu";
 import { logger } from "../../../logger";
 import { moveOntwerpVerkeersteken } from "./ontwerpVerkeersteken";
 import { moveVerkeersbordVerkeersteken } from "./verkeersbordVerkeersteken";
-import {
-  verkeerstekenQuery,
-  PUBLIC_GRAPH,
-  sudoOptions,
-} from "../processPage";
-import { LDES_GRAPH } from "../LDES_GRAPH";
+import { verkeerstekenQuery } from "../processPage";
+import { LDES_GRAPH, PUBLIC_GRAPH, SUDO_OPTIONS } from "../utils/constants";
 
 export async function moveBevatVerkeersteken(uri: string) {
   const graphQuery = `
@@ -43,10 +39,10 @@ export async function moveBevatVerkeersteken(uri: string) {
   const queryResult = await querySudo<{ adminUnitUuid: string }>(
     graphQuery,
     {},
-    sudoOptions,
+    SUDO_OPTIONS,
   );
   console.log(JSON.stringify(queryResult));
-  console.log(sudoOptions);
+  console.log(SUDO_OPTIONS);
   const adminUnitUuid = queryResult.results.bindings[0]?.adminUnitUuid.value;
   if (!adminUnitUuid) {
     logger.error(`No admin unit found for ${uri}`);
@@ -77,7 +73,7 @@ export async function moveBevatVerkeersteken(uri: string) {
       
     }
   `;
-  await updateSudo(moveQuery, {}, sudoOptions);
+  await updateSudo(moveQuery, {}, SUDO_OPTIONS);
 
   // This relationships can have 2 meanings so we have to move both children
   const queryUrisToMove = `
@@ -103,7 +99,7 @@ export async function moveBevatVerkeersteken(uri: string) {
   const moveQueryResult = await querySudo<{ uriToMove: string }>(
     queryUrisToMove,
     {},
-    sudoOptions,
+    SUDO_OPTIONS,
   );
   const urisToMove = moveQueryResult.results.bindings.map(
     (binding) => binding.uriToMove.value,

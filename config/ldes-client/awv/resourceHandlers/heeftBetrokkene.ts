@@ -3,8 +3,7 @@ import { sparqlEscapeUri } from "mu";
 // this is a winston logger
 import { logger } from "../../../logger";
 import { moveSignalisatieOntwerp } from "./signalisatieOntwerp";
-import { PUBLIC_GRAPH, sudoOptions } from "../processPage";
-import { LDES_GRAPH } from "../LDES_GRAPH";
+import { LDES_GRAPH, PUBLIC_GRAPH, SUDO_OPTIONS } from "../utils/constants";
 
 export async function moveHeeftBetrokkene(uri: string) {
   const graphQuery = `
@@ -57,7 +56,7 @@ export async function moveHeeftBetrokkene(uri: string) {
       
     }
   `;
-  await updateSudo(moveQuery, {}, sudoOptions);
+  await updateSudo(moveQuery, {}, SUDO_OPTIONS);
 
   const queryUrisToMove = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -81,7 +80,7 @@ export async function moveHeeftBetrokkene(uri: string) {
   const moveQueryResult = await querySudo<{ uriToMove: string }>(
     queryUrisToMove,
     {},
-    sudoOptions,
+    SUDO_OPTIONS,
   );
   const urisToMove = moveQueryResult.results.bindings.map(
     (binding) => binding.uriToMove.value,

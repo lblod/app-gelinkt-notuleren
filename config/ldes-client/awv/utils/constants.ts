@@ -5,7 +5,7 @@ export const PUBLIC_GRAPH = "<http://mu.semte.ch/graphs/public>";
 export const BATCH_GRAPH = sparqlEscapeUri(environment.BATCH_GRAPH);
 export const VERSION_OF = sparqlEscapeUri(environment.getVersionPredicate());
 
-export const sudoOptions = environment.BYPASS_MU_AUTH
+export const SUDO_OPTIONS = environment.BYPASS_MU_AUTH
   ? {
       sparqlEndpoint: environment.DIRECT_DATABASE_CONNECTION,
     }

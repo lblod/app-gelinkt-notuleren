@@ -20,7 +20,7 @@ import { moveHeeftBetrokkene } from "./resourceHandlers/heeftBetrokkene";
 import {
   LDES_GRAPH,
   PUBLIC_GRAPH,
-  sudoOptions,
+  SUDO_OPTIONS,
   BATCH_GRAPH,
   VERSION_OF,
 } from "./utils/constants";
@@ -54,21 +54,19 @@ async function replaceExistingData() {
       }
     }`,
     {},
-    sudoOptions,
+    SUDO_OPTIONS,
   );
   const subjectsQuery = await querySudo<{ s: string }>(
     `
       SELECT DISTINCT ?s WHERE {
-          GRAPH ${sparqlEscapeUri(environment.BATCH_GRAPH)} {
+          GRAPH ${BATCH_GRAPH} {
             ?stream <https://w3id.org/tree#member> ?versionedMember .
-            ?versionedMember ${sparqlEscapeUri(
-              environment.getVersionPredicate(),
-            )} ?s .
+            ?versionedMember ${VERSION_OF} ?s .
           }
       }
     `,
     {},
-    sudoOptions,
+    SUDO_OPTIONS,
   );
   const subjects = subjectsQuery.results.bindings.map(
     (binding) => binding.s.value,
@@ -95,7 +93,7 @@ async function generateUuids() {
     }
   `,
     {},
-    sudoOptions,
+    SUDO_OPTIONS,
   );
   const subjectsWithUuid = subjectsWithoutUuidsQuery.results.bindings.map(
     (binding) => ({ subject: binding.s.value, uuid: generateUuid() }),
@@ -119,7 +117,7 @@ async function generateUuids() {
     }
   `,
     {},
-    sudoOptions,
+    SUDO_OPTIONS,
   );
 }
 
@@ -140,7 +138,7 @@ async function mapUriToType(uri: string) {
   const queryResult = await querySudo<{ type: string }>(
     signUriQuery,
     {},
-    sudoOptions,
+    SUDO_OPTIONS,
   );
   return {
     uri,
