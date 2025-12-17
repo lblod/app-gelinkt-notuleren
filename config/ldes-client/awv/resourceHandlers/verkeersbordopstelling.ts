@@ -1,7 +1,8 @@
-import { querySudo, updateSudo } from "@lblod/mu-auth-sudo";
+import { querySudo } from "@lblod/mu-auth-sudo";
 import { sparqlEscapeUri } from "mu";
 import { logger } from "../../../logger";
 import { LDES_GRAPH, PUBLIC_GRAPH, SUDO_OPTIONS } from "../utils/constants";
+import { moveResource } from "../utils/moveResource";
 
 export async function moveVerkeersbordopstelling(uri: string) {
   const graphQuery = `
@@ -34,29 +35,6 @@ export async function moveVerkeersbordopstelling(uri: string) {
     return;
   }
   const graph = `http://mu.semte.ch/graphs/awv/ldes/${adminUnitUuid}`;
-  const moveQuery = `
-    DELETE {
-      GRAPH ${sparqlEscapeUri(graph)} {
-        ${sparqlEscapeUri(uri)} ?pOld ?oOld.
-      }
-    } WHERE {
-     OPTIONAL {
-        GRAPH ${sparqlEscapeUri(graph)} {
-          ${sparqlEscapeUri(uri)} ?pOld ?oOld.
-        }
-      }
-    };
 
-    INSERT {
-      GRAPH ${sparqlEscapeUri(graph)} {
-        ${sparqlEscapeUri(uri)} ?a ?b
-      }
-    } WHERE {
-      GRAPH ${LDES_GRAPH} {
-        ${sparqlEscapeUri(uri)} ?a ?b
-      }
-      
-    }
-  `;
-  await updateSudo(moveQuery, {}, SUDO_OPTIONS);
+  await moveResource(uri, graph);
 }
