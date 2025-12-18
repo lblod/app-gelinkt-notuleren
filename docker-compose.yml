@@ -259,21 +259,13 @@ services:
       DIRECT_DATABASE_CONNECTION: "http://virtuoso:8890/sparql"
       RANDOMIZE_GRAPHS: "true"
       BATCH_SIZE: 100
-      BYPASS_MU_AUTH: "false"
+      BYPASS_MU_AUTH: true
     logging: *default-logging
     labels:
       - "logging=true"
-
-  uuid-generation:
-    image: redpencil/uuid-generation:0.4.1
-    volumes:
-      - ./config/uuid-generation/:/config
-    restart: always
-    labels:
-      - "logging=true"
-    logging: *default-logging
 
   vks-design-service:
-    image: lblod/vks-design-service:0.1.0
+    image: lblod/vks-design-service:0.2.0
     environment:
       MOW_ENDPOINT: 'https://roadsigns.lblod.info/sparql'
+      ALLOW_MU_AUTH_SUDO: true
