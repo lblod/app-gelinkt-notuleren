@@ -1,5 +1,21 @@
 # app-gelinkt-notuleren
 
+## 5.66.0
+
+### Minor Changes
+
+- [#256](https://github.com/lblod/app-gelinkt-notuleren/pull/256) [`f66e901b`](https://github.com/lblod/app-gelinkt-notuleren/commit/f66e901bf168c08a4004b7a773ad3309e5491f13) Thanks [@abeforgit](https://github.com/abeforgit)! - Make variable instantiation work
+
+  contains:
+  https://github.com/lblod/frontend-gelinkt-notuleren/pull/890
+  https://github.com/lblod/ember-rdfa-editor-lblod-plugins/pull/617
+
+### Patch Changes
+
+- [#256](https://github.com/lblod/app-gelinkt-notuleren/pull/256) [`73f713f7`](https://github.com/lblod/app-gelinkt-notuleren/commit/73f713f79fb72dc17559a526a4f908d9aca39a42) Thanks [@abeforgit](https://github.com/abeforgit)! - Update frontend to version [5.71.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.71.0)
+
+- [#256](https://github.com/lblod/app-gelinkt-notuleren/pull/256) [`14dee652`](https://github.com/lblod/app-gelinkt-notuleren/commit/14dee652f776b4ab562b03e29d9d02cc2dc58d64) Thanks [@abeforgit](https://github.com/abeforgit)! - Update `vks-design-service` to version 0.1.0
+
 ## 5.65.1
 
 ### Patch Changes
@@ -323,7 +339,6 @@
 ### Minor Changes
 
 - [#223](https://github.com/lblod/app-gelinkt-notuleren/pull/223) [`de8f4a9`](https://github.com/lblod/app-gelinkt-notuleren/commit/de8f4a97bd242219bbe68aca73e1850e796df22b) Thanks [@elpoelma](https://github.com/elpoelma)! - Addition of migrations which update the built-in standard templates:
-
   - Addition of dutch labels to RDFa blocks
   - Modernize usage of template URIs
 
