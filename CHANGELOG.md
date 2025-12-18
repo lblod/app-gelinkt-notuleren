@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.66.2
+
+### Patch Changes
+
+- [`f2a98e1c`](https://github.com/lblod/app-gelinkt-notuleren/commit/f2a98e1c84ff55bb456984a121fe18421f2896cf) Thanks [@abeforgit](https://github.com/abeforgit)! - re-enable mdb config
+
 ## 5.66.1
 
 ### Patch Changes
