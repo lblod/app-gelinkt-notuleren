@@ -1,18 +1,8 @@
 services:
   dashboard:
-    ports:
-      - "82:80"
     restart: "no"
   dashboard-identifier:
-    ports:
-      - "81:80"
     restart: "no"
-  proxy:
-    image: nginx:1.13
-    volumes:
-      - ./config/proxy:/etc/nginx/conf.d
-    ports:
-      - "443:443"
   meeting:
     restart: "no"
   editor:
@@ -24,20 +14,14 @@ services:
       SESSION_COOKIE_SECURE: "false"
       # SAME_SITE: "None" doesn't work with insecure cookies
       SESSION_COOKIE_SAME_SITE: "Lax"
-    ports:
-      - "80:80"
     restart: "no"
   database:
     restart: "no"
   virtuoso:
-    ports:
-      - "8890:8890"
     restart: "no"
   dispatcher:
     restart: "no"
   migrations:
-    volumes:
-      - ./config/dev-migrations:/data/migrations/dev/
     restart: "no"
   login:
     restart: "no"
@@ -55,8 +39,6 @@ services:
     image: lblod/mock-login-service:0.4.0
   yasgui:
     image: erikap/yasgui
-    ports:
-      - 8891:80
     environment:
       ENABLE_ENDPOINT_SELECTOR: "true"
       DEFAULT_SPARQL_ENDPOINT: "http://localhost:8890/sparql"
