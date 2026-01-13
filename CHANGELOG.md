@@ -1,5 +1,13 @@
 # app-gelinkt-notuleren
 
+## 5.66.3
+
+### Patch Changes
+
+- [#263](https://github.com/lblod/app-gelinkt-notuleren/pull/263) [`1d54b452`](https://github.com/lblod/app-gelinkt-notuleren/commit/1d54b4524601babf99b3fb22ce5072c1cce60f10) Thanks [@abeforgit](https://github.com/abeforgit)! - Remove bad config from dev compose file
+
+- [`18c62d19`](https://github.com/lblod/app-gelinkt-notuleren/commit/18c62d19337b18fd81611ee39fc11ea9f4e71972) Thanks [@abeforgit](https://github.com/abeforgit)! - Remove "nieuwe gemeentewet" from the AR template
+
 ## 5.66.2
 
 ### Patch Changes
