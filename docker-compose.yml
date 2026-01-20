@@ -245,10 +245,7 @@ services:
       - "logging=true"
 
   ldes-client:
-    build: https://github.com/lblod/ldes-client.git#fix/crash-if-error-on-startup
-    links:
-      - database:database
-      - virtuoso:virtuoso
+    build: https://github.com/lblod/ldes-client.git#feat/fancy-error-handling
     restart: always
     volumes:
       - ./config/ldes-client:/config
@@ -256,10 +253,10 @@ services:
       RUN_AT_STARTUP: true
       DELAY: 1000
       CRON_PATTERN: "*/1 * * * *"
+      CRON_RETRIES: 5
       DIRECT_DATABASE_CONNECTION: "http://virtuoso:8890/sparql"
       RANDOMIZE_GRAPHS: "true"
       BATCH_SIZE: 100
-      BYPASS_MU_AUTH: true
     logging: *default-logging
     labels:
       - "logging=true"
