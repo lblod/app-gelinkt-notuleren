@@ -185,6 +185,7 @@
 (define-resource editor-document ()
   :class (s-prefix "ext:EditorDocument")
   :properties `((:title :string ,(s-prefix "dct:title"))
+                ; Can be too long for sparql-parser
                 (:content :string ,(s-prefix "ext:editorDocumentContent"))
                 (:context :string ,(s-prefix "ext:editorDocumentContext"))
                 (:created-on :datetime ,(s-prefix "pav:createdOn"))
@@ -253,7 +254,9 @@
                 (:gestart-op-tijdstip :datetime ,(s-prefix "prov:startedAtTime"))
                 (:geeindigd-op-tijdstip :datetime ,(s-prefix "prov:endedAtTime"))
                 (:op-locatie :string ,(s-prefix "prov:atLocation"))
+                ; 2 instances too long for sparql-parser
                 (:intro :string ,(s-prefix "notulen:intro"))
+                ; 2 instances too long for sparql-parser
                 (:outro :string ,(s-prefix "notulen:outro")))
 
   :has-many `((mandataris :via ,(s-prefix "besluit:heeftAanwezigeBijStart")
@@ -283,6 +286,7 @@
 
 (define-resource agendapunt ()
   :class (s-prefix "besluit:Agendapunt")
+                ; 1 instance too long for sparql-parser
   :properties `((:beschrijving :string ,(s-prefix "dct:description"))
                 (:gepland-openbaar :boolean ,(s-prefix "besluit:geplandOpenbaar"))
                 (:heeft-ontwerpbesluit :url ,(s-prefix "besluit:heeftOntwerpbesluit"))
@@ -460,6 +464,7 @@
 
 (define-resource signed-resource ()
   :class (s-prefix "sign:SignedResource")
+                ; Can be too long for sparql-parser
   :properties `((:content :string ,(s-prefix "sign:text"))
                 (:hash-value :string ,(s-prefix "sign:hashValue"))
                 (:created-on :datetime ,(s-prefix "dct:created"))
@@ -485,6 +490,7 @@
 
 (define-resource published-resource ()
   :class (s-prefix "sign:PublishedResource")
+                ; Can be too long for sparql-parser
   :properties `((:content :string ,(s-prefix "sign:text"))
                 (:hash-value :string ,(s-prefix "sign:hashValue"))
                 (:created-on :datetime ,(s-prefix "dct:created"))
@@ -511,6 +517,7 @@
 (define-resource versioned-behandeling ()
   :class (s-prefix "ext:VersionedBehandeling")
   :properties `((:state :string ,(s-prefix "ext:stateString"))
+                ; Can be too long for sparql-parser
                 (:content :string ,(s-prefix "ext:content"))
                 (:deleted :boolean ,(s-prefix "ext:deleted")))
   :has-many `((signed-resource :via ,(s-prefix "ext:signsBehandeling")
@@ -532,6 +539,7 @@
 (define-resource versioned-besluiten-lijst ()
   :class (s-prefix "ext:VersionedBesluitenLijst")
   :properties `((:state :string ,(s-prefix "ext:stateString"))
+                ; Can be too long for sparql-parser
                 (:content :string ,(s-prefix "ext:content"))
                 (:deleted :boolean ,(s-prefix "ext:deleted")))
   :has-many `((signed-resource :via ,(s-prefix "ext:signsBesluitenlijst")
@@ -553,7 +561,9 @@
 (define-resource versioned-notulen ()
   :class (s-prefix "ext:VersionedNotulen")
   :properties `((:state :string ,(s-prefix "ext:stateString"))
+                ; Can be too long for sparql-parser
                 (:content :string ,(s-prefix "ext:content"))
+                ; Could be too long? There are no examples though
                 (:public-content :string ,(s-prefix "ext:publicContent"))
                 (:public-behandelingen :uri-set ,(s-prefix "ext:publicBehandeling"))
                 (:kind :string ,(s-prefix "ext:notulenKind"))
@@ -603,6 +613,7 @@
                 (:inhoud :string ,(s-prefix "prov:value"))
                 (:agenda-status :string ,(s-prefix "bv:agendaStatus"))
                 (:agenda-type :string ,(s-prefix "bv:agendaType"))
+                ; Can be too long for sparql-parser
                 (:rendered-content :string ,(s-prefix "ext:renderedContent"))
                 (:deleted :boolean ,(s-prefix "ext:deleted"))
                 )
