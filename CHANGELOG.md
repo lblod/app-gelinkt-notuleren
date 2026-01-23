@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.67.1
+
+### Patch Changes
+
+- [`1de932b6`](https://github.com/lblod/app-gelinkt-notuleren/commit/1de932b617545f0696c3e6e892c7fcc112145571) Thanks [@lagartoverde](https://github.com/lagartoverde)! - Bump notulen-prepublish-service to [2.8.1](https://github.com/lblod/notulen-prepublish-service/releases/tag/v2.8.1)
+
 ## 5.67.0
 
 ### Minor Changes
