@@ -1,5 +1,17 @@
 # app-gelinkt-notuleren
 
+## 5.67.0
+
+### Minor Changes
+
+- [#253](https://github.com/lblod/app-gelinkt-notuleren/pull/253) [`7ccf3bbc`](https://github.com/lblod/app-gelinkt-notuleren/commit/7ccf3bbc528d1762c69b5a62e3c5f036a0964822) Thanks [@piemonkey](https://github.com/piemonkey)! - Update mu-cl-resources version to 1.27.2
+
+### Patch Changes
+
+- [`b34c2ebe`](https://github.com/lblod/app-gelinkt-notuleren/commit/b34c2ebea690189a6d20fe18ddc45cab9c8cea01) Thanks [@lagartoverde](https://github.com/lagartoverde)! - Bump notulen-prepublish-service to [2.8.0](https://github.com/lblod/notulen-prepublish-service/releases/tag/v2.8.0)
+
+- [#266](https://github.com/lblod/app-gelinkt-notuleren/pull/266) [`2394639d`](https://github.com/lblod/app-gelinkt-notuleren/commit/2394639dd5227f2c10dd2d98c0b85054326fddc9) Thanks [@piemonkey](https://github.com/piemonkey)! - Change ldes-client version to one that includes improved error handling and set retries count
+
 ## 5.66.4
 
 ### Patch Changes
@@ -365,6 +377,7 @@
 ### Minor Changes
 
 - [#223](https://github.com/lblod/app-gelinkt-notuleren/pull/223) [`de8f4a9`](https://github.com/lblod/app-gelinkt-notuleren/commit/de8f4a97bd242219bbe68aca73e1850e796df22b) Thanks [@elpoelma](https://github.com/elpoelma)! - Addition of migrations which update the built-in standard templates:
+
   - Addition of dutch labels to RDFa blocks
   - Modernize usage of template URIs
 
