@@ -31,13 +31,11 @@ SELECT (?arOnt AS ?AanvullendReglementOntwerp) (?mOnt AS ?MobiliteitsmaatregelOn
        #   we use eli:has_part as per the Besluit Publicatie model
        eli:has_part ?art .
   ?art a besluit:Artikel ;
-       # Note: this is a difference to the model, it should be mobiliteit:heeftMobiliteitsmaatregel
-       mobiliteit:heeftVerkeersmaatregel ?mmr .
+       mobiliteit:heeftMobiliteitsmaatregel ?mmr .
   ?mmr a mobiliteit:Mobiliteitsmaatregel ;
        mobiliteit:isGebaseerdOpMaatregelOntwerp ?mOnt .
-       # Note: the RDFa contains no `mobiliteit:MobiliteitsmaatregelOntwerp` type information to verify the type
-  # Note: this is a difference from the model, it should be ?mOnt ^implementatieelement:RelatieObject.doel / implementatieelement:RelatieObject.bron ?arOnt
-  ?arOnt onderdeel:BevatMaatregelOntwerp ?mOnt .
-  # Note: the RDFa contains no `mobiliteit:AanvullendReglementOntwerp` type information to verify the type
+  ?mOnt a mobiliteit:MobiliteitsmaatregelOntwerp;
+        ^implementatieelement:RelatieObject.doel / implementatieelement:RelatieObject.bron ?arOnt .
+  ?arOnt a mobiliteit:AanvullendReglementOntwerp .
 }
 ```
