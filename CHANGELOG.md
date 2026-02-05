@@ -1,5 +1,15 @@
 # app-gelinkt-notuleren
 
+## 5.67.2
+
+### Patch Changes
+
+- [`f9e645135ae771c0f885e1df624c6513717c342a`](https://github.com/lblod/app-gelinkt-notuleren/commit/f9e645135ae771c0f885e1df624c6513717c342a) Thanks [@kobemertens](https://github.com/kobemertens)! - Bump frontend to v5.72.0
+
+- [#268](https://github.com/lblod/app-gelinkt-notuleren/pull/268) [`964596b3015fc95d7bf6cb19fc4446212499ac17`](https://github.com/lblod/app-gelinkt-notuleren/commit/964596b3015fc95d7bf6cb19fc4446212499ac17) Thanks [@piemonkey](https://github.com/piemonkey)! - Update docs for AR design links to reflect updates to follow the model
+
+- [#267](https://github.com/lblod/app-gelinkt-notuleren/pull/267) [`5b61a85415d569aac7b7ec6af343ef2fcdbf5104`](https://github.com/lblod/app-gelinkt-notuleren/commit/5b61a85415d569aac7b7ec6af343ef2fcdbf5104) Thanks [@piemonkey](https://github.com/piemonkey)! - Add documentation for how to link published decisions to AR designs
+
 ## 5.67.1
 
 ### Patch Changes
