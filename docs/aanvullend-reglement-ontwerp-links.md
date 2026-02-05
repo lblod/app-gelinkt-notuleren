@@ -36,7 +36,6 @@ SELECT (?arOnt AS ?AanvullendReglementOntwerp) (?mOnt AS ?MobiliteitsmaatregelOn
        mobiliteit:isGebaseerdOpMaatregelOntwerp ?mOnt .
   ?mOnt a mobiliteit:MobiliteitsmaatregelOntwerp;
         ^implementatieelement:RelatieObject.doel / implementatieelement:RelatieObject.bron ?arOnt .
-  ?arOnt a mobiliteit:AanvullendReglementOntwerp ;
-         onderdeel:BevatMaatregelOntwerp ?mOnt .
+  ?arOnt a mobiliteit:AanvullendReglementOntwerp .
 }
 ```
