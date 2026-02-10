@@ -3,7 +3,7 @@ export default [
     match: {
       subject: {},
       graph: {
-        value: /^(?!http:\/\/mu\.semte\.ch\/graphs\/awv\/ldes).+$/,
+        value: /^(?!http:\/\/mu\.semte\.ch\/graphs\/awv\/ldes).*$/,
         type: "uri",
       },
     },
