@@ -29,7 +29,7 @@ services:
       SESSION_COOKIE_SECURE: "on"
       SESSION_COOKIE_SAME_SITE: "None"
   deltanotifier:
-    image: semtech/mu-delta-notifier:0.2.0
+    build: https://github.com/nvdk/delta-notifier.git#feature/regex-based-filtering
     volumes:
       - ./config/delta:/config
     restart: always
