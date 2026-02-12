@@ -29,7 +29,7 @@ services:
       SESSION_COOKIE_SECURE: "on"
       SESSION_COOKIE_SAME_SITE: "None"
   deltanotifier:
-    build: https://github.com/nvdk/delta-notifier.git#feature/regex-based-filtering
+    image: nvdk/mu-delta-notifier:1.1.0
     volumes:
       - ./config/delta:/config
     restart: always
