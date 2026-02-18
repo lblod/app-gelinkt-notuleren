@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.68.0
+
+### Minor Changes
+
+- [`dc442ed5`](https://github.com/lblod/app-gelinkt-notuleren/commit/dc442ed5cbc2f2da6216b29e66f280e03acc4690) Thanks [@abeforgit](https://github.com/abeforgit)! - Bump frontend to [v5.73.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.73.0)
+
 ## 5.67.2
 
 ### Patch Changes
@@ -393,7 +399,6 @@
 ### Minor Changes
 
 - [#223](https://github.com/lblod/app-gelinkt-notuleren/pull/223) [`de8f4a9`](https://github.com/lblod/app-gelinkt-notuleren/commit/de8f4a97bd242219bbe68aca73e1850e796df22b) Thanks [@elpoelma](https://github.com/elpoelma)! - Addition of migrations which update the built-in standard templates:
-
   - Addition of dutch labels to RDFa blocks
   - Modernize usage of template URIs
 
