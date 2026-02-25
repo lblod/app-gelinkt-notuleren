@@ -279,25 +279,6 @@ defmodule Dispatcher do
     forward conn, path, "http://resource/blockchain-statuses/"
   end
 
-  match "/verkeersbordcombinaties/*path" do
-    forward conn, path, "http://resource/verkeersbordcombinaties/"
-  end
-
-  match "/maatregelconcepten/*path" do
-    forward conn, path, "http://resource/maatregelconcepten/"
-  end
-
-  match "/verkeersbordconcepten/*path" do
-    forward conn, path, "http://resource/verkeersbordconcepten/"
-  end
-
-  match "/verkeersbordcategorieen/*path" do
-    forward conn, path, "http://resource/verkeersbordcategorieen/"
-  end
-
-  match "/verkeersbordconcept-status-codes/*path" do
-    forward conn, path, "http://resource/verkeersbordconcept-status-codes/"
-  end
 
   match "/intermissions/*path" do
     forward conn, path, "http://resource/intermissions/"
@@ -329,13 +310,6 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/functionarissen/"
   end
 
-  match "/contact-punten/*path" do
-    forward conn, path, "http://cache/contact-punten/"
-  end
-
-  match "/adressen/*path" do
-    forward conn, path, "http://cache/adressen/"
-  end
 
   match "/functionaris-status-codes/*path" do
     forward conn, path, "http://cache/functionaris-status-codes/"
