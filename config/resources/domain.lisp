@@ -666,9 +666,7 @@
                              :as "provincie")
              (bestuurseenheid-classificatie-code :via ,(s-prefix "besluit:classificatie")
                                                  :as "classificatie"))
-  :has-many `((contact-punt :via ,(s-prefix "schema:contactPoint")
-                            :as "contactinfo")
-              (bestuursorgaan :via ,(s-prefix "besluit:bestuurt")
+  :has-many `((bestuursorgaan :via ,(s-prefix "besluit:bestuurt")
                               :inverse t
                               :as "bestuursorganen"))
   :resource-base (s-url "http://data.lblod.info/id/bestuurseenheden/")
@@ -759,9 +757,7 @@
 (define-resource bestuursfunctie ()
   :class (s-prefix "lblodlg:Bestuursfunctie")
   :has-one `((bestuursfunctie-code :via ,(s-prefix "org:role")
-                                   :as "rol")
-             (contact-punt :via ,(s-prefix "schema:contactPoint")
-                           :as "contactinfo"))
+                                   :as "rol"))
   :has-many `((bestuursorgaan :via ,(s-prefix "lblodlg:heeftBestuursfunctie")
                               :inverse t
                               :as "bevat-in"))
