@@ -310,13 +310,6 @@ defmodule Dispatcher do
     forward conn, path, "http://cache/functionarissen/"
   end
 
-  match "/contact-punten/*path" do
-    forward conn, path, "http://cache/contact-punten/"
-  end
-
-  match "/adressen/*path" do
-    forward conn, path, "http://cache/adressen/"
-  end
 
   match "/functionaris-status-codes/*path" do
     forward conn, path, "http://cache/functionaris-status-codes/"
