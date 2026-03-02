@@ -2,6 +2,10 @@ export default [
   {
     match: {
       subject: {},
+      graph: {
+        value: /^(?!http:\/\/mu\.semte\.ch\/graphs\/awv\/ldes).*$/,
+        type: "uri",
+      },
     },
     callback: {
       url: "http://resource/.mu/delta",
