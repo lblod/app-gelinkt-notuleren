@@ -243,68 +243,6 @@
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; MOBILITY MODELS ;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(define-resource verkeersbordcombinatie ()
-  :class (s-prefix "lblodmow:Verkeersbordcombinatie")
-  :properties `((:identifier :string ,(s-prefix "dct:identifier"))) ; identifier from irg
-  :has-many `((maatregelconcept :via ,(s-prefix "dct:hasPart")
-                                 :as "maatregelconcepten"))
-  :resource-base (s-url "http://data.lblod.info/verkeersbordcombinaties/")
-  :on-path "verkeersbordcombinaties"
-)
-
-(define-resource maatregelconcept ()
-  :class (s-prefix "lblodmow:MaatregelConcept")
-  :properties `((:beschrijving :string ,(s-prefix "dct:description")))
-  :has-one `((verkeersbordcombinatie :via ,(s-prefix "dct:hasPart")
-                                     :inverse t
-                                     :as "combinaties")
-             (verkeersbordconcept :via ,(s-prefix "lblodmow:verkeersbordconcept")
-                                  :as "verkeersbordconcept"))
-  :resource-base (s-url "http://data.lblod.info/maatregelconcepten/")
-  :on-path "maatregelconcepten"
-)
-
-(define-resource verkeersbordconcept ()
-  :class (s-prefix "mobiliteit:Verkeersbordconcept")
-  :properties `((:afbeelding :url ,(s-prefix "mobiliteit:grafischeWeergave"))
-                (:betekenis :string ,(s-prefix "skos:scopeNote"))
-                (:verkeersbordcode :string ,(s-prefix "skos:prefLabel"))
-                )
-  :has-one `((verkeersbordconcept-status-code :via ,(s-url "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status")
-                                         :as "status"))
-  :has-many `((verkeersbordcategorie :via ,(s-prefix "org:classification")
-                                      :as "categorie")
-              (maatregelconcept :via ,(s-prefix "lblodmow:verkeersbordconcept")
-                                      :inverse t
-                                      :as "maatregelconcepten"))
-  :resource-base (s-url "http://data.lblod.info/verkeersbordconcepten/")
-  :on-path "verkeersbordconcepten"
-)
-
-(define-resource verkeersbordcategorie ()
-  :class (s-prefix "mobiliteit:Verkeersbordcategorie")
-  :properties `((:label :string ,(s-prefix "skos:prefLabel")))
-  :has-many `((verkeersbordconcept :via ,(s-prefix "org:classification")
-                                   :inverse t
-                                   :as "verkeersbordconcepten"))
-  :resource-base (s-url "http://data.lblod.info/verkeersbordcategorieen/")
-  :on-path "verkeersbordcategorieen"
-)
-
-(define-resource verkeersbordconcept-status-code ()
-  :class (s-prefix "lblodmow:VerkeersbordconceptStatusCode")
-  :properties `((:label :string ,(s-prefix "skos:prefLabel")))
-  :has-many `((verkeersbordconcept :via ,(s-url "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status")
-                                   :inverse t
-                                   :as "verkeersbordconcepten"))
-  :resource-base (s-url "http://data.lblod.info/verkeersbordconcept-status-codes/")
-  :on-path "verkeersbordconcept-status-codes"
-)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ZITTING/MEETING MODELS ;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -728,9 +666,7 @@
                              :as "provincie")
              (bestuurseenheid-classificatie-code :via ,(s-prefix "besluit:classificatie")
                                                  :as "classificatie"))
-  :has-many `((contact-punt :via ,(s-prefix "schema:contactPoint")
-                            :as "contactinfo")
-              (bestuursorgaan :via ,(s-prefix "besluit:bestuurt")
+  :has-many `((bestuursorgaan :via ,(s-prefix "besluit:bestuurt")
                               :inverse t
                               :as "bestuursorganen"))
   :resource-base (s-url "http://data.lblod.info/id/bestuurseenheden/")
@@ -821,9 +757,7 @@
 (define-resource bestuursfunctie ()
   :class (s-prefix "lblodlg:Bestuursfunctie")
   :has-one `((bestuursfunctie-code :via ,(s-prefix "org:role")
-                                   :as "rol")
-             (contact-punt :via ,(s-prefix "schema:contactPoint")
-                           :as "contactinfo"))
+                                   :as "rol"))
   :has-many `((bestuursorgaan :via ,(s-prefix "lblodlg:heeftBestuursfunctie")
                               :inverse t
                               :as "bevat-in"))
@@ -1048,70 +982,6 @@
   :on-path "verkiezingsresultaat-gevolg-codes"
 )
 
-;;TODO: is this model still in use/relevant?
-(define-resource rol ()
-  :class (s-prefix "org:Role")
-  :properties `((:label :string ,(s-prefix "skos:prefLabel")))
-  :resource-base (s-url "http://data.lblod.info/id/concept/functionarisRol/")
-  :features '(include-uri)
-  :on-path "rollen"
-)
-
-;;TODO: is this model still in use/relevant?
-(define-resource positie ()
-  :class (s-prefix "org:Post")
-  :has-one `((contact-punt :via ,(s-prefix "schema:contactPoint")
-                           :as "contactinfo")
-             (rol :via ,(s-prefix "org:role")
-                  :as "rol")
-             (bestuurseenheid :via ,(s-prefix "org:hasPost")
-                            :inverse t
-                            :as "is-positie-in"))
-  :resource-base (s-url "http://data.lblod.info/id/positie/")
-  :features '(include-uri)
-  :on-path "posities"
-)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; CONTACT MODELS ;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(define-resource contact-punt ()
-  :class (s-prefix "schema:ContactPoint")
-  :properties `((:aanschrijfprefix :language-string-set ,(s-prefix "vcard:honorific-prefix"))
-                (:email :string ,(s-prefix "schema:email"))
-                (:fax :string ,(s-prefix "schema:faxNumber"))
-                (:naam :string ,(s-prefix "foaf:name"))
-                (:website :url ,(s-prefix "foaf:page"))
-                (:telefoon :string ,(s-prefix "schema:telephone")))
-  :has-one `((adres :via ,(s-prefix "locn:address")
-                    :as "adres"))
-  :features '(include-uri)
-  :resource-base (s-url "http://data.lblod.info/id/contact-punten/")
-  :on-path "contact-punten"
-)
-
-;; !! This resource has no `mu:uuid` defined in production (source is from ldb export)
-;; and might not work as expected !!
-(define-resource adres ()
-  :class (s-prefix "locn:Address")
-  :properties `((:busnummer :string ,(s-prefix "adres:Adresvoorstelling.busnummer"))
-                (:huisnummer :string ,(s-prefix "adres:AdresVoorstelling.huisnummer"))
-                (:straatnaam :string ,(s-prefix "locn:thoroughfare"))
-                (:postcode :string ,(s-prefix "locn:postCode"))
-                (:gemeentenaam :string ,(s-prefix "adres:gemeentenaam"))
-                (:land :language-string-set ,(s-prefix "adres:land"))
-                (:locatieaanduiding :string ,(s-prefix "locn:locatorDesignator"))
-                (:locatienaam :language-string-set ,(s-prefix "locn:locatorName"))
-                (:postbus :string ,(s-prefix "locn:poBox"))
-                (:postnaam :string ,(s-prefix "locn:postName"))
-                (:volledig-adres :string ,(s-prefix "locn:fullAddress"))
-                (:adres-register-id :number ,(s-prefix "lblodlg:adresRegisterId"))
-                (:adres-register-uri :url ,(s-prefix "adres:verwijstNaar")))
-  :features '(include-uri)
-  :resource-base (s-url "http://data.lblod.info/id/adressen/")
-  :on-path "adressen"
-)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; PERSON-RELATED DATA MODELS ;;;;;;;;;;;;;
