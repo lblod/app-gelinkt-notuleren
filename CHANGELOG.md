@@ -1,5 +1,17 @@
 # app-gelinkt-notuleren
 
+## 5.69.0
+
+### Minor Changes
+
+- [`8a72bc1f`](https://github.com/lblod/app-gelinkt-notuleren/commit/8a72bc1f2b9004447214cd019b7b04fd53e1a130) Thanks [@abeforgit](https://github.com/abeforgit)! - Bump frontend to [v5.74.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.74.0)
+
+### Patch Changes
+
+- [#270](https://github.com/lblod/app-gelinkt-notuleren/pull/270) [`57f6727a`](https://github.com/lblod/app-gelinkt-notuleren/commit/57f6727ad6fafa0259c1b540b6ea5c47c3d10f57) Thanks [@abeforgit](https://github.com/abeforgit)! - Remove unused resource and dispatcher configs
+
+- [#269](https://github.com/lblod/app-gelinkt-notuleren/pull/269) [`6278842b`](https://github.com/lblod/app-gelinkt-notuleren/commit/6278842bedebaff1bae1d4d85b603b620644622c) Thanks [@kobemertens](https://github.com/kobemertens)! - dont send ldes delta's to mu-cl-resource by using negative lookahead regex
+
 ## 5.68.0
 
 ### Minor Changes
