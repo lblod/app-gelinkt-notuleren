@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.68.1
+
+### Patch Changes
+
+- [`32c3c231`](https://github.com/lblod/app-gelinkt-notuleren/commit/32c3c2311f53f621288854675cd09ddd52127660) Thanks [@abeforgit](https://github.com/abeforgit)! - Add clean group to default authgroups header
+
 ## 5.68.0
 
 ### Minor Changes
