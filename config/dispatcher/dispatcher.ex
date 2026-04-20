@@ -1,6 +1,8 @@
 defmodule Dispatcher do
   use Matcher
-  define_accept_types []
+  define_accept_types [
+    any:  [ "*/*" ]
+  ]
 
   # In order to forward the 'themes' resource to the
   # resource service, use the following forward rule.
@@ -368,6 +370,17 @@ defmodule Dispatcher do
   #######################################################################
   # SPARQL                                                              #
   #######################################################################
+  #
+  options "/rb-sparql/*path", _ do
+     conn
+     |> Plug.Conn.put_resp_header( "access-control-allow-headers", "content-type,accept" )
+     |> Plug.Conn.put_resp_header( "access-control-allow-methods", "*" )
+     |> send_resp( 200, "{ \"message\": \"ok\" }" )
+   end
+
+  match "/rb-sparql/*path" do
+    forward conn, path, "http://rb-vendor-proxy/"
+  end
 
   match "/sparql" do
     forward conn, [], "http://sparql-cache/sparql"
@@ -376,6 +389,7 @@ defmodule Dispatcher do
   match "/raw-sparql" do
     forward conn, [], "http://database:8890/sparql"
   end
+
 
   
 
@@ -394,6 +408,7 @@ defmodule Dispatcher do
   match "/@appuniversum/*path" do
     Proxy.forward conn, path, "http://editor/@appuniversum/"
   end
+
 
   match "/*_path" do
     Proxy.forward conn, [], "http://editor/index.html"

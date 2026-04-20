@@ -266,3 +266,5 @@ services:
     environment:
       MOW_ENDPOINT: 'https://roadsigns.lblod.info/sparql'
       ALLOW_MU_AUTH_SUDO: true
+  rb-vendor-proxy:
+    image: lblod/vendor-proxy-service
