@@ -1,5 +1,13 @@
 # app-gelinkt-notuleren
 
+## 5.69.1
+
+### Patch Changes
+
+- [`a16ec5b2`](https://github.com/lblod/app-gelinkt-notuleren/commit/a16ec5b2401d9ec0beb4d8cba00053becd1d0877) Thanks [@abeforgit](https://github.com/abeforgit)! - Bump vks-design service to [0.3.1](https://github.com/lblod/vks-design-service/releases/tag/v0.3.1)
+
+- [`32c3c231`](https://github.com/lblod/app-gelinkt-notuleren/commit/32c3c2311f53f621288854675cd09ddd52127660) Thanks [@abeforgit](https://github.com/abeforgit)! - Add clean group to default authgroups header
+
 ## 5.69.0
 
 ### Minor Changes
