@@ -24,7 +24,8 @@ services:
     labels:
       - "logging=true"
     environment:
-      DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: '[{"variables":[],"name":"public"}, {"variables":[],"name":"lmb-public"}]'
+      # It is INCREDIBLY important that the "clean" group is part of this config, DO NOT ADJUST unless you know EXACTLY what you're doing
+      DEFAULT_MU_AUTH_ALLOWED_GROUPS_HEADER: '[{"variables":[],"name":"clean"}, {"variables":[],"name":"public"}, {"variables":[],"name":"lmb-public"}]'
       DEFAULT_ACCESS_CONTROL_ALLOW_ORIGIN_HEADER: "*"
       SESSION_COOKIE_SECURE: "on"
       SESSION_COOKIE_SAME_SITE: "None"
