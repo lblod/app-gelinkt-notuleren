@@ -1,5 +1,13 @@
 # app-gelinkt-notuleren
 
+## 5.71.0
+
+### Minor Changes
+
+- [`7bd813b8`](https://github.com/lblod/app-gelinkt-notuleren/commit/7bd813b8eceffa8af2b93d61918c6b99adaf0650) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [v5.76.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.76.0)
+
+- [`537ac803`](https://github.com/lblod/app-gelinkt-notuleren/commit/537ac803b8e2b7313cf452f86d0283d878d079ac) Thanks [@abeforgit](https://github.com/abeforgit)! - Bump vks to [0.4.0](https://github.com/lblod/vks-design-service/releases/tag/v0.4.0)
+
 ## 5.70.0
 
 ### Minor Changes
