@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.68.2
+
+### Patch Changes
+
+- [`2a46d92b`](https://github.com/lblod/app-gelinkt-notuleren/commit/2a46d92b84ff14c58e78df335445d6eb5cd6860e) Thanks [@abeforgit](https://github.com/abeforgit)! - bump virtuoso to 1.2.2
+
 ## 5.68.1
 
 ### Patch Changes
