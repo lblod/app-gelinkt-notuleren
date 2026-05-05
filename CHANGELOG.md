@@ -40,6 +40,18 @@
 
 - [#269](https://github.com/lblod/app-gelinkt-notuleren/pull/269) [`6278842b`](https://github.com/lblod/app-gelinkt-notuleren/commit/6278842bedebaff1bae1d4d85b603b620644622c) Thanks [@kobemertens](https://github.com/kobemertens)! - dont send ldes delta's to mu-cl-resource by using negative lookahead regex
 
+## 5.68.2
+
+### Patch Changes
+
+- [`2a46d92b`](https://github.com/lblod/app-gelinkt-notuleren/commit/2a46d92b84ff14c58e78df335445d6eb5cd6860e) Thanks [@abeforgit](https://github.com/abeforgit)! - bump virtuoso to 1.2.2
+
+## 5.68.1
+
+### Patch Changes
+
+- [`32c3c231`](https://github.com/lblod/app-gelinkt-notuleren/commit/32c3c2311f53f621288854675cd09ddd52127660) Thanks [@abeforgit](https://github.com/abeforgit)! - Add clean group to default authgroups header
+
 ## 5.68.0
 
 ### Minor Changes
