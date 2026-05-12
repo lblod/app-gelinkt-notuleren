@@ -400,7 +400,7 @@ defmodule Dispatcher do
   end
 
   match "/raw-sparql" do
-    forward conn, [], "http://database:8890/sparql"
+    forward conn, [], "http://sparql-wrapper/sparql"
   end
 
   
