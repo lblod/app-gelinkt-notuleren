@@ -239,7 +239,8 @@ services:
   sparql-cache:
     image: redpencil/varnish-post:1.0.0
     environment:
-      BACKEND_HOST: database
+      BACKEND_HOST: sparql-wrapper
+      BACKEND_PORT: 80
     restart: always
     logging: *default-logging
     labels:
@@ -267,3 +268,11 @@ services:
     environment:
       MOW_ENDPOINT: 'https://roadsigns.lblod.info/sparql'
       ALLOW_MU_AUTH_SUDO: true
+
+  sparql-wrapper:
+    image: lblod/sparql-authorization-wrapper-service:1.1.1
+    volumes:
+      - ./config/sparql-wrapper:/config
+    environment:
+      LOG_SPARQL_ALL: "false"
+      ALLOW_MU_AUTH_SUDO: "true"
