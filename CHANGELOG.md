@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.68.3
+
+### Patch Changes
+
+- [`724c90bc`](https://github.com/lblod/app-gelinkt-notuleren/commit/724c90bc4cea1bc4daedbb1ed3e3bde03f23835f) Thanks [@abeforgit](https://github.com/abeforgit)! - Put sparql endpoint behind auth wrapper
+
 ## 5.68.2
 
 ### Patch Changes
