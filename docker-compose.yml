@@ -102,7 +102,7 @@ services:
     labels:
       - "logging=true"
   cache:
-    image: semtech/mu-cache:2.1.0
+    image: semtech/mu-cache:2.0.2
     links:
       - resource:backend
     restart: always
