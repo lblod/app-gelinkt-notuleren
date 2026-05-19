@@ -192,7 +192,7 @@ services:
       SESSION_COOKIE_SECURE: "on"
       SESSION_COOKIE_SAME_SITE: "None"
   dashboard-dispatcher:
-    image: semtech/mu-dispatcher:2.1.0-beta.1
+    image: semtech/mu-dispatcher:2.1.1
     volumes:
       - ./config/dashboard-dispatcher:/config
     restart: always
