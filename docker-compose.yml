@@ -80,7 +80,7 @@ services:
     labels:
       - "logging=true"
   login:
-    image: lblod/acmidm-login-service:0.8.0
+    image: lblod/acmidm-login-service:0.12.1.rc-2
     environment:
       MU_APPLICATION_AUTH_DISCOVERY_URL: "https://authenticatie-ti.vlaanderen.be/op"
       MU_APPLICATION_AUTH_CLIENT_ID: "68b1585d-0e13-4817-820e-c475207673ed"
