@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.72.1
+
+### Patch Changes
+
+- [`63b28d1`](https://github.com/lblod/app-gelinkt-notuleren/commit/63b28d1f00fd5cee0d24a3a578ce822564fd2c11) Thanks [@abeforgit](https://github.com/abeforgit)! - bump vks to [v0.4.1](https://github.com/lblod/vks-design-service/releases/tag/v0.4.1)
+
 ## 5.72.0
 
 ### Minor Changes
