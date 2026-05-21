@@ -1,5 +1,27 @@
 # app-gelinkt-notuleren
 
+## 5.72.0
+
+### Minor Changes
+
+- [`6c63aec`](https://github.com/lblod/app-gelinkt-notuleren/commit/6c63aec40e3b7e9221b174d4d5e2bb3ed91e4fa1) Thanks [@abeforgit](https://github.com/abeforgit)! - Bump frontend to [v5.77.1](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.77.1)
+
+- [#271](https://github.com/lblod/app-gelinkt-notuleren/pull/271) [`f002c53`](https://github.com/lblod/app-gelinkt-notuleren/commit/f002c53de124c91149680123d6c0d7b1f0dcf0bc) Thanks [@nvdk](https://github.com/nvdk)! - Put sparql endpoint behind auth wrapper
+
+- [`35fc98e`](https://github.com/lblod/app-gelinkt-notuleren/commit/35fc98eb9f86cc25923c7d4e0681d4dae275623d) Thanks [@abeforgit](https://github.com/abeforgit)! - Bump service dependencies
+
+  identifier: https://github.com/mu-semtech/mu-identifier/releases/tag/v1.11.0
+  dispatcher: https://github.com/mu-semtech/mu-dispatcher/releases/tag/v2.1.1
+  virtuoso: https://github.com/redpencilio/docker-virtuoso/releases/tag/v1.3.1
+  migrations: https://github.com/mu-semtech/mu-migrations-service/releases/tag/v0.9.0
+  login: https://github.com/lblod/acmidm-login-service/releases/tag/v0.12.1.rc-2
+  file: https://github.com/mu-semtech/file-service/releases/tag/v3.5.0
+  report-generation: https://github.com/lblod/loket-report-generation-service/releases/tag/v0.8.6-beta-7
+
+### Patch Changes
+
+- [`3108731`](https://github.com/lblod/app-gelinkt-notuleren/commit/3108731383bbaeea527d07676d6e823c3a2b4eb5) Thanks [@abeforgit](https://github.com/abeforgit)! - Switch to pnpm
+
 ## 5.71.1
 
 ### Patch Changes
@@ -451,6 +473,7 @@
 ### Minor Changes
 
 - [#223](https://github.com/lblod/app-gelinkt-notuleren/pull/223) [`de8f4a9`](https://github.com/lblod/app-gelinkt-notuleren/commit/de8f4a97bd242219bbe68aca73e1850e796df22b) Thanks [@elpoelma](https://github.com/elpoelma)! - Addition of migrations which update the built-in standard templates:
+
   - Addition of dutch labels to RDFa blocks
   - Modernize usage of template URIs
 
