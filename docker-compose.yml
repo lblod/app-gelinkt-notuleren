@@ -264,7 +264,7 @@ services:
       - "logging=true"
 
   vks-design-service:
-    image: lblod/vks-design-service:0.4.0
+    image: lblod/vks-design-service:0.4.1
     environment:
       MOW_ENDPOINT: 'https://roadsigns.lblod.info/sparql'
       ALLOW_MU_AUTH_SUDO: true
