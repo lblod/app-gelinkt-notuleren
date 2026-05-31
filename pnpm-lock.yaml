@@ -9,6 +9,12 @@ catalogs:
     '@changesets/changelog-github':
       specifier: ^0.7.0
       version: 0.7.0
+    '@changesets/cli':
+      specifier: ^2.26.2
+      version: 2.31.0
+    changesets-release-it-plugin:
+      specifier: ^0.2.0
+      version: 0.2.0
     release-it:
       specifier: ^20.0.1
       version: 20.0.1
@@ -21,10 +27,10 @@ importers:
         specifier: 'catalog:'
         version: 0.7.0
       '@changesets/cli':
-        specifier: ^2.26.2
+        specifier: 'catalog:'
         version: 2.31.0
       changesets-release-it-plugin:
-        specifier: ^0.2.0
+        specifier: 'catalog:'
         version: 0.2.0(@changesets/cli@2.31.0)(release-it@20.0.1)
       release-it:
         specifier: 'catalog:'
