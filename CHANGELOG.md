@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 5.73.1
+
+### Patch Changes
+
+- [`426ba80`](https://github.com/lblod/app-gelinkt-notuleren/commit/426ba80608af383dde933b51656d39db53d25006) Thanks [@abeforgit](https://github.com/abeforgit)! - bump to resources bugfix branch
+
 ## 5.73.0
 
 ### Minor Changes
