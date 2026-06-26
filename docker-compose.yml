@@ -18,7 +18,7 @@ services:
     labels:
       - "logging=true"
   identifier:
-    image: semtech/mu-identifier:1.11.0
+    image: semtech/mu-identifier:feature-version-upgrades-and-logging
     restart: always
     logging: *default-logging
     labels:
@@ -38,7 +38,7 @@ services:
     labels:
       - "logging=true"
   dispatcher:
-    image: semtech/mu-dispatcher:2.1.1
+    image: semtech/mu-dispatcher:feature-big-chunks
     volumes:
       - ./config/dispatcher:/config
     restart: always
@@ -113,6 +113,7 @@ services:
       - ./config/resources:/config
     environment:
       CACHE_CLEAR_PATH: "http://cache/.mu/clear-keys"
+      LISP_DYNAMIC_SPACE_SIZE: 2048
     restart: always
     logging:
       driver: "json-file"

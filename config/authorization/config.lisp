@@ -323,8 +323,3 @@
 (grant (write)
        :to-graph error-log-graph
        :for-allowed-group "public")
-
-(in-package :support)
-;; setting the string-max-size to nil assures us that strings will never be converted to files
-(defparameter *string-max-size* nil
-  "Maximum size of a string before it gets converted.")
