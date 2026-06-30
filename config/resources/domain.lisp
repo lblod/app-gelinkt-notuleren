@@ -517,7 +517,7 @@
 (define-resource versioned-behandeling ()
   :class (s-prefix "ext:VersionedBehandeling")
   :properties `((:state :string ,(s-prefix "ext:stateString"))
-                ; Can be too long for sparql-parser
+                ; Can be converted to a file
                 (:content :string ,(s-prefix "ext:content"))
                 (:deleted :boolean ,(s-prefix "ext:deleted")))
   :has-many `((signed-resource :via ,(s-prefix "ext:signsBehandeling")
@@ -539,7 +539,7 @@
 (define-resource versioned-besluiten-lijst ()
   :class (s-prefix "ext:VersionedBesluitenLijst")
   :properties `((:state :string ,(s-prefix "ext:stateString"))
-                ; Can be too long for sparql-parser
+                ; Can be converted to a file
                 (:content :string ,(s-prefix "ext:content"))
                 (:deleted :boolean ,(s-prefix "ext:deleted")))
   :has-many `((signed-resource :via ,(s-prefix "ext:signsBesluitenlijst")
