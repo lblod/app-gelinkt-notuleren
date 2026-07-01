@@ -18,7 +18,7 @@ services:
     labels:
       - "logging=true"
   identifier:
-    image: semtech/mu-identifier:1.11.0
+    image: semtech/mu-identifier:feature-version-upgrades-and-logging
     restart: always
     logging: *default-logging
     labels:
@@ -38,7 +38,7 @@ services:
     labels:
       - "logging=true"
   dispatcher:
-    image: semtech/mu-dispatcher:2.1.1
+    image: semtech/mu-dispatcher:feature-big-chunks
     volumes:
       - ./config/dispatcher:/config
     restart: always
@@ -46,18 +46,16 @@ services:
     labels:
       - "logging=true"
   database:
-    image: semtech/mu-authorization:0.6.0-beta.8
-    environment:
-      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
-      DATABASE_COMPATIBILITY: Virtuoso
+    image: semtech/sparql-parser:0.0.15
     volumes:
       - ./config/authorization:/config
+      - ./data/mu-auth:/data
     restart: always
     logging: *default-logging
     labels:
       - "logging=true"
-  virtuoso:
-    image: redpencil/virtuoso:1.3.1
+  triplestore:
+    image: redpencil/virtuoso:1.2.0-rc.1
     environment:
       SPARQL_UPDATE: "true"
       DEFAULT_GRAPH: "http://mu.semte.ch/application"
@@ -70,7 +68,7 @@ services:
   migrations:
     image: semtech/mu-migrations-service:0.9.0
     links:
-      - virtuoso:database
+      - triplestore:database
     volumes:
       - ./config/migrations:/data/migrations
     environment:
@@ -115,6 +113,7 @@ services:
       - ./config/resources:/config
     environment:
       CACHE_CLEAR_PATH: "http://cache/.mu/clear-keys"
+      LISP_DYNAMIC_SPACE_SIZE: 2048
     restart: always
     logging:
       driver: "json-file"
@@ -139,8 +138,6 @@ services:
     logging: *default-logging
     labels:
       - "logging=true"
-    links:
-      - database:database
     volumes:
       - ./data/files/:/share/
   published-resource-producer:
@@ -201,8 +198,6 @@ services:
       - "logging=true"
   dashboard-login:
     image: semtech/mu-login-service:2.9.1
-    links:
-      - database:database
     environment:
       USERS_GRAPH: "http://mu.semte.ch/graphs/users"
       SESSIONS_GRAPH: "http://mu.semte.ch/graphs/sessions"
@@ -225,8 +220,6 @@ services:
       - "logging=true"
   lpdc-service:
     image: lblod/api-proxy-service:1.0.1
-    links:
-      - database:database
     environment:
       API_URL: "https://api.ipdc.vlaanderen.be"
       API_KEY: "VERY_SECRET_KEY_REPLACE_ME"
@@ -256,7 +249,7 @@ services:
       DELAY: 1000
       CRON_PATTERN: "*/1 * * * *"
       CRON_RETRIES: 5
-      DIRECT_DATABASE_CONNECTION: "http://virtuoso:8890/sparql"
+      DIRECT_DATABASE_CONNECTION: "http://triplestore:8890/sparql"
       RANDOMIZE_GRAPHS: "true"
       BATCH_SIZE: 100
     logging: *default-logging
