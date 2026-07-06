@@ -113,6 +113,7 @@ services:
       - ./config/resources:/config
     environment:
       CACHE_CLEAR_PATH: "http://cache/.mu/clear-keys"
+      # Increased the dynamic space size to handle big queries
       LISP_DYNAMIC_SPACE_SIZE: 2048
     restart: always
     logging:
