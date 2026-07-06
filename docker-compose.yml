@@ -250,6 +250,7 @@ services:
       CRON_PATTERN: "*/1 * * * *"
       CRON_RETRIES: 5
       DIRECT_DATABASE_CONNECTION: "http://triplestore:8890/sparql"
+      GRAPH_STORE_URL: "http://triplestore:8890/sparql-graph-crud"
       RANDOMIZE_GRAPHS: "true"
       BATCH_SIZE: 100
     logging: *default-logging
