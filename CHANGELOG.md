@@ -1,5 +1,11 @@
 # app-gelinkt-notuleren
 
+## 6.0.1
+
+### Patch Changes
+
+- [`db5525b`](https://github.com/lblod/app-gelinkt-notuleren/commit/db5525be3fb55c5fbfe650781b5a4de75c2b07da) Thanks [@piemonkey](https://github.com/piemonkey)! - Update vks-design-service to [v0.5.0](https://github.com/lblod/vks-design-service/releases/tag/v0.5.0)
+
 ## 6.0.0
 
 ### Major Changes
