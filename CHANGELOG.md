@@ -1,5 +1,19 @@
 # app-gelinkt-notuleren
 
+## 6.0.0
+
+### Major Changes
+
+- [#246](https://github.com/lblod/app-gelinkt-notuleren/pull/246) [`482d495`](https://github.com/lblod/app-gelinkt-notuleren/commit/482d4952324a336e55334b5adc124e4caf783996) Thanks [@piemonkey](https://github.com/piemonkey)! - Move from mu-authorization as an auth layer, to sparql-parser
+
+### Minor Changes
+
+- [#246](https://github.com/lblod/app-gelinkt-notuleren/pull/246) [`48c84a6`](https://github.com/lblod/app-gelinkt-notuleren/commit/48c84a6a4195ff073030a50b66b4edd44d117e39) Thanks [@piemonkey](https://github.com/piemonkey)! - Rename 'virtuoso' container to 'triplestore' to match mu-semtech naming convention
+
+### Patch Changes
+
+- [`9344b49`](https://github.com/lblod/app-gelinkt-notuleren/commit/9344b49faf029af00bb64a7e2f314eb41e159d41) Thanks [@piemonkey](https://github.com/piemonkey)! - Update vks-design-service to [v0.4.2](https://github.com/lblod/vks-design-service/releases/tag/v0.4.2)
+
 ## 5.75.1
 
 ### Patch Changes
