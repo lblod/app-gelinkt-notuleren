@@ -18,6 +18,7 @@ services:
     labels:
       - "logging=true"
   identifier:
+    # Higher version than 1.11.0 waiting for a release
     image: semtech/mu-identifier:feature-version-upgrades-and-logging
     restart: always
     logging: *default-logging
@@ -38,6 +39,7 @@ services:
     labels:
       - "logging=true"
   dispatcher:
+    # Higher version than 2.1.1 waiting for a release
     image: semtech/mu-dispatcher:feature-big-chunks
     volumes:
       - ./config/dispatcher:/config

@@ -254,9 +254,7 @@
                 (:gestart-op-tijdstip :datetime ,(s-prefix "prov:startedAtTime"))
                 (:geeindigd-op-tijdstip :datetime ,(s-prefix "prov:endedAtTime"))
                 (:op-locatie :string ,(s-prefix "prov:atLocation"))
-                ; 2 instances converted to a file
                 (:intro :string ,(s-prefix "notulen:intro"))
-                ; 2 instances converted to a file
                 (:outro :string ,(s-prefix "notulen:outro")))
 
   :has-many `((mandataris :via ,(s-prefix "besluit:heeftAanwezigeBijStart")
@@ -286,7 +284,6 @@
 
 (define-resource agendapunt ()
   :class (s-prefix "besluit:Agendapunt")
-                ; 1 instance converted to a file
   :properties `((:beschrijving :string ,(s-prefix "dct:description"))
                 (:gepland-openbaar :boolean ,(s-prefix "besluit:geplandOpenbaar"))
                 (:heeft-ontwerpbesluit :url ,(s-prefix "besluit:heeftOntwerpbesluit"))
@@ -464,7 +461,6 @@
 
 (define-resource signed-resource ()
   :class (s-prefix "sign:SignedResource")
-                ; Can be converted to a file
   :properties `((:content :string ,(s-prefix "sign:text"))
                 (:hash-value :string ,(s-prefix "sign:hashValue"))
                 (:created-on :datetime ,(s-prefix "dct:created"))
@@ -490,7 +486,6 @@
 
 (define-resource published-resource ()
   :class (s-prefix "sign:PublishedResource")
-                ; Can be converted to a file
   :properties `((:content :string ,(s-prefix "sign:text"))
                 (:hash-value :string ,(s-prefix "sign:hashValue"))
                 (:created-on :datetime ,(s-prefix "dct:created"))
@@ -517,7 +512,6 @@
 (define-resource versioned-behandeling ()
   :class (s-prefix "ext:VersionedBehandeling")
   :properties `((:state :string ,(s-prefix "ext:stateString"))
-                ; Can be converted to a file
                 (:content :string ,(s-prefix "ext:content"))
                 (:deleted :boolean ,(s-prefix "ext:deleted")))
   :has-many `((signed-resource :via ,(s-prefix "ext:signsBehandeling")
@@ -539,7 +533,6 @@
 (define-resource versioned-besluiten-lijst ()
   :class (s-prefix "ext:VersionedBesluitenLijst")
   :properties `((:state :string ,(s-prefix "ext:stateString"))
-                ; Can be converted to a file
                 (:content :string ,(s-prefix "ext:content"))
                 (:deleted :boolean ,(s-prefix "ext:deleted")))
   :has-many `((signed-resource :via ,(s-prefix "ext:signsBesluitenlijst")
@@ -561,9 +554,7 @@
 (define-resource versioned-notulen ()
   :class (s-prefix "ext:VersionedNotulen")
   :properties `((:state :string ,(s-prefix "ext:stateString"))
-                ; Can be converted to a file
                 (:content :string ,(s-prefix "ext:content"))
-                ; Could be converted to a file. There are no examples though
                 (:public-content :string ,(s-prefix "ext:publicContent"))
                 (:public-behandelingen :uri-set ,(s-prefix "ext:publicBehandeling"))
                 (:kind :string ,(s-prefix "ext:notulenKind"))
@@ -613,7 +604,6 @@
                 (:inhoud :string ,(s-prefix "prov:value"))
                 (:agenda-status :string ,(s-prefix "bv:agendaStatus"))
                 (:agenda-type :string ,(s-prefix "bv:agendaType"))
-                ; Can be converted to a file
                 (:rendered-content :string ,(s-prefix "ext:renderedContent"))
                 (:deleted :boolean ,(s-prefix "ext:deleted"))
                 )
