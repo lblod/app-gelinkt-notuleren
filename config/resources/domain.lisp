@@ -185,6 +185,7 @@
 (define-resource editor-document ()
   :class (s-prefix "ext:EditorDocument")
   :properties `((:title :string ,(s-prefix "dct:title"))
+                ; Will be converted to a file if needed
                 (:content :string ,(s-prefix "ext:editorDocumentContent"))
                 (:context :string ,(s-prefix "ext:editorDocumentContext"))
                 (:created-on :datetime ,(s-prefix "pav:createdOn"))
