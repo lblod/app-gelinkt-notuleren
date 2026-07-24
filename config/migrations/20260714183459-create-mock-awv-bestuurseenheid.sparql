@@ -1,0 +1,10 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    <http://data.lblod.info/id/bestuurseenheden/157d4d32-d283-4d07-b6e2-b9c6377401f3> 
+    a besluit:Bestuurseenheid ;
+      mu:uuid """157d4d32-d283-4d07-b6e2-b9c6377401f3"""
+  }
+}
