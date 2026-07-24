@@ -166,6 +166,24 @@
   ("ext:DocumentContainer" -> _) ; needed to update status on publishing decision/notulen
 )
 
+(define-graph agency-read-graph ("http://mu.semte.ch/graphs/agencies/")
+  ("nfo:FileDataObject" -> _)
+  ("ext:Attachment" -> _)
+  ("ext:EditorDocument" -> _)
+  ("besluit:Agendapunt" -> _)
+  ("ext:DocumentContainer" -> _)
+  ("task:Task" -> _)
+  ("oslc:Error" -> _)
+  ("person:Person" -> _)
+  ("persoon:Geboorte" -> _)
+  ("adms:Identifier" -> _)
+  ("ext:UserPreference" -> _)
+)
+
+(define-graph agency-write-graph ("http://mu.semte.ch/graphs/agencies/")
+  ("ext:UserPreference" -> _)
+)
+
 (define-graph org-sign-graph ("http://mu.semte.ch/graphs/organizations/")
   ("nfo:FileDataObject" -> _)
   ("besluitvorming:Agenda" -> _)
@@ -272,6 +290,18 @@
           }"
 )
 
+(supply-allowed-group "agency"
+  :parameters ("session_group")
+  :query "PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+          PREFIX session: <http://mu.semte.ch/vocabularies/session/>
+          PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+          SELECT DISTINCT * WHERE {
+            <SESSION_ID> 
+              ext:sessionGroup/mu:uuid ?session_group ;
+              session:account/ext:sessionRole \"GelinktNotuleren-agency\" .
+          }"
+)
+
 ; 'reader' group privileges
 (grant (read)
        :to-graph session-graph
@@ -323,3 +353,11 @@
 (grant (write)
        :to-graph error-log-graph
        :for-allowed-group "public")
+
+(grant (read)
+       :to-graph agency-read-graph
+       :for-allowed-group "agency")
+
+(grant (write)
+       :to-graph agency-write-graph
+       :for-allowed-group "agency")
