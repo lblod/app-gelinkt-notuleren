@@ -182,6 +182,10 @@
 
 (define-graph agency-write-graph ("http://mu.semte.ch/graphs/agencies/")
   ("ext:UserPreference" -> _)
+  ("ext:DocumentContainer" -> _)
+  ("ext:EditorDocument" -> _)
+  ("nfo:FileDataObject" -> _)
+  ("ext:Attachment" -> _)
 )
 
 (define-graph org-sign-graph ("http://mu.semte.ch/graphs/organizations/")
