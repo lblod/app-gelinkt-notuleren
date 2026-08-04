@@ -302,7 +302,7 @@
           SELECT DISTINCT * WHERE {
             <SESSION_ID> 
               ext:sessionGroup/mu:uuid ?session_group ;
-              session:account/ext:sessionRole \"GelinktNotuleren-agency\" .
+              session:account/ext:sessionRole \"GelinktNotuleren-documentbeheerder\" .
           }"
 )
 
