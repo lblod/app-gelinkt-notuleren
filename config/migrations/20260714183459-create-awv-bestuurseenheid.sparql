@@ -1,12 +1,14 @@
 PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
 PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX dct: <http://purl.org/dc/terms/>
 
 INSERT DATA {
   GRAPH <http://mu.semte.ch/graphs/public> {
-    <http://data.lblod.info/id/bestuurseenheden/157d4d32-d283-4d07-b6e2-b9c6377401f3> 
+    <http://data.lblod.info/id/bestuurseenheden/be07181d-1cc9-4537-9157-726547ce3c10> 
       a besluit:Bestuurseenheid ;
       besluit:classificatie <http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001> ;
       skos:prefLabel """Agentschap Wegen en Verkeer""" ;
-      mu:uuid """157d4d32-d283-4d07-b6e2-b9c6377401f3""" .
+      mu:uuid """be07181d-1cc9-4537-9157-726547ce3c10""" ;
+      dct:identifier "OVO000098" .
   }
 }
