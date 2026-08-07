@@ -166,7 +166,7 @@
   ("ext:DocumentContainer" -> _) ; needed to update status on publishing decision/notulen
 )
 
-(define-graph agency-read-graph ("http://mu.semte.ch/graphs/agencies/")
+(define-graph agency-read-graph ("http://mu.semte.ch/graphs/organizations/")
   ("nfo:FileDataObject" -> _)
   ("ext:Attachment" -> _)
   ("ext:EditorDocument" -> _)
@@ -180,7 +180,7 @@
   ("ext:UserPreference" -> _)
 )
 
-(define-graph agency-write-graph ("http://mu.semte.ch/graphs/agencies/")
+(define-graph agency-write-graph ("http://mu.semte.ch/graphs/organizations/")
   ("ext:UserPreference" -> _)
   ("ext:DocumentContainer" -> _)
   ("ext:EditorDocument" -> _)
