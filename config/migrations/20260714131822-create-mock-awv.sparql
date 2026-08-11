@@ -1,0 +1,35 @@
+PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX mu:<http://mu.semte.ch/vocabularies/core/>
+PREFIX ext:<http://mu.semte.ch/vocabularies/ext/>
+
+INSERT {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    ?persoon 
+      a foaf:Person;
+      mu:uuid ?uuidPersoon;
+      foaf:familyName "Agentschap Wegen en Verkeer";
+      foaf:member <http://data.lblod.info/id/bestuurseenheden/be07181d-1cc9-4537-9157-726547ce3c10> ;
+      foaf:account ?account.
+    
+    ?account 
+      a foaf:OnlineAccount;
+      mu:uuid ?uuidAccount;
+      foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>;
+      ext:sessionRole "IRGN-schrijver".
+  }
+  GRAPH <http://mu.semte.ch/graphs/organizations/be07181d-1cc9-4537-9157-726547ce3c10> {
+    ?account 
+      a foaf:OnlineAccount;
+      mu:uuid ?uuidAccount;
+      foaf:accountServiceHomepage <https://github.com/lblod/mock-login-service>;
+      ext:sessionRole "IRGN-schrijver".
+  }
+}
+WHERE {
+     BIND("""8b66fc19-50a0-4143-a9fa-be6a2c0df46c""" as ?uuidPersoon)
+     BIND("""a3cae72e-759c-485a-9f9f-9088ee54449d""" as ?uuidAccount)
+     BIND(IRI(CONCAT("http://data.lblod.info/id/persoon/", ?uuidPersoon)) AS ?persoon)
+     BIND(IRI(CONCAT("http://data.lblod.info/id/account/", ?uuidAccount)) AS ?account)
+}

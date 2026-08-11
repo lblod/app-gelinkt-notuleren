@@ -1,0 +1,8 @@
+steps:
+  changeset:
+    image: node:22
+    commands:
+      - git fetch origin master
+      - git diff -wb --name-only origin/master..HEAD | grep "\.changeset/.*\.md"
+when:
+  - evaluate: 'CI_PIPELINE_EVENT == "pull_request" && not (CI_COMMIT_PULL_REQUEST_LABELS contains "dependabot")'
