@@ -331,10 +331,10 @@ defmodule Dispatcher do
   # VKS
   ########
   get "/ar-designs/*path" do
-    forward conn, path, "http://vks-design-service/ar-designs/"
+    forward conn, path, "http://vendor-proxy/query-json/ar-designs/"
   end
   get "/measure-concepts/*path" do
-    forward conn, path, "http://vks-design-service/measure-concepts/"
+    forward conn, path, "http://vendor-proxy/query-json/measure-concepts/"
   end
 
   #########
