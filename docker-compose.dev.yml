@@ -64,3 +64,8 @@ services:
     restart: "no"
   ldes-client:
     restart: "no"
+  vendor-proxy:
+    restart: "no"
+    environment:
+      VENDOR_KEY: "test"
+      VENDOR_URI: "http://data.lblod.info/foaf/agent/id/caefd380-6f44-4907-950c-d68f3487a4a7"
