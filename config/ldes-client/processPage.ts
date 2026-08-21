@@ -6,7 +6,5 @@ export async function processPage() {
   switch (environment.getCurrentStreamConfig().name) {
     case "MDB":
       return processPageMDB();
-    case "AWV":
-      return processPageAWV();
   }
 }
