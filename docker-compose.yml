@@ -272,6 +272,7 @@ services:
     labels:
       - "logging=true"
   vks-vendor-proxy:
+    restart: always
     image: lblod/vendor-proxy-service:0.3.0
     environment:
       AUTH_GROUP: "org-write"
