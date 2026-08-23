@@ -1,5 +1,21 @@
 # app-gelinkt-notuleren
 
+## 6.1.0
+
+### Minor Changes
+
+- [`09f0729`](https://github.com/lblod/app-gelinkt-notuleren/commit/09f0729a337a0d18fd1cacbd7b6e08d4c12454de) Thanks [@abeforgit](https://github.com/abeforgit)! - Bump prepublish to [3.2.0](https://github.com/lblod/notulen-prepublish-service/releases/tag/v3.2.0)
+
+- [#275](https://github.com/lblod/app-gelinkt-notuleren/pull/275) [`032910d`](https://github.com/lblod/app-gelinkt-notuleren/commit/032910daa219212c772b524ce10fa6472398a8e9) Thanks [@lagartoverde](https://github.com/lagartoverde)! - Start using vks-ldes stack for AR-designs
+
+- [#273](https://github.com/lblod/app-gelinkt-notuleren/pull/273) [`df3bb80`](https://github.com/lblod/app-gelinkt-notuleren/commit/df3bb801ef469aab1566001974e0fe60429e677a) Thanks [@kobemertens](https://github.com/kobemertens)! - Add mock AWV adminUnit
+
+- [`09f0729`](https://github.com/lblod/app-gelinkt-notuleren/commit/09f0729a337a0d18fd1cacbd7b6e08d4c12454de) Thanks [@abeforgit](https://github.com/abeforgit)! - bump frontend to [v5.83.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.83.0)
+
+### Patch Changes
+
+- [#273](https://github.com/lblod/app-gelinkt-notuleren/pull/273) [`2ca7f21`](https://github.com/lblod/app-gelinkt-notuleren/commit/2ca7f21d7860f6fb36d26cf022c633f9b40706a9) Thanks [@kobemertens](https://github.com/kobemertens)! - Add changeset CI check
+
 ## 6.0.1
 
 ### Patch Changes
