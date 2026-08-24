@@ -60,11 +60,9 @@ services:
     restart: "no"
   sparql-cache:
     restart: "no"
-  vks-design-service:
-    restart: "no"
   ldes-client:
     restart: "no"
-  vendor-proxy:
+  vks-vendor-proxy:
     restart: "no"
     environment:
       VENDOR_KEY: "test"
