@@ -1,5 +1,13 @@
 # app-gelinkt-notuleren
 
+## 6.2.0
+
+### Minor Changes
+
+- [`6f78adf`](https://github.com/lblod/app-gelinkt-notuleren/commit/6f78adfa2ee3bb5633898521637f6ba962efbc55) Thanks [@abeforgit](https://github.com/abeforgit)! - Bump frontend to [v5.84.0](https://github.com/lblod/frontend-gelinkt-notuleren/releases/tag/v5.84.0)
+
+- [`6f78adf`](https://github.com/lblod/app-gelinkt-notuleren/commit/6f78adfa2ee3bb5633898521637f6ba962efbc55) Thanks [@abeforgit](https://github.com/abeforgit)! - Bump prepublisher to [v3.3.0](https://github.com/lblod/notulen-prepublish-service/releases/tag/v3.3.0)
+
 ## 6.1.1
 
 ### Patch Changes
