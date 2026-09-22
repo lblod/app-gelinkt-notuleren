@@ -197,7 +197,7 @@ def until_valid(question, options = nil, &block)
 end
 
 def client
-  @client ||= SPARQL::Client.new("http://virtuoso:8890/sparql")
+  @client ||= SPARQL::Client.new("http://triplestore:8890/sparql")
 end
 
 def fetch_unit_uris(name)

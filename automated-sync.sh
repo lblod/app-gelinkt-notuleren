@@ -57,7 +57,7 @@ while [ ! $? -eq 0 ]; do
 done
 
 echo "$(date) - migrations successful, making virtuoso checkpoints"
-docker compose exec -T virtuoso isql-v <<EOF
+docker compose exec -T triplestore isql-v <<EOF
     exec('checkpoint');
     DB.DBA.vacuum();
     exec('checkpoint');
