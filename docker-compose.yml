@@ -260,6 +260,16 @@ services:
     labels:
       - "logging=true"
 
+  vks-design-service:
+    restart: always
+    image: lblod/vks-design-service:0.5.0
+    environment:
+      MOW_ENDPOINT: 'https://roadsigns.lblod.info/sparql'
+      ALLOW_MU_AUTH_SUDO: true
+    logging: *default-logging
+    labels:
+      - "logging=true"
+
   sparql-wrapper:
     restart: always
     image: lblod/sparql-authorization-wrapper-service:1.1.1
@@ -268,14 +278,6 @@ services:
     environment:
       LOG_SPARQL_ALL: "false"
       ALLOW_MU_AUTH_SUDO: "true"
-    logging: *default-logging
-    labels:
-      - "logging=true"
-  vks-vendor-proxy:
-    restart: always
-    image: lblod/vendor-proxy-service:0.3.0
-    environment:
-      AUTH_GROUP: "org-write"
     logging: *default-logging
     labels:
       - "logging=true"
