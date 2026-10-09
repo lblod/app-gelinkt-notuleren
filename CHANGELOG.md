@@ -1,5 +1,13 @@
 # app-gelinkt-notuleren
 
+## 6.2.1
+
+### Patch Changes
+
+- [`bcc5bbe`](https://github.com/lblod/app-gelinkt-notuleren/commit/bcc5bbe3ecb8a9a05adae08c38799157b7378b26) Thanks [@lagartoverde](https://github.com/lagartoverde)! - Bump vendor-proxy-service to [0.3.1](https://github.com/lblod/vendor-proxy-service/releases/tag/v0.3.1)
+
+- [#276](https://github.com/lblod/app-gelinkt-notuleren/pull/276) [`36a760f`](https://github.com/lblod/app-gelinkt-notuleren/commit/36a760f0aa39b52544ce379b8571043907de37f2) Thanks [@lagartoverde](https://github.com/lagartoverde)! - Fix old migration and delete unneeded big ones
+
 ## 6.2.0
 
 ### Minor Changes
