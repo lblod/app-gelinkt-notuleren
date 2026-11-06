@@ -1,5 +1,3 @@
-GN Systems Overview
-
 # Systems Diagram
 
 Here is a quick graphical overview of the connections in the GN sphere of influence. This includes other apps than the app-gelinkt-notuleren
@@ -57,7 +55,7 @@ The GN editor uses this endpoint for creating citations (links) to existing regu
 
 A central location for exposing all public data of local decisions as linked open data, chiefly through a public SPARQL endpoint, but it also hosts a metis stack to make LBLOD URIs dereferenceable.
 
-The GN and Reglementaire Bijlagen editors use this public SPARQL endpoint to get an up to date list of concepts in the conceptscheme:BesluitType, limited by certain filters [https://github.com/lblod/ember-rdfa-editor-lblod-plugins/blob/master/addon/plugins/besluit-type-plugin/utils/fetchBesluitTypes.ts#L11]
+The GN and Reglementaire Bijlagen editors use this public SPARQL endpoint to get an up to date list of concepts in the conceptscheme:BesluitType, [limited by certain filters](https://github.com/lblod/ember-rdfa-editor-lblod-plugins/blob/master/addon/plugins/besluit-type-plugin/utils/fetchBesluitTypes.ts#L11)
 
 ## Reglementaire Bijlagen System
 
