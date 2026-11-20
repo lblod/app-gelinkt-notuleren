@@ -20,22 +20,6 @@ else
   rm $FILENAME
 fi
 
-# mdb sync no longer needed with ldes
-#echo "$(date) - generating MDB migrations"
-
-## generate MDB migrations
-#MDB="https://mandaten.lokaalbestuur.vlaanderen.be"
-#FILENAME=`curl -s "$MDB/exports?filter%5Bformat%5D=text%2Fturtle&page%5Bsize%5D=1&sort=-created" -H 'Accept: application/vnd.api+json'  -H 'Pragma: no-cache' -H 'Cache-Control: no-cache' | jq -r '.data[0].attributes.filename'`
-#
-#curl "$MDB/files/$FILENAME" -o $FILENAME
-#if [ $? -ne 0 ]; then    
-#    echo "download of MDB export failed, not generating migrations"
-#    exit -1
-#else
-#  /data/mu-cli/mu script project-scripts setup-data-sync-mdb $FILENAME
-#  rm $FILENAME
-#fi
-
 echo "$(date) - setting up maintenance frontend"
 
 # set up maintenance frontend

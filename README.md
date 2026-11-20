@@ -16,8 +16,7 @@ This repository harvest three setups.  The base of these setups resides in the s
   - publishes the included frontend on port 83, so you can visit the app at http://localhost:83/
   - publishes the database instance on port 8890 so you can easily see what content is stored in the base triplestore
   - provides a mock-login backend service so you don't need the ACM/IDM integration.
-  - provides some information on how to setup the ldes-client you can add to
-  your override
+  - disables the `ldes-client` service by default, to save resources and avoid unexpected deltas in you development setup
 * *docker-compose.demo.yml* Provides a setup for demo purposes.  It is similar to the dev setup, but publishes the frontend application directly:
   - publishes the frontend editor on port 80 so you can visit the app at http://localhost/
   - publishes the database instance on port 8890 so you can easily see what content is stored in the base triplestore
@@ -139,7 +138,7 @@ At some times you may want to clean the database and make sure it's in a pristin
 Make sure to wait for the migrations to run.
 
 ### Loading a backup to the database
-You might want to load a backup from a server as test data locally. First create backup like other stacks and put it in `data/db/backups`.  
+You might want to load a backup from a server as test data locally. First create backup like other stacks and put it in `data/db/backups`.
 Because the stack uses an old virtuoso version, loading a backup won't work by itself. Add the following configuration to your docker-compose file (`docker-compose.override.yml` would be a good place). The important part is overriding the image.
 ```
 services:
@@ -163,87 +162,50 @@ curl -XPOST -H 'Content-Type: application/json' -d '{"data":{"attributes": {"rep
 
 ```
 
-### External delta sync [EXPERIMENTAL]
+### External data sync
 
-*DISCLAIMER: this is not 100% bulletproof*
+Data from app-lokaal-mandatenbeheer (LMB) and leidinggevendendatabank (LDB) is
+synced into the triplestore.
 
-This feature allows syncing data from external applications, to be immediately reflected in the current application.
-It is considered an external feature at this point and requires a manual setup.
-The next steps assume you have never setup the sync before in this instance of the stack. Else you will need to run the re-import [TODO]
+#### Lokaal Mandatenbeheer
 
-#### Step 1: Sync producer stacks with Gelinkt Notuleren
+The LMB data is consumed from the LDES streams published by
+[app-lokaal-mandatenbeheer](https://github.com/lblod/app-lokaal-mandatenbeheer)
+by the `ldes-client` service in `docker-compose.yml`. Its stream configuration
+is in `config/ldes-client/config.ts`; the stream URL and credentials are passed
+through the `MDB_FIRST_PAGE`, `MDB_BASE` and `MDB_HEADERS` environment variables
+(for local development these are set in `docker-compose.override.yml`). The
+client stores the data in the
+`lmb-data-public` and `lmb-data-private` graphs, removes tombstoned resources
+and tracks the last update time per administrative unit.
 
-> **Prerequisites**:
-> This setup makes use of [mu-cli](https://github.com/mu-semtech/mu-cli), so make sure to install it first.
+The `MDB_HEADERS` are used to add the `authorization` header because GN uses the
+private (abb) stream from LMB that contains PII.
 
+#### Leidinggevendendatabank
 
-To ensure both the producer and consumer work correctly, the respecting stacks should both start from the same base-state. By performing the following steps we can achieve this.
+The LDB data is refreshed by `automated-sync.sh`, which is intended to run daily
+from cron. The script downloads the latest export, generates migrations using
+the `setup-data-sync-ldb` project script, restarts the migrations service and
+waits for the ingest to finish, then restarts the cache and resource services.
 
-1. Download a data-dump from the producing service you wish to sync up with:
-    - [Mandatendatabank (mdb)](https://mandaten.lokaalbestuur.vlaanderen.be)
-    - [Leidinggevendendatabank (ldb)](https://leidinggevenden.lokaalbestuur.vlaanderen.be)
-2. Place the data-dump file in the project root.
-3. Run the provided mu-script to set-up the migrations we need:
-   >  **Note:** if you want to learn more about mu-semtech migrations, consult [mu-migrations-service]( https://github.com/mu-semtech/mu-migrations-service)
+The script requires [mu-cli](https://github.com/mu-semtech/mu-cli) and the
+`project-scripts` container in the docker-compose (this is auto-stopped and
+only used for running such scripts):
 
-   ```console
-    foo@device:~project-root$ docker-compose up -d project-scripts # project-scripts container needs to be running
-    foo@device:~project-root$ mu script project-scripts setup-data-sync-[mdb|ldb] data-dump.ttl
-    ```
-   You should be able to see that the following files have been generated in `./config/migrations`:
-    - `<timestamp>-data-sync-[mdb|ldb]`
-        - `<timestamp>-export.graph`
-        - `<timestamp>-export.ttl` (should contain the data-export)
-        - `<timestamp>-ingest-exported-triples.sparql`
+```console
+./automated-sync.sh
+```
 
+To import a specific export manually, place it in the project root and run:
 
-4. Restart the migrations:
-    ```console
-    foo@device:~project-root$ docker-compose restart migrations
-    ```
-   Make sure the migrations ran successfully before continuing:
-   
-    ```console
-    foo@device:~project-root$ docker-compose logs -f migrations
+```console
+mu script project-scripts setup-data-sync-ldb data-dump.ttl
+docker compose restart migrations
+```
 
-    migrations_1          | /data/migrations/20200929102725-data-sync-with-mdb/20200929102725-mdb-export.ttl [DONE]
-    migrations_1          | /data/migrations/20200929102725-data-sync-with-mdb/20200929102726-ingest-mdb-triples.sparql [DONE]
-    migrations_1          |
-    migrations_1          | [2020-09-29 08:32:37] INFO  WEBrick 1.4.2
-    migrations_1          | [2020-09-29 08:32:37] INFO  ruby 2.5.1 (2018-03-29) [x86_64-linux]
-    migrations_1          | == Sinatra (v1.4.8) has taken the stage on 80 for production with backup from WEBrick
-    migrations_1          | [2020-09-29 08:32:37] INFO  WEBrick::HTTPServer#start: pid=12 port=80
-    ```
-   > **Note**: This could take a while, so go grab yourself a coffee.
-
-5. Restart the cache and resource services to make sure they are aware of the new data:
-    ```console
-    foo@device:~project-root$ docker-compose restart cache resource
-    ```
-6. (optional) remove the data-dump file in the project root.
-
-#### Step 2: Setting up mandatarissen-consumer and functionarissen-consumer
-
-1. Create/update the `docker-compose.override.yml` file with following lines:
-   ```dockerfile
-     mandatarissen-consumer:
-       environment:
-         SYNC_BASE_URL: 'https://mandaten.lokaalbestuur.vlaanderen.be' # the endpoint you want to sync from
-         START_FROM_DELTA_TIMESTAMP: '2020-09-18T03:15:00.112Z' # a timestamp from TTL converted to ISO
-     functionarissen-consumer:
-       environment:
-         SYNC_BASE_URL: 'https://leidinggevenden.lokaalbestuur.vlaanderen.be' # the endpoint you want to sync from
-         START_FROM_DELTA_TIMESTAMP: '2020-09-18T03:15:00.112Z' # a timestamp from TTL converted to ISO
-   ```
-
-2. Include the `mandatarissen-consumer` container to the stack by including the provided `docker-compose.external-delta-sync.yml` to a `.env` file:
-    ```text
-    COMPOSE_FILE=docker-compose.yml:docker-compose.external-delta-sync.yml:docker-compose.override.yml
-    ```
-3. Update the stack:
-    ```console
-    foo@device:~project-root$ docker-compose up -d
-    ```
+The LDB sync briefly switches the editor to the maintenance frontend while the
+migrations run.
 
 ## General application structure
 

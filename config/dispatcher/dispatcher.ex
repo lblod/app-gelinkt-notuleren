@@ -40,10 +40,6 @@ defmodule Dispatcher do
     forward conn, path, "http://resource/attachments/"
   end
 
-  match "/blockchain/*path" do
-    forward conn, path, "http://blockchain/"
-  end
-
   match "/codex/sparql/*path" do
     forward conn, path, "http://codex-proxy/sparql/"
   end
@@ -318,7 +314,7 @@ defmodule Dispatcher do
   match "/agendapoint-service/*path" do
     forward conn, path, "http://agendapoint-service/"
   end
-  
+
 
   #########
   # LPDC
@@ -377,7 +373,7 @@ defmodule Dispatcher do
     forward conn, [], "http://sparql-wrapper/sparql"
   end
 
-  
+
 
   match "/query/*path" do
     forward conn, path, "http://yasgui/"
@@ -398,5 +394,5 @@ defmodule Dispatcher do
   match "/*_path" do
     Proxy.forward conn, [], "http://editor/index.html"
   end
-  
+
 end
